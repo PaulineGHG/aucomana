@@ -1,5 +1,8 @@
-import pandas as pd
+"""
+Reactions class
+"""
 from typing import Dict, List, Tuple
+import pandas as pd
 
 
 class Reactions:
@@ -30,8 +33,8 @@ class Reactions:
         file_reactions_tsv : str
             file reactions.tsv output from aucome analysis
         species_list : List[str], optional (default=None)
-            List of species to study (must correspond to their name in reactions.tsv file). If not specified, will
-            contain all the species from reactions.tsv file.
+            List of species to study (must correspond to their name in reactions.tsv file).
+            If not specified, will contain all the species from reactions.tsv file.
         """
         self.species_list = species_list
         self.data_reactions, \
@@ -64,8 +67,8 @@ class Reactions:
         genes_assoc_list = [x + "_genes_assoc (sep=;)" for x in self.species_list]
         data_genes_assoc = data[genes_assoc_list]
         filtered_reactions = self.__get_filtered_reactions(data_species_all_reactions)
-        return data_species_all_reactions.loc[filtered_reactions], data_genes_assoc.loc[filtered_reactions], \
-            filtered_reactions
+        return data_species_all_reactions.loc[filtered_reactions], \
+            data_genes_assoc.loc[filtered_reactions], filtered_reactions
 
     def __generate_species_list(self, data):
         """ Generate the species_list attribute if is None
@@ -144,7 +147,8 @@ class Reactions:
         Parameters
         ----------
         reactions_list : List[str], optional (default=None)
-            List of reactions to find genes associated with. If None, will pe reactions_list attribute.
+            List of reactions to find genes associated with.
+            If None, will pe reactions_list attribute.
 
         Returns
         -------
@@ -158,11 +162,13 @@ class Reactions:
             reactions_list = self.reactions_list
         for species in self.species_list:
             for reaction in reactions_list:
-                genes_assoc[species][reaction] = \
-                    str(self.data_genes_assoc[species + "_genes_assoc (sep=;)"][reaction]).split(";")
+                genes_assoc[species][reaction] = str(self.data_genes_assoc[species +
+                                                                           "_genes_assoc (sep=;)"]
+                                                     [reaction]).split(";")
         return genes_assoc
 
-    def get_common_reactions(self, data_to_compare: 'Reactions', species: str) -> Tuple[int, List[str]]:
+    def get_common_reactions(self, data_to_compare: 'Reactions', species: str) -> \
+            Tuple[int, List[str]]:
         """ Returns the reactions lost in common between 2 Reactions instance for 1 common species
 
         Parameters
@@ -185,6 +191,11 @@ class Reactions:
 
     @staticmethod
     def print_genes_assoc(dict_genes_assoc: Dict[str, Dict[str, List[str]]]):
+        """ Prints the gene_assoc dictionary
+        Parameters
+        ----------
+        dict_genes_assoc : Dict
+        """
         for species, gene_assoc in dict_genes_assoc.items():
             print(f"\n{species} :\n{'=' * 50}")
             for reaction, genes in gene_assoc.items():
