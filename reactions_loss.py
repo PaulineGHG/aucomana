@@ -62,7 +62,8 @@ class Reactions:
             reactions_list = self.reactions_list
         for species in self.species_list:
             for reaction in reactions_list:
-                genes_assoc[species][reaction] = self.data_genes_assoc[species + "_genes_assoc (sep=;)"][reaction]
+                genes_assoc[species][reaction] = \
+                    str(self.data_genes_assoc[species + "_genes_assoc (sep=;)"][reaction]).split(";")
         return genes_assoc
 
     def get_common_reactions(self, data_to_compare, specie):
@@ -112,6 +113,6 @@ R40_loss_lami_e = R40.reactions_loss['Laminarionema_elsbetiae']
 # print(R1.get_common_reactions(R40, 'Laminarionema_elsbetiae'))
 # print(R40.reactions_loss)
 # print(R40.data_genes_assoc)
-R40.print_gene_assoc(R40.get_genes_assoc(R40_loss_lami_e[1]))
+R40.print_genes_assoc(R40.get_genes_assoc(R40_loss_lami_e[1]))
 
 
