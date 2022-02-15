@@ -81,7 +81,7 @@ class Reactions:
                 break
             self.species_list.append(x)
 
-    def __get_filtered_reactions(self, data_all_reactions, out: int = 1):
+    def __get_filtered_reactions(self, data_all_reactions, out: int = 1) -> List[str]:
         """ Filter the reactions according to the number of species not having the reaction
 
         Parameters
@@ -107,7 +107,7 @@ class Reactions:
                 filtered_reactions.append(reaction)
         return filtered_reactions
 
-    def __get_reactions_loss_1_species(self, species: str):
+    def __get_reactions_loss_1_species(self, species: str) -> Tuple[int, List[str]]:
         """ Capture the reaction lost for a given species
 
         Parameters
@@ -126,7 +126,7 @@ class Reactions:
                 loss.append(reaction)
         return len(loss), loss
 
-    def __init_reactions_loss(self):
+    def __init_reactions_loss(self) -> Dict[str, Tuple[int, List[str]]]:
         """ Init the reactions_loss attribute
 
         Returns
@@ -139,7 +139,7 @@ class Reactions:
             reactions_loss[species] = self.__get_reactions_loss_1_species(species)
         return reactions_loss
 
-    def get_genes_assoc(self, reactions_list: List[str] = None):
+    def get_genes_assoc(self, reactions_list: List[str] = None) -> Dict[str, Dict[str, List[str]]]:
         """
         Parameters
         ----------
@@ -162,7 +162,7 @@ class Reactions:
                     str(self.data_genes_assoc[species + "_genes_assoc (sep=;)"][reaction]).split(";")
         return genes_assoc
 
-    def get_common_reactions(self, data_to_compare: 'Reactions', species: str):
+    def get_common_reactions(self, data_to_compare: 'Reactions', species: str) -> Tuple[int, List[str]]:
         """ Returns the reactions lost in common between 2 Reactions instance for 1 common species
 
         Parameters
