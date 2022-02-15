@@ -27,9 +27,9 @@ R40 = Reactions(DATA_FILE_40, BROWN_ALGAE_40)
 
 R40_loss_lami_e = R40.reactions_loss[INTEREST_SPECIES]
 # R1_loss_lami_e = R1.reactions_loss[INTEREST_SPECIES]
-# print(R40_loss_lami_e)
+print(R40_loss_lami_e)
 # print(R1_loss_lami_e)
 # print(R1.get_common_reactions(R40, INTEREST_SPECIES))
 # print(R40.reactions_loss)
 # print(R40.data_genes_assoc)
-R40.print_genes_assoc(R40.get_genes_assoc(R40_loss_lami_e[1]))
+# R40.print_genes_assoc(R40.get_genes_assoc(R40_loss_lami_e[1]))

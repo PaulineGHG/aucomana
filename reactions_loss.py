@@ -29,7 +29,7 @@ class Reactions:
                 break
             self.species_list.append(x)
 
-    def __get_filtered_reactions(self, data_all_reactions):
+    def __get_filtered_reactions(self, data_all_reactions, out=1):
         nb_species = len(self.species_list)
         filtered_reactions = []
         for reaction in data_all_reactions.index:
@@ -37,7 +37,7 @@ class Reactions:
             for species in data_all_reactions.columns:
                 if data_all_reactions[species][reaction] == 1:
                     count += 1
-            if count > nb_species - 2:
+            if count > nb_species - (out + 1):
                 filtered_reactions.append(reaction)
         return filtered_reactions
 
