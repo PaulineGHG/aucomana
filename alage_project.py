@@ -49,5 +49,5 @@ r_interest1 = reactions_from_file(DATA_LELSB_LOSSES, R1_loss_lami_e[1])
 print(R1.get_common_reactions(R40, LAMINARIONEMA_E))
 
 # R40.print_genes_assoc(R40.get_genes_assoc(r_interest40))
-R1.print_genes_assoc(R1.get_genes_assoc(r_interest1))
+# R1.print_genes_assoc(R1.get_genes_assoc(r_interest1))
 

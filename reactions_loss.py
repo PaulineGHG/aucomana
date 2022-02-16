@@ -102,10 +102,7 @@ class Reactions:
         nb_species = len(self.species_list)
         filtered_reactions = []
         for reaction in data_all_reactions.index:
-            count = 0
-            for species in data_all_reactions.columns:
-                if data_all_reactions[species][reaction] == 1:
-                    count += 1
+            count = sum(data_all_reactions.loc[reaction])
             if count > nb_species - (out + 1):
                 filtered_reactions.append(reaction)
         return filtered_reactions
