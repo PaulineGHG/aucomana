@@ -25,7 +25,7 @@ class Reactions:
         Dictionary indicating for each species how many and which reactions are lost
     """
 
-    def __init__(self, file_reactions_tsv: str, species_list: List[str] = None):
+    def __init__(self, file_reactions_tsv: str, species_list: List[str] = None, out: int = 1):
         """ Init the Reactions class
 
         Parameters
@@ -35,15 +35,17 @@ class Reactions:
         species_list : List[str], optional (default=None)
             List of species to study (must correspond to their name in reactions.tsv file).
             If not specified, will contain all the species from reactions.tsv file.
+        out : int, optional (default = 1)
+            number of species maximum not having the reaction for the reaction to be kept
         """
         self.species_list = species_list
         self.data_reactions, \
             self.data_genes_assoc, \
-            self.reactions_list = self.__init_data(file_reactions_tsv)
+            self.reactions_list = self.__init_data(file_reactions_tsv, out)
         self.nb_reactions, self.nb_species = self.data_reactions.shape
         self.reactions_loss = self.__init_reactions_loss()
 
-    def __init_data(self, file_reactions_tsv: str) \
+    def __init_data(self, file_reactions_tsv: str, out: int) \
             -> Tuple['pd.DataFrame', 'pd.DataFrame', List[str]]:
         """ Generate the data_reactions, data_genes_assoc and reactions_list attributes
 
@@ -51,6 +53,8 @@ class Reactions:
         ----------
         file_reactions_tsv : str
             file reactions.tsv
+        out : int
+            number of species maximum not having the reaction for the reaction to be kept
 
         Returns
         -------
@@ -67,7 +71,7 @@ class Reactions:
         data_species_all_reactions = data[self.species_list]
         genes_assoc_list = [x + "_genes_assoc (sep=;)" for x in self.species_list]
         data_genes_assoc = data[genes_assoc_list]
-        filtered_reactions = self.__get_filtered_reactions(data_species_all_reactions)
+        filtered_reactions = self.__get_filtered_reactions(data_species_all_reactions, out)
         return data_species_all_reactions.loc[filtered_reactions], \
             data_genes_assoc.loc[filtered_reactions], filtered_reactions
 
@@ -85,7 +89,7 @@ class Reactions:
                 break
             self.species_list.append(x)
 
-    def __get_filtered_reactions(self, data_all_reactions: 'pd.DataFrame', out: int = 1) \
+    def __get_filtered_reactions(self, data_all_reactions: 'pd.DataFrame', out: int) \
             -> List[str]:
         """ Filter the reactions according to the number of species not having the reaction
 
@@ -93,7 +97,7 @@ class Reactions:
         ----------
         data_all_reactions:
             Dataframe with filtered columns and unfiltered reactions (rows)
-        out: int, optional (default=1)
+        out: int
             number of species maximum not having the reaction for the reaction to be kept
 
         Returns
