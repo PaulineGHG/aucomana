@@ -43,7 +43,8 @@ class Reactions:
         self.nb_reactions, self.nb_species = self.data_reactions.shape
         self.reactions_loss = self.__init_reactions_loss()
 
-    def __init_data(self, file_reactions_tsv: str):
+    def __init_data(self, file_reactions_tsv: str) \
+            -> Tuple['pd.DataFrame', 'pd.DataFrame', List[str]]:
         """ Generate the data_reactions, data_genes_assoc and reactions_list attributes
 
         Parameters
@@ -70,7 +71,7 @@ class Reactions:
         return data_species_all_reactions.loc[filtered_reactions], \
             data_genes_assoc.loc[filtered_reactions], filtered_reactions
 
-    def __generate_species_list(self, data):
+    def __generate_species_list(self, data: 'pd.DataFrame'):
         """ Generate the species_list attribute if is None
 
         Parameters
@@ -84,7 +85,8 @@ class Reactions:
                 break
             self.species_list.append(x)
 
-    def __get_filtered_reactions(self, data_all_reactions, out: int = 1) -> List[str]:
+    def __get_filtered_reactions(self, data_all_reactions: 'pd.DataFrame', out: int = 1) \
+            -> List[str]:
         """ Filter the reactions according to the number of species not having the reaction
 
         Parameters
