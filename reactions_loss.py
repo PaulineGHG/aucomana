@@ -170,26 +170,30 @@ class Reactions:
                                                      [reaction]).split(";")
         return genes_assoc
 
-    def get_common_reactions(self, data_to_compare: 'Reactions', species: str) -> \
+    def get_common_reactions(self, datas_to_compare: List["Reactions"], species: str) -> \
             Tuple[int, List[str]]:
         """ Returns the reactions lost in common between 2 Reactions instance for 1 common species
 
         Parameters
         ----------
-        data_to_compare : "Reactions"
-            Reactions instance to compare with self instance
+        datas_to_compare : List["Reactions"]
+            List of Reactions instance to compare with self instance
         species : str
-            Species to compare
+            Species of interest compare
 
         Returns
         -------
         Tuple[int, List[str]]
             Number of reactions in common and their list
         """
-        common_reactions = []
-        for reaction in self.reactions_loss[species][1]:
-            if reaction in data_to_compare.reactions_loss[species][1]:
-                common_reactions.append(reaction)
+        common_reactions = self.reactions_loss[species][1]
+        for data in datas_to_compare:
+            list_reactions = data.reactions_loss[species][1]
+            temp_common_reactions = []
+            for reaction in list_reactions:
+                if reaction in common_reactions:
+                    temp_common_reactions.append(reaction)
+            common_reactions = temp_common_reactions
         return len(common_reactions), common_reactions
 
     @staticmethod
