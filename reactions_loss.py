@@ -9,6 +9,8 @@ class Reactions:
     """
     Attributes
     ----------
+    name : str
+        name of the file
     species_list : List[str]
         List of species studied
     data_reactions :
@@ -24,6 +26,7 @@ class Reactions:
     reactions_loss : Dict[str, Tuple[int, List[str]]]
         Dictionary indicating for each species how many and which reactions are lost
     """
+    nb_analysis = 0
 
     def __init__(self, file_reactions_tsv: str, species_list: List[str] = None, out: int = 1):
         """ Init the Reactions class
@@ -38,6 +41,7 @@ class Reactions:
         out : int, optional (default = 1)
             number of species maximum not having the reaction for the reaction to be kept
         """
+        self.name = file_reactions_tsv.split(".")[0].split("/")[-1]
         self.species_list = species_list
         self.data_reactions, \
             self.data_genes_assoc, \
@@ -84,7 +88,7 @@ class Reactions:
             The dataframe created from reactions.tsv file
         """
         self.species_list = []
-        for x in data.columns[1:]:
+        for x in data.columns:
             if x[-7:] == '(sep=;)':
                 break
             self.species_list.append(x)
@@ -170,31 +174,62 @@ class Reactions:
                                                      [reaction]).split(";")
         return genes_assoc
 
-    def get_common_reactions(self, datas_to_compare: List["Reactions"], species: str) -> \
-            Tuple[int, List[str]]:
+    @classmethod
+    def get_common_reactions(cls, datas: List["Reactions"], species: str, output_file=False) \
+            -> Tuple[int, List[str]]:
         """ Returns the reactions lost in common between 2 Reactions instance for 1 common species
 
         Parameters
         ----------
-        datas_to_compare : List["Reactions"]
-            List of Reactions instance to compare with self instance
+        datas : List["Reactions"]
+            List of Reactions instance to compare
         species : str
             Species of interest compare
+        output_file : bool, optional (default=False)
+            True to write output in a file
 
         Returns
         -------
         Tuple[int, List[str]]
             Number of reactions in common and their list
         """
-        common_reactions = self.reactions_loss[species][1]
-        for data in datas_to_compare:
+        common_reactions = datas[0].reactions_loss[species][1]
+        for data in datas[1:]:
             list_reactions = data.reactions_loss[species][1]
             temp_common_reactions = []
             for reaction in list_reactions:
                 if reaction in common_reactions:
                     temp_common_reactions.append(reaction)
             common_reactions = temp_common_reactions
-        return len(common_reactions), common_reactions
+        if not output_file:
+            return len(common_reactions), common_reactions
+        else:
+            cls.nb_analysis += 1
+            cls.__write_common_reactions_o(datas, common_reactions)
+
+    @classmethod
+    def __write_common_reactions_o(cls, datas_list: List["Reactions"], common_reactions: List[str]):
+        """Write get_common_reactions results in a file
+
+        Parameters
+        ----------
+        datas_list : List["Reactions"]
+            List of Reactions instance compared
+        common_reactions : List[str]
+            List of common reactions between all the datas
+        """
+        outfile_name = f'outputs/analyse_{cls.nb_analysis}'
+        with open(outfile_name, 'w') as o:
+            o.write("Compared files :\n"
+                    "----------------\n")
+            for data in datas_list:
+                o.write(data.name + "\n")
+            o.write(f"\nNumber of common reactions : {len(common_reactions)}\n"
+                    f"----------------------------\n\n"
+                    f"Reactions :\n"
+                    f"-----------\n")
+            for reaction in common_reactions:
+                o.write(reaction + "\n")
 
     @staticmethod
     def print_genes_assoc(dict_genes_assoc: Dict[str, Dict[str, List[str]]]):
