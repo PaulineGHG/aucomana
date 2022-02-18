@@ -205,10 +205,11 @@ class Reactions:
             return len(common_reactions), common_reactions
         else:
             cls.nb_analysis += 1
-            cls.__write_common_reactions_o(datas, common_reactions)
+            cls.__write_common_reactions_o(datas, common_reactions, species)
 
     @classmethod
-    def __write_common_reactions_o(cls, datas_list: List["Reactions"], common_reactions: List[str]):
+    def __write_common_reactions_o(cls, datas_list: List["Reactions"], common_reactions: List[str],
+                                   species: str):
         """Write get_common_reactions results in a file
 
         Parameters
@@ -217,6 +218,8 @@ class Reactions:
             List of Reactions instance compared
         common_reactions : List[str]
             List of common reactions between all the datas
+        species : str
+            Interest species
         """
         outfile_name = f'outputs/analyse_{cls.nb_analysis}'
         with open(outfile_name, 'w') as o:
@@ -224,7 +227,10 @@ class Reactions:
                     "----------------\n")
             for data in datas_list:
                 o.write(data.name + "\n")
-            o.write(f"\nNumber of common reactions : {len(common_reactions)}\n"
+            o.write(f"Interest species :\n"
+                    f"------------------\n"
+                    f"{species}\n\n")
+            o.write(f"Number of common reactions : {len(common_reactions)}\n"
                     f"----------------------------\n\n"
                     f"Reactions :\n"
                     f"-----------\n")
@@ -233,7 +239,8 @@ class Reactions:
 
     @staticmethod
     def print_genes_assoc(dict_genes_assoc: Dict[str, Dict[str, List[str]]]):
-        """ Prints the gene_assoc dictionary
+        """Prints the gene_assoc dictionary
+
         Parameters
         ----------
         dict_genes_assoc : Dict
