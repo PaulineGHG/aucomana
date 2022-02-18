@@ -227,7 +227,7 @@ class Reactions:
                     "----------------\n")
             for data in datas_list:
                 o.write(data.name + "\n")
-            o.write(f"Interest species :\n"
+            o.write(f"\nInterest species :\n"
                     f"------------------\n"
                     f"{species}\n\n")
             o.write(f"Number of common reactions : {len(common_reactions)}\n"
