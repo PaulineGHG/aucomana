@@ -155,7 +155,7 @@ class Reactions:
         ----------
         reactions_list : List[str], optional (default=None)
             List of reactions to find genes associated with.
-            If None, will pe reactions_list attribute.
+            If None, will be reactions_list attribute.
 
         Returns
         -------
@@ -177,7 +177,8 @@ class Reactions:
     @classmethod
     def get_common_reactions(cls, datas: List["Reactions"], species: str, output_file=False) \
             -> Tuple[int, List[str]]:
-        """ Returns the reactions lost in common between 2 Reactions instance for 1 common species
+        """ Returns the reactions lost in common between at least 2 Reactions instance for 1
+        common species
 
         Parameters
         ----------
