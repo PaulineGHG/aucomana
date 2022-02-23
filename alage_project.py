@@ -70,8 +70,8 @@ print(RA2.reactions_loss[LAMINARIONEMA_E])
 
 # ### Common Reactions ###
 
-print(Reactions.get_common_reactions([R01, R40, RA0], LAMINARIONEMA_E, output_file=True))
-print(Reactions.get_common_reactions([R01, R40, RA1], LAMINARIONEMA_E, output_file=True))
-print(Reactions.get_common_reactions([R01, R40, RA2], LAMINARIONEMA_E, output_file=True))
+print(Reactions.get_common_reactions([R01, R40, RA0], LAMINARIONEMA_E))
+print(Reactions.get_common_reactions([R01, R40, RA1], LAMINARIONEMA_E))
+print(Reactions.get_common_reactions([R01, R40, RA2], LAMINARIONEMA_E))
 
 
