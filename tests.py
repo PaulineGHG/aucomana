@@ -1,7 +1,7 @@
 import unittest
 from reactions_loss import Reactions
 
-FILE_TEST = "data/run2_reactions.tsv"
+FILE_TEST = "data/runA1_reactions.tsv"
 R = Reactions(FILE_TEST)
 
 
@@ -29,7 +29,7 @@ class Test(unittest.TestCase):
         self.assertEqual(species_list, RS.species_list)
 
     def test_name(self):
-        self.assertEqual(R.name, 'run2_reactions')
+        self.assertEqual(R.name, 'runA1_reactions')
 
 
 if __name__ == '__main__':
