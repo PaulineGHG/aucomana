@@ -28,7 +28,7 @@ Contains Reactions class
 
 Contains command to analyse files :
 
-- Creation of a Reactions object instance : R = Reactions(input_file, [species_list], [out])
+- Creation of a Reactions object instance : ```R = Reactions(input_file, [species_list], [out])```
 - Get the reactions lost : for all species : R.reactions_loss / for a specific species : R.reactions_loss[species_name]
 - Get common reactions between different instance : Reactions.get_common_reactions(list_of-instances, species_name, [output_file])
   - output_file=None --> returns the result
