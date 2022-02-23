@@ -3,6 +3,7 @@ Reactions class
 """
 from typing import Dict, List, Tuple
 import pandas as pd
+import json
 
 
 class Reactions:
@@ -175,7 +176,7 @@ class Reactions:
         return genes_assoc
 
     @classmethod
-    def get_common_reactions(cls, datas: List["Reactions"], species: str, output_file=False) \
+    def get_common_reactions(cls, datas: List["Reactions"], species: str, output_file=None) \
             -> Tuple[int, List[str]]:
         """ Returns the reactions lost in common between at least 2 Reactions instance for 1
         common species
@@ -186,8 +187,10 @@ class Reactions:
             List of Reactions instance to compare
         species : str
             Species of interest compare
-        output_file : bool, optional (default=False)
-            True to write output in a file
+        output_file : str, optional (default=None)
+            'json' to write output in a .json file
+            'txt' to write output in a .txt file
+            None to return the output
 
         Returns
         -------
@@ -202,16 +205,21 @@ class Reactions:
                 if reaction in common_reactions:
                     temp_common_reactions.append(reaction)
             common_reactions = temp_common_reactions
-        if not output_file:
+        if output_file is None:
             return len(common_reactions), common_reactions
-        else:
+        elif output_file == "json":
             cls.nb_analysis += 1
-            cls.__write_common_reactions_o(datas, common_reactions, species)
+            cls.__write_common_reactions_json(datas, common_reactions, species)
+        elif output_file == "txt":
+            cls.nb_analysis += 1
+            cls.__write_common_reactions_txt(datas, common_reactions, species)
+        else:
+            raise ValueError("output_file value must be 'json' or 'txt'")
 
     @classmethod
-    def __write_common_reactions_o(cls, datas_list: List["Reactions"], common_reactions: List[str],
-                                   species: str):
-        """Write get_common_reactions results in a file
+    def __write_common_reactions_txt(cls, datas_list: List["Reactions"],
+                                     common_reactions: List[str], species: str):
+        """Write get_common_reactions results in a .txt file
 
         Parameters
         ----------
@@ -222,7 +230,7 @@ class Reactions:
         species : str
             Interest species
         """
-        outfile_name = f'outputs/analyse_{cls.nb_analysis}'
+        outfile_name = f'outputs/analyse_{cls.nb_analysis}.txt'
         with open(outfile_name, 'w') as o:
             o.write("Compared files :\n"
                     "----------------\n")
@@ -237,6 +245,28 @@ class Reactions:
                     f"-----------\n")
             for reaction in common_reactions:
                 o.write(reaction + "\n")
+
+    @classmethod
+    def __write_common_reactions_json(cls, datas_list: List["Reactions"],
+                                      common_reactions: List[str], species: str):
+        """Write get_common_reactions results in a .json file
+
+       Parameters
+       ----------
+       datas_list : List["Reactions"]
+           List of Reactions instance compared
+       common_reactions : List[str]
+           List of common reactions between all the datas
+       species : str
+           Interest species
+       """
+        outfile_name = f'outputs/analyse_{cls.nb_analysis}.json'
+        data = {"Compared files": [data.name for data in datas_list],
+                "Interest species": species,
+                "Number of common reactions": len(common_reactions),
+                "Reactions": [reaction for reaction in common_reactions]}
+        with open(outfile_name, 'w') as o:
+            json.dump(data, o, indent=4)
 
     @staticmethod
     def print_genes_assoc(dict_genes_assoc: Dict[str, Dict[str, List[str]]]):

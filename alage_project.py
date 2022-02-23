@@ -11,6 +11,9 @@ def reactions_from_file(file):
     return reactions
 
 
+JSON = "json"
+TXT = "txt"
+
 # ###Description ###
 
 # 40 : run 40+7
@@ -70,8 +73,6 @@ print(RA2.reactions_loss[LAMINARIONEMA_E])
 
 # ### Common Reactions ###
 
-print(Reactions.get_common_reactions([R01, R40, RA0], LAMINARIONEMA_E))
-print(Reactions.get_common_reactions([R01, R40, RA1], LAMINARIONEMA_E))
-print(Reactions.get_common_reactions([R01, R40, RA2], LAMINARIONEMA_E))
-
-
+print(Reactions.get_common_reactions([R01, R40, RA0], LAMINARIONEMA_E, output_file=None))
+print(Reactions.get_common_reactions([R01, R40, RA1], LAMINARIONEMA_E, output_file=None))
+print(Reactions.get_common_reactions([R01, R40, RA2], LAMINARIONEMA_E, output_file=None))
