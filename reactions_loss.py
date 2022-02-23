@@ -1,7 +1,7 @@
 """
 Reactions class
 """
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, Set
 import pandas as pd
 import json
 
@@ -24,7 +24,7 @@ class Reactions:
         number of reactions (filtered)
     nb_species : int
         number of species studied
-    reactions_loss : Dict[str, Tuple[int, List[str]]]
+    reactions_loss : Dict[str, Tuple[int, Set[str]]]
         Dictionary indicating for each species how many and which reactions are lost
     """
     nb_analysis = 0
@@ -118,7 +118,7 @@ class Reactions:
                 filtered_reactions.append(reaction)
         return filtered_reactions
 
-    def __get_reactions_loss_1_species(self, species: str) -> Tuple[int, List[str]]:
+    def __get_reactions_loss_1_species(self, species: str) -> Tuple[int, Set[str]]:
         """ Capture the reaction lost for a given species
 
         Parameters
@@ -128,21 +128,21 @@ class Reactions:
 
         Returns
         -------
-        Tuple[int, List[str]]
+        Tuple[int, Set[str]]
             Tuple with the number of reactions lost and the list of these reactions
         """
-        loss = []
+        loss = set()
         for reaction in self.reactions_list:
             if self.data_reactions[species][reaction] == 0:
-                loss.append(reaction)
+                loss.add(reaction)
         return len(loss), loss
 
-    def __init_reactions_loss(self) -> Dict[str, Tuple[int, List[str]]]:
+    def __init_reactions_loss(self) -> Dict[str, Tuple[int, Set[str]]]:
         """ Init the reactions_loss attribute
 
         Returns
         -------
-        reactions_loss : Dict[str, Tuple[int, List[str]]]
+        reactions_loss : Dict[str, Tuple[int, Set[str]]]
             reactions_loss attribute
         """
         reactions_loss = {}
@@ -177,7 +177,7 @@ class Reactions:
 
     @classmethod
     def get_common_reactions(cls, datas: List["Reactions"], species: str, output_file=None) \
-            -> Tuple[int, List[str]]:
+            -> Tuple[int, Set[str]]:
         """ Returns the reactions lost in common between at least 2 Reactions instance for 1
         common species
 
@@ -194,17 +194,13 @@ class Reactions:
 
         Returns
         -------
-        Tuple[int, List[str]]
+        Tuple[int, Set[str]]
             Number of reactions in common and their list
         """
-        common_reactions = datas[0].reactions_loss[species][1]
-        for data in datas[1:]:
-            list_reactions = data.reactions_loss[species][1]
-            temp_common_reactions = []
-            for reaction in list_reactions:
-                if reaction in common_reactions:
-                    temp_common_reactions.append(reaction)
-            common_reactions = temp_common_reactions
+        set_reac_list = []
+        for data in datas:
+            set_reac_list.append(data.reactions_loss[species][1])
+        common_reactions = set.intersection(*set_reac_list)
         if output_file is None:
             return len(common_reactions), common_reactions
         elif output_file == "json":
@@ -218,15 +214,15 @@ class Reactions:
 
     @classmethod
     def __write_common_reactions_txt(cls, datas_list: List["Reactions"],
-                                     common_reactions: List[str], species: str):
+                                     common_reactions: Set[str], species: str):
         """Write get_common_reactions results in a .txt file
 
         Parameters
         ----------
         datas_list : List["Reactions"]
             List of Reactions instance compared
-        common_reactions : List[str]
-            List of common reactions between all the datas
+        common_reactions : Set[str]
+            Set of common reactions between all the datas
         species : str
             Interest species
         """
@@ -248,15 +244,15 @@ class Reactions:
 
     @classmethod
     def __write_common_reactions_json(cls, datas_list: List["Reactions"],
-                                      common_reactions: List[str], species: str):
+                                      common_reactions: Set[str], species: str):
         """Write get_common_reactions results in a .json file
 
        Parameters
        ----------
        datas_list : List["Reactions"]
            List of Reactions instance compared
-       common_reactions : List[str]
-           List of common reactions between all the datas
+       common_reactions : Set[str]
+           Set of common reactions between all the datas
        species : str
            Interest species
        """
