@@ -76,3 +76,9 @@ print(RA2.reactions_loss[LAMINARIONEMA_E])
 print(Reactions.get_common_reactions([R01, R40, RA0], LAMINARIONEMA_E, output_file=None))
 print(Reactions.get_common_reactions([R01, R40, RA1], LAMINARIONEMA_E, output_file=None))
 print(Reactions.get_common_reactions([R01, R40, RA2], LAMINARIONEMA_E, output_file=None))
+
+
+# ### reactions lost percentage (based on highly shared reactions)
+
+for k, v in R01.reactions_loss.items():
+    print(k, " : ", round((v[0]/R01.nb_reactions)*100, 3), "%")
