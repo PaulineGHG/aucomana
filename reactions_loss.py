@@ -151,7 +151,8 @@ class Reactions:
             reactions_loss[species] = self.__get_reactions_loss_1_species(species)
         return reactions_loss
 
-    def get_genes_assoc(self, interest_species: str,  reactions_set: Set[str] = None) -> Dict[str, Dict[str, List[str]]]:
+    def get_genes_assoc(self, interest_species: str,  reactions_set: Set[str] = None) -> \
+            Dict[str, Dict[str, List[str]]]:
         """
         Parameters
         ----------
