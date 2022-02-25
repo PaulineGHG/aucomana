@@ -28,6 +28,7 @@ class Reactions:
         Dictionary indicating for each species how many and which reactions are lost
     """
     nb_analysis = 0
+    STR_GENE_ASSOC = "_genes_assoc (sep=;)"
 
     def __init__(self, file_reactions_tsv: str, species_list: List[str] = None, out: int = 1):
         """ Init the Reactions class
@@ -74,7 +75,7 @@ class Reactions:
         if self.species_list is None:
             self.__generate_species_list(data)
         data_species_all_reactions = data[self.species_list]
-        genes_assoc_list = [x + "_genes_assoc (sep=;)" for x in self.species_list]
+        genes_assoc_list = [x + self.STR_GENE_ASSOC for x in self.species_list]
         data_genes_assoc = data[genes_assoc_list]
         filtered_reactions = self.__get_filtered_reactions(data_species_all_reactions, out)
         return data_species_all_reactions.loc[filtered_reactions], \
@@ -150,12 +151,14 @@ class Reactions:
             reactions_loss[species] = self.__get_reactions_loss_1_species(species)
         return reactions_loss
 
-    def get_genes_assoc(self, species: str,  reactions_list: Set[str]=None) -> Dict[str, Dict[str, List[str]]]:
+    def get_genes_assoc(self, interest_species: str,  reactions_set: Set[str] = None) -> Dict[str, Dict[str, List[str]]]:
         """
         Parameters
         ----------
-        reactions_list : List[str], optional (default=None)
-            List of reactions to find genes associated with.
+        interest_species : str
+            species of interest
+        reactions_set : List[str], optional (default=None)
+            Set of reactions to find genes associated with.
             If None, will be reactions_list attribute.
 
         Returns
@@ -163,16 +166,15 @@ class Reactions:
         genes_assoc : Dict[str, Dict[str, List[str]]]
             Dictionary of genes associated with each reaction for each species
         """
-        genes_assoc = {}
-        if reactions_list is None:
-            reactions_list = self.reactions_loss[species][1]
-        for reaction in reactions_list:
-            genes_assoc[reaction] = {}
-        for reaction in reactions_list:
+        genes_assoc = {interest_species: {}}
+        if reactions_set is None:
+            reactions_set = self.reactions_loss[interest_species][1]
+        for reaction in reactions_set:
+            genes_assoc[interest_species][reaction] = {}
+        for reaction in reactions_set:
             for species in self.species_list:
-                genes_assoc[reaction][species] = str(self.data_genes_assoc[species +
-                                                                           "_genes_assoc (sep=;)"]
-                                                     [reaction]).split(";")
+                genes_assoc[interest_species][reaction][species] = str(
+                    self.data_genes_assoc[species + self.STR_GENE_ASSOC][reaction]).split(";")
         return genes_assoc
 
     @classmethod
