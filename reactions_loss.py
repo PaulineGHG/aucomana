@@ -150,7 +150,7 @@ class Reactions:
             reactions_loss[species] = self.__get_reactions_loss_1_species(species)
         return reactions_loss
 
-    def get_genes_assoc(self, reactions_list: List[str] = None) -> Dict[str, Dict[str, List[str]]]:
+    def get_genes_assoc(self, species: str,  reactions_list: Set[str]=None) -> Dict[str, Dict[str, List[str]]]:
         """
         Parameters
         ----------
@@ -164,13 +164,13 @@ class Reactions:
             Dictionary of genes associated with each reaction for each species
         """
         genes_assoc = {}
-        for species in self.species_list:
-            genes_assoc[species] = {}
         if reactions_list is None:
-            reactions_list = self.reactions_list
-        for species in self.species_list:
-            for reaction in reactions_list:
-                genes_assoc[species][reaction] = str(self.data_genes_assoc[species +
+            reactions_list = self.reactions_loss[species][1]
+        for reaction in reactions_list:
+            genes_assoc[reaction] = {}
+        for reaction in reactions_list:
+            for species in self.species_list:
+                genes_assoc[reaction][species] = str(self.data_genes_assoc[species +
                                                                            "_genes_assoc (sep=;)"]
                                                      [reaction]).split(";")
         return genes_assoc
@@ -264,15 +264,3 @@ class Reactions:
         with open(outfile_name, 'w') as o:
             json.dump(data, o, indent=4)
 
-    @staticmethod
-    def print_genes_assoc(dict_genes_assoc: Dict[str, Dict[str, List[str]]]):
-        """Prints the gene_assoc dictionary
-
-        Parameters
-        ----------
-        dict_genes_assoc : Dict
-        """
-        for species, gene_assoc in dict_genes_assoc.items():
-            print(f"\n{species} :\n{'=' * 50}")
-            for reaction, genes in gene_assoc.items():
-                print(f"{reaction} : {genes}")

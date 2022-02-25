@@ -23,8 +23,8 @@ class Test(unittest.TestCase):
 
     def test_species_precised(self):
         species_list = ['Ectocarpus_crouaniorum_m', 'Laminarionema_elsbetiae',
-                       'Scytosiphon_promiscuus_MALE', 'Undaria_pinnatifida_Kr2015',
-                       'Desmarestia_dudresnayi', 'Thalassiosira_pseudonana']
+                        'Scytosiphon_promiscuus_MALE', 'Undaria_pinnatifida_Kr2015',
+                        'Desmarestia_dudresnayi', 'Thalassiosira_pseudonana']
         RS = Reactions(FILE_TEST, species_list)
         self.assertEqual(species_list, RS.species_list)
 

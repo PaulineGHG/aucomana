@@ -64,21 +64,26 @@ reac_lostA = reactions_from_file(DATA_LELSB_LOSSES)
 
 # ### Laminarionema loss ###
 
-print(R40.reactions_loss[LAMINARIONEMA_E])
-print(R01.reactions_loss[LAMINARIONEMA_E])
-print(RA0.reactions_loss[LAMINARIONEMA_E])
-print(RA1.reactions_loss[LAMINARIONEMA_E])
-print(RA2.reactions_loss[LAMINARIONEMA_E])
+# print(R40.reactions_loss[LAMINARIONEMA_E])
+# print(R01.reactions_loss[LAMINARIONEMA_E])
+# print(RA0.reactions_loss[LAMINARIONEMA_E])
+# print(RA1.reactions_loss[LAMINARIONEMA_E])
+# print(RA2.reactions_loss[LAMINARIONEMA_E])
 
 
 # ### Common Reactions ###
 
-print(Reactions.get_common_reactions([R01, R40, RA0], LAMINARIONEMA_E, output_file=None))
-print(Reactions.get_common_reactions([R01, R40, RA1], LAMINARIONEMA_E, output_file=None))
-print(Reactions.get_common_reactions([R01, R40, RA2], LAMINARIONEMA_E, output_file=None))
+# print(Reactions.get_common_reactions([R01, R40, RA0], LAMINARIONEMA_E, output_file=None))
+# print(Reactions.get_common_reactions([R01, R40, RA1], LAMINARIONEMA_E, output_file=None))
+# print(Reactions.get_common_reactions([R01, R40, RA2], LAMINARIONEMA_E, output_file=None))
 
 
 # ### reactions lost percentage (based on highly shared reactions)
 
 # for k, v in R01.reactions_loss.items():
 #     print(k, " : ", round((v[0]/R01.nb_reactions)*100, 3), "%")
+
+# ### genes assoc ###
+
+print(R01.get_genes_assoc(LAMINARIONEMA_E,
+                          Reactions.get_common_reactions([R01, R40, RA2], LAMINARIONEMA_E)[1]))
