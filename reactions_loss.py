@@ -211,7 +211,7 @@ class Reactions:
                                 write_seq = False
                                 gene = line[1:][:-1]
                                 if gene in genes_list:
-                                    o.write(f">{gene}\n")
+                                    o.write(f">{species}_{gene}\n")
                                     write_seq = True
                             elif write_seq:
                                 o.write(line)

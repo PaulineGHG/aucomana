@@ -1,83 +1,81 @@
 {
     "Laminarionema_elsbetiae": {
-        "RXN-7790": {
+        "DHHB-METHYLTRANSFER-RXN": {
             "Ectocarpus_fasciculatus_m": [
-                "c_organisms_32270"
+                "c_organisms_05656"
             ],
             "Undaria_pinnatifida_Kr2015": [
-                "UNPIN0859CG0040"
+                "UNPIN1005CG0090"
             ],
             "Nannochloropsis_gaditana": [
-                "Naga_100196g5"
+                "Naga_100398g3"
             ],
             "Desmarestia_herbacea_m": [
-                "c_organisms_26266"
+                "c_organisms_02382"
             ],
             "Ectocarpus_siliculosus_m": [
-                "c_organisms_03788"
+                "c_organisms_28146"
             ],
             "Chordaria_linearis": [
-                "c_organisms_14050",
-                "c_organisms_14048"
+                "c_organisms_29822"
             ],
             "Phaeodactylum_tricornutum": [
-                "PHATRDRAFT_9476"
+                "PHATRDRAFT_9984"
             ],
             "Scytosiphon_promiscuus_MALE": [
-                "c_organisms_13092"
+                "c_organisms_11332"
             ],
             "Cladosiphon_okamuranus": [
-                "C_okamuranus_05948"
+                "C_okamuranus_11385"
             ],
             "Pleurocladia_lacustris": [
-                "c_organisms_01718"
+                "c_organisms_30828"
             ],
             "Thalassiosira_pseudonana": [
-                "THAPSDRAFT_795"
+                "THAPS_35408"
             ],
             "Fragilariopsis_cylindrus": [
-                "FRACYDRAFT_186364"
+                "FRACYDRAFT_291503"
             ],
             "Ectocarpus_crouaniorum_m": [
-                "c_organisms_04684"
+                "c_organisms_12404"
             ],
             "Fistulifera_solaris": [
-                "FisN_30Hh027",
-                "FisN_30Lh027"
+                "FisN_1Hu362"
             ],
             "Ectocarpus_siliculosus": [
-                "E_siliculosus_08611"
+                "E_siliculosus_02745"
             ],
             "Ectocarpus_subulatus": [
-                "EsuBft356_2"
+                "EsuBft171_3"
             ],
             "Fucus_serratus_MALE": [
-                "c_organisms_08382"
+                "c_organisms_25602",
+                "c_organisms_19952"
             ],
             "Saccharina_latissima_FEMALE": [
-                "c_organisms_02226"
+                "c_organisms_07176"
             ],
             "Schizocladia_ischiensis": [
-                "c_organisms_25256"
+                "c_organisms_16544"
             ],
             "Dictyota_dichotoma_m": [
-                "c_organisms_37832",
-                "c_organisms_39742"
+                "c_organisms_10302"
             ],
             "Nemacystus_decipiens": [
-                "g11114"
+                "g8339"
             ],
             "Porterinema_fluviatile": [
-                "c_organisms_03454"
+                "c_organisms_19046"
             ],
             "Laminarionema_elsbetiae": [
                 "nan"
             ],
             "Saccharina_japonica": [
-                "SJ18449"
+                "SJ13007"
             ]
         },
-        "RXN-20352": {
+        "RXN-7792": {
             "Ectocarpus_fasciculatus_m": [
                 "c_organisms_18963",
                 "c_organisms_18964"
@@ -167,264 +165,7 @@
                 "SJ06297"
             ]
         },
-        "GART-RXN": {
-            "Ectocarpus_fasciculatus_m": [
-                "c_organisms_00511",
-                "c_organisms_00512"
-            ],
-            "Undaria_pinnatifida_Kr2015": [
-                "UNPIN0010CG0300"
-            ],
-            "Nannochloropsis_gaditana": [
-                "Naga_100004g33",
-                "Naga_100001g134"
-            ],
-            "Desmarestia_herbacea_m": [
-                "c_organisms_26050",
-                "c_organisms_26049"
-            ],
-            "Ectocarpus_siliculosus_m": [
-                "c_organisms_02650",
-                "c_organisms_02649"
-            ],
-            "Chordaria_linearis": [
-                "c_organisms_09416",
-                "c_organisms_09415"
-            ],
-            "Phaeodactylum_tricornutum": [
-                "PHATRDRAFT_47067"
-            ],
-            "Scytosiphon_promiscuus_MALE": [
-                "c_organisms_07082",
-                "c_organisms_07081"
-            ],
-            "Cladosiphon_okamuranus": [
-                "C_okamuranus_03207"
-            ],
-            "Pleurocladia_lacustris": [
-                "c_organisms_14474",
-                "c_organisms_14473"
-            ],
-            "Thalassiosira_pseudonana": [
-                "THAPSDRAFT_20580"
-            ],
-            "Fragilariopsis_cylindrus": [
-                "FRACYDRAFT_209097"
-            ],
-            "Ectocarpus_crouaniorum_m": [
-                "c_organisms_01093",
-                "c_organisms_01094"
-            ],
-            "Fistulifera_solaris": [
-                "FisN_28Lh022",
-                "FisN_28Hh022"
-            ],
-            "Ectocarpus_siliculosus": [
-                "E_siliculosus_09790"
-            ],
-            "Ectocarpus_subulatus": [
-                "EsuBft35_25"
-            ],
-            "Fucus_serratus_MALE": [
-                "c_organisms_11173",
-                "c_organisms_11174"
-            ],
-            "Saccharina_latissima_FEMALE": [
-                "c_organisms_13597",
-                "c_organisms_13598"
-            ],
-            "Schizocladia_ischiensis": [
-                "c_organisms_19778",
-                "c_organisms_19777",
-                "c_organisms_28884",
-                "c_organisms_12836",
-                "c_organisms_12835",
-                "c_organisms_28883"
-            ],
-            "Dictyota_dichotoma_m": [
-                "c_organisms_34298",
-                "c_organisms_34297"
-            ],
-            "Nemacystus_decipiens": [
-                "g11637",
-                "g1060",
-                "g6241"
-            ],
-            "Porterinema_fluviatile": [
-                "c_organisms_11209",
-                "c_organisms_11210"
-            ],
-            "Laminarionema_elsbetiae": [
-                "nan"
-            ],
-            "Saccharina_japonica": [
-                "SJ06408"
-            ]
-        },
-        "ORNITHINE--OXO-ACID-AMINOTRANSFERASE-RXN": {
-            "Ectocarpus_fasciculatus_m": [
-                "c_organisms_18547",
-                "c_organisms_18548"
-            ],
-            "Undaria_pinnatifida_Kr2015": [
-                "UNPIN0068CG0110"
-            ],
-            "Nannochloropsis_gaditana": [
-                "Naga_100419g4"
-            ],
-            "Desmarestia_herbacea_m": [
-                "c_organisms_08803",
-                "c_organisms_08804"
-            ],
-            "Ectocarpus_siliculosus_m": [
-                "c_organisms_13000",
-                "c_organisms_12999"
-            ],
-            "Chordaria_linearis": [
-                "c_organisms_13412",
-                "c_organisms_13411"
-            ],
-            "Phaeodactylum_tricornutum": [
-                "PHATRDRAFT_27726"
-            ],
-            "Scytosiphon_promiscuus_MALE": [
-                "c_organisms_20303",
-                "c_organisms_20304"
-            ],
-            "Cladosiphon_okamuranus": [
-                "C_okamuranus_14326"
-            ],
-            "Pleurocladia_lacustris": [
-                "c_organisms_26872",
-                "c_organisms_26871"
-            ],
-            "Thalassiosira_pseudonana": [
-                "THAPSDRAFT_27892"
-            ],
-            "Fragilariopsis_cylindrus": [
-                "FRACYDRAFT_269005"
-            ],
-            "Ectocarpus_crouaniorum_m": [
-                "c_organisms_18125",
-                "c_organisms_18123",
-                "c_organisms_18126"
-            ],
-            "Fistulifera_solaris": [
-                "FisN_5Hu271",
-                "FisN_UnNu107"
-            ],
-            "Ectocarpus_siliculosus": [
-                "E_siliculosus_14712"
-            ],
-            "Ectocarpus_subulatus": [
-                "EsuBft610_5"
-            ],
-            "Fucus_serratus_MALE": [
-                "c_organisms_23541",
-                "c_organisms_23542"
-            ],
-            "Saccharina_latissima_FEMALE": [
-                "c_organisms_25496",
-                "c_organisms_25495"
-            ],
-            "Schizocladia_ischiensis": [
-                "c_organisms_09983",
-                "c_organisms_09984"
-            ],
-            "Dictyota_dichotoma_m": [
-                "c_organisms_18357",
-                "c_organisms_18358"
-            ],
-            "Nemacystus_decipiens": [
-                "g6872"
-            ],
-            "Porterinema_fluviatile": [
-                "c_organisms_14578",
-                "c_organisms_14577"
-            ],
-            "Laminarionema_elsbetiae": [
-                "nan"
-            ],
-            "Saccharina_japonica": [
-                "SJ09475"
-            ]
-        },
-        "2-OCTAPRENYL-6-OHPHENOL-METHY-RXN": {
-            "Ectocarpus_fasciculatus_m": [
-                "c_organisms_05656"
-            ],
-            "Undaria_pinnatifida_Kr2015": [
-                "UNPIN1005CG0090"
-            ],
-            "Nannochloropsis_gaditana": [
-                "Naga_100398g3"
-            ],
-            "Desmarestia_herbacea_m": [
-                "c_organisms_02382"
-            ],
-            "Ectocarpus_siliculosus_m": [
-                "c_organisms_28146"
-            ],
-            "Chordaria_linearis": [
-                "c_organisms_29822"
-            ],
-            "Phaeodactylum_tricornutum": [
-                "PHATRDRAFT_9984"
-            ],
-            "Scytosiphon_promiscuus_MALE": [
-                "c_organisms_11332"
-            ],
-            "Cladosiphon_okamuranus": [
-                "C_okamuranus_11385"
-            ],
-            "Pleurocladia_lacustris": [
-                "c_organisms_30828"
-            ],
-            "Thalassiosira_pseudonana": [
-                "THAPS_35408"
-            ],
-            "Fragilariopsis_cylindrus": [
-                "FRACYDRAFT_291503"
-            ],
-            "Ectocarpus_crouaniorum_m": [
-                "c_organisms_12404"
-            ],
-            "Fistulifera_solaris": [
-                "FisN_1Hu362"
-            ],
-            "Ectocarpus_siliculosus": [
-                "E_siliculosus_02745"
-            ],
-            "Ectocarpus_subulatus": [
-                "EsuBft171_3"
-            ],
-            "Fucus_serratus_MALE": [
-                "c_organisms_25602",
-                "c_organisms_19952"
-            ],
-            "Saccharina_latissima_FEMALE": [
-                "c_organisms_07176"
-            ],
-            "Schizocladia_ischiensis": [
-                "c_organisms_16544"
-            ],
-            "Dictyota_dichotoma_m": [
-                "c_organisms_10302"
-            ],
-            "Nemacystus_decipiens": [
-                "g8339"
-            ],
-            "Porterinema_fluviatile": [
-                "c_organisms_19046"
-            ],
-            "Laminarionema_elsbetiae": [
-                "nan"
-            ],
-            "Saccharina_japonica": [
-                "SJ13007"
-            ]
-        },
-        "RXN-20404": {
+        "RXN-20405": {
             "Ectocarpus_fasciculatus_m": [
                 "c_organisms_18963",
                 "c_organisms_18964"
@@ -475,8 +216,186 @@
                 "c_organisms_14723"
             ],
             "Fistulifera_solaris": [
-                "FisN_23Lh232",
-                "FisN_23Hh232"
+                "FisN_23Hh232",
+                "FisN_23Lh232"
+            ],
+            "Ectocarpus_siliculosus": [
+                "E_siliculosus_06371"
+            ],
+            "Ectocarpus_subulatus": [
+                "EsuBft88_19"
+            ],
+            "Fucus_serratus_MALE": [
+                "c_organisms_19996",
+                "c_organisms_19995"
+            ],
+            "Saccharina_latissima_FEMALE": [
+                "c_organisms_18403",
+                "c_organisms_18404"
+            ],
+            "Schizocladia_ischiensis": [
+                "c_organisms_26647",
+                "c_organisms_26648"
+            ],
+            "Dictyota_dichotoma_m": [
+                "c_organisms_06434",
+                "c_organisms_06433"
+            ],
+            "Nemacystus_decipiens": [
+                "g4956"
+            ],
+            "Porterinema_fluviatile": [
+                "c_organisms_06307",
+                "c_organisms_06308"
+            ],
+            "Laminarionema_elsbetiae": [
+                "nan"
+            ],
+            "Saccharina_japonica": [
+                "SJ06297"
+            ]
+        },
+        "DTDPDEHYDRHAMEPIM-RXN": {
+            "Ectocarpus_fasciculatus_m": [
+                "c_organisms_24207",
+                "c_organisms_24208"
+            ],
+            "Undaria_pinnatifida_Kr2015": [
+                "UNPIN0026CG0020"
+            ],
+            "Nannochloropsis_gaditana": [
+                "Naga_100199g4"
+            ],
+            "Desmarestia_herbacea_m": [
+                "c_organisms_01208",
+                "c_organisms_01207"
+            ],
+            "Ectocarpus_siliculosus_m": [
+                "c_organisms_12314",
+                "c_organisms_12313"
+            ],
+            "Chordaria_linearis": [
+                "c_organisms_24647",
+                "c_organisms_24648"
+            ],
+            "Phaeodactylum_tricornutum": [
+                "PHATRDRAFT_23281"
+            ],
+            "Scytosiphon_promiscuus_MALE": [
+                "c_organisms_21368",
+                "c_organisms_21367"
+            ],
+            "Cladosiphon_okamuranus": [
+                "C_okamuranus_03010"
+            ],
+            "Pleurocladia_lacustris": [
+                "c_organisms_24805",
+                "c_organisms_24806"
+            ],
+            "Thalassiosira_pseudonana": [
+                "THAPSDRAFT_40788"
+            ],
+            "Fragilariopsis_cylindrus": [
+                "FRACYDRAFT_191008"
+            ],
+            "Ectocarpus_crouaniorum_m": [
+                "c_organisms_27537",
+                "c_organisms_27538"
+            ],
+            "Fistulifera_solaris": [
+                "FisN_16Hh084",
+                "FisN_16Lh084"
+            ],
+            "Ectocarpus_siliculosus": [
+                "E_siliculosus_04508"
+            ],
+            "Ectocarpus_subulatus": [
+                "EsuBft1218_11"
+            ],
+            "Fucus_serratus_MALE": [
+                "c_organisms_22753",
+                "c_organisms_22754"
+            ],
+            "Saccharina_latissima_FEMALE": [
+                "c_organisms_19744",
+                "c_organisms_19743"
+            ],
+            "Schizocladia_ischiensis": [
+                "c_organisms_17609",
+                "c_organisms_17610"
+            ],
+            "Dictyota_dichotoma_m": [
+                "c_organisms_16849",
+                "c_organisms_16850"
+            ],
+            "Nemacystus_decipiens": [
+                "g14806"
+            ],
+            "Porterinema_fluviatile": [
+                "c_organisms_06821",
+                "c_organisms_06819",
+                "c_organisms_06820"
+            ],
+            "Laminarionema_elsbetiae": [
+                "nan"
+            ],
+            "Saccharina_japonica": [
+                "SJ22556"
+            ]
+        },
+        "RXN-20403": {
+            "Ectocarpus_fasciculatus_m": [
+                "c_organisms_18963",
+                "c_organisms_18964"
+            ],
+            "Undaria_pinnatifida_Kr2015": [
+                "UNPIN0808CG0060"
+            ],
+            "Nannochloropsis_gaditana": [
+                "Naga_100200g8",
+                "Naga_100012g44"
+            ],
+            "Desmarestia_herbacea_m": [
+                "c_organisms_00064",
+                "c_organisms_00063"
+            ],
+            "Ectocarpus_siliculosus_m": [
+                "c_organisms_18333",
+                "c_organisms_18334"
+            ],
+            "Chordaria_linearis": [
+                "c_organisms_05042",
+                "c_organisms_05041"
+            ],
+            "Phaeodactylum_tricornutum": [
+                "PHATRDRAFT_49163",
+                "PHATRDRAFT_46595"
+            ],
+            "Scytosiphon_promiscuus_MALE": [
+                "c_organisms_23810",
+                "c_organisms_23809"
+            ],
+            "Cladosiphon_okamuranus": [
+                "C_okamuranus_05869"
+            ],
+            "Pleurocladia_lacustris": [
+                "c_organisms_05033",
+                "c_organisms_05034"
+            ],
+            "Thalassiosira_pseudonana": [
+                "THAPSDRAFT_11806",
+                "THAPSDRAFT_25733"
+            ],
+            "Fragilariopsis_cylindrus": [
+                "FRACYDRAFT_187842"
+            ],
+            "Ectocarpus_crouaniorum_m": [
+                "c_organisms_14724",
+                "c_organisms_14723"
+            ],
+            "Fistulifera_solaris": [
+                "FisN_23Hh232",
+                "FisN_23Lh232"
             ],
             "Ectocarpus_siliculosus": [
                 "E_siliculosus_06371"
@@ -612,185 +531,6 @@
                 "SJ11569"
             ]
         },
-        "RXN-20405": {
-            "Ectocarpus_fasciculatus_m": [
-                "c_organisms_18963",
-                "c_organisms_18964"
-            ],
-            "Undaria_pinnatifida_Kr2015": [
-                "UNPIN0808CG0060"
-            ],
-            "Nannochloropsis_gaditana": [
-                "Naga_100200g8",
-                "Naga_100012g44"
-            ],
-            "Desmarestia_herbacea_m": [
-                "c_organisms_00064",
-                "c_organisms_00063"
-            ],
-            "Ectocarpus_siliculosus_m": [
-                "c_organisms_18333",
-                "c_organisms_18334"
-            ],
-            "Chordaria_linearis": [
-                "c_organisms_05042",
-                "c_organisms_05041"
-            ],
-            "Phaeodactylum_tricornutum": [
-                "PHATRDRAFT_49163",
-                "PHATRDRAFT_46595"
-            ],
-            "Scytosiphon_promiscuus_MALE": [
-                "c_organisms_23810",
-                "c_organisms_23809"
-            ],
-            "Cladosiphon_okamuranus": [
-                "C_okamuranus_05869"
-            ],
-            "Pleurocladia_lacustris": [
-                "c_organisms_05033",
-                "c_organisms_05034"
-            ],
-            "Thalassiosira_pseudonana": [
-                "THAPSDRAFT_11806",
-                "THAPSDRAFT_25733"
-            ],
-            "Fragilariopsis_cylindrus": [
-                "FRACYDRAFT_187842"
-            ],
-            "Ectocarpus_crouaniorum_m": [
-                "c_organisms_14724",
-                "c_organisms_14723"
-            ],
-            "Fistulifera_solaris": [
-                "FisN_23Hh232",
-                "FisN_23Lh232"
-            ],
-            "Ectocarpus_siliculosus": [
-                "E_siliculosus_06371"
-            ],
-            "Ectocarpus_subulatus": [
-                "EsuBft88_19"
-            ],
-            "Fucus_serratus_MALE": [
-                "c_organisms_19996",
-                "c_organisms_19995"
-            ],
-            "Saccharina_latissima_FEMALE": [
-                "c_organisms_18403",
-                "c_organisms_18404"
-            ],
-            "Schizocladia_ischiensis": [
-                "c_organisms_26647",
-                "c_organisms_26648"
-            ],
-            "Dictyota_dichotoma_m": [
-                "c_organisms_06434",
-                "c_organisms_06433"
-            ],
-            "Nemacystus_decipiens": [
-                "g4956"
-            ],
-            "Porterinema_fluviatile": [
-                "c_organisms_06307",
-                "c_organisms_06308"
-            ],
-            "Laminarionema_elsbetiae": [
-                "nan"
-            ],
-            "Saccharina_japonica": [
-                "SJ06297"
-            ]
-        },
-        "RXN0-6554": {
-            "Ectocarpus_fasciculatus_m": [
-                "c_organisms_23874",
-                "c_organisms_23873"
-            ],
-            "Undaria_pinnatifida_Kr2015": [
-                "UNPIN0165CG0050"
-            ],
-            "Nannochloropsis_gaditana": [
-                "Naga_100144g11"
-            ],
-            "Desmarestia_herbacea_m": [
-                "c_organisms_26850",
-                "c_organisms_26849"
-            ],
-            "Ectocarpus_siliculosus_m": [
-                "c_organisms_16746",
-                "c_organisms_16745"
-            ],
-            "Chordaria_linearis": [
-                "c_organisms_02324",
-                "c_organisms_02323"
-            ],
-            "Phaeodactylum_tricornutum": [
-                "PHATRDRAFT_48900"
-            ],
-            "Scytosiphon_promiscuus_MALE": [
-                "c_organisms_16555",
-                "c_organisms_16556"
-            ],
-            "Cladosiphon_okamuranus": [
-                "C_okamuranus_04068"
-            ],
-            "Pleurocladia_lacustris": [
-                "c_organisms_19128",
-                "c_organisms_19127"
-            ],
-            "Thalassiosira_pseudonana": [
-                "THAPSDRAFT_264316"
-            ],
-            "Fragilariopsis_cylindrus": [
-                "FRACYDRAFT_182199"
-            ],
-            "Ectocarpus_crouaniorum_m": [
-                "c_organisms_03141",
-                "c_organisms_03142"
-            ],
-            "Fistulifera_solaris": [
-                "FisN_18Hh244",
-                "FisN_18Lh244"
-            ],
-            "Ectocarpus_siliculosus": [
-                "E_siliculosus_17911"
-            ],
-            "Ectocarpus_subulatus": [
-                "EsuBft1707_5",
-                "EsuBft1707_6"
-            ],
-            "Fucus_serratus_MALE": [
-                "c_organisms_10428",
-                "c_organisms_10427"
-            ],
-            "Saccharina_latissima_FEMALE": [
-                "c_organisms_13700",
-                "c_organisms_13699"
-            ],
-            "Schizocladia_ischiensis": [
-                "c_organisms_16382",
-                "c_organisms_16381"
-            ],
-            "Dictyota_dichotoma_m": [
-                "c_organisms_14739",
-                "c_organisms_14740"
-            ],
-            "Nemacystus_decipiens": [
-                "g1309",
-                "g11739"
-            ],
-            "Porterinema_fluviatile": [
-                "c_organisms_20505",
-                "c_organisms_20506"
-            ],
-            "Laminarionema_elsbetiae": [
-                "nan"
-            ],
-            "Saccharina_japonica": [
-                "SJ18134"
-            ]
-        },
         "SPHINGOSINE-N-ACYLTRANSFERASE-RXN": {
             "Ectocarpus_fasciculatus_m": [
                 "c_organisms_18963",
@@ -881,729 +621,180 @@
                 "SJ06297"
             ]
         },
-        "ISOCITDEH-RXN": {
+        "RXN0-6491": {
             "Ectocarpus_fasciculatus_m": [
-                "c_organisms_36197",
-                "c_organisms_36198"
+                "c_organisms_23874",
+                "c_organisms_23873"
             ],
             "Undaria_pinnatifida_Kr2015": [
-                "UNPIN0088CG0400"
+                "UNPIN0165CG0050"
             ],
             "Nannochloropsis_gaditana": [
-                "Naga_100022g53"
+                "Naga_100144g11"
             ],
             "Desmarestia_herbacea_m": [
-                "c_organisms_00857",
-                "c_organisms_00858"
+                "c_organisms_26850",
+                "c_organisms_26849"
             ],
             "Ectocarpus_siliculosus_m": [
-                "c_organisms_17927",
-                "c_organisms_17928"
+                "c_organisms_16746",
+                "c_organisms_16745"
             ],
             "Chordaria_linearis": [
-                "c_organisms_28943",
-                "c_organisms_28944"
+                "c_organisms_02324",
+                "c_organisms_02323"
             ],
             "Phaeodactylum_tricornutum": [
-                "PHATRDRAFT_45017",
-                "PHATRDRAFT_14762"
+                "PHATRDRAFT_48900"
             ],
             "Scytosiphon_promiscuus_MALE": [
-                "c_organisms_14132",
-                "c_organisms_14131"
+                "c_organisms_16555",
+                "c_organisms_16556"
             ],
             "Cladosiphon_okamuranus": [
-                "C_okamuranus_00203"
+                "C_okamuranus_04068"
             ],
             "Pleurocladia_lacustris": [
-                "c_organisms_25068",
-                "c_organisms_25067"
+                "c_organisms_19128",
+                "c_organisms_19127"
             ],
             "Thalassiosira_pseudonana": [
-                "THAPSDRAFT_21640",
-                "THAPSDRAFT_1456"
+                "THAPSDRAFT_264316"
             ],
             "Fragilariopsis_cylindrus": [
-                "FRACYDRAFT_168262",
-                "FRACYDRAFT_277597"
+                "FRACYDRAFT_182199"
             ],
             "Ectocarpus_crouaniorum_m": [
-                "c_organisms_06634",
-                "c_organisms_06633"
+                "c_organisms_03141",
+                "c_organisms_03142"
             ],
             "Fistulifera_solaris": [
-                "FisN_9Hh340",
-                "FisN_7Hh268",
-                "FisN_9Lh340",
-                "FisN_7Lh268"
+                "FisN_18Hh244",
+                "FisN_18Lh244"
             ],
             "Ectocarpus_siliculosus": [
-                "E_siliculosus_08932"
+                "E_siliculosus_17911"
             ],
             "Ectocarpus_subulatus": [
-                "EsuBft315_6"
+                "EsuBft1707_5",
+                "EsuBft1707_6"
             ],
             "Fucus_serratus_MALE": [
-                "c_organisms_25278",
-                "c_organisms_25277",
-                "c_organisms_23070",
-                "c_organisms_23069"
+                "c_organisms_10428",
+                "c_organisms_10427"
             ],
             "Saccharina_latissima_FEMALE": [
-                "c_organisms_01510",
-                "c_organisms_01509"
+                "c_organisms_13700",
+                "c_organisms_13699"
             ],
             "Schizocladia_ischiensis": [
-                "c_organisms_05018",
-                "c_organisms_05017"
+                "c_organisms_16382",
+                "c_organisms_16381"
             ],
             "Dictyota_dichotoma_m": [
-                "c_organisms_15268",
-                "c_organisms_15267"
+                "c_organisms_14739",
+                "c_organisms_14740"
             ],
             "Nemacystus_decipiens": [
-                "g13117",
-                "g671"
+                "g1309",
+                "g11739"
             ],
             "Porterinema_fluviatile": [
-                "c_organisms_07727",
-                "c_organisms_07728"
+                "c_organisms_20505",
+                "c_organisms_20506"
             ],
             "Laminarionema_elsbetiae": [
                 "nan"
             ],
             "Saccharina_japonica": [
-                "SJ08749"
+                "SJ18134"
             ]
         },
-        "DHHB-METHYLTRANSFER-RXN": {
+        "PREPHENATE-ASP-TRANSAMINE-RXN": {
             "Ectocarpus_fasciculatus_m": [
-                "c_organisms_05656"
+                "c_organisms_12491",
+                "c_organisms_12492"
             ],
             "Undaria_pinnatifida_Kr2015": [
-                "UNPIN1005CG0090"
+                "UNPIN0046CG0300"
             ],
             "Nannochloropsis_gaditana": [
-                "Naga_100398g3"
+                "Naga_100017g28"
             ],
             "Desmarestia_herbacea_m": [
-                "c_organisms_02382"
+                "c_organisms_04164",
+                "c_organisms_04163"
             ],
             "Ectocarpus_siliculosus_m": [
-                "c_organisms_28146"
+                "c_organisms_24806",
+                "c_organisms_24805"
             ],
             "Chordaria_linearis": [
-                "c_organisms_29822"
+                "c_organisms_25556",
+                "c_organisms_25555"
             ],
             "Phaeodactylum_tricornutum": [
-                "PHATRDRAFT_9984"
+                "PHATRDRAFT_bd870"
             ],
             "Scytosiphon_promiscuus_MALE": [
-                "c_organisms_11332"
+                "c_organisms_24178",
+                "c_organisms_24177"
             ],
             "Cladosiphon_okamuranus": [
-                "C_okamuranus_11385"
+                "C_okamuranus_12920"
             ],
             "Pleurocladia_lacustris": [
-                "c_organisms_30828"
+                "c_organisms_17079",
+                "c_organisms_17080"
             ],
             "Thalassiosira_pseudonana": [
-                "THAPS_35408"
+                "THAPSDRAFT_12030"
             ],
             "Fragilariopsis_cylindrus": [
-                "FRACYDRAFT_291503"
+                "FRACYDRAFT_238714"
             ],
             "Ectocarpus_crouaniorum_m": [
-                "c_organisms_12404"
+                "c_organisms_25617",
+                "c_organisms_25618"
             ],
             "Fistulifera_solaris": [
-                "FisN_1Hu362"
+                "FisN_22Lh121",
+                "FisN_22Hh121"
             ],
             "Ectocarpus_siliculosus": [
-                "E_siliculosus_02745"
+                "E_siliculosus_15752"
             ],
             "Ectocarpus_subulatus": [
-                "EsuBft171_3"
+                "EsuBft1211_3"
             ],
             "Fucus_serratus_MALE": [
-                "c_organisms_25602",
-                "c_organisms_19952"
+                "c_organisms_09541",
+                "c_organisms_09542"
             ],
             "Saccharina_latissima_FEMALE": [
-                "c_organisms_07176"
+                "nan"
             ],
             "Schizocladia_ischiensis": [
-                "c_organisms_16544"
+                "c_organisms_21513",
+                "c_organisms_21514"
             ],
             "Dictyota_dichotoma_m": [
-                "c_organisms_10302"
+                "c_organisms_37994",
+                "c_organisms_37993"
             ],
             "Nemacystus_decipiens": [
-                "g8339"
+                "g16424",
+                "g357"
             ],
             "Porterinema_fluviatile": [
-                "c_organisms_19046"
+                "c_organisms_21314",
+                "c_organisms_21313"
             ],
             "Laminarionema_elsbetiae": [
                 "nan"
             ],
             "Saccharina_japonica": [
-                "SJ13007"
-            ]
-        },
-        "RXN-9229": {
-            "Ectocarpus_fasciculatus_m": [
-                "c_organisms_05656"
-            ],
-            "Undaria_pinnatifida_Kr2015": [
-                "UNPIN1005CG0090"
-            ],
-            "Nannochloropsis_gaditana": [
-                "Naga_100398g3"
-            ],
-            "Desmarestia_herbacea_m": [
-                "c_organisms_02382"
-            ],
-            "Ectocarpus_siliculosus_m": [
-                "c_organisms_28146"
-            ],
-            "Chordaria_linearis": [
-                "c_organisms_29822"
-            ],
-            "Phaeodactylum_tricornutum": [
-                "PHATRDRAFT_9984"
-            ],
-            "Scytosiphon_promiscuus_MALE": [
-                "c_organisms_11332"
-            ],
-            "Cladosiphon_okamuranus": [
-                "C_okamuranus_11385"
-            ],
-            "Pleurocladia_lacustris": [
-                "c_organisms_30828"
-            ],
-            "Thalassiosira_pseudonana": [
-                "THAPS_35408"
-            ],
-            "Fragilariopsis_cylindrus": [
-                "FRACYDRAFT_291503"
-            ],
-            "Ectocarpus_crouaniorum_m": [
-                "c_organisms_12404"
-            ],
-            "Fistulifera_solaris": [
-                "FisN_1Hu362"
-            ],
-            "Ectocarpus_siliculosus": [
-                "E_siliculosus_02745"
-            ],
-            "Ectocarpus_subulatus": [
-                "EsuBft171_3"
-            ],
-            "Fucus_serratus_MALE": [
-                "c_organisms_25602",
-                "c_organisms_19952"
-            ],
-            "Saccharina_latissima_FEMALE": [
-                "c_organisms_07176"
-            ],
-            "Schizocladia_ischiensis": [
-                "c_organisms_16544"
-            ],
-            "Dictyota_dichotoma_m": [
-                "c_organisms_10302"
-            ],
-            "Nemacystus_decipiens": [
-                "g8339"
-            ],
-            "Porterinema_fluviatile": [
-                "c_organisms_19046"
-            ],
-            "Laminarionema_elsbetiae": [
-                "nan"
-            ],
-            "Saccharina_japonica": [
-                "SJ13007"
-            ]
-        },
-        "RXN-20403": {
-            "Ectocarpus_fasciculatus_m": [
-                "c_organisms_18963",
-                "c_organisms_18964"
-            ],
-            "Undaria_pinnatifida_Kr2015": [
-                "UNPIN0808CG0060"
-            ],
-            "Nannochloropsis_gaditana": [
-                "Naga_100200g8",
-                "Naga_100012g44"
-            ],
-            "Desmarestia_herbacea_m": [
-                "c_organisms_00064",
-                "c_organisms_00063"
-            ],
-            "Ectocarpus_siliculosus_m": [
-                "c_organisms_18333",
-                "c_organisms_18334"
-            ],
-            "Chordaria_linearis": [
-                "c_organisms_05042",
-                "c_organisms_05041"
-            ],
-            "Phaeodactylum_tricornutum": [
-                "PHATRDRAFT_49163",
-                "PHATRDRAFT_46595"
-            ],
-            "Scytosiphon_promiscuus_MALE": [
-                "c_organisms_23810",
-                "c_organisms_23809"
-            ],
-            "Cladosiphon_okamuranus": [
-                "C_okamuranus_05869"
-            ],
-            "Pleurocladia_lacustris": [
-                "c_organisms_05033",
-                "c_organisms_05034"
-            ],
-            "Thalassiosira_pseudonana": [
-                "THAPSDRAFT_11806",
-                "THAPSDRAFT_25733"
-            ],
-            "Fragilariopsis_cylindrus": [
-                "FRACYDRAFT_187842"
-            ],
-            "Ectocarpus_crouaniorum_m": [
-                "c_organisms_14724",
-                "c_organisms_14723"
-            ],
-            "Fistulifera_solaris": [
-                "FisN_23Hh232",
-                "FisN_23Lh232"
-            ],
-            "Ectocarpus_siliculosus": [
-                "E_siliculosus_06371"
-            ],
-            "Ectocarpus_subulatus": [
-                "EsuBft88_19"
-            ],
-            "Fucus_serratus_MALE": [
-                "c_organisms_19996",
-                "c_organisms_19995"
-            ],
-            "Saccharina_latissima_FEMALE": [
-                "c_organisms_18403",
-                "c_organisms_18404"
-            ],
-            "Schizocladia_ischiensis": [
-                "c_organisms_26647",
-                "c_organisms_26648"
-            ],
-            "Dictyota_dichotoma_m": [
-                "c_organisms_06434",
-                "c_organisms_06433"
-            ],
-            "Nemacystus_decipiens": [
-                "g4956"
-            ],
-            "Porterinema_fluviatile": [
-                "c_organisms_06307",
-                "c_organisms_06308"
-            ],
-            "Laminarionema_elsbetiae": [
-                "nan"
-            ],
-            "Saccharina_japonica": [
-                "SJ06297"
-            ]
-        },
-        "RXN3O-102": {
-            "Ectocarpus_fasciculatus_m": [
-                "c_organisms_05656"
-            ],
-            "Undaria_pinnatifida_Kr2015": [
-                "UNPIN1005CG0090"
-            ],
-            "Nannochloropsis_gaditana": [
-                "Naga_100398g3"
-            ],
-            "Desmarestia_herbacea_m": [
-                "c_organisms_02382"
-            ],
-            "Ectocarpus_siliculosus_m": [
-                "c_organisms_28146"
-            ],
-            "Chordaria_linearis": [
-                "c_organisms_29822"
-            ],
-            "Phaeodactylum_tricornutum": [
-                "PHATRDRAFT_9984"
-            ],
-            "Scytosiphon_promiscuus_MALE": [
-                "c_organisms_11332"
-            ],
-            "Cladosiphon_okamuranus": [
-                "C_okamuranus_11385"
-            ],
-            "Pleurocladia_lacustris": [
-                "c_organisms_30828"
-            ],
-            "Thalassiosira_pseudonana": [
-                "THAPS_35408"
-            ],
-            "Fragilariopsis_cylindrus": [
-                "FRACYDRAFT_291503"
-            ],
-            "Ectocarpus_crouaniorum_m": [
-                "c_organisms_12404"
-            ],
-            "Fistulifera_solaris": [
-                "FisN_1Hu362"
-            ],
-            "Ectocarpus_siliculosus": [
-                "E_siliculosus_02745"
-            ],
-            "Ectocarpus_subulatus": [
-                "EsuBft171_3"
-            ],
-            "Fucus_serratus_MALE": [
-                "c_organisms_25602",
-                "c_organisms_19952"
-            ],
-            "Saccharina_latissima_FEMALE": [
-                "c_organisms_07176"
-            ],
-            "Schizocladia_ischiensis": [
-                "c_organisms_16544"
-            ],
-            "Dictyota_dichotoma_m": [
-                "c_organisms_10302"
-            ],
-            "Nemacystus_decipiens": [
-                "g8339"
-            ],
-            "Porterinema_fluviatile": [
-                "c_organisms_19046"
-            ],
-            "Laminarionema_elsbetiae": [
-                "nan"
-            ],
-            "Saccharina_japonica": [
-                "SJ13007"
-            ]
-        },
-        "DTDPDEHYDRHAMEPIM-RXN": {
-            "Ectocarpus_fasciculatus_m": [
-                "c_organisms_24207",
-                "c_organisms_24208"
-            ],
-            "Undaria_pinnatifida_Kr2015": [
-                "UNPIN0026CG0020"
-            ],
-            "Nannochloropsis_gaditana": [
-                "Naga_100199g4"
-            ],
-            "Desmarestia_herbacea_m": [
-                "c_organisms_01208",
-                "c_organisms_01207"
-            ],
-            "Ectocarpus_siliculosus_m": [
-                "c_organisms_12314",
-                "c_organisms_12313"
-            ],
-            "Chordaria_linearis": [
-                "c_organisms_24647",
-                "c_organisms_24648"
-            ],
-            "Phaeodactylum_tricornutum": [
-                "PHATRDRAFT_23281"
-            ],
-            "Scytosiphon_promiscuus_MALE": [
-                "c_organisms_21368",
-                "c_organisms_21367"
-            ],
-            "Cladosiphon_okamuranus": [
-                "C_okamuranus_03010"
-            ],
-            "Pleurocladia_lacustris": [
-                "c_organisms_24805",
-                "c_organisms_24806"
-            ],
-            "Thalassiosira_pseudonana": [
-                "THAPSDRAFT_40788"
-            ],
-            "Fragilariopsis_cylindrus": [
-                "FRACYDRAFT_191008"
-            ],
-            "Ectocarpus_crouaniorum_m": [
-                "c_organisms_27537",
-                "c_organisms_27538"
-            ],
-            "Fistulifera_solaris": [
-                "FisN_16Hh084",
-                "FisN_16Lh084"
-            ],
-            "Ectocarpus_siliculosus": [
-                "E_siliculosus_04508"
-            ],
-            "Ectocarpus_subulatus": [
-                "EsuBft1218_11"
-            ],
-            "Fucus_serratus_MALE": [
-                "c_organisms_22753",
-                "c_organisms_22754"
-            ],
-            "Saccharina_latissima_FEMALE": [
-                "c_organisms_19744",
-                "c_organisms_19743"
-            ],
-            "Schizocladia_ischiensis": [
-                "c_organisms_17609",
-                "c_organisms_17610"
-            ],
-            "Dictyota_dichotoma_m": [
-                "c_organisms_16849",
-                "c_organisms_16850"
-            ],
-            "Nemacystus_decipiens": [
-                "g14806"
-            ],
-            "Porterinema_fluviatile": [
-                "c_organisms_06821",
-                "c_organisms_06819",
-                "c_organisms_06820"
-            ],
-            "Laminarionema_elsbetiae": [
-                "nan"
-            ],
-            "Saccharina_japonica": [
-                "SJ22556"
-            ]
-        },
-        "ORNITHINE-GLU-AMINOTRANSFERASE-RXN": {
-            "Ectocarpus_fasciculatus_m": [
-                "c_organisms_18547",
-                "c_organisms_18548"
-            ],
-            "Undaria_pinnatifida_Kr2015": [
-                "UNPIN0068CG0110"
-            ],
-            "Nannochloropsis_gaditana": [
-                "Naga_100419g4"
-            ],
-            "Desmarestia_herbacea_m": [
-                "c_organisms_08803",
-                "c_organisms_08804"
-            ],
-            "Ectocarpus_siliculosus_m": [
-                "c_organisms_13000",
-                "c_organisms_12999"
-            ],
-            "Chordaria_linearis": [
-                "c_organisms_13412",
-                "c_organisms_13411"
-            ],
-            "Phaeodactylum_tricornutum": [
-                "PHATRDRAFT_27726"
-            ],
-            "Scytosiphon_promiscuus_MALE": [
-                "c_organisms_20303",
-                "c_organisms_20304"
-            ],
-            "Cladosiphon_okamuranus": [
-                "C_okamuranus_14326"
-            ],
-            "Pleurocladia_lacustris": [
-                "c_organisms_26872",
-                "c_organisms_26871"
-            ],
-            "Thalassiosira_pseudonana": [
-                "THAPSDRAFT_27892"
-            ],
-            "Fragilariopsis_cylindrus": [
-                "FRACYDRAFT_269005"
-            ],
-            "Ectocarpus_crouaniorum_m": [
-                "c_organisms_18125",
-                "c_organisms_18123",
-                "c_organisms_18126"
-            ],
-            "Fistulifera_solaris": [
-                "FisN_5Hu271",
-                "FisN_UnNu107"
-            ],
-            "Ectocarpus_siliculosus": [
-                "E_siliculosus_14712"
-            ],
-            "Ectocarpus_subulatus": [
-                "EsuBft610_5"
-            ],
-            "Fucus_serratus_MALE": [
-                "c_organisms_23541",
-                "c_organisms_23542"
-            ],
-            "Saccharina_latissima_FEMALE": [
-                "c_organisms_25496",
-                "c_organisms_25495"
-            ],
-            "Schizocladia_ischiensis": [
-                "c_organisms_09983",
-                "c_organisms_09984"
-            ],
-            "Dictyota_dichotoma_m": [
-                "c_organisms_18357",
-                "c_organisms_18358"
-            ],
-            "Nemacystus_decipiens": [
-                "g6872"
-            ],
-            "Porterinema_fluviatile": [
-                "c_organisms_14578",
-                "c_organisms_14577"
-            ],
-            "Laminarionema_elsbetiae": [
-                "nan"
-            ],
-            "Saccharina_japonica": [
-                "SJ09475"
-            ]
-        },
-        "RIB5PISOM-RXN": {
-            "Ectocarpus_fasciculatus_m": [
-                "c_organisms_22537",
-                "c_organisms_01871",
-                "c_organisms_22538",
-                "c_organisms_01872"
-            ],
-            "Undaria_pinnatifida_Kr2015": [
-                "UNPIN0141CG0010",
-                "UNPIN3097CG0010",
-                "UNPIN0304CG0130",
-                "UNPIN0263CG0220"
-            ],
-            "Nannochloropsis_gaditana": [
-                "Naga_100032g3",
-                "Naga_100018g63",
-                "Naga_100158g13"
-            ],
-            "Desmarestia_herbacea_m": [
-                "c_organisms_02707",
-                "c_organisms_15698",
-                "c_organisms_20857",
-                "c_organisms_20858",
-                "c_organisms_02708",
-                "c_organisms_15697"
-            ],
-            "Ectocarpus_siliculosus_m": [
-                "c_organisms_10346",
-                "c_organisms_10345",
-                "c_organisms_06384",
-                "c_organisms_06383"
-            ],
-            "Chordaria_linearis": [
-                "c_organisms_12773",
-                "c_organisms_01593",
-                "c_organisms_01594",
-                "c_organisms_12774"
-            ],
-            "Phaeodactylum_tricornutum": [
-                "PHATR_50995",
-                "PHATRDRAFT_17545"
-            ],
-            "Scytosiphon_promiscuus_MALE": [
-                "c_organisms_22241",
-                "c_organisms_07812",
-                "c_organisms_22242",
-                "c_organisms_07811"
-            ],
-            "Cladosiphon_okamuranus": [
-                "C_okamuranus_05455",
-                "C_okamuranus_05325"
-            ],
-            "Pleurocladia_lacustris": [
-                "c_organisms_04402",
-                "c_organisms_12407",
-                "c_organisms_12408",
-                "c_organisms_04401"
-            ],
-            "Thalassiosira_pseudonana": [
-                "THAPSDRAFT_270308",
-                "THAPSDRAFT_32252",
-                "THAPSDRAFT_26046"
-            ],
-            "Fragilariopsis_cylindrus": [
-                "FRACYDRAFT_207790",
-                "FRACYDRAFT_276792"
-            ],
-            "Ectocarpus_crouaniorum_m": [
-                "c_organisms_04017",
-                "c_organisms_00407",
-                "c_organisms_00408",
-                "c_organisms_04018"
-            ],
-            "Fistulifera_solaris": [
-                "FisN_6Lh358",
-                "FisN_13Lh055",
-                "FisN_13Hh055",
-                "FisN_6Hh358"
-            ],
-            "Ectocarpus_siliculosus": [
-                "E_siliculosus_09448",
-                "E_siliculosus_07191"
-            ],
-            "Ectocarpus_subulatus": [
-                "EsuBft4938_2",
-                "EsuBft404_10"
-            ],
-            "Fucus_serratus_MALE": [
-                "c_organisms_10666",
-                "c_organisms_05428",
-                "c_organisms_23989",
-                "c_organisms_05427",
-                "c_organisms_23990",
-                "c_organisms_10665",
-                "c_organisms_41124"
-            ],
-            "Saccharina_latissima_FEMALE": [
-                "c_organisms_21093",
-                "c_organisms_21094",
-                "c_organisms_10714",
-                "c_organisms_21881",
-                "c_organisms_21882",
-                "c_organisms_10713"
-            ],
-            "Schizocladia_ischiensis": [
-                "c_organisms_13295",
-                "c_organisms_30356",
-                "c_organisms_17343",
-                "c_organisms_28004",
-                "c_organisms_28003",
-                "c_organisms_13296",
-                "c_organisms_30355"
-            ],
-            "Dictyota_dichotoma_m": [
-                "c_organisms_34570",
-                "c_organisms_38080",
-                "c_organisms_00597",
-                "c_organisms_34569",
-                "c_organisms_38079",
-                "c_organisms_00598"
-            ],
-            "Nemacystus_decipiens": [
-                "g244"
-            ],
-            "Porterinema_fluviatile": [
-                "c_organisms_10707",
-                "c_organisms_25989",
-                "c_organisms_25990",
-                "c_organisms_10708"
-            ],
-            "Laminarionema_elsbetiae": [
-                "nan"
-            ],
-            "Saccharina_japonica": [
-                "SJ07743",
-                "SJ00411",
-                "SJ10679"
+                "SJ05778"
             ]
         },
         "RXN-8642": {
@@ -1701,93 +892,437 @@
                 "SJ08749"
             ]
         },
-        "RXN0-6491": {
+        "RXN-20404": {
             "Ectocarpus_fasciculatus_m": [
-                "c_organisms_23874",
-                "c_organisms_23873"
+                "c_organisms_18963",
+                "c_organisms_18964"
             ],
             "Undaria_pinnatifida_Kr2015": [
-                "UNPIN0165CG0050"
+                "UNPIN0808CG0060"
             ],
             "Nannochloropsis_gaditana": [
-                "Naga_100144g11"
+                "Naga_100200g8",
+                "Naga_100012g44"
             ],
             "Desmarestia_herbacea_m": [
-                "c_organisms_26850",
-                "c_organisms_26849"
+                "c_organisms_00064",
+                "c_organisms_00063"
             ],
             "Ectocarpus_siliculosus_m": [
-                "c_organisms_16746",
-                "c_organisms_16745"
+                "c_organisms_18333",
+                "c_organisms_18334"
             ],
             "Chordaria_linearis": [
-                "c_organisms_02324",
-                "c_organisms_02323"
+                "c_organisms_05042",
+                "c_organisms_05041"
             ],
             "Phaeodactylum_tricornutum": [
-                "PHATRDRAFT_48900"
+                "PHATRDRAFT_49163",
+                "PHATRDRAFT_46595"
             ],
             "Scytosiphon_promiscuus_MALE": [
-                "c_organisms_16555",
-                "c_organisms_16556"
+                "c_organisms_23810",
+                "c_organisms_23809"
             ],
             "Cladosiphon_okamuranus": [
-                "C_okamuranus_04068"
+                "C_okamuranus_05869"
             ],
             "Pleurocladia_lacustris": [
-                "c_organisms_19128",
-                "c_organisms_19127"
+                "c_organisms_05033",
+                "c_organisms_05034"
             ],
             "Thalassiosira_pseudonana": [
-                "THAPSDRAFT_264316"
+                "THAPSDRAFT_11806",
+                "THAPSDRAFT_25733"
             ],
             "Fragilariopsis_cylindrus": [
-                "FRACYDRAFT_182199"
+                "FRACYDRAFT_187842"
             ],
             "Ectocarpus_crouaniorum_m": [
-                "c_organisms_03141",
-                "c_organisms_03142"
+                "c_organisms_14724",
+                "c_organisms_14723"
             ],
             "Fistulifera_solaris": [
-                "FisN_18Hh244",
-                "FisN_18Lh244"
+                "FisN_23Lh232",
+                "FisN_23Hh232"
             ],
             "Ectocarpus_siliculosus": [
-                "E_siliculosus_17911"
+                "E_siliculosus_06371"
             ],
             "Ectocarpus_subulatus": [
-                "EsuBft1707_5",
-                "EsuBft1707_6"
+                "EsuBft88_19"
             ],
             "Fucus_serratus_MALE": [
-                "c_organisms_10428",
-                "c_organisms_10427"
+                "c_organisms_19996",
+                "c_organisms_19995"
             ],
             "Saccharina_latissima_FEMALE": [
-                "c_organisms_13700",
-                "c_organisms_13699"
+                "c_organisms_18403",
+                "c_organisms_18404"
             ],
             "Schizocladia_ischiensis": [
-                "c_organisms_16382",
-                "c_organisms_16381"
+                "c_organisms_26647",
+                "c_organisms_26648"
             ],
             "Dictyota_dichotoma_m": [
-                "c_organisms_14739",
-                "c_organisms_14740"
+                "c_organisms_06434",
+                "c_organisms_06433"
             ],
             "Nemacystus_decipiens": [
-                "g1309",
-                "g11739"
+                "g4956"
             ],
             "Porterinema_fluviatile": [
-                "c_organisms_20505",
-                "c_organisms_20506"
+                "c_organisms_06307",
+                "c_organisms_06308"
             ],
             "Laminarionema_elsbetiae": [
                 "nan"
             ],
             "Saccharina_japonica": [
-                "SJ18134"
+                "SJ06297"
+            ]
+        },
+        "ORNITHINE--OXO-ACID-AMINOTRANSFERASE-RXN": {
+            "Ectocarpus_fasciculatus_m": [
+                "c_organisms_18547",
+                "c_organisms_18548"
+            ],
+            "Undaria_pinnatifida_Kr2015": [
+                "UNPIN0068CG0110"
+            ],
+            "Nannochloropsis_gaditana": [
+                "Naga_100419g4"
+            ],
+            "Desmarestia_herbacea_m": [
+                "c_organisms_08803",
+                "c_organisms_08804"
+            ],
+            "Ectocarpus_siliculosus_m": [
+                "c_organisms_13000",
+                "c_organisms_12999"
+            ],
+            "Chordaria_linearis": [
+                "c_organisms_13412",
+                "c_organisms_13411"
+            ],
+            "Phaeodactylum_tricornutum": [
+                "PHATRDRAFT_27726"
+            ],
+            "Scytosiphon_promiscuus_MALE": [
+                "c_organisms_20303",
+                "c_organisms_20304"
+            ],
+            "Cladosiphon_okamuranus": [
+                "C_okamuranus_14326"
+            ],
+            "Pleurocladia_lacustris": [
+                "c_organisms_26872",
+                "c_organisms_26871"
+            ],
+            "Thalassiosira_pseudonana": [
+                "THAPSDRAFT_27892"
+            ],
+            "Fragilariopsis_cylindrus": [
+                "FRACYDRAFT_269005"
+            ],
+            "Ectocarpus_crouaniorum_m": [
+                "c_organisms_18125",
+                "c_organisms_18123",
+                "c_organisms_18126"
+            ],
+            "Fistulifera_solaris": [
+                "FisN_5Hu271",
+                "FisN_UnNu107"
+            ],
+            "Ectocarpus_siliculosus": [
+                "E_siliculosus_14712"
+            ],
+            "Ectocarpus_subulatus": [
+                "EsuBft610_5"
+            ],
+            "Fucus_serratus_MALE": [
+                "c_organisms_23541",
+                "c_organisms_23542"
+            ],
+            "Saccharina_latissima_FEMALE": [
+                "c_organisms_25496",
+                "c_organisms_25495"
+            ],
+            "Schizocladia_ischiensis": [
+                "c_organisms_09983",
+                "c_organisms_09984"
+            ],
+            "Dictyota_dichotoma_m": [
+                "c_organisms_18357",
+                "c_organisms_18358"
+            ],
+            "Nemacystus_decipiens": [
+                "g6872"
+            ],
+            "Porterinema_fluviatile": [
+                "c_organisms_14578",
+                "c_organisms_14577"
+            ],
+            "Laminarionema_elsbetiae": [
+                "nan"
+            ],
+            "Saccharina_japonica": [
+                "SJ09475"
+            ]
+        },
+        "RXN3O-102": {
+            "Ectocarpus_fasciculatus_m": [
+                "c_organisms_05656"
+            ],
+            "Undaria_pinnatifida_Kr2015": [
+                "UNPIN1005CG0090"
+            ],
+            "Nannochloropsis_gaditana": [
+                "Naga_100398g3"
+            ],
+            "Desmarestia_herbacea_m": [
+                "c_organisms_02382"
+            ],
+            "Ectocarpus_siliculosus_m": [
+                "c_organisms_28146"
+            ],
+            "Chordaria_linearis": [
+                "c_organisms_29822"
+            ],
+            "Phaeodactylum_tricornutum": [
+                "PHATRDRAFT_9984"
+            ],
+            "Scytosiphon_promiscuus_MALE": [
+                "c_organisms_11332"
+            ],
+            "Cladosiphon_okamuranus": [
+                "C_okamuranus_11385"
+            ],
+            "Pleurocladia_lacustris": [
+                "c_organisms_30828"
+            ],
+            "Thalassiosira_pseudonana": [
+                "THAPS_35408"
+            ],
+            "Fragilariopsis_cylindrus": [
+                "FRACYDRAFT_291503"
+            ],
+            "Ectocarpus_crouaniorum_m": [
+                "c_organisms_12404"
+            ],
+            "Fistulifera_solaris": [
+                "FisN_1Hu362"
+            ],
+            "Ectocarpus_siliculosus": [
+                "E_siliculosus_02745"
+            ],
+            "Ectocarpus_subulatus": [
+                "EsuBft171_3"
+            ],
+            "Fucus_serratus_MALE": [
+                "c_organisms_25602",
+                "c_organisms_19952"
+            ],
+            "Saccharina_latissima_FEMALE": [
+                "c_organisms_07176"
+            ],
+            "Schizocladia_ischiensis": [
+                "c_organisms_16544"
+            ],
+            "Dictyota_dichotoma_m": [
+                "c_organisms_10302"
+            ],
+            "Nemacystus_decipiens": [
+                "g8339"
+            ],
+            "Porterinema_fluviatile": [
+                "c_organisms_19046"
+            ],
+            "Laminarionema_elsbetiae": [
+                "nan"
+            ],
+            "Saccharina_japonica": [
+                "SJ13007"
+            ]
+        },
+        "RXN-20368": {
+            "Ectocarpus_fasciculatus_m": [
+                "c_organisms_18963",
+                "c_organisms_18964"
+            ],
+            "Undaria_pinnatifida_Kr2015": [
+                "UNPIN0808CG0060"
+            ],
+            "Nannochloropsis_gaditana": [
+                "Naga_100200g8",
+                "Naga_100012g44"
+            ],
+            "Desmarestia_herbacea_m": [
+                "c_organisms_00064",
+                "c_organisms_00063"
+            ],
+            "Ectocarpus_siliculosus_m": [
+                "c_organisms_18333",
+                "c_organisms_18334"
+            ],
+            "Chordaria_linearis": [
+                "c_organisms_05042",
+                "c_organisms_05041"
+            ],
+            "Phaeodactylum_tricornutum": [
+                "PHATRDRAFT_49163",
+                "PHATRDRAFT_46595"
+            ],
+            "Scytosiphon_promiscuus_MALE": [
+                "c_organisms_23810",
+                "c_organisms_23809"
+            ],
+            "Cladosiphon_okamuranus": [
+                "C_okamuranus_05869"
+            ],
+            "Pleurocladia_lacustris": [
+                "c_organisms_05033",
+                "c_organisms_05034"
+            ],
+            "Thalassiosira_pseudonana": [
+                "THAPSDRAFT_11806",
+                "THAPSDRAFT_25733"
+            ],
+            "Fragilariopsis_cylindrus": [
+                "FRACYDRAFT_187842"
+            ],
+            "Ectocarpus_crouaniorum_m": [
+                "c_organisms_14724",
+                "c_organisms_14723"
+            ],
+            "Fistulifera_solaris": [
+                "FisN_23Hh232",
+                "FisN_23Lh232"
+            ],
+            "Ectocarpus_siliculosus": [
+                "E_siliculosus_06371"
+            ],
+            "Ectocarpus_subulatus": [
+                "EsuBft88_19"
+            ],
+            "Fucus_serratus_MALE": [
+                "c_organisms_19996",
+                "c_organisms_19995"
+            ],
+            "Saccharina_latissima_FEMALE": [
+                "c_organisms_18403",
+                "c_organisms_18404"
+            ],
+            "Schizocladia_ischiensis": [
+                "c_organisms_26647",
+                "c_organisms_26648"
+            ],
+            "Dictyota_dichotoma_m": [
+                "c_organisms_06434",
+                "c_organisms_06433"
+            ],
+            "Nemacystus_decipiens": [
+                "g4956"
+            ],
+            "Porterinema_fluviatile": [
+                "c_organisms_06307",
+                "c_organisms_06308"
+            ],
+            "Laminarionema_elsbetiae": [
+                "nan"
+            ],
+            "Saccharina_japonica": [
+                "SJ06297"
+            ]
+        },
+        "RXN-20352": {
+            "Ectocarpus_fasciculatus_m": [
+                "c_organisms_18963",
+                "c_organisms_18964"
+            ],
+            "Undaria_pinnatifida_Kr2015": [
+                "UNPIN0808CG0060"
+            ],
+            "Nannochloropsis_gaditana": [
+                "Naga_100200g8",
+                "Naga_100012g44"
+            ],
+            "Desmarestia_herbacea_m": [
+                "c_organisms_00064",
+                "c_organisms_00063"
+            ],
+            "Ectocarpus_siliculosus_m": [
+                "c_organisms_18333",
+                "c_organisms_18334"
+            ],
+            "Chordaria_linearis": [
+                "c_organisms_05042",
+                "c_organisms_05041"
+            ],
+            "Phaeodactylum_tricornutum": [
+                "PHATRDRAFT_49163",
+                "PHATRDRAFT_46595"
+            ],
+            "Scytosiphon_promiscuus_MALE": [
+                "c_organisms_23810",
+                "c_organisms_23809"
+            ],
+            "Cladosiphon_okamuranus": [
+                "C_okamuranus_05869"
+            ],
+            "Pleurocladia_lacustris": [
+                "c_organisms_05033",
+                "c_organisms_05034"
+            ],
+            "Thalassiosira_pseudonana": [
+                "THAPSDRAFT_11806",
+                "THAPSDRAFT_25733"
+            ],
+            "Fragilariopsis_cylindrus": [
+                "FRACYDRAFT_187842"
+            ],
+            "Ectocarpus_crouaniorum_m": [
+                "c_organisms_14724",
+                "c_organisms_14723"
+            ],
+            "Fistulifera_solaris": [
+                "FisN_23Hh232",
+                "FisN_23Lh232"
+            ],
+            "Ectocarpus_siliculosus": [
+                "E_siliculosus_06371"
+            ],
+            "Ectocarpus_subulatus": [
+                "EsuBft88_19"
+            ],
+            "Fucus_serratus_MALE": [
+                "c_organisms_19996",
+                "c_organisms_19995"
+            ],
+            "Saccharina_latissima_FEMALE": [
+                "c_organisms_18403",
+                "c_organisms_18404"
+            ],
+            "Schizocladia_ischiensis": [
+                "c_organisms_26647",
+                "c_organisms_26648"
+            ],
+            "Dictyota_dichotoma_m": [
+                "c_organisms_06434",
+                "c_organisms_06433"
+            ],
+            "Nemacystus_decipiens": [
+                "g4956"
+            ],
+            "Porterinema_fluviatile": [
+                "c_organisms_06307",
+                "c_organisms_06308"
+            ],
+            "Laminarionema_elsbetiae": [
+                "nan"
+            ],
+            "Saccharina_japonica": [
+                "SJ06297"
             ]
         },
         "PREPHENATE-TRANSAMINE-RXN": {
@@ -1967,6 +1502,189 @@
                 "SJ17386"
             ]
         },
+        "GART-RXN": {
+            "Ectocarpus_fasciculatus_m": [
+                "c_organisms_00511",
+                "c_organisms_00512"
+            ],
+            "Undaria_pinnatifida_Kr2015": [
+                "UNPIN0010CG0300"
+            ],
+            "Nannochloropsis_gaditana": [
+                "Naga_100004g33",
+                "Naga_100001g134"
+            ],
+            "Desmarestia_herbacea_m": [
+                "c_organisms_26050",
+                "c_organisms_26049"
+            ],
+            "Ectocarpus_siliculosus_m": [
+                "c_organisms_02650",
+                "c_organisms_02649"
+            ],
+            "Chordaria_linearis": [
+                "c_organisms_09416",
+                "c_organisms_09415"
+            ],
+            "Phaeodactylum_tricornutum": [
+                "PHATRDRAFT_47067"
+            ],
+            "Scytosiphon_promiscuus_MALE": [
+                "c_organisms_07082",
+                "c_organisms_07081"
+            ],
+            "Cladosiphon_okamuranus": [
+                "C_okamuranus_03207"
+            ],
+            "Pleurocladia_lacustris": [
+                "c_organisms_14474",
+                "c_organisms_14473"
+            ],
+            "Thalassiosira_pseudonana": [
+                "THAPSDRAFT_20580"
+            ],
+            "Fragilariopsis_cylindrus": [
+                "FRACYDRAFT_209097"
+            ],
+            "Ectocarpus_crouaniorum_m": [
+                "c_organisms_01093",
+                "c_organisms_01094"
+            ],
+            "Fistulifera_solaris": [
+                "FisN_28Lh022",
+                "FisN_28Hh022"
+            ],
+            "Ectocarpus_siliculosus": [
+                "E_siliculosus_09790"
+            ],
+            "Ectocarpus_subulatus": [
+                "EsuBft35_25"
+            ],
+            "Fucus_serratus_MALE": [
+                "c_organisms_11173",
+                "c_organisms_11174"
+            ],
+            "Saccharina_latissima_FEMALE": [
+                "c_organisms_13597",
+                "c_organisms_13598"
+            ],
+            "Schizocladia_ischiensis": [
+                "c_organisms_19778",
+                "c_organisms_19777",
+                "c_organisms_28884",
+                "c_organisms_12836",
+                "c_organisms_12835",
+                "c_organisms_28883"
+            ],
+            "Dictyota_dichotoma_m": [
+                "c_organisms_34298",
+                "c_organisms_34297"
+            ],
+            "Nemacystus_decipiens": [
+                "g11637",
+                "g1060",
+                "g6241"
+            ],
+            "Porterinema_fluviatile": [
+                "c_organisms_11209",
+                "c_organisms_11210"
+            ],
+            "Laminarionema_elsbetiae": [
+                "nan"
+            ],
+            "Saccharina_japonica": [
+                "SJ06408"
+            ]
+        },
+        "RXN0-6554": {
+            "Ectocarpus_fasciculatus_m": [
+                "c_organisms_23874",
+                "c_organisms_23873"
+            ],
+            "Undaria_pinnatifida_Kr2015": [
+                "UNPIN0165CG0050"
+            ],
+            "Nannochloropsis_gaditana": [
+                "Naga_100144g11"
+            ],
+            "Desmarestia_herbacea_m": [
+                "c_organisms_26850",
+                "c_organisms_26849"
+            ],
+            "Ectocarpus_siliculosus_m": [
+                "c_organisms_16746",
+                "c_organisms_16745"
+            ],
+            "Chordaria_linearis": [
+                "c_organisms_02324",
+                "c_organisms_02323"
+            ],
+            "Phaeodactylum_tricornutum": [
+                "PHATRDRAFT_48900"
+            ],
+            "Scytosiphon_promiscuus_MALE": [
+                "c_organisms_16555",
+                "c_organisms_16556"
+            ],
+            "Cladosiphon_okamuranus": [
+                "C_okamuranus_04068"
+            ],
+            "Pleurocladia_lacustris": [
+                "c_organisms_19128",
+                "c_organisms_19127"
+            ],
+            "Thalassiosira_pseudonana": [
+                "THAPSDRAFT_264316"
+            ],
+            "Fragilariopsis_cylindrus": [
+                "FRACYDRAFT_182199"
+            ],
+            "Ectocarpus_crouaniorum_m": [
+                "c_organisms_03141",
+                "c_organisms_03142"
+            ],
+            "Fistulifera_solaris": [
+                "FisN_18Hh244",
+                "FisN_18Lh244"
+            ],
+            "Ectocarpus_siliculosus": [
+                "E_siliculosus_17911"
+            ],
+            "Ectocarpus_subulatus": [
+                "EsuBft1707_5",
+                "EsuBft1707_6"
+            ],
+            "Fucus_serratus_MALE": [
+                "c_organisms_10428",
+                "c_organisms_10427"
+            ],
+            "Saccharina_latissima_FEMALE": [
+                "c_organisms_13700",
+                "c_organisms_13699"
+            ],
+            "Schizocladia_ischiensis": [
+                "c_organisms_16382",
+                "c_organisms_16381"
+            ],
+            "Dictyota_dichotoma_m": [
+                "c_organisms_14739",
+                "c_organisms_14740"
+            ],
+            "Nemacystus_decipiens": [
+                "g1309",
+                "g11739"
+            ],
+            "Porterinema_fluviatile": [
+                "c_organisms_20505",
+                "c_organisms_20506"
+            ],
+            "Laminarionema_elsbetiae": [
+                "nan"
+            ],
+            "Saccharina_japonica": [
+                "SJ18134"
+            ]
+        },
         "RXN-9951": {
             "Ectocarpus_fasciculatus_m": [
                 "c_organisms_36197",
@@ -2062,91 +1780,262 @@
                 "SJ08749"
             ]
         },
-        "PREPHENATE-ASP-TRANSAMINE-RXN": {
+        "RXN-9229": {
             "Ectocarpus_fasciculatus_m": [
-                "c_organisms_12491",
-                "c_organisms_12492"
+                "c_organisms_05656"
             ],
             "Undaria_pinnatifida_Kr2015": [
-                "UNPIN0046CG0300"
+                "UNPIN1005CG0090"
             ],
             "Nannochloropsis_gaditana": [
-                "Naga_100017g28"
+                "Naga_100398g3"
             ],
             "Desmarestia_herbacea_m": [
-                "c_organisms_04164",
-                "c_organisms_04163"
+                "c_organisms_02382"
             ],
             "Ectocarpus_siliculosus_m": [
-                "c_organisms_24806",
-                "c_organisms_24805"
+                "c_organisms_28146"
             ],
             "Chordaria_linearis": [
-                "c_organisms_25556",
-                "c_organisms_25555"
+                "c_organisms_29822"
             ],
             "Phaeodactylum_tricornutum": [
-                "PHATRDRAFT_bd870"
+                "PHATRDRAFT_9984"
             ],
             "Scytosiphon_promiscuus_MALE": [
-                "c_organisms_24178",
-                "c_organisms_24177"
+                "c_organisms_11332"
             ],
             "Cladosiphon_okamuranus": [
-                "C_okamuranus_12920"
+                "C_okamuranus_11385"
             ],
             "Pleurocladia_lacustris": [
-                "c_organisms_17079",
-                "c_organisms_17080"
+                "c_organisms_30828"
             ],
             "Thalassiosira_pseudonana": [
-                "THAPSDRAFT_12030"
+                "THAPS_35408"
             ],
             "Fragilariopsis_cylindrus": [
-                "FRACYDRAFT_238714"
+                "FRACYDRAFT_291503"
             ],
             "Ectocarpus_crouaniorum_m": [
-                "c_organisms_25617",
-                "c_organisms_25618"
+                "c_organisms_12404"
             ],
             "Fistulifera_solaris": [
-                "FisN_22Lh121",
-                "FisN_22Hh121"
+                "FisN_1Hu362"
             ],
             "Ectocarpus_siliculosus": [
-                "E_siliculosus_15752"
+                "E_siliculosus_02745"
             ],
             "Ectocarpus_subulatus": [
-                "EsuBft1211_3"
+                "EsuBft171_3"
             ],
             "Fucus_serratus_MALE": [
-                "c_organisms_09541",
-                "c_organisms_09542"
+                "c_organisms_25602",
+                "c_organisms_19952"
             ],
             "Saccharina_latissima_FEMALE": [
-                "nan"
+                "c_organisms_07176"
             ],
             "Schizocladia_ischiensis": [
-                "c_organisms_21513",
-                "c_organisms_21514"
+                "c_organisms_16544"
             ],
             "Dictyota_dichotoma_m": [
-                "c_organisms_37994",
-                "c_organisms_37993"
+                "c_organisms_10302"
             ],
             "Nemacystus_decipiens": [
-                "g16424",
-                "g357"
+                "g8339"
             ],
             "Porterinema_fluviatile": [
-                "c_organisms_21314",
-                "c_organisms_21313"
+                "c_organisms_19046"
             ],
             "Laminarionema_elsbetiae": [
                 "nan"
             ],
             "Saccharina_japonica": [
-                "SJ05778"
+                "SJ13007"
+            ]
+        },
+        "ISOCITDEH-RXN": {
+            "Ectocarpus_fasciculatus_m": [
+                "c_organisms_36197",
+                "c_organisms_36198"
+            ],
+            "Undaria_pinnatifida_Kr2015": [
+                "UNPIN0088CG0400"
+            ],
+            "Nannochloropsis_gaditana": [
+                "Naga_100022g53"
+            ],
+            "Desmarestia_herbacea_m": [
+                "c_organisms_00857",
+                "c_organisms_00858"
+            ],
+            "Ectocarpus_siliculosus_m": [
+                "c_organisms_17927",
+                "c_organisms_17928"
+            ],
+            "Chordaria_linearis": [
+                "c_organisms_28943",
+                "c_organisms_28944"
+            ],
+            "Phaeodactylum_tricornutum": [
+                "PHATRDRAFT_45017",
+                "PHATRDRAFT_14762"
+            ],
+            "Scytosiphon_promiscuus_MALE": [
+                "c_organisms_14132",
+                "c_organisms_14131"
+            ],
+            "Cladosiphon_okamuranus": [
+                "C_okamuranus_00203"
+            ],
+            "Pleurocladia_lacustris": [
+                "c_organisms_25068",
+                "c_organisms_25067"
+            ],
+            "Thalassiosira_pseudonana": [
+                "THAPSDRAFT_21640",
+                "THAPSDRAFT_1456"
+            ],
+            "Fragilariopsis_cylindrus": [
+                "FRACYDRAFT_168262",
+                "FRACYDRAFT_277597"
+            ],
+            "Ectocarpus_crouaniorum_m": [
+                "c_organisms_06634",
+                "c_organisms_06633"
+            ],
+            "Fistulifera_solaris": [
+                "FisN_9Hh340",
+                "FisN_7Hh268",
+                "FisN_9Lh340",
+                "FisN_7Lh268"
+            ],
+            "Ectocarpus_siliculosus": [
+                "E_siliculosus_08932"
+            ],
+            "Ectocarpus_subulatus": [
+                "EsuBft315_6"
+            ],
+            "Fucus_serratus_MALE": [
+                "c_organisms_25278",
+                "c_organisms_25277",
+                "c_organisms_23070",
+                "c_organisms_23069"
+            ],
+            "Saccharina_latissima_FEMALE": [
+                "c_organisms_01510",
+                "c_organisms_01509"
+            ],
+            "Schizocladia_ischiensis": [
+                "c_organisms_05018",
+                "c_organisms_05017"
+            ],
+            "Dictyota_dichotoma_m": [
+                "c_organisms_15268",
+                "c_organisms_15267"
+            ],
+            "Nemacystus_decipiens": [
+                "g13117",
+                "g671"
+            ],
+            "Porterinema_fluviatile": [
+                "c_organisms_07727",
+                "c_organisms_07728"
+            ],
+            "Laminarionema_elsbetiae": [
+                "nan"
+            ],
+            "Saccharina_japonica": [
+                "SJ08749"
+            ]
+        },
+        "ORNITHINE-GLU-AMINOTRANSFERASE-RXN": {
+            "Ectocarpus_fasciculatus_m": [
+                "c_organisms_18547",
+                "c_organisms_18548"
+            ],
+            "Undaria_pinnatifida_Kr2015": [
+                "UNPIN0068CG0110"
+            ],
+            "Nannochloropsis_gaditana": [
+                "Naga_100419g4"
+            ],
+            "Desmarestia_herbacea_m": [
+                "c_organisms_08803",
+                "c_organisms_08804"
+            ],
+            "Ectocarpus_siliculosus_m": [
+                "c_organisms_13000",
+                "c_organisms_12999"
+            ],
+            "Chordaria_linearis": [
+                "c_organisms_13412",
+                "c_organisms_13411"
+            ],
+            "Phaeodactylum_tricornutum": [
+                "PHATRDRAFT_27726"
+            ],
+            "Scytosiphon_promiscuus_MALE": [
+                "c_organisms_20303",
+                "c_organisms_20304"
+            ],
+            "Cladosiphon_okamuranus": [
+                "C_okamuranus_14326"
+            ],
+            "Pleurocladia_lacustris": [
+                "c_organisms_26872",
+                "c_organisms_26871"
+            ],
+            "Thalassiosira_pseudonana": [
+                "THAPSDRAFT_27892"
+            ],
+            "Fragilariopsis_cylindrus": [
+                "FRACYDRAFT_269005"
+            ],
+            "Ectocarpus_crouaniorum_m": [
+                "c_organisms_18125",
+                "c_organisms_18123",
+                "c_organisms_18126"
+            ],
+            "Fistulifera_solaris": [
+                "FisN_5Hu271",
+                "FisN_UnNu107"
+            ],
+            "Ectocarpus_siliculosus": [
+                "E_siliculosus_14712"
+            ],
+            "Ectocarpus_subulatus": [
+                "EsuBft610_5"
+            ],
+            "Fucus_serratus_MALE": [
+                "c_organisms_23541",
+                "c_organisms_23542"
+            ],
+            "Saccharina_latissima_FEMALE": [
+                "c_organisms_25496",
+                "c_organisms_25495"
+            ],
+            "Schizocladia_ischiensis": [
+                "c_organisms_09983",
+                "c_organisms_09984"
+            ],
+            "Dictyota_dichotoma_m": [
+                "c_organisms_18357",
+                "c_organisms_18358"
+            ],
+            "Nemacystus_decipiens": [
+                "g6872"
+            ],
+            "Porterinema_fluviatile": [
+                "c_organisms_14578",
+                "c_organisms_14577"
+            ],
+            "Laminarionema_elsbetiae": [
+                "nan"
+            ],
+            "Saccharina_japonica": [
+                "SJ09475"
             ]
         },
         "DIHYDROOROTATE-DEHYDROGENASE-RXN": {
@@ -2238,184 +2127,295 @@
                 "SJ18134"
             ]
         },
-        "RXN-7792": {
+        "RXN-7790": {
             "Ectocarpus_fasciculatus_m": [
-                "c_organisms_18963",
-                "c_organisms_18964"
+                "c_organisms_32270"
             ],
             "Undaria_pinnatifida_Kr2015": [
-                "UNPIN0808CG0060"
+                "UNPIN0859CG0040"
             ],
             "Nannochloropsis_gaditana": [
-                "Naga_100200g8",
-                "Naga_100012g44"
+                "Naga_100196g5"
             ],
             "Desmarestia_herbacea_m": [
-                "c_organisms_00064",
-                "c_organisms_00063"
+                "c_organisms_26266"
             ],
             "Ectocarpus_siliculosus_m": [
-                "c_organisms_18333",
-                "c_organisms_18334"
+                "c_organisms_03788"
             ],
             "Chordaria_linearis": [
-                "c_organisms_05042",
-                "c_organisms_05041"
+                "c_organisms_14050",
+                "c_organisms_14048"
             ],
             "Phaeodactylum_tricornutum": [
-                "PHATRDRAFT_49163",
-                "PHATRDRAFT_46595"
+                "PHATRDRAFT_9476"
             ],
             "Scytosiphon_promiscuus_MALE": [
-                "c_organisms_23810",
-                "c_organisms_23809"
+                "c_organisms_13092"
             ],
             "Cladosiphon_okamuranus": [
-                "C_okamuranus_05869"
+                "C_okamuranus_05948"
             ],
             "Pleurocladia_lacustris": [
-                "c_organisms_05033",
-                "c_organisms_05034"
+                "c_organisms_01718"
             ],
             "Thalassiosira_pseudonana": [
-                "THAPSDRAFT_11806",
-                "THAPSDRAFT_25733"
+                "THAPSDRAFT_795"
             ],
             "Fragilariopsis_cylindrus": [
-                "FRACYDRAFT_187842"
+                "FRACYDRAFT_186364"
             ],
             "Ectocarpus_crouaniorum_m": [
-                "c_organisms_14724",
-                "c_organisms_14723"
+                "c_organisms_04684"
             ],
             "Fistulifera_solaris": [
-                "FisN_23Hh232",
-                "FisN_23Lh232"
+                "FisN_30Hh027",
+                "FisN_30Lh027"
             ],
             "Ectocarpus_siliculosus": [
-                "E_siliculosus_06371"
+                "E_siliculosus_08611"
             ],
             "Ectocarpus_subulatus": [
-                "EsuBft88_19"
+                "EsuBft356_2"
             ],
             "Fucus_serratus_MALE": [
-                "c_organisms_19996",
-                "c_organisms_19995"
+                "c_organisms_08382"
             ],
             "Saccharina_latissima_FEMALE": [
-                "c_organisms_18403",
-                "c_organisms_18404"
+                "c_organisms_02226"
             ],
             "Schizocladia_ischiensis": [
-                "c_organisms_26647",
-                "c_organisms_26648"
+                "c_organisms_25256"
             ],
             "Dictyota_dichotoma_m": [
-                "c_organisms_06434",
-                "c_organisms_06433"
+                "c_organisms_37832",
+                "c_organisms_39742"
             ],
             "Nemacystus_decipiens": [
-                "g4956"
+                "g11114"
             ],
             "Porterinema_fluviatile": [
-                "c_organisms_06307",
-                "c_organisms_06308"
+                "c_organisms_03454"
             ],
             "Laminarionema_elsbetiae": [
                 "nan"
             ],
             "Saccharina_japonica": [
-                "SJ06297"
+                "SJ18449"
             ]
         },
-        "RXN-20368": {
+        "2-OCTAPRENYL-6-OHPHENOL-METHY-RXN": {
             "Ectocarpus_fasciculatus_m": [
-                "c_organisms_18963",
-                "c_organisms_18964"
+                "c_organisms_05656"
             ],
             "Undaria_pinnatifida_Kr2015": [
-                "UNPIN0808CG0060"
+                "UNPIN1005CG0090"
             ],
             "Nannochloropsis_gaditana": [
-                "Naga_100200g8",
-                "Naga_100012g44"
+                "Naga_100398g3"
             ],
             "Desmarestia_herbacea_m": [
-                "c_organisms_00064",
-                "c_organisms_00063"
+                "c_organisms_02382"
             ],
             "Ectocarpus_siliculosus_m": [
-                "c_organisms_18333",
-                "c_organisms_18334"
+                "c_organisms_28146"
             ],
             "Chordaria_linearis": [
-                "c_organisms_05042",
-                "c_organisms_05041"
+                "c_organisms_29822"
             ],
             "Phaeodactylum_tricornutum": [
-                "PHATRDRAFT_49163",
-                "PHATRDRAFT_46595"
+                "PHATRDRAFT_9984"
             ],
             "Scytosiphon_promiscuus_MALE": [
-                "c_organisms_23810",
-                "c_organisms_23809"
+                "c_organisms_11332"
             ],
             "Cladosiphon_okamuranus": [
-                "C_okamuranus_05869"
+                "C_okamuranus_11385"
             ],
             "Pleurocladia_lacustris": [
-                "c_organisms_05033",
-                "c_organisms_05034"
+                "c_organisms_30828"
             ],
             "Thalassiosira_pseudonana": [
-                "THAPSDRAFT_11806",
-                "THAPSDRAFT_25733"
+                "THAPS_35408"
             ],
             "Fragilariopsis_cylindrus": [
-                "FRACYDRAFT_187842"
+                "FRACYDRAFT_291503"
             ],
             "Ectocarpus_crouaniorum_m": [
-                "c_organisms_14724",
-                "c_organisms_14723"
+                "c_organisms_12404"
             ],
             "Fistulifera_solaris": [
-                "FisN_23Hh232",
-                "FisN_23Lh232"
+                "FisN_1Hu362"
             ],
             "Ectocarpus_siliculosus": [
-                "E_siliculosus_06371"
+                "E_siliculosus_02745"
             ],
             "Ectocarpus_subulatus": [
-                "EsuBft88_19"
+                "EsuBft171_3"
             ],
             "Fucus_serratus_MALE": [
-                "c_organisms_19996",
-                "c_organisms_19995"
+                "c_organisms_25602",
+                "c_organisms_19952"
             ],
             "Saccharina_latissima_FEMALE": [
-                "c_organisms_18403",
-                "c_organisms_18404"
+                "c_organisms_07176"
             ],
             "Schizocladia_ischiensis": [
-                "c_organisms_26647",
-                "c_organisms_26648"
+                "c_organisms_16544"
             ],
             "Dictyota_dichotoma_m": [
-                "c_organisms_06434",
-                "c_organisms_06433"
+                "c_organisms_10302"
             ],
             "Nemacystus_decipiens": [
-                "g4956"
+                "g8339"
             ],
             "Porterinema_fluviatile": [
-                "c_organisms_06307",
-                "c_organisms_06308"
+                "c_organisms_19046"
             ],
             "Laminarionema_elsbetiae": [
                 "nan"
             ],
             "Saccharina_japonica": [
-                "SJ06297"
+                "SJ13007"
+            ]
+        },
+        "RIB5PISOM-RXN": {
+            "Ectocarpus_fasciculatus_m": [
+                "c_organisms_22537",
+                "c_organisms_01871",
+                "c_organisms_22538",
+                "c_organisms_01872"
+            ],
+            "Undaria_pinnatifida_Kr2015": [
+                "UNPIN0141CG0010",
+                "UNPIN3097CG0010",
+                "UNPIN0304CG0130",
+                "UNPIN0263CG0220"
+            ],
+            "Nannochloropsis_gaditana": [
+                "Naga_100032g3",
+                "Naga_100018g63",
+                "Naga_100158g13"
+            ],
+            "Desmarestia_herbacea_m": [
+                "c_organisms_02707",
+                "c_organisms_15698",
+                "c_organisms_20857",
+                "c_organisms_20858",
+                "c_organisms_02708",
+                "c_organisms_15697"
+            ],
+            "Ectocarpus_siliculosus_m": [
+                "c_organisms_10346",
+                "c_organisms_10345",
+                "c_organisms_06384",
+                "c_organisms_06383"
+            ],
+            "Chordaria_linearis": [
+                "c_organisms_12773",
+                "c_organisms_01593",
+                "c_organisms_01594",
+                "c_organisms_12774"
+            ],
+            "Phaeodactylum_tricornutum": [
+                "PHATR_50995",
+                "PHATRDRAFT_17545"
+            ],
+            "Scytosiphon_promiscuus_MALE": [
+                "c_organisms_22241",
+                "c_organisms_07812",
+                "c_organisms_22242",
+                "c_organisms_07811"
+            ],
+            "Cladosiphon_okamuranus": [
+                "C_okamuranus_05455",
+                "C_okamuranus_05325"
+            ],
+            "Pleurocladia_lacustris": [
+                "c_organisms_04402",
+                "c_organisms_12407",
+                "c_organisms_12408",
+                "c_organisms_04401"
+            ],
+            "Thalassiosira_pseudonana": [
+                "THAPSDRAFT_270308",
+                "THAPSDRAFT_32252",
+                "THAPSDRAFT_26046"
+            ],
+            "Fragilariopsis_cylindrus": [
+                "FRACYDRAFT_207790",
+                "FRACYDRAFT_276792"
+            ],
+            "Ectocarpus_crouaniorum_m": [
+                "c_organisms_04017",
+                "c_organisms_00407",
+                "c_organisms_00408",
+                "c_organisms_04018"
+            ],
+            "Fistulifera_solaris": [
+                "FisN_6Lh358",
+                "FisN_13Lh055",
+                "FisN_13Hh055",
+                "FisN_6Hh358"
+            ],
+            "Ectocarpus_siliculosus": [
+                "E_siliculosus_09448",
+                "E_siliculosus_07191"
+            ],
+            "Ectocarpus_subulatus": [
+                "EsuBft4938_2",
+                "EsuBft404_10"
+            ],
+            "Fucus_serratus_MALE": [
+                "c_organisms_10666",
+                "c_organisms_05428",
+                "c_organisms_23989",
+                "c_organisms_05427",
+                "c_organisms_23990",
+                "c_organisms_10665",
+                "c_organisms_41124"
+            ],
+            "Saccharina_latissima_FEMALE": [
+                "c_organisms_21093",
+                "c_organisms_21094",
+                "c_organisms_10714",
+                "c_organisms_21881",
+                "c_organisms_21882",
+                "c_organisms_10713"
+            ],
+            "Schizocladia_ischiensis": [
+                "c_organisms_13295",
+                "c_organisms_30356",
+                "c_organisms_17343",
+                "c_organisms_28004",
+                "c_organisms_28003",
+                "c_organisms_13296",
+                "c_organisms_30355"
+            ],
+            "Dictyota_dichotoma_m": [
+                "c_organisms_34570",
+                "c_organisms_38080",
+                "c_organisms_00597",
+                "c_organisms_34569",
+                "c_organisms_38079",
+                "c_organisms_00598"
+            ],
+            "Nemacystus_decipiens": [
+                "g244"
+            ],
+            "Porterinema_fluviatile": [
+                "c_organisms_10707",
+                "c_organisms_25989",
+                "c_organisms_25990",
+                "c_organisms_10708"
+            ],
+            "Laminarionema_elsbetiae": [
+                "nan"
+            ],
+            "Saccharina_japonica": [
+                "SJ07743",
+                "SJ00411",
+                "SJ10679"
             ]
         }
     }
