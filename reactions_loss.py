@@ -4,6 +4,7 @@ Reactions class
 from typing import Dict, List, Tuple, Set
 import pandas as pd
 import json
+import os
 
 
 class Reactions:
@@ -27,7 +28,8 @@ class Reactions:
     reactions_loss : Dict[str, Tuple[int, Set[str]]]
         Dictionary indicating for each species how many and which reactions are lost
     """
-    nb_analysis = 0
+    nb_common_reac = 0
+    nb_genes_assoc = 0
     STR_GENE_ASSOC = "_genes_assoc (sep=;)"
 
     def __init__(self, file_reactions_tsv: str, species_list: List[str] = None, out: int = 1):
@@ -151,8 +153,8 @@ class Reactions:
             reactions_loss[species] = self.__get_reactions_loss_1_species(species)
         return reactions_loss
 
-    def get_genes_assoc(self, interest_species: str,  reactions_set: Set[str] = None) -> \
-            Dict[str, Dict[str, List[str]]]:
+    def get_genes_assoc(self, interest_species: str,  reactions_set: Set[str] = None,
+                        output_file=False) -> Dict[str, Dict[str, List[str]]]:
         """
         Parameters
         ----------
@@ -161,6 +163,9 @@ class Reactions:
         reactions_set : List[str], optional (default=None)
             Set of reactions to find genes associated with.
             If None, will be reactions_list attribute.
+        output_file : Bool, optional (default=False)
+            If False, return the gene_assoc dict
+            If true write the results with prot sequence
 
         Returns
         -------
@@ -176,7 +181,39 @@ class Reactions:
             for species in self.species_list:
                 genes_assoc[interest_species][reaction][species] = str(
                     self.data_genes_assoc[species + self.STR_GENE_ASSOC][reaction]).split(";")
-        return genes_assoc
+        if not output_file:
+            return genes_assoc
+        else:
+            self.nb_genes_assoc += 1
+            self.write_genes(genes_assoc, interest_species)
+
+    def write_genes(self, genes_assoc, interest_species):
+        fa_file_path = f"data/{self.name.split('_')[0]}_studied_organism/"
+        os.makedirs(f"outputs/genes_assoc/{self.nb_genes_assoc}_{interest_species}/")
+        file_out_json = f"outputs/genes_assoc/{self.nb_genes_assoc}_{interest_species}/" \
+                        f"{self.name.split('_')[0]}_genes_assoc.json"
+        dir_out_fasta = f"outputs/genes_assoc/{self.nb_genes_assoc}_{interest_species}/"
+
+        with open(file_out_json, 'w') as o:
+            json.dump(genes_assoc, o, indent=4)
+
+        genes_dict = genes_assoc[interest_species]
+        for reaction, species_dict in genes_dict.items():
+            fasta = dir_out_fasta + reaction + ".fa"
+            with open(fasta, 'w') as o:
+                for species, genes_list in species_dict.items():
+                    genes_fa = f"{fa_file_path}{species}/{species}.faa"
+                    with open(genes_fa, 'r') as f:
+                        write_seq = False
+                        for line in f:
+                            if line[0] == ">":
+                                write_seq = False
+                                gene = line[1:][:-1]
+                                if gene in genes_list:
+                                    o.write(f">{gene}\n")
+                                    write_seq = True
+                            elif write_seq:
+                                o.write(line)
 
     @classmethod
     def get_common_reactions(cls, datas: List["Reactions"], species: str, output_file=None) \
@@ -207,10 +244,10 @@ class Reactions:
         if output_file is None:
             return len(common_reactions), common_reactions
         elif output_file == "json":
-            cls.nb_analysis += 1
+            cls.nb_common_reac += 1
             cls.__write_common_reactions_json(datas, common_reactions, species)
         elif output_file == "txt":
-            cls.nb_analysis += 1
+            cls.nb_common_reac += 1
             cls.__write_common_reactions_txt(datas, common_reactions, species)
         else:
             raise ValueError("output_file value must be 'json' or 'txt'")
@@ -229,7 +266,7 @@ class Reactions:
         species : str
             Interest species
         """
-        outfile_name = f'outputs/analyse_{cls.nb_analysis}.txt'
+        outfile_name = f'outputs/common_reac/analyse_{cls.nb_common_reac}.txt'
         with open(outfile_name, 'w') as o:
             o.write("Compared files :\n"
                     "----------------\n")
@@ -259,7 +296,7 @@ class Reactions:
        species : str
            Interest species
        """
-        outfile_name = f'outputs/analyse_{cls.nb_analysis}.json'
+        outfile_name = f'outputs/common_reac/analyse_{cls.nb_common_reac}.json'
         data = {"Compared files": [data.name for data in datas_list],
                 "Interest species": species,
                 "Number of common reactions": len(common_reactions),

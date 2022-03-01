@@ -1,0 +1,31 @@
+Compared files :
+----------------
+run01_reactions
+run40_reactions
+runA1_reactions
+
+Interest species :
+------------------
+Laminarionema_elsbetiae
+
+Number of common reactions : 16
+----------------------------
+
+Reactions :
+-----------
+EXOPOLYPHOSPHATASE-RXN
+RXN0-6554
+RIB5PISOM-RXN
+DHHB-METHYLTRANSFER-RXN
+RXN-8642
+DTDPDEHYDRHAMEPIM-RXN
+GART-RXN
+DIHYDROOROTATE-DEHYDROGENASE-RXN
+RXN-9229
+ISOCITDEH-RXN
+THRESYN-RXN
+2-OCTAPRENYL-6-OHPHENOL-METHY-RXN
+RXN3O-102
+RXN0-6491
+RXN-7790
+RXN-9951
