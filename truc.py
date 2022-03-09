@@ -1,4 +1,5 @@
 import pandas as pd
+import time
 
 # file = "reactions_phaeo.tsv"
 #
@@ -21,7 +22,7 @@ spl = ['Ectocarpus_fasciculatus_m',
        'Schizocladia_ischiensis', 'Dictyota_dichotoma_m',
        'Porterinema_fluviatile', 'Laminarionema_elsbetiae']
 
-spl2 = ['Chordaria_linearis']
+spl2 = ['Dictyota_dichotoma_m']
 
 
 def edit_padmet(spl, path=None):
@@ -33,20 +34,40 @@ def edit_padmet(spl, path=None):
                 li = l.split()
                 assodict[li[1]] = li[0]
         file = f"data/run01_studied_organism/{sp}/{sp}.padmet"
-        out = f"data/run01_studied_organism/2PADMETs/2_{sp}.padmet"
+        out = f"data/run01_studied_organism/2PADMETs/{sp}.padmet"
         with open(file, 'r') as f:
             with open(out, 'w') as o:
                 nb = 0
                 for li in f:
-                    li = li.split("\n")[0].split("\t")
-                    for i in range(len(li)):
-                        if li[i] in assodict:
-                            li[i] = assodict[li[i]]
-                            nb += 1
-                        elif li[i].split("_names")[0] in assodict:
-                            li[i] = assodict[li[i].split("_names")[0]] + "_names"
-                    o.write("\t".join(li) + "\n")
+                    if "c_organism" in li:
+                        for el in assodict:
+                            if el in li:
+                                li = li.replace(el, assodict[el])
+                    # for i in range(len(li)):
+                    #     if "c_organism" in li[i]:
+                    #         for el in assodict:
+                    #             if el in li[i]:
+                    #                 li[i] = li[i].replace(el, assodict[el])
+                        # if ' or ' in li[i]:
+                        #     li2 = li[i].split(' or ')
+                        #     for j in range(len(li2)):
+                        #         el = li2[j].strip()[1:-1]
+                        #         if el in assodict:
+                        #             li2[j] = f"({assodict[el]})"
+                        #     li[i] = " or ".join(li2)
+                        # if li[i] in assodict:
+                        #     li[i] = assodict[li[i]]
+                        # elif li[i].split("_names")[0] in assodict:
+                        #     li[i] = assodict[li[i].split("_names")[0]] + "_names"
+                    o.write(li)
         print(nb)
 
 
+start = time.time()
 edit_padmet(spl)
+end = time.time()
+print(end - start)
+
+# 1 : 443.7
+# 2 : 255.9
+# 3 : 235.9
