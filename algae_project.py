@@ -85,6 +85,8 @@ reac_lostA = reactions_from_file(DATA_LELSB_LOSSES)
 
 # ### genes assoc ###
 
-print(R01.get_genes_assoc(LAMINARIONEMA_E,
-                          Reactions.get_common_reactions([R01, R40, RA2], LAMINARIONEMA_E)[1],
-                          output_file=True))
+# print(R01.get_genes_assoc(LAMINARIONEMA_E,
+#                           Reactions.get_common_reactions([R01, R40, RA2], LAMINARIONEMA_E)[1],
+#                           output_file=True))
+
+print(R01.species_list)
