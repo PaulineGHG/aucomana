@@ -25,14 +25,19 @@ spl = ['Ectocarpus_fasciculatus_m',
 spl2 = ['Dictyota_dichotoma_m']
 
 
-def edit_padmet(spl, path=None):
+def get_dict(sp):
+    dic = f"data/run01_studied_organism/{sp}/{sp}_dict.csv"
+    assodict = {}
+    with open(dic, 'r') as d:
+        for l in d:
+            li = l.split()
+            assodict[li[1]] = li[0]
+    return assodict
+
+
+def edit_padmet(spl):
     for sp in spl:
-        dic = f"data/run01_studied_organism/{sp}/{sp}_dict.csv"
-        assodict = {}
-        with open(dic, 'r') as d:
-            for l in d:
-                li = l.split()
-                assodict[li[1]] = li[0]
+        assodict = get_dict(sp)
         file = f"data/run01_studied_organism/{sp}/{sp}.padmet"
         out = f"data/run01_studied_organism/2PADMETs/{sp}.padmet"
         with open(file, 'r') as f:
@@ -64,7 +69,14 @@ def edit_padmet(spl, path=None):
 
 
 start = time.time()
-edit_padmet(spl)
+for sp in spl2:
+    dic = get_dict(sp)
+    file = f"data/run01_studied_organism/{sp}/{sp}.padmet"
+    out = f"data/run01_studied_organism/2PADMETs/{sp}.padmet"
+    with open(file, "r") as in_file, open(out, "w") as out_file:
+        for l in in_file:
+            l2 = l.translate(dic)
+            out_file.write(l2)
 end = time.time()
 print(end - start)
 
