@@ -27,9 +27,8 @@ def apply_automaton(automaton, input_filename, output_filename):
             outfile.write(line)
 
 
-def get_dict(sp):
+def get_dict(sp, assodict):
     dic = f"data/run01_studied_organism/{sp}/{sp}_dict.csv"
-    assodict = {}
     with open(dic, 'r') as d:
         for l in d:
             li = l.split()
@@ -50,8 +49,12 @@ spl2 = ['Dictyota_dichotoma_m']
 
 start = time.time()
 
+assodict = {}
 for sp in spl2:
-    automaton = make_automaton(get_dict(sp))
+    assodict = get_dict(sp, assodict)
+
+for sp in spl2:
+    automaton = make_automaton(assodict)
     apply_automaton(automaton, f"data/run01_studied_organism/{sp}/{sp}.padmet",
                     f"data/run01_studied_organism/2PADMETs/test_{sp}.padmet")
 
