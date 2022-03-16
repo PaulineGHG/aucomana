@@ -17,7 +17,7 @@ setwd("~/Documents/Reactions_loss")
 
 # load data
 
-reactions_dataframe = read.table("data/run01_reactions.tsv", sep = "\t", header = T, row.names = "reaction")
+reactions_dataframe = read.table("outputs/cut_run01_reactions.tsv", sep = "\t", header = T, row.names = "reaction")
 reactions_dataframe = select(reactions_dataframe, -colnames(select(reactions_dataframe, ends_with("..sep...") | ends_with("_formula"))))
 
 result = pvclust(reactions_dataframe, method.dist="binary", method.hclust="complete", nboot=10000, parallel=TRUE)

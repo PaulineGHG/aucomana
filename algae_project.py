@@ -60,11 +60,11 @@ BROWN_ALGAE_01 = ['Ectocarpus_fasciculatus_m', 'Undaria_pinnatifida_Kr2015', 'De
                   'Dictyota_dichotoma_m', 'Nemacystus_decipiens', 'Porterinema_fluviatile', 'Laminarionema_elsbetiae',
                   'Saccharina_japonica']
 
-R01 = Reactions(DATA_FILE_01, BROWN_ALGAE_01)
-R40 = Reactions(DATA_FILE_40, BROWN_ALGAE_40)
-RA0 = Reactions(DATA_FILE_A0)
-RA1 = Reactions(DATA_FILE_A1)
-RA2 = Reactions(DATA_FILE_A2)
+R01 = Reactions(DATA_FILE_01, BROWN_ALGAE_01, prio=("Dictyota_dichotoma_m", "Desmarestia_herbacea_m"))
+# R40 = Reactions(DATA_FILE_40, BROWN_ALGAE_40)
+# RA0 = Reactions(DATA_FILE_A0)
+# RA1 = Reactions(DATA_FILE_A1)
+# RA2 = Reactions(DATA_FILE_A2)
 
 reac_lostA = reactions_from_file(DATA_LELSB_LOSSES)
 
@@ -96,4 +96,10 @@ reac_lostA = reactions_from_file(DATA_LELSB_LOSSES)
 #                           Reactions.get_common_reactions([R01, R40, RA2], LAMINARIONEMA_E)[1],
 #                           output_file=True))
 
-print(R01.species_list)
+reac_list = set(R01.reactions_list)
+
+with open("data/run01_reactions.tsv", "r") as f, open("outputs/cut_run01_reactions.tsv", "w") as o:
+    for line in f:
+        l = line.split("\t")
+        if l[0] in reac_list or l[0] == "reaction":
+            o.write(line)

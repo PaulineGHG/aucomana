@@ -32,7 +32,7 @@ class Reactions:
     nb_genes_assoc = 0
     STR_GENE_ASSOC = "_genes_assoc (sep=;)"
 
-    def __init__(self, file_reactions_tsv: str, species_list: List[str] = None, out: int = 1):
+    def __init__(self, file_reactions_tsv: str, species_list: List[str] = None, out: int = 2, prio=None):
         """ Init the Reactions class
 
         Parameters
@@ -49,11 +49,11 @@ class Reactions:
         self.species_list = species_list
         self.data_reactions, \
             self.data_genes_assoc, \
-            self.reactions_list = self.__init_data(file_reactions_tsv, out)
+            self.reactions_list = self.__init_data(file_reactions_tsv, out, prio)
         self.nb_reactions, self.nb_species = self.data_reactions.shape
         self.reactions_loss = self.__init_reactions_loss()
 
-    def __init_data(self, file_reactions_tsv: str, out: int) \
+    def __init_data(self, file_reactions_tsv: str, out: int, prio) \
             -> Tuple['pd.DataFrame', 'pd.DataFrame', List[str]]:
         """ Generate the data_reactions, data_genes_assoc and reactions_list attributes
 
@@ -79,7 +79,7 @@ class Reactions:
         data_species_all_reactions = data[self.species_list]
         genes_assoc_list = [x + self.STR_GENE_ASSOC for x in self.species_list]
         data_genes_assoc = data[genes_assoc_list]
-        filtered_reactions = self.__get_filtered_reactions(data_species_all_reactions, out)
+        filtered_reactions = self.__get_filtered_reactions(data_species_all_reactions, out, prio)
         return data_species_all_reactions.loc[filtered_reactions], \
             data_genes_assoc.loc[filtered_reactions], filtered_reactions
 
@@ -97,7 +97,7 @@ class Reactions:
                 break
             self.species_list.append(x)
 
-    def __get_filtered_reactions(self, data_all_reactions: 'pd.DataFrame', out: int, prio=None, exclude=None) \
+    def __get_filtered_reactions(self, data_all_reactions: 'pd.DataFrame', out: int, prio) \
             -> List[str]:
         """ Filter the reactions according to the number of species not having the reaction
 
@@ -117,8 +117,13 @@ class Reactions:
         filtered_reactions = []
         for reaction in data_all_reactions.index:
             count = sum(data_all_reactions.loc[reaction])
-            if count > nb_species - (out + 1):
+            if count > (out + 1):
                 filtered_reactions.append(reaction)
+            else:
+                if prio is not None:
+                    for p_sp in prio:
+                        if data_all_reactions.loc[reaction][p_sp] == 1:
+                            filtered_reactions.append(reaction)
         return filtered_reactions
 
     def __get_reactions_loss_1_species(self, species: str) -> Tuple[int, Set[str]]:
