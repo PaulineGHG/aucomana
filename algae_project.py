@@ -53,7 +53,14 @@ LAMINARIONEMA_E = 'Laminarionema_elsbetiae'
 
 # ### Class instances ###
 
-R01 = Reactions(DATA_FILE_01)
+BROWN_ALGAE_01 = ['Ectocarpus_fasciculatus_m', 'Undaria_pinnatifida_Kr2015', 'Desmarestia_herbacea_m',
+                  'Ectocarpus_siliculosus_m', 'Chordaria_linearis','Scytosiphon_promiscuus_MALE',
+                  'Cladosiphon_okamuranus', 'Pleurocladia_lacustris', 'Ectocarpus_crouaniorum_m',
+                  'Ectocarpus_siliculosus', 'Ectocarpus_subulatus','Fucus_serratus_MALE', 'Saccharina_latissima_FEMALE',
+                  'Dictyota_dichotoma_m', 'Nemacystus_decipiens', 'Porterinema_fluviatile', 'Laminarionema_elsbetiae',
+                  'Saccharina_japonica']
+
+R01 = Reactions(DATA_FILE_01, BROWN_ALGAE_01)
 R40 = Reactions(DATA_FILE_40, BROWN_ALGAE_40)
 RA0 = Reactions(DATA_FILE_A0)
 RA1 = Reactions(DATA_FILE_A1)

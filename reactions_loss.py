@@ -97,7 +97,7 @@ class Reactions:
                 break
             self.species_list.append(x)
 
-    def __get_filtered_reactions(self, data_all_reactions: 'pd.DataFrame', out: int) \
+    def __get_filtered_reactions(self, data_all_reactions: 'pd.DataFrame', out: int, prio=None, exclude=None) \
             -> List[str]:
         """ Filter the reactions according to the number of species not having the reaction
 
@@ -217,7 +217,7 @@ class Reactions:
                                 o.write(line)
 
     @classmethod
-    def get_common_reactions(cls, datas: List["Reactions"], species: str, output_file=None) \
+    def get_common_reactions(cls, datas: List["Reactions"], species: str, output_file=False) \
             -> Tuple[int, Set[str]]:
         """ Returns the reactions lost in common between at least 2 Reactions instance for 1
         common species
@@ -228,10 +228,9 @@ class Reactions:
             List of Reactions instance to compare
         species : str
             Species of interest compare
-        output_file : str, optional (default=None)
-            'json' to write output in a .json file
-            'txt' to write output in a .txt file
-            None to return the output
+        output_file : bool, optional (default=False)
+            True : write json and txt output
+            False : returns the output
 
         Returns
         -------
@@ -242,16 +241,12 @@ class Reactions:
         for data in datas:
             set_reac_list.append(data.reactions_loss[species][1])
         common_reactions = set.intersection(*set_reac_list)
-        if output_file is None:
-            return len(common_reactions), common_reactions
-        elif output_file == "json":
+        if output_file:
             cls.nb_common_reac += 1
             cls.__write_common_reactions_json(datas, common_reactions, species)
-        elif output_file == "txt":
-            cls.nb_common_reac += 1
             cls.__write_common_reactions_txt(datas, common_reactions, species)
         else:
-            raise ValueError("output_file value must be 'json' or 'txt'")
+            return len(common_reactions), common_reactions
 
     @classmethod
     def __write_common_reactions_txt(cls, datas_list: List["Reactions"],
