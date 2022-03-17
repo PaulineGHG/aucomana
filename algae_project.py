@@ -11,8 +11,32 @@ def reactions_from_file(file):
     return reactions
 
 
-JSON = "json"
-TXT = "txt"
+def get_brown_algae_l(reactions_file, organisms_file):
+    with open(organisms_file, "r") as org_f, open(reactions_file, "r") as rea_f:
+        species_l = set()
+        brown_l = []
+        for l in rea_f:
+            l = l.split("\t")
+            for x in l[1:]:
+                if x[-7:] == '(sep=;)':
+                    break
+                species_l.add(x)
+            break
+        for l in org_f:
+            l = l.split()
+            if l[1] == "brown" and l[0] in species_l:
+                brown_l.append(l[0])
+        return brown_l
+
+
+def write_cut_reactions_file(original_file, cut_nb):
+    name = original_file.split("/")[-1]
+    with open(original_file, "r") as f, open(f"outputs/cut_reactions_data/cut{cut_nb}_{name}", "w") as o:
+        for line in f:
+            l = line.split("\t")
+            if l[0] in reac_list or l[0] == "reaction":
+                o.write(line)
+
 
 # ###Description ###
 
@@ -24,12 +48,14 @@ TXT = "txt"
 
 # ### FILES ####
 
-DATA_FILE_01 = "data/run01_reactions.tsv"
-DATA_FILE_40 = 'data/run40_reactions.tsv'
-DATA_FILE_A0 = 'data/runA0_reactions.tsv'
-DATA_FILE_A1 = 'data/runA1_reactions.tsv'
-DATA_FILE_A2 = 'data/runA2_reactions.tsv'
+DATA_FILE_01 = "data/reactions_data/run01_reactions.tsv"
+DATA_FILE_03 = "data/reactions_data/run03_reactions.tsv"
+DATA_FILE_40 = 'data/reactions_data/run40_reactions.tsv'
+DATA_FILE_A0 = 'data/reactions_data/runA0_reactions.tsv'
+DATA_FILE_A1 = 'data/reactions_data/runA1_reactions.tsv'
+DATA_FILE_A2 = 'data/reactions_data/runA2_reactions.tsv'
 DATA_LELSB_LOSSES = "data/Lelsb_losses.ods"
+ORG_TSV = "data/species_group.tsv"
 
 # ### Select species ###
 
@@ -53,24 +79,15 @@ LAMINARIONEMA_E = 'Laminarionema_elsbetiae'
 
 # ### Class instances ###
 
-BROWN_ALGAE_01 = ['Ectocarpus_fasciculatus_m', 'Undaria_pinnatifida_Kr2015', 'Desmarestia_herbacea_m',
-                  'Ectocarpus_siliculosus_m', 'Chordaria_linearis','Scytosiphon_promiscuus_MALE',
-                  'Cladosiphon_okamuranus', 'Pleurocladia_lacustris', 'Ectocarpus_crouaniorum_m',
-                  'Ectocarpus_siliculosus', 'Ectocarpus_subulatus','Fucus_serratus_MALE', 'Saccharina_latissima_FEMALE',
-                  'Dictyota_dichotoma_m', 'Nemacystus_decipiens', 'Porterinema_fluviatile', 'Laminarionema_elsbetiae',
-                  'Saccharina_japonica']
-
-BROWN_ALGAE_03 = ["Saccharina_latissima_FEMALE", "Scytosiphon_promiscuus_MALE", "Ectocarpus_siliculosus_m",
-                  "Ectocarpus_crouaniorum_m", "Ectocarpus_fasciculatus_m", "Laminarionema_elsbetiae",
-                  "Fucus_serratus_MALE", "Porterinema_fluviatile", "Pleurocladia_lacustris", "Chordaria_linearis",
-                  "Desmarestia_herbacea_m", "Dictyota_dichotoma_m"]
+BROWN_ALGAE_01 = get_brown_algae_l(DATA_FILE_01, ORG_TSV)
+BROWN_ALGAE_03 = get_brown_algae_l(DATA_FILE_03, ORG_TSV)
 
 # R01 = Reactions(DATA_FILE_01, BROWN_ALGAE_01, out=2, prio=("Dictyota_dichotoma_m", "Desmarestia_herbacea_m"))
 # R40 = Reactions(DATA_FILE_40, BROWN_ALGAE_40)
 # RA0 = Reactions(DATA_FILE_A0)
 # RA1 = Reactions(DATA_FILE_A1)
 # RA2 = Reactions(DATA_FILE_A2)
-R03 = Reactions("data/reactions_data/run03_reactions.tsv", BROWN_ALGAE_03, out=3, prio=("Dictyota_dichotoma_m", "Desmarestia_herbacea_m", "Fucus_serratus_MALE"))
+R03 = Reactions(DATA_FILE_03, BROWN_ALGAE_03, out=3, prio=("Dictyota_dichotoma_m", "Desmarestia_herbacea_m", "Fucus_serratus_MALE"))
 
 reac_lostA = reactions_from_file(DATA_LELSB_LOSSES)
 
@@ -105,8 +122,4 @@ reac_lostA = reactions_from_file(DATA_LELSB_LOSSES)
 reac_list = R03.reactions_list
 print(len(reac_list))
 
-with open("data/reactions_data/run03_reactions.tsv", "r") as f, open("outputs/cut_reactions_data/cut2_run03_reactions.tsv", "w") as o:
-    for line in f:
-        l = line.split("\t")
-        if l[0] in reac_list or l[0] == "reaction":
-            o.write(line)
+write_cut_reactions_file(DATA_FILE_03, 3)

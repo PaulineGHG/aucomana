@@ -17,7 +17,8 @@ setwd("~/Documents/Reactions_loss")
 
 # load data
 
-reactions_dataframe = read.table("outputs/cut_run01_reactions.tsv", sep = "\t", header = T, row.names = "reaction")
+name = "run03"
+reactions_dataframe = read.table("data/reactions_data/run03_reactions.tsv", sep = "\t", header = T, row.names = "reaction")
 reactions_dataframe = select(reactions_dataframe, -colnames(select(reactions_dataframe, ends_with("..sep...") | ends_with("_formula"))))
 
 result = pvclust(reactions_dataframe, method.dist="binary", method.hclust="complete", nboot=10000, parallel=TRUE)
@@ -64,7 +65,7 @@ get_lab_colors = function(dendrogram){
   return(col_lab)
 }
 
-get_lr_nodes = function(dendrogram){
+get_lr_leaves = function(dendrogram){
   lab = labels(dendrogram)
   col_pch = rep(0, length(lab))
   pch = rep(NA, length(lab))
@@ -106,8 +107,7 @@ d_col_lab = get_lab_colors(dend)
 # d_nodes_list = get_nodes(dend)
 # d_nodes_col = d_nodes_list[[1]]
 # d_nodes_pch = d_nodes_list[[2]]
-d_leaf = get_lr_nodes(dend)
-d_leaf_pch = d_leaf[[1]] ; d_leaf_pchcol = d_leaf[[2]] 
+d_leaf = get_lr_leaves(dend) ; d_leaf_pch = d_leaf[[1]] ; d_leaf_pchcol = d_leaf[[2]] 
 
 dend = dend %>% 
   set("branches_lwd", 2) %>% 
@@ -122,7 +122,7 @@ dend = dend %>%
   sort(type = "nodes") 
 
 par(mar=c(3,3,1,15))
-plot_horiz.dendrogram(dend, side = F, edge.root = T)
+plot_horiz.dendrogram(dend, side = F, edge.root = T, main = paste(name, " Predicted phylogeny"))
 plot(result)
 
 # phylo tree
@@ -132,7 +132,7 @@ phylo = chronos(phylo)
 phylo = as.dendrogram(phylo)
 
 p_col_lab = get_lab_colors(phylo)
-p_leaf = get_lr_nodes(phylo)
+p_leaf = get_lr_leaves(phylo)
 p_leaf_pch = p_leaf[[1]] ; p_leaf_pchcol = p_leaf[[2]] 
 
 phylo = phylo %>% 
@@ -149,6 +149,6 @@ col_lines = get_lab_colors(phylo)
 plot_horiz.dendrogram(phylo, side = F)
 d1 = dendlist(phylo, dend)
 tanglegram(d1, margin_inner = 13, color_lines = col_lines, lwd = 2, 
-           main_left = "Original phylogeny", main_right = "Predicted phylogeny",
-           margin_outer = 2)
+           main_left = "Original phylogeny", main_right = paste(name, "\nPredicted phylogeny"),
+           margin_outer = 2, margin_top = 5)
 
