@@ -99,29 +99,29 @@ class Reactions:
 
     # ##### GET FILTERED REACTIONS, TESTS #######
 
-    # def __get_filtered_reactions(self, data_all_reactions: 'pd.DataFrame', out: int, prio) \
-    #         -> List[str]:
-    #     """ Filter the reactions according to the number of species not having the reaction
-    #
-    #     Parameters
-    #     ----------
-    #     data_all_reactions:
-    #         Dataframe with filtered columns and unfiltered reactions (rows)
-    #     out: int
-    #         number of species maximum not having the reaction for the reaction to be kept
-    #
-    #     Returns
-    #     -------
-    #     filtered_reactions : List[str]
-    #         List of reactions filtered
-    #     """
-    #     nb_species = len(self.species_list)
-    #     filtered_reactions = []
-    #     for reaction in data_all_reactions.index:
-    #         count = sum(data_all_reactions.loc[reaction])
-    #         if count > nb_species - (out + 1):
-    #             filtered_reactions.append(reaction)
-    #     return filtered_reactions
+    def __get_filtered_reactions(self, data_all_reactions: 'pd.DataFrame', out: int, prio) \
+            -> List[str]:
+        """ Filter the reactions according to the number of species not having the reaction
+
+        Parameters
+        ----------
+        data_all_reactions:
+            Dataframe with filtered columns and unfiltered reactions (rows)
+        out: int
+            number of species maximum not having the reaction for the reaction to be kept
+
+        Returns
+        -------
+        filtered_reactions : List[str]
+            List of reactions filtered
+        """
+        nb_species = len(self.species_list)
+        filtered_reactions = []
+        for reaction in data_all_reactions.index:
+            count = sum(data_all_reactions.loc[reaction])
+            if count > nb_species - (out + 1):
+                filtered_reactions.append(reaction)
+        return filtered_reactions
 
     # def __get_filtered_reactions(self, data_all_reactions: 'pd.DataFrame', out: int, prio) \
     #         -> Set[str]:
@@ -152,34 +152,37 @@ class Reactions:
     #                         filtered_reactions.add(reaction)
     #     return filtered_reactions
 
-    def __get_filtered_reactions(self, data_all_reactions: 'pd.DataFrame', out: int, prio) \
-            -> Set[str]:
-        """ Filter the reactions according to the number of species not having the reaction
-
-        Parameters
-        ----------
-        data_all_reactions:
-            Dataframe with filtered columns and unfiltered reactions (rows)
-        out: int
-            number of species maximum not having the reaction for the reaction to be kept
-
-        Returns
-        -------
-        filtered_reactions : List[str]
-            List of reactions filtered
-        """
-        nb_species = len(self.species_list)
-        filtered_reactions = set()
-        for reaction in data_all_reactions.index:
-            count = sum(data_all_reactions.loc[reaction])
-            if count > (out + 1):
-                filtered_reactions.add(reaction)
-            else:
-                if prio is not None:
-                    for p_sp in prio:
-                        if data_all_reactions.loc[reaction][p_sp] == 1:
-                            filtered_reactions.add(reaction)
-        return filtered_reactions
+    # def __get_filtered_reactions(self, data_all_reactions: 'pd.DataFrame', out: int, prio) \
+    #         -> Set[str]:
+    #     """ Filter the reactions according to the number of species not having the reaction
+    #
+    #     Parameters
+    #     ----------
+    #     data_all_reactions:
+    #         Dataframe with filtered columns and unfiltered reactions (rows)
+    #     out: int
+    #         number of species maximum not having the reaction for the reaction to be kept
+    #
+    #     Returns
+    #     -------
+    #     filtered_reactions : List[str]
+    #         List of reactions filtered
+    #     """
+    #     nb_species = len(self.species_list)
+    #     filtered_reactions = set()
+    #     for reaction in data_all_reactions.index:
+    #         count = sum(data_all_reactions.loc[reaction])
+    #         if count > out:
+    #             filtered_reactions.add(reaction)
+    #         else:
+    #             if prio is not None:
+    #                 add = True
+    #                 for p_sp in prio:
+    #                     if data_all_reactions.loc[reaction][p_sp] == 1:
+    #                         add = False
+    #                 if add:
+    #                     filtered_reactions.add(reaction)
+    #     return filtered_reactions
 
     # ##### END GET FILTERED REACTIONS, TESTS #######
 

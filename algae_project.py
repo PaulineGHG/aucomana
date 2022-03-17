@@ -87,7 +87,7 @@ BROWN_ALGAE_03 = get_brown_algae_l(DATA_FILE_03, ORG_TSV)
 # RA0 = Reactions(DATA_FILE_A0)
 # RA1 = Reactions(DATA_FILE_A1)
 # RA2 = Reactions(DATA_FILE_A2)
-R03 = Reactions(DATA_FILE_03, BROWN_ALGAE_03, out=3, prio=("Dictyota_dichotoma_m", "Desmarestia_herbacea_m", "Fucus_serratus_MALE"))
+R03 = Reactions(DATA_FILE_03, BROWN_ALGAE_03, out=1)
 
 reac_lostA = reactions_from_file(DATA_LELSB_LOSSES)
 
@@ -122,4 +122,4 @@ reac_lostA = reactions_from_file(DATA_LELSB_LOSSES)
 reac_list = R03.reactions_list
 print(len(reac_list))
 
-write_cut_reactions_file(DATA_FILE_03, 3)
+write_cut_reactions_file(DATA_FILE_03, 4)
