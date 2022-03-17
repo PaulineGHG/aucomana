@@ -32,7 +32,7 @@ class Reactions:
     nb_genes_assoc = 0
     STR_GENE_ASSOC = "_genes_assoc (sep=;)"
 
-    def __init__(self, file_reactions_tsv: str, species_list: List[str] = None, out: int = 2, prio=None):
+    def __init__(self, file_reactions_tsv: str, species_list: List[str] = None, out: int = 1, prio=None):
         """ Init the Reactions class
 
         Parameters
@@ -80,8 +80,8 @@ class Reactions:
         genes_assoc_list = [x + self.STR_GENE_ASSOC for x in self.species_list]
         data_genes_assoc = data[genes_assoc_list]
         filtered_reactions = self.__get_filtered_reactions(data_species_all_reactions, out, prio)
-        return data_species_all_reactions.loc[filtered_reactions], \
-            data_genes_assoc.loc[filtered_reactions], filtered_reactions
+        return data_species_all_reactions.loc[list(filtered_reactions)], \
+            data_genes_assoc.loc[list(filtered_reactions)], filtered_reactions
 
     def __generate_species_list(self, data: 'pd.DataFrame'):
         """ Generate the species_list attribute if is None
@@ -97,8 +97,34 @@ class Reactions:
                 break
             self.species_list.append(x)
 
+    # ##### GET FILTERED REACTIONS, TESTS #######
+
+    # def __get_filtered_reactions(self, data_all_reactions: 'pd.DataFrame', out: int, prio) \
+    #         -> List[str]:
+    #     """ Filter the reactions according to the number of species not having the reaction
+    #
+    #     Parameters
+    #     ----------
+    #     data_all_reactions:
+    #         Dataframe with filtered columns and unfiltered reactions (rows)
+    #     out: int
+    #         number of species maximum not having the reaction for the reaction to be kept
+    #
+    #     Returns
+    #     -------
+    #     filtered_reactions : List[str]
+    #         List of reactions filtered
+    #     """
+    #     nb_species = len(self.species_list)
+    #     filtered_reactions = []
+    #     for reaction in data_all_reactions.index:
+    #         count = sum(data_all_reactions.loc[reaction])
+    #         if count > nb_species - (out + 1):
+    #             filtered_reactions.append(reaction)
+    #     return filtered_reactions
+
     def __get_filtered_reactions(self, data_all_reactions: 'pd.DataFrame', out: int, prio) \
-            -> List[str]:
+            -> Set[str]:
         """ Filter the reactions according to the number of species not having the reaction
 
         Parameters
@@ -114,17 +140,19 @@ class Reactions:
             List of reactions filtered
         """
         nb_species = len(self.species_list)
-        filtered_reactions = []
+        filtered_reactions = set()
         for reaction in data_all_reactions.index:
             count = sum(data_all_reactions.loc[reaction])
             if count > (out + 1):
-                filtered_reactions.append(reaction)
+                filtered_reactions.add(reaction)
             else:
                 if prio is not None:
                     for p_sp in prio:
                         if data_all_reactions.loc[reaction][p_sp] == 1:
-                            filtered_reactions.append(reaction)
+                            filtered_reactions.add(reaction)
         return filtered_reactions
+
+    # ##### GET FILTERED REACTIONS, END TESTS #######
 
     def __get_reactions_loss_1_species(self, species: str) -> Tuple[int, Set[str]]:
         """ Capture the reaction lost for a given species

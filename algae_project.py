@@ -60,11 +60,17 @@ BROWN_ALGAE_01 = ['Ectocarpus_fasciculatus_m', 'Undaria_pinnatifida_Kr2015', 'De
                   'Dictyota_dichotoma_m', 'Nemacystus_decipiens', 'Porterinema_fluviatile', 'Laminarionema_elsbetiae',
                   'Saccharina_japonica']
 
-R01 = Reactions(DATA_FILE_01, BROWN_ALGAE_01, prio=("Dictyota_dichotoma_m", "Desmarestia_herbacea_m"))
+BROWN_ALGAE_03 = ["Saccharina_latissima_FEMALE", "Scytosiphon_promiscuus_MALE", "Ectocarpus_siliculosus_m",
+                  "Ectocarpus_crouaniorum_m", "Ectocarpus_fasciculatus_m", "Laminarionema_elsbetiae",
+                  "Fucus_serratus_MALE", "Porterinema_fluviatile", "Pleurocladia_lacustris", "Chordaria_linearis",
+                  "Desmarestia_herbacea_m", "Dictyota_dichotoma_m"]
+
+# R01 = Reactions(DATA_FILE_01, BROWN_ALGAE_01, out=2, prio=("Dictyota_dichotoma_m", "Desmarestia_herbacea_m"))
 # R40 = Reactions(DATA_FILE_40, BROWN_ALGAE_40)
 # RA0 = Reactions(DATA_FILE_A0)
 # RA1 = Reactions(DATA_FILE_A1)
 # RA2 = Reactions(DATA_FILE_A2)
+R03 = Reactions("data/reactions_data/run03_reactions.tsv", BROWN_ALGAE_03, out=3, prio=("Dictyota_dichotoma_m", "Desmarestia_herbacea_m", "Fucus_serratus_MALE"))
 
 reac_lostA = reactions_from_file(DATA_LELSB_LOSSES)
 
@@ -96,9 +102,10 @@ reac_lostA = reactions_from_file(DATA_LELSB_LOSSES)
 #                           Reactions.get_common_reactions([R01, R40, RA2], LAMINARIONEMA_E)[1],
 #                           output_file=True))
 
-reac_list = set(R01.reactions_list)
+reac_list = R03.reactions_list
+print(len(reac_list))
 
-with open("data/run01_reactions.tsv", "r") as f, open("outputs/cut_run01_reactions.tsv", "w") as o:
+with open("data/reactions_data/run03_reactions.tsv", "r") as f, open("outputs/cut_reactions_data/cut2_run03_reactions.tsv", "w") as o:
     for line in f:
         l = line.split("\t")
         if l[0] in reac_list or l[0] == "reaction":
