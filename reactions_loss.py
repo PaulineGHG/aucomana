@@ -32,7 +32,8 @@ class Reactions:
     nb_genes_assoc = 0
     STR_GENE_ASSOC = "_genes_assoc (sep=;)"
 
-    def __init__(self, file_reactions_tsv: str, species_list: List[str] = None, out: int = 1, prio=None):
+    def __init__(self, file_reactions_tsv: str, species_list: List[str] = None, out: int = None,
+                 prio=None):
         """ Init the Reactions class
 
         Parameters
@@ -97,8 +98,6 @@ class Reactions:
                 break
             self.species_list.append(x)
 
-    # ##### GET FILTERED REACTIONS, TESTS #######
-
     def __get_filtered_reactions(self, data_all_reactions: 'pd.DataFrame', out: int, prio) \
             -> List[str]:
         """ Filter the reactions according to the number of species not having the reaction
@@ -116,6 +115,8 @@ class Reactions:
             List of reactions filtered
         """
         nb_species = len(self.species_list)
+        if out is None:
+            out = nb_species
         filtered_reactions = []
         for reaction in data_all_reactions.index:
             count = sum(data_all_reactions.loc[reaction])
@@ -184,8 +185,6 @@ class Reactions:
     #                     filtered_reactions.add(reaction)
     #     return filtered_reactions
 
-    # ##### END GET FILTERED REACTIONS, TESTS #######
-
     def __get_reactions_loss_1_species(self, species: str) -> Tuple[int, Set[str]]:
         """ Capture the reaction lost for a given species
 
@@ -217,6 +216,12 @@ class Reactions:
         for species in self.species_list:
             reactions_loss[species] = self.__get_reactions_loss_1_species(species)
         return reactions_loss
+
+    def get_reaction_nb(self, species_l: List[str]):
+        reactions_nb_dict = {}
+        for species in species_l:
+            reactions_nb_dict[species] = sum(self.data_reactions[species])
+        return reactions_nb_dict
 
     def get_genes_assoc(self, interest_species: str,  reactions_set: Set[str] = None,
                         output_file=False) -> Dict[str, Dict[str, List[str]]]:

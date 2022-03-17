@@ -87,7 +87,7 @@ BROWN_ALGAE_03 = get_brown_algae_l(DATA_FILE_03, ORG_TSV)
 # RA0 = Reactions(DATA_FILE_A0)
 # RA1 = Reactions(DATA_FILE_A1)
 # RA2 = Reactions(DATA_FILE_A2)
-R03 = Reactions(DATA_FILE_03, BROWN_ALGAE_03, out=1)
+R03 = Reactions(DATA_FILE_03)
 
 reac_lostA = reactions_from_file(DATA_LELSB_LOSSES)
 
@@ -120,6 +120,7 @@ reac_lostA = reactions_from_file(DATA_LELSB_LOSSES)
 #                           output_file=True))
 
 reac_list = R03.reactions_list
-print(len(reac_list))
 
-write_cut_reactions_file(DATA_FILE_03, 4)
+# write_cut_reactions_file(DATA_FILE_03, 4)
+
+print(R03.get_reaction_nb(R03.species_list))
