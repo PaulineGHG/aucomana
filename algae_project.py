@@ -1,5 +1,6 @@
 from reactions_loss import Reactions
 from pandas_ods_reader import read_ods
+import matplotlib.pyplot as plt
 
 
 def reactions_from_file(file):
@@ -123,4 +124,6 @@ reac_list = R03.reactions_list
 
 # write_cut_reactions_file(DATA_FILE_03, 4)
 
-print(R03.get_reaction_nb(R03.species_list))
+dic_rec_nb = R03.get_reaction_nb(R03.species_list)
+dic_rec_nb = dict(sorted(dic_rec_nb.items(), key=lambda item: item[1]))
+

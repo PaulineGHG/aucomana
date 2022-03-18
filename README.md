@@ -34,6 +34,9 @@ Contains output files for each reaction in fasta containing each protein sequenc
 ### cut_reactions_data
 
 reactions.tsv files cut according to selected reactions
+cut 1 : Dictoya + Desmerastia
+cut 2 : Dictoya + Desmerastia + Fucus
+cut 3 : Pleurocladia + Saccharina
 
 ### dendrogram_comp
 

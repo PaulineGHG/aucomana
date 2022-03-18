@@ -17,7 +17,7 @@ setwd("~/Documents/Reactions_loss")
 
 # load data
 
-name = "cut3 run03"
+name = "Run 03 : cut 2 misplaced"
 reactions_dataframe = read.table("outputs/cut_reactions_data/cut3_run03_reactions.tsv", sep = "\t", header = T, row.names = "reaction")
 reactions_dataframe = select(reactions_dataframe, -colnames(select(reactions_dataframe, ends_with("..sep...") | ends_with("_formula"))))
 
@@ -121,8 +121,9 @@ dend = dend %>%
   # set("nodes_col", d_nodes_col) %>%
   sort(type = "nodes") 
 
+
 par(mar=c(3,3,1,15))
-plot_horiz.dendrogram(dend, side = F, edge.root = T, main = paste(name, " Predicted phylogeny"))
+plot_horiz.dendrogram(dend, side = F, edge.root = T, main = paste(name, " Metabolic Dendrogram"))
 plot(result)
 
 # phylo tree
@@ -149,6 +150,9 @@ col_lines = get_lab_colors(phylo)
 plot_horiz.dendrogram(phylo, side = F)
 d1 = dendlist(phylo, dend)
 tanglegram(d1, margin_inner = 13, color_lines = col_lines, lwd = 2, 
-           main_left = "Original phylogeny", main_right = paste(name, "\nPredicted phylogeny"),
+           main_left = "Original phylogeny", main_right = paste(name, "\nMetabolic Dendrogram"),
            margin_outer = 2, margin_top = 5)
+
+
+barplot(as.matrix(reactions_dataframe), las = 2, cex.names = 0.7)
 
