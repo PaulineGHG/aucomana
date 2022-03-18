@@ -84,12 +84,12 @@ BROWN_ALGAE_01 = get_brown_algae_l(DATA_FILE_01, ORG_TSV)
 BROWN_ALGAE_03 = get_brown_algae_l(DATA_FILE_03, ORG_TSV)
 BROWN_ALGAE_A2 = get_brown_algae_l(DATA_FILE_A2, ORG_TSV)
 
-R01 = Reactions(DATA_FILE_01, BROWN_ALGAE_01)
-R40 = Reactions(DATA_FILE_40, BROWN_ALGAE_40)
+R01 = Reactions(DATA_FILE_01, BROWN_ALGAE_01, out=1)
+R40 = Reactions(DATA_FILE_40, BROWN_ALGAE_40, out=1)
 RA0 = Reactions(DATA_FILE_A0)
 RA1 = Reactions(DATA_FILE_A1)
-RA2 = Reactions(DATA_FILE_A2, BROWN_ALGAE_A2)
-R03 = Reactions(DATA_FILE_03, BROWN_ALGAE_03)
+RA2 = Reactions(DATA_FILE_A2, BROWN_ALGAE_A2, out=1)
+R03 = Reactions(DATA_FILE_03, BROWN_ALGAE_03, out=1)
 
 reac_lostA = reactions_from_file(DATA_LELSB_LOSSES)
 
