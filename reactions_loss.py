@@ -81,8 +81,8 @@ class Reactions:
         genes_assoc_list = [x + self.STR_GENE_ASSOC for x in self.species_list]
         data_genes_assoc = data[genes_assoc_list]
         filtered_reactions = self.__get_filtered_reactions(data_species_all_reactions, out, prio)
-        return data_species_all_reactions.loc[list(filtered_reactions)], \
-            data_genes_assoc.loc[list(filtered_reactions)], filtered_reactions
+        return data_species_all_reactions.loc[filtered_reactions], \
+            data_genes_assoc.loc[filtered_reactions], filtered_reactions
 
     def __generate_species_list(self, data: 'pd.DataFrame'):
         """ Generate the species_list attribute if is None
