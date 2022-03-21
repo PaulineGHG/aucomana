@@ -119,7 +119,7 @@ reac_lostA = reactions_from_file(DATA_LELSB_LOSSES)
 # print(R01.get_genes_assoc(LAMINARIONEMA_E,
 #                           Reactions.get_common_reactions([R01, R40, RA2], LAMINARIONEMA_E)[1],
 #                           output_file=True))
-R01.get_genes_assoc(LAMINARIONEMA_E, {'LEUKOTRIENE-C4-SYNTHASE-RXN', 'PROSTAGLANDIN-E-SYNTHASE-RXN'}, output_file=True)
+# R01.get_genes_assoc(LAMINARIONEMA_E, {'LEUKOTRIENE-C4-SYNTHASE-RXN', 'PROSTAGLANDIN-E-SYNTHASE-RXN'}, output_file=True)
 
 # write_cut_reactions_file(DATA_FILE_03, 4)
 
