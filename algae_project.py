@@ -1,6 +1,5 @@
 from reactions_loss import Reactions
 from pandas_ods_reader import read_ods
-import matplotlib.pyplot as plt
 
 
 def reactions_from_file(file):
@@ -126,4 +125,5 @@ reac_list = R03.reactions_list
 # write_cut_reactions_file(DATA_FILE_03, 4)
 
 Reactions.get_common_reactions([R01, R40, RA2, R03], LAMINARIONEMA_E, output_file=True)
+Reactions.get_common_reactions([R01, R40, RA2, R03], LAMINARIONEMA_E, output_file=True, union=True)
 

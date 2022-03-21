@@ -287,8 +287,8 @@ class Reactions:
                                 o.write(line)
 
     @classmethod
-    def get_common_reactions(cls, datas: List["Reactions"], species: str, output_file=False) \
-            -> Tuple[int, Set[str]]:
+    def get_common_reactions(cls, datas: List["Reactions"], species: str, output_file=False,
+                             union=False) -> Tuple[int, Set[str]]:
         """ Returns the reactions lost in common between at least 2 Reactions instance for 1
         common species
 
@@ -310,17 +310,20 @@ class Reactions:
         set_reac_list = []
         for data in datas:
             set_reac_list.append(data.reactions_loss[species][1])
-        common_reactions = set.intersection(*set_reac_list)
+        if not union:
+            common_reactions = set.intersection(*set_reac_list)
+        else:
+            common_reactions = set.union(*set_reac_list)
         if output_file:
             cls.nb_common_reac += 1
-            cls.__write_common_reactions_json(datas, common_reactions, species)
-            cls.__write_common_reactions_txt(datas, common_reactions, species)
+            cls.__write_common_reactions_json(datas, common_reactions, species, union)
+            cls.__write_common_reactions_txt(datas, common_reactions, species, union)
         else:
             return len(common_reactions), common_reactions
 
     @classmethod
     def __write_common_reactions_txt(cls, datas_list: List["Reactions"],
-                                     common_reactions: Set[str], species: str):
+                                     common_reactions: Set[str], species: str, union: bool):
         """Write get_common_reactions results in a .txt file
 
         Parameters
@@ -332,7 +335,10 @@ class Reactions:
         species : str
             Interest species
         """
-        outfile_name = f'outputs/common_reac/analyse_{cls.nb_common_reac}.txt'
+        if not union:
+            outfile_name = f'outputs/common_reac/analyse_{cls.nb_common_reac}.txt'
+        else:
+            outfile_name = f'outputs/union_reac/analyse_{cls.nb_common_reac}.txt'
         with open(outfile_name, 'w') as o:
             o.write("Compared files :\n"
                     "----------------\n")
@@ -350,7 +356,7 @@ class Reactions:
 
     @classmethod
     def __write_common_reactions_json(cls, datas_list: List["Reactions"],
-                                      common_reactions: Set[str], species: str):
+                                      common_reactions: Set[str], species: str, union: bool):
         """Write get_common_reactions results in a .json file
 
        Parameters
@@ -362,7 +368,10 @@ class Reactions:
        species : str
            Interest species
        """
-        outfile_name = f'outputs/common_reac/analyse_{cls.nb_common_reac}.json'
+        if not union:
+            outfile_name = f'outputs/common_reac/analyse_{cls.nb_common_reac}.json'
+        else:
+            outfile_name = f'outputs/union_reac/analyse_{cls.nb_common_reac}.json'
         data = {"Compared files": [data.name for data in datas_list],
                 "Interest species": species,
                 "Number of common reactions": len(common_reactions),
