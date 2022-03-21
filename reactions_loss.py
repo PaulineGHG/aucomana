@@ -258,7 +258,7 @@ class Reactions:
             self.write_genes(genes_assoc, interest_species)
 
     def write_genes(self, genes_assoc, interest_species):
-        fa_file_path = f"data/{self.name.split('_')[0]}_studied_organism/"
+        fa_file_path = f"data/{self.name.split('_')[0]}_studied_organisms/"
         if not os.path.exists(f"outputs/genes_assoc/{self.nb_genes_assoc}_{interest_species}/"):
             os.makedirs(f"outputs/genes_assoc/{self.nb_genes_assoc}_{interest_species}/")
         file_out_json = f"outputs/genes_assoc/{self.nb_genes_assoc}_{interest_species}/" \
