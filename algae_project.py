@@ -123,6 +123,6 @@ reac_lostA = reactions_from_file(DATA_LELSB_LOSSES)
 
 # write_cut_reactions_file(DATA_FILE_03, 4)
 
-Reactions.get_common_reactions([R01, R40, RA2, R03], LAMINARIONEMA_E, output_file=True)
-Reactions.get_common_reactions([R01, R40, RA2, R03], LAMINARIONEMA_E, output_file=True, union=True)
+# Reactions.get_common_reactions([R01, R40, RA2, R03], LAMINARIONEMA_E, output_file=True)
+# Reactions.get_common_reactions([R01, R40, RA2, R03], LAMINARIONEMA_E, output_file=True, union=True)
 
