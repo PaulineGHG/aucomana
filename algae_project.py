@@ -29,7 +29,7 @@ def get_brown_algae_l(reactions_file, organisms_file):
         return brown_l
 
 
-def write_cut_reactions_file(original_file, cut_nb):
+def write_cut_reactions_file(original_file, cut_nb, reac_list):
     name = original_file.split("/")[-1]
     with open(original_file, "r") as f, open(f"outputs/cut_reactions_data/cut{cut_nb}_{name}", "w") as o:
         for line in f:
