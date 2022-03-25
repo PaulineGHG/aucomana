@@ -1,5 +1,5 @@
 import unittest
-from reactions_loss import Reactions
+from reactions import Reactions
 from algae_project import get_brown_algae_l
 
 FILE_TEST = "data/reactions_data/runA1_reactions.tsv"

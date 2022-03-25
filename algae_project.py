@@ -1,4 +1,4 @@
-from reactions_loss import Reactions
+from reactions import Reactions
 from pandas_ods_reader import read_ods
 
 
