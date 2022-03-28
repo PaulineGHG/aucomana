@@ -1,11 +1,11 @@
 import unittest
 from reactions import Reactions
-from algae_project import get_brown_algae_l
+from algae_project import get_cat_l
 
 FILE_TEST = "data/reactions_data/runA1_reactions.tsv"
 ORG_TSV = "data/species_group.tsv"
 
-brown_algae = get_brown_algae_l(FILE_TEST, ORG_TSV)
+brown_algae = get_cat_l(FILE_TEST, ORG_TSV)
 
 R = Reactions(FILE_TEST)
 RS = Reactions(FILE_TEST, brown_algae)
@@ -33,7 +33,7 @@ class Test(unittest.TestCase):
         self.assertEqual(brown_algae, RS.species_list)
 
     def test_name(self):
-        self.assertEqual(R.name, 'runA1_reactions')
+        self.assertEqual(R.name, 'runA1')
 
     def test_reactions(self):
         self.assertEqual(3737, len(RS.reactions_list))

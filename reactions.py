@@ -2,9 +2,11 @@
 Reactions class
 """
 from typing import Dict, List, Tuple, Set
+from init_analysis import PATH_STUDY, PATH_RUNS
 import pandas as pd
 import json
 import os
+import datetime
 
 
 class Reactions:
@@ -32,8 +34,7 @@ class Reactions:
     nb_genes_assoc = 0
     STR_GENE_ASSOC = "_genes_assoc (sep=;)"
 
-    def __init__(self, file_reactions_tsv: str, species_list: List[str] = None, out: int = None,
-                 prio=None):
+    def __init__(self, file_reactions_tsv: str, species_list: List[str] = None, out: int = None):
         """ Init the Reactions class
 
         Parameters
@@ -46,15 +47,15 @@ class Reactions:
         out : int, optional (default = 1)
             number of species maximum not having the reaction for the reaction to be kept
         """
-        self.name = file_reactions_tsv.split(".")[0].split("/")[-1]
+        self.name = file_reactions_tsv.split(".")[0].split("/")[-1].split("_")[0]
         self.species_list = species_list
         self.data_reactions, \
             self.data_genes_assoc, \
-            self.reactions_list = self.__init_data(file_reactions_tsv, out, prio)
+            self.reactions_list = self.__init_data(file_reactions_tsv, out)
         self.nb_reactions, self.nb_species = self.data_reactions.shape
         self.reactions_loss = self.__init_reactions_loss()
 
-    def __init_data(self, file_reactions_tsv: str, out: int, prio) \
+    def __init_data(self, file_reactions_tsv: str, out: int) \
             -> Tuple['pd.DataFrame', 'pd.DataFrame', List[str]]:
         """ Generate the data_reactions, data_genes_assoc and reactions_list attributes
 
@@ -80,7 +81,7 @@ class Reactions:
         data_species_all_reactions = data[self.species_list]
         genes_assoc_list = [x + self.STR_GENE_ASSOC for x in self.species_list]
         data_genes_assoc = data[genes_assoc_list]
-        filtered_reactions = self.__get_filtered_reactions(data_species_all_reactions, out, prio)
+        filtered_reactions = self.__get_filtered_reactions(data_species_all_reactions, out)
         return data_species_all_reactions.loc[filtered_reactions], \
             data_genes_assoc.loc[filtered_reactions], filtered_reactions
 
@@ -98,7 +99,7 @@ class Reactions:
                 break
             self.species_list.append(x)
 
-    def __get_filtered_reactions(self, data_all_reactions: 'pd.DataFrame', out: int, prio) \
+    def __get_filtered_reactions(self, data_all_reactions: 'pd.DataFrame', out: int) \
             -> List[str]:
         """ Filter the reactions according to the number of species not having the reaction
 
@@ -258,19 +259,19 @@ class Reactions:
             self.write_genes(genes_assoc, interest_species)
 
     def write_genes(self, genes_assoc, interest_species):
-        fa_file_path = f"data/{self.name.split('_')[0]}_studied_organisms/"
-        if not os.path.exists(f"outputs/genes_assoc/{self.nb_genes_assoc}_{interest_species}/"):
-            os.makedirs(f"outputs/genes_assoc/{self.nb_genes_assoc}_{interest_species}/")
-        file_out_json = f"outputs/genes_assoc/{self.nb_genes_assoc}_{interest_species}/" \
-                        f"{self.name.split('_')[0]}_genes_assoc.json"
-        dir_out_fasta = f"outputs/genes_assoc/{self.nb_genes_assoc}_{interest_species}/"
+        fa_file_path = f"{PATH_RUNS}/{self.name}/studied_organisms/"
+        now = datetime.datetime.now().strftime('%d_%m_%Y__%Hh_%Mmin_%Ss')
+        out_file = f"{PATH_STUDY}/output_data/reactions_data/genes_assoc/{now}_{self.nb_genes_assoc}/"
+        if not os.path.exists(out_file):
+            os.makedirs(out_file)
+        file_out_json = f"{out_file}{self.name}_genes_assoc.json"
 
         with open(file_out_json, 'w') as o:
             json.dump(genes_assoc, o, indent=4)
 
         genes_dict = genes_assoc[interest_species]
         for reaction, species_dict in genes_dict.items():
-            fasta = dir_out_fasta + reaction + ".fa"
+            fasta = f"{out_file}{reaction}.fa"
             with open(fasta, 'w') as o:
                 for species, genes_list in species_dict.items():
                     genes_fa = f"{fa_file_path}{species}/{species}.faa"
@@ -335,10 +336,13 @@ class Reactions:
         species : str
             Interest species
         """
+        now = datetime.datetime.now().strftime('%d_%m_%Y__%Hh_%Mmin_%Ss')
         if not union:
-            outfile_name = f'outputs/common_reac/analyse_{cls.nb_common_reac}.txt'
+            outfile_name = f'{PATH_STUDY}/output_data/reactions_data/common_reac/intersection/' \
+                           f'{now}_{cls.nb_common_reac}.txt'
         else:
-            outfile_name = f'outputs/union_reac/analyse_{cls.nb_common_reac}.txt'
+            outfile_name = f'{PATH_STUDY}/output_data/reactions_data/common_reac/union/{now}_' \
+                           f'{cls.nb_common_reac}.txt'
         with open(outfile_name, 'w') as o:
             o.write("Compared files :\n"
                     "----------------\n")
@@ -368,10 +372,13 @@ class Reactions:
        species : str
            Interest species
        """
+        now = datetime.datetime.now().strftime('%d_%m_%Y__%Hh_%Mmin_%Ss')
         if not union:
-            outfile_name = f'outputs/common_reac/analyse_{cls.nb_common_reac}.json'
+            outfile_name = f'{PATH_STUDY}/output_data/reactions_data/common_reac/intersection/' \
+                           f'{now}_{cls.nb_common_reac}.json'
         else:
-            outfile_name = f'outputs/union_reac/analyse_{cls.nb_common_reac}.json'
+            outfile_name = f'{PATH_STUDY}/output_data/reactions_data/common_reac/union/{now}_' \
+                           f'{cls.nb_common_reac}.json'
         data = {"Compared files": [data.name for data in datas_list],
                 "Interest species": species,
                 "Number of common reactions": len(common_reactions),

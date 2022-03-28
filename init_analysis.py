@@ -4,13 +4,12 @@ import shutil
 
 def create_folders(path_study):
     arbo = [['input_data'], ['output_data'],
-            ['input_data', 'pathways_data'],
-            ['input_data', 'reactions_data'],
-            ['input_data', 'genes_data'],
-            ['input_data', 'metabolites_data'],
+            ['output_data', 'dendro_tanglegrams'],
             ['output_data', 'pathways_data'],
             ['output_data', 'reactions_data'],
             ['output_data', 'reactions_data', 'common_reac'],
+            ['output_data', 'reactions_data', 'common_reac', 'union'],
+            ['output_data', 'reactions_data', 'common_reac', 'intersection'],
             ['output_data', 'reactions_data', 'genes_assoc'],
             ['output_data', 'genes_data'],
             ['output_data', 'metabolites_data'],
@@ -42,8 +41,10 @@ def copy_file_tsv(path_study, run, analysis_grp, grp, nw_obj):
         print(f'copy {r_file} in {r_dest}')
 
 
-path_studyhi = '/home/paulinehg/Documents/test_folder'
-p_r = '/home/paulinehg/Documents/Aucome_runs'
+PATH_STUDY = os.getcwd()
+PATH_RUNS = '/home/paulinehg/Documents/Aucome_runs'
 
-create_folders(path_studyhi)
-fill_input_auto(path_studyhi, p_r)
+# create_folders(PATH_STUDY)
+# fill_input_auto(PATH_STUDY, PATH_RUNS)
+
+

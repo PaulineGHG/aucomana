@@ -1,6 +1,7 @@
 from typing import Dict, List, Tuple, Set
 import pandas as pd
-from algae_project import get_brown_algae_l
+from algae_project import get_cat_l
+from init_analysis import PATH_STUDY
 
 
 class Pathways:
@@ -140,7 +141,7 @@ class Pathways:
 
 R_FILE_01 = "data/reactions_data/run01b_reactions.tsv"
 ORG_TSV = "data/species_group.tsv"
-BROWN_01 = get_brown_algae_l(R_FILE_01, ORG_TSV)
+BROWN_01 = get_cat_l(R_FILE_01, ORG_TSV, "brown")
 
 SLAT = "Saccharina_latissima_FEMALE"
 PLAC = "Pleurocladia_lacustris"

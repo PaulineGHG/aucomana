@@ -1,5 +1,7 @@
+import os
 from reactions import Reactions
 from pandas_ods_reader import read_ods
+from init_analysis import PATH_RUNS, PATH_STUDY
 
 
 def reactions_from_file(file):
@@ -11,7 +13,7 @@ def reactions_from_file(file):
     return reactions
 
 
-def get_brown_algae_l(reactions_file, organisms_file):
+def get_cat_l(reactions_file, organisms_file, cat):
     with open(organisms_file, "r") as org_f, open(reactions_file, "r") as rea_f:
         species_l = set()
         brown_l = []
@@ -24,7 +26,7 @@ def get_brown_algae_l(reactions_file, organisms_file):
             break
         for l in org_f:
             l = l.split()
-            if l[1] == "brown" and l[0] in species_l:
+            if l[1] == cat and l[0] in species_l:
                 brown_l.append(l[0])
         return brown_l
 
@@ -38,15 +40,18 @@ def write_cut_reactions_file(original_file, cut_nb, reac_list):
                 o.write(line)
 
 
-# ###Description ###
+def get_reactions_inst(path_runs, org_tsv, cat=None, out=None):
+    r_dic = {}
+    for run in os.listdir(path_runs):
+        r_path = os.path.join(path_runs, run, "analysis", "all", "reactions.tsv")
+        if os.path.exists(r_path):
+            if cat is not None:
+                cat = get_cat_l(r_path, org_tsv, cat)
+            r_dic[run] = Reactions(r_path, cat, out)
+    return r_dic
 
-# 40 : run 40+7
-# 01 : run Pauline all species
-# A0 : run Alexandre
-# A1 : run Pauline, Alexandre like exactly
-# A2 : run Pauline, Alexandre like improved
 
-# ### FILES ####
+# ### FILES #######################################################################################
 
 DATA_FILE_01 = "data/reactions_data/run01_reactions.tsv"
 DATA_FILE_03 = "data/reactions_data/run03_reactions.tsv"
@@ -57,7 +62,7 @@ DATA_FILE_A2 = 'data/reactions_data/runA2_reactions.tsv'
 DATA_LELSB_LOSSES = "data/Lelsb_losses.ods"
 ORG_TSV = "data/species_group.tsv"
 
-# ### Select species ###
+# ### Select species ##############################################################################
 
 BROWN_ALGAE_40 = ['Thalassiosira_pseudonana',
                   'Fragilariopsis_cylindrus',
@@ -74,55 +79,52 @@ BROWN_ALGAE_40 = ['Thalassiosira_pseudonana',
                   'Laminarionema_elsbetiae',
                   'Saccharina_japonica',
                   'Undaria_pinnatifida']
+LELSB = 'Laminarionema_elsbetiae'
 
-LAMINARIONEMA_E = 'Laminarionema_elsbetiae'
+# ### Class instances #############################################################################
 
-# ### Class instances ###
-
-BROWN_ALGAE_01 = get_brown_algae_l(DATA_FILE_01, ORG_TSV)
-BROWN_ALGAE_03 = get_brown_algae_l(DATA_FILE_03, ORG_TSV)
-BROWN_ALGAE_A2 = get_brown_algae_l(DATA_FILE_A2, ORG_TSV)
-
-R01 = Reactions(DATA_FILE_01, BROWN_ALGAE_01, out=1)
-R40 = Reactions(DATA_FILE_40, BROWN_ALGAE_40, out=1)
-RA0 = Reactions(DATA_FILE_A0)
-RA1 = Reactions(DATA_FILE_A1)
-RA2 = Reactions(DATA_FILE_A2, BROWN_ALGAE_A2, out=1)
-R03 = Reactions(DATA_FILE_03, BROWN_ALGAE_03, out=1)
+# BROWN_ALGAE_01 = get_cat_l(DATA_FILE_01, ORG_TSV, "brown")
+# BROWN_ALGAE_03 = get_cat_l(DATA_FILE_03, ORG_TSV, "brown")
+# BROWN_ALGAE_A2 = get_cat_l(DATA_FILE_A2, ORG_TSV, "brown")
+#
+# R01 = Reactions(DATA_FILE_01, BROWN_ALGAE_01, out=1)
+# R40 = Reactions(DATA_FILE_40, BROWN_ALGAE_40, out=1)
+# RA0 = Reactions(DATA_FILE_A0)
+# RA1 = Reactions(DATA_FILE_A1)
+# RA2 = Reactions(DATA_FILE_A2, BROWN_ALGAE_A2, out=1)
+# R03 = Reactions(DATA_FILE_03, BROWN_ALGAE_03, out=1)
 
 reac_lostA = reactions_from_file(DATA_LELSB_LOSSES)
 
 
-# ### Laminarionema loss ###
+# ##### Laminarionema loss ########################################################################
 
-# print(R40.reactions_loss[LAMINARIONEMA_E])
-# print(R01.reactions_loss[LAMINARIONEMA_E])
-# print(RA0.reactions_loss[LAMINARIONEMA_E])
-# print(RA1.reactions_loss[LAMINARIONEMA_E])
-# print(RA2.reactions_loss[LAMINARIONEMA_E])
-
-
-# ### Common Reactions ###
-
-# print(Reactions.get_common_reactions([R01, R40, RA0], LAMINARIONEMA_E, output_file=None))
-# print(Reactions.get_common_reactions([R01, R40, RA1], LAMINARIONEMA_E, output_file=None))
-# print(Reactions.get_common_reactions([R01, R40, RA2], LAMINARIONEMA_E, output_file=None))
+# print(R40.reactions_loss[LELSB])
+# print(R01.reactions_loss[LELSB])
+# print(RA0.reactions_loss[LELSB])
+# print(RA1.reactions_loss[LELSB])
+# print(RA2.reactions_loss[LELSB])
 
 
-# ### reactions lost percentage (based on highly shared reactions)
+# ### Common Reactions ############################################################################
 
-# for k, v in R01.reactions_loss.items():
-#     print(k, " : ", round((v[0]/R01.nb_reactions)*100, 3), "%")
-
-# ### genes assoc ###
-
-# print(R01.get_genes_assoc(LAMINARIONEMA_E,
-#                           Reactions.get_common_reactions([R01, R40, RA2], LAMINARIONEMA_E)[1],
-#                           output_file=True))
-# R01.get_genes_assoc(LAMINARIONEMA_E, {'LEUKOTRIENE-C4-SYNTHASE-RXN', 'PROSTAGLANDIN-E-SYNTHASE-RXN'}, output_file=True)
-
-# write_cut_reactions_file(DATA_FILE_03, 4)
+# print(Reactions.get_common_reactions([R01, R40, RA0], LELSB, output_file=None))
+# print(Reactions.get_common_reactions([R01, R40, RA1], LELSB, output_file=None))
+# print(Reactions.get_common_reactions([R01, R40, RA2], LELSB, output_file=None))
 
 # Reactions.get_common_reactions([R01, R40, RA2, R03], LAMINARIONEMA_E, output_file=True)
 # Reactions.get_common_reactions([R01, R40, RA2, R03], LAMINARIONEMA_E, output_file=True, union=True)
 
+# ### genes assoc #################################################################################
+
+# print(R01.get_genes_assoc(LELSB,
+#                           Reactions.get_common_reactions([R01, R40, RA2], LELSB)[1],
+#                           output_file=True))
+# R01.get_genes_assoc(LELSB, {'LEUKOTRIENE-C4-SYNTHASE-RXN', 'PROSTAGLANDIN-E-SYNTHASE-RXN'}, output_file=True)
+
+
+REACTIONS = get_reactions_inst(PATH_RUNS, ORG_TSV, "brown")
+
+for run, R in REACTIONS.items():
+    print(run)
+    print(R.nb_reactions)
