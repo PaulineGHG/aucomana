@@ -1,6 +1,5 @@
 from typing import Dict, List, Tuple, Set
 import pandas as pd
-from algae_project import get_cat_l
 from init_analysis import PATH_STUDY
 
 
@@ -137,26 +136,3 @@ class Pathways:
             if sum(self.data_pathways.loc[pw]) > self.nb_species - 1 and val != 1:
                 loss.add(pw)
         return len(loss), loss
-
-
-R_FILE_01 = "data/reactions_data/run01b_reactions.tsv"
-ORG_TSV = "data/species_group.tsv"
-BROWN_01 = get_cat_l(R_FILE_01, ORG_TSV, "brown")
-
-SLAT = "Saccharina_latissima_FEMALE"
-PLAC = "Pleurocladia_lacustris"
-
-FILE01 = "data/pathways_data/run01b_pathways.tsv"
-P01 = Pathways(FILE01, BROWN_01, out=1)
-
-# print(P01.get_pw_incomplete_1_species(SLAT))
-# print(P01.get_pw_min_1_species(SLAT))
-# print(P01.get_pw_lost_1_species(SLAT))
-# #
-# print(P01.get_pw_incomplete_1_species(PLAC))
-# print(P01.get_pw_min_1_species(PLAC))
-# print(P01.get_pw_lost_1_species(PLAC))
-
-for sp in P01.species_list:
-    print(sp, P01.get_pw_lost_1_species(sp))
-
