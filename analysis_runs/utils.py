@@ -51,6 +51,7 @@ def get_reactions_inst(path_runs, org_tsv, cat=None, out=None):
             r_dic[run] = Reactions(r_path, cat, out)
     return r_dic
 
+
 def get_pathways_inst(path_runs, org_tsv, cat=None, out=None):
     p_dic = {}
     for run in os.listdir(path_runs):

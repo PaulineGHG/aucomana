@@ -1,10 +1,13 @@
 import unittest
+import pandas as pd
 from analysis_runs.reactions import Reactions
-from analysis_runs.algae_project import get_cat_l
+from analysis_runs.utils import get_cat_l
 
+STUDY_PATH = "Study_folder"
+RUNS_PATH = "Runs_aucome"
 
-FILE_TEST = "runA1/analysis/all/reactions.tsv"
-ORG_TSV = "species_group.tsv"
+FILE_TEST = f"{RUNS_PATH}/runA1/analysis/all/reactions.tsv"
+ORG_TSV = f"{STUDY_PATH}/species_group.tsv"
 
 brown_algae = get_cat_l(FILE_TEST, ORG_TSV, "brown")
 
@@ -17,7 +20,7 @@ RSO2 = Reactions(FILE_TEST, brown_algae, out=2)
 class Test(unittest.TestCase):
 
     def test_init(self):
-        self.assertEqual(type(R), Reactions)
+        self.assertIsInstance(R, Reactions)
 
     def test_init_species_default(self):
         species_obj = ['Ectocarpus_crouaniorum_m', 'Laminarionema_elsbetiae',
@@ -53,8 +56,16 @@ class Test(unittest.TestCase):
         self.assertIn('1.1.1.285-RXN', RSO2.reactions_list)
         self.assertNotIn('1.1.4.2-RXN', RSO1.reactions_list)
 
-    def test_(self):
-        pass
+    def test_data_reactions(self):
+        self.assertIsInstance(RSO1.data_reactions, pd.DataFrame)
+        self.assertListEqual(RSO1.reactions_list, list(RSO1.data_reactions.index))
+        self.assertListEqual(RSO1.species_list, list(RSO1.data_reactions.columns))
+
+    def test_data_genes_assoc(self):
+        self.assertIsInstance(RSO1.data_genes_assoc, pd.DataFrame)
+        self.assertListEqual(RSO1.reactions_list, list(RSO1.data_genes_assoc.index))
+        index_list = [x + RSO1.STR_GENE_ASSOC for x in RSO1.species_list]
+        self.assertListEqual(index_list, list(RSO1.data_genes_assoc.columns))
 
 
 if __name__ == '__main__':

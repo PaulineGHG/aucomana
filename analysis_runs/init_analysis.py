@@ -21,24 +21,24 @@ def create_folders(path_study):
             os.mkdir(folder_path)
 
 
-def fill_input_auto(path_study, path_runs, runs=None):
-    for run in os.listdir(path_runs):
-        analysis = os.path.join(path_runs, run, 'analysis')
-        if os.path.exists(analysis):
-            for grp in os.listdir(analysis):
-                if grp != 'group_template.tsv':
-                    analysis_grp = os.path.join(analysis, grp)
-                    nw_obj_l = ['reactions', 'pathways', 'genes', 'metabolites']
-                    for nw_obj in nw_obj_l:
-                        copy_file_tsv(path_study, run, analysis_grp, grp, nw_obj)
-
-
-def copy_file_tsv(path_study, run, analysis_grp, grp, nw_obj):
-    r_file = os.path.join(analysis_grp, f'{nw_obj}.tsv')
-    r_dest = os.path.join(path_study, 'input_data', f'{nw_obj}_data', f'{run}_{grp}_{nw_obj}.tsv')
-    if os.path.exists(r_file):
-        shutil.copy(r_file, r_dest)
-        print(f'copy {r_file} in {r_dest}')
+# def fill_input_auto(path_study, path_runs, runs=None):
+#     for run in os.listdir(path_runs):
+#         analysis = os.path.join(path_runs, run, 'analysis')
+#         if os.path.exists(analysis):
+#             for grp in os.listdir(analysis):
+#                 if grp != 'group_template.tsv':
+#                     analysis_grp = os.path.join(analysis, grp)
+#                     nw_obj_l = ['reactions', 'pathways', 'genes', 'metabolites']
+#                     for nw_obj in nw_obj_l:
+#                         copy_file_tsv(path_study, run, analysis_grp, grp, nw_obj)
+#
+#
+# def copy_file_tsv(path_study, run, analysis_grp, grp, nw_obj):
+#     r_file = os.path.join(analysis_grp, f'{nw_obj}.tsv')
+#     r_dest = os.path.join(path_study, 'input_data', f'{nw_obj}_data', f'{run}_{grp}_{nw_obj}.tsv')
+#     if os.path.exists(r_file):
+#         shutil.copy(r_file, r_dest)
+#         print(f'copy {r_file} in {r_dest}')
 
 
 PATH_STUDY = os.getcwd()

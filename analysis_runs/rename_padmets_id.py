@@ -1,6 +1,6 @@
 import ahocorasick
 import time
-from analysis_runs.algae_project import PATH_RUNS
+from analysis_runs.utils import PATH_RUNS
 
 
 def make_automaton(gene_to_replace):
