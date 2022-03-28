@@ -1,11 +1,12 @@
 import unittest
-from reactions import Reactions
-from algae_project import get_cat_l
+from analysis_runs.reactions import Reactions
+from analysis_runs.algae_project import get_cat_l
 
-FILE_TEST = "data/reactions_data/runA1_reactions.tsv"
-ORG_TSV = "data/species_group.tsv"
 
-brown_algae = get_cat_l(FILE_TEST, ORG_TSV)
+FILE_TEST = "runA1/analysis/all/reactions.tsv"
+ORG_TSV = "species_group.tsv"
+
+brown_algae = get_cat_l(FILE_TEST, ORG_TSV, "brown")
 
 R = Reactions(FILE_TEST)
 RS = Reactions(FILE_TEST, brown_algae)

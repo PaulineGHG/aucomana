@@ -1,6 +1,5 @@
 from typing import Dict, List, Tuple, Set
 import pandas as pd
-from init_analysis import PATH_STUDY
 
 
 class Pathways:

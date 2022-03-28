@@ -1,8 +1,8 @@
 import os
-from reactions import Reactions
-from pathways import Pathways
+from analysis_runs.reactions import Reactions
+from analysis_runs.pathways import Pathways
+from analysis_runs.init_analysis import PATH_RUNS, PATH_STUDY
 from pandas_ods_reader import read_ods
-from init_analysis import PATH_RUNS, PATH_STUDY
 
 
 def reactions_from_file(file):
@@ -98,8 +98,8 @@ PLAC = "Pleurocladia_lacustris"
 
 # ### Class instances #############################################################################
 
-REACTIONS = get_reactions_inst(PATH_RUNS, ORG_TSV, "brown", 1)
-PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, "brown", 1)
+# REACTIONS = get_reactions_inst(PATH_RUNS, ORG_TSV, "brown", 1)
+# PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, "brown", 1)
 
 # ### Common Reactions ############################################################################
 
@@ -111,5 +111,5 @@ PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, "brown", 1)
 # REACTIONS["run01"].get_genes_assoc(LELS, {"12-OXOPHYTODIENOATE-REDUCTASE-RXN"}, output_file=True)
 
 
-for sp in PATHWAYS["run01"].species_list:
-    print(sp, PATHWAYS["run01"].get_pw_lost_1_species(sp))
+# for sp in PATHWAYS["run01"].species_list:
+#     print(sp, PATHWAYS["run01"].get_pw_lost_1_species(sp))
