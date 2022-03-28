@@ -47,7 +47,7 @@ class Reactions:
         out : int, optional (default = 1)
             number of species maximum not having the reaction for the reaction to be kept
         """
-        self.name = file_reactions_tsv.split(".")[0].split("/")[-1].split("_")[0]
+        self.name = file_reactions_tsv.split("/")[-4]
         self.species_list = species_list
         self.data_reactions, \
             self.data_genes_assoc, \

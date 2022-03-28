@@ -38,7 +38,7 @@ class Pathways:
             List of species to study.
             If not specified, will contain all the species from the run.
         """
-        self.name = file_pathways_tsv.split(".")[0].split("/")[-1]
+        self.name = file_pathways_tsv.split("/")[-4]
         self.species_list = species_list
         self.data_pathways, \
             self.data_reacs_assoc = self.__init_data(file_pathways_tsv)

@@ -123,8 +123,6 @@ reac_lostA = reactions_from_file(DATA_LELSB_LOSSES)
 # R01.get_genes_assoc(LELSB, {'LEUKOTRIENE-C4-SYNTHASE-RXN', 'PROSTAGLANDIN-E-SYNTHASE-RXN'}, output_file=True)
 
 
-REACTIONS = get_reactions_inst(PATH_RUNS, ORG_TSV, "brown")
+REACTIONS = get_reactions_inst(PATH_RUNS, ORG_TSV, "brown", out=1)
+REACTIONS["run01"].get_genes_assoc(LELSB, {"12-OXOPHYTODIENOATE-REDUCTASE-RXN"}, output_file=True)
 
-for run, R in REACTIONS.items():
-    print(run)
-    print(R.nb_reactions)
