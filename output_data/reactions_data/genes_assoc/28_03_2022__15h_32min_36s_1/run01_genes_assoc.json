@@ -1,0 +1,67 @@
+{
+    "Laminarionema_elsbetiae": {
+        "12-OXOPHYTODIENOATE-REDUCTASE-RXN": {
+            "Porterinema_fluviatile": [
+                "c_organisms_28124"
+            ],
+            "Scytosiphon_promiscuus_MALE": [
+                "c_organisms_34780",
+                "c_organisms_34778"
+            ],
+            "Ectocarpus_siliculosus_m": [
+                "c_organisms_18184"
+            ],
+            "Chordaria_linearis": [
+                "c_organisms_03124"
+            ],
+            "Pleurocladia_lacustris": [
+                "c_organisms_31218"
+            ],
+            "Ectocarpus_crouaniorum_m": [
+                "c_organisms_28738",
+                "c_organisms_28736"
+            ],
+            "Ectocarpus_fasciculatus_m": [
+                "c_organisms_20956"
+            ],
+            "Laminarionema_elsbetiae": [
+                "nan"
+            ],
+            "Desmarestia_herbacea_m": [
+                "c_organisms_29340"
+            ],
+            "Saccharina_latissima_FEMALE": [
+                "c_organisms_17542"
+            ],
+            "Dictyota_dichotoma_m": [
+                "c_organisms_18126"
+            ],
+            "Fucus_serratus_MALE": [
+                "c_organisms_28024",
+                "c_organisms_06362"
+            ],
+            "Cladosiphon_okamuranus": [
+                "C_okamuranus_14517",
+                "C_okamuranus_11705"
+            ],
+            "Ectocarpus_subulatus": [
+                "EsuBft848_4"
+            ],
+            "Nemacystus_decipiens": [
+                "g5301",
+                "g4529"
+            ],
+            "Saccharina_japonica": [
+                "SJ22257"
+            ],
+            "Undaria_pinnatifida_Kr2015": [
+                "UNPIN1199CG0010",
+                "UNPIN0506CG0010"
+            ],
+            "Ectocarpus_siliculosus": [
+                "E_siliculosus_04861",
+                "E_siliculosus_04858"
+            ]
+        }
+    }
+}
