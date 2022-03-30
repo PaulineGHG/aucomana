@@ -19,3 +19,7 @@ def create_folders(path_study):
         print(f'creating folder {folder_path}')
         if not os.path.exists(folder_path):
             os.mkdir(folder_path)
+
+
+PATH_STUDY = os.getcwd()
+PATH_RUNS = '../data/runs/'

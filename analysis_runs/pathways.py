@@ -1,3 +1,6 @@
+"""
+Pathways class
+"""
 from typing import Dict, List, Tuple, Set
 import pandas as pd
 
@@ -10,8 +13,10 @@ class Pathways:
         name of the file
     species_list : List[str]
         List of species studied
-    data_pathways :
-        Dataframe indicating completion rate of each pathway for each species
+    data_pathways_float :
+        Dataframe indicating completion rate of each pathway for each species (prop float)
+    data_pathways_str :
+        Dataframe indicating completion rate of each pathway for each species (prop str)
     data_reacs_assoc :
         Dataframe indicating reactions associated with each pathway for each species
     pathways_list : List[str]
@@ -38,15 +43,14 @@ class Pathways:
         """
         self.name = file_pathways_tsv.split("/")[-4]
         self.species_list = species_list
-        self.data_pathways_float, \
-            self.data_pathways_str,\
-            self.data_reacs_assoc = self.__init_data(file_pathways_tsv)
+        self.data_pathways_str, self.data_reacs_assoc = self.__init_data(file_pathways_tsv)
+        self.data_pathways_float = self.data_pathways_str.copy(deep=True)
         self.__convert_data_pathways()
         self.pathways_list = self.__get_filtered_pathways(out)
         self.nb_pathways, self.nb_species = self.data_pathways_float.shape
 
     def __init_data(self, file_pathways_tsv: str) \
-            -> Tuple['pd.DataFrame', 'pd.DataFrame', 'pd.DataFrame']:
+            -> Tuple['pd.DataFrame', 'pd.DataFrame']:
         """ Generate the data_reactions, data_genes_assoc and reactions_list attributes
 
         Parameters
@@ -56,12 +60,10 @@ class Pathways:
 
         Returns
         -------
-        data_pathways :
+        data_pathways_str :
             data_pathways attribute
         data_reacs_assoc :
             data_reacs_assoc attribute
-        pathways_list : List[str]
-            pathways_list attribute
         """
         data = pd.read_csv(file_pathways_tsv, sep="\t", header=0, index_col='pathway')
         if self.species_list is None:
@@ -70,7 +72,7 @@ class Pathways:
         data_species_all_pathways = data[comp_list]
         reac_assoc_list = [x + self.STR_RNX_ASSOC for x in self.species_list]
         data_reacs_assoc = data[reac_assoc_list]
-        return data_species_all_pathways, data_species_all_pathways, data_reacs_assoc
+        return data_species_all_pathways, data_reacs_assoc
 
     def __generate_species_list(self, data: 'pd.DataFrame'):
         """ Generate the species_list attribute if is None
@@ -87,6 +89,11 @@ class Pathways:
             self.species_list.append(x[:-16])
 
     def __convert_data_pathways(self):
+        """ Converts data_pathways_floats and data_pathways_str values
+
+        data_pathways_floats values transformed in float
+        data_pathways_str NA transforms in str
+        """
         for sp in self.data_pathways_float.columns:
             for pw in self.data_pathways_float.index:
                 val_str = self.data_pathways_float.loc[pw, sp]
