@@ -87,7 +87,7 @@ PLAC = "Pleurocladia_lacustris"
 
 # REACTIONS = get_reactions_inst(PATH_RUNS, ORG_TSV, "brown", 1)
 
-# PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, "brown", 1)
+PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, "brown", 1)
 
 R01 = "run01"
 R02 = "run02"
@@ -105,8 +105,7 @@ R40 = "run40"
 # REACTIONS[R01].get_genes_assoc(LELS, {"12-OXOPHYTODIENOATE-REDUCTASE-RXN"}, output_file=True)
 
 
-# print(PATHWAYS[R01].data_pathways_str)
-
+print(PATHWAYS)
 
 
 

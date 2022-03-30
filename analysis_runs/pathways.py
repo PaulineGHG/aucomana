@@ -149,3 +149,10 @@ class Pathways:
             if sum(self.data_pathways_float.loc[pw]) > self.nb_species - 1 and val != 1:
                 loss.add(pw)
         return len(loss), loss
+
+    def print_comp_pw(self, pathway, species):
+        species += self.STR_COMP
+        comp_str = self.data_pathways_str.loc[pathway, species]
+        comp_float = round(self.data_pathways_float.loc[pathway, species], 3)
+        print(f"{comp_str} reactions present in pathway \"{pathway}\" = {comp_float*100}%")
+
