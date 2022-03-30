@@ -1,5 +1,5 @@
 import ahocorasick
-from analysis_runs.utils import PATH_RUNS
+from analysis_runs.init_analysis import PATH_RUNS
 
 
 def make_automaton(gene_to_replace):

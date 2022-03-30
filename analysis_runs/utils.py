@@ -1,7 +1,7 @@
 import os
-from reactions import Reactions
-from pathways import Pathways
-from init_analysis import PATH_RUNS
+from analysis_runs.reactions import Reactions
+from analysis_runs.pathways import Pathways
+from analysis_runs.init_analysis import PATH_RUNS
 
 
 def get_cat_l(reactions_file, organisms_file, cat):
@@ -87,7 +87,7 @@ PLAC = "Pleurocladia_lacustris"
 
 # REACTIONS = get_reactions_inst(PATH_RUNS, ORG_TSV, "brown", 1)
 
-PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, "brown", 1)
+# PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, "brown", 1)
 
 R01 = "run01"
 R02 = "run02"
@@ -105,7 +105,7 @@ R40 = "run40"
 # REACTIONS[R01].get_genes_assoc(LELS, {"12-OXOPHYTODIENOATE-REDUCTASE-RXN"}, output_file=True)
 
 
-print(PATHWAYS[R01].data_pathways_str)
+# print(PATHWAYS[R01].data_pathways_str)
 
 
 

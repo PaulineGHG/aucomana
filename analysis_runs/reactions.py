@@ -2,7 +2,7 @@
 Reactions class
 """
 from typing import Dict, List, Tuple, Set
-from init_analysis import PATH_STUDY, PATH_RUNS
+from analysis_runs.init_analysis import PATH_STUDY, PATH_RUNS
 import pandas as pd
 import json
 import os
