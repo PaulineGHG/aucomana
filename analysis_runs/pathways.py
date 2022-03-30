@@ -38,14 +38,15 @@ class Pathways:
         """
         self.name = file_pathways_tsv.split("/")[-4]
         self.species_list = species_list
-        self.data_pathways, \
+        self.data_pathways_float, \
+            self.data_pathways_str,\
             self.data_reacs_assoc = self.__init_data(file_pathways_tsv)
         self.__convert_data_pathways()
         self.pathways_list = self.__get_filtered_pathways(out)
-        self.nb_pathways, self.nb_species = self.data_pathways.shape
+        self.nb_pathways, self.nb_species = self.data_pathways_float.shape
 
     def __init_data(self, file_pathways_tsv: str) \
-            -> Tuple['pd.DataFrame', 'pd.DataFrame']:
+            -> Tuple['pd.DataFrame', 'pd.DataFrame', 'pd.DataFrame']:
         """ Generate the data_reactions, data_genes_assoc and reactions_list attributes
 
         Parameters
@@ -69,7 +70,7 @@ class Pathways:
         data_species_all_pathways = data[comp_list]
         reac_assoc_list = [x + self.STR_RNX_ASSOC for x in self.species_list]
         data_reacs_assoc = data[reac_assoc_list]
-        return data_species_all_pathways, data_reacs_assoc
+        return data_species_all_pathways, data_species_all_pathways, data_reacs_assoc
 
     def __generate_species_list(self, data: 'pd.DataFrame'):
         """ Generate the species_list attribute if is None
@@ -86,52 +87,58 @@ class Pathways:
             self.species_list.append(x[:-16])
 
     def __convert_data_pathways(self):
-        for sp in self.data_pathways.columns:
-            for pw in self.data_pathways.index:
-                val_str = self.data_pathways.loc[pw, sp]
+        for sp in self.data_pathways_float.columns:
+            for pw in self.data_pathways_float.index:
+                val_str = self.data_pathways_float.loc[pw, sp]
                 if type(val_str) == str:
                     val_l = val_str.split("/")
-                    self.data_pathways.loc[pw, sp] = int(val_l[0]) / int(val_l[1])
+                    self.data_pathways_float.loc[pw, sp] = int(val_l[0]) / int(val_l[1])
                 else:
-                    self.data_pathways.loc[pw, sp] = float(0)
+                    self.data_pathways_float.loc[pw, sp] = float(0)
+                    nb_r = "?"
+                    for v in self.data_pathways_str.loc[pw]:
+                        if type(v) == str:
+                            nb_r = v.split("/")[1]
+                            break
+                    self.data_pathways_str.loc[pw, sp] = f"0/{nb_r}"
 
     def __get_filtered_pathways(self, out: int):
         if out is None:
-            return list(self.data_pathways.index)
+            return list(self.data_pathways_float.index)
         filtered_pw = []
         nb_species = len(self.species_list)
-        for pw in self.data_pathways.index:
+        for pw in self.data_pathways_float.index:
             count_pw = 0
-            for sp in self.data_pathways.columns:
-                if self.data_pathways.loc[pw, sp] != 0:
+            for sp in self.data_pathways_float.columns:
+                if self.data_pathways_float.loc[pw, sp] != 0:
                     count_pw += 1
             if count_pw > nb_species - (out + 1):
                 filtered_pw.append(pw)
         return filtered_pw
 
-    def get_pw_lost_1_species(self, species):
+    def get_pw_absent(self, species):
         species += self.STR_COMP
         loss = set()
         for pw in self.pathways_list:
-            if self.data_pathways.loc[pw, species] == 0:
+            if self.data_pathways_float.loc[pw, species] == 0:
                 loss.add(pw)
         return len(loss), loss
 
-    def get_pw_min_1_species(self, species):
+    def get_pw_min(self, species):
         species += self.STR_COMP
         loss = set()
         for pw in self.pathways_list:
-            min_comp = min(self.data_pathways.loc[pw])
-            max_comp = max(self.data_pathways.loc[pw])
-            if self.data_pathways.loc[pw, species] == min_comp and min_comp < max_comp:
+            min_comp = min(self.data_pathways_float.loc[pw])
+            max_comp = max(self.data_pathways_float.loc[pw])
+            if self.data_pathways_float.loc[pw, species] == min_comp and min_comp < max_comp:
                 loss.add(pw)
         return len(loss), loss
 
-    def get_pw_incomplete_1_species(self, species):
+    def get_pw_incomplete(self, species):
         species += self.STR_COMP
         loss = set()
         for pw in self.pathways_list:
-            val = self.data_pathways.loc[pw, species]
-            if sum(self.data_pathways.loc[pw]) > self.nb_species - 1 and val != 1:
+            val = self.data_pathways_float.loc[pw, species]
+            if sum(self.data_pathways_float.loc[pw]) > self.nb_species - 1 and val != 1:
                 loss.add(pw)
         return len(loss), loss

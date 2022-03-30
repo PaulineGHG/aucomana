@@ -1,6 +1,5 @@
 import ahocorasick
-import time
-from analysis_runs.utils import PATH_RUNS
+from analysis_runs.main import PATH_RUNS
 
 
 def make_automaton(gene_to_replace):
@@ -48,8 +47,8 @@ spl = ['Ectocarpus_fasciculatus_m',
 
 spl2 = ['Dictyota_dichotoma_m']
 
-# start = time.time()
-#
+
+
 # assodict = {}
 # for sp in spl2:
 #     assodict = get_dict(sp, assodict)
@@ -58,8 +57,6 @@ spl2 = ['Dictyota_dichotoma_m']
 #     automaton = make_automaton(assodict)
 #     apply_automaton(automaton, f"data/run01_studied_organism/{sp}/{sp}.padmet",
 #                     f"data/run01_studied_organism/2PADMETs/test_{sp}.padmet")
-#
-# end = time.time()
-# print(end - start)
+
 
 

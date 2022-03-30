@@ -2,7 +2,7 @@
 Reactions class
 """
 from typing import Dict, List, Tuple, Set
-from analysis_runs.init_analysis import PATH_RUNS, PATH_STUDY
+from analysis_runs.main import PATH_RUNS, PATH_STUDY
 import pandas as pd
 import json
 import os
@@ -125,67 +125,6 @@ class Reactions:
                 filtered_reactions.append(reaction)
         return filtered_reactions
 
-    # def __get_filtered_reactions(self, data_all_reactions: 'pd.DataFrame', out: int, prio) \
-    #         -> Set[str]:
-    #     """ Filter the reactions according to the number of species not having the reaction
-    #
-    #     Parameters
-    #     ----------
-    #     data_all_reactions:
-    #         Dataframe with filtered columns and unfiltered reactions (rows)
-    #     out: int
-    #         number of species maximum not having the reaction for the reaction to be kept
-    #
-    #     Returns
-    #     -------
-    #     filtered_reactions : List[str]
-    #         List of reactions filtered
-    #     """
-    #     nb_species = len(self.species_list)
-    #     filtered_reactions = set()
-    #     for reaction in data_all_reactions.index:
-    #         count = sum(data_all_reactions.loc[reaction])
-    #         if count > (out + 1):
-    #             filtered_reactions.add(reaction)
-    #         else:
-    #             if prio is not None:
-    #                 for p_sp in prio:
-    #                     if data_all_reactions.loc[reaction][p_sp] == 1:
-    #                         filtered_reactions.add(reaction)
-    #     return filtered_reactions
-
-    # def __get_filtered_reactions(self, data_all_reactions: 'pd.DataFrame', out: int, prio) \
-    #         -> Set[str]:
-    #     """ Filter the reactions according to the number of species not having the reaction
-    #
-    #     Parameters
-    #     ----------
-    #     data_all_reactions:
-    #         Dataframe with filtered columns and unfiltered reactions (rows)
-    #     out: int
-    #         number of species maximum not having the reaction for the reaction to be kept
-    #
-    #     Returns
-    #     -------
-    #     filtered_reactions : List[str]
-    #         List of reactions filtered
-    #     """
-    #     nb_species = len(self.species_list)
-    #     filtered_reactions = set()
-    #     for reaction in data_all_reactions.index:
-    #         count = sum(data_all_reactions.loc[reaction])
-    #         if count > out:
-    #             filtered_reactions.add(reaction)
-    #         else:
-    #             if prio is not None:
-    #                 add = True
-    #                 for p_sp in prio:
-    #                     if data_all_reactions.loc[reaction][p_sp] == 1:
-    #                         add = False
-    #                 if add:
-    #                     filtered_reactions.add(reaction)
-    #     return filtered_reactions
-
     def __get_reactions_loss_1_species(self, species: str) -> Tuple[int, Set[str]]:
         """ Capture the reaction lost for a given species
 
@@ -225,7 +164,7 @@ class Reactions:
         return reactions_nb_dict
 
     def get_genes_assoc(self, interest_species: str,  reactions_set: Set[str] = None,
-                        output_file=False) -> Dict[str, Dict[str, List[str]]]:
+                        output_file=False) -> Dict[str, Dict[str, Dict[str, List[str]]]]:
         """
         Parameters
         ----------
@@ -240,7 +179,7 @@ class Reactions:
 
         Returns
         -------
-        genes_assoc : Dict[str, Dict[str, List[str]]]
+        genes_assoc : Dict[str, Dict[str, Dict[str, List[str]]]]
             Dictionary of genes associated with each reaction for each species
         """
         genes_assoc = {interest_species: {}}
@@ -256,9 +195,20 @@ class Reactions:
             return genes_assoc
         else:
             self.nb_genes_assoc += 1
-            self.write_genes(genes_assoc, interest_species)
+            self.__write_genes(genes_assoc, interest_species)
 
-    def write_genes(self, genes_assoc, interest_species):
+    def __write_genes(self, genes_assoc, interest_species):
+        """ Allow writing sequences of genes in fasta out files
+
+        Parameters
+        ----------
+        genes_assoc : Dict[str, Dict[str, Dict[str, List[str]]]]
+            Dictionary of genes associated with each reaction for each species
+        interest_species : str
+            species of interest
+
+        Write results in {PATH_STUDY}/output_data/reactions_data/genes_assoc/{now}_{self.nb_genes_assoc}/
+        """
         fa_file_path = f"{PATH_RUNS}/{self.name}/studied_organisms/"
         now = datetime.datetime.now().strftime('%d_%m_%Y__%Hh_%Mmin_%Ss')
         out_file = f"{PATH_STUDY}/output_data/reactions_data/genes_assoc/{now}_{self.nb_genes_assoc}/"
