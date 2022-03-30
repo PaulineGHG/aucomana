@@ -252,6 +252,9 @@ class Reactions:
         output_file : bool, optional (default=False)
             True : write json and txt output
             False : returns the output
+        union : bool, optional (default=False)
+            True : get the union set of reactions between runs
+            False : get the intersection set of reactions between runs
 
         Returns
         -------
