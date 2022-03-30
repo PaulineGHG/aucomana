@@ -47,7 +47,7 @@ def get_pathways_inst(path_runs, org_tsv, cat=None, out=None):
     for run in os.listdir(path_runs):
         r_path = os.path.join(path_runs, run, "analysis", "all", "reactions.tsv")
         p_path = os.path.join(path_runs, run, "analysis", "all", "pathways.tsv")
-        if os.path.exists(r_path):
+        if os.path.exists(r_path) and os.path.exists(p_path):
             if cat is not None:
                 cat = get_cat_l(r_path, org_tsv, cat)
             p_dic[run] = Pathways(p_path, cat, out)
@@ -104,9 +104,36 @@ R40 = "run40"
 
 # REACTIONS[R01].get_genes_assoc(LELS, {"12-OXOPHYTODIENOATE-REDUCTASE-RXN"}, output_file=True)
 
+with open("pathways_slat_plac.txt", "w") as f:
+    f.write("1) Pathways absents chez Slat et présents chez les autres : ")
+    p_l = PATHWAYS[R01].get_pw_absent(SLAT)
+    f.write(f"{p_l[0]}\n")
+    for p in p_l[1]:
+        f.write(f"{p}\n")
+    f.write("\nPathways absents chez Plac et présents chez les autres : ")
+    p_l = PATHWAYS[R01].get_pw_absent(PLAC)
+    f.write(f"{p_l[0]}\n")
+    for p in p_l[1]:
+        f.write(f"{p}\n")
 
-print(PATHWAYS)
+    f.write("\n\n2) Pathways de completion minimale chez Slat : ")
+    p_l = PATHWAYS[R01].get_pw_min(SLAT)
+    f.write(f"{p_l[0]}\n")
+    for p in p_l[1]:
+        f.write(f"{p}\n")
+    f.write("\nPathways de completion minimale chez Plac : ")
+    p_l = PATHWAYS[R01].get_pw_min(PLAC)
+    f.write(f"{p_l[0]}\n")
+    for p in p_l[1]:
+        f.write(f"{p}\n")
 
-
-
-
+    f.write("\n\n3) Pathways incomplets chez Slat et complets chez autres espèces : ")
+    p_l = PATHWAYS[R01].get_pw_incomplete(SLAT)
+    f.write(f"{p_l[0]}\n")
+    for p in p_l[1]:
+        f.write(f"{p}\n")
+    f.write("\nPathways incomplets chez Plac et complets chez autres espèces : ")
+    p_l = PATHWAYS[R01].get_pw_incomplete(PLAC)
+    f.write(f"{p_l[0]}\n")
+    for p in p_l[1]:
+        f.write(f"{p}\n")

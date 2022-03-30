@@ -123,6 +123,8 @@ class Pathways:
                 filtered_pw.append(pw)
         return filtered_pw
 
+    # Loss
+
     def get_pw_absent(self, species):
         species += self.STR_COMP
         loss = set()
@@ -135,9 +137,9 @@ class Pathways:
         species += self.STR_COMP
         loss = set()
         for pw in self.pathways_list:
-            min_comp = min(self.data_pathways_float.loc[pw])
-            max_comp = max(self.data_pathways_float.loc[pw])
-            if self.data_pathways_float.loc[pw, species] == min_comp and min_comp < max_comp:
+            row = list(self.data_pathways_float.loc[pw])
+            min_comp = min(row)
+            if self.data_pathways_float.loc[pw, species] == min_comp and row.count(min_comp) == 1 and min_comp > 0:
                 loss.add(pw)
         return len(loss), loss
 
@@ -150,7 +152,38 @@ class Pathways:
                 loss.add(pw)
         return len(loss), loss
 
-    def print_comp_pw(self, pathway, species):
+    # Gain
+
+    def get_pw_present(self, species):
+        species += self.STR_COMP
+        loss = set()
+        for pw in self.pathways_list:
+            if self.data_pathways_float.loc[pw, species] > 0:
+                loss.add(pw)
+        return len(loss), loss
+
+    def get_pw_max(self, species):
+        species += self.STR_COMP
+        loss = set()
+        for pw in self.pathways_list:
+            row = list(self.data_pathways_float.loc[pw])
+            max_comp = max(row)
+            if self.data_pathways_float.loc[pw, species] == max_comp and row.count(max_comp) == 1:
+                loss.add(pw)
+        return len(loss), loss
+
+    def get_pw_complete(self, species):
+        species += self.STR_COMP
+        loss = set()
+        for pw in self.pathways_list:
+            val = self.data_pathways_float.loc[pw, species]
+            if val == 1:
+                loss.add(pw)
+        return len(loss), loss
+
+    # Other
+
+    def print_completion_pw(self, pathway, species):
         species += self.STR_COMP
         comp_str = self.data_pathways_str.loc[pathway, species]
         comp_float = round(self.data_pathways_float.loc[pathway, species], 3)
