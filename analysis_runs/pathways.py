@@ -150,6 +150,7 @@ class Pathways:
             species to be considered
         unique: bool
             True if the minimum is unique, False otherwise
+
         Returns
         -------
         bool
@@ -165,6 +166,22 @@ class Pathways:
             return self.data_pathways_float.loc[pathway, species] == min_completion and min_completion > 0
 
     def get_pw_min(self, species: str or List[str], unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+        """ Returns for each species the number and the set of pathways having the minimal completion (unique or not),
+        the pathways returned are not absent (at least 1 reaction in the pathway)
+
+        Parameters
+        ----------
+        species: str or List[str]
+            species or list of species to be considered
+        unique: bool, optional (default=True)
+            True if the minimum is unique, False otherwise
+
+        Returns
+        -------
+        min_pw: Dict[str, Tuple[int, Set[str]]]
+            (Dict[species, Tuple[number_pathways, Set[pathways]]]) dictionary associating for each species the number of
+            pathways and its set having the minimal (unique or not) completion value
+        """
         if type(species) == str:
             species = [species]
         min_pw = {}
@@ -179,14 +196,48 @@ class Pathways:
 
     # ## Absent
 
-    def is_absent(self, species, pathway):
-        return self.data_pathways_float.loc[pathway, species] == 0
+    def is_absent(self, species: str, pathway: str, unique: bool) -> bool:
+        """ Indicate if the pathway is absent for the species (unique or not) : considered unique if only this species
+        is not having the pathway among all species
 
-    def is_unique_absent(self, species, pathway):
+        Parameters
+        ----------
+        species: str
+            species to be considered
+        pathway: str
+            species to be considered
+        unique: bool
+            True if the absence is unique, False otherwise
+
+        Returns
+        -------
+        bool
+            True if the pathway for the species is absent (unique or not),
+            False otherwise
+        """
         row = list(self.data_pathways_float.loc[pathway])
-        return self.is_absent(species, pathway) and row.count(0) == 1
+        if unique:
+            return self.data_pathways_float.loc[pathway, species] == 0 and row.count(0) == 1
+        else:
+            return self.data_pathways_float.loc[pathway, species] == 0
 
-    def get_pw_absent(self, species: str or List[str], unique=True):
+    def get_pw_absent(self, species: str or List[str], unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+        """ Returns for each species the number and the set of absent pathways (unique or not) : considered unique if
+        only this species is not having the pathway among all species
+
+        Parameters
+        ----------
+        species: str or List[str]
+            species or list of species to be considered
+        unique: bool, optional (default=True)
+            True if the absence is unique, False otherwise
+
+        Returns
+        -------
+        min_pw: Dict[str, Tuple[int, Set[str]]]
+            (Dict[species, Tuple[number_pathways, Set[pathways]]]) dictionary associating for each species the number of
+            absent pathways and its set (unique or not)
+        """
         if type(species) == str:
             species = [species]
         absent_pw = {}
@@ -194,23 +245,19 @@ class Pathways:
             sp += self.STR_COMP
             loss = set()
             for pw in self.pathways_list:
-                if unique:
-                    if self.is_unique_absent(sp, pw):
-                        loss.add(pw)
-                else:
-                    if self.is_absent(sp, pw):
-                        loss.add(pw)
+                if self.is_absent(sp, pw, unique):
+                    loss.add(pw)
             absent_pw[sp] = (len(loss), loss)
         return absent_pw
 
     # ## Incomplete
 
-    def is_incomplete(self, species, pathway):
-        return 0 < self.data_pathways_float.loc[pathway, species] < 1
-
-    def is_unique_incomplete(self, species, pathway):
+    def is_incomplete(self, species, pathway, unique):
         row = list(self.data_pathways_float.loc[pathway])
-        return sum(row) > self.nb_species - 1 and self.data_pathways_float.loc[pathway, species] < 1
+        if unique:
+            return sum(row) > self.nb_species - 1 and self.data_pathways_float.loc[pathway, species] < 1
+        else:
+            return 0 < self.data_pathways_float.loc[pathway, species] < 1
 
     def get_pw_incomplete(self, species: str or List[str], unique=True):
         if type(species) == str:
@@ -220,12 +267,8 @@ class Pathways:
             sp += self.STR_COMP
             loss = set()
             for pw in self.pathways_list:
-                if unique:
-                    if self.is_unique_incomplete(sp, pw):
-                        loss.add(pw)
-                else:
-                    if self.is_incomplete(sp, pw):
-                        loss.add(pw)
+                if self.is_incomplete(sp, pw, unique):
+                    loss.add(pw)
             incomplete_pw[sp] = (len(loss), loss)
         return incomplete_pw
 

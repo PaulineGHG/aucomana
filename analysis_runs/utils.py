@@ -104,7 +104,7 @@ R40 = "run40"
 
 # REACTIONS[R01].get_genes_assoc(LELS, {"12-OXOPHYTODIENOATE-REDUCTASE-RXN"}, output_file=True)
 
-print(PATHWAYS[R01].get_pw_min([SLAT, PLAC], unique=False))
+print(PATHWAYS[R01].get_pw_incomplete([SLAT, PLAC], unique=False))
 
 
 # with open("pathways_slat_plac.txt", "w") as f:
