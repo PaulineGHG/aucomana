@@ -308,23 +308,51 @@ class Pathways:
 
     # Gain
 
-    def get_pw_present(self, species):
-        species += self.STR_COMP
-        loss = set()
-        for pw in self.pathways_list:
-            if self.data_pathways_float.loc[pw, species] > 0:
-                loss.add(pw)
-        return len(loss), loss
+    # ## Present
+    def is_present(self, species: str, pathway: str, unique: bool) -> bool:
+        row = list(self.data_pathways_float.loc[pathway])
+        if unique:
+            return 0 < self.data_pathways_float.loc[pathway, species] == sum(row)
+        else:
+            return self.data_pathways_float.loc[pathway, species] > 0
 
-    def get_pw_max(self, species):
-        species += self.STR_COMP
-        loss = set()
-        for pw in self.pathways_list:
-            row = list(self.data_pathways_float.loc[pw])
-            max_comp = max(row)
-            if self.data_pathways_float.loc[pw, species] == max_comp and row.count(max_comp) == 1:
-                loss.add(pw)
-        return len(loss), loss
+    def get_pw_present(self, species: str or List[str], unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+        if type(species) == str:
+            species = [species]
+        present_pw_dict = {}
+        for sp in species:
+            sp += self.STR_COMP
+            present_pw = set()
+            for pw in self.pathways_list:
+                if self.is_present(sp, pw, unique):
+                    present_pw.add(pw)
+            present_pw_dict[sp] = (len(present_pw), present_pw)
+        return present_pw_dict
+
+    # ## Max
+
+    def is_max(self, species: str, pathway: str, unique: bool) -> bool:
+        row = list(self.data_pathways_float.loc[pathway])
+        max_comp = max(row)
+        if unique:
+            return self.data_pathways_float.loc[pathway, species] == max_comp and row.count(max_comp) == 1
+        else:
+            return self.data_pathways_float.loc[pathway, species] == max_comp
+
+    def get_pw_max(self, species: str or List[str], unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+        if type(species) == str:
+            species = [species]
+        max_pw_dict = {}
+        for sp in species:
+            sp += self.STR_COMP
+            max_pw = set()
+            for pw in self.pathways_list:
+                if self.is_max(sp, pw, unique):
+                    max_pw.add(pw)
+            max_pw_dict[sp] = (len(max_pw), max_pw)
+        return max_pw_dict
+
+    # ## Complete
 
     def get_pw_complete(self, species):
         species += self.STR_COMP
