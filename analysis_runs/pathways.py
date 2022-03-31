@@ -252,14 +252,48 @@ class Pathways:
 
     # ## Incomplete
 
-    def is_incomplete(self, species, pathway, unique):
+    def is_incomplete(self, species: str, pathway: str, unique: bool) -> bool:
+        """ Indicate if the pathway is incomplete for the species (unique or not) : considered unique if all other
+        species have the pathway completed
+
+        Parameters
+        ----------
+        species: str
+            species to be considered
+        pathway: str
+            species to be considered
+        unique: bool
+            True if the incomplete pathway is unique, False otherwise
+
+        Returns
+        -------
+        bool
+            True if the pathway for the species is incomplete (unique or not),
+            False otherwise
+        """
         row = list(self.data_pathways_float.loc[pathway])
         if unique:
             return sum(row) > self.nb_species - 1 and self.data_pathways_float.loc[pathway, species] < 1
         else:
             return 0 < self.data_pathways_float.loc[pathway, species] < 1
 
-    def get_pw_incomplete(self, species: str or List[str], unique=True):
+    def get_pw_incomplete(self, species: str or List[str], unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+        """ Returns for each species the number and the set of incomplete pathways (unique or not) : considered unique
+        if all other species have the pathway completed
+
+        Parameters
+        ----------
+        species: str or List[str]
+            species or list of species to be considered
+        unique: bool, optional (default=True)
+            True if the incomplete pathway is unique, False otherwise
+
+        Returns
+        -------
+        min_pw: Dict[str, Tuple[int, Set[str]]]
+            (Dict[species, Tuple[number_pathways, Set[pathways]]]) dictionary associating for each species the number of
+            incomplete pathways and its set (unique or not)
+        """
         if type(species) == str:
             species = [species]
         incomplete_pw = {}
