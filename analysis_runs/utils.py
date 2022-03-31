@@ -87,7 +87,7 @@ PLAC = "Pleurocladia_lacustris"
 
 # REACTIONS = get_reactions_inst(PATH_RUNS, ORG_TSV, "brown", 1)
 
-PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, "brown", 1)
+PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, "brown")
 
 R01 = "run01"
 R02 = "run02"
@@ -104,36 +104,39 @@ R40 = "run40"
 
 # REACTIONS[R01].get_genes_assoc(LELS, {"12-OXOPHYTODIENOATE-REDUCTASE-RXN"}, output_file=True)
 
-with open("pathways_slat_plac.txt", "w") as f:
-    f.write("1) Pathways absents chez Slat et présents chez les autres : ")
-    p_l = PATHWAYS[R01].get_pw_absent(SLAT)
-    f.write(f"{p_l[0]}\n")
-    for p in p_l[1]:
-        f.write(f"{p}\n")
-    f.write("\nPathways absents chez Plac et présents chez les autres : ")
-    p_l = PATHWAYS[R01].get_pw_absent(PLAC)
-    f.write(f"{p_l[0]}\n")
-    for p in p_l[1]:
-        f.write(f"{p}\n")
+print(PATHWAYS[R01].get_pw_absent([SLAT, PLAC], unique=False))
 
-    f.write("\n\n2) Pathways de completion minimale chez Slat : ")
-    p_l = PATHWAYS[R01].get_pw_min(SLAT)
-    f.write(f"{p_l[0]}\n")
-    for p in p_l[1]:
-        f.write(f"{p}\n")
-    f.write("\nPathways de completion minimale chez Plac : ")
-    p_l = PATHWAYS[R01].get_pw_min(PLAC)
-    f.write(f"{p_l[0]}\n")
-    for p in p_l[1]:
-        f.write(f"{p}\n")
 
-    f.write("\n\n3) Pathways incomplets chez Slat et complets chez autres espèces : ")
-    p_l = PATHWAYS[R01].get_pw_incomplete(SLAT)
-    f.write(f"{p_l[0]}\n")
-    for p in p_l[1]:
-        f.write(f"{p}\n")
-    f.write("\nPathways incomplets chez Plac et complets chez autres espèces : ")
-    p_l = PATHWAYS[R01].get_pw_incomplete(PLAC)
-    f.write(f"{p_l[0]}\n")
-    for p in p_l[1]:
-        f.write(f"{p}\n")
+# with open("pathways_slat_plac.txt", "w") as f:
+#     f.write("1) Pathways absents chez Slat et présents chez les autres : ")
+#     p_l = PATHWAYS[R01].get_pw_absent(SLAT)
+#     f.write(f"{p_l[0]}\n")
+#     for p in p_l[1]:
+#         f.write(f"{p}\n")
+#     f.write("\nPathways absents chez Plac et présents chez les autres : ")
+#     p_l = PATHWAYS[R01].get_pw_absent(PLAC)
+#     f.write(f"{p_l[0]}\n")
+#     for p in p_l[1]:
+#         f.write(f"{p}\n")
+#
+#     f.write("\n\n2) Pathways de completion minimale chez Slat : ")
+#     p_l = PATHWAYS[R01].get_pw_min(SLAT)
+#     f.write(f"{p_l[0]}\n")
+#     for p in p_l[1]:
+#         f.write(f"{p}\n")
+#     f.write("\nPathways de completion minimale chez Plac : ")
+#     p_l = PATHWAYS[R01].get_pw_min(PLAC)
+#     f.write(f"{p_l[0]}\n")
+#     for p in p_l[1]:
+#         f.write(f"{p}\n")
+#
+#     f.write("\n\n3) Pathways incomplets chez Slat et complets chez autres espèces : ")
+#     p_l = PATHWAYS[R01].get_pw_incomplete(SLAT)
+#     f.write(f"{p_l[0]}\n")
+#     for p in p_l[1]:
+#         f.write(f"{p}\n")
+#     f.write("\nPathways incomplets chez Plac et complets chez autres espèces : ")
+#     p_l = PATHWAYS[R01].get_pw_incomplete(PLAC)
+#     f.write(f"{p_l[0]}\n")
+#     for p in p_l[1]:
+#         f.write(f"{p}\n")

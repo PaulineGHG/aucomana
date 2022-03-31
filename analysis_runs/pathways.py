@@ -125,32 +125,76 @@ class Pathways:
 
     # Loss
 
-    def get_pw_absent(self, species):
-        species += self.STR_COMP
-        loss = set()
-        for pw in self.pathways_list:
-            if self.data_pathways_float.loc[pw, species] == 0:
-                loss.add(pw)
-        return len(loss), loss
+    # ## Min
 
-    def get_pw_min(self, species):
-        species += self.STR_COMP
-        loss = set()
-        for pw in self.pathways_list:
-            row = list(self.data_pathways_float.loc[pw])
-            min_comp = min(row)
-            if self.data_pathways_float.loc[pw, species] == min_comp and row.count(min_comp) == 1 and min_comp > 0:
-                loss.add(pw)
-        return len(loss), loss
+    def is_min(self, species, pathway):
+        min_completion = min(list(self.data_pathways_float.loc[pathway]))
+        return self.data_pathways_float.loc[pathway, species] == min_completion and min_completion > 0
 
-    def get_pw_incomplete(self, species):
-        species += self.STR_COMP
-        loss = set()
-        for pw in self.pathways_list:
-            val = self.data_pathways_float.loc[pw, species]
-            if sum(self.data_pathways_float.loc[pw]) > self.nb_species - 1 and val != 1:
-                loss.add(pw)
-        return len(loss), loss
+    def is_unique_min(self, species, pathway):
+        row = list(self.data_pathways_float.loc[pathway])
+        min_completion = min(row)
+        return self.data_pathways_float.loc[pathway, species] == min_completion and min_completion > 0 and \
+            row.count(min_completion) == 1
+
+    def get_pw_min(self, species: str or List[str], unique=True):
+        if type(species) == str:
+            species = [species]
+        min_pw = {}
+        for sp in species:
+            sp += self.STR_COMP
+            loss = set()
+            for pw in self.pathways_list:
+                if unique:
+                    if self.is_unique_min(sp, pw):
+                        loss.add(pw)
+                else:
+                    if self.is_min(sp, pw):
+                        loss.add(pw)
+            min_pw[sp] = (len(loss), loss)
+        return min_pw
+
+    # ## Absent
+
+    def is_absent(self, species, pathway):
+        return self.data_pathways_float.loc[pathway, species] == 0
+
+    def is_unique_absent(self, species, pathway):
+        row = list(self.data_pathways_float.loc[pathway])
+        return self.is_absent(species, pathway) and row.count(0) == 1
+
+    def get_pw_absent(self, species: str or List[str], unique=True):
+        if type(species) == str:
+            species = [species]
+        absent_pw = {}
+        for sp in species:
+            sp += self.STR_COMP
+            loss = set()
+            for pw in self.pathways_list:
+                if unique:
+                    if self.is_unique_absent(sp, pw):
+                        loss.add(pw)
+                else:
+                    if self.is_absent(sp, pw):
+                        loss.add(pw)
+            absent_pw[sp] = (len(loss), loss)
+        return absent_pw
+
+    # ## Incomplete
+    
+    def get_unique_pw_incomplete(self, species: str or List[str]):
+        if type(species) == str:
+            species = [species]
+        incomplete_pw = {}
+        for sp in species:
+            sp += self.STR_COMP
+            loss = set()
+            for pw in self.pathways_list:
+                val = self.data_pathways_float.loc[pw, sp]
+                if sum(self.data_pathways_float.loc[pw]) > self.nb_species - 1 and val != 1:
+                    loss.add(pw)
+            incomplete_pw[sp] = (len(loss), loss)
+        return incomplete_pw
 
     # Gain
 
