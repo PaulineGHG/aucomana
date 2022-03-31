@@ -354,6 +354,12 @@ class Pathways:
 
     # ## Complete
 
+    def is_complete(self, species: str, pathway: str, unique: bool) -> bool:
+        if unique:
+            pass
+        else:
+            return self.data_pathways_float.loc[pathway, species] == 1
+
     def get_pw_complete(self, species):
         species += self.STR_COMP
         loss = set()
