@@ -181,8 +181,15 @@ class Pathways:
         return absent_pw
 
     # ## Incomplete
-    
-    def get_unique_pw_incomplete(self, species: str or List[str]):
+
+    def is_incomplete(self, species, pathway):
+        return 0 < self.data_pathways_float.loc[pathway, species] < 1
+
+    def is_unique_incomplete(self, species, pathway):
+        row = list(self.data_pathways_float.loc[pathway])
+        return sum(row) > self.nb_species - 1 and self.data_pathways_float.loc[pathway, species] < 1
+
+    def get_pw_incomplete(self, species: str or List[str], unique=True):
         if type(species) == str:
             species = [species]
         incomplete_pw = {}
@@ -190,9 +197,12 @@ class Pathways:
             sp += self.STR_COMP
             loss = set()
             for pw in self.pathways_list:
-                val = self.data_pathways_float.loc[pw, sp]
-                if sum(self.data_pathways_float.loc[pw]) > self.nb_species - 1 and val != 1:
-                    loss.add(pw)
+                if unique:
+                    if self.is_unique_incomplete(sp, pw):
+                        loss.add(pw)
+                else:
+                    if self.is_incomplete(sp, pw):
+                        loss.add(pw)
             incomplete_pw[sp] = (len(loss), loss)
         return incomplete_pw
 
