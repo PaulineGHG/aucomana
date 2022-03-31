@@ -109,7 +109,19 @@ class Pathways:
                             break
                     self.data_pathways_str.loc[pw, sp] = f"0/{nb_r}"
 
-    def __get_filtered_pathways(self, out: int):
+    def __get_filtered_pathways(self, out: int) -> List[str]:
+        """ Filter the pathways according to the number of species not having the pathway
+
+        Parameters
+        ----------
+        out: int
+            number of species maximum not having the pathway for the pathway to be kept
+
+        Returns
+        -------
+        filtered_pw: List[str]
+            List of pathway filtered
+        """
         if out is None:
             return list(self.data_pathways_float.index)
         filtered_pw = []
@@ -127,17 +139,32 @@ class Pathways:
 
     # ## Min
 
-    def is_min(self, species, pathway):
-        min_completion = min(list(self.data_pathways_float.loc[pathway]))
-        return self.data_pathways_float.loc[pathway, species] == min_completion and min_completion > 0
+    def is_min(self, species: str, pathway: str, unique) -> bool:
+        """ Indicate if the completion of the pathway for the species is minimal (unique or not) between all species
 
-    def is_unique_min(self, species, pathway):
+        Parameters
+        ----------
+        species: str
+            species to be considered
+        pathway: str
+            species to be considered
+        unique: bool
+            True if the minimum is unique, False otherwise
+        Returns
+        -------
+        bool
+            True if the completion of the pathway for the species is minimal (unique or not) between all species,
+            False otherwise
+        """
         row = list(self.data_pathways_float.loc[pathway])
         min_completion = min(row)
-        return self.data_pathways_float.loc[pathway, species] == min_completion and min_completion > 0 and \
-            row.count(min_completion) == 1
+        if unique:
+            return self.data_pathways_float.loc[pathway, species] == min_completion and min_completion > 0 and \
+                   row.count(min_completion) == 1
+        else:
+            return self.data_pathways_float.loc[pathway, species] == min_completion and min_completion > 0
 
-    def get_pw_min(self, species: str or List[str], unique=True):
+    def get_pw_min(self, species: str or List[str], unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
         if type(species) == str:
             species = [species]
         min_pw = {}
@@ -145,12 +172,8 @@ class Pathways:
             sp += self.STR_COMP
             loss = set()
             for pw in self.pathways_list:
-                if unique:
-                    if self.is_unique_min(sp, pw):
-                        loss.add(pw)
-                else:
-                    if self.is_min(sp, pw):
-                        loss.add(pw)
+                if self.is_min(sp, pw, unique):
+                    loss.add(pw)
             min_pw[sp] = (len(loss), loss)
         return min_pw
 
