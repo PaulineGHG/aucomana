@@ -4,7 +4,7 @@ import pandas as pd
 import os
 
 
-GBK_PATH = "/media/paulinehg/OS/Users/Pauline/Documents/MyDocs/Gbk/short_read/unmodified/"
+GBK_PATH = "/media/paulinehg/OS/Users/Pauline/Documents/MyDocs/Gbk/short_read/uncut_genomes/"
 OUT_PATH = "/media/paulinehg/OS/Users/Pauline/Documents/MyDocs/Gbk/info_gbk/"
 
 
@@ -13,8 +13,7 @@ def individual_analysis(gbk_path, out_path):
 
         print(f"Creating table for {dir}")
 
-        file = f"{dir}/{dir}.gbk"
-        file_path = f"{gbk_path}{file}"
+        file_path = f"{gbk_path}{dir}/{dir}.gbk"
 
         df = pd.DataFrame(columns=("id_contig", "#gene", "#CDS", "#b"))
         for record in SeqIO.parse(file_path, "genbank"):
@@ -47,5 +46,5 @@ def group_analysis(out_path):
     df.to_csv(f"{out_path}{'all_species'}.tsv", sep="\t", index=False)
 
 
-# individual_analysis(GBK_PATH, OUT_PATH)
-group_analysis(OUT_PATH)
+individual_analysis(GBK_PATH, OUT_PATH)
+# group_analysis(OUT_PATH)
