@@ -1,13 +1,12 @@
 import os
 from analysis_runs.reactions import Reactions
 from analysis_runs.pathways import Pathways
-from analysis_runs.init_analysis import PATH_RUNS
 
 
 def get_cat_l(reactions_file, organisms_file, cat):
     with open(organisms_file, "r") as org_f, open(reactions_file, "r") as rea_f:
         species_l = set()
-        brown_l = []
+        cat_l = []
         for l in rea_f:
             l = l.split("\t")
             for x in l[1:]:
@@ -18,8 +17,8 @@ def get_cat_l(reactions_file, organisms_file, cat):
         for l in org_f:
             l = l.split()
             if l[1] == cat and l[0] in species_l:
-                brown_l.append(l[0])
-        return brown_l
+                cat_l.append(l[0])
+        return cat_l
 
 
 def write_cut_reactions_file(original_file, cut_nb, reac_list):

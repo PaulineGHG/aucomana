@@ -1,5 +1,4 @@
 import os
-import shutil
 
 
 def create_folders(path_study):
