@@ -309,7 +309,26 @@ class Pathways:
     # Gain
 
     # ## Present
+
     def is_present(self, species: str, pathway: str, unique: bool) -> bool:
+        """ Indicate if the pathway is present for the species (unique or not) : considered unique if only this species
+        is having the pathway among all species
+
+        Parameters
+        ----------
+        species: str
+            species to be considered
+        pathway: str
+            species to be considered
+        unique: bool
+            True if the presence is unique, False otherwise
+
+        Returns
+        -------
+        bool
+            True if the pathway for the species is present (unique or not),
+            False otherwise
+        """
         if unique:
             row = list(self.data_pathways_float.loc[pathway])
             return 0 < self.data_pathways_float.loc[pathway, species] == sum(row)
@@ -317,6 +336,22 @@ class Pathways:
             return self.data_pathways_float.loc[pathway, species] > 0
 
     def get_pw_present(self, species: str or List[str], unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+        """ Returns for each species the number and the set of present pathways (unique or not) : considered unique if
+        only this species is having the pathway among all species
+
+        Parameters
+        ----------
+        species: str or List[str]
+            species or list of species to be considered
+        unique: bool, optional (default=True)
+            True if the presence is unique, False otherwise
+
+        Returns
+        -------
+        min_pw: Dict[str, Tuple[int, Set[str]]]
+            (Dict[species, Tuple[number_pathways, Set[pathways]]]) dictionary associating for each species the number of
+            present pathways and its set (unique or not)
+        """
         if type(species) == str:
             species = [species]
         present_pw_dict = {}
@@ -332,6 +367,23 @@ class Pathways:
     # ## Max
 
     def is_max(self, species: str, pathway: str, unique: bool) -> bool:
+        """ Indicate if the completion of the pathway for the species is maximal (unique or not) between all species
+
+        Parameters
+        ----------
+        species: str
+            species to be considered
+        pathway: str
+            species to be considered
+        unique: bool
+            True if the maximum is unique, False otherwise
+
+        Returns
+        -------
+        bool
+            True if the completion of the pathway for the species is maximal (unique or not) between all species,
+            False otherwise
+        """
         row = list(self.data_pathways_float.loc[pathway])
         max_comp = max(row)
         if unique:
@@ -340,6 +392,21 @@ class Pathways:
             return self.data_pathways_float.loc[pathway, species] == max_comp
 
     def get_pw_max(self, species: str or List[str], unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+        """ Returns for each species the number and the set of pathways having the maximal completion (unique or not),
+
+        Parameters
+        ----------
+        species: str or List[str]
+            species or list of species to be considered
+        unique: bool, optional (default=True)
+            True if the maximum is unique, False otherwise
+
+        Returns
+        -------
+        min_pw: Dict[str, Tuple[int, Set[str]]]
+            (Dict[species, Tuple[number_pathways, Set[pathways]]]) dictionary associating for each species the number of
+            pathways and its set having the maximum (unique or not) completion value
+        """
         if type(species) == str:
             species = [species]
         max_pw_dict = {}
@@ -355,6 +422,24 @@ class Pathways:
     # ## Complete
 
     def is_complete(self, species: str, pathway: str, unique: bool) -> bool:
+        """ Indicate if the pathway is complete for the species (unique or not) : considered unique if all other
+        species have not the pathway completed
+
+        Parameters
+        ----------
+        species: str
+            species to be considered
+        pathway: str
+            species to be considered
+        unique: bool
+            True if the complete pathway is unique, False otherwise
+
+        Returns
+        -------
+        bool
+            True if the pathway for the species is complete (unique or not),
+            False otherwise
+        """
         if unique:
             row = list(self.data_pathways_float.loc[pathway])
             return self.data_pathways_float.loc[pathway, species] == 1 and row.count(1) == 1
@@ -362,6 +447,22 @@ class Pathways:
             return self.data_pathways_float.loc[pathway, species] == 1
 
     def get_pw_complete(self, species: str or List[str], unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+        """ Returns for each species the number and the set of complete pathways (unique or not) : considered unique
+        if all other species have not the pathway completed
+
+        Parameters
+        ----------
+        species: str or List[str]
+            species or list of species to be considered
+        unique: bool, optional (default=True)
+            True if the complete pathway is unique, False otherwise
+
+        Returns
+        -------
+        min_pw: Dict[str, Tuple[int, Set[str]]]
+            (Dict[species, Tuple[number_pathways, Set[pathways]]]) dictionary associating for each species the number of
+            complete pathways and its set (unique or not)
+        """
         if type(species) == str:
             species = [species]
         complete_pw_dict = {}
