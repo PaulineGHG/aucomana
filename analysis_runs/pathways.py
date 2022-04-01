@@ -184,15 +184,15 @@ class Pathways:
         """
         if type(species) == str:
             species = [species]
-        min_pw = {}
+        min_pw_dict = {}
         for sp in species:
             sp += self.STR_COMP
-            loss = set()
+            min_pw = set()
             for pw in self.pathways_list:
                 if self.is_min(sp, pw, unique):
-                    loss.add(pw)
-            min_pw[sp] = (len(loss), loss)
-        return min_pw
+                    min_pw.add(pw)
+            min_pw_dict[sp] = (len(min_pw), min_pw)
+        return min_pw_dict
 
     # ## Absent
 
@@ -215,8 +215,8 @@ class Pathways:
             True if the pathway for the species is absent (unique or not),
             False otherwise
         """
-        row = list(self.data_pathways_float.loc[pathway])
         if unique:
+            row = list(self.data_pathways_float.loc[pathway])
             return self.data_pathways_float.loc[pathway, species] == 0 and row.count(0) == 1
         else:
             return self.data_pathways_float.loc[pathway, species] == 0
@@ -240,15 +240,15 @@ class Pathways:
         """
         if type(species) == str:
             species = [species]
-        absent_pw = {}
+        absent_pw_dict = {}
         for sp in species:
             sp += self.STR_COMP
-            loss = set()
+            absent_pw = set()
             for pw in self.pathways_list:
                 if self.is_absent(sp, pw, unique):
-                    loss.add(pw)
-            absent_pw[sp] = (len(loss), loss)
-        return absent_pw
+                    absent_pw.add(pw)
+            absent_pw_dict[sp] = (len(absent_pw), absent_pw)
+        return absent_pw_dict
 
     # ## Incomplete
 
@@ -271,8 +271,8 @@ class Pathways:
             True if the pathway for the species is incomplete (unique or not),
             False otherwise
         """
-        row = list(self.data_pathways_float.loc[pathway])
         if unique:
+            row = list(self.data_pathways_float.loc[pathway])
             return sum(row) > self.nb_species - 1 and self.data_pathways_float.loc[pathway, species] < 1
         else:
             return 0 < self.data_pathways_float.loc[pathway, species] < 1
@@ -296,22 +296,22 @@ class Pathways:
         """
         if type(species) == str:
             species = [species]
-        incomplete_pw = {}
+        incomplete_pw_dict = {}
         for sp in species:
             sp += self.STR_COMP
-            loss = set()
+            incomplete_pw = set()
             for pw in self.pathways_list:
                 if self.is_incomplete(sp, pw, unique):
-                    loss.add(pw)
-            incomplete_pw[sp] = (len(loss), loss)
-        return incomplete_pw
+                    incomplete_pw.add(pw)
+            incomplete_pw_dict[sp] = (len(incomplete_pw), incomplete_pw)
+        return incomplete_pw_dict
 
     # Gain
 
     # ## Present
     def is_present(self, species: str, pathway: str, unique: bool) -> bool:
-        row = list(self.data_pathways_float.loc[pathway])
         if unique:
+            row = list(self.data_pathways_float.loc[pathway])
             return 0 < self.data_pathways_float.loc[pathway, species] == sum(row)
         else:
             return self.data_pathways_float.loc[pathway, species] > 0
@@ -356,18 +356,23 @@ class Pathways:
 
     def is_complete(self, species: str, pathway: str, unique: bool) -> bool:
         if unique:
-            pass
+            row = list(self.data_pathways_float.loc[pathway])
+            return self.data_pathways_float.loc[pathway, species] == 1 and row.count(1) == 1
         else:
             return self.data_pathways_float.loc[pathway, species] == 1
 
-    def get_pw_complete(self, species):
-        species += self.STR_COMP
-        loss = set()
-        for pw in self.pathways_list:
-            val = self.data_pathways_float.loc[pw, species]
-            if val == 1:
-                loss.add(pw)
-        return len(loss), loss
+    def get_pw_complete(self, species: str or List[str], unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+        if type(species) == str:
+            species = [species]
+        complete_pw_dict = {}
+        for sp in species:
+            sp += self.STR_COMP
+            complete_pw = set()
+            for pw in self.pathways_list:
+                if self.is_complete(sp, pw, unique):
+                    complete_pw.add(pw)
+            complete_pw_dict[sp] = (len(complete_pw), complete_pw)
+        return complete_pw_dict
 
     # Other
 
