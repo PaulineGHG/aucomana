@@ -13,30 +13,37 @@ library(dplyr)
 library(ape)
 
 
-setwd("~/Documents/Reactions_loss")
+setwd("~/Documents/Analysis_runs")
 
 # load data
 
-name = "Run 03 : cut 2 misplaced"
-reactions_dataframe = read.table("outputs/cut_reactions_data/cut3_run03_reactions.tsv", sep = "\t", header = T, row.names = "reaction")
+name = "Run 01"
+reactions_dataframe = read.table("data/runs/run01/analysis/all/reactions.tsv", sep = "\t", header = T, row.names = "reaction")
 reactions_dataframe = select(reactions_dataframe, -colnames(select(reactions_dataframe, ends_with("..sep...") | ends_with("_formula"))))
 
 result = pvclust(reactions_dataframe, method.dist="binary", method.hclust="complete", nboot=10000, parallel=TRUE)
 
 # vector of algae categories
 
-brown = c("Laminarionema_elsbetiae", "Undaria_pinnatifida_Kr2015", "Cladosiphon_okamuranus", "Nemacystus_decipiens", "Saccharina_japonica", 
-          "Pleurocladia_lacustris", "Ectocarpus_siliculosus", "Ectocarpus_subulatus", "Saccharina_latissima_FEMALE", "Dictyota_dichotoma_m",
-          "Fucus_serratus_MALE", "Desmarestia_herbacea_m", "Ectocarpus_siliculosus_m", "Porterinema_fluviatile", "Ectocarpus_fasciculatus_m",
-          "Chordaria_linearis", "Scytosiphon_promiscuus_MALE", "Ectocarpus_crouaniorum_m", "Ectocarpus_species7")
+tsv_org_file = read.table("data/species_group.tsv", sep = "\t", header = F)
 
-diatoms = c("Thalassiosira_pseudonana", "Fragilariopsis_cylindrus", "Fistulifera_solaris", "Phaeodactylum_tricornutum")
+brown = tsv_org_file[,1][tsv_org_file[,2] == "brown"]
+diatoms = tsv_org_file[,1][tsv_org_file[,2] == "diatoms"]
+nano = tsv_org_file[,1][tsv_org_file[,2] == "nano"]
+long_read = tsv_org_file[,1][tsv_org_file[,3] == "LR"]
 
-nano = c("Nannochloropsis_gaditana")
-
-long_read = c("Pleurocladia_lacustris", "Saccharina_latissima_FEMALE", "Dictyota_dichotoma_m", "Fucus_serratus_MALE", "Desmarestia_herbacea_m",
-              "Ectocarpus_siliculosus_m", "Porterinema_fluviatile", "Ectocarpus_fasciculatus_m", "Chordaria_linearis", "Scytosiphon_promiscuus_MALE",
-              "Ectocarpus_crouaniorum_m", "Schizocladia_ischiensis")
+# brown = c("Laminarionema_elsbetiae", "Undaria_pinnatifida_Kr2015", "Cladosiphon_okamuranus", "Nemacystus_decipiens", "Saccharina_japonica", 
+#           "Pleurocladia_lacustris", "Ectocarpus_siliculosus", "Ectocarpus_subulatus", "Saccharina_latissima_FEMALE", "Dictyota_dichotoma_m",
+#           "Fucus_serratus_MALE", "Desmarestia_herbacea_m", "Ectocarpus_siliculosus_m", "Porterinema_fluviatile", "Ectocarpus_fasciculatus_m",
+#           "Chordaria_linearis", "Scytosiphon_promiscuus_MALE", "Ectocarpus_crouaniorum_m", "Ectocarpus_species7")
+# 
+# diatoms = c("Thalassiosira_pseudonana", "Fragilariopsis_cylindrus", "Fistulifera_solaris", "Phaeodactylum_tricornutum")
+# 
+# nano = c("Nannochloropsis_gaditana")
+# 
+# long_read = c("Pleurocladia_lacustris", "Saccharina_latissima_FEMALE", "Dictyota_dichotoma_m", "Fucus_serratus_MALE", "Desmarestia_herbacea_m",
+#               "Ectocarpus_siliculosus_m", "Porterinema_fluviatile", "Ectocarpus_fasciculatus_m", "Chordaria_linearis", "Scytosiphon_promiscuus_MALE",
+#               "Ectocarpus_crouaniorum_m", "Schizocladia_ischiensis")
 
 # pval = result$edges$au
 # pval
@@ -128,6 +135,7 @@ plot(result)
 
 # phylo tree
 
+phylo = ape::read.tree("data/Phaeoexplorer_MLtree_KH_27may20.nwk")
 phylo = ape::read.nexus("data/Ref_tree_run01.nex.txt")
 phylo = chronos(phylo)
 phylo = as.dendrogram(phylo)
