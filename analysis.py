@@ -1,4 +1,5 @@
 from analysis_runs.utils import *
+from analysis_runs.init_analysis import PATH_RUNS
 
 # create_folders(PATH_STUDY)
 
@@ -31,9 +32,9 @@ PLAC = "Pleurocladia_lacustris"
 
 # ### Class instances #############################################################################
 
-# REACTIONS = get_reactions_inst(PATH_RUNS, ORG_TSV, "brown", 1)
+# REACTIONS = get_reactions_inst(PATH_RUNS, ORG_TSV, ("brown", 1), 1)
 
-PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, "brown")
+PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, ("brown", 1))
 
 R01 = "run01"
 R02 = "run02"
@@ -50,7 +51,7 @@ R40 = "run40"
 
 # REACTIONS[R01].get_genes_assoc(LELS, {"12-OXOPHYTODIENOATE-REDUCTASE-RXN"}, output_file=True)
 
-print(PATHWAYS[R01].get_pw_complete([SLAT, PLAC], unique=True))
+# print(PATHWAYS[R01].get_pw_complete([SLAT, PLAC], unique=True))
 
 
 # with open("pathways_slat_plac.txt", "w") as f:

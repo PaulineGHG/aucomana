@@ -1,29 +1,33 @@
+###############################################################################
 # install packages
+###############################################################################
 
 install.packages("pvclust")
 install.packages("dendextend")
 install.packages("dplyr")
 install.packages("ape")
 
+###############################################################################
 # load packages
+###############################################################################
 
 library(pvclust)
 library(dendextend)
 library(dplyr)
 library(ape)
 
+###############################################################################
+# load data
+###############################################################################
 
 setwd("~/Documents/Analysis_runs")
-
-# load data
-
 name = "Run 01"
 reactions_dataframe = read.table("data/runs/run01/analysis/all/reactions.tsv", sep = "\t", header = T, row.names = "reaction")
 reactions_dataframe = select(reactions_dataframe, -colnames(select(reactions_dataframe, ends_with("..sep...") | ends_with("_formula"))))
 
-result = pvclust(reactions_dataframe, method.dist="binary", method.hclust="complete", nboot=10000, parallel=TRUE)
-
+###############################################################################
 # vector of algae categories
+###############################################################################
 
 tsv_org_file = read.table("data/species_group.tsv", sep = "\t", header = F)
 
@@ -32,25 +36,18 @@ diatoms = tsv_org_file[,1][tsv_org_file[,2] == "diatoms"]
 nano = tsv_org_file[,1][tsv_org_file[,2] == "nano"]
 long_read = tsv_org_file[,1][tsv_org_file[,3] == "LR"]
 
-# brown = c("Laminarionema_elsbetiae", "Undaria_pinnatifida_Kr2015", "Cladosiphon_okamuranus", "Nemacystus_decipiens", "Saccharina_japonica", 
-#           "Pleurocladia_lacustris", "Ectocarpus_siliculosus", "Ectocarpus_subulatus", "Saccharina_latissima_FEMALE", "Dictyota_dichotoma_m",
-#           "Fucus_serratus_MALE", "Desmarestia_herbacea_m", "Ectocarpus_siliculosus_m", "Porterinema_fluviatile", "Ectocarpus_fasciculatus_m",
-#           "Chordaria_linearis", "Scytosiphon_promiscuus_MALE", "Ectocarpus_crouaniorum_m", "Ectocarpus_species7")
-# 
-# diatoms = c("Thalassiosira_pseudonana", "Fragilariopsis_cylindrus", "Fistulifera_solaris", "Phaeodactylum_tricornutum")
-# 
-# nano = c("Nannochloropsis_gaditana")
-# 
-# long_read = c("Pleurocladia_lacustris", "Saccharina_latissima_FEMALE", "Dictyota_dichotoma_m", "Fucus_serratus_MALE", "Desmarestia_herbacea_m",
-#               "Ectocarpus_siliculosus_m", "Porterinema_fluviatile", "Ectocarpus_fasciculatus_m", "Chordaria_linearis", "Scytosiphon_promiscuus_MALE",
-#               "Ectocarpus_crouaniorum_m", "Schizocladia_ischiensis")
+###############################################################################
+# select pvalue
+###############################################################################
 
 # pval = result$edges$au
 # pval
 # signif = which(pval > 0.95)
 # signif
 
+###############################################################################
 # functions
+###############################################################################
 
 get_lab_colors = function(dendrogram){
   lab = labels(dendrogram)
@@ -106,8 +103,11 @@ get_nodes = function(dendrogram){
   return(list(nodes_col, nodes_pch))
 }
 
+###############################################################################
 # dendrogram
+###############################################################################
 
+result = pvclust(reactions_dataframe, method.dist="binary", method.hclust="complete", nboot=10000, parallel=TRUE)
 dend = as.dendrogram(result)
 
 d_col_lab = get_lab_colors(dend)
@@ -133,9 +133,12 @@ par(mar=c(3,3,1,15))
 plot_horiz.dendrogram(dend, side = F, edge.root = T, main = paste(name, " Metabolic Dendrogram"))
 plot(result)
 
+###############################################################################
 # phylo tree
+###############################################################################
 
 phylo = ape::read.tree("data/Phaeoexplorer_MLtree_KH_27may20.nwk")
+plot(phylo)
 phylo = ape::read.nexus("data/Ref_tree_run01.nex.txt")
 phylo = chronos(phylo)
 phylo = as.dendrogram(phylo)
@@ -154,6 +157,10 @@ phylo = phylo %>%
   set("leaves_col", p_leaf_pchcol) %>%
   sort(type = "nodes") 
 
+###############################################################################
+# tanglegram
+###############################################################################
+
 col_lines = get_lab_colors(phylo)
 plot_horiz.dendrogram(phylo, side = F)
 d1 = dendlist(phylo, dend)
@@ -161,6 +168,4 @@ tanglegram(d1, margin_inner = 13, color_lines = col_lines, lwd = 2,
            main_left = "Original phylogeny", main_right = paste(name, "\nMetabolic Dendrogram"),
            margin_outer = 2, margin_top = 5)
 
-
-barplot(as.matrix(reactions_dataframe), las = 2, cex.names = 0.7)
 

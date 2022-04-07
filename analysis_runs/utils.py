@@ -1,9 +1,10 @@
 import os
 from analysis_runs.reactions import Reactions
 from analysis_runs.pathways import Pathways
+from typing import Tuple
 
 
-def get_cat_l(reactions_file, organisms_file, cat):
+def get_cat_l(reactions_file, organisms_file, cat: Tuple[str, int]):
     with open(organisms_file, "r") as org_f, open(reactions_file, "r") as rea_f:
         species_l = set()
         cat_l = []
@@ -16,7 +17,7 @@ def get_cat_l(reactions_file, organisms_file, cat):
             break
         for l in org_f:
             l = l.split()
-            if l[1] == cat and l[0] in species_l:
+            if l[cat[1]] == cat[0] and l[0] in species_l:
                 cat_l.append(l[0])
         return cat_l
 
@@ -36,8 +37,10 @@ def get_reactions_inst(path_runs, org_tsv, cat=None, out=None):
         r_path = os.path.join(path_runs, run, "analysis", "all", "reactions.tsv")
         if os.path.exists(r_path):
             if cat is not None:
-                cat = get_cat_l(r_path, org_tsv, cat)
-            r_dic[run] = Reactions(r_path, cat, out)
+                species_l = get_cat_l(r_path, org_tsv, cat)
+                r_dic[run] = Reactions(r_path, species_l, out)
+            else:
+                r_dic[run] = Reactions(r_path, cat, out)
     return r_dic
 
 
@@ -48,6 +51,8 @@ def get_pathways_inst(path_runs, org_tsv, cat=None, out=None):
         p_path = os.path.join(path_runs, run, "analysis", "all", "pathways.tsv")
         if os.path.exists(r_path) and os.path.exists(p_path):
             if cat is not None:
-                cat = get_cat_l(r_path, org_tsv, cat)
-            p_dic[run] = Pathways(p_path, cat, out)
+                species_l = get_cat_l(r_path, org_tsv, cat)
+                p_dic[run] = Pathways(p_path, species_l, out)
+            else:
+                p_dic[run] = Pathways(p_path, cat, out)
     return p_dic
