@@ -191,7 +191,7 @@ tanglegram(d1, margin_inner = 13, color_lines = col_lines, lwd = 2,
            margin_outer = 2, margin_top = 5)
 
 ###############################################################################
-# corelation
+# correlation
 ###############################################################################
 
 # From cophenetic: The cophenetic distance between two observations that have 
