@@ -34,7 +34,7 @@ PLAC = "Pleurocladia_lacustris"
 
 # REACTIONS = get_reactions_inst(PATH_RUNS, ORG_TSV, ("brown", 1), 1)
 
-PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, ("brown", 1))
+# PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, ("brown", 1))
 
 R01 = "run01"
 R02 = "run02"
@@ -87,3 +87,15 @@ R40 = "run40"
 #     f.write(f"{p_l[0]}\n")
 #     for p in p_l[1]:
 #         f.write(f"{p}\n")
+
+SHORT_READS = get_cat_l("data/runs/run04/analysis/all/reactions.tsv", ORG_TSV, ("SR", 2))
+LONG_READS = get_cat_l("data/runs/run04/analysis/all/reactions.tsv", ORG_TSV, ("LR", 2))
+print(SHORT_READS)
+print(LONG_READS)
+R04_SR = Reactions("data/runs/run04/analysis/all/reactions.tsv", species_list=SHORT_READS)
+R04_LR = Reactions("data/runs/run04/analysis/all/reactions.tsv", species_list=LONG_READS)
+P04_SR = Pathways("data/runs/run04/analysis/all/reactions.tsv", species_list=SHORT_READS)
+P04_LR = Pathways("data/runs/run04/analysis/all/reactions.tsv", species_list=LONG_READS)
+
+
+
