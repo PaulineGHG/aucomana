@@ -46,6 +46,7 @@ class Genes:
             self.data_rnx_assoc, \
             self.genes_list = self.__init_data(file_genes_tsv)
         self.nb_genes, self.nb_species = self.data_genes.shape
+        self.nb_genes_species = self.__generate_nb_genes_sp()
 
     def __init_data(self, file_genes_tsv: str) \
             -> Tuple['pd.DataFrame', 'pd.DataFrame', List[str]]:
@@ -69,6 +70,7 @@ class Genes:
         if self.species_list is None:
             self.__generate_species_list(data)
         data_species_all_genes = data[self.species_list]
+        data_species_all_genes = data_species_all_genes.fillna(int(0))
         rnx_assoc_list = [x + self.STR_RNX_ASSOC for x in self.species_list]
         data_rnx_assoc = data[rnx_assoc_list]
         genes_list = list(data_species_all_genes.index)
@@ -88,3 +90,23 @@ class Genes:
             if x[-7:] == '(sep=;)':
                 break
             self.species_list.append(x)
+
+    def __generate_nb_genes_sp(self):
+        nb_genes_sp_dict = {}
+        for sp in self.species_list:
+            nb_genes_sp_dict[sp] = int(sum(self.data_genes[sp]))
+        return nb_genes_sp_dict
+
+    def get_genes_1sp(self, species):
+        genes_set = set()
+        for gene in self.genes_list:
+            if self.data_genes.loc[gene, species] == 1:
+                genes_set.add(gene)
+        return genes_set
+
+    def get_genes_all_sp(self):
+        genes_sp_dict = {}
+        for sp in self.species_list:
+            genes_set = self.get_genes_1sp(sp)
+            genes_sp_dict[sp] = genes_set
+        return genes_sp_dict

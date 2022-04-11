@@ -1,6 +1,7 @@
 import os
 from analysis_runs.reactions import Reactions
 from analysis_runs.pathways import Pathways
+from analysis_runs.genes import Genes
 from typing import Tuple
 
 
