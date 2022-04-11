@@ -475,7 +475,7 @@ class Pathways:
             complete_pw_dict[sp[:-len(self.STR_COMP)]] = (len(complete_pw), complete_pw)
         return complete_pw_dict
 
-    def get_pw_over_treshold(self, species: str or List[str], threshold: float):
+    def get_pw_over_treshold(self, species: str or List[str], threshold: float, strict: bool = False):
         if type(species) == str:
             species = [species]
         over_t_pw_dict = {}
@@ -483,8 +483,12 @@ class Pathways:
             sp += self.STR_COMP
             over_t_pw = set()
             for pw in self.pathways_list:
-                if self.data_pathways_float.loc[pw, sp] >= threshold:
-                    over_t_pw.add(pw)
+                if strict:
+                    if self.data_pathways_float.loc[pw, sp] > threshold:
+                        over_t_pw.add(pw)
+                else:
+                    if self.data_pathways_float.loc[pw, sp] >= threshold:
+                        over_t_pw.add(pw)
             over_t_pw_dict[sp[:-len(self.STR_COMP)]] = (len(over_t_pw), over_t_pw)
         return over_t_pw_dict
 

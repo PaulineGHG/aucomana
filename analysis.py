@@ -86,9 +86,15 @@ def compare_groups(run, group1, group2):
         df_g1.loc[sp, to_calculate[0]] = G_G1.nb_genes_species[sp]
         df_g1.loc[sp, to_calculate[1]] = R_G1.nb_reactions_sp[sp]
         df_g1.loc[sp, to_calculate[2]] = P_G1.get_pw_over_treshold(sp, 0.8)[sp][0]
+        df_g1.loc[sp, to_calculate[3]] = P_G1.get_pw_complete(sp, False)[sp][0]
 
-    print(df_g1)
+    for sp in group2:
+        df_g2.loc[sp, to_calculate[0]] = G_G2.nb_genes_species[sp]
+        df_g2.loc[sp, to_calculate[1]] = R_G2.nb_reactions_sp[sp]
+        df_g2.loc[sp, to_calculate[2]] = P_G2.get_pw_over_treshold(sp, 0.8)[sp][0]
+        df_g2.loc[sp, to_calculate[3]] = P_G2.get_pw_complete(sp, False)[sp][0]
 
+    print(df_g1, df_g2)
 
 
 compare_groups(R04, SHORT_READS, LONG_READS)
