@@ -16,72 +16,64 @@ class Genes:
         name of the file
     species_list : List[str]
         List of species studied
-    data_reactions :
-        Dataframe indicating if filtered reactions are present in each species
-    data_genes_assoc :
-        Dataframe indicating genes associated with each filtered reaction for each species
-    reactions_list : List[str]
-        List of all reactions filtered according to the number of species not having the reaction
-    nb_reactions : int
-        number of reactions (filtered)
+    data_genes :
+        Dataframe indicating if genes are present for each species
+    data_rnx_assoc :
+        Dataframe indicating reactions associated with each gene for each species
+    genes_list : List[str]
+        List of all genes
+    nb_genes : int
+        number of genes
     nb_species : int
         number of species studied
-    reactions_loss : Dict[str, Tuple[int, Set[str]]]
-        Dictionary indicating for each species how many and which reactions are lost
     """
-    nb_common_reac = 0
-    nb_genes_assoc = 0
-    STR_GENE_ASSOC = "_genes_assoc (sep=;)"
+    STR_RNX_ASSOC = "_rxn_assoc (sep=;)"
 
-    def __init__(self, file_reactions_tsv: str, species_list: List[str] = None, out: int = None):
-        """ Init the Reactions class
+    def __init__(self, file_genes_tsv: str, species_list: List[str] = None):
+        """ Init the Genes class
 
         Parameters
         ----------
-        file_reactions_tsv : str
-            file reactions.tsv output from aucome analysis
+        file_genes_tsv : str
+            file genes.tsv output from aucome analysis
         species_list : List[str], optional (default=None)
-            List of species to study (must correspond to their name in reactions.tsv file).
-            If not specified, will contain all the species from reactions.tsv file.
-        out : int, optional (default = 1)
-            number of species maximum not having the reaction for the reaction to be kept
+            List of species to study (must correspond to their name in genes.tsv file).
+            If not specified, will contain all the species from genes.tsv file.
         """
-        self.name = file_reactions_tsv.split("/")[-4]
+        self.name = file_genes_tsv.split("/")[-4]
         self.species_list = species_list
-        self.data_reactions, \
-            self.data_genes_assoc, \
-            self.reactions_list = self.__init_data(file_reactions_tsv, out)
-        self.nb_reactions, self.nb_species = self.data_reactions.shape
+        self.data_genes, \
+            self.data_rnx_assoc, \
+            self.genes_list = self.__init_data(file_genes_tsv)
+        self.nb_genes, self.nb_species = self.data_genes.shape
 
-    def __init_data(self, file_reactions_tsv: str, out: int) \
+    def __init_data(self, file_genes_tsv: str) \
             -> Tuple['pd.DataFrame', 'pd.DataFrame', List[str]]:
-        """ Generate the data_reactions, data_genes_assoc and reactions_list attributes
+        """ Generate the data_genes, data_rnx_assoc and genes_list attributes
 
         Parameters
         ----------
-        file_reactions_tsv : str
-            file reactions.tsv
-        out : int
-            number of species maximum not having the reaction for the reaction to be kept
+        file_genes_tsv : str
+            file genes.tsv
 
         Returns
         -------
-        data_reactions :
-            data_reactions attribute
-        data_genes_assoc :
-            data_genes_assoc attribute
-        reactions_list : List[str]
-            reactions_list
+        data_genes :
+            data_genes attribute
+        data_rnx_assoc :
+            data_rnx_assoc attribute
+        genes_list : List[str]
+            genes_list
         """
-        data = pd.read_csv(file_reactions_tsv, sep="\t", header=0, index_col='reaction')
+        data = pd.read_csv(file_genes_tsv, sep="\t", header=0, index_col='gene')
         if self.species_list is None:
             self.__generate_species_list(data)
-        data_species_all_reactions = data[self.species_list]
-        genes_assoc_list = [x + self.STR_GENE_ASSOC for x in self.species_list]
-        data_genes_assoc = data[genes_assoc_list]
-        filtered_reactions = self.__get_filtered_reactions(data_species_all_reactions, out)
-        return data_species_all_reactions.loc[filtered_reactions], \
-            data_genes_assoc.loc[filtered_reactions], filtered_reactions
+        data_species_all_genes = data[self.species_list]
+        rnx_assoc_list = [x + self.STR_RNX_ASSOC for x in self.species_list]
+        data_rnx_assoc = data[rnx_assoc_list]
+        genes_list = list(data_species_all_genes.index)
+        return data_species_all_genes.loc[genes_list], \
+            data_rnx_assoc.loc[genes_list], genes_list
 
     def __generate_species_list(self, data: 'pd.DataFrame'):
         """ Generate the species_list attribute if is None
@@ -89,7 +81,7 @@ class Genes:
         Parameters
         ----------
         data :
-            The dataframe created from reactions.tsv file
+            The dataframe created from genes.tsv file
         """
         self.species_list = []
         for x in data.columns:
