@@ -29,6 +29,8 @@ class Reactions:
         number of species studied
     reactions_loss : Dict[str, Tuple[int, Set[str]]]
         Dictionary indicating for each species how many and which reactions are lost
+    nb_reactions_sp : Dict[str, int]
+        Dictionary indicating for each species how many reactions are found
     """
     nb_common_reac = 0
     nb_genes_assoc = 0
@@ -54,6 +56,7 @@ class Reactions:
             self.reactions_list = self.__init_data(file_reactions_tsv, out)
         self.nb_reactions, self.nb_species = self.data_reactions.shape
         self.reactions_loss = self.__init_reactions_loss()
+        self.nb_reactions_sp = self.__get_reaction_nb()
 
     def __init_data(self, file_reactions_tsv: str, out: int) \
             -> Tuple['pd.DataFrame', 'pd.DataFrame', List[str]]:
@@ -157,9 +160,9 @@ class Reactions:
             reactions_loss[species] = self.__get_reactions_loss_1_species(species)
         return reactions_loss
 
-    def get_reaction_nb(self, species_l: List[str]):
+    def __get_reaction_nb(self):
         reactions_nb_dict = {}
-        for species in species_l:
+        for species in self.species_list:
             reactions_nb_dict[species] = sum(self.data_reactions[species])
         return reactions_nb_dict
 

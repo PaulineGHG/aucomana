@@ -191,7 +191,7 @@ class Pathways:
             for pw in self.pathways_list:
                 if self.is_min(sp, pw, unique):
                     min_pw.add(pw)
-            min_pw_dict[sp] = (len(min_pw), min_pw)
+            min_pw_dict[sp[:-len(self.STR_COMP)]] = (len(min_pw), min_pw)
         return min_pw_dict
 
     # ## Absent
@@ -247,7 +247,7 @@ class Pathways:
             for pw in self.pathways_list:
                 if self.is_absent(sp, pw, unique):
                     absent_pw.add(pw)
-            absent_pw_dict[sp] = (len(absent_pw), absent_pw)
+            absent_pw_dict[sp[:-len(self.STR_COMP)]] = (len(absent_pw), absent_pw)
         return absent_pw_dict
 
     # ## Incomplete
@@ -303,7 +303,7 @@ class Pathways:
             for pw in self.pathways_list:
                 if self.is_incomplete(sp, pw, unique):
                     incomplete_pw.add(pw)
-            incomplete_pw_dict[sp] = (len(incomplete_pw), incomplete_pw)
+            incomplete_pw_dict[sp[:-len(self.STR_COMP)]] = (len(incomplete_pw), incomplete_pw)
         return incomplete_pw_dict
 
     # Gain
@@ -361,7 +361,7 @@ class Pathways:
             for pw in self.pathways_list:
                 if self.is_present(sp, pw, unique):
                     present_pw.add(pw)
-            present_pw_dict[sp] = (len(present_pw), present_pw)
+            present_pw_dict[sp[:-len(self.STR_COMP)]] = (len(present_pw), present_pw)
         return present_pw_dict
 
     # ## Max
@@ -416,7 +416,7 @@ class Pathways:
             for pw in self.pathways_list:
                 if self.is_max(sp, pw, unique):
                     max_pw.add(pw)
-            max_pw_dict[sp] = (len(max_pw), max_pw)
+            max_pw_dict[sp[:-len(self.STR_COMP)]] = (len(max_pw), max_pw)
         return max_pw_dict
 
     # ## Complete
@@ -472,8 +472,27 @@ class Pathways:
             for pw in self.pathways_list:
                 if self.is_complete(sp, pw, unique):
                     complete_pw.add(pw)
-            complete_pw_dict[sp] = (len(complete_pw), complete_pw)
+            complete_pw_dict[sp[:-len(self.STR_COMP)]] = (len(complete_pw), complete_pw)
         return complete_pw_dict
+
+    def get_pw_over_treshold(self, species: str or List[str], threshold: float):
+        if type(species) == str:
+            species = [species]
+        over_t_pw_dict = {}
+        for sp in species:
+            sp += self.STR_COMP
+            over_t_pw = set()
+            for pw in self.pathways_list:
+                if self.data_pathways_float.loc[pw, sp] >= threshold:
+                    over_t_pw.add(pw)
+            over_t_pw_dict[sp[:-len(self.STR_COMP)]] = (len(over_t_pw), over_t_pw)
+        return over_t_pw_dict
+
+    # TO DO : DO METHOD REVERSE SET
+    def get_pw_under_treshold(self, species: str or List[str], threshold: int):
+        over_t_dict = self.get_pw_over_treshold(species, threshold)
+        under_t_pw_dict = over_t_dict
+        return under_t_pw_dict
 
     # Other
 

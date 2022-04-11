@@ -1,5 +1,6 @@
 from analysis_runs.utils import *
 from analysis_runs.init_analysis import PATH_RUNS
+import pandas as pd
 
 # create_folders(PATH_STUDY)
 
@@ -54,52 +55,40 @@ R40 = "run40"
 # print(PATHWAYS[R01].get_pw_complete([SLAT, PLAC], unique=True))
 
 
-# with open("pathways_slat_plac.txt", "w") as f:
-#     f.write("1) Pathways absents chez Slat et présents chez les autres : ")
-#     p_l = PATHWAYS[R01].get_pw_absent(SLAT)
-#     f.write(f"{p_l[0]}\n")
-#     for p in p_l[1]:
-#         f.write(f"{p}\n")
-#     f.write("\nPathways absents chez Plac et présents chez les autres : ")
-#     p_l = PATHWAYS[R01].get_pw_absent(PLAC)
-#     f.write(f"{p_l[0]}\n")
-#     for p in p_l[1]:
-#         f.write(f"{p}\n")
-#
-#     f.write("\n\n2) Pathways de completion minimale chez Slat : ")
-#     p_l = PATHWAYS[R01].get_pw_min(SLAT)
-#     f.write(f"{p_l[0]}\n")
-#     for p in p_l[1]:
-#         f.write(f"{p}\n")
-#     f.write("\nPathways de completion minimale chez Plac : ")
-#     p_l = PATHWAYS[R01].get_pw_min(PLAC)
-#     f.write(f"{p_l[0]}\n")
-#     for p in p_l[1]:
-#         f.write(f"{p}\n")
-#
-#     f.write("\n\n3) Pathways incomplets chez Slat et complets chez autres espèces : ")
-#     p_l = PATHWAYS[R01].get_pw_incomplete(SLAT)
-#     f.write(f"{p_l[0]}\n")
-#     for p in p_l[1]:
-#         f.write(f"{p}\n")
-#     f.write("\nPathways incomplets chez Plac et complets chez autres espèces : ")
-#     p_l = PATHWAYS[R01].get_pw_incomplete(PLAC)
-#     f.write(f"{p_l[0]}\n")
-#     for p in p_l[1]:
-#         f.write(f"{p}\n")
-
 SHORT_READS = get_cat_l("data/runs/run04/analysis/all/reactions.tsv", ORG_TSV, ("SR", 2))
 LONG_READS = get_cat_l("data/runs/run04/analysis/all/reactions.tsv", ORG_TSV, ("LR", 2))
-print(SHORT_READS)
-print(LONG_READS)
-
-R04_SR = Reactions("data/runs/run04/analysis/all/reactions.tsv", species_list=SHORT_READS)
-R04_LR = Reactions("data/runs/run04/analysis/all/reactions.tsv", species_list=LONG_READS)
-
-# P04_SR = Pathways("data/runs/run04/analysis/all/pathways.tsv", species_list=SHORT_READS)
-# P04_LR = Pathways("data/runs/run04/analysis/all/pathways.tsv", species_list=LONG_READS)
-
-G04_SR = Genes("data/runs/run04/analysis/all/genes.tsv", species_list=SHORT_READS)
-print(G04_SR.nb_genes_species)
 
 
+def compare_groups(run, group1, group2):
+    to_calculate = ("nb_genes", "nb_rnx", "nb_pw > 80%", "nb_pw 100%")
+    stat = (" mean", " med", " sd", " min", " max")
+    path = f"{PATH_RUNS}/{run}/analysis/all/"
+    R_G1 = Reactions(f"{path}reactions.tsv", group1)
+    R_G2 = Reactions(f"{path}reactions.tsv", group2)
+    P_G1 = Pathways(f"{path}pathways.tsv", group1)
+    P_G2 = Pathways(f"{path}pathways.tsv", group2)
+    G_G1 = Genes(f"{path}genes.tsv", group1)
+    G_G2 = Genes(f"{path}genes.tsv", group2)
+
+    g1_res_file = "output_data/group1.tsv"
+    g2_res_file = "output_data/group2.tsv"
+    res_file = "output_data/compare_groups.tsv"
+
+    df_g1 = pd.DataFrame(columns=to_calculate, index=group1)
+    df_g2 = pd.DataFrame(columns=to_calculate, index=group2)
+    col_stat = []
+    for x in to_calculate:
+        for y in stat:
+            col_stat.append(x + y)
+    df_comp = pd.DataFrame(columns=col_stat, index=["group 1", "group 2"])
+
+    for sp in group1:
+        df_g1.loc[sp, to_calculate[0]] = G_G1.nb_genes_species[sp]
+        df_g1.loc[sp, to_calculate[1]] = R_G1.nb_reactions_sp[sp]
+        df_g1.loc[sp, to_calculate[2]] = P_G1.get_pw_over_treshold(sp, 0.8)[sp][0]
+
+    print(df_g1)
+
+
+
+compare_groups(R04, SHORT_READS, LONG_READS)
