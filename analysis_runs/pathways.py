@@ -475,7 +475,25 @@ class Pathways:
             complete_pw_dict[sp[:-len(self.STR_COMP)]] = (len(complete_pw), complete_pw)
         return complete_pw_dict
 
-    def get_pw_over_treshold(self, species: str or List[str], threshold: float, strict: bool = False):
+    def get_pw_over_treshold(self, species: str or List[str], threshold: float, strict: bool = False) \
+            -> Dict[str, Tuple[int, Set[str]]]:
+        """ Returns the pathways with completion over a given threshold for species
+
+        Parameters
+        ----------
+        species: str or List[str]
+            Species or list of species to be considered
+        threshold : float
+            Threshold of completion
+        strict : bool, optional (default=False)
+            Whether the inequality relative to the threshold should be strict or not
+
+        Returns
+        -------
+        over_t_pw_dict : Dict[str, Tuple[int, Set[str]]]
+            (Dict[species, Tuple[number_pathways, Set[pathways]]]) dictionary associating for each species the number of
+            pathways over the threshold and its set
+        """
         if type(species) == str:
             species = [species]
         over_t_pw_dict = {}
@@ -492,10 +510,33 @@ class Pathways:
             over_t_pw_dict[sp[:-len(self.STR_COMP)]] = (len(over_t_pw), over_t_pw)
         return over_t_pw_dict
 
-    # TO DO : DO METHOD REVERSE SET
-    def get_pw_under_treshold(self, species: str or List[str], threshold: int):
-        over_t_dict = self.get_pw_over_treshold(species, threshold)
-        under_t_pw_dict = over_t_dict
+    def get_pw_under_treshold(self, species: str or List[str], threshold: float, strict: bool = False) \
+            -> Dict[str, Tuple[int, Set[str]]]:
+        """ Returns the pathways with completion under a given threshold for species
+
+        Parameters
+        ----------
+        species: str or List[str]
+            Species or list of species to be considered
+        threshold : float
+            Threshold of completion
+        strict : bool, optional (default=False)
+            Whether the inequality relative to the threshold should be strict or not
+
+        Returns
+        -------
+        over_t_pw_dict : Dict[str, Tuple[int, Set[str]]]
+            (Dict[species, Tuple[number_pathways, Set[pathways]]]) dictionary associating for each species the number of
+            pathways under the threshold and its set
+        """
+        if strict:
+            over_t_dict = self.get_pw_over_treshold(species, threshold, False)
+        else:
+            over_t_dict = self.get_pw_over_treshold(species, threshold, True)
+        under_t_pw_dict = {}
+        for sp in over_t_dict:
+            under_t_pw_dict[sp] = (self.nb_pathways - over_t_dict[sp][0],
+                                   set(self.pathways_list).difference(over_t_dict[sp][1]))
         return under_t_pw_dict
 
     # Other
