@@ -1,6 +1,7 @@
 from analysis_runs.utils import *
 from analysis_runs.init_analysis import PATH_RUNS
 import pandas as pd
+import numpy as np
 
 # create_folders(PATH_STUDY)
 
@@ -70,9 +71,12 @@ def compare_groups(run, group1, group2, org_file):
     g_g1 = Genes(f"{path}genes.tsv", group1_list)
     g_g2 = Genes(f"{path}genes.tsv", group2_list)
 
-    g1_res_file = "output_data/group1.tsv"
-    g2_res_file = "output_data/group2.tsv"
-    res_file = "output_data/compare_groups.tsv"
+    out_dir = f"output_data/compare_{group1[0]}_{group2[0]}/"
+    if not os.path.exists(out_dir):
+        os.mkdir(out_dir)
+    g1_res_file = f"{out_dir}{group1[0]}.tsv"
+    g2_res_file = f"{out_dir}{group2[0]}.tsv"
+    res_file = f"{out_dir}compare_{group1[0]}_{group2[0]}.tsv"
 
     df_g1 = pd.DataFrame(columns=to_calculate, index=group1_list)
     df_g2 = pd.DataFrame(columns=to_calculate, index=group2_list)
@@ -96,11 +100,15 @@ def compare_groups(run, group1, group2, org_file):
 
     for grp in [(group1[0], df_g1), (group2[0], df_g2)]:
         for calc in to_calculate:
-            df_comp.loc[grp[0], calc + stat[0]] = None
+            df_comp.loc[grp[0], calc + stat[0]] = round(float(np.mean(grp[1][calc])), 1)
+            df_comp.loc[grp[0], calc + stat[1]] = np.median(grp[1][calc])
+            df_comp.loc[grp[0], calc + stat[2]] = round(np.sqrt(np.var(grp[1][calc])), 1)
+            df_comp.loc[grp[0], calc + stat[3]] = min(grp[1][calc])
+            df_comp.loc[grp[0], calc + stat[4]] = max(grp[1][calc])
 
-    df_g1.to_csv(g1_res_file, sep="\t", index=False)
-    df_g2.to_csv(g2_res_file, sep="\t", index=False)
-    print(df_comp)
+    df_g1.to_csv(g1_res_file, sep="\t")
+    df_g2.to_csv(g2_res_file, sep="\t")
+    df_comp.to_csv(res_file, sep="\t")
 
 
 compare_groups(R04, ("SR", 2), ("LR", 2), ORG_TSV)
