@@ -1,5 +1,6 @@
 from analysis_runs.utils import *
-
+import matplotlib.pyplot as plt
+import matplotlib_venn as mven
 
 # ### FILES #######################################################################################
 
@@ -53,5 +54,16 @@ R40 = "run40"
 
 # compare_groups(R04, ("SR", 2), ("LR", 2), ORG_TSV)
 
+file = f"{PATH_RUNS}{R04}/analysis/all/reactions.tsv"
+sr = get_cat_l(file, ORG_TSV, ("SR", 2))
+lr = get_cat_l(file, ORG_TSV, ("LR", 2))
 
+rsr = Reactions(file, sr)
+rlr = Reactions(file, lr)
 
+reactions_sr = set(rsr.reactions_list)
+reactions_lr = set(rlr.reactions_list)
+
+print(len(reactions_sr), len(reactions_lr))
+# mven.venn2([reactions_sr, reactions_lr], ("Short Read", "Long Read"))
+# plt.show()

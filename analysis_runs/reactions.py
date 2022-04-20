@@ -120,7 +120,7 @@ class Reactions:
         """
         nb_species = len(self.species_list)
         if out is None:
-            out = nb_species
+            out = nb_species - 1
         filtered_reactions = []
         for reaction in data_all_reactions.index:
             count = sum(data_all_reactions.loc[reaction])
