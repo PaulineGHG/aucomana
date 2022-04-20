@@ -54,16 +54,32 @@ R40 = "run40"
 
 # compare_groups(R04, ("SR", 2), ("LR", 2), ORG_TSV)
 
-file = f"{PATH_RUNS}{R04}/analysis/all/reactions.tsv"
-sr = get_cat_l(file, ORG_TSV, ("SR", 2))
-lr = get_cat_l(file, ORG_TSV, ("LR", 2))
 
-rsr = Reactions(file, sr)
-rlr = Reactions(file, lr)
+def intersect_groups(run, group1, group2, org_file, venn_plot=False):
+    file = f"{PATH_RUNS}{run}/analysis/all/reactions.tsv"
+    group1_list = get_cat_l(file, org_file, group1)
+    group2_list = get_cat_l(file, org_file, group2)
 
-reactions_sr = set(rsr.reactions_list)
-reactions_lr = set(rlr.reactions_list)
+    r1 = Reactions(file, group1_list)
+    r2 = Reactions(file, group2_list)
 
-print(len(reactions_sr), len(reactions_lr))
-# mven.venn2([reactions_sr, reactions_lr], ("Short Read", "Long Read"))
-# plt.show()
+    reactions_g1 = set(r1.reactions_list)
+    reactions_g2 = set(r2.reactions_list)
+
+    g1_nb = len(reactions_g1)
+    g2_nb = len(reactions_g2)
+    intersect_nb = len(reactions_g1.intersection(reactions_g2))
+    union_nb = len(reactions_g1.union(reactions_g2))
+
+    print(f"Over {union_nb} reactions, {intersect_nb} reactions in common.\n"
+          f"{g1_nb - intersect_nb} only present among the {group1[0]} group = "
+          f"{round(((g1_nb - intersect_nb)/union_nb) * 100, 2)} %.\n"
+          f"{g2_nb - intersect_nb} only present among the {group2[0]} group = "
+          f"{round(((g2_nb - intersect_nb)/union_nb) * 100, 2)} %.\n")
+
+    if venn_plot:
+        mven.venn2([reactions_g1, reactions_g2], (group1[0], group2[0]))
+        plt.show()
+
+
+intersect_groups(R04, ("LR", 2), ("SR", 2), ORG_TSV, True)
