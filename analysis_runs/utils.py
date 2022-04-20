@@ -1,6 +1,9 @@
 import os
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib_venn
+
 from analysis_runs.reactions import Reactions
 from analysis_runs.pathways import Pathways
 from analysis_runs.genes import Genes
@@ -115,3 +118,30 @@ def compare_groups(run, group1, group2, org_file):
     df_g1.to_csv(g1_res_file, sep="\t")
     df_g2.to_csv(g2_res_file, sep="\t")
     df_comp.to_csv(res_file, sep="\t")
+
+
+def intersect_groups(run, group1, group2, org_file, venn_plot=False):
+    file = f"{PATH_RUNS}{run}/analysis/all/reactions.tsv"
+    group1_list = get_cat_l(file, org_file, group1)
+    group2_list = get_cat_l(file, org_file, group2)
+
+    r1 = Reactions(file, group1_list)
+    r2 = Reactions(file, group2_list)
+
+    reactions_g1 = set(r1.reactions_list)
+    reactions_g2 = set(r2.reactions_list)
+
+    g1_nb = len(reactions_g1)
+    g2_nb = len(reactions_g2)
+    intersect_nb = len(reactions_g1.intersection(reactions_g2))
+    union_nb = len(reactions_g1.union(reactions_g2))
+
+    print(f"Over {union_nb} reactions, {intersect_nb} reactions in common.\n"
+          f"{g1_nb - intersect_nb} only present among the {group1[0]} group = "
+          f"{round(((g1_nb - intersect_nb)/union_nb) * 100, 2)} %.\n"
+          f"{g2_nb - intersect_nb} only present among the {group2[0]} group = "
+          f"{round(((g2_nb - intersect_nb)/union_nb) * 100, 2)} %.\n")
+
+    if venn_plot:
+        matplotlib_venn.venn2([reactions_g1, reactions_g2], (group1[0], group2[0]))
+        plt.show()
