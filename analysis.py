@@ -53,7 +53,4 @@ R40 = "run40"
 # compare_groups(R04, ("SR", 2), ("LR", 2), ORG_TSV)
 
 
-
-
-
-intersect_groups(R04, ("LR", 2), ("SR", 2), ORG_TSV, True)
+intersect_groups(R04, ("LR", 2), ("SR", 2), ORG_TSV)

@@ -136,11 +136,12 @@ def intersect_groups(run, group1, group2, org_file, venn_plot=False):
     intersect_nb = len(reactions_g1.intersection(reactions_g2))
     union_nb = len(reactions_g1.union(reactions_g2))
 
-    print(f"Over {union_nb} reactions, {intersect_nb} reactions in common.\n"
+    print(f"Over {union_nb} reactions, {intersect_nb} reactions in common = "
+          f"{round((intersect_nb/union_nb) * 100, 2)} % of the union.\n"
           f"{g1_nb - intersect_nb} only present among the {group1[0]} group = "
-          f"{round(((g1_nb - intersect_nb)/union_nb) * 100, 2)} %.\n"
+          f"{round(((g1_nb - intersect_nb)/union_nb) * 100, 2)} % of the union.\n"
           f"{g2_nb - intersect_nb} only present among the {group2[0]} group = "
-          f"{round(((g2_nb - intersect_nb)/union_nb) * 100, 2)} %.\n")
+          f"{round(((g2_nb - intersect_nb)/union_nb) * 100, 2)} % of the union.\n")
 
     if venn_plot:
         matplotlib_venn.venn2([reactions_g1, reactions_g2], (group1[0], group2[0]))
