@@ -9,7 +9,7 @@ RUNS_PATH = "Runs_aucome"
 FILE_TEST = f"{RUNS_PATH}/runA1/analysis/all/reactions.tsv"
 ORG_TSV = f"{STUDY_PATH}/species_group.tsv"
 
-brown_algae = get_cat_l(FILE_TEST, ORG_TSV, "brown")
+brown_algae = get_cat_l(FILE_TEST, ORG_TSV, ("brown", 1))
 
 R = Reactions(FILE_TEST)
 RS = Reactions(FILE_TEST, brown_algae)

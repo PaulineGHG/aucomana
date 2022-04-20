@@ -1,7 +1,5 @@
 from analysis_runs.utils import *
-from analysis_runs.init_analysis import PATH_RUNS
 
-# create_folders(PATH_STUDY)
 
 # ### FILES #######################################################################################
 
@@ -34,7 +32,7 @@ PLAC = "Pleurocladia_lacustris"
 
 # REACTIONS = get_reactions_inst(PATH_RUNS, ORG_TSV, ("brown", 1), 1)
 
-PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, ("brown", 1))
+# PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, ("brown", 1))
 
 R01 = "run01"
 R02 = "run02"
@@ -54,5 +52,6 @@ R40 = "run40"
 # print(PATHWAYS[R01].get_pw_complete([SLAT, PLAC], unique=True))
 
 # compare_groups(R04, ("SR", 2), ("LR", 2), ORG_TSV)
+
 
 
