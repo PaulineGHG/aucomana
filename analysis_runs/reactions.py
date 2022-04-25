@@ -166,13 +166,11 @@ class Reactions:
             reactions_nb_dict[species] = sum(self.data_reactions[species])
         return reactions_nb_dict
 
-    def get_genes_assoc(self, interest_species: str,  reactions_set: Set[str] = None,
+    def get_genes_assoc(self, reactions_set: Set[str] = None,
                         output_file=False) -> Dict[str, Dict[str, Dict[str, List[str]]]]:
         """
         Parameters
         ----------
-        interest_species : str
-            species of interest
         reactions_set : List[str], optional (default=None)
             Set of reactions to find genes associated with.
             If None, will be reactions_list attribute.
@@ -185,35 +183,33 @@ class Reactions:
         genes_assoc : Dict[str, Dict[str, Dict[str, List[str]]]]
             Dictionary of genes associated with each reaction for each species
         """
-        genes_assoc = {interest_species: {}}
+        genes_assoc = {}
         if reactions_set is None:
-            reactions_set = self.reactions_loss[interest_species][1]
+            reactions_set = self.reactions_list
         for reaction in reactions_set:
-            genes_assoc[interest_species][reaction] = {}
+            genes_assoc[reaction] = {}
         for reaction in reactions_set:
             for species in self.species_list:
-                genes_assoc[interest_species][reaction][species] = str(
+                genes_assoc[reaction][species] = str(
                     self.data_genes_assoc[species + self.STR_GENE_ASSOC][reaction]).split(";")
         if not output_file:
             return genes_assoc
         else:
             self.nb_genes_assoc += 1
-            self.__write_genes(genes_assoc, interest_species)
+            self.__write_genes(genes_assoc)
 
-    def __write_genes(self, genes_assoc, interest_species):
+    def __write_genes(self, genes_assoc):
         """ Allow writing sequences of genes in fasta out files
 
         Parameters
         ----------
         genes_assoc : Dict[str, Dict[str, Dict[str, List[str]]]]
             Dictionary of genes associated with each reaction for each species
-        interest_species : str
-            species of interest
 
         Write results in {PATH_STUDY}/output_data/reactions_data/genes_assoc/{now}_{self.nb_genes_assoc}/
         """
         fa_file_path = f"{PATH_RUNS}/{self.name}/studied_organisms/"
-        now = datetime.datetime.now().strftime('%d_%m_%Y__%Hh_%Mmin_%Ss')
+        now = datetime.datetime.now().strftime('%d-%m-%Y_%Hh-%Mmin-%Ss')
         out_file = f"{PATH_STUDY}/output_data/reactions_data/genes_assoc/{now}_{self.nb_genes_assoc}/"
         if not os.path.exists(out_file):
             os.makedirs(out_file)
@@ -222,8 +218,7 @@ class Reactions:
         with open(file_out_json, 'w') as o:
             json.dump(genes_assoc, o, indent=4)
 
-        genes_dict = genes_assoc[interest_species]
-        for reaction, species_dict in genes_dict.items():
+        for reaction, species_dict in genes_assoc.items():
             fasta = f"{out_file}{reaction}.fa"
             with open(fasta, 'w') as o:
                 for species, genes_list in species_dict.items():
