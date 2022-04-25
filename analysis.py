@@ -49,8 +49,3 @@ R40 = "run40"
 # REACTIONS[R01].get_genes_assoc(LELS, {"12-OXOPHYTODIENOATE-REDUCTASE-RXN"}, output_file=True)
 
 # print(PATHWAYS[R01].get_pw_complete([SLAT, PLAC], unique=True))
-
-# compare_groups(R04, ("SR", 2), ("LR", 2), ORG_TSV)
-
-
-intersect_groups(R04, ("LR", 2), ("SR", 2), ORG_TSV)
