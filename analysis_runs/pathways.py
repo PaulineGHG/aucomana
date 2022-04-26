@@ -1,7 +1,10 @@
 """
 Pathways class
 """
+import copy
 from typing import Dict, List, Tuple, Set
+import os
+from analysis_runs.init_analysis import PATH_STUDY, PATH_RUNS
 import pandas as pd
 
 
@@ -494,6 +497,8 @@ class Pathways:
             (Dict[species, Tuple[number_pathways, Set[pathways]]]) dictionary associating for each species the number of
             pathways over the threshold and its set
         """
+        if threshold < 0 or threshold > 1:
+            raise ValueError("The threshold must be within the range of 0 to 1")
         if type(species) == str:
             species = [species]
         over_t_pw_dict = {}
@@ -540,6 +545,50 @@ class Pathways:
         return under_t_pw_dict
 
     # Other
+
+    def convert_df_to_binary(self, threshold: float, strict: bool = False, output_file: bool = False) \
+            -> 'pd.DataFrame':
+        """ Returns the pathways with completion over a given threshold for species
+
+        Parameters
+        ----------
+        threshold : float
+            Threshold of completion
+        strict : bool, optional (default=False)
+            Whether the inequality relative to the threshold should be strict or not
+        output_file : bool, optional (default=False)
+            Whether write the binary data frame in an output file or not
+
+        Returns
+        -------
+        df_binary : 'pd.DataFrame'
+            Dataframe with binary values according to the threshold indicated :
+            value = 1 if value >= (or > if strict) threshold
+            value = 0 if value < (or <= if strict) threshold
+        """
+        if threshold < 0 or threshold > 1:
+            raise ValueError("The threshold must be within the range of 0 to 1")
+        df_binary = pd.DataFrame(columns=[sp + self.STR_COMP for sp in self.species_list], index=self.pathways_list,
+                                 dtype=int)
+        for pw in self.pathways_list:
+            for sp in self.species_list:
+                sp += self.STR_COMP
+                if strict:
+                    if self.data_pathways_float.loc[pw, sp] > threshold:
+                        df_binary.loc[pw, sp] = int(1)
+                    else:
+                        df_binary.loc[pw, sp] = int(0)
+                else:
+                    if self.data_pathways_float.loc[pw, sp] >= threshold:
+                        df_binary.loc[pw, sp] = int(1)
+                    else:
+                        df_binary.loc[pw, sp] = int(0)
+        if output_file:
+            file_name = f"{self.name}_{threshold}_binary_pw.tsv"
+            file_path = os.path.join(PATH_STUDY, "output_data", "pathways_data", "binary_df", file_name)
+            df_binary.to_csv(file_path, sep="\t", index=False)
+        else:
+            return df_binary
 
     def print_completion_pw(self, pathway, species):
         species += self.STR_COMP

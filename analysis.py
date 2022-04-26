@@ -1,4 +1,5 @@
 from analysis_runs.utils import *
+from analysis_runs.init_analysis import *
 
 # ### FILES #######################################################################################
 
@@ -29,8 +30,8 @@ PLAC = "Pleurocladia_lacustris"
 
 # ### Class instances #############################################################################
 
-REACTIONS = get_reactions_inst(PATH_RUNS, ORG_TSV)
-# PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, ("brown", 1))
+# REACTIONS = get_reactions_inst(PATH_RUNS, ORG_TSV)
+PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, ("brown", 1))
 
 R01 = "run01"
 R02 = "run02"
@@ -46,6 +47,10 @@ R40 = "run40"
 # ### genes assoc #################################################################################
 
 # REACTIONS[R01].get_genes_assoc(LELS, {"12-OXOPHYTODIENOATE-REDUCTASE-RXN"}, output_file=True)
-print(REACTIONS[R04].get_genes_assoc({"12-OXOPHYTODIENOATE-REDUCTASE-RXN", "LEUKOTRIENE-C4-SYNTHASE-RXN", "PROSTAGLANDIN-E-SYNTHASE-RXN"}, output_file=True))
+# print(REACTIONS[R04].get_genes_assoc({"12-OXOPHYTODIENOATE-REDUCTASE-RXN", "LEUKOTRIENE-C4-SYNTHASE-RXN", "PROSTAGLANDIN-E-SYNTHASE-RXN"}, output_file=True))
+
+
+# ### pathways ##################################################################################
 
 # print(PATHWAYS[R01].get_pw_complete([SLAT, PLAC], unique=True))
+# PATHWAYS[R04].convert_df_to_binary(1, output_file=True)

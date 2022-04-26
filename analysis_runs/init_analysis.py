@@ -5,6 +5,7 @@ def create_folders(path_study):
     arbo = [['input_data'], ['output_data'],
             ['output_data', 'dendro_tanglegrams'],
             ['output_data', 'pathways_data'],
+            ['output_data', 'pathways_data', 'binary_df'],
             ['output_data', 'reactions_data'],
             ['output_data', 'reactions_data', 'common_reac'],
             ['output_data', 'reactions_data', 'common_reac', 'union'],
@@ -21,5 +22,5 @@ def create_folders(path_study):
 
 
 PATH_STUDY = os.getcwd()
-# PATH_RUNS = 'data/runs/'
-PATH_RUNS = '/home/phamongi/Documents/Runs/'
+PATH_RUNS = 'data/runs/'
+# PATH_RUNS = '/home/phamongi/Documents/Runs/'
