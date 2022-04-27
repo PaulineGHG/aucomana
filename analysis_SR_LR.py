@@ -41,8 +41,9 @@ def reg_lin(file_tsv):
 # ### illustration ###########
 
 
-def save_figur_comp(folder, df_comp, group, calc):
+def save_figur_comp(folder, df_comp, group):
     stat = (" mean", " med", " sd", " min", " max")
+    to_calculate = ("nb_genes", "nb_rnx", "nb_pw > 80%", "nb_pw 100%")
     group_file = None
     for file in os.listdir(folder):
         if file.split(".")[0] == group:
@@ -50,30 +51,36 @@ def save_figur_comp(folder, df_comp, group, calc):
     if group_file is not None:
         df_group = pd.read_csv(group_file, sep="\t", index_col=0)
 
-        X = df_group[calc]
+        fig = plt.figure(figsize=[12.8, 9.6])
+        i = 1
 
-        plt.hist(X, len(X) - len(X)//2, density=True, facecolor='g')
-        plt.xlabel(calc)
-        plt.ylabel('Density')
-        mu = df_comp.loc[group, calc + stat[0]]
-        med = df_comp.loc[group, calc + stat[1]]
-        sd = df_comp.loc[group, calc + stat[2]]
-        mini = df_comp.loc[group, calc + stat[3]]
-        maxi = df_comp.loc[group, calc + stat[4]]
-        plt.title(f"Histogram of {calc} for the {group} group\n"
-                  f"$\mu={mu},\ \sigma={sd}$")
-        plt.axvline(x=mu, color='b', label=f"$\mu={mu}$")
-        plt.axvline(x=med, color='c', label=f"med={med}")
-        plt.axvline(x=mini, color='m', label=f"min={mini}")
-        plt.axvline(x=maxi, color='r', label=f"max={maxi}")
-        plt.grid(True)
-        plt.legend(bbox_to_anchor=(1.0, 1), loc='upper left')
-        # plt.savefig("output.png", bbox_inches="tight")
-        plt.show()
+        for calc in to_calculate:
+            axs = fig.add_subplot(2, 2, i)
+            i += 1
+            X = df_group[calc]
+            axs.hist(X, len(X) - len(X)//2, density=True, facecolor='g')
+            axs.set_xlabel(calc)
+            axs.set_ylabel('Density')
+            mu = df_comp.loc[group, calc + stat[0]]
+            med = df_comp.loc[group, calc + stat[1]]
+            sd = df_comp.loc[group, calc + stat[2]]
+            mini = df_comp.loc[group, calc + stat[3]]
+            maxi = df_comp.loc[group, calc + stat[4]]
+            axs.set_title(f"Histogram of {calc} for the {group} group\n"
+                                          f"$\mu={mu},\ \sigma={sd}$")
+            axs.axvline(x=mu, color='b', label=f"$\mu={mu}$")
+            axs.axvline(x=med, color='c', label=f"med={med}")
+            axs.axvline(x=mini, color='m', label=f"min={mini}")
+            axs.axvline(x=maxi, color='r', label=f"max={maxi}")
+            axs.grid(True)
+            axs.legend(bbox_to_anchor=(1.0, 1), loc='upper left')
+        fig.tight_layout()
+        path_fig = os.path.join(folder, f"{group}_hist.png")
+        plt.savefig(path_fig)
+        # plt.show()
 
 
 def illustrate_comp(folder):
-    to_calculate = ("nb_genes", "nb_rnx", "nb_pw > 80%", "nb_pw 100%")
     comp_file = None
     for file in os.listdir(folder):
         if file.split("_")[0] == "compare":
@@ -81,8 +88,7 @@ def illustrate_comp(folder):
     if comp_file is not None:
         df_comp = pd.read_csv(comp_file, sep="\t", index_col=0)
         for group in df_comp.index:
-            for calc in to_calculate:
-                save_figur_comp(folder, df_comp, group, calc)
+            save_figur_comp(folder, df_comp, group)
 
 
 illustrate_comp("output_data/compare_SR_LR/")
