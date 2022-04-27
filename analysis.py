@@ -30,8 +30,8 @@ PLAC = "Pleurocladia_lacustris"
 
 # ### Class instances #############################################################################
 
-# REACTIONS = get_reactions_inst(PATH_RUNS, ORG_TSV)
-PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, ("brown", 1))
+REACTIONS = get_reactions_inst(PATH_RUNS, ORG_TSV)
+# PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, ("brown", 1))
 
 R01 = "run01"
 R02 = "run02"

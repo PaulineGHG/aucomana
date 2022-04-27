@@ -146,3 +146,8 @@ def intersect_groups(run, group1, group2, org_file, venn_plot=False):
     if venn_plot:
         matplotlib_venn.venn2([reactions_g1, reactions_g2], (group1[0], group2[0]))
         plt.show()
+
+
+def get_abr_name(name):
+    name = name.split("_")
+    return f"{name[0][0]}.{name[1][:4]}"
