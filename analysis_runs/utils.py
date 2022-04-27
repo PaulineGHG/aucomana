@@ -80,12 +80,12 @@ def compare_groups(run, group1, group2, org_file):
     g_g1 = Genes(f"{path}genes.tsv", group1_list)
     g_g2 = Genes(f"{path}genes.tsv", group2_list)
 
-    out_dir = f"output_data/compare_{group1[0]}_{group2[0]}/"
+    out_dir = os.path.join("output_data", "compare_groups", f"{run}_compare_{group1[0]}_{group2[0]}")
     if not os.path.exists(out_dir):
         os.mkdir(out_dir)
-    g1_res_file = f"{out_dir}{group1[0]}.tsv"
-    g2_res_file = f"{out_dir}{group2[0]}.tsv"
-    res_file = f"{out_dir}compare_{group1[0]}_{group2[0]}.tsv"
+    g1_res_file = os.path.join(out_dir, f"{group1[0]}.tsv")
+    g2_res_file = os.path.join(out_dir, f"{group2[0]}.tsv")
+    res_file = os.path.join(out_dir, f"compare_{group1[0]}_{group2[0]}.tsv")
 
     df_g1 = pd.DataFrame(columns=to_calculate, index=group1_list)
     df_g2 = pd.DataFrame(columns=to_calculate, index=group2_list)

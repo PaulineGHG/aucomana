@@ -2,7 +2,8 @@ import os
 
 
 def create_folders(path_study):
-    arbo = [['input_data'], ['output_data'],
+    arbo = [['output_data'],
+            ['output_data', 'compare_groups'],
             ['output_data', 'dendro_tanglegrams'],
             ['output_data', 'pathways_data'],
             ['output_data', 'pathways_data', 'binary_df'],

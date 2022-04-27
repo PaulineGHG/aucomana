@@ -91,4 +91,4 @@ def illustrate_comp(folder):
             save_figur_comp(folder, df_comp, group)
 
 
-illustrate_comp("output_data/compare_SR_LR/")
+illustrate_comp("output_data/compare_groups/run04_compare_SR_LR")
