@@ -24,8 +24,14 @@ library(ade4)
 
 setwd("~/Documents/Analysis_runs")
 name = "Run 04"
-reactions_dataframe = read.table("data/runs/run04/analysis/all/reactions.tsv", sep = "\t", header = T, row.names = "reaction")
-reactions_dataframe = select(reactions_dataframe, -colnames(select(reactions_dataframe, ends_with("..sep...") | ends_with("_formula"))))
+
+# Reactions
+dataframe = read.table("data/runs/run04/analysis/all/reactions.tsv", sep = "\t", header = T, row.names = "reaction")
+dataframe = select(dataframe, -colnames(select(dataframe, ends_with("..sep...") | ends_with("_formula"))))
+
+# Pathways
+dataframe = read.table("output_data/pathways_data/binary_df/run04_0.8_binary_pw.tsv", sep = "\t", header = T, row.names = "pathway")
+
 
 ###############################################################################
 # vector of algae categories
@@ -130,7 +136,7 @@ get_line_colors = function(phylo, dendro){
 # dendrogram
 ###############################################################################
 
-result = pvclust(reactions_dataframe, method.dist="binary", method.hclust="complete", nboot=10000, parallel=TRUE)
+result = pvclust(dataframe, method.dist="binary", method.hclust="complete", nboot=10000, parallel=TRUE)
 dend = as.dendrogram(result)
 
 d_col_lab = get_lab_colors(dend)
