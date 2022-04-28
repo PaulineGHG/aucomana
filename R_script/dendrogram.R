@@ -23,14 +23,14 @@ library(ade4)
 ###############################################################################
 
 setwd("~/Documents/Analysis_runs")
-name = "Run 04"
+name = "Run 04 rnx"
 
 # Reactions
 dataframe = read.table("data/runs/run04/analysis/all/reactions.tsv", sep = "\t", header = T, row.names = "reaction")
 dataframe = select(dataframe, -colnames(select(dataframe, ends_with("..sep...") | ends_with("_formula"))))
 
 # Pathways
-dataframe = read.table("output_data/pathways_data/binary_df/run04_0.8_binary_pw.tsv", sep = "\t", header = T, row.names = "pathway")
+dataframe = read.table("output_data/pathways_data/binary_df/run04_1_binary_pw.tsv", sep = "\t", header = T, row.names = "pathway")
 
 
 ###############################################################################
@@ -137,6 +137,7 @@ get_line_colors = function(phylo, dendro){
 ###############################################################################
 
 result = pvclust(dataframe, method.dist="binary", method.hclust="complete", nboot=10000, parallel=TRUE)
+plot(result)
 dend = as.dendrogram(result)
 
 d_col_lab = get_lab_colors(dend)
@@ -160,7 +161,6 @@ dend = dend %>%
 
 par(mar=c(3,3,1,15))
 plot_horiz.dendrogram(dend, side = F, edge.root = T, main = paste(name, " Metabolic Dendrogram"))
-plot(result)
 
 ###############################################################################
 # phylo tree
@@ -253,4 +253,10 @@ cor_bakers_gamma(d1, to_plot = T)
 # line under H0, And a solid red line of the upper critical Bk values for 
 # rejection.
 
+Cor_cophenetic = c(cor_cophenetic(d1, method_coef = "pearson"))
+Cor_bakers_gamma = c(cor_bakers_gamma(d1))
+df_cor = data_frame(Cor_cophenetic, Cor_bakers_gamma)
+write.csv(df_cor, "output_data/dendro_tanglegrams/run04/pw100/cor.tsv", sep = "\t")
+
 Bk_plot(d1[[1]], d1[[2]], rejection_line_permutation = T)
+
