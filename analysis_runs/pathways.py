@@ -586,7 +586,7 @@ class Pathways:
         if output_file:
             file_name = f"{self.name}_{threshold}_binary_pw.tsv"
             file_path = os.path.join(PATH_STUDY, "output_data", "pathways_data", "binary_df", file_name)
-            df_binary.to_csv(file_path, sep="\t", index=False)
+            df_binary.to_csv(file_path, sep="\t", index_label="pathway")
         else:
             return df_binary
 

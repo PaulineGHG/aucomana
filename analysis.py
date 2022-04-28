@@ -53,4 +53,4 @@ R40 = "run40"
 # ### pathways ##################################################################################
 
 # print(PATHWAYS[R01].get_pw_complete([SLAT, PLAC], unique=True))
-PATHWAYS[R04].convert_df_to_binary(0.8, output_file=True)
+PATHWAYS[R04].convert_df_to_binary(1, output_file=True)
