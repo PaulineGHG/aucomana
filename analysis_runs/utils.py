@@ -65,7 +65,57 @@ def get_pathways_inst(path_runs, org_tsv, cat=None, out=None):
     return p_dic
 
 
-def compare_groups(run, group1, group2, org_file):
+def save_figur_comp(folder, df_comp, group):
+    stat = (" mean", " med", " sd", " min", " max")
+    to_calculate = ("nb_genes", "nb_rnx", "nb_pw > 80%", "nb_pw 100%")
+    group_file = None
+    for file in os.listdir(folder):
+        if file.split(".")[0] == group:
+            group_file = os.path.join(folder, file)
+    if group_file is not None:
+        df_group = pd.read_csv(group_file, sep="\t", index_col=0)
+
+        fig = plt.figure(figsize=[12.8, 9.6])
+        i = 1
+
+        for calc in to_calculate:
+            axs = fig.add_subplot(2, 2, i)
+            i += 1
+            X = df_group[calc]
+            axs.hist(X, len(X) - len(X)//2, density=True, facecolor='g')
+            axs.set_xlabel(calc)
+            axs.set_ylabel('Density')
+            mu = df_comp.loc[group, calc + stat[0]]
+            med = df_comp.loc[group, calc + stat[1]]
+            sd = df_comp.loc[group, calc + stat[2]]
+            mini = df_comp.loc[group, calc + stat[3]]
+            maxi = df_comp.loc[group, calc + stat[4]]
+            axs.set_title(f"Histogram of {calc} for the {group} group\n"
+                          f"$\mu={mu},\ \sigma={sd}$")
+            axs.axvline(x=mu, color='b', label=f"$\mu={mu}$")
+            axs.axvline(x=med, color='c', label=f"med={med}")
+            axs.axvline(x=mini, color='m', label=f"min={mini}")
+            axs.axvline(x=maxi, color='r', label=f"max={maxi}")
+            axs.grid(True)
+            axs.legend(bbox_to_anchor=(1.0, 1), loc='upper left')
+        fig.tight_layout()
+        path_fig = os.path.join(folder, f"{group}_hist.png")
+        plt.savefig(path_fig)
+        # plt.show()
+
+
+def illustrate_comp(folder):
+    comp_file = None
+    for file in os.listdir(folder):
+        if file.split("_")[0] == "compare":
+            comp_file = os.path.join(folder, file)
+    if comp_file is not None:
+        df_comp = pd.read_csv(comp_file, sep="\t", index_col=0)
+        for group in df_comp.index:
+            save_figur_comp(folder, df_comp, group)
+
+
+def compare_groups(run, group1, group2, org_file, hist=True):
     to_calculate = ("nb_genes", "nb_rnx", "nb_pw > 80%", "nb_pw 100%")
     stat = (" mean", " med", " sd", " min", " max")
     path = f"{PATH_RUNS}/{run}/analysis/all/"
@@ -118,6 +168,9 @@ def compare_groups(run, group1, group2, org_file):
     df_g1.to_csv(g1_res_file, sep="\t")
     df_g2.to_csv(g2_res_file, sep="\t")
     df_comp.to_csv(res_file, sep="\t")
+
+    if hist:
+        illustrate_comp(out_dir)
 
 
 def intersect_groups(run, group1, group2, org_file, venn_plot=False):
