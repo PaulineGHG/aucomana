@@ -10,10 +10,10 @@ comp_dir_SR_LR = "output_data/compare_SR_LR/"
 brown = analysis_runs.utils.get_cat_l(file, "data/species_group.tsv", ("brown", 1))
 
 
-def get_freq_list(R):
+def get_freq_list(r: analysis_runs.reactions.Reactions):
     frequency = []
-    for r in R.reactions_list:
-        f = sum(R.data_reactions.loc[r])
+    for sp in r.species_list:
+        f = sum(r.data_reactions[sp])
         if f < 5:
             frequency.append(f)
     return frequency
@@ -36,7 +36,6 @@ def get_under_mean(comp_dir):
             for sp in dict_g1["nb_genes"].keys():
                 if dict_g1["nb_genes"][sp] < mean_g1:
                     sp_under_mean.append(sp)
-
             return sp_under_mean
 
 

@@ -568,18 +568,18 @@ class Pathways:
         """
         if threshold < 0 or threshold > 1:
             raise ValueError("The threshold must be within the range of 0 to 1")
-        df_binary = pd.DataFrame(columns=[sp + self.STR_COMP for sp in self.species_list], index=self.pathways_list,
+        df_binary = pd.DataFrame(columns=self.species_list, index=self.pathways_list,
                                  dtype=int)
         for pw in self.pathways_list:
             for sp in self.species_list:
-                sp += self.STR_COMP
+                sp_c = sp + self.STR_COMP
                 if strict:
-                    if self.data_pathways_float.loc[pw, sp] > threshold:
+                    if self.data_pathways_float.loc[pw, sp_c] > threshold:
                         df_binary.loc[pw, sp] = int(1)
                     else:
                         df_binary.loc[pw, sp] = int(0)
                 else:
-                    if self.data_pathways_float.loc[pw, sp] >= threshold:
+                    if self.data_pathways_float.loc[pw, sp_c] >= threshold:
                         df_binary.loc[pw, sp] = int(1)
                     else:
                         df_binary.loc[pw, sp] = int(0)

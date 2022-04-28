@@ -30,8 +30,8 @@ PLAC = "Pleurocladia_lacustris"
 
 # ### Class instances #############################################################################
 
-REACTIONS = get_reactions_inst(PATH_RUNS, ORG_TSV)
-# PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, ("brown", 1))
+# REACTIONS = get_reactions_inst(PATH_RUNS, ORG_TSV)
+PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, ("brown", 1))
 
 R01 = "run01"
 R02 = "run02"
@@ -53,4 +53,4 @@ R40 = "run40"
 # ### pathways ##################################################################################
 
 # print(PATHWAYS[R01].get_pw_complete([SLAT, PLAC], unique=True))
-# PATHWAYS[R04].convert_df_to_binary(1, output_file=True)
+PATHWAYS[R04].convert_df_to_binary(0.8, output_file=True)
