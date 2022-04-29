@@ -49,7 +49,8 @@ def boxplot_grp_completion_rnx(run, org_file, group1, group2):
     g1_l = get_cat_l(reaction_file, org_file, group1)
     g2_l = get_cat_l(reaction_file, org_file, group2)
     all_sp = g1_l + g2_l
-    out = len(all_sp)//5
+    out = int(len(all_sp)*0.2)
+    print(out)
     freq_g1 = []
     freq_g2 = []
     r = Reactions(reaction_file, species_list=all_sp, out=out)
