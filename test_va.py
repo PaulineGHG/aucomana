@@ -3,12 +3,16 @@ import analysis_runs
 import pandas as pd
 import os
 import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
 
 
 file = "data/runs/run04/analysis/all/reactions.tsv"
 comp_dir_SR_LR = "output_data/compare_SR_LR/"
+lr = analysis_runs.utils.get_cat_l(file, "data/species_group.tsv", ("LR", 2))
+sr = analysis_runs.utils.get_cat_l(file, "data/species_group.tsv", ("SR", 2))
 brown = analysis_runs.utils.get_cat_l(file, "data/species_group.tsv", ("brown", 1))
-
+lr = set(lr).intersection(set(brown))
+sr = set(sr).intersection(set(brown))
 
 def get_freq_list(r: analysis_runs.reactions.Reactions):
     frequency = []
@@ -39,7 +43,34 @@ def get_under_mean(comp_dir):
             return sp_under_mean
 
 
-# RM = analysis_runs.reactions.Reactions(file, get_under_mean(comp_dir_SR_LR))
+RM = analysis_runs.reactions.Reactions(file, species_list=brown, out=5)
+
+
+def barplot_freq(rnx_obj):
+    freq = []
+    sp_l = []
+    color_l = []
+    for sp, nb in rnx_obj.nb_reactions_sp.items():
+        if sp in lr:
+            freq.append(round(nb / rnx_obj.nb_reactions, 4))
+            sp_l.append(analysis_runs.utils.get_abr_name(sp))
+            color_l.append("#889EBE")
+        elif sp in sr:
+            freq.append(round(nb / rnx_obj.nb_reactions, 4))
+            sp_l.append(analysis_runs.utils.get_abr_name(sp))
+            color_l.append("#BE88A2")
+
+    freq, sp_l, color_l = zip(*sorted(zip(freq, sp_l, color_l)))
+    fig, ax = plt.subplots(figsize=(15, 10))
+    bars = ax.barh(sp_l, freq, color=color_l)
+    red_patch = mpatches.Patch(color='#BE88A2', label='Short Read')
+    blue_patch = mpatches.Patch(color='#889EBE', label='Long Read')
+    ax.legend(handles=[red_patch, blue_patch], bbox_to_anchor=(0, 1.02, 1, 0.2), loc="lower right", ncol=2)
+    ax.bar_label(bars)
+    plt.show()
+
+
+barplot_freq(RM)
 # print(scipy.stats.chisquare(get_freq_list(RM)))
 
 
