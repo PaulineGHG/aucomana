@@ -50,7 +50,6 @@ def boxplot_grp_completion_rnx(run, org_file, group1, group2):
     g2_l = get_cat_l(reaction_file, org_file, group2)
     all_sp = g1_l + g2_l
     out = int(len(all_sp)*0.2)
-    print(out)
     freq_g1 = []
     freq_g2 = []
     r = Reactions(reaction_file, species_list=all_sp, out=out)
@@ -59,13 +58,11 @@ def boxplot_grp_completion_rnx(run, org_file, group1, group2):
             freq_g1.append(nb)
         elif sp in g2_l:
             freq_g2.append(nb)
-    print(freq_g1, freq_g2)
-    # fig = plt.figure(figsize=(10, 7))
-    # ax = fig.add_axes([0, 0, 1, 1])
-    # ax.boxplot(g1_l)
-    # plt.show()
-
-
+    plt.boxplot([freq_g1, freq_g2], labels=[group1[0], group2[0]])
+    plt.ylabel("Nb rnx")
+    plt.title(f"Boxplot of number of reactions among a conserved subset\n"
+              f"of reactions for {group1[0]} and {group2[0]} groups.")
+    plt.show()
 
 
 # barplot_freq(RM)
