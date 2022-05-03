@@ -8,6 +8,8 @@ import os
 GBK_PATH = "/media/paulinehg/OS/Users/Pauline/Documents/MyDocs/Gbk/short_read/uncut_genomes/"
 OUT_PATH = "/media/paulinehg/OS/Users/Pauline/Documents/MyDocs/Gbk/info_gbk/"
 
+# TO DO : adapt create info file for boxplot !
+
 
 def individual_analysis(gbk_path, out_path):
     for dir in os.listdir(gbk_path):
@@ -47,17 +49,30 @@ def group_analysis(out_path):
     df.to_csv(f"{out_path}{'all_species'}.tsv", sep="\t", index=False)
 
 
-def boxplot_gbk_groups(group1_file, group2_file):
-    col = ("#b", "#contigs", "#gene", "contigs at least 1 gene (%)")
+def boxplot_gbk_groups(group1_file, group2_file, outpath):
+    col = ("#contigs", "#b", "#genes", "contigs at least 1 gene (%)")
     df_g1 = pd.read_csv(group1_file, sep="\t", index_col=0)
     df_g2 = pd.read_csv(group2_file, sep="\t", index_col=0)
-    for prop in col:
-        plt.boxplot([df_g1[prop], df_g2[prop]], labels=("Long Read", "Short Read"))
-        plt.ylabel(prop)
-        plt.show()
+    fig = plt.figure(figsize=[15.8, 5.6])
+    i = 1
+    titles = ("Number of contigs depending\nof short or long read",
+              "Number of bases depending\nof short or long read",
+              "Number of genes depending\nof short or long read",
+              "Percentage of contigs with\nat least 1 genes depending\n"
+              "of short or long read")
 
+    for prop in col:
+        axs = fig.add_subplot(1, 4, i)
+        axs.boxplot([df_g1[prop], df_g2[prop]], labels=("Long Read", "Short Read"))
+        axs.set_ylabel(prop)
+        axs.set_title(titles[i-1])
+        i += 1
+    fig.tight_layout()
+    plt.savefig(outpath)
 
 
 # individual_analysis(GBK_PATH, OUT_PATH)
 # group_analysis(OUT_PATH)
-boxplot_gbk_groups("data/info_gbk/long_read.tsv", "data/info_gbk/short_read.tsv")
+boxplot_gbk_groups("data/info_gbk/long_read.tsv",
+                   "data/info_gbk/short_read.tsv",
+                   "data/info_gbk/boxplot_info_gbk.png")
