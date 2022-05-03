@@ -1,6 +1,7 @@
 from Bio import SeqIO
 from collections import Counter
 import pandas as pd
+import matplotlib.pyplot as plt
 import os
 
 
@@ -46,5 +47,17 @@ def group_analysis(out_path):
     df.to_csv(f"{out_path}{'all_species'}.tsv", sep="\t", index=False)
 
 
-individual_analysis(GBK_PATH, OUT_PATH)
+def boxplot_gbk_groups(group1_file, group2_file):
+    col = ("#b", "#contigs", "#gene", "contigs at least 1 gene (%)")
+    df_g1 = pd.read_csv(group1_file, sep="\t", index_col=0)
+    df_g2 = pd.read_csv(group2_file, sep="\t", index_col=0)
+    for prop in col:
+        plt.boxplot([df_g1[prop], df_g2[prop]], labels=("Long Read", "Short Read"))
+        plt.ylabel(prop)
+        plt.show()
+
+
+
+# individual_analysis(GBK_PATH, OUT_PATH)
 # group_analysis(OUT_PATH)
+boxplot_gbk_groups("data/info_gbk/long_read.tsv", "data/info_gbk/short_read.tsv")
