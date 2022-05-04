@@ -55,10 +55,10 @@ def boxplot_gbk_groups(group1_file, group2_file, outpath):
     df_g2 = pd.read_csv(group2_file, sep="\t", index_col=0)
     fig = plt.figure(figsize=[15.8, 5.6])
     i = 1
-    titles = ("Number of contigs depending\nof short or long read",
-              "Number of bases depending\nof short or long read",
-              "Number of genes depending\nof short or long read",
-              "Percentage of contigs with\nat least 1 genes depending\n"
+    titles = ("a. Number of contigs depending\nof short or long read",
+              "b. Number of bases depending\nof short or long read",
+              "c. Number of genes depending\nof short or long read",
+              "d. Percentage of contigs with\nat least 1 genes depending\n"
               "of short or long read")
 
     for prop in col:
