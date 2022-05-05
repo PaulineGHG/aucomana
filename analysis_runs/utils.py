@@ -53,7 +53,7 @@ def get_reactions_inst(path_runs, org_tsv, runs=None, cat=None, out=None):
     return r_dic
 
 
-def get_pathways_inst(path_runs, org_tsv, runs=None, cat=None, out=None):
+def get_pathways_inst(path_runs, org_tsv, runs=None, cat=None, out=None, nb_rnx_px_min=0):
     p_dic = {}
     if runs is None:
         runs = os.listdir(path_runs)
@@ -63,9 +63,9 @@ def get_pathways_inst(path_runs, org_tsv, runs=None, cat=None, out=None):
         if os.path.exists(r_path) and os.path.exists(p_path):
             if cat is not None:
                 species_l = get_cat_l(r_path, org_tsv, cat)
-                p_dic[run] = Pathways(p_path, species_l, out)
+                p_dic[run] = Pathways(p_path, species_l, out, nb_rnx_px_min)
             else:
-                p_dic[run] = Pathways(p_path, cat, out)
+                p_dic[run] = Pathways(p_path, cat, out, nb_rnx_px_min)
     return p_dic
 
 

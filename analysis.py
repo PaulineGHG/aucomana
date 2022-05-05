@@ -37,7 +37,7 @@ R04 = "run04"
 R40 = "run40"
 
 # REACTIONS = get_reactions_inst(PATH_RUNS, ORG_TSV)
-PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, [R04], ("brown", 1))
+PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, [R04], ("brown", 1), nb_rnx_px_min=3)
 
 # ### Common Reactions ############################################################################
 

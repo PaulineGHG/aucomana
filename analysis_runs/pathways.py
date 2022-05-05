@@ -33,7 +33,7 @@ class Pathways:
     STR_RNX_ASSOC = "_rxn_assoc (sep=;)"
 
     def __init__(self, file_pathways_tsv: str, species_list: List[str] = None,
-                 out: int = None):
+                 out: int = None, nb_rnx_pw_min: int = 1):
         """ Init the Reactions class
 
         Parameters
@@ -49,7 +49,7 @@ class Pathways:
         self.data_pathways_str, self.data_reacs_assoc = self.__init_data(file_pathways_tsv)
         self.data_pathways_float = self.data_pathways_str.copy(deep=True)
         self.nb_rnx_pw = self.__convert_data_pathways()
-        self.pathways_list = self.__get_filtered_pathways(out)
+        self.pathways_list = self.__get_filtered_pathways(out, nb_rnx_pw_min)
         self.nb_pathways, self.nb_species = self.data_pathways_float.shape
 
     def __init_data(self, file_pathways_tsv: str) \
@@ -117,7 +117,7 @@ class Pathways:
                         nb_rnx_pw[pw] = int(nb_r)
         return nb_rnx_pw
 
-    def __get_filtered_pathways(self, out: int) -> List[str]:
+    def __get_filtered_pathways(self, out: int, nb_rnx_pw_min: int) -> List[str]:
         """ Filter the pathways according to the number of species not having the pathway
 
         Parameters
@@ -139,7 +139,7 @@ class Pathways:
             for sp in self.data_pathways_float.columns:
                 if self.data_pathways_float.loc[pw, sp] != 0:
                     count_pw += 1
-            if count_pw > nb_species - (out + 1):
+            if count_pw > nb_species - (out + 1) and self.nb_rnx_pw[pw] >= nb_rnx_pw_min:
                 filtered_pw.append(pw)
         self.data_pathways_float = self.data_pathways_float.loc[filtered_pw]
         self.data_pathways_str = self.data_pathways_str.loc[filtered_pw]
