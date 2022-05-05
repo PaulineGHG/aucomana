@@ -38,9 +38,11 @@ def write_cut_reactions_file(original_file, cut_nb, reac_list):
                 o.write(line)
 
 
-def get_reactions_inst(path_runs, org_tsv, cat=None, out=None):
+def get_reactions_inst(path_runs, org_tsv, runs=None, cat=None, out=None):
     r_dic = {}
-    for run in os.listdir(path_runs):
+    if runs is None:
+        runs = os.listdir(path_runs)
+    for run in runs:
         r_path = os.path.join(path_runs, run, "analysis", "all", "reactions.tsv")
         if os.path.exists(r_path):
             if cat is not None:
