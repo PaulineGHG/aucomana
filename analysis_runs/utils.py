@@ -51,9 +51,11 @@ def get_reactions_inst(path_runs, org_tsv, cat=None, out=None):
     return r_dic
 
 
-def get_pathways_inst(path_runs, org_tsv, cat=None, out=None):
+def get_pathways_inst(path_runs, org_tsv, runs=None, cat=None, out=None):
     p_dic = {}
-    for run in os.listdir(path_runs):
+    if runs is None:
+        runs = os.listdir(path_runs)
+    for run in runs:
         r_path = os.path.join(path_runs, run, "analysis", "all", "reactions.tsv")
         p_path = os.path.join(path_runs, run, "analysis", "all", "pathways.tsv")
         if os.path.exists(r_path) and os.path.exists(p_path):

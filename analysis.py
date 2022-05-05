@@ -30,14 +30,14 @@ PLAC = "Pleurocladia_lacustris"
 
 # ### Class instances #############################################################################
 
-# REACTIONS = get_reactions_inst(PATH_RUNS, ORG_TSV)
-PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV)
-
 R01 = "run01"
 R02 = "run02"
 R03 = "run03"
 R04 = "run04"
 R40 = "run40"
+
+# REACTIONS = get_reactions_inst(PATH_RUNS, ORG_TSV)
+PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, [R04], ("brown", 1))
 
 # ### Common Reactions ############################################################################
 
@@ -47,7 +47,9 @@ R40 = "run40"
 # ### genes assoc #################################################################################
 
 # REACTIONS[R01].get_genes_assoc(LELS, {"12-OXOPHYTODIENOATE-REDUCTASE-RXN"}, output_file=True)
-# print(REACTIONS[R04].get_genes_assoc({"12-OXOPHYTODIENOATE-REDUCTASE-RXN", "LEUKOTRIENE-C4-SYNTHASE-RXN", "PROSTAGLANDIN-E-SYNTHASE-RXN"}, output_file=True))
+# print(REACTIONS[R04].get_genes_assoc({"12-OXOPHYTODIENOATE-REDUCTASE-RXN",
+#                                       "LEUKOTRIENE-C4-SYNTHASE-RXN",
+#                                       "PROSTAGLANDIN-E-SYNTHASE-RXN"}, output_file=True))
 
 
 # ### pathways ##################################################################################

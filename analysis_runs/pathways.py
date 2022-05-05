@@ -48,7 +48,7 @@ class Pathways:
         self.species_list = species_list
         self.data_pathways_str, self.data_reacs_assoc = self.__init_data(file_pathways_tsv)
         self.data_pathways_float = self.data_pathways_str.copy(deep=True)
-        self.__convert_data_pathways()
+        self.nb_rnx_pw = self.__convert_data_pathways()
         self.pathways_list = self.__get_filtered_pathways(out)
         self.nb_pathways, self.nb_species = self.data_pathways_float.shape
 
@@ -97,12 +97,14 @@ class Pathways:
         data_pathways_floats values transformed in float
         data_pathways_str NA transforms in str
         """
+        nb_rnx_pw = {}
         for sp in self.data_pathways_float.columns:
             for pw in self.data_pathways_float.index:
                 val_str = self.data_pathways_float.loc[pw, sp]
                 if type(val_str) == str:
                     val_l = val_str.split("/")
                     self.data_pathways_float.loc[pw, sp] = int(val_l[0]) / int(val_l[1])
+                    nb_rnx_pw[pw] = int(val_l[1])
                 else:
                     self.data_pathways_float.loc[pw, sp] = float(0)
                     nb_r = "?"
@@ -111,6 +113,9 @@ class Pathways:
                             nb_r = v.split("/")[1]
                             break
                     self.data_pathways_str.loc[pw, sp] = f"0/{nb_r}"
+                    if nb_r != "?":
+                        nb_rnx_pw[pw] = int(nb_r)
+        return nb_rnx_pw
 
     def __get_filtered_pathways(self, out: int) -> List[str]:
         """ Filter the pathways according to the number of species not having the pathway
@@ -126,7 +131,7 @@ class Pathways:
             List of pathway filtered
         """
         if out is None:
-            return list(self.data_pathways_float.index)
+            out = len(self.species_list) - 1
         filtered_pw = []
         nb_species = len(self.species_list)
         for pw in self.data_pathways_float.index:
@@ -136,6 +141,8 @@ class Pathways:
                     count_pw += 1
             if count_pw > nb_species - (out + 1):
                 filtered_pw.append(pw)
+        self.data_pathways_float = self.data_pathways_float.loc[filtered_pw]
+        self.data_pathways_str = self.data_pathways_str.loc[filtered_pw]
         return filtered_pw
 
     # Loss
@@ -568,9 +575,10 @@ class Pathways:
         """
         if threshold < 0 or threshold > 1:
             raise ValueError("The threshold must be within the range of 0 to 1")
-        df_binary = pd.DataFrame(columns=self.species_list, index=self.pathways_list,
+        df_binary = pd.DataFrame(columns=self.species_list + ["nb rnx pw"], index=self.pathways_list,
                                  dtype=int)
         for pw in self.pathways_list:
+            df_binary.loc[pw, "nb rnx pw"] = int(self.nb_rnx_pw[pw])
             for sp in self.species_list:
                 sp_c = sp + self.STR_COMP
                 if strict:
@@ -583,6 +591,7 @@ class Pathways:
                         df_binary.loc[pw, sp] = int(1)
                     else:
                         df_binary.loc[pw, sp] = int(0)
+
         if output_file:
             file_name = f"{self.name}_{threshold}_binary_pw.tsv"
             file_path = os.path.join(PATH_STUDY, "output_data", "pathways_data", "binary_df", file_name)
