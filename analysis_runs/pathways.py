@@ -6,6 +6,7 @@ from typing import Dict, List, Tuple, Set
 import os
 from analysis_runs.init_analysis import PATH_STUDY, PATH_RUNS
 import pandas as pd
+import numpy as np
 
 
 class Pathways:
@@ -575,8 +576,7 @@ class Pathways:
         """
         if threshold < 0 or threshold > 1:
             raise ValueError("The threshold must be within the range of 0 to 1")
-        df_binary = pd.DataFrame(columns=self.species_list + ["nb rnx pw"], index=self.pathways_list,
-                                 dtype=int)
+        df_binary = pd.DataFrame(columns=self.species_list + ["nb rnx pw"], index=self.pathways_list)
         for pw in self.pathways_list:
             df_binary.loc[pw, "nb rnx pw"] = int(self.nb_rnx_pw[pw])
             for sp in self.species_list:
