@@ -586,9 +586,11 @@ class Pathways:
         """
         if threshold < 0 or threshold > 1:
             raise ValueError("The threshold must be within the range of 0 to 1")
-        df_binary = pd.DataFrame(columns=self.species_list + ["nb rnx pw"], index=self.pathways_list)
+        common_pw_name = self.get_pw_names()
+        df_binary = pd.DataFrame(columns=self.species_list + ["nb rnx pw", "common name"], index=self.pathways_list)
         for pw in self.pathways_list:
             df_binary.loc[pw, "nb rnx pw"] = int(self.nb_rnx_pw[pw])
+            df_binary.loc[pw, "common name"] = common_pw_name[pw]
             for sp in self.species_list:
                 sp_c = sp + self.STR_COMP
                 if strict:
