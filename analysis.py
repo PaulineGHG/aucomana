@@ -55,4 +55,5 @@ PATHWAYS = get_pathways_inst(PATH_RUNS, ORG_TSV, [R04], ("brown", 1), nb_rnx_px_
 # ### pathways ##################################################################################
 
 # print(PATHWAYS[R01].get_pw_complete([SLAT, PLAC], unique=True))
-PATHWAYS[R04].convert_df_to_binary(0.8, output_file=True)
+# PATHWAYS[R04].convert_df_to_binary(0.8, output_file=True)
+PATHWAYS[R04].get_pw_names()

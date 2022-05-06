@@ -554,6 +554,16 @@ class Pathways:
 
     # Other
 
+    def get_pw_names(self):
+        pw_names = {}
+        padmet_file = os.path.join(PATH_RUNS, self.name, "analysis", "all", "all_panmetabolism.padmet")
+        with open(padmet_file, "r") as f:
+            for l in f:
+                if "COMMON-NAME" in l and "pathway" in l:
+                    l = l.split("\t")
+                    pw_names[l[1]] = l[3]
+        return pw_names
+
     def convert_df_to_binary(self, threshold: float, strict: bool = False, output_file: bool = False) \
             -> 'pd.DataFrame':
         """ Returns the pathways with completion over a given threshold for species

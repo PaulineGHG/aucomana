@@ -23,5 +23,5 @@ def create_folders(path_study):
 
 
 PATH_STUDY = os.getcwd()
-PATH_RUNS = 'data/runs/'
-# PATH_RUNS = '/home/phamongi/Documents/Runs/'
+# PATH_RUNS = 'data/runs/'
+PATH_RUNS = '/home/phamongi/Documents/Runs/'
