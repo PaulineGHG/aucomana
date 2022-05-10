@@ -42,7 +42,7 @@ def get_grp_l(run: str, organisms_file: str, group: Tuple[str, int],
     run: str
         ID of the run
     organisms_file: str
-        File providing groups information
+        TSV file providing groups information
     group: Tuple[str, int]
         The group to consider : Tuple(name of the group, column of the group in the organisms_file)
     species_list: List[str], optional (default=None)
@@ -96,7 +96,7 @@ def get_reactions_inst(runs: List[str] = None, species_list: List[str] = None, o
     species_list: List[str], optional (default=None)
         List of species to consider for instances creation
     organisms_file: str, optional (default=None)
-        File providing groups information
+        TSV file providing groups information
         If None, species will not be filtered according to their group belonging
     group: Tuple[str, int], optional (default=None)
         The group to consider for species filtering : Tuple(name of the group, column of the
@@ -148,7 +148,7 @@ def get_pathways_inst(runs: List[str] = None, species_list: List[str] = None,
     species_list: List[str], optional (default=None)
         List of species to consider for instances creation
     organisms_file: str, optional (default=None)
-        File providing groups information
+        TSV file providing groups information
         If None, species will not be filtered according to their group belonging
     group: Tuple[str, int], optional (default=None)
         The group to consider for species filtering : Tuple(name of the group, column of the
@@ -195,7 +195,22 @@ STAT = (" mean", " med", " sd", " min", " max")
 TO_CALCULATE = ("nb_genes", "nb_rnx", "nb_pw > 80%", "nb_pw 100%")
 
 
-def hist_comp(out_dir, df_comp, df_grp_dict):
+def hist_comp(out_dir: str, df_comp: 'pd.DataFrame',
+              df_grp_dict: Dict[Tuple[str, int], 'pd.DataFrame']):
+    """Generate histogram figures for each group in df_grp_dict keys.
+
+    Parameters
+    ----------
+    out_dir: str
+        Path of the directory to save figures
+    df_comp: 'pd.DataFrame'
+        Data Frame of the comparison between all the groups
+    df_grp_dict: Dict[Tuple[str, int], 'pd.DataFrame']
+        Dictionary associating for each group, its data_frame of calculated stats
+        Dict[Tuple[name of group, column], DataFrame of the group]
+
+    Save a total of the number of groups of histogram figures in out_dir path.
+    """
     for group, df_group in df_grp_dict.items():
         fig = plt.figure(figsize=[12.8, 9.6])
         i = 1
@@ -224,7 +239,19 @@ def hist_comp(out_dir, df_comp, df_grp_dict):
         plt.savefig(path_fig)
 
 
-def boxplot_comp(out_dir, df_grp_dict):
+def boxplot_comp(out_dir: str, df_grp_dict: Dict[Tuple[str, int], 'pd.DataFrame']):
+    """Generate boxplot figure comparing each group of df_grp_dict keys.
+
+       Parameters
+       ----------
+       out_dir: str
+           Path of the directory to save figures
+       df_grp_dict: Dict[Tuple[str, int], 'pd.DataFrame']
+           Dictionary associating for each group, its data_frame of calculated stats
+           Dict[Tuple[name of group, column], DataFrame of the group]
+
+       Save a boxplot figure in out_dir path.
+       """
     nb_grp = len(df_grp_dict)
     i = 1
     str_grp_names = ""
@@ -252,7 +279,27 @@ def boxplot_comp(out_dir, df_grp_dict):
     plt.savefig(os.path.join(out_dir, f"boxplot.png"))
 
 
-def compare_groups(run, groups_list, org_file, hist=False, boxplot=False):
+def compare_groups(run: str, groups_list: List[Tuple[str, int]], org_file: str, hist: bool = False,
+                   boxplot: bool = False):
+    """ Compare groups given according to : their number of genes, number of reactions, number of
+    pathways with completion > 80% and number of pathways with completion = 100%. For each of this
+    elements are calculated the mean, median, standard deviation, minimum and maximum between
+    species of the group. Results are stored in tables and can be illustrated in histograms and/or
+    boxplots figures.
+
+    Parameters
+    ----------
+    run: str
+        ID of the run to consider
+    groups_list: List[Tuple[str, int]]
+        List of groups to compare, groups are selected from groups specificied in org_file
+    org_file: str
+        TSV file providing groups information
+    hist: bool, optional (default=False)
+        Indicate whether histograms outputs (PNG files) must be created
+    boxplot: bool, optional (default=False)
+        Indicate whether boxplot output (PNG file) must be created
+    """
     path = os.path.join(PATH_RUNS, run, "analysis", "all")
 
     grp_str = ""
