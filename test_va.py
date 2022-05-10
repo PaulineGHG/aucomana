@@ -7,17 +7,17 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
 
-file = "data/runs/run04/analysis/all/reactions.tsv"
+run = "run04"
 ORG_FILE = "data/species_group.tsv"
 comp_dir_SR_LR = "output_data/compare_SR_LR/"
-lr = analysis_runs.utils.get_cat_l(file, "data/species_group.tsv", ("LR", 2))
-sr = analysis_runs.utils.get_cat_l(file, "data/species_group.tsv", ("SR", 2))
-brown = analysis_runs.utils.get_cat_l(file, "data/species_group.tsv", ("brown", 1))
+lr = analysis_runs.utils.get_grp_l(run, ORG_FILE, ("LR", 2))
+sr = analysis_runs.utils.get_grp_l(run, ORG_FILE, ("SR", 2))
+brown = analysis_runs.utils.get_grp_l(run, ORG_FILE, ("brown", 1))
 lr = set(lr).intersection(set(brown))
 sr = set(sr).intersection(set(brown))
 
 
-RM = analysis_runs.reactions.Reactions(file, species_list=brown, out=5)
+RM = get_reactions_inst([run], ORG_FILE, ("brown", 1), 5)[run]
 
 
 def barplot_freq(rnx_obj):
@@ -27,11 +27,11 @@ def barplot_freq(rnx_obj):
     for sp, nb in rnx_obj.nb_reactions_sp.items():
         if sp in lr:
             freq.append(round(nb / rnx_obj.nb_reactions, 4))
-            sp_l.append(analysis_runs.utils.get_abr_name(sp))
+            sp_l.append(analysis_runs.utils.get_abbr_name(sp))
             color_l.append("#889EBE")
         elif sp in sr:
             freq.append(round(nb / rnx_obj.nb_reactions, 4))
-            sp_l.append(analysis_runs.utils.get_abr_name(sp))
+            sp_l.append(analysis_runs.utils.get_abbr_name(sp))
             color_l.append("#BE88A2")
 
     freq, sp_l, color_l = zip(*sorted(zip(freq, sp_l, color_l)))
@@ -46,8 +46,8 @@ def barplot_freq(rnx_obj):
 
 def boxplot_grp_completion_rnx(run, org_file, group1, group2):
     reaction_file = os.path.join(PATH_RUNS, run, "analysis", "all", "reactions.tsv")
-    g1_l = get_cat_l(reaction_file, org_file, group1)
-    g2_l = get_cat_l(reaction_file, org_file, group2)
+    g1_l = get_grp_l(run, org_file, group1)
+    g2_l = get_grp_l(run, org_file, group2)
     all_sp = g1_l + g2_l
     out = int(len(all_sp)*0.2)
     freq_g1 = []
@@ -66,5 +66,5 @@ def boxplot_grp_completion_rnx(run, org_file, group1, group2):
 
 
 # barplot_freq(RM)
-boxplot_grp_completion_rnx("run04", ORG_FILE, ("LR", 2), ("SR", 2))
+boxplot_grp_completion_rnx(run, ORG_FILE, ("LR", 2), ("SR", 2))
 # print(scipy.stats.chisquare(get_freq_list(RM)))
