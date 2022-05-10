@@ -8,49 +8,102 @@ from analysis_runs.reactions import Reactions
 from analysis_runs.pathways import Pathways
 from analysis_runs.genes import Genes
 from analysis_runs.init_analysis import PATH_RUNS
-from typing import Tuple
+from typing import Tuple, List, Dict
 
 
-def get_cat_l(reactions_file, organisms_file, cat: Tuple[str, int]):
-    with open(organisms_file, "r") as org_f, open(reactions_file, "r") as rea_f:
+def get_grp_l(run: str, organisms_file: str, group: Tuple[str, int]) \
+        -> List[str]:
+    """ Select species according to the group they belong to. The groups must be specified in a
+    TSV file (organisms-file as input).
+
+    Parameters
+    ----------
+    run: str
+        ID of the run
+    organisms_file: str
+        File providing groups information
+    group: Tuple[str, int]
+        The group to consider : Tuple(name of the group, column of the group in the organisms_file)
+
+    Returns
+    -------
+    group_l: List[str]
+        List of species corresponding to the category chosen
+    """
+    grp_template_f = os.path.join(PATH_RUNS, run, "analysis",
+                                  "group_template.tsv")
+    with open(organisms_file, "r") as org_f, open(grp_template_f, "r") as grp_f:
         species_l = set()
-        cat_l = []
-        for l in rea_f:
-            l = l.split("\t")
-            for x in l[1:]:
-                if x[-7:] == '(sep=;)':
-                    break
-                species_l.add(x)
-            break
-        for l in org_f:
-            l = l.split()
-            if l[cat[1]] == cat[0] and l[0] in species_l:
-                cat_l.append(l[0])
-        return cat_l
+        group_list = []
+        for line in grp_f:
+            line = line.split("\t")
+            if line[0] == "all":
+                for species in line[1:]:
+                    species_l.add(species)
+                break
+        for line in org_f:
+            line = line.split()
+            if line[group[1]] == group[0] and line[0] in species_l:
+                group_list.append(line[0])
+        return group_list
 
 
-def write_cut_reactions_file(original_file, cut_nb, reac_list):
-    name = original_file.split("/")[-1]
-    with open(original_file, "r") as f, open(f"outputs/cut_reactions_data/cut{cut_nb}_{name}", "w") as o:
-        for line in f:
-            l = line.split("\t")
-            if l[0] in reac_list or l[0] == "reaction":
-                o.write(line)
+# def write_cut_reactions_file(original_file, cut_nb, reac_list):
+#     name = original_file.split("/")[-1]
+#     with open(original_file, "r") as f, open(f"outputs/cut_reactions_data/"
+#                                              f"cut{cut_nb}_{name}", "w") as o:
+#         for line in f:
+#             l = line.split("\t")
+#             if l[0] in reac_list or l[0] == "reaction":
+#                 o.write(line)
 
 
-def get_reactions_inst(path_runs, org_tsv, runs=None, cat=None, out=None):
-    r_dic = {}
+def get_reactions_inst(organisms_file: str = None, runs: List[str] = None,
+                       group: Tuple[str, int] = None, out: int = None) -> Dict[str, 'Reactions']:
+    """ Create Reactions instances in a dictionary.
+
+    Parameters
+    ----------
+    organisms_file: str, optional (default=None)
+        File providing groups information
+    runs: List[str], optional (default=None)
+        List of the runs ID to consider
+        If None, will be the list of all runs in the Runs path
+    group: Tuple[str, int], optional (default=None)
+        The group to consider : Tuple(name of the group, column of the
+        group in the organisms_file)
+        If None will be all the species of each run
+    out: int, optional (default=None)
+        Number of species maximum not having the reaction for the reaction to be kept
+        If None, will not filter the reactions
+
+    Returns
+    -------
+    reactions_dic: Dict[str, 'Reactions']
+        Dictionary of Reactions instances : Dict[ID of the run, Reactions instance of the run]
+    """
+    rnx_dic = {}
     if runs is None:
-        runs = os.listdir(path_runs)
+        runs = os.listdir(PATH_RUNS)
     for run in runs:
-        r_path = os.path.join(path_runs, run, "analysis", "all", "reactions.tsv")
+        r_path = os.path.join(PATH_RUNS, run, "analysis", "all",
+                              "reactions.tsv")
         if os.path.exists(r_path):
-            if cat is not None:
-                species_l = get_cat_l(r_path, org_tsv, cat)
-                r_dic[run] = Reactions(r_path, species_l, out)
+            if group is not None:
+                if organisms_file is None:
+                    print("If group is specified, organisms_file must also be specified for the "
+                          "filter to be applied. Here no organisms_file has been specified so all "
+                          "species has been kept.")
+                    group = None
+                    rnx_dic[run] = Reactions(r_path, out)
+                else:
+                    species_l = get_grp_l(run, organisms_file, group)
+                    rnx_dic[run] = Reactions(r_path, species_l, out)
             else:
-                r_dic[run] = Reactions(r_path, cat, out)
-    return r_dic
+                rnx_dic[run] = Reactions(r_path, group, out)
+    print(f"Reactions instances has been created for runs : {runs} with group = {group} and out = "
+          f"{out}")
+    return rnx_dic
 
 
 def get_pathways_inst(path_runs, org_tsv, runs=None, cat=None, out=None, nb_rnx_px_min=0):
@@ -62,7 +115,7 @@ def get_pathways_inst(path_runs, org_tsv, runs=None, cat=None, out=None, nb_rnx_
         p_path = os.path.join(path_runs, run, "analysis", "all", "pathways.tsv")
         if os.path.exists(r_path) and os.path.exists(p_path):
             if cat is not None:
-                species_l = get_cat_l(r_path, org_tsv, cat)
+                species_l = get_grp_l(r_path, org_tsv, cat)
                 p_dic[run] = Pathways(p_path, species_l, out, nb_rnx_px_min)
             else:
                 p_dic[run] = Pathways(p_path, cat, out, nb_rnx_px_min)

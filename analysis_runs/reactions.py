@@ -46,7 +46,7 @@ class Reactions:
         species_list : List[str], optional (default=None)
             List of species to study (must correspond to their name in reactions.tsv file).
             If not specified, will contain all the species from reactions.tsv file.
-        out : int, optional (default = 1)
+        out : int, optional (default = None)
             number of species maximum not having the reaction for the reaction to be kept
         """
         self.name = file_reactions_tsv.split("/")[-4]

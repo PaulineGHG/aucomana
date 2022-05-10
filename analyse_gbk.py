@@ -1,3 +1,4 @@
+import numpy
 from Bio import SeqIO
 from collections import Counter
 import pandas as pd
@@ -50,25 +51,31 @@ def group_analysis(out_path):
 
 
 def boxplot_gbk_groups(group1_file, group2_file, outpath):
-    col = ("#contigs", "#b", "#genes", "contigs at least 1 gene (%)")
+    col = ("#contigs", "#genes", "contigs at least 1 gene (%)")
     df_g1 = pd.read_csv(group1_file, sep="\t", index_col=0)
     df_g2 = pd.read_csv(group2_file, sep="\t", index_col=0)
-    fig = plt.figure(figsize=[15.8, 5.6])
+    fig = plt.figure(figsize=[15.8, 7.6])
     i = 1
-    titles = ("a. Number of contigs depending\nof short or long read",
-              "b. Number of bases depending\nof short or long read",
-              "c. Number of genes depending\nof short or long read",
-              "d. Percentage of contigs with\nat least 1 genes depending\n"
-              "of short or long read")
+    titles = ("a. Number of contigs depending\nof short or long read sequencing",
+              "b. Number of genes depending\nof short or long read sequencing",
+              "c. Percentage of contigs with\nat least 1 genes depending\n"
+              "of short or long read sequencing")
+    plt.rcParams.update({'font.size': 15})
 
     for prop in col:
-        axs = fig.add_subplot(1, 4, i)
+        axs = fig.add_subplot(1, 3, i)
         axs.boxplot([df_g1[prop], df_g2[prop]], labels=("Long Read", "Short Read"))
         axs.set_ylabel(prop)
         axs.set_title(titles[i-1])
         i += 1
+        print(prop, numpy.sqrt(numpy.var(df_g1[prop])),
+              numpy.sqrt(numpy.var(df_g2[prop])))
+        print(prop, numpy.mean(df_g1[prop]),
+              numpy.mean(df_g2[prop]))
+        print(prop, numpy.median(df_g1[prop]),
+              numpy.median(df_g2[prop]))
     fig.tight_layout()
-    plt.savefig(outpath)
+    plt.savefig(outpath, dpi=200)
 
 
 # individual_analysis(GBK_PATH, OUT_PATH)
