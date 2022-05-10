@@ -12,6 +12,8 @@ from analysis_runs.init_analysis import PATH_RUNS
 from typing import Tuple, List, Dict
 
 
+# ## Various utils fnc
+
 def get_abbr_name(name: str) -> str:
     """Abbreviate and returns the name of the species in format : X.xxxx.
     Ex : Escherichia coli returns E.coli
@@ -79,6 +81,8 @@ def get_grp_l(run: str, organisms_file: str, group: Tuple[str, int],
                 group_list.append(sp)
     return group_list
 
+
+# ## Create instances
 
 def get_reactions_inst(runs: List[str] = None, species_list: List[str] = None, organisms_file: str = None,
                        group: Tuple[str, int] = None, out: int = None) -> Dict[str, 'Reactions']:
@@ -185,32 +189,29 @@ def get_pathways_inst(runs: List[str] = None, species_list: List[str] = None,
     return pathways_dict
 
 
-def save_figur_comp(folder, df_comp, group):
-    stat = (" mean", " med", " sd", " min", " max")
-    to_calculate = ("nb_genes", "nb_rnx", "nb_pw > 80%", "nb_pw 100%")
-    group_file = None
-    for file in os.listdir(folder):
-        if file.split(".")[0] == group:
-            group_file = os.path.join(folder, file)
-    if group_file is not None:
-        df_group = pd.read_csv(group_file, sep="\t", index_col=0)
+# ## Group comparisons and figures generation
 
+STAT = (" mean", " med", " sd", " min", " max")
+TO_CALCULATE = ("nb_genes", "nb_rnx", "nb_pw > 80%", "nb_pw 100%")
+
+
+def hist_comp(out_dir, df_comp, df_grp_dict):
+    for group, df_group in df_grp_dict.items():
         fig = plt.figure(figsize=[12.8, 9.6])
         i = 1
-
-        for calc in to_calculate:
+        for calc in TO_CALCULATE:
             axs = fig.add_subplot(2, 2, i)
             i += 1
             X = df_group[calc]
-            axs.hist(X, len(X) - len(X)//2, density=True, facecolor='g')
+            axs.hist(X, len(X) - len(X) // 2, density=True, facecolor='g')
             axs.set_xlabel(calc)
             axs.set_ylabel('Density')
-            mu = df_comp.loc[group, calc + stat[0]]
-            med = df_comp.loc[group, calc + stat[1]]
-            sd = df_comp.loc[group, calc + stat[2]]
-            mini = df_comp.loc[group, calc + stat[3]]
-            maxi = df_comp.loc[group, calc + stat[4]]
-            axs.set_title(f"Histogram of {calc} for the {group} group\n"
+            mu = df_comp.loc[group[0], calc + STAT[0]]
+            med = df_comp.loc[group[0], calc + STAT[1]]
+            sd = df_comp.loc[group[0], calc + STAT[2]]
+            mini = df_comp.loc[group[0], calc + STAT[3]]
+            maxi = df_comp.loc[group[0], calc + STAT[4]]
+            axs.set_title(f"Histogram of {calc} for the {group[0]} group\n"
                           f"$\mu={mu},\ \sigma={sd}$")
             axs.axvline(x=mu, color='b', label=f"$\mu={mu}$")
             axs.axvline(x=med, color='c', label=f"med={med}")
@@ -219,77 +220,91 @@ def save_figur_comp(folder, df_comp, group):
             axs.grid(True)
             axs.legend(bbox_to_anchor=(1.0, 1), loc='upper left')
         fig.tight_layout()
-        path_fig = os.path.join(folder, f"{group}_hist.png")
+        path_fig = os.path.join(out_dir, f"{group[0]}_hist.png")
         plt.savefig(path_fig)
 
 
-def illustrate_comp(folder):
-    comp_file = None
-    for file in os.listdir(folder):
-        if file.split("_")[0] == "compare":
-            comp_file = os.path.join(folder, file)
-    if comp_file is not None:
-        df_comp = pd.read_csv(comp_file, sep="\t", index_col=0)
-        for group in df_comp.index:
-            save_figur_comp(folder, df_comp, group)
+def boxplot_comp(out_dir, df_grp_dict):
+    nb_grp = len(df_grp_dict)
+    i = 1
+    str_grp_names = ""
+    for group in df_grp_dict:
+        if i == nb_grp - 1:
+            str_grp_names += f"{group[0]} and "
+            i += 1
+        else:
+            str_grp_names += f"{group[0]}, "
+            i += 1
+    fig = plt.figure(figsize=[12.8, 9.6])
+    i = 1
+    for calc in TO_CALCULATE:
+        axs = fig.add_subplot(2, 2, i)
+        i += 1
+        x_lst = []
+        labels_lst = []
+        for group, df_group in df_grp_dict.items():
+            x_lst.append(list(df_group[calc]))
+            labels_lst.append(group[0])
+        axs.boxplot(x_lst, labels=labels_lst)
+        axs.set_ylabel(calc)
+        axs.set_title(f"Boxplot of {calc} for the {str_grp_names[:-2]} groups")
+    fig.tight_layout()
+    plt.savefig(os.path.join(out_dir, f"boxplot.png"))
 
 
-def compare_groups(run, group1, group2, org_file, hist=True):
-    to_calculate = ("nb_genes", "nb_rnx", "nb_pw > 80%", "nb_pw 100%")
-    stat = (" mean", " med", " sd", " min", " max")
-    path = f"{PATH_RUNS}/{run}/analysis/all/"
+def compare_groups(run, groups_list, org_file, hist=False, boxplot=False):
+    path = os.path.join(PATH_RUNS, run, "analysis", "all")
 
-    group1_list = get_grp_l(run, org_file, group1)
-    group2_list = get_grp_l(run, org_file, group2)
+    grp_str = ""
+    for group in groups_list:
+        grp_str += group[0] + "_"
 
-    r_g1 = Reactions(f"{path}reactions.tsv", group1_list)
-    r_g2 = Reactions(f"{path}reactions.tsv", group2_list)
-    p_g1 = Pathways(f"{path}pathways.tsv", group1_list)
-    p_g2 = Pathways(f"{path}pathways.tsv", group2_list)
-    g_g1 = Genes(f"{path}genes.tsv", group1_list)
-    g_g2 = Genes(f"{path}genes.tsv", group2_list)
-
-    out_dir = os.path.join("output_data", "compare_groups", f"{run}_compare_{group1[0]}_{group2[0]}")
+    out_dir = os.path.join("output_data", "compare_groups", f"{run}_compare_{grp_str[:-1]}")
     if not os.path.exists(out_dir):
         os.mkdir(out_dir)
-    g1_res_file = os.path.join(out_dir, f"{group1[0]}.tsv")
-    g2_res_file = os.path.join(out_dir, f"{group2[0]}.tsv")
-    res_file = os.path.join(out_dir, f"compare_{group1[0]}_{group2[0]}.tsv")
 
-    df_g1 = pd.DataFrame(columns=to_calculate, index=group1_list)
-    df_g2 = pd.DataFrame(columns=to_calculate, index=group2_list)
+    res_file = os.path.join(out_dir, f"compare_{grp_str[:-1]}.tsv")
+
     col_stat = []
-    for x in to_calculate:
-        for y in stat:
+    for x in TO_CALCULATE:
+        for y in STAT:
             col_stat.append(x + y)
-    df_comp = pd.DataFrame(columns=col_stat, index=[group1[0], group2[0]])
+    df_comp = pd.DataFrame(columns=col_stat, index=[group[0] for group in groups_list])
 
-    for sp in group1_list:
-        df_g1.loc[sp, to_calculate[0]] = g_g1.nb_genes_species[sp]
-        df_g1.loc[sp, to_calculate[1]] = r_g1.nb_reactions_sp[sp]
-        df_g1.loc[sp, to_calculate[2]] = p_g1.get_pw_over_treshold(sp, 0.8)[sp][0]
-        df_g1.loc[sp, to_calculate[3]] = p_g1.get_pw_complete(sp, False)[sp][0]
+    df_grp_dict = {}
+    for group in groups_list:
+        grp_sp_list = get_grp_l(run, org_file, group)
 
-    for sp in group2_list:
-        df_g2.loc[sp, to_calculate[0]] = g_g2.nb_genes_species[sp]
-        df_g2.loc[sp, to_calculate[1]] = r_g2.nb_reactions_sp[sp]
-        df_g2.loc[sp, to_calculate[2]] = p_g2.get_pw_over_treshold(sp, 0.8)[sp][0]
-        df_g2.loc[sp, to_calculate[3]] = p_g2.get_pw_complete(sp, False)[sp][0]
+        r_g = Reactions(os.path.join(path, "reactions.tsv"), grp_sp_list)
+        p_g = Pathways(os.path.join(path, "pathways.tsv"), grp_sp_list)
+        g_g = Genes(os.path.join(path, "genes.tsv"), grp_sp_list)
 
-    for grp in [(group1[0], df_g1), (group2[0], df_g2)]:
-        for calc in to_calculate:
-            df_comp.loc[grp[0], calc + stat[0]] = round(float(np.mean(grp[1][calc])), 1)
-            df_comp.loc[grp[0], calc + stat[1]] = np.median(grp[1][calc])
-            df_comp.loc[grp[0], calc + stat[2]] = round(np.sqrt(np.var(grp[1][calc])), 1)
-            df_comp.loc[grp[0], calc + stat[3]] = min(grp[1][calc])
-            df_comp.loc[grp[0], calc + stat[4]] = max(grp[1][calc])
+        g_res_file = os.path.join(out_dir, f"{group[0]}.tsv")
 
-    df_g1.to_csv(g1_res_file, sep="\t")
-    df_g2.to_csv(g2_res_file, sep="\t")
-    df_comp.to_csv(res_file, sep="\t")
+        df_g = pd.DataFrame(columns=TO_CALCULATE, index=grp_sp_list)
+
+        for sp in grp_sp_list:
+            df_g.loc[sp, TO_CALCULATE[0]] = g_g.nb_genes_species[sp]
+            df_g.loc[sp, TO_CALCULATE[1]] = r_g.nb_reactions_sp[sp]
+            df_g.loc[sp, TO_CALCULATE[2]] = p_g.get_pw_over_treshold(sp, 0.8)[sp][0]
+            df_g.loc[sp, TO_CALCULATE[3]] = p_g.get_pw_complete(sp, False)[sp][0]
+
+        df_grp_dict[group] = df_g
+        df_g.to_csv(g_res_file, sep="\t")
+
+        for calc in TO_CALCULATE:
+            df_comp.loc[group[0], calc + STAT[0]] = round(float(np.mean(df_g[calc])), 1)
+            df_comp.loc[group[0], calc + STAT[1]] = np.median(df_g[calc])
+            df_comp.loc[group[0], calc + STAT[2]] = round(np.sqrt(np.var(df_g[calc])), 1)
+            df_comp.loc[group[0], calc + STAT[3]] = min(df_g[calc])
+            df_comp.loc[group[0], calc + STAT[4]] = max(df_g[calc])
+
+        df_comp.to_csv(res_file, sep="\t")
 
     if hist:
-        illustrate_comp(out_dir)
+        hist_comp(out_dir, df_comp, df_grp_dict)
+    if boxplot:
+        boxplot_comp(out_dir, df_grp_dict)
 
 
 def intersect_groups(run, group1, group2, org_file, venn_plot=False):

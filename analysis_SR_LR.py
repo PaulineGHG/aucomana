@@ -10,7 +10,7 @@ ORG_TSV = "data/species_group.tsv"
 
 # ### compare SR & LR #############################################################################
 
-compare_groups("run04filter", ("SR", 2), ("LR", 2), ORG_TSV)
+compare_groups("run04", [("SR", 2), ("LR", 2), ("PUB", 2)], ORG_TSV, boxplot=True)
 
 # intersect_groups(R04, ("LR", 2), ("SR", 2), ORG_TSV, True)
 
