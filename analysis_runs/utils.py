@@ -42,6 +42,9 @@ def get_grp_l(run: str, organisms_file: str, group: Tuple[str, int]) \
                     species_l.add(species.strip())
     group_list = []
     df = pd.read_csv(organisms_file, sep="\t", index_col=0, header=None)
+    if group[1] not in list(df.columns):
+        raise ValueError(f"No column {group[1]} in {organisms_file} file. (Number of columns = "
+                         f"{df.shape[1]})")
     if group[0] not in list(df[group[1]]):
         warnings.warn(f"No species of group {group[0]} are in the column {group[1]} of the "
                       f"{organisms_file}. All species has been kept.")
