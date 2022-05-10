@@ -12,6 +12,24 @@ from analysis_runs.init_analysis import PATH_RUNS
 from typing import Tuple, List, Dict
 
 
+def get_abbr_name(name: str) -> str:
+    """Abbreviate and returns the name of the species in format : X.xxxx.
+    Ex : Escherichia coli returns E.coli
+
+    Parameters
+    ----------
+    name: str
+        name of the species
+
+    Returns
+    -------
+    abbr_name: str
+        Abbreviated name of the species
+    """
+    name = name.split("_")
+    return f"{name[0][0]}.{name[1][:4]}"
+
+
 def get_grp_l(run: str, organisms_file: str, group: Tuple[str, int]) \
         -> List[str]:
     """ Select species according to the group they belong to. The groups must be specified in a
@@ -193,7 +211,6 @@ def save_figur_comp(folder, df_comp, group):
         fig.tight_layout()
         path_fig = os.path.join(folder, f"{group}_hist.png")
         plt.savefig(path_fig)
-        # plt.show()
 
 
 def illustrate_comp(folder):
@@ -212,8 +229,8 @@ def compare_groups(run, group1, group2, org_file, hist=True):
     stat = (" mean", " med", " sd", " min", " max")
     path = f"{PATH_RUNS}/{run}/analysis/all/"
 
-    group1_list = get_cat_l(f"{path}reactions.tsv", org_file, group1)
-    group2_list = get_cat_l(f"{path}reactions.tsv", org_file, group2)
+    group1_list = get_grp_l(run, org_file, group1)
+    group2_list = get_grp_l(run, org_file, group2)
 
     r_g1 = Reactions(f"{path}reactions.tsv", group1_list)
     r_g2 = Reactions(f"{path}reactions.tsv", group2_list)
@@ -266,9 +283,9 @@ def compare_groups(run, group1, group2, org_file, hist=True):
 
 
 def intersect_groups(run, group1, group2, org_file, venn_plot=False):
-    file = f"{PATH_RUNS}{run}/analysis/all/reactions.tsv"
-    group1_list = get_cat_l(file, org_file, group1)
-    group2_list = get_cat_l(file, org_file, group2)
+    file = os.path.join(PATH_RUNS, run, "analysis", "all", "reactions.tsv")
+    group1_list = get_grp_l(run, org_file, group1)
+    group2_list = get_grp_l(run, org_file, group2)
 
     r1 = Reactions(file, group1_list)
     r2 = Reactions(file, group2_list)
@@ -292,7 +309,3 @@ def intersect_groups(run, group1, group2, org_file, venn_plot=False):
         matplotlib_venn.venn2([reactions_g1, reactions_g2], (group1[0], group2[0]))
         plt.show()
 
-
-def get_abr_name(name):
-    name = name.split("_")
-    return f"{name[0][0]}.{name[1][:4]}"
