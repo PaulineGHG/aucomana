@@ -43,7 +43,8 @@ def get_grp_l(run: str, organisms_file: str, group: Tuple[str, int]) \
     group_list = []
     df = pd.read_csv(organisms_file, sep="\t", index_col=0, header=None)
     if group[0] not in list(df[group[1]]):
-        warnings.warn(f"No species of group {group[0]} are in the column {group[1]} of the {organisms_file}. All species has been kept.")
+        warnings.warn(f"No species of group {group[0]} are in the column {group[1]} of the "
+                      f"{organisms_file}. All species has been kept.")
         return list(species_l)
     else:
         for sp in species_l:
@@ -86,9 +87,9 @@ def get_reactions_inst(runs: List[str] = None, organisms_file: str = None,
         if os.path.exists(r_path):
             if group is not None:
                 if organisms_file is None:
-                    print("If group is specified, organisms_file must also be specified for the "
-                          "filter to be applied. Here no organisms_file has been specified so all "
-                          "species has been kept.")
+                    warnings.warn("If group is specified, organisms_file must also be specified "
+                                  "for the filter to be applied. Here no organisms_file has been "
+                                  "specified so all species has been kept.")
                     group = None
                     reactions_dict[run] = Reactions(r_path, out)
                 else:
@@ -138,9 +139,9 @@ def get_pathways_inst(runs: List[str] = None, organisms_file: str = None,
         if os.path.exists(p_path):
             if group is not None:
                 if organisms_file is None:
-                    print("If group is specified, organisms_file must also be specified for the "
-                          "filter to be applied. Here no organisms_file has been specified so all "
-                          "species has been kept.")
+                    warnings.warn("If group is specified, organisms_file must also be specified "
+                                  "for the filter to be applied. Here no organisms_file has been "
+                                  "specified so all species has been kept.")
                     group = None
                     pathways_dict[run] = Pathways(p_path, out=out, nb_rnx_pw_min=nb_rnx_px_min)
                 else:
