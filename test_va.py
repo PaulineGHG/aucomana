@@ -17,7 +17,7 @@ lr = set(lr).intersection(set(brown))
 sr = set(sr).intersection(set(brown))
 
 
-RM = get_reactions_inst([run], ORG_FILE, ("brown", 1), 5)[run]
+RM = get_reactions_inst([run], None, ORG_FILE, ("brown", 1), 5)[run]
 
 
 def barplot_freq(rnx_obj):
