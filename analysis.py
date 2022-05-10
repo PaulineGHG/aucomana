@@ -36,7 +36,7 @@ R03 = "run03"
 R04 = "run04"
 R40 = "run40"
 
-# REACTIONS = get_reactions_inst(runs=[R04], group=("brown", 1), organisms_file=ORG_TSV)
+REACTIONS = get_reactions_inst(runs=[R04], group=("brown", 2), organisms_file=ORG_TSV)
 # PATHWAYS = get_pathways_inst([R04], ORG_TSV, ("brown", 1), nb_rnx_px_min=3)
 
 # ### Common Reactions ############################################################################
@@ -57,4 +57,4 @@ R40 = "run40"
 # print(PATHWAYS[R01].get_pw_complete([SLAT, PLAC], unique=True))
 # PATHWAYS[R04].convert_df_to_binary(1, output_file=True)
 # print(PATHWAYS[R04].get_pw_names())
-print(PATHWAYS[R04].species_list)
+print(REACTIONS[R04].species_list)

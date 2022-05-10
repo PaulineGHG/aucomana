@@ -1,4 +1,5 @@
 import os
+import warnings
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -32,30 +33,23 @@ def get_grp_l(run: str, organisms_file: str, group: Tuple[str, int]) \
     """
     grp_template_f = os.path.join(PATH_RUNS, run, "analysis",
                                   "group_template.tsv")
-    with open(organisms_file, "r") as org_f, open(grp_template_f, "r") as grp_f:
+    with open(grp_template_f, "r") as grp_f:
         species_l = set()
-        group_list = []
         for line in grp_f:
             line = line.split("\t")
             if line[0] == "all":
                 for species in line[1:]:
-                    species_l.add(species)
-                break
-        for line in org_f:
-            line = line.split()
-            if line[group[1]] == group[0] and line[0] in species_l:
-                group_list.append(line[0])
-        return group_list
-
-
-# def write_cut_reactions_file(original_file, cut_nb, reac_list):
-#     name = original_file.split("/")[-1]
-#     with open(original_file, "r") as f, open(f"outputs/cut_reactions_data/"
-#                                              f"cut{cut_nb}_{name}", "w") as o:
-#         for line in f:
-#             l = line.split("\t")
-#             if l[0] in reac_list or l[0] == "reaction":
-#                 o.write(line)
+                    species_l.add(species.strip())
+    group_list = []
+    df = pd.read_csv(organisms_file, sep="\t", index_col=0, header=None)
+    if group[0] not in list(df[group[1]]):
+        warnings.warn(f"No species of group {group[0]} are in the column {group[1]} of the {organisms_file}. All species has been kept.")
+        return list(species_l)
+    else:
+        for sp in species_l:
+            if df.loc[sp, group[1]] == group[0]:
+                group_list.append(sp)
+    return group_list
 
 
 def get_reactions_inst(runs: List[str] = None, organisms_file: str = None,
