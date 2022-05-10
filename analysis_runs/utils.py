@@ -4,11 +4,12 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib_venn
+import venn
 
 from analysis_runs.reactions import Reactions
 from analysis_runs.pathways import Pathways
 from analysis_runs.genes import Genes
-from analysis_runs.init_analysis import PATH_RUNS
+from analysis_runs.init_analysis import PATH_RUNS, PATH_STUDY
 from typing import Tuple, List, Dict
 
 
@@ -356,30 +357,38 @@ def compare_groups(run: str, groups_list: List[Tuple[str, int]], org_file: str, 
         boxplot_comp(out_dir, df_grp_dict)
 
 
-def intersect_groups(run, group1, group2, org_file, venn_plot=False):
+def intersect_rnx_groups(run: str, groups_list, org_file, percentage=True, venn_plot=False):
     file = os.path.join(PATH_RUNS, run, "analysis", "all", "reactions.tsv")
-    group1_list = get_grp_l(run, org_file, group1)
-    group2_list = get_grp_l(run, org_file, group2)
+    group_rnx_dict = {}
+    grp_str = ""
+    for group in groups_list:
+        grp_str += group[0] + "_"
+    for group in groups_list:
+        group_list = get_grp_l(run, org_file, group)
+        r = Reactions(file, group_list)
+        reactions_g = set(r.reactions_list)
+        group_rnx_dict[group[0]] = reactions_g
 
-    r1 = Reactions(file, group1_list)
-    r2 = Reactions(file, group2_list)
-
-    reactions_g1 = set(r1.reactions_list)
-    reactions_g2 = set(r2.reactions_list)
-
-    g1_nb = len(reactions_g1)
-    g2_nb = len(reactions_g2)
-    intersect_nb = len(reactions_g1.intersection(reactions_g2))
-    union_nb = len(reactions_g1.union(reactions_g2))
-
-    print(f"Over {union_nb} reactions, {intersect_nb} reactions in common = "
-          f"{round((intersect_nb/union_nb) * 100, 2)} % of the union.\n"
-          f"{g1_nb - intersect_nb} only present among the {group1[0]} group = "
-          f"{round(((g1_nb - intersect_nb)/union_nb) * 100, 2)} % of the union.\n"
-          f"{g2_nb - intersect_nb} only present among the {group2[0]} group = "
-          f"{round(((g2_nb - intersect_nb)/union_nb) * 100, 2)} % of the union.\n")
+    if percentage:
+        union = set.union(*group_rnx_dict.values())
+        intersect = set.intersection(*group_rnx_dict.values())
+        union_nb = len(union)
+        intersect_nb = len(intersect)
+        txt_file = os.path.join(PATH_STUDY, "output_data", "compare_groups",
+                                f"{run}_intersect_{grp_str}.txt")
+        with open(txt_file, "w") as f:
+            s = f"Over {union_nb} reactions, {intersect_nb} reactions in common = " \
+                f"{round((intersect_nb/union_nb) * 100, 2)} % of the union."
+            print(s)
+            f.write(s)
+            for group, reactions in group_rnx_dict.items():
+                g_rnx_nb = len(reactions)
+                s = f"{g_rnx_nb - intersect_nb} only present among the {group} group = " \
+                    f"{round(((g_rnx_nb - intersect_nb)/union_nb) * 100, 2)} % of the union."
+                print(s)
+                f.write(s)
 
     if venn_plot:
-        matplotlib_venn.venn2([reactions_g1, reactions_g2], (group1[0], group2[0]))
-        plt.show()
-
+        venn.venn(group_rnx_dict, cmap="plasma")
+        plt.savefig(os.path.join(PATH_STUDY, "output_data", "compare_groups",
+                                 f"{run}_intersect_{grp_str}.png"))
