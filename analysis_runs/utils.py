@@ -32,6 +32,8 @@ def get_abbr_name(name: str) -> str:
     return f"{name[0][0]}.{name[1][:4]}"
 
 
+# ## Extract species according to groups from organisms file
+
 def get_grp_l(run: str, organisms_file: str, group: Tuple[str, int],
               species_list: List[str] = None) -> List[str]:
     """ Select species according to the group they belong to. The groups must be specified in a
