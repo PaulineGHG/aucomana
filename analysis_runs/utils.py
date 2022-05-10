@@ -58,17 +58,18 @@ def get_grp_l(run: str, organisms_file: str, group: Tuple[str, int]) \
 #                 o.write(line)
 
 
-def get_reactions_inst(organisms_file: str = None, runs: List[str] = None,
+def get_reactions_inst(runs: List[str] = None, organisms_file: str = None,
                        group: Tuple[str, int] = None, out: int = None) -> Dict[str, 'Reactions']:
     """ Create Reactions instances in a dictionary.
 
     Parameters
     ----------
-    organisms_file: str, optional (default=None)
-        File providing groups information
     runs: List[str], optional (default=None)
         List of the runs ID to consider
         If None, will be the list of all runs in the Runs path
+    organisms_file: str, optional (default=None)
+        File providing groups information
+        If None, species will not be filtered according to their group belonging
     group: Tuple[str, int], optional (default=None)
         The group to consider : Tuple(name of the group, column of the
         group in the organisms_file)
@@ -79,10 +80,10 @@ def get_reactions_inst(organisms_file: str = None, runs: List[str] = None,
 
     Returns
     -------
-    reactions_dic: Dict[str, 'Reactions']
+    reactions_dict: Dict[str, 'Reactions']
         Dictionary of Reactions instances : Dict[ID of the run, Reactions instance of the run]
     """
-    rnx_dic = {}
+    reactions_dict = {}
     if runs is None:
         runs = os.listdir(PATH_RUNS)
     for run in runs:
@@ -95,31 +96,67 @@ def get_reactions_inst(organisms_file: str = None, runs: List[str] = None,
                           "filter to be applied. Here no organisms_file has been specified so all "
                           "species has been kept.")
                     group = None
-                    rnx_dic[run] = Reactions(r_path, out)
+                    reactions_dict[run] = Reactions(r_path, out)
                 else:
                     species_l = get_grp_l(run, organisms_file, group)
-                    rnx_dic[run] = Reactions(r_path, species_l, out)
+                    reactions_dict[run] = Reactions(r_path, species_l, out)
             else:
-                rnx_dic[run] = Reactions(r_path, group, out)
+                reactions_dict[run] = Reactions(r_path, group, out)
     print(f"Reactions instances has been created for runs : {runs} with group = {group} and out = "
           f"{out}")
-    return rnx_dic
+    return reactions_dict
 
 
-def get_pathways_inst(path_runs, org_tsv, runs=None, cat=None, out=None, nb_rnx_px_min=0):
-    p_dic = {}
+def get_pathways_inst(runs: List[str] = None, organisms_file: str = None,
+                      group: Tuple[str, int] = None, out: int = None, nb_rnx_px_min=0) \
+        -> Dict[str, 'Pathways']:
+    """ Create Pathways instances in a dictionary.
+
+    Parameters
+    ----------
+    runs: List[str], optional (default=None)
+        List of the runs ID to consider
+        If None, will be the list of all runs in the Runs path
+    organisms_file: str, optional (default=None)
+        File providing groups information
+        If None, species will not be filtered according to their group belonging
+    group: Tuple[str, int], optional (default=None)
+        The group to consider : Tuple(name of the group, column of the
+        group in the organisms_file)
+        If None will be all the species of each run
+    out: int, optional (default=None)
+        Number of species maximum not having the pathway for the pathway to be kept
+        If None, will not filter the reactions
+    nb_rnx_px_min: int, optional (default=0)
+        Minimal number of reactions in a pathway for the pathway to be kept
+        If not precised, will be 0 (=> no filter)
+
+    Returns
+    -------
+    pathways_dict: Dict[str, 'Pathways']
+        Dictionary of Pathways instances : Dict[ID of the run, Pathways instance of the run]
+    """
+    pathways_dict = {}
     if runs is None:
-        runs = os.listdir(path_runs)
+        runs = os.listdir(PATH_RUNS)
     for run in runs:
-        r_path = os.path.join(path_runs, run, "analysis", "all", "reactions.tsv")
-        p_path = os.path.join(path_runs, run, "analysis", "all", "pathways.tsv")
-        if os.path.exists(r_path) and os.path.exists(p_path):
-            if cat is not None:
-                species_l = get_grp_l(r_path, org_tsv, cat)
-                p_dic[run] = Pathways(p_path, species_l, out, nb_rnx_px_min)
+        p_path = os.path.join(PATH_RUNS, run, "analysis", "all", "pathways.tsv")
+        if os.path.exists(p_path):
+            if group is not None:
+                if organisms_file is None:
+                    print("If group is specified, organisms_file must also be specified for the "
+                          "filter to be applied. Here no organisms_file has been specified so all "
+                          "species has been kept.")
+                    group = None
+                    pathways_dict[run] = Pathways(p_path, out=out, nb_rnx_pw_min=nb_rnx_px_min)
+                else:
+                    species_l = get_grp_l(run, organisms_file, group)
+                    pathways_dict[run] = Pathways(p_path, species_l, out, nb_rnx_px_min)
             else:
-                p_dic[run] = Pathways(p_path, cat, out, nb_rnx_px_min)
-    return p_dic
+                pathways_dict[run] = Pathways(p_path, group, out, nb_rnx_px_min)
+        print(f"Pathways instances has been created for runs : {runs} with group = {group}, out = "
+              f"{out} and minimal number of rnx in pw = {nb_rnx_px_min}")
+    return pathways_dict
 
 
 def save_figur_comp(folder, df_comp, group):
