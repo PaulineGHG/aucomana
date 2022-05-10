@@ -30,8 +30,8 @@ def get_abbr_name(name: str) -> str:
     return f"{name[0][0]}.{name[1][:4]}"
 
 
-def get_grp_l(run: str, organisms_file: str, group: Tuple[str, int]) \
-        -> List[str]:
+def get_grp_l(run: str, organisms_file: str, group: Tuple[str, int],
+              species_list: List[str] = None) -> List[str]:
     """ Select species according to the group they belong to. The groups must be specified in a
     TSV file (organisms-file as input).
 
@@ -43,21 +43,27 @@ def get_grp_l(run: str, organisms_file: str, group: Tuple[str, int]) \
         File providing groups information
     group: Tuple[str, int]
         The group to consider : Tuple(name of the group, column of the group in the organisms_file)
+    species_list: List[str], optional (default=None)
+        List of species to consider to be filtered according to their group belonging
+        If None will be all the species of the run
 
     Returns
     -------
     group_l: List[str]
         List of species corresponding to the category chosen
     """
-    grp_template_f = os.path.join(PATH_RUNS, run, "analysis",
-                                  "group_template.tsv")
-    with open(grp_template_f, "r") as grp_f:
-        species_l = set()
-        for line in grp_f:
-            line = line.split("\t")
-            if line[0] == "all":
-                for species in line[1:]:
-                    species_l.add(species.strip())
+    if species_list is not None:
+        species_l = set(species_list)
+    else:
+        grp_template_f = os.path.join(PATH_RUNS, run, "analysis",
+                                      "group_template.tsv")
+        with open(grp_template_f, "r") as grp_f:
+            species_l = set()
+            for line in grp_f:
+                line = line.split("\t")
+                if line[0] == "all":
+                    for species in line[1:]:
+                        species_l.add(species.strip())
     group_list = []
     df = pd.read_csv(organisms_file, sep="\t", index_col=0, header=None)
     if group[1] not in list(df.columns):
@@ -74,7 +80,7 @@ def get_grp_l(run: str, organisms_file: str, group: Tuple[str, int]) \
     return group_list
 
 
-def get_reactions_inst(runs: List[str] = None, organisms_file: str = None,
+def get_reactions_inst(runs: List[str] = None, species_list: List[str] = None, organisms_file: str = None,
                        group: Tuple[str, int] = None, out: int = None) -> Dict[str, 'Reactions']:
     """ Create Reactions instances in a dictionary.
 
@@ -83,11 +89,13 @@ def get_reactions_inst(runs: List[str] = None, organisms_file: str = None,
     runs: List[str], optional (default=None)
         List of the runs ID to consider
         If None, will be the list of all runs in the Runs path
+    species_list: List[str], optional (default=None)
+        List of species to consider for instances creation
     organisms_file: str, optional (default=None)
         File providing groups information
         If None, species will not be filtered according to their group belonging
     group: Tuple[str, int], optional (default=None)
-        The group to consider : Tuple(name of the group, column of the
+        The group to consider for species filtering : Tuple(name of the group, column of the
         group in the organisms_file)
         If None will be all the species of each run
     out: int, optional (default=None)
@@ -112,20 +120,20 @@ def get_reactions_inst(runs: List[str] = None, organisms_file: str = None,
                                   "for the filter to be applied. Here no organisms_file has been "
                                   "specified so all species has been kept.")
                     group = None
-                    reactions_dict[run] = Reactions(r_path, out)
+                    reactions_dict[run] = Reactions(r_path, species_list, out)
                 else:
-                    species_l = get_grp_l(run, organisms_file, group)
-                    reactions_dict[run] = Reactions(r_path, species_l, out)
+                    grp_species_l = get_grp_l(run, organisms_file, group, species_list)
+                    reactions_dict[run] = Reactions(r_path, grp_species_l, out)
             else:
-                reactions_dict[run] = Reactions(r_path, group, out)
+                reactions_dict[run] = Reactions(r_path, species_list, out)
     print(f"Reactions instances has been created for runs : {runs} with group = {group} and out = "
           f"{out}")
     return reactions_dict
 
 
-def get_pathways_inst(runs: List[str] = None, organisms_file: str = None,
-                      group: Tuple[str, int] = None, out: int = None, nb_rnx_px_min=0) \
-        -> Dict[str, 'Pathways']:
+def get_pathways_inst(runs: List[str] = None, species_list: List[str] = None,
+                      organisms_file: str = None, group: Tuple[str, int] = None, out: int = None,
+                      nb_rnx_px_min=0) -> Dict[str, 'Pathways']:
     """ Create Pathways instances in a dictionary.
 
     Parameters
@@ -133,11 +141,13 @@ def get_pathways_inst(runs: List[str] = None, organisms_file: str = None,
     runs: List[str], optional (default=None)
         List of the runs ID to consider
         If None, will be the list of all runs in the Runs path
+    species_list: List[str], optional (default=None)
+        List of species to consider for instances creation
     organisms_file: str, optional (default=None)
         File providing groups information
         If None, species will not be filtered according to their group belonging
     group: Tuple[str, int], optional (default=None)
-        The group to consider : Tuple(name of the group, column of the
+        The group to consider for species filtering : Tuple(name of the group, column of the
         group in the organisms_file)
         If None will be all the species of each run
     out: int, optional (default=None)
@@ -164,12 +174,12 @@ def get_pathways_inst(runs: List[str] = None, organisms_file: str = None,
                                   "for the filter to be applied. Here no organisms_file has been "
                                   "specified so all species has been kept.")
                     group = None
-                    pathways_dict[run] = Pathways(p_path, out=out, nb_rnx_pw_min=nb_rnx_px_min)
+                    pathways_dict[run] = Pathways(p_path, species_list, out, nb_rnx_px_min)
                 else:
-                    species_l = get_grp_l(run, organisms_file, group)
-                    pathways_dict[run] = Pathways(p_path, species_l, out, nb_rnx_px_min)
+                    grp_species_l = get_grp_l(run, organisms_file, group)
+                    pathways_dict[run] = Pathways(p_path, grp_species_l, out, nb_rnx_px_min)
             else:
-                pathways_dict[run] = Pathways(p_path, group, out, nb_rnx_px_min)
+                pathways_dict[run] = Pathways(p_path, species_list, out, nb_rnx_px_min)
         print(f"Pathways instances has been created for runs : {runs} with group = {group}, out = "
               f"{out} and minimal number of rnx in pw = {nb_rnx_px_min}")
     return pathways_dict
