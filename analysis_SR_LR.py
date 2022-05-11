@@ -40,5 +40,3 @@ def reg_lin(file_tsv):
 # ### illustration ###########
 
 # illustrate_comp("output_data/compare_groups/run04_compare_SR_LR")
-
-print(get_reactions_inst([R04]))
