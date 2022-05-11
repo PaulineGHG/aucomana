@@ -36,8 +36,8 @@ R03 = "run03"
 R04 = "run04"
 R40 = "run40"
 
-REACTIONS = get_reactions_inst(runs=[R04], group=("brown", 1), organisms_file=ORG_TSV)
-# PATHWAYS = get_pathways_inst([R04], ORG_TSV, ("brown", 1), nb_rnx_px_min=3)
+REACTIONS = get_reactions_inst(runs=[R04], group=("brown", 1))
+PATHWAYS = get_pathways_inst(runs=[R04], group=("brown", 1), nb_rnx_px_min=3)
 
 # ### Common Reactions ############################################################################
 
