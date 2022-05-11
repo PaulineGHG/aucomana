@@ -140,7 +140,7 @@ def get_reactions_inst(runs: List[str] = None, species_list: List[str] = None, o
 
 def get_pathways_inst(runs: List[str] = None, species_list: List[str] = None,
                       organisms_file: str = None, group: Tuple[str, int] = None, out: int = None,
-                      nb_rnx_px_min=0) -> Dict[str, 'Pathways']:
+                      nb_rnx_px_min: int = 0) -> Dict[str, 'Pathways']:
     """ Create Pathways instances in a dictionary.
 
     Parameters
@@ -162,7 +162,7 @@ def get_pathways_inst(runs: List[str] = None, species_list: List[str] = None,
         If None, will not filter the reactions
     nb_rnx_px_min: int, optional (default=0)
         Minimal number of reactions in a pathway for the pathway to be kept
-        If not precised, will be 0 (=> no filter)
+        If not specified, will be 0 (=> no filter)
 
     Returns
     -------
@@ -295,11 +295,11 @@ def compare_groups(run: str, groups_list: List[Tuple[str, int]], org_file: str, 
     run: str
         ID of the run to consider
     groups_list: List[Tuple[str, int]]
-        List of groups to compare, groups are selected from groups specificied in org_file
+        List of groups to compare, groups are selected from groups specified in org_file
     org_file: str
         TSV file providing groups information
     hist: bool, optional (default=False)
-        Indicate whether histograms outputs (PNG files) must be created
+        Indicate whether histograms output (PNG files) must be created
     boxplot: bool, optional (default=False)
         Indicate whether boxplot output (PNG file) must be created
     """
