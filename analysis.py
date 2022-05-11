@@ -36,7 +36,7 @@ R03 = "run03"
 R04 = "run04"
 R40 = "run40"
 
-REACTIONS = get_reactions_inst(runs=[R04], group=("brown", 1))
+REACTIONS = get_reactions_inst(runs=[R04])
 PATHWAYS = get_pathways_inst(runs=[R04], group=("brown", 1), nb_rnx_px_min=3)
 
 # ### Common Reactions ############################################################################

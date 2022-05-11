@@ -120,8 +120,10 @@ def get_reactions_inst(runs: List[str] = None, species_list: List[str] = None,
                 reactions_dict[run] = Reactions(r_path, grp_species_l, out)
             else:
                 reactions_dict[run] = Reactions(r_path, species_list, out)
-    print(f"Reactions instances has been created for runs : {runs} with group = {group} and out = "
-          f"{out}")
+    for run in runs:
+        if run in reactions_dict.keys():
+            print(f"Reactions instances has been created for run : {run} with group = {group} and out = "
+                  f"{out}")
     return reactions_dict
 
 
@@ -164,8 +166,10 @@ def get_pathways_inst(runs: List[str] = None, species_list: List[str] = None,
                 pathways_dict[run] = Pathways(p_path, grp_species_l, out, nb_rnx_px_min)
             else:
                 pathways_dict[run] = Pathways(p_path, species_list, out, nb_rnx_px_min)
-        print(f"Pathways instances has been created for runs : {runs} with group = {group}, out = "
-              f"{out} and minimal number of rnx in pw = {nb_rnx_px_min}")
+    for run in runs:
+        if run in pathways_dict.keys():
+            print(f"Pathways instances has been created for run : {run} with group = {group}, out = "
+                  f"{out} and minimal number of rnx in pw = {nb_rnx_px_min}")
     return pathways_dict
 
 

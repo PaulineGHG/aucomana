@@ -21,7 +21,7 @@ class Pathways:
         Dataframe indicating completion rate of each pathway for each species (prop float)
     data_pathways_str :
         Dataframe indicating completion rate of each pathway for each species (prop str)
-    data_reacs_assoc :
+    data_rnx_assoc :
         Dataframe indicating reactions associated with each pathway for each species
     pathways_list : List[str]
         List of all pathways
@@ -47,7 +47,7 @@ class Pathways:
         """
         self.name = file_pathways_tsv.split("/")[-4]
         self.species_list = species_list
-        self.data_pathways_str, self.data_reacs_assoc = self.__init_data(file_pathways_tsv)
+        self.data_pathways_str, self.data_rnx_assoc = self.__init_data(file_pathways_tsv)
         self.data_pathways_float = self.data_pathways_str.copy(deep=True)
         self.nb_rnx_pw = self.__convert_data_pathways()
         self.pathways_list = self.__get_filtered_pathways(out, nb_rnx_pw_min)
@@ -74,9 +74,9 @@ class Pathways:
             self.__generate_species_list(data)
         comp_list = [x + self.STR_COMP for x in self.species_list]
         data_species_all_pathways = data[comp_list]
-        reac_assoc_list = [x + self.STR_RNX_ASSOC for x in self.species_list]
-        data_reacs_assoc = data[reac_assoc_list]
-        return data_species_all_pathways, data_reacs_assoc
+        rnx_assoc_list = [x + self.STR_RNX_ASSOC for x in self.species_list]
+        data_rnx_assoc = data[rnx_assoc_list]
+        return data_species_all_pathways, data_rnx_assoc
 
     def __generate_species_list(self, data: 'pd.DataFrame'):
         """ Generate the species_list attribute if is None
