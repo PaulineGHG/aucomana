@@ -1,0 +1,5 @@
+group name	column	color	element (B for branch, L for leave)
+brown	1	#a3724b	B
+nano	1	#c9ad4b	B
+diatoms	1	#e7baaa	B
+LR	2	blue	L

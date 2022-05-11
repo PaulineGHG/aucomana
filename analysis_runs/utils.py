@@ -29,7 +29,13 @@ def get_abbr_name(name: str) -> str:
         Abbreviated name of the species
     """
     name = name.split("_")
-    return f"{name[0][0]}.{name[1][:4]}"
+    if len(name) > 1:
+        if len(name[1]) > 3:
+            return f"{name[0][0].upper()}.{name[1][:4].lower()}"
+        else:
+            return f"{name[0][0].upper()}.{name[1].lower()}"
+    else:
+        return f"{name[0][0].upper()}{name[0][1:5].lower()}"
 
 
 # ## Extract species according to groups from organisms file
