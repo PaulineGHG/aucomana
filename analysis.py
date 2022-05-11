@@ -4,7 +4,7 @@ from analysis_runs.init_analysis import *
 # ### FILES #######################################################################################
 
 # DATA_LELSB_LOSSES = "data/Lelsb_losses.ods"
-ORG_TSV = "data/species_group.tsv"
+# ORG_TSV = "data/species_group.tsv"
 
 # ### Select species ##############################################################################
 
@@ -57,5 +57,6 @@ PATHWAYS = get_pathways_inst(runs=[R04], group=("brown", 1), nb_rnx_px_min=3)
 # print(PATHWAYS[R01].get_pw_complete([SLAT, PLAC], unique=True))
 # PATHWAYS[R04].convert_df_to_binary(1, output_file=True)
 # print(PATHWAYS[R04].get_pw_names())
-print(REACTIONS[R04].species_list)
+print(REACTIONS)
+print(PATHWAYS)
 

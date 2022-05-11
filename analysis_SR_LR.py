@@ -5,14 +5,14 @@ import matplotlib.pyplot as plt
 from scipy import stats
 
 R04 = "run04"
-ORG_TSV = "data/species_group.tsv"
+# ORG_TSV = "data/species_group.tsv"
 
 
 # ### compare SR & LR #############################################################################
 
-# compare_groups("run04", [("SR", 2), ("LR", 2), ("PUB", 2)], ORG_TSV, boxplot=True)
+# compare_groups("run04", [("SR", 2), ("LR", 2), ("PUB", 2)], boxplot=True)
 
-intersect_rnx_groups(R04, [("LR", 2), ("SR", 2), ("PUB", 2)], ORG_TSV, True)
+intersect_rnx_groups(R04, [("LR", 2), ("SR", 2), ("PUB", 2)], True)
 
 # Corelation nb rnx & fragmentation
 
@@ -40,3 +40,5 @@ def reg_lin(file_tsv):
 # ### illustration ###########
 
 # illustrate_comp("output_data/compare_groups/run04_compare_SR_LR")
+
+print(get_reactions_inst([R04]))

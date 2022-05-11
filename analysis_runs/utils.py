@@ -263,7 +263,7 @@ def boxplot_comp(out_dir: str, df_grp_dict: Dict[Tuple[str, int], 'pd.DataFrame'
     plt.savefig(os.path.join(out_dir, f"boxplot.png"))
 
 
-def compare_groups(run: str, groups_list: List[Tuple[str, int]], org_file: str, hist: bool = False,
+def compare_groups(run: str, groups_list: List[Tuple[str, int]], hist: bool = False,
                    boxplot: bool = False):
     """ Compare groups given according to : their number of genes, number of reactions, number of
     pathways with completion > 80% and number of pathways with completion = 100%. For each of this
@@ -277,8 +277,6 @@ def compare_groups(run: str, groups_list: List[Tuple[str, int]], org_file: str, 
         ID of the run to consider
     groups_list: List[Tuple[str, int]]
         List of groups to compare, groups are selected from groups specified in org_file
-    org_file: str
-        TSV file providing groups information
     hist: bool, optional (default=False)
         Indicate whether histograms output (PNG files) must be created
     boxplot: bool, optional (default=False)
@@ -304,7 +302,7 @@ def compare_groups(run: str, groups_list: List[Tuple[str, int]], org_file: str, 
 
     df_grp_dict = {}
     for group in groups_list:
-        grp_sp_list = get_grp_l(run, org_file, group)
+        grp_sp_list = get_grp_l(run, group)
 
         r_g = Reactions(os.path.join(path, "reactions.tsv"), grp_sp_list)
         p_g = Pathways(os.path.join(path, "pathways.tsv"), grp_sp_list)
@@ -338,14 +336,14 @@ def compare_groups(run: str, groups_list: List[Tuple[str, int]], org_file: str, 
         boxplot_comp(out_dir, df_grp_dict)
 
 
-def intersect_rnx_groups(run: str, groups_list, org_file, percentage=True, venn_plot=False):
+def intersect_rnx_groups(run: str, groups_list, percentage=True, venn_plot=False):
     file = os.path.join(PATH_RUNS, run, "analysis", "all", "reactions.tsv")
     group_rnx_dict = {}
     grp_str = ""
     for group in groups_list:
         grp_str += group[0] + "_"
     for group in groups_list:
-        group_list = get_grp_l(run, org_file, group)
+        group_list = get_grp_l(run, group)
         r = Reactions(file, group_list)
         reactions_g = set(r.reactions_list)
         group_rnx_dict[group[0]] = reactions_g
