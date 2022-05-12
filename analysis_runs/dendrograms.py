@@ -34,7 +34,7 @@ def get_dendro_pvclust(df_binary, name, run, phylo_file=None, n_boot=100000):
     # Make pandas dataframe compatible with R dataframe.
     pandas2ri.activate()
     # Launch pvclust on the data silently and in parallel.
-    print(f"Running pvclust with nboot = {n_boot}, this step can take a moment.")
+    print(f"Running pvclust with nboot = {n_boot}, this step may take a while.")
     result = pvclust.pvclust(df_binary, method_dist="binary", method_hclust="complete",
                              nboot=n_boot, quiet=True, parallel=True)
     print("Running pvclust : Done.")
@@ -192,4 +192,14 @@ def get_tanglegram(phylo, dend, name, out_dir):
                           main_right=title_right, quiet=True)
     grdevices.dev_off()
     print(f"Tanglegram has been saved to : {out_file}")
+    get_similarity_indicators(d1, name, out_dir)
 
+
+def get_similarity_indicators(d1, name, out_dir):
+    cor_coph = dendextend.cor_cophenetic(d1, method_coef="pearson")
+    cor_bakers_gamma = dendextend.cor_bakers_gamma(d1)
+    out_file = os.path.join(out_dir, f"{name}_similarity_indicators.tsv")
+    with open(out_file, 'w') as f:
+        f.write("Correlation cophenetic\tCorrelation bakers gamma\n")
+        f.write(f"{cor_coph[0]}\t{cor_bakers_gamma[0]}")
+    print(f"Correlation indicators table has been saved to : {out_file}")
