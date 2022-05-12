@@ -5,6 +5,7 @@ import copy
 from typing import Dict, List, Tuple, Set
 import os
 from analysis_runs.init_analysis import PATH_STUDY, PATH_RUNS
+import analysis_runs.dendrograms
 import pandas as pd
 import numpy as np
 
@@ -30,6 +31,7 @@ class Pathways:
     nb_species : int
         number of species studied
     """
+    nb_dend = 0
     STR_COMP = "_completion_rate"
     STR_RNX_ASSOC = "_rxn_assoc (sep=;)"
 
@@ -556,7 +558,8 @@ class Pathways:
 
     def get_pw_names(self):
         pw_names = {}
-        padmet_file = os.path.join(PATH_RUNS, self.name, "analysis", "all", "all_panmetabolism.padmet")
+        padmet_file = os.path.join(PATH_RUNS, self.name, "analysis", "all",
+                                   "all_panmetabolism.padmet")
         with open(padmet_file, "r") as f:
             for l in f:
                 if "COMMON-NAME" in l and "pathway" in l:
@@ -564,7 +567,8 @@ class Pathways:
                     pw_names[l[1]] = l[3]
         return pw_names
 
-    def convert_df_to_binary(self, threshold: float, strict: bool = False, output_file: bool = False) \
+    def convert_df_to_binary(self, threshold: float, strict: bool = False,
+                             output_file: bool = False, common_name: bool = False) \
             -> 'pd.DataFrame':
         """ Returns the pathways with completion over a given threshold for species
 
@@ -576,6 +580,8 @@ class Pathways:
             Whether the inequality relative to the threshold should be strict or not
         output_file : bool, optional (default=False)
             Whether write the binary data frame in an output file or not
+        common_name : bool, optional (default=False)
+            Whether write the common name of the pathway in 1st column or not
 
         Returns
         -------
@@ -586,11 +592,17 @@ class Pathways:
         """
         if threshold < 0 or threshold > 1:
             raise ValueError("The threshold must be within the range of 0 to 1")
-        common_pw_name = self.get_pw_names()
-        df_binary = pd.DataFrame(columns=self.species_list + ["nb rnx pw", "common name"], index=self.pathways_list)
+        if common_name:
+            common_pw_name = self.get_pw_names()
+            df_binary = pd.DataFrame(columns=["common name"] + self.species_list + ["nb rnx pw"],
+                                     index=self.pathways_list)
+        else:
+            df_binary = pd.DataFrame(columns=self.species_list + ["nb rnx pw"],
+                                     index=self.pathways_list)
         for pw in self.pathways_list:
             df_binary.loc[pw, "nb rnx pw"] = int(self.nb_rnx_pw[pw])
-            df_binary.loc[pw, "common name"] = common_pw_name[pw]
+            if common_name:
+                df_binary.loc[pw, "common name"] = common_pw_name[pw]
             for sp in self.species_list:
                 sp_c = sp + self.STR_COMP
                 if strict:
@@ -606,10 +618,20 @@ class Pathways:
 
         if output_file:
             file_name = f"{self.name}_{threshold}_binary_pw.tsv"
-            file_path = os.path.join(PATH_STUDY, "output_data", "pathways_data", "binary_df", file_name)
+            file_path = os.path.join(PATH_STUDY, "output_data", "pathways_data", "binary_df",
+                                     file_name)
             df_binary.to_csv(file_path, sep="\t", index_label="pathway")
         else:
             return df_binary
+
+    def generate_pw_dendrogram(self, df_binary_theshold: float, strict: bool = False,
+                               name: str = None, phylo_file: str = None, n_boot: int = 100000):
+        if name is None:
+            self.nb_dend += 1
+            name = f"dendrogram{self.nb_dend}"
+        name = f"pw_{int(df_binary_theshold*100)}_{name}"
+        df_bin = self.convert_df_to_binary(df_binary_theshold, strict)
+        analysis_runs.dendrograms.get_dendro_pvclust(df_bin, name, self.name, phylo_file, n_boot)
 
     def print_completion_pw(self, pathway, species):
         species += self.STR_COMP
