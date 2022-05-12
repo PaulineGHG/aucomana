@@ -5,6 +5,7 @@ from analysis_runs.init_analysis import *
 
 # DATA_LELSB_LOSSES = "data/Lelsb_losses.ods"
 # ORG_TSV = "data/species_group.tsv"
+phylo_f = "data/Phaeoexplorer_MLtree_rooted.nex"
 
 # ### Select species ##############################################################################
 
@@ -37,7 +38,7 @@ R04 = "run04"
 R40 = "run40"
 
 REACTIONS = get_reactions_inst(runs=[R04])
-PATHWAYS = get_pathways_inst(runs=[R04], group=("brown", 1), nb_rnx_px_min=3)
+# PATHWAYS = get_pathways_inst(runs=[R04], group=("brown", 1), nb_rnx_px_min=3)
 
 # ### Common Reactions ############################################################################
 
@@ -58,5 +59,5 @@ PATHWAYS = get_pathways_inst(runs=[R04], group=("brown", 1), nb_rnx_px_min=3)
 # PATHWAYS[R04].convert_df_to_binary(1, output_file=True)
 # print(PATHWAYS[R04].get_pw_names())
 print(REACTIONS)
-print(PATHWAYS)
-
+# print(PATHWAYS)
+REACTIONS[R04].generate_rnx_dendrogram("test2", phylo_f)

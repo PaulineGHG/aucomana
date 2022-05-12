@@ -6,15 +6,21 @@ import rpy2
 from rpy2.robjects.packages import importr
 from rpy2.robjects import pandas2ri
 
+utils = importr('utils')
+utils.chooseCRANmirror(ind=1)
+packnames = ('dendextend', 'pvclust', 'grDevices', 'ape')
+for package in packnames:
+    if package not in rpy2.robjects.r['installed.packages']():
+        utils.install_packages(package)
 
-dendextend = importr('dendextend')
-pvclust = importr("pvclust")
-grdevices = importr('grDevices')
-ape = importr('ape')
+dendextend = importr(packnames[0])
+pvclust = importr(packnames[1])
+grdevices = importr(packnames[2])
+ape = importr(packnames[3])
 
 
 def create_dendro_groups_file():
-    file = os.path.join(PATH_STUDY, "output_data", "dendro_tanglegrams", "dendro_groups.tsv")
+    file = os.path.join(PATH_STUDY, "../output_data", "dendro_tanglegrams", "dendro_groups.tsv")
     if not os.path.exists(file):
         with open(file, "w") as f:
             f.write("\t".join(["group name", "column", "color", "element (B for branch, L for leave)"]))
@@ -26,12 +32,9 @@ def create_dendro_groups_file():
 def get_dendro_pvclust(df_binary, name, run, phylo_file=None):
     # Make pandas dataframe compatible with R dataframe.
     pandas2ri.activate()
-
     # Launch pvclust on the data silently and in parallel.
     result = pvclust.pvclust(df_binary, method_dist="binary", method_hclust="complete", nboot=10, quiet=True, parallel=True)
-
     # Create the dendrogram picture.
-
     out_dir = os.path.join(PATH_STUDY, "output_data", "dendro_tanglegrams", run, name)
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
@@ -41,7 +44,6 @@ def get_dendro_pvclust(df_binary, name, run, phylo_file=None):
     grdevices.png(file=out_file, width=2048, height=2048, pointsize=24)
     pvclust.plot_pvclust(result)
     grdevices.dev_off()
-
     # Dendextend dendrogram
     dendro_groups_file = os.path.join(PATH_STUDY, "output_data", "dendro_tanglegrams", "dendro_groups.tsv")
     create_dendextend(result, name, dendro_groups_file, run, out_dir, phylo_file)
@@ -138,7 +140,7 @@ def create_dendextend(pvclust_res, name, dendro_groups_file, run, out_dir, phylo
     grdevices.png(file=out_file, width=2048, height=2048, pointsize=24)
     rpy2.robjects.r.plot(dend, horiz=True, main=title)
     grdevices.dev_off()
-
+    # Compare with original phylogeny
     if phylo_file is not None:
         phylo = get_original_phylo_dend(phylo_file, name, out_dir, groups_branch, groups_leaves)
         get_tanglegram(phylo, dend, name, out_dir)
@@ -179,10 +181,10 @@ def get_tanglegram(phylo, dend, name, out_dir):
     grdevices.dev_off()
 
 
-phylo_f = "data/Phaeoexplorer_MLtree_rooted.nex"
-create_dendro_groups_file()
-R04 = "run04"
-REACTIONS = get_reactions_inst(runs=[R04])
-df = REACTIONS[R04].data_reactions
-get_dendro_pvclust(df, "test", R04, phylo_f)
+# phylo_f = "data/Phaeoexplorer_MLtree_rooted.nex"
+# create_dendro_groups_file()
+# R04 = "run04"
+# REACTIONS = get_reactions_inst(runs=[R04])
+# df = REACTIONS[R04].data_reactions
+# # get_dendro_pvclust(df, "test2", R04, phylo_f)
 
