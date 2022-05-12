@@ -8,6 +8,7 @@ import venn
 from analysis_runs.reactions import Reactions
 from analysis_runs.pathways import Pathways
 from analysis_runs.genes import Genes
+from analysis_runs.metabolites import Metabolites
 from analysis_runs.init_analysis import PATH_RUNS, PATH_STUDY, ORG_FILE
 from typing import Tuple, List, Dict
 
@@ -177,6 +178,44 @@ def get_pathways_inst(runs: List[str] = None, species_list: List[str] = None,
             print(f"Pathways instances has been created for run : {run} with group = {group}, out = "
                   f"{out} and minimal number of rnx in pw = {nb_rnx_px_min}")
     return pathways_dict
+
+
+def get_genes_inst(runs: List[str] = None, species_list: List[str] = None,
+                   group: Tuple[str, int] = None) -> Dict[str, 'Genes']:
+    """ Create Genes instances in a dictionary.
+
+    Parameters
+    ----------
+    runs: List[str], optional (default=None)
+        List of the runs ID to consider
+        If None, will be the list of all runs in the Runs path
+    species_list: List[str], optional (default=None)
+        List of species to consider for instances creation
+    group: Tuple[str, int], optional (default=None)
+        The group to consider for species filtering : Tuple(name of the group, column of the
+        group in the organisms_file)
+        If None will be all the species of each run
+
+    Returns
+    -------
+    genes_dict: Dict[str, 'Genes']
+        Dictionary of Genes instances : Dict[ID of the run, Genes instance of the run]
+    """
+    genes_dict = {}
+    if runs is None:
+        runs = os.listdir(PATH_RUNS)
+    for run in runs:
+        r_path = os.path.join(PATH_RUNS, run, "analysis", "all", "genes.tsv")
+        if os.path.exists(r_path):
+            if group is not None:
+                grp_species_l = get_grp_l(run, group, species_list)
+                genes_dict[run] = Genes(r_path, grp_species_l)
+            else:
+                genes_dict[run] = Genes(r_path, species_list)
+    for run in runs:
+        if run in genes_dict.keys():
+            print(f"Genes instances has been created for run : {run} with group = {group}")
+    return genes_dict
 
 
 # ## Group comparisons and figures generation
