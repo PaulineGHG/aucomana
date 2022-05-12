@@ -33,8 +33,10 @@ def get_dendro_pvclust(df_binary, name, run, phylo_file=None, n_boot=100000):
     # Make pandas dataframe compatible with R dataframe.
     pandas2ri.activate()
     # Launch pvclust on the data silently and in parallel.
+    print(f"Running pvclust with nboot = {n_boot}, this step can take a moment.")
     result = pvclust.pvclust(df_binary, method_dist="binary", method_hclust="complete",
                              nboot=n_boot, quiet=True, parallel=True)
+    print("Running pvclust : Done.")
     # Create the dendrogram picture.
     out_dir = os.path.join(PATH_STUDY, "output_data", "dendro_tanglegrams", run, name)
     if not os.path.exists(out_dir):
@@ -45,6 +47,7 @@ def get_dendro_pvclust(df_binary, name, run, phylo_file=None, n_boot=100000):
     grdevices.png(file=out_file, width=2048, height=2048, pointsize=24)
     pvclust.plot_pvclust(result)
     grdevices.dev_off()
+    print(f"pvclust dendrogram has been saved to : {out_file}")
     # Dendextend dendrogram
     dendro_groups_file = os.path.join(PATH_STUDY, "output_data", "dendro_tanglegrams", "dendro_groups.tsv")
     create_dendextend(result, name, dendro_groups_file, run, out_dir, phylo_file)
@@ -120,6 +123,7 @@ def set_abbr_labels(dend):
 
 
 def create_dendextend(pvclust_res, name, dendro_groups_file, run, out_dir, phylo_file):
+    print(f"Creating shaped dendextend dendrogram from {dendro_groups_file} parameters.")
     d_grp = pd.read_csv(dendro_groups_file, sep="\t")
     # Get groups
     groups_branch, groups_leaves = get_groups(d_grp, run)
@@ -141,6 +145,7 @@ def create_dendextend(pvclust_res, name, dendro_groups_file, run, out_dir, phylo
     grdevices.png(file=out_file, width=2048, height=2048, pointsize=24)
     rpy2.robjects.r.plot(dend, horiz=True, main=title)
     grdevices.dev_off()
+    print(f"Shaped dendextend dendrogram has been saved to : {out_file}")
     # Compare with original phylogeny
     if phylo_file is not None:
         phylo = get_original_phylo_dend(phylo_file, name, out_dir, groups_branch, groups_leaves)
@@ -148,6 +153,7 @@ def create_dendextend(pvclust_res, name, dendro_groups_file, run, out_dir, phylo
 
 
 def get_original_phylo_dend(phylo_file, name, out_dir, groups_branch, groups_leaves):
+    print(f"Creating phylogeny dendrogram from {phylo_file} information.")
     phylo = rpy2.robjects.r['read.nexus'](phylo_file)
     phylo = ape.chronos(phylo, quiet=True)
     phylo = rpy2.robjects.r['as.dendrogram'](phylo)
@@ -167,10 +173,12 @@ def get_original_phylo_dend(phylo_file, name, out_dir, groups_branch, groups_lea
     grdevices.png(file=out_file, width=2048, height=2048, pointsize=24)
     rpy2.robjects.r.plot(phylo, horiz=True, main=title)
     grdevices.dev_off()
+    print(f"Phylogeny dendrogram has been saved to : {out_file}")
     return phylo
 
 
 def get_tanglegram(phylo, dend, name, out_dir):
+    print("Creating tanglegram comparing metabolic dendrogram to phylogeny dendrogram.")
     d1 = dendextend.intersect_trees(phylo, dend, quiet=True)
     col_lines = dendextend.labels_col(d1[0])
 
@@ -180,6 +188,7 @@ def get_tanglegram(phylo, dend, name, out_dir):
     dendextend.tanglegram(d1, lwd=2, color_lines=col_lines, main_left="Original phylogeny", main_right=title_right,
                           quiet=True)
     grdevices.dev_off()
+    print(f"Tanglegram has been saved to : {out_file}")
 
 
 # phylo_f = "data/Phaeoexplorer_MLtree_rooted.nex"
