@@ -29,11 +29,12 @@ def create_dendro_groups_file():
         print(f"dendro_groups.tsv file already exists in path : {file}")
 
 
-def get_dendro_pvclust(df_binary, name, run, phylo_file=None):
+def get_dendro_pvclust(df_binary, name, run, phylo_file=None, n_boot=100000):
     # Make pandas dataframe compatible with R dataframe.
     pandas2ri.activate()
     # Launch pvclust on the data silently and in parallel.
-    result = pvclust.pvclust(df_binary, method_dist="binary", method_hclust="complete", nboot=10, quiet=True, parallel=True)
+    result = pvclust.pvclust(df_binary, method_dist="binary", method_hclust="complete",
+                             nboot=n_boot, quiet=True, parallel=True)
     # Create the dendrogram picture.
     out_dir = os.path.join(PATH_STUDY, "output_data", "dendro_tanglegrams", run, name)
     if not os.path.exists(out_dir):

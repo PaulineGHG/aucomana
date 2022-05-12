@@ -311,11 +311,13 @@ class Reactions:
             for reaction in common_reactions:
                 o.write(reaction + "\n")
 
-    def generate_rnx_dendrogram(self, name=None, phylo_file=None):
+    def generate_rnx_dendrogram(self, name=None, phylo_file=None, n_boot=100000):
         if name is None:
             self.nb_dend += 1
             name = f"dendrogram{self.nb_dend}"
-        analysis_runs.dendrograms.get_dendro_pvclust(self.data_reactions, name, self.name, phylo_file)
+        name = "rnx_" + name
+        analysis_runs.dendrograms.get_dendro_pvclust(self.data_reactions, name, self.name,
+                                                     phylo_file, n_boot)
 
     @classmethod
     def __write_common_reactions_json(cls, datas_list: List["Reactions"],
