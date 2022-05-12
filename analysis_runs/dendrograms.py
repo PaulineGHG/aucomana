@@ -23,7 +23,8 @@ def create_dendro_groups_file():
     file = os.path.join(PATH_STUDY, "../output_data", "dendro_tanglegrams", "dendro_groups.tsv")
     if not os.path.exists(file):
         with open(file, "w") as f:
-            f.write("\t".join(["group name", "column", "color", "element (B for branch, L for leave)"]))
+            f.write("\t".join(["group name", "column", "color",
+                               "element (B for branch, L for leave)"]))
         print(f"dendro_groups.tsv file created in path : {file}")
     else:
         print(f"dendro_groups.tsv file already exists in path : {file}")
@@ -49,7 +50,8 @@ def get_dendro_pvclust(df_binary, name, run, phylo_file=None, n_boot=100000):
     grdevices.dev_off()
     print(f"pvclust dendrogram has been saved to : {out_file}")
     # Dendextend dendrogram
-    dendro_groups_file = os.path.join(PATH_STUDY, "output_data", "dendro_tanglegrams", "dendro_groups.tsv")
+    dendro_groups_file = os.path.join(PATH_STUDY, "output_data", "dendro_tanglegrams",
+                                      "dendro_groups.tsv")
     create_dendextend(result, name, dendro_groups_file, run, out_dir, phylo_file)
 
 
@@ -72,7 +74,8 @@ def set_branch_color(dend, groups_branch):
     for gval in groups_branch.values():
         value = rpy2.robjects.StrVector(gval["list"])
         color = rpy2.robjects.StrVector([gval["color"]])
-        dend = dendextend.set(dend, "by_labels_branches_col", value=value, TF_values=color, quiet=True)
+        dend = dendextend.set(dend, "by_labels_branches_col", value=value, TF_values=color,
+                              quiet=True)
     return dend
 
 
@@ -185,16 +188,8 @@ def get_tanglegram(phylo, dend, name, out_dir):
     out_file = os.path.join(out_dir, f"{name}_tanglegram.png")
     grdevices.png(file=out_file, width=1500, height=1000, pointsize=24)
     title_right = f"{name} Metabolic Dendrogram"
-    dendextend.tanglegram(d1, lwd=2, color_lines=col_lines, main_left="Original phylogeny", main_right=title_right,
-                          quiet=True)
+    dendextend.tanglegram(d1, lwd=2, color_lines=col_lines, main_left="Original phylogeny",
+                          main_right=title_right, quiet=True)
     grdevices.dev_off()
     print(f"Tanglegram has been saved to : {out_file}")
-
-
-# phylo_f = "data/Phaeoexplorer_MLtree_rooted.nex"
-# create_dendro_groups_file()
-# R04 = "run04"
-# REACTIONS = get_reactions_inst(runs=[R04])
-# df = REACTIONS[R04].data_reactions
-# # get_dendro_pvclust(df, "test2", R04, phylo_f)
 
