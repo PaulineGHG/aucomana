@@ -22,7 +22,3 @@ def create_folders(path_study):
             os.mkdir(folder_path)
 
 
-ORG_FILE = 'data/species_group.tsv'
-PATH_STUDY = os.getcwd()
-PATH_RUNS = 'data/runs/'
-# PATH_RUNS = '/home/phamongi/Documents/Runs/'

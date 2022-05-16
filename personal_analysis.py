@@ -3,6 +3,10 @@ from analysis_runs.init_analysis import *
 
 # ### FILES #######################################################################################
 
+ORG_FILE = 'data/species_group.tsv'
+PATH_STUDY = os.getcwd()
+PATH_RUNS = 'data/runs/'
+# PATH_RUNS = '/home/phamongi/Documents/Runs/'
 # DATA_LELSB_LOSSES = "data/Lelsb_losses.ods"
 # ORG_TSV = "data/species_group.tsv"
 phylo_f = "data/Phaeoexplorer_MLtree_rooted.nex"
@@ -37,10 +41,12 @@ R03 = "run03"
 R04 = "run04"
 R40 = "run40"
 
-# REACTIONS = get_reactions_inst(runs=[R04])
-# PATHWAYS = get_pathways_inst(runs=[R04], group=("brown", 1), nb_rnx_px_min=3)
-GENES = get_genes_inst(runs=[R04], group=("brown", 1))
-METABOLITES = get_metabolites_inst(runs=[R04], group=("brown", 1))
+A = Analysis(PATH_RUNS, PATH_STUDY, ORG_FILE)
+
+# REACTIONS = A.get_reactions_inst(runs=[R04])
+# PATHWAYS = A.get_pathways_inst(runs=[R04], group=("brown", 1), nb_rnx_px_min=3)
+GENES = A.get_genes_inst(runs=[R04], group=("brown", 1))
+METABOLITES = A.get_metabolites_inst(runs=[R04], group=("brown", 1))
 
 # ### Common Reactions ############################################################################
 
