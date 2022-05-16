@@ -176,9 +176,11 @@ class Analysis:
             if os.path.exists(p_path):
                 if group is not None:
                     grp_species_l = self.get_grp_l(run, group, species_list)
-                    pathways_dict[run] = Pathways(p_path, grp_species_l, out, nb_rnx_px_min)
+                    pathways_dict[run] = Pathways(self.path_runs, self.path_study, p_path, grp_species_l, out,
+                                                  nb_rnx_px_min)
                 else:
-                    pathways_dict[run] = Pathways(p_path, species_list, out, nb_rnx_px_min)
+                    pathways_dict[run] = Pathways(self.path_runs, self.path_study, p_path, species_list, out,
+                                                  nb_rnx_px_min)
         for run in runs:
             if run in pathways_dict.keys():
                 print(f"Pathways instances has been created for run : {run} with group = {group}, out = "
@@ -385,7 +387,7 @@ class Analysis:
             grp_sp_list = self.get_grp_l(run, group)
 
             r_g = Reactions(self.path_runs, self.path_study, os.path.join(path, "reactions.tsv"), grp_sp_list)
-            p_g = Pathways(os.path.join(path, "pathways.tsv"), grp_sp_list)
+            p_g = Pathways(self.path_runs, self.path_study, os.path.join(path, "pathways.tsv"), grp_sp_list)
             g_g = Genes(os.path.join(path, "genes.tsv"), grp_sp_list)
 
             g_res_file = os.path.join(out_dir, f"{group[0]}.tsv")

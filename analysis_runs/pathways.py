@@ -4,7 +4,6 @@ Pathways class
 import copy
 from typing import Dict, List, Tuple, Set
 import os
-from analysis_runs.init_analysis import PATH_STUDY, PATH_RUNS
 import analysis_runs.dendrograms
 import pandas as pd
 import numpy as np
@@ -14,6 +13,10 @@ class Pathways:
     """
     Attributes
     ----------
+    path_runs: str
+        path of AuCoMe runs results
+    path_study: str
+        path of outputs_data of the study
     name : str
         name of the file
     species_list : List[str]
@@ -35,18 +38,28 @@ class Pathways:
     STR_COMP = "_completion_rate"
     STR_RNX_ASSOC = "_rxn_assoc (sep=;)"
 
-    def __init__(self, file_pathways_tsv: str, species_list: List[str] = None,
+    def __init__(self, path_runs: str, path_study: str, file_pathways_tsv: str, species_list: List[str] = None,
                  out: int = None, nb_rnx_pw_min: int = 1):
         """ Init the Reactions class
 
         Parameters
         ----------
+        path_runs: str
+            path of AuCoMe runs results
+        path_study: str
+            path of outputs_data of the study
         file_pathways_tsv : str
             file pathways.tsv output from aucome analysis
         species_list : List[str], optional (default=None)
             List of species to study.
             If not specified, will contain all the species from the run.
+        out: int, optional (default=None)
+            Number of species having at least a reaction in the pathway for the pathway to be kept
+        nb_rnx_pw_min: int, optional (default=1)
+            Minimal total number of reactions in the pathway for the pathway to be kept
         """
+        self.path_runs = path_runs
+        self.path_study = path_study
         self.name = file_pathways_tsv.split("/")[-4]
         self.species_list = species_list
         self.data_pathways_str, self.data_rnx_assoc = self.__init_data(file_pathways_tsv)
@@ -558,7 +571,7 @@ class Pathways:
 
     def get_pw_names(self):
         pw_names = {}
-        padmet_file = os.path.join(PATH_RUNS, self.name, "analysis", "all",
+        padmet_file = os.path.join(self.path_runs, self.name, "analysis", "all",
                                    "all_panmetabolism.padmet")
         with open(padmet_file, "r") as f:
             for l in f:
@@ -618,7 +631,7 @@ class Pathways:
 
         if output_file:
             file_name = f"{self.name}_{threshold}_binary_pw.tsv"
-            file_path = os.path.join(PATH_STUDY, "output_data", "pathways_data", "binary_df",
+            file_path = os.path.join(self.path_study, "output_data", "pathways_data", "binary_df",
                                      file_name)
             df_binary.to_csv(file_path, sep="\t", index_label="pathway")
         else:
