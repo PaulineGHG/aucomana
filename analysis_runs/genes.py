@@ -2,10 +2,7 @@
 Genes class
 """
 from typing import Dict, List, Tuple, Set
-from analysis_runs.init_analysis import PATH_STUDY, PATH_RUNS
 import pandas as pd
-import json
-import os
 
 
 class Genes:
