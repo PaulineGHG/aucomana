@@ -1,6 +1,6 @@
 import scipy.stats
 import analysis_runs
-from analysis_runs.utils import *
+from analysis_runs.analysis import *
 import pandas as pd
 import os
 import matplotlib.pyplot as plt
@@ -10,9 +10,9 @@ import matplotlib.patches as mpatches
 run = "run04"
 ORG_FILE = "data/species_group.tsv"
 comp_dir_SR_LR = "output_data/compare_SR_LR/"
-lr = analysis_runs.utils.get_grp_l(run, ORG_FILE, ("LR", 2))
-sr = analysis_runs.utils.get_grp_l(run, ORG_FILE, ("SR", 2))
-brown = analysis_runs.utils.get_grp_l(run, ORG_FILE, ("brown", 1))
+lr = analysis_runs.analysis.get_grp_l(run, ORG_FILE, ("LR", 2))
+sr = analysis_runs.analysis.get_grp_l(run, ORG_FILE, ("SR", 2))
+brown = analysis_runs.analysis.get_grp_l(run, ORG_FILE, ("brown", 1))
 lr = set(lr).intersection(set(brown))
 sr = set(sr).intersection(set(brown))
 
@@ -27,11 +27,11 @@ def barplot_freq(rnx_obj):
     for sp, nb in rnx_obj.nb_reactions_sp.items():
         if sp in lr:
             freq.append(round(nb / rnx_obj.nb_reactions, 4))
-            sp_l.append(analysis_runs.utils.get_abbr_name(sp))
+            sp_l.append(analysis_runs.analysis.get_abbr_name(sp))
             color_l.append("#889EBE")
         elif sp in sr:
             freq.append(round(nb / rnx_obj.nb_reactions, 4))
-            sp_l.append(analysis_runs.utils.get_abbr_name(sp))
+            sp_l.append(analysis_runs.analysis.get_abbr_name(sp))
             color_l.append("#BE88A2")
 
     freq, sp_l, color_l = zip(*sorted(zip(freq, sp_l, color_l)))

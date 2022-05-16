@@ -1,7 +1,7 @@
 import unittest
 import pandas as pd
 from analysis_runs.reactions import Reactions
-from analysis_runs.utils import get_cat_l
+from analysis_runs.analysis import get_cat_l
 
 STUDY_PATH = "Study_folder"
 RUNS_PATH = "Runs_aucome"

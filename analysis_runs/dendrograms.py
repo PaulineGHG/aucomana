@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-from analysis_runs.utils import *
+from analysis_runs.analysis import Analysis
 import rpy2
 from rpy2.robjects.packages import importr
 from rpy2.robjects import pandas2ri
@@ -18,14 +18,14 @@ def install_packages():
             utils.install_packages(package)
 
 
-# dendextend = importr(packnames[0])
-# pvclust = importr(packnames[1])
-# grdevices = importr(packnames[2])
-# ape = importr(packnames[3])
+dendextend = importr(packnames[0])
+pvclust = importr(packnames[1])
+grdevices = importr(packnames[2])
+ape = importr(packnames[3])
 
 
-def create_dendro_groups_file():
-    file = os.path.join(PATH_STUDY, "../output_data", "dendro_tanglegrams", "dendro_groups.tsv")
+def create_dendro_groups_file(path_study):
+    file = os.path.join(path_study, "../output_data", "dendro_tanglegrams", "dendro_groups.tsv")
     if not os.path.exists(file):
         with open(file, "w") as f:
             f.write("\t".join(["group name", "column", "color",
@@ -35,7 +35,7 @@ def create_dendro_groups_file():
         print(f"dendro_groups.tsv file already exists in path : {file}")
 
 
-def get_dendro_pvclust(df_binary, name, run, phylo_file=None, n_boot=100000):
+def get_dendro_pvclust(path_study, df_binary, name, run, phylo_file=None, n_boot=100000):
     # Make pandas dataframe compatible with R dataframe.
     pandas2ri.activate()
     # Launch pvclust on the data silently and in parallel.
@@ -44,7 +44,7 @@ def get_dendro_pvclust(df_binary, name, run, phylo_file=None, n_boot=100000):
                              nboot=n_boot, quiet=True, parallel=True)
     print("Running pvclust : Done.")
     # Create the dendrogram picture.
-    out_dir = os.path.join(PATH_STUDY, "output_data", "dendro_tanglegrams", run, name)
+    out_dir = os.path.join(path_study, "output_data", "dendro_tanglegrams", run, name)
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
     else:
@@ -55,7 +55,7 @@ def get_dendro_pvclust(df_binary, name, run, phylo_file=None, n_boot=100000):
     grdevices.dev_off()
     print(f"pvclust dendrogram has been saved to : {out_file}")
     # Dendextend dendrogram
-    dendro_groups_file = os.path.join(PATH_STUDY, "output_data", "dendro_tanglegrams",
+    dendro_groups_file = os.path.join(path_study, "output_data", "dendro_tanglegrams",
                                       "dendro_groups.tsv")
     create_dendextend(result, name, dendro_groups_file, run, out_dir, phylo_file)
 
@@ -124,7 +124,7 @@ def set_leaves_color(dend, groups_leaves):
 def set_abbr_labels(dend):
     abbr_label = []
     for l in rpy2.robjects.r['labels'](dend):
-        abbr_label.append(get_abbr_name(l))
+        abbr_label.append(Analysis.get_abbr_name(l))
     abbr_label = rpy2.robjects.StrVector(abbr_label)
     dend = dendextend.set(dend, "labels", abbr_label, quiet=True)
     return dend

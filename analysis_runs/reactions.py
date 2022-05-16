@@ -2,7 +2,6 @@
 Reactions class
 """
 from typing import Dict, List, Tuple, Set
-from analysis_runs.init_analysis import PATH_STUDY, PATH_RUNS
 import analysis_runs.dendrograms
 import pandas as pd
 import json
@@ -14,6 +13,10 @@ class Reactions:
     """
     Attributes
     ----------
+    path_runs: str
+        path of AuCoMe runs results
+    path_study: str
+        path of outputs_data of the study
     name : str
         name of the file
     species_list : List[str]
@@ -38,11 +41,16 @@ class Reactions:
     nb_dend = 0
     STR_GENE_ASSOC = "_genes_assoc (sep=;)"
 
-    def __init__(self, file_reactions_tsv: str, species_list: List[str] = None, out: int = None):
+    def __init__(self, path_runs: str, path_study: str, file_reactions_tsv: str, species_list: List[str] = None,
+                 out: int = None):
         """ Init the Reactions class
 
         Parameters
         ----------
+        path_runs: str
+            path of AuCoMe runs results
+        path_study: str
+            path of outputs_data of the study
         file_reactions_tsv : str
             file reactions.tsv output from aucome analysis
         species_list : List[str], optional (default=None)
@@ -51,6 +59,8 @@ class Reactions:
         out : int, optional (default = None)
             number of species maximum not having the reaction for the reaction to be kept
         """
+        self.path_runs = path_runs
+        self.path_study = path_study
         self.name = file_reactions_tsv.split("/")[-4]
         self.species_list = species_list
         self.data_reactions, \
@@ -210,9 +220,9 @@ class Reactions:
 
         Write results in {PATH_STUDY}/output_data/reactions_data/genes_assoc/{now}_{self.nb_genes_assoc}/
         """
-        fa_file_path = f"{PATH_RUNS}/{self.name}/studied_organisms/"
+        fa_file_path = f"{self.path_runs}/{self.name}/studied_organisms/"
         now = datetime.datetime.now().strftime('%d-%m-%Y_%Hh-%Mmin-%Ss')
-        out_file = f"{PATH_STUDY}/output_data/reactions_data/genes_assoc/{now}_{self.nb_genes_assoc}/"
+        out_file = f"{self.path_study}/output_data/reactions_data/genes_assoc/{now}_{self.nb_genes_assoc}/"
         if not os.path.exists(out_file):
             os.makedirs(out_file)
         file_out_json = f"{out_file}{self.name}_genes_assoc.json"
@@ -275,8 +285,7 @@ class Reactions:
         else:
             return len(common_reactions), common_reactions
 
-    @classmethod
-    def __write_common_reactions_txt(cls, datas_list: List["Reactions"],
+    def __write_common_reactions_txt(self, datas_list: List["Reactions"],
                                      common_reactions: Set[str], species: str, union: bool):
         """Write get_common_reactions results in a .txt file
 
@@ -291,11 +300,11 @@ class Reactions:
         """
         now = datetime.datetime.now().strftime('%d_%m_%Y__%Hh_%Mmin_%Ss')
         if not union:
-            outfile_name = f'{PATH_STUDY}/output_data/reactions_data/common_reac/intersection/' \
-                           f'{now}_{cls.nb_common_reac}.txt'
+            outfile_name = f'{self.path_study}/output_data/reactions_data/common_reac/intersection/' \
+                           f'{now}_{self.nb_common_reac}.txt'
         else:
-            outfile_name = f'{PATH_STUDY}/output_data/reactions_data/common_reac/union/{now}_' \
-                           f'{cls.nb_common_reac}.txt'
+            outfile_name = f'{self.path_study}/output_data/reactions_data/common_reac/union/{now}_' \
+                           f'{self.nb_common_reac}.txt'
         with open(outfile_name, 'w') as o:
             o.write("Compared files :\n"
                     "----------------\n")
@@ -319,8 +328,7 @@ class Reactions:
         analysis_runs.dendrograms.get_dendro_pvclust(self.data_reactions, name, self.name,
                                                      phylo_file, n_boot)
 
-    @classmethod
-    def __write_common_reactions_json(cls, datas_list: List["Reactions"],
+    def __write_common_reactions_json(self, datas_list: List["Reactions"],
                                       common_reactions: Set[str], species: str, union: bool):
         """Write get_common_reactions results in a .json file
 
@@ -335,11 +343,11 @@ class Reactions:
        """
         now = datetime.datetime.now().strftime('%d_%m_%Y__%Hh_%Mmin_%Ss')
         if not union:
-            outfile_name = f'{PATH_STUDY}/output_data/reactions_data/common_reac/intersection/' \
-                           f'{now}_{cls.nb_common_reac}.json'
+            outfile_name = f'{self.path_study}/output_data/reactions_data/common_reac/intersection/' \
+                           f'{now}_{self.nb_common_reac}.json'
         else:
-            outfile_name = f'{PATH_STUDY}/output_data/reactions_data/common_reac/union/{now}_' \
-                           f'{cls.nb_common_reac}.json'
+            outfile_name = f'{self.path_study}/output_data/reactions_data/common_reac/union/{now}_' \
+                           f'{self.nb_common_reac}.json'
         data = {"Compared files": [data.name for data in datas_list],
                 "Interest species": species,
                 "Number of common reactions": len(common_reactions),
