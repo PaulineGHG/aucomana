@@ -325,7 +325,7 @@ class Reactions:
             self.nb_dend += 1
             name = f"dendrogram{self.nb_dend}"
         name = "rnx_" + name
-        analysis_runs.dendrograms.get_dendro_pvclust(self.data_reactions, name, self.name,
+        analysis_runs.dendrograms.get_dendro_pvclust(self.path_study, self.data_reactions, name, self.name,
                                                      phylo_file, n_boot)
 
     def __write_common_reactions_json(self, datas_list: List["Reactions"],
