@@ -3,6 +3,7 @@ Metabolites class
 """
 from typing import Dict, List, Tuple, Set
 from analysis_runs.init_analysis import PATH_STUDY, PATH_RUNS
+import analysis_runs.dendrograms
 import pandas as pd
 import json
 import os
@@ -28,7 +29,8 @@ class Metabolites:
         number of species studied
     """
     STR_CONSUME = "_rxn_consume"
-    STR_PRODUCE = "_rnx_produce"
+    STR_PRODUCE = "_rxn_produce"
+    nb_dend = 0
 
     def __init__(self, file_metabolites_tsv: str, species_list: List[str] = None):
         """ Init the Genes class
@@ -46,6 +48,7 @@ class Metabolites:
         self.data_metabolites_consumed, \
             self.data_metabolites_produced, \
             self.metabolites_list = self.__init_data(file_metabolites_tsv)
+        self.data_metabolites = self.__generate_metabolites_df()
         self.nb_metabolites, self.nb_species = self.data_metabolites_consumed.shape
 
     def __init_data(self, file_metabolites_tsv: str) \
@@ -93,4 +96,27 @@ class Metabolites:
             if x[-12:] == self.STR_PRODUCE:
                 break
             self.species_list.append(x[:-12])
+
+    def __generate_metabolites_df(self):
+        metabolites_df = pd.DataFrame(index=self.metabolites_list, columns=self.species_list)
+        metabolites_df.index_label = "metabolite"
+        for met in self.metabolites_list:
+            for sp in self.species_list:
+                sp_prod = sp + self.STR_PRODUCE
+                sp_cons = sp + self.STR_CONSUME
+                if self.data_metabolites_consumed.loc[met, sp_cons] == 0 and \
+                        self.data_metabolites_produced.loc[met, sp_prod] == 0:
+                    metabolites_df.loc[met, sp] = 0
+                else:
+                    metabolites_df.loc[met, sp] = 1
+        return metabolites_df
+
+    def generate_met_dendrogram(self, name=None, phylo_file=None, n_boot=100000):
+        if name is None:
+            self.nb_dend += 1
+            name = f"dendrogram{self.nb_dend}"
+        name = "met_" + name
+        analysis_runs.dendrograms.get_dendro_pvclust(self.data_metabolites, name, self.name,
+                                                     phylo_file, n_boot)
+
 

@@ -6,17 +6,22 @@ import rpy2
 from rpy2.robjects.packages import importr
 from rpy2.robjects import pandas2ri
 
-utils = importr('utils')
-utils.chooseCRANmirror(ind=1)
-packnames = ('dendextend', 'pvclust', 'grDevices', 'ape')
-for package in packnames:
-    if package not in rpy2.robjects.r['installed.packages']():
-        utils.install_packages(package)
 
-dendextend = importr(packnames[0])
-pvclust = importr(packnames[1])
-grdevices = importr(packnames[2])
-ape = importr(packnames[3])
+packnames = ('dendextend', 'pvclust', 'grDevices', 'ape')
+
+
+def install_packages():
+    utils = importr('utils')
+    utils.chooseCRANmirror(ind=1)
+    for package in packnames:
+        if package not in rpy2.robjects.r['installed.packages']():
+            utils.install_packages(package)
+
+
+# dendextend = importr(packnames[0])
+# pvclust = importr(packnames[1])
+# grdevices = importr(packnames[2])
+# ape = importr(packnames[3])
 
 
 def create_dendro_groups_file():

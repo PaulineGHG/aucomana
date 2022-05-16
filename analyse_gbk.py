@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import os
 
 
-GBK_PATH = "/media/paulinehg/OS/Users/Pauline/Documents/MyDocs/Gbk/short_read/uncut_genomes/"
+GBK_PATH = "/media/paulinehg/OS/Users/Pauline/Documents/MyDocs/Gbk/short_read/cut_genomes/"
 OUT_PATH = "/media/paulinehg/OS/Users/Pauline/Documents/MyDocs/Gbk/info_gbk/"
 
 # TO DO : adapt create info file for boxplot !
@@ -78,8 +78,8 @@ def boxplot_gbk_groups(group1_file, group2_file, outpath):
     plt.savefig(outpath, dpi=200)
 
 
-# individual_analysis(GBK_PATH, OUT_PATH)
+individual_analysis(GBK_PATH, OUT_PATH)
 # group_analysis(OUT_PATH)
-boxplot_gbk_groups("data/info_gbk/long_read.tsv",
-                   "data/info_gbk/short_read.tsv",
-                   "data/info_gbk/boxplot_info_gbk.png")
+# boxplot_gbk_groups("data/info_gbk/long_read.tsv",
+#                    "data/info_gbk/short_read.tsv",
+#                    "data/info_gbk/boxplot_info_gbk.png")

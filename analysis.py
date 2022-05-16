@@ -37,8 +37,10 @@ R03 = "run03"
 R04 = "run04"
 R40 = "run40"
 
-REACTIONS = get_reactions_inst(runs=[R04])
-PATHWAYS = get_pathways_inst(runs=[R04], group=("brown", 1), nb_rnx_px_min=3)
+# REACTIONS = get_reactions_inst(runs=[R04])
+# PATHWAYS = get_pathways_inst(runs=[R04], group=("brown", 1), nb_rnx_px_min=3)
+GENES = get_genes_inst(runs=[R04], group=("brown", 1))
+METABOLITES = get_metabolites_inst(runs=[R04], group=("brown", 1))
 
 # ### Common Reactions ############################################################################
 
@@ -58,6 +60,8 @@ PATHWAYS = get_pathways_inst(runs=[R04], group=("brown", 1), nb_rnx_px_min=3)
 # print(PATHWAYS[R01].get_pw_complete([SLAT, PLAC], unique=True))
 # PATHWAYS[R04].convert_df_to_binary(1, output_file=True)
 # print(PATHWAYS[R04].get_pw_names())
-print(REACTIONS)
-print(PATHWAYS)
-PATHWAYS[R04].generate_pw_dendrogram(0.8, False, "test", phylo_f, 10)
+# print(REACTIONS)
+# print(PATHWAYS)
+# PATHWAYS[R04].generate_pw_dendrogram(0.8, False, "test", phylo_f, 10)
+print(GENES)
+print(METABOLITES)

@@ -218,6 +218,44 @@ def get_genes_inst(runs: List[str] = None, species_list: List[str] = None,
     return genes_dict
 
 
+def get_metabolites_inst(runs: List[str] = None, species_list: List[str] = None,
+                         group: Tuple[str, int] = None) -> Dict[str, 'Metabolites']:
+    """ Create Genes instances in a dictionary.
+
+    Parameters
+    ----------
+    runs: List[str], optional (default=None)
+        List of the runs ID to consider
+        If None, will be the list of all runs in the Runs path
+    species_list: List[str], optional (default=None)
+        List of species to consider for instances creation
+    group: Tuple[str, int], optional (default=None)
+        The group to consider for species filtering : Tuple(name of the group, column of the
+        group in the organisms_file)
+        If None will be all the species of each run
+
+    Returns
+    -------
+    metabolites_dict: Dict[str, 'Metabolites']
+        Dictionary of Genes instances : Dict[ID of the run, Metabolites instance of the run]
+    """
+    metabolites_dict = {}
+    if runs is None:
+        runs = os.listdir(PATH_RUNS)
+    for run in runs:
+        r_path = os.path.join(PATH_RUNS, run, "analysis", "all", "metabolites.tsv")
+        if os.path.exists(r_path):
+            if group is not None:
+                grp_species_l = get_grp_l(run, group, species_list)
+                metabolites_dict[run] = Metabolites(r_path, grp_species_l)
+            else:
+                metabolites_dict[run] = Metabolites(r_path, species_list)
+    for run in runs:
+        if run in metabolites_dict.keys():
+            print(f"Metabolites instances has been created for run : {run} with group = {group}")
+    return metabolites_dict
+
+
 # ## Group comparisons and figures generation
 
 STAT = (" mean", " med", " sd", " min", " max")
