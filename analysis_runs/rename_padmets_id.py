@@ -1,5 +1,5 @@
+import os.path
 import ahocorasick
-from analysis_runs.init_analysis import PATH_RUNS
 
 
 def make_automaton(gene_to_replace):
@@ -27,36 +27,17 @@ def apply_automaton(automaton, input_filename, output_filename):
             outfile.write(line)
 
 
-def get_dict(run, sp, assodict):
-    dic = f"{PATH_RUNS}/{run}/studied_organisms/{sp}/{sp}_dict.csv"
-    with open(dic, 'r') as d:
-        for l in d:
-            li = l.split()
-            assodict[li[1]] = li[0]
-    return assodict
+def get_dict(run, sp, assodict, path_runs):
+    dic = os.path.join(path_runs, run, "studied_organisms", sp, f"{sp}_dict.csv")
+    if os.path.exists(dic):
+        with open(dic, 'r') as d:
+            for l in d:
+                li = l.split()
+                assodict[li[1]] = li[0]
+        return assodict
+    else:
+        return assodict
 
-
-spl = ['Ectocarpus_fasciculatus_m',
-       'Desmarestia_herbacea_m', 'Ectocarpus_siliculosus_m', 'Chordaria_linearis',
-       'Scytosiphon_promiscuus_MALE',
-       'Pleurocladia_lacustris',
-       'Ectocarpus_crouaniorum_m',
-       'Fucus_serratus_MALE', 'Saccharina_latissima_FEMALE',
-       'Schizocladia_ischiensis', 'Dictyota_dichotoma_m',
-       'Porterinema_fluviatile', 'Laminarionema_elsbetiae']
-
-spl2 = ['Dictyota_dichotoma_m']
-
-
-
-# assodict = {}
-# for sp in spl2:
-#     assodict = get_dict(sp, assodict)
-#
-# for sp in spl2:
-#     automaton = make_automaton(assodict)
-#     apply_automaton(automaton, f"data/run01_studied_organism/{sp}/{sp}.padmet",
-#                     f"data/run01_studied_organism/2PADMETs/test_{sp}.padmet")
 
 
 

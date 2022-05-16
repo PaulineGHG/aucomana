@@ -9,7 +9,7 @@ from analysis_runs.reactions import Reactions
 from analysis_runs.pathways import Pathways
 from analysis_runs.genes import Genes
 from analysis_runs.metabolites import Metabolites
-# from analysis_runs.init_analysis import PATH_RUNS, PATH_STUDY, ORG_FILE
+from analysis_runs.rename_padmets_id import make_automaton, apply_automaton, get_dict
 from typing import Tuple, List, Dict
 
 
@@ -22,6 +22,27 @@ class Analysis:
         self.path_runs = path_runs
         self.path_study = path_study
         self.org_file = org_file
+        self.__create_folders()
+
+    def __create_folders(self):
+        arbo = [['output_data'],
+                ['output_data', 'compare_groups'],
+                ['output_data', 'dendro_tanglegrams'],
+                ['output_data', 'pathways_data'],
+                ['output_data', 'pathways_data', 'binary_df'],
+                ['output_data', 'reactions_data'],
+                ['output_data', 'reactions_data', 'common_reac'],
+                ['output_data', 'reactions_data', 'common_reac', 'union'],
+                ['output_data', 'reactions_data', 'common_reac', 'intersection'],
+                ['output_data', 'reactions_data', 'genes_assoc'],
+                ['output_data', 'genes_data'],
+                ['output_data', 'metabolites_data'],
+                ['output_data', 'pages']]
+        for folder in arbo:
+            folder_path = os.path.join(self.path_study, *folder)
+            print(f'creating folder {folder_path}')
+            if not os.path.exists(folder_path):
+                os.mkdir(folder_path)
 
     @staticmethod
     def get_abbr_name(name: str) -> str:
@@ -452,3 +473,18 @@ class Analysis:
             venn.venn(group_rnx_dict, cmap="plasma")
             plt.savefig(os.path.join(self.path_study, "output_data", "compare_groups",
                                      f"{run}_intersect_{grp_str}.png"))
+
+    # Rename padmet id
+
+    # TODO: Finalize fnc
+    def rename_padmet_id(self, run):
+        assodict = {}
+        path_species = os.path.join(self.path_runs, run, "studied_organisms")
+        path_padmet = os.path.join(self.path_runs, run, "network")
+        for species_folder in os.listdir(path_species):
+            assodict = get_dict(run, species_folder, assodict, self.path_runs)
+        automaton = make_automaton(assodict)
+        for species_folder in os.listdir(path_species):
+            apply_automaton(automaton, os.path.join(path_padmet),
+                            os.path.join(self.path_study, "output_data"))
+
