@@ -3,6 +3,7 @@ Reactions class
 """
 from typing import Dict, List, Tuple, Set
 import analysis_runs.dendrograms
+import analysis_runs.analysis
 import pandas as pd
 import json
 import os
@@ -320,13 +321,14 @@ class Reactions:
             for reaction in common_reactions:
                 o.write(reaction + "\n")
 
-    def generate_rnx_dendrogram(self, a, name=None, phylo_file=None, n_boot=100000):
+    def generate_rnx_dendrogram(self, a, name=None, phylo_file=None, n_boot=10000):
         if name is None:
             self.nb_dend += 1
             name = f"dendrogram{self.nb_dend}"
         name = "rnx_" + name
-        analysis_runs.dendrograms.get_dendro_pvclust(a, self.path_study, self.data_reactions, name,
-                                                     self.name, phylo_file, n_boot)
+        d = analysis_runs.dendrograms.Dendrogram(a, self.path_study, self.data_reactions,
+                                                 self.name, name, phylo_file)
+        d.get_dendro_pvclust(n_boot)
 
     def __write_common_reactions_json(self, datas_list: List["Reactions"],
                                       common_reactions: Set[str], species: str, union: bool):

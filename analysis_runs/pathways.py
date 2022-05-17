@@ -637,14 +637,16 @@ class Pathways:
         else:
             return df_binary
 
-    def generate_pw_dendrogram(self, df_binary_theshold: float, strict: bool = False,
+    def generate_pw_dendrogram(self, a: 'Analysis', df_binary_theshold: float, strict: bool = False,
                                name: str = None, phylo_file: str = None, n_boot: int = 100000):
         if name is None:
             self.nb_dend += 1
             name = f"dendrogram{self.nb_dend}"
         name = f"pw_{int(df_binary_theshold*100)}_{name}"
         df_bin = self.convert_df_to_binary(df_binary_theshold, strict)
-        analysis_runs.dendrograms.get_dendro_pvclust(self.path_study, df_bin, name, self.name, phylo_file, n_boot)
+        d = analysis_runs.dendrograms.Dendrogram(a, self.path_study, df_bin, self.name, name,
+                                                 phylo_file)
+        d.get_dendro_pvclust(n_boot)
 
     def print_completion_pw(self, pathway, species):
         species += self.STR_COMP
