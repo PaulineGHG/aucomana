@@ -1,5 +1,4 @@
 from analysis_runs.analysis import *
-from analysis_runs.init_analysis import *
 
 # ### FILES #######################################################################################
 
@@ -43,10 +42,10 @@ R40 = "run40"
 
 A = Analysis(PATH_RUNS, PATH_STUDY, ORG_FILE)
 
-# REACTIONS = A.get_reactions_inst(runs=[R04])
+REACTIONS = A.get_reactions_inst(runs=[R04])
 # PATHWAYS = A.get_pathways_inst(runs=[R04], group=("brown", 1), nb_rnx_px_min=3)
-GENES = A.get_genes_inst(runs=[R04], group=("brown", 1))
-METABOLITES = A.get_metabolites_inst(runs=[R04], group=("brown", 1))
+# GENES = A.get_genes_inst(runs=[R04], group=("brown", 1))
+# METABOLITES = A.get_metabolites_inst(runs=[R04], group=("brown", 1))
 
 # ### Common Reactions ############################################################################
 
@@ -69,5 +68,6 @@ METABOLITES = A.get_metabolites_inst(runs=[R04], group=("brown", 1))
 # print(REACTIONS)
 # print(PATHWAYS)
 # PATHWAYS[R04].generate_pw_dendrogram(0.8, False, "test", phylo_f, 10)
-print(GENES)
-print(METABOLITES)
+# print(GENES)
+# print(METABOLITES)
+REACTIONS[R04].generate_rnx_dendrogram(A, "testu", phylo_f, 10)

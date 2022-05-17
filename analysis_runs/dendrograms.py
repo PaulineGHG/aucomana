@@ -35,7 +35,7 @@ def create_dendro_groups_file(path_study):
         print(f"dendro_groups.tsv file already exists in path : {file}")
 
 
-def get_dendro_pvclust(path_study, df_binary, name, run, phylo_file=None, n_boot=100000):
+def get_dendro_pvclust(a, path_study, df_binary, name, run, phylo_file=None, n_boot=100000):
     # Make pandas dataframe compatible with R dataframe.
     pandas2ri.activate()
     # Launch pvclust on the data silently and in parallel.
@@ -57,17 +57,17 @@ def get_dendro_pvclust(path_study, df_binary, name, run, phylo_file=None, n_boot
     # Dendextend dendrogram
     dendro_groups_file = os.path.join(path_study, "output_data", "dendro_tanglegrams",
                                       "dendro_groups.tsv")
-    create_dendextend(result, name, dendro_groups_file, run, out_dir, phylo_file)
+    create_dendextend(a, result, name, dendro_groups_file, run, out_dir, phylo_file)
 
 
-def get_groups(d_grp, run):
+def get_groups(a, d_grp, run):
     groups_branch = {}
     groups_leaves = {}
     for i in d_grp.index:
         group = (d_grp.loc[i, "group name"], d_grp.loc[i, "column"])
         color = d_grp.loc[i, "color"]
         element = d_grp.loc[i, "element (B for branch, L for leave)"]
-        group_list = get_grp_l(run, group)
+        group_list = a.get_grp_l(run=run, group=group)
         if element == "B":
             groups_branch[group] = {"list": group_list, "color": color}
         elif element == "L":
@@ -130,11 +130,11 @@ def set_abbr_labels(dend):
     return dend
 
 
-def create_dendextend(pvclust_res, name, dendro_groups_file, run, out_dir, phylo_file):
+def create_dendextend(a, pvclust_res, name, dendro_groups_file, run, out_dir, phylo_file):
     print(f"Creating shaped dendextend dendrogram from {dendro_groups_file} parameters.")
     d_grp = pd.read_csv(dendro_groups_file, sep="\t")
     # Get groups
-    groups_branch, groups_leaves = get_groups(d_grp, run)
+    groups_branch, groups_leaves = get_groups(a, d_grp, run)
     # Create dendrograms
     dend = rpy2.robjects.r['as.dendrogram'](pvclust_res)
     dend = dendextend.set(dend, "branches_lwd", 4)
@@ -193,6 +193,7 @@ def get_tanglegram(phylo, dend, name, out_dir):
     out_file = os.path.join(out_dir, f"{name}_tanglegram.png")
     grdevices.png(file=out_file, width=1500, height=1000, pointsize=24)
     title_right = f"{name} Metabolic Dendrogram"
+    d1 = dendextend.untangle(d1)
     dendextend.tanglegram(d1, lwd=2, color_lines=col_lines, main_left="Original phylogeny",
                           main_right=title_right, quiet=True)
     grdevices.dev_off()

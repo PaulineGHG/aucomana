@@ -40,9 +40,9 @@ class Analysis:
                 ['output_data', 'pages']]
         for folder in arbo:
             folder_path = os.path.join(self.path_study, *folder)
-            print(f'creating folder {folder_path}')
             if not os.path.exists(folder_path):
                 os.mkdir(folder_path)
+                print(f'Folder {folder_path} created')
 
     @staticmethod
     def get_abbr_name(name: str) -> str:
