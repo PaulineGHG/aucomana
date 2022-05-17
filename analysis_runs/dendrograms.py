@@ -59,7 +59,7 @@ class Dendrogram:
         # Create the dendrogram picture.
 
         out_file = os.path.join(self.out_dir, f"{self.name}_pvclust_dend.png")
-        grdevices.png(file=out_file, width=2048, height=2048, pointsize=24)
+        grdevices.png(file=out_file, width=1500, height=1000, pointsize=24)
         pvclust.plot_pvclust(result)
         grdevices.dev_off()
         print(f"pvclust dendrogram has been saved to : {out_file}")
@@ -155,7 +155,7 @@ class Dendrogram:
         # Save figure
         title = f"{self.name} original phylogeny dendrogram"
         out_file = os.path.join(self.out_dir, f"{self.name}_dendextend_dend.png")
-        grdevices.png(file=out_file, width=2048, height=2048, pointsize=24)
+        grdevices.png(file=out_file, width=1500, height=1000, pointsize=24)
         rpy2.robjects.r.plot(dend, horiz=True, main=title)
         grdevices.dev_off()
         print(f"Shaped dendextend dendrogram has been saved to : {out_file}")
@@ -182,7 +182,7 @@ class Dendrogram:
         # Save figure
         title = f"{self.name} metabolic dendrogram"
         out_file = os.path.join(self.out_dir, f"{self.name}_phylo_dend.png")
-        grdevices.png(file=out_file, width=2048, height=2048, pointsize=24)
+        grdevices.png(file=out_file, width=1500, height=1000, pointsize=24)
         rpy2.robjects.r.plot(phylo, horiz=True, main=title)
         grdevices.dev_off()
         print(f"Phylogeny dendrogram has been saved to : {out_file}")
