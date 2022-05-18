@@ -127,6 +127,7 @@ class Dendrogram:
         return dend
 
     @staticmethod
+    # !!! If the abbreviatio gives duplicate names, untangle and tanglegram will give error.
     def __set_abbr_labels(dend):
         abbr_label = []
         for l in rpy2.robjects.r['labels'](dend):
@@ -194,7 +195,7 @@ class Dendrogram:
         col_lines = dendextend.labels_col(d1[0])
 
         out_file = os.path.join(self.out_dir, f"{self.name}_tanglegram.png")
-        grdevices.png(file=out_file, width=1500, height=1000, pointsize=24)
+        grdevices.png(file=out_file, width=1700, height=1000, pointsize=24)
         title_right = f"{self.name} Metabolic Dendrogram"
         d1 = dendextend.untangle(d1)
         dendextend.tanglegram(d1, lwd=2, color_lines=col_lines, main_left="Original phylogeny",

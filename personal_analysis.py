@@ -8,7 +8,8 @@ PATH_RUNS = 'data/runs/'
 # PATH_RUNS = '/home/phamongi/Documents/Runs/'
 # DATA_LELSB_LOSSES = "data/Lelsb_losses.ods"
 # ORG_TSV = "data/species_group.tsv"
-phylo_f = "data/Phaeoexplorer_MLtree_rooted.nex"
+phylo_f1 = "data/Phaeoexplorer_MLtree_rooted.nex"
+phylo_f2 = "data/SpeciesTree_rooted.nex"
 
 # ### Select species ##############################################################################
 
@@ -70,4 +71,4 @@ REACTIONS = A.get_reactions_inst(runs=[R04])
 # PATHWAYS[R04].generate_pw_dendrogram(0.8, False, "test", phylo_f, 10)
 # print(GENES)
 # print(METABOLITES)
-REACTIONS[R04].generate_rnx_dendrogram(A, "all_sp_test", phylo_f, n_boot=100)
+REACTIONS[R04].generate_rnx_dendrogram(A, "all_sp_test", phylo_f2, n_boot=10)
