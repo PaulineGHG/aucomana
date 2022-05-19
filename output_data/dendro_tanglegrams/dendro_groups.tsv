@@ -1,7 +1,7 @@
 group name	column	color	element (B for branch, L for leave)
 brown	1	#a3724b	B
-nano	1	#c9ad4b	B
-diatoms	1	#e7baaa	B
+nano	1	#e7baaa	B
+diatoms	1	#c9ad4b	B
 LR	2	blue	L
 PUB	2	orange	L
 SR	2	red	L

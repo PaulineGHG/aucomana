@@ -1,18 +1,21 @@
 import os
-from analysis_runs.analysis import *
+from analysis_runs.analysis import Analysis
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy import stats
 
 R04 = "run04"
-# ORG_TSV = "data/species_group.tsv"
+ORG_FILE = 'data/species_group.tsv'
+PATH_STUDY = os.getcwd()
+PATH_RUNS = 'data/runs/'
 
+A = Analysis(PATH_RUNS, PATH_STUDY, ORG_FILE)
 
 # ### compare SR & LR #############################################################################
 
 # compare_groups("run04", [("SR", 2), ("LR", 2), ("PUB", 2)], boxplot=True)
 
-intersect_rnx_groups(R04, [("LR", 2), ("SR", 2), ("PUB", 2)], True)
+A.intersect_rnx_groups(R04, [("LR", 2), ("SR", 2)], True, True)
 
 # Corelation nb rnx & fragmentation
 

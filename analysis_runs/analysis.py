@@ -461,13 +461,17 @@ class Analysis:
                 s = f"Over {union_nb} reactions, {intersect_nb} reactions in common = " \
                     f"{round((intersect_nb/union_nb) * 100, 2)} % of the union."
                 print(s)
-                f.write(s)
+                f.write(s + "\n")
                 for group, reactions in group_rnx_dict.items():
                     g_rnx_nb = len(reactions)
+                    s = f"{g_rnx_nb} present among the {group} group = " \
+                        f"{round((g_rnx_nb/union_nb) * 100, 2)} % of the union."
+                    print(s)
+                    f.write(s + "\n")
                     s = f"{g_rnx_nb - intersect_nb} only present among the {group} group = " \
                         f"{round(((g_rnx_nb - intersect_nb)/union_nb) * 100, 2)} % of the union."
                     print(s)
-                    f.write(s)
+                    f.write(s + "\n")
 
         if venn_plot:
             venn.venn(group_rnx_dict, cmap="plasma")
