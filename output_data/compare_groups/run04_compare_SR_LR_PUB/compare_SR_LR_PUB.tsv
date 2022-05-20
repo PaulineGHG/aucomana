@@ -1,0 +1,4 @@
+	nb_genes mean	nb_genes med	nb_genes sd	nb_genes min	nb_genes max	nb_rnx mean	nb_rnx med	nb_rnx sd	nb_rnx min	nb_rnx max	nb_pw > 80% mean	nb_pw > 80% med	nb_pw > 80% sd	nb_pw > 80% min	nb_pw > 80% max	nb_pw 100% mean	nb_pw 100% med	nb_pw 100% sd	nb_pw 100% min	nb_pw 100% max
+SR	9249.3	8517.0	1899.5	7264	13875	3346.5	3258.5	263.5	3039	3969	516.2	499.5	47.1	461	617	438.8	421.5	48.0	388	539
+LR	8035.6	7965.5	489.5	7326	9374	3279.1	3286.0	38.1	3226	3346	517.5	519.5	8.0	500	528	440.1	441.5	6.8	424	450
+PUB	4877.5	5363.0	1348.3	2959	6961	3032.4	3122.0	155.7	2793	3238	482.6	492.0	23.3	451	526	409.0	414.0	20.4	382	453

@@ -43,8 +43,8 @@ R40 = "run40"
 
 A = Analysis(PATH_RUNS, PATH_STUDY, ORG_FILE)
 
-REACTIONS = A.get_reactions_inst(runs=[R04], group=("SR", 2))
-# PATHWAYS = A.get_pathways_inst(runs=[R04], group=("brown", 1), nb_rnx_px_min=3)
+REACTIONS = A.get_reactions_inst(runs=[R04], out=10)
+# PATHWAYS = A.get_pathways_inst(runs=[R04])
 # GENES = A.get_genes_inst(runs=[R04], group=("brown", 1))
 # METABOLITES = A.get_metabolites_inst(runs=[R04], group=("brown", 1))
 
@@ -68,7 +68,7 @@ REACTIONS = A.get_reactions_inst(runs=[R04], group=("SR", 2))
 # print(PATHWAYS[R04].get_pw_names())
 # print(REACTIONS)
 # print(PATHWAYS)
-# PATHWAYS[R04].generate_pw_dendrogram(0.8, False, "test", phylo_f, 10)
+# PATHWAYS[R04].generate_pw_dendrogram(A, 0.6, False, "all_sp_allrxn", phylo_f2, 1000)
 # print(GENES)
 # print(METABOLITES)
-REACTIONS[R04].generate_rnx_dendrogram(A, "SR_sp", phylo_f2, n_boot=1000)
+REACTIONS[R04].generate_rnx_dendrogram(A, "all_sp_out10", phylo_f2, n_boot=1000)
