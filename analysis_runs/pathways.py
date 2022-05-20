@@ -581,8 +581,8 @@ class Pathways:
         return pw_names
 
     def convert_df_to_binary(self, threshold: float, strict: bool = False,
-                             output_file: bool = False, common_name: bool = False) \
-            -> 'pd.DataFrame':
+                             output_file: bool = False, common_name: bool = False,
+                             nb_rxn: bool = False) -> 'pd.DataFrame':
         """ Returns the pathways with completion over a given threshold for species
 
         Parameters
@@ -607,13 +607,19 @@ class Pathways:
             raise ValueError("The threshold must be within the range of 0 to 1")
         if common_name:
             common_pw_name = self.get_pw_names()
-            df_binary = pd.DataFrame(columns=["common name"] + self.species_list + ["nb rnx pw"],
-                                     index=self.pathways_list)
+            if nb_rxn:
+                columns = ["common name"] + self.species_list + ["nb rnx pw"]
+            else:
+                columns = ["common name"] + self.species_list
         else:
-            df_binary = pd.DataFrame(columns=self.species_list + ["nb rnx pw"],
-                                     index=self.pathways_list)
+            if nb_rxn:
+                columns = self.species_list + ["nb rnx pw"]
+            else:
+                columns = self.species_list
+        df_binary = pd.DataFrame(columns=columns, index=self.pathways_list)
         for pw in self.pathways_list:
-            df_binary.loc[pw, "nb rnx pw"] = int(self.nb_rnx_pw[pw])
+            if nb_rxn:
+                df_binary.loc[pw, "nb rnx pw"] = int(self.nb_rnx_pw[pw])
             if common_name:
                 df_binary.loc[pw, "common name"] = common_pw_name[pw]
             for sp in self.species_list:
