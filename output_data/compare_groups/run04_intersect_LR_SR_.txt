@@ -1,5 +1,0 @@
-Over 4825 reactions, 3632 reactions in common = 75.27 % of the union.
-3665 present among the LR group = 75.96 % of the union.
-33 only present among the LR group = 0.68 % of the union.
-4792 present among the SR group = 99.32 % of the union.
-1160 only present among the SR group = 24.04 % of the union.
