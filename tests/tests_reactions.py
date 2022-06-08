@@ -1,20 +1,18 @@
 import unittest
 import pandas as pd
 from analysis_runs.reactions import Reactions
-from analysis_runs.analysis import get_cat_l
 
 STUDY_PATH = "Study_folder"
 RUNS_PATH = "Runs_aucome"
 
-FILE_TEST = f"{RUNS_PATH}/runA1/analysis/all/reactions.tsv"
+FILE_TEST = f"{RUNS_PATH}/file_test"
 ORG_TSV = f"{STUDY_PATH}/species_group.tsv"
 
-brown_algae = get_cat_l(FILE_TEST, ORG_TSV, ("brown", 1))
-
+g1 = ["org1", "org2"]
 R = Reactions(FILE_TEST)
-RS = Reactions(FILE_TEST, brown_algae)
-RSO1 = Reactions(FILE_TEST, brown_algae, out=1)
-RSO2 = Reactions(FILE_TEST, brown_algae, out=2)
+RS = Reactions(FILE_TEST, g1)
+RSO1 = Reactions(FILE_TEST, g1, out=1)
+RSO2 = Reactions(FILE_TEST, g1, out=2)
 
 
 class Test(unittest.TestCase):
@@ -23,18 +21,11 @@ class Test(unittest.TestCase):
         self.assertIsInstance(R, Reactions)
 
     def test_init_species_default(self):
-        species_obj = ['Ectocarpus_crouaniorum_m', 'Laminarionema_elsbetiae',
-                       'Scytosiphon_promiscuus_MALE', 'Undaria_pinnatifida_Kr2015',
-                       'Desmarestia_dudresnayi', 'Thalassiosira_pseudonana',
-                       'Fragilariopsis_cylindrus', 'Phaeodactylum_tricornutum',
-                       'Saccharina_japonica', 'Ectocarpus_subulatus',
-                       'Porterinema_fluviatile', 'Ectocarpus_siliculosus',
-                       'Cladosiphon_okamuranus', 'Ectocarpus_fasciculatus_m',
-                       'Nemacystus_decipiens', 'Nannochloropsis_gaditana']
+        species_obj = []
         self.assertEqual(species_obj, R.species_list)
 
     def test_species_precised(self):
-        self.assertEqual(brown_algae, RS.species_list)
+        self.assertEqual(g1, RS.species_list)
 
     def test_name(self):
         self.assertEqual(R.name, 'runA1')
