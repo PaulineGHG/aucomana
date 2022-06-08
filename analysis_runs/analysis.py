@@ -12,8 +12,6 @@ from analysis_runs.metabolites import Metabolites
 from analysis_runs.rename_padmets_id import make_automaton, apply_automaton, get_dict
 from typing import Tuple, List, Dict
 
-#TEST
-
 class Analysis:
     STAT = (" mean", " med", " sd", " min", " max")
     TO_CALCULATE = ("nb_genes", "nb_rnx", "nb_pw > 80%", "nb_pw 100%")
