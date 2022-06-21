@@ -133,12 +133,14 @@ class Analysis:
         reactions_dict = {}
         if runs is None:
             runs = os.listdir(self.path_runs)
+        if type(runs) == str:
+            runs = list(runs)
         for run in runs:
             r_path = os.path.join(self.path_runs, run, "analysis", "all",
                                   "reactions.tsv")
             if os.path.exists(r_path):
                 if group is not None:
-                    grp_species_l = self.get_grp_l(run, group, species_list)
+                    grp_species_l = list(self.get_grp_set(run, group, species_list))
                     reactions_dict[run] = Reactions(self.path_runs, self.path_study, r_path, grp_species_l, out)
                 else:
                     reactions_dict[run] = Reactions(self.path_runs, self.path_study, r_path, species_list, out)
