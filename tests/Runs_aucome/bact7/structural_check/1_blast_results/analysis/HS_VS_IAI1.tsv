@@ -1,0 +1,7 @@
+query_seq_id	blastp_sseqid	blastp_evalue	blastp_bitscore	tblastn_sseqid	tblastn_evalue	tblastn_bitscore	tblastn_sstart	tblastn_send	exonerate_score	exonerate_hit_range	predicted_gene
+EcHS_A3533											
+EcHS_A2694	ECIAI1_2803	6.35e-24	99.0	CU928160.2	0.0	562	2695996	2696952	2028	9757-10956	predicted_EcHS_A2694_vs_CU928160.2
+EcHS_A1137											
+EcHS_A3893	ECIAI1_1794	3.40e-46	162	CU928160.2	1.72e-133	421	3933273	3932659			
+EcHS_A3089				CU928160.2	0.0	628	3138705	3137782	2166	8723-9999	predicted_EcHS_A3089_vs_CU928160.2
+EcHS_A4523	ECIAI1_1630	1.09e-36	132	CU928160.2	1.73e-32	125	1698234	1697227			

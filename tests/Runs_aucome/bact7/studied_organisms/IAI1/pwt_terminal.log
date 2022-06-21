@@ -1,0 +1,488 @@
+;; Optimization settings: safety 3, space 1, speed 1, debug 3.
+;; For a complete description of all compiler switches given the
+;; current optimization settings evaluate (EXPLAIN-COMPILER-SETTINGS).
+
+*** This Pathway Tools executable built on Fri May 21, 2021 at 17:33:57. ***
+[oot::acache-connect: Note that another Ocelot KB named NCBI-TAXONOMY already exists (#<OCELOT-FILE-KB
+                                                                                        NCBI-TAXONOMY NIL
+                                                                                        @
+                                                                                        #x1003f076902>); creating new KB named NCBI-TAXONOMY]
+[Opened acache database /programs/pathway-tools/aic-export/pathway-tools/ocelot-acache/, which contains 1 ocelot KBs]
+[Reading Pathway Tools init file "/mnt/go-docker/data/pwt_data/ptools-local/ptools-init.dat" ]
+[Scanning PGDB directories in   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/   3 total PGDBs have now been found]
+[Scanning PGDB directories in   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/registry/   3 total PGDBs have now been found]
+[Loading Ocelot KB from /programs/pathway-tools/aic-export/pgdbs/biocyc/PGDB-METADATA.ocelot
+ KB name=PGDB-METADATA, format=V1-SEXPR
+Warning: Skipping load of frame META-NIL which already exists in PGDB-METADATA
+Warning: Skipping load of frame ECOLI-0 which already exists in PGDB-METADATA
+ 0 frames loaded]
+[Scanning PGDB directories in   /programs/pathway-tools/aic-export/pgdbs/biocyc/   3 total PGDBs have now been found]
+====== SCIP, package: #<The SCIP
+                        package>, #+-scip: SCIP, (fboundp 'load-scip-lib-at-execution-time): #<Function LOAD-SCIP-LIB-AT-EXECUTION-TIME>.
+Loading SCIP Library at Start Up (Runtime?: PTOOLS-RUNTIME)...
+Loading scip lib from scip-interface: /programs/pathway-tools/aic-export/pathway-tools/ptools/25.0/exe/libScipAll.so
+
+        ::::::::  Begin Batch PathoLogic for test//studied_organisms/IAI1/  ::::::::
+
+[Redirecting standard-output and error-output to test/studied_organisms/IAI1/pathologic.log]
+20 40 60 80 100 120 140 20 40 60 80 100 Copying file test/studied_organisms/IAI1/genetic-elements.dat
+    to       /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/input/genetic-elements.dat
+Copying file /mnt/go-docker/data/aucome_runs/test/studied_organisms/IAI1/IAI1.gbk
+    to       /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/input/IAI1.gbk
+[Indexed IAI1BASE class People of 21 frames yielding hash table of 53 entries]
+[Indexed IAI1BASE class Growth-Media of 1 frames yielding hash table of 2 entries]
+[Indexed IAI1BASE class Extragenic-Sites of 3 frames yielding hash table of 4 entries]
+[Indexed IAI1BASE class Organisms of 28 frames yielding hash table of 133 entries]
+[Indexed IAI1BASE class Transcription-Units of 1 frames yielding hash table of 1 entries]
+[Indexed IAI1BASE class Gene-Ontology-Terms of 3 frames yielding hash table of 14 entries]
+[Indexed IAI1BASE class DNAs of 7 frames yielding hash table of 11 entries]
+[Indexed IAI1BASE class Reactions of 40 frames yielding hash table of 51 entries]
+[Indexed IAI1BASE class Pathways of 681 frames yielding hash table of 1158 entries]
+[Indexed IAI1BASE class Compounds of 4596 frames yielding hash table of 12539 entries]
+[Indexed IAI1BASE class Polynucleotides of 281 frames yielding hash table of 639 entries]
+[Indexed IAI1BASE class Proteins of 163 frames yielding hash table of 444 entries]
+[Indexed IAI1BASE class Enzymatic-Reactions of 1 frames yielding hash table of 0 entries]
+[Indexed IAI1BASE class RNAs of 248 frames yielding hash table of 574 entries]
+[Indexed IAI1BASE class All-Genes of 10 frames yielding hash table of 12 entries]
+100 200 300 400 500 600 700 800 900 1000 1100 1200 1300 1400 1500 1600 1700 1800 1900 2000 2100 2200 2300 2400 2500 2600 2700 2800 2900 3000 3100 3200 3300 3400 3500 3600 3700 3800 3900 4000 4100 4200 4300 4400 4500 4600 4700 4800 4900 5000 5100 5200 5300 5400 5500 5600 5700 5800 5900 6000 6100 6200 6300 6400 6500 6600 6700 6800 6900 7000 7100 7200 7300 7400 7500 7600 7700 7800 7900 8000 8100 8200 8300 8400 8500 8600 8700 8800 8900 9000 9100 9200 500 1000 1500 2000 2500 3000 3500 4000 4500 500 1000 1500 2000 2500 3000 3500 4000 1000 [Indexed METABASE class All-Genes of 14319 frames yielding hash table of 38990 entries]
+Resolved unmatched enzyme name "2-deoxyribose-5-phosphate aldolase, NAD(P)-linked" via gene "deoC" to (DEOXYRIBOSE-P-ALD-RXN)
+Resolved unmatched enzyme name "triphosphoribosyl-dephospho-CoA transferase" via gene "citG" to (2.7.8.25-RXN)
+Resolved unmatched enzyme name "citrate lyase, acyl carrier (gamma) subunit" via gene "citD" to (CITLY-RXN
+                                                                                                 CITTRANS-RXN
+                                                                                                 CITRYLY-RXN)
+Resolved unmatched enzyme name "palmitoyl transferase for Lipid A" via gene "crcA" to (RXN-20916
+                                                                                       RXN-20915
+                                                                                       RXN-20914
+                                                                                       RXN-20913
+                                                                                       RXN-20918
+                                                                                       RXN-20919)
+Resolved ambiguous enzyme name "D-alanyl-D-alanine carboxypeptidase" via gene "dacA" to (RXN-16649
+                                                                                         RXN-19249
+                                                                                         RXN-19253
+                                                                                         3.4.17.8-RXN)
+Resolved unmatched enzyme name "putative phosphatase with phosphoglycerate mutase domain" via gene "phpB" to (RXN-8770
+                                                                                                              RXN-16788)
+Resolved unmatched enzyme name "nicotinic acid mononucleotide adenylyltransferase, NAD(P)-dependent" via gene "nadD" to (NICONUCADENYLYLTRAN-RXN)
+Resolved unmatched enzyme name "ribonucleoside hydrolase 1" via gene "rihA" to (URIDINE-NUCLEOSIDASE-RXN
+                                                                                RXN0-361)
+Resolved unmatched enzyme name "isopentenyl-adenosine A37 tRNA methylthiolase" via gene "miaB" to (RXN0-5063
+                                                                                                   RXN-14480
+                                                                                                   RXN-14481)
+Resolved unmatched enzyme name "2-octaprenyl-3-methyl-6-methoxy-1,4-benzoquinol oxygenase" via gene "ubiF" to (OCTAPRENYL-METHYL-METHOXY-BENZOQ-OH-RXN)
+Resolved unmatched enzyme name "NMP phosphatase" via gene "nagD" to (RXN-14026
+                                                                     RXN-14025
+                                                                     RXN-7607
+                                                                     RXN-7609
+                                                                     XMPXAN-RXN
+                                                                     5-NUCLEOTID-RXN)
+Resolved unmatched enzyme name "potassium translocating ATPase, subunit C" via gene "kdpC" to (TRANS-RXN-2)
+Resolved unmatched enzyme name "potassium translocating ATPase, subunit B" via gene "kdpB" to (TRANS-RXN-2)
+Resolved unmatched enzyme name "potassium translocating ATPase, subunit A" via gene "kdpA" to (TRANS-RXN-2)
+Resolved unmatched enzyme name "deoxyribodipyrimidine photolyase, FAD-binding" via gene "phr" to (RXN-19245
+                                                                                                  RXN-19242
+                                                                                                  RXN-20897)
+Resolved unmatched enzyme name "2-oxoglutarate decarboxylase, thiamin-requiring" via gene "sucA" to (2OXOGLUTARATEDEH-RXN
+                                                                                                     RXN0-1147
+                                                                                                     RXN-7716
+                                                                                                     2OXOGLUTDECARB-RXN)
+Resolved unmatched enzyme name "dihydrolipoyltranssuccinase" via gene "sucB" to (2OXOGLUTARATEDEH-RXN
+                                                                                 2OXOGLUTDECARB-RXN
+                                                                                 RXN-7716
+                                                                                 RXN0-1147)
+Resolved unmatched enzyme name "3-deoxy-D-arabino-heptulosonate-7-phosphate synthase, phenylalanine repressible" via gene "aroG" to (DAHPSYN-RXN)
+Resolved ambiguous enzyme name "phosphoglyceromutase" via gene "gpmA" to (RXN-15513)
+Resolved unmatched enzyme name "putative methltransferase, enzyme of biotin synthesis" via gene "bioC" to (RXN-11475)
+Resolved ambiguous enzyme name "D-alanyl-D-alanine carboxypeptidase" via gene "dacC" to (RXN-16649
+                                                                                         RXN-19249
+                                                                                         RXN-19256
+                                                                                         3.4.17.8-RXN)
+Resolved unmatched enzyme name "glutaredoxin 1, redox coenzyme for ribonucleotide reductase (RNR1a)" via gene "grxA" to (PRODISULFREDUCT-RXN
+                                                                                                                         RXN0-7271
+                                                                                                                         RXN-19629
+                                                                                                                         RXN-18586)
+Resolved unmatched enzyme name "nitroreductase A, NADPH-dependent, FMN-dependent" via gene "nfsA" to (R303-RXN
+                                                                                                      RXN-17007
+                                                                                                      RXN0-7385)
+Resolved unmatched enzyme name "pyruvate dehydrogenase (pyruvate oxidase), thiamin-dependent, FAD-binding" via gene "poxB" to (RXN-11496
+                                                                                                                               RXN0-2022
+                                                                                                                               RXN-6161
+                                                                                                                               RXN3O-470)
+Resolved unmatched enzyme name "HCP oxidoreductase, NADH-dependent" via gene "hcr" to (RXN0-307)
+Resolved unmatched enzyme name "thioredoxin reductase, FAD/NAD(P)-binding" via gene "trxB" to (THIOREDOXIN-REDUCT-NADPH-RXN)
+Resolved unmatched enzyme name "seryl-tRNA synthetase, also charges selenocysteinyl-tRNA with serine" via gene "serS" to (SERINE--TRNA-LIGASE-RXN
+                                                                                                                          RXN0-2161)
+Resolved unmatched enzyme name "dimethyl sulfoxide reductase, anaerobic, subunit A" via gene "dmsA" to (DIMESULFREDUCT-RXN)
+Resolved unmatched enzyme name "dimethyl sulfoxide reductase, anaerobic, subunit B" via gene "dmsB" to (DIMESULFREDUCT-RXN)
+Resolved unmatched enzyme name "dimethyl sulfoxide reductase, anaerobic, subunit C" via gene "dmsC" to (DIMESULFREDUCT-RXN)
+Resolved unmatched enzyme name "alkanesulfonate monooxygenase, FMNH(2)-dependent" via gene "ssuD" to (RXN0-6973
+                                                                                                      RXN-18086
+                                                                                                      RXN-15341
+                                                                                                      RXN0-280
+                                                                                                      RXN-13418)
+Resolved unmatched enzyme name "phosphoanhydride phosphorylase" via gene "appA" to (RXN0-5462
+                                                                                    RXN-10940
+                                                                                    RXN-17495
+                                                                                    RXN-17489
+                                                                                    RXN-17490
+                                                                                    RXN-17493)
+Resolved unmatched enzyme name "trimethylamine N-oxide (TMAO) reductase I, cytochrome c-type subunit" via gene "torC" to (RXN0-5264)
+Resolved unmatched enzyme name "trimethylamine N-oxide (TMAO) reductase I, catalytic subunit" via gene "torA" to (RXN0-5264
+                                                                                                                  RXN-19618)
+Resolved unmatched enzyme name "flavin:NADH oxidoreductase subunit of alternative pyrimidine degradation pathway" via gene "rutF" to (RXN-9510)
+Resolved unmatched enzyme name "oxidoreductase subunit of the alternative pyrimidine degradation pathway" via gene "rutE" to (RXN-8974)
+Resolved unmatched enzyme name "monooxygenase of the alternative pyrimidine degradation pathway" via gene "rutA" to (RXN0-6444
+                                                                                                                     RXN-20707
+                                                                                                                     RXN-12886
+                                                                                                                     RXN-22443
+                                                                                                                     RXN-20708)
+Resolved unmatched enzyme name "N-methyltryptophan oxidase, FAD-binding" via gene "solA" to (RXN0-301)
+Resolved ambiguous enzyme name "glutaredoxin" via gene "grxB" to (PRODISULFREDUCT-RXN)
+Resolved unmatched enzyme name "oxidoreductase that catalyzes reoxidation of DsbA protein disulfide isomerase I" via gene "dsbB" to (RXN-19950
+                                                                                                                                     RXN-20160
+                                                                                                                                     RXN-20056)
+Resolved unmatched enzyme name "lytic murein endotransglycosylase E" via gene "emtA" to (RXN-17392
+                                                                                         RXN-17391)
+Resolved unmatched enzyme name "fused glutamine amidotransferase (component II) of anthranilate synthase; anthranilate phosphoribosyl transferase" via gene "trpD" to (ANTHRANSYN-RXN
+                                                                                                                                                                       PRTRANS-RXN)
+Resolved unmatched enzyme name "component I of anthranilate synthase" via gene "trpE" to (ANTHRANSYN-RXN)
+Resolved unmatched enzyme name "modulator of Rnase II stability" via gene "gmr" to (RXN0-4181)
+Resolved ambiguous enzyme name "ribonuclease II" via gene "rnb" to (RXN0-6479
+                                                                    3.1.13.1-RXN
+                                                                    RXN0-6524)
+Resolved unmatched enzyme name "gamma-Glu-putrescine synthase" via gene "puuA" to (RXN0-3901)
+Resolved unmatched enzyme name "gamma-Glu-gamma-aminobutyraldehyde dehydrogenase, NAD(P)H-dependent" via gene "puuC" to (AMINOBUTDEHYDROG-RXN
+                                                                                                                         SUCCINATE-SEMIALDEHYDE-DEHYDROGENASE-RXN
+                                                                                                                         RXN0-5455
+                                                                                                                         RXN0-3922)
+Resolved unmatched enzyme name "gamma-Glu-putrescine oxidase, FAD/NAD(P)-binding" via gene "puuB" to (RXN0-3921)
+Resolved unmatched enzyme name "fused aldehyde dehydrogenase; enoyl-CoA hydratase" via gene "maoC" to (RXNMETA-12671
+                                                                                                       RXNMETA-12672
+                                                                                                       3-HYDROXBUTYRYL-COA-DEHYDRATASE-RXN)
+Resolved unmatched enzyme name "putative multicomponent oxygenase/reductase subunit for phenylacetic acid degradation" via gene "paaA" to (RXN0-2042)
+Resolved unmatched enzyme name "putative multicomponent oxygenase/reductase subunit for phenylacetic acid degradation" via gene "paaB" to (RXN0-2042)
+Resolved unmatched enzyme name "putative multicomponent oxygenase/reductase subunit for phenylacetic acid degradation" via gene "paaC" to (RXN0-2042)
+Resolved unmatched enzyme name "subunit of the phenylacetly-CoA oxygenase/reductase" via gene "paaJ" to (RXN-3641
+                                                                                                         RXN0-6512)
+Resolved unmatched enzyme name "acyl-CoA hydratase" via gene "paaG" to (RXN0-6510)
+Resolved ambiguous enzyme name "3-hydroxybutyryl-CoA dehydrogenase" via gene "paaH" to (RXN0-2044)
+Resolved unmatched enzyme name "phenylacetate pathway hotdog-fold thioesterase" via gene "paaI" to (RXN0-7104
+                                                                                                    RXN0-5065)
+Resolved unmatched enzyme name "putative hexapeptide repeat acetyltransferase" via gene "paaY" to (RXN0-7103)
+Resolved unmatched enzyme name "NADH-azoreductase, FMN-dependent" via gene "azoR" to (RXN0-6722
+                                                                                      RXN0-5375)
+Resolved ambiguous enzyme name "glyceraldehyde-3-phosphate dehydrogenase" via gene "gapC" to (GAPOXNPHOSPHN-RXN)
+Resolved unmatched enzyme name "putative AdoMet-dependent methyltransferase" via gene "tehB" to (RXN0-6576)
+Resolved unmatched enzyme name "formate dehydrogenase-N, alpha subunit, nitrate-inducible" via gene "fdnG" to (FORMATEDEHYDROG-RXN)
+Resolved unmatched enzyme name "formate dehydrogenase-N, Fe-S (beta) subunit, nitrate-inducible" via gene "fdnH" to (FORMATEDEHYDROG-RXN)
+Resolved unmatched enzyme name "formate dehydrogenase-N, cytochrome B556 (gamma) subunit, nitrate-inducible" via gene "fdnI" to (FORMATEDEHYDROG-RXN)
+Resolved unmatched enzyme name "alcohol dehydrogenase, 1-propanol preferring" via gene "adhP" to (RXN-13748
+                                                                                                  RXN66-478
+                                                                                                  OCTANOL-DEHYDROGENASE-RXN
+                                                                                                  HEXANOL-RXN
+                                                                                                  RXN-161
+                                                                                                  ALCOHOL-DEHYDROG-RXN
+                                                                                                  RXN-13198
+                                                                                                  RXN-11968
+                                                                                                  ALCOHOL-DEHYDROG-GENERIC-RXN)
+Resolved unmatched enzyme name "malate dehydrogenase, (decarboxylating, NAD-requiring) (malic enzyme)" via gene "sfcA" to (1.1.1.39-RXN
+                                                                                                                           MALATE-DEH-RXN
+                                                                                                                           OXALODECARB-RXN)
+Resolved unmatched enzyme name "cAMP phosphodiesterase, heme-regulated" via gene "dos" to (RXN0-4181)
+Resolved unmatched enzyme name "autoinducer AI-2 kinase" via gene "lsrK" to (RXN0-5461)
+Resolved ambiguous enzyme name "trans-aconitate methyltransferase" via gene "tam" to (RXN0-2441)
+Resolved unmatched enzyme name "altronate oxidoreductase, NAD-dependent" via gene "uxaB" to (ALTRO-OXIDOREDUCT-RXN)
+Resolved unmatched enzyme name "fumarate hydratase (fumarase C),aerobic Class II" via gene "fumC" to (FUMHYDR-RXN)
+Resolved unmatched enzyme name "fumarate hydratase (fumarase A), aerobic Class I" via gene "fumA" to (FUMHYDR-RXN
+                                                                                                      OXALOACETATE-TAUTOMERASE-RXN)
+Resolved unmatched enzyme name "glutathionine S-transferase" via gene "gst" to (GST-RXN)
+Resolved unmatched enzyme name "glyoxalase I, Ni-dependent" via gene "gloA" to (GLYOXI-RXN)
+Resolved ambiguous enzyme name "glutathione peroxidase" via gene "btuE" to (GLUTATHIONE-PEROXIDASE-RXN)
+Resolved unmatched enzyme name "hydroperoxidase HPII(III) (catalase)" via gene "katE" to (CATAL-RXN
+                                                                                          RXN-8073)
+Resolved unmatched enzyme name "cryptic phospho-beta-glucosidase, NAD(P)-binding" via gene "chbF" to (RXN0-7002
+                                                                                                      6-PHOSPHO-BETA-GLUCOSIDASE-RXN)
+Resolved unmatched enzyme name "NAD synthetase, NH3/glutamine-dependent" via gene "nadE" to (NAD-SYNTH-NH3-RXN
+                                                                                             NAD-SYNTH-GLN-RXN)
+Resolved unmatched enzyme name "pyrimidine (deoxy)nucleoside triphosphate pyrophosphohydrolase" via gene "nudG" to (RXN0-6957
+                                                                                                                    RXN-14188
+                                                                                                                    RXN0-7291)
+Resolved unmatched enzyme name "myristoyl-acyl carrier protein (ACP)-dependent acyltransferase" via gene "lpxM" to (MYRISTOYLACYLTRAN-RXN
+                                                                                                                    MYRPALMTRAN-RXN)
+Resolved unmatched enzyme name "trimethylamine N-oxide reductase system III, catalytic subunit" via gene "torZ" to (RXN-19619)
+Resolved unmatched enzyme name "chemotaxis regulator, protein-glutamate methyltransferase" via gene "cheR" to (CHER-RXN
+                                                                                                               RXN-19922)
+Resolved ambiguous enzyme name "D-alanyl-D-alanine carboxypeptidase" via gene "dacD" to (RXN-16649
+                                                                                         RXN-19249
+                                                                                         RXN-19253)
+Resolved ambiguous enzyme name "exonuclease I" via gene "sbcB" to (3.1.11.1-RXN)
+Resolved unmatched enzyme name "fused phosphoribosyl-AMP cyclohydrolase; phosphoribosyl-ATP pyrophosphatase" via gene "hisI" to (HISTCYCLOHYD-RXN
+                                                                                                                                 HISTPRATPHYD-RXN)
+Resolved unmatched enzyme name "putative UDP-sugar lipid carrier transferase" via gene "wcaJ" to (RXN-11791)
+Resolved ambiguous enzyme name "mannose-1-phosphate guanyltransferase" via gene "cpsB" to (2.7.7.13-RXN)
+Resolved unmatched enzyme name "bifunctional GDP-fucose synthetase: GDP-4-dehydro-6-deoxy-D-mannose epimerase and GDP-4-dehydro-6-L-deoxygalactose reductase" via gene "fcl" to (1.1.1.271-RXN
+                                                                                                                                                                                 FCLEPIM-RXN
+                                                                                                                                                                                 FCLREDUCT-RXN)
+Resolved unmatched enzyme name "GDP-D-mannose dehydratase, NAD(P)-binding" via gene "gmd" to (GDPMANDEHYDRA-RXN)
+Resolved unmatched enzyme name "putative glycose-acyl transferase" via gene "wcaF" to (RXN0-7342)
+Resolved unmatched enzyme name "ribonucleoside hydrolase 2" via gene "rihB" to (RXN0-361
+                                                                                URIDINE-NUCLEOSIDASE-RXN
+                                                                                RIBOSYLPYRIMIDINE-NUCLEOSIDASE-RXN)
+Resolved unmatched enzyme name "heme lyase, CcmH subunit" via gene "ccmH" to (RXN-21422)
+Resolved unmatched enzyme name "heme lyase, CcmF subunit" via gene "ccmF" to (RXN-21423)
+Resolved unmatched enzyme name "nitrate reductase, small, cytochrome C550 subunit, periplasmic" via gene "napB" to (NITRATE-REDUCTASE-CYTOCHROME-RXN)
+Resolved unmatched enzyme name "ferredoxin-type protein essential for electron transfer from ubiquinol to periplasmic nitrate reductase (NapAB)" via gene "napG" to (RXN-18584)
+Resolved ambiguous enzyme name "nitrate reductase" via gene "napA" to (NITRATE-REDUCTASE-CYTOCHROME-RXN)
+Resolved unmatched enzyme name "sn-glycerol-3-phosphate dehydrogenase (anaerobic), large subunit, FAD/NAD(P)-binding" via gene "glpA" to (RXN-15740)
+Resolved unmatched enzyme name "dihydroxynaphthoic acid synthetase" via gene "menB" to (NAPHTHOATE-SYN-RXN)
+Resolved unmatched enzyme name "binuclear zinc phosphodiesterase" via gene "elaC" to (3.1.26.11-RXN
+                                                                                      RXN0-6525
+                                                                                      RXN0-4222)
+Resolved unmatched enzyme name "acetyl-CoA carboxylase, beta (carboxyltranferase) subunit" via gene "accD" to (RXN0-5055)
+Resolved unmatched enzyme name "putative semialdehyde dehydrogenase" via gene "usg" to (RXN0-5055)
+Resolved unmatched enzyme name "fused 5-methylaminomethyl-2-thiouridine-forming enzyme methyltransferase; FAD-dependent demodification enzyme" via gene "trmC" to (RXN0-7081
+                                                                                                                                                                   RXN0-5144)
+Resolved unmatched enzyme name "formyl-CoA transferase, NAD(P)-binding" via gene "frc" to (RXN0-1382)
+Resolved unmatched enzyme name "palmitoleoyl-acyl carrier protein (ACP)-dependent acyltransferase" via gene "ddg" to (PALMITOTRANS-RXN)
+Resolved unmatched enzyme name "PEP-protein phosphotransferase of PTS system (enzyme I)" via gene "ptsI" to (2.7.3.9-RXN
+                                                                                                             RXN-17354
+                                                                                                             RXN-17355)
+Resolved unmatched enzyme name "putative oxidoredutase, sulfate metabolism protein" via gene "ucpA" to (RXN-11032)
+Resolved ambiguous enzyme name "N-acetylmuramoyl-l-alanine amidase" via gene "amiA" to (RXN-16938)
+Resolved unmatched enzyme name "ethanolamine ammonia-lyase, small subunit (light chain)" via gene "eutC" to (ETHAMLY-RXN)
+Resolved unmatched enzyme name "putative alcohol dehydrogenase in ethanolamine utilization; ethanolaminosome" via gene "eutG" to (ALCOHOL-DEHYDROG-RXN)
+Resolved unmatched enzyme name "putative cobalamin adenosyltransferase in ethanolamine utilization" via gene "eutT" to (RXN-19336
+                                                                                                                        RXN-19340
+                                                                                                                        RXN-19333)
+Resolved unmatched enzyme name "putative fused malic enzyme oxidoreductase; putative phosphotransacetylase" via gene "maeB" to (MALIC-NADP-RXN
+                                                                                                                                MALATE-DEHYDROGENASE-NADP+-RXN
+                                                                                                                                OXALODECARB-RXN)
+Resolved unmatched enzyme name "transketolase 2, thiamin-binding" via gene "tktB" to (1TRANSKETO-RXN
+                                                                                      2TRANSKETO-RXN)
+Resolved unmatched enzyme name "GTPase involved in ribosome synthesis and maintenance" via gene "der" to (RXN0-5462)
+Resolved unmatched enzyme name "3-phenylpropionate dioxygenase, large (alpha) subunit" via gene "hcaE" to (RXN-12072
+                                                                                                           HCAMULTI-RXN)
+Resolved unmatched enzyme name "3-phenylpropionate dioxygenase, small (beta) subunit" via gene "hcaF" to (RXN-12072
+                                                                                                          HCAMULTI-RXN)
+Resolved unmatched enzyme name "3-phenylpropionate dioxygenase, putative ferredoxin subunit" via gene "hcaC" to (RXN-12072
+                                                                                                                 HCAMULTI-RXN)
+Resolved unmatched enzyme name "phosphoribosylformyl-glycineamide synthetase" via gene "purL" to (FGAMSYN-RXN)
+Resolved unmatched enzyme name "membrane-associated, 16S rRNA-binding GTPase" via gene "era" to (RXN0-5462)
+Resolved unmatched enzyme name "quinolinate synthase, L-aspartate oxidase (B protein) subunit" via gene "nadB" to (L-ASPARTATE-OXID-RXN
+                                                                                                                   RXN-9772)
+Resolved unmatched enzyme name "fused chorismate mutase T; prephenate dehydrogenase" via gene "tyrA" to (CHORISMATEMUT-RXN
+                                                                                                         PREPHENATEDEHYDROG-RXN)
+Resolved unmatched enzyme name "flavorubredoxin oxidoreductase" via gene "norV" to (RXN0-2721)
+Resolved unmatched enzyme name "NADH:flavorubredoxin oxidoreductase" via gene "norW" to (RXN-22001)
+Resolved unmatched enzyme name "formate hydrogenlyase complex iron-sulfur protein" via gene "hycF" to (FHLMULTI-RXN
+                                                                                                       RXN0-3281
+                                                                                                       RXN-12275)
+Resolved unmatched enzyme name "hydrogenase 3, Fe-S subunit" via gene "hycB" to (FHLMULTI-RXN
+                                                                                 RXN0-3281
+                                                                                 RXN-12275)
+Resolved unmatched enzyme name "pseudoruidine synthase" via gene "truD" to (RXN-11841)
+Resolved unmatched enzyme name "23S rRNA (uracil-5)-methyltransferase" via gene "rumA" to (RXN-11601)
+Resolved ambiguous enzyme name "N-acetylmuramoyl-L-alanine amidase" via gene "amiC" to (RXN-16938)
+Resolved unmatched enzyme name "fused acetylglutamate kinase homolog (inactive); amino acid N-acetyltransferase" via gene "argA" to (N-ACETYLTRANSFER-RXN)
+Resolved unmatched enzyme name "nucleotide hydrolase" via gene "nudH" to (RXN0-7283
+                                                                          RXN0-5510)
+Resolved unmatched enzyme name "fused 2-acylglycerophospho-ethanolamine acyl transferase; acyl-acyl carrier protein synthetase" via gene "aas" to (ACYLGPEACYLTRANS-RXN
+                                                                                                                                                   RXN-21395
+                                                                                                                                                   RXN-16463
+                                                                                                                                                   RXN-5741
+                                                                                                                                                   RXN-13264
+                                                                                                                                                   RXN-16468
+                                                                                                                                                   RXN-13267
+                                                                                                                                                   RXN-13266
+                                                                                                                                                   RXN-13268
+                                                                                                                                                   RXN0-5513)
+Resolved unmatched enzyme name "diaminopimelate decarboxylase, PLP-binding" via gene "lysA" to (DIAMINOPIMDECARB-RXN)
+Resolved unmatched enzyme name "lysine tRNA synthetase, constitutive" via gene "lysS" to (LYSINE--TRNA-LIGASE-RXN)
+Resolved unmatched enzyme name "glycine decarboxylase, PLP-dependent, subunit (protein P) of glycine cleavage complex" via gene "gcvP" to (GCVMULTI-RXN
+                                                                                                                                           GCVT-RXN
+                                                                                                                                           RXN-8629
+                                                                                                                                           GCVP-RXN)
+Resolved unmatched enzyme name "aminomethyltransferase, tetrahydrofolate-dependent, subunit (T protein) of glycine cleavage complex" via gene "gcvT" to (GCVMULTI-RXN
+                                                                                                                                                         GCVP-RXN
+                                                                                                                                                         RXN-8629
+                                                                                                                                                         GCVT-RXN)
+Resolved unmatched enzyme name "putative oxidoreductase with FAD/NAD(P)-binding domain" via gene "visC" to (2-OCTAPRENYLPHENOL-HYDROX-RXN)
+Resolved unmatched enzyme name "2-octaprenyl-6-methoxyphenol hydroxylase, FAD/NAD(P)-binding" via gene "ubiH" to (2-OCTAPRENYL-6-METHOXYPHENOL-HYDROX-RXN)
+Resolved unmatched enzyme name "ribose 5-phosphate isomerase, constitutive" via gene "rpiA" to (RIB5PISOM-RXN)
+Resolved unmatched enzyme name "transketolase 1, thiamin-binding" via gene "tktA" to (2TRANSKETO-RXN
+                                                                                      1TRANSKETO-RXN)
+Resolved unmatched enzyme name "biosynthetic arginine decarboxylase, PLP-binding" via gene "speA" to (ARGDECARBOX-RXN)
+Resolved unmatched enzyme name "ornithine decarboxylase, constitutive" via gene "speC" to (ORNDECARBOX-RXN)
+Resolved unmatched enzyme name "hydrogenase 2 4Fe-4S ferredoxin-type component" via gene "hybA" to (RXN0-5256)
+Resolved unmatched enzyme name "fused heptose 7-phosphate kinase; heptose 1-phosphate adenyltransferase" via gene "rfaE" to (RXN0-4341
+                                                                                                                             RXN0-4342)
+Resolved unmatched enzyme name "fused deadenylyltransferase; adenylyltransferase for glutamine synthetase" via gene "glnE" to (GSADENYLATION-RXN
+                                                                                                                               GSDEADENYLATION-RXN)
+Resolved unmatched enzyme name "fused tRNA nucleotidyl transferase; 2'3'-cyclic phosphodiesterase and 2'nucleotidase and phosphatase" via gene "cca" to (TRNA-CYTIDYLYLTRANSFERASE-RXN)
+Resolved unmatched enzyme name "1-acyl glycerol-3-phosphate synthetase component" via gene "plsY" to (RXN-9591)
+Resolved ambiguous enzyme name "altronate hydrolase" via gene "uxaA" to (ALTRODEHYDRAT-RXN)
+Resolved unmatched enzyme name "(D)-galactarate dehydrogenase" via gene "garD" to (GALACTARDEHYDRA-RXN)
+Resolved unmatched enzyme name "tagatose-6-phosphate ketose/aldose isomerase" via gene "agaS" to (RXN-13548)
+Resolved unmatched enzyme name "tagatose 6-phosphate aldolase 1, kbaY subunit" via gene "kbaY" to (TAGAALDOL-RXN)
+Resolved ambiguous enzyme name "D-alanyl-D-alanine carboxypeptidase" via gene "dacB" to (RXN-16649)
+Resolved ambiguous enzyme name "glutamate synthase" via gene "gltB" to (GLUTAMATESYN-RXN)
+Resolved unmatched enzyme name "glutamate synthase, 4Fe-4S protein, small subunit" via gene "gltD" to (GLUTAMATESYN-RXN
+                                                                                                       GLUTDEHYD-RXN
+                                                                                                       GLUTAMIN-RXN)
+Resolved unmatched enzyme name "16S rRNA m5C967 methyltransferase, S-adenosyl-L-methionine-dependent" via gene "rsmB" to (RXN-11591)
+Resolved unmatched enzyme name "nitrite reductase, large subunit, NAD(P) H-binding" via gene "nirB" to (RXN-13854)
+Resolved unmatched enzyme name "nitrite reductase, NAD(P)H-binding, small subunit" via gene "nirD" to (RXN-13854)
+Resolved unmatched enzyme name "fructoselysine-6-P-deglycase" via gene "frlB" to (RXN0-963)
+Resolved ambiguous enzyme name "phosphoenolpyruvate carboxykinase" via gene "pck" to (PEPCARBOXYKIN-RXN)
+Resolved unmatched enzyme name "carboxylesterase of pimeloyl-CoA synthesis" via gene "bioH" to (RXN-11483
+                                                                                                RXN-19416
+                                                                                                RXN-11272
+                                                                                                RXN-13126
+                                                                                                RXN-17577
+                                                                                                ACETYLESTERASE-RXN
+                                                                                                FATTY-ACYL-ETHYL-ESTER-SYNTHASE-RXN
+                                                                                                CARBOXYLESTERASE-RXN)
+Resolved ambiguous enzyme name "glycogen synthase" via gene "glgA" to (GLYCOGENSYN-RXN)
+Resolved unmatched enzyme name "glycerophosphodiester phosphodiesterase, cytosolic" via gene "ugpQ" to (GLYCPDIESTER-RXN
+                                                                                                        RXN-14073
+                                                                                                        RXN-14136
+                                                                                                        RXN-14160)
+Resolved unmatched enzyme name "regulator of cellulose synthase, cyclic di-GMP binding" via gene "bcsB" to (CELLULOSE-SYNTHASE-UDP-FORMING-RXN)
+Resolved unmatched enzyme name "putative endoglucanase involved in cellulose biosynthesis" via gene "bcsG" to (RXN-19630)
+Resolved ambiguous enzyme name "alpha-amylase" via gene "malS" to (RXN0-5181)
+Resolved ambiguous enzyme name "selenocysteine synthase" via gene "selA" to (2.9.1.1-RXN)
+Resolved ambiguous enzyme name "glutaredoxin" via gene "grxC" to (PRODISULFREDUCT-RXN)
+Resolved unmatched enzyme name "phosphoglycero mutase III, cofactor-independent" via gene "gpmI" to (3PGAREARR-RXN)
+Resolved unmatched enzyme name "ADP-L-glycero-D-mannoheptose-6-epimerase, NAD(P)-binding" via gene "waaD" to (5.1.3.20-RXN)
+Resolved unmatched enzyme name "UDP-glucose:(Glucosyl) LPS alpha1, 3-glucosyltransferase" via gene "waaO" to (RXN0-5125)
+Resolved unmatched enzyme name "kinase that phosphorylates core heptose of lipopolysaccharide" via gene "waaP" to (RXN0-5121)
+Resolved unmatched enzyme name "fused 4'-phosphopantothenoylcysteine decarboxylase; phosphopantothenoylcysteine synthetase, FMN-binding" via gene "dfp" to (P-PANTOCYSLIG-RXN
+                                                                                                                                                            P-PANTOCYSDECARB-RXN)
+Resolved unmatched enzyme name "protein C5 component of RNase P" via gene "rnpA" to (RXN0-6480
+                                                                                     3.1.26.5-RXN)
+Resolved unmatched enzyme name "cryptic phospho-beta-glucosidase B" via gene "bglB" to (RXN0-5297
+                                                                                        RXN0-5295
+                                                                                        6-PHOSPHO-BETA-GLUCOSIDASE-RXN)
+Resolved unmatched enzyme name "fused regulatory ATPase variant A; conserved hypothetical protein" via gene "ravA" to (RXN0-1061)
+Resolved ambiguous enzyme name "dihydroxyacid dehydratase" via gene "ilvD" to (DIHYDROXYMETVALDEHYDRAT-RXN
+                                                                               DIHYDROXYISOVALDEHYDRAT-RXN)
+Resolved ambiguous enzyme name "UDP-N-acetyl glucosamine-2-epimerase" via gene "rffE" to (UDPGLCNACEPIM-RXN)
+Resolved unmatched enzyme name "UDP-N-acetyl-D-mannosaminuronic acid dehydrogenase" via gene "rffD" to (UDPMANNACADEHYDROG-RXN)
+Resolved unmatched enzyme name "fused aspartokinase I; homoserine dehydrogenase I" via gene "thrA" to (ASPARTATEKIN-RXN
+                                                                                                       HOMOSERDEHYDROG-RXN)
+Resolved unmatched enzyme name "molybdochelatase MogA, involved in Moco biosynthesis" via gene "mogA" to (RXN-8344)
+Resolved unmatched enzyme name "1-hydroxy-2-methyl-2-(E)-butenyl 4-diphosphate reductase, 4Fe-4S protein" via gene "ispH" to (RXN0-884
+                                                                                                                              ISPH2-RXN)
+Resolved unmatched enzyme name "ribonucleoside hydrolase 3" via gene "rihC" to (URIDINE-NUCLEOSIDASE-RXN
+                                                                                RXN0-363
+                                                                                INOSINE-NUCLEOSIDASE-RXN
+                                                                                ADENOSINE-NUCLEOSIDASE-RXN
+                                                                                RXN0-361)
+Resolved unmatched enzyme name "putative crotonobetaine CoA ligase:carnitine CoA ligase" via gene "caiC" to (LCARNCOALIG-RXN)
+Resolved unmatched enzyme name "crotonobetaine reductase subunit II, FAD-binding" via gene "caiA" to (CROBETREDUCT-RXN)
+Resolved unmatched enzyme name "putative oxidoreductase with FAD/NAD(P)-binding domain" via gene "fixC" to (RXN-21798)
+Resolved unmatched enzyme name "pseudouridine synthase for 23S rRNA (position 746) and tRNAphe(position 32)" via gene "rluA" to (RXN-11842
+                                                                                                                                 RXN-11843)
+Resolved unmatched enzyme name "coproporphyrinogen III oxidase, SAM and NAD(P)H dependent, oxygen-independent" via gene "hemN" to (HEMN-RXN)
+Resolved unmatched enzyme name "S-adenosyl-dependent methyltransferase activity on membrane-located substrates" via gene "mraW" to (RXN-11638)
+Resolved unmatched enzyme name "nucleoside triphosphate pyrophosphohydrolase, marked preference for dGTP" via gene "mutT" to (RXN-14002
+                                                                                                                              RXN-12816
+                                                                                                                              RXN-11397
+                                                                                                                              RXN-11396)
+Resolved ambiguous enzyme name "formate dehydrogenase-O" via gene "fdoI" to (FORMATEDEHYDROG-RXN)
+Resolved unmatched enzyme name "formate dehydrogenase-O, Fe-S subunit" via gene "fdoH" to (FORMATEDEHYDROG-RXN)
+Resolved ambiguous enzyme name "formate dehydrogenase-O" via gene "fdoG" to (FORMATEDEHYDROG-RXN)
+Resolved unmatched enzyme name "pyruvate dehydrogenase, decarboxylase component E1, thiamin-binding" via gene "aceE" to (PYRUVDEH-RXN
+                                                                                                                         RXN0-1133
+                                                                                                                         RXN0-1132
+                                                                                                                         RXN0-1134
+                                                                                                                         RXN-12583
+                                                                                                                         RXN-12508)
+Resolved unmatched enzyme name "pyruvate dehydrogenase, dihydrolipoyltransacetylase component E2" via gene "aceF" to (PYRUVDEH-RXN
+                                                                                                                      RXN0-1134
+                                                                                                                      RXN-12583
+                                                                                                                      RXN-12508
+                                                                                                                      RXN0-1132
+                                                                                                                      RXN0-1133)
+Resolved ambiguous enzyme name "glucose dehydrogenase" via gene "gcd" to (RXN0-6373)
+Resolved ambiguous enzyme name "aspartate 1-decarboxylase" via gene "panD" to (ASPDECARBOX-RXN)
+Resolved ambiguous enzyme name "HslUV protease" via gene "hslU" to (RXN0-5103)
+Resolved unmatched enzyme name "fused aspartokinase II; homoserine dehydrogenase II" via gene "metL" to (ASPARTATEKIN-RXN
+                                                                                                         HOMOSERDEHYDROG-RXN)
+Resolved ambiguous enzyme name "phosphoenolpyruvate carboxylase" via gene "ppc" to (PEPCARBOX-RXN)
+Resolved unmatched enzyme name "pyridine nucleotide transhydrogenase, soluble" via gene "sthA" to (PYRNUTRANSHYDROGEN-RXN)
+Resolved unmatched enzyme name "UDP-N-acetylenolpyruvoylglucosamine reductase, FAD-binding" via gene "murB" to (UDPNACETYLMURAMATEDEHYDROG-RXN)
+Resolved unmatched enzyme name "lysine decarboxylase 2, constitutive" via gene "ldcC" to (LYSDECARBOX-RXN)
+Resolved unmatched enzyme name "thiamin biosynthesis ThiGH complex subunit" via gene "thiH" to (RXN-11319)
+Resolved unmatched enzyme name "thiamin biosynthesis ThiGH complex subunit" via gene "thiG" to (THIAZOLSYN2-RXN)
+Resolved ambiguous enzyme name "2,5-diketo-D-gluconate reductase" via gene "dkgB" to (RXN0-7020)
+Resolved ambiguous enzyme name "endonuclease V" via gene "nfi" to (RXN-21350)
+Resolved unmatched enzyme name "phosphoribosylglycinamide synthetase phosphoribosylamine-glycine ligase" via gene "purD" to (GLYRIBONUCSYN-RXN)
+Resolved ambiguous enzyme name "diacylglycerol kinase" via gene "dgkA" to (DIACYLGLYKIN-RXN)
+Resolved unmatched enzyme name "betaine aldehyde dehydrogenase, NAD-dependent" via gene "betB" to (BADH-RXN)
+Resolved unmatched enzyme name "carbon-phosphorus lyase complex accessory protein" via gene "phnP" to (RXN0-6710)
+Resolved unmatched enzyme name "putative acyltransferase with acyl-CoA N-acyltransferase domain" via gene "phnO" to (RXN0-7014
+                                                                                                                     RXN-17960
+                                                                                                                     RXN-17962
+                                                                                                                     RXN-17961
+                                                                                                                     TUBULIN-N-ACETYLTRANSFERASE-RXN
+                                                                                                                     HISTONE-ACETYLTRANSFERASE-RXN
+                                                                                                                     RXN0-7160)
+Resolved ambiguous enzyme name "2-methylcitrate dehydratase" via gene "prpD" to (2-METHYLCITRATE-DEHYDRATASE-RXN)
+Resolved unmatched enzyme name "alpha-galactosidase, NAD(P)-binding" via gene "melA" to (ALPHAGALACTOSID-RXN
+                                                                                         RXN-17754)
+Resolved unmatched enzyme name "2-hydroxy-6-ketonona-2,4-dienedioic acid hydrolase" via gene "mhpC" to (MHPCHYDROL-RXN
+                                                                                                        RXN-12070)
+Resolved unmatched enzyme name "acetaldehyde-CoA dehydrogenase II, NAD-binding" via gene "mhpF" to (ACETALD-DEHYDROG-RXN)
+Resolved unmatched enzyme name "4-hyroxy-2-oxovalerate/4-hydroxy-2-oxopentanoic acid aldolase, class I" via gene "mhpE" to (MHPELY-RXN)
+Resolved unmatched enzyme name "taurine dioxygenase, 2-oxoglutarate-dependent" via gene "tauD" to (RXN0-299)
+Resolved unmatched enzyme name "fumarate reductase (anaerobic), Fe-S subunit" via gene "frdB" to (R601-RXN)
+Resolved unmatched enzyme name "fumarate reductase (anaerobic) catalytic and NAD/flavoprotein subunit" via gene "frdA" to (R601-RXN)
+Resolved unmatched enzyme name "pyrroline-5-carboxylate reductase, NAD(P)-binding" via gene "proC" to (PYRROLINECARBREDUCT-RXN)
+Resolved ambiguous enzyme name "N-acetylmuramoyl-l-alanine amidase" via gene "amiB" to (RXN-16938)
+Resolved unmatched enzyme name "23S rRNA (Gm2251)-methyltransferase" via gene "rlmB" to (RXN-11588)
+Resolved unmatched enzyme name "fused diaminohydroxyphosphoribosylaminopyrimidine deaminase; 5-amino-6-(5-phosphoribosylamino) uracil reductase" via gene "ribD" to (RIBOFLAVINSYNDEAM-RXN
+                                                                                                                                                                     RIBOFLAVINSYNREDUC-RXN)
+Resolved unmatched enzyme name "1-deoxyxylulose-5-phosphate synthase, thiamine-requiring, FAD-requiring" via gene "dxs" to (DXS-RXN)
+Resolved unmatched enzyme name "2-dehydropantoate reductase, NADPH-specific" via gene "panE" to (2-DEHYDROPANTOATE-REDUCT-RXN)
+Resolved unmatched enzyme name "PAPS (adenosine 3'-phosphate 5'-phosphosulfate) 3'(2'),5'-bisphosphate nucleotidase" via gene "cysQ" to (325-BISPHOSPHATE-NUCLEOTIDASE-RXN)
+Resolved unmatched enzyme name "thiamin pyrimidine pyrophosphate hydrolase" via gene "cof" to (RXN0-3543
+                                                                                               3.1.3.74-RXN)
+Resolved ambiguous enzyme name "ureidoglycolate hydrolase" via gene "allA" to (UREIDOGLYCOLATE-LYASE-RXN)
+Resolved unmatched enzyme name "D-mannonate oxidoreductase, NAD-binding" via gene "uxuB" to (MANNONOXIDOREDUCT-RXN)
+Resolved unmatched enzyme name "ATPase, activator of (R)-hydroxyglutaryl-CoA dehydratase" via gene "hgdC" to (RXN-19891)
+Resolved unmatched enzyme name "4-hydroxyphenylacetate 3-monooxygenase small component, Flavin:NADH reductase" via gene "hpaC" to (RXN-8506
+                                                                                                                                   RXN-9510
+                                                                                                                                   RXN-12446)
+Resolved unmatched enzyme name "phosphopantetheinyltransferase component of enterobactin synthase multienzyme complex" via gene "entD" to (ENTMULTI-RXN
+                                                                                                                                           RXN-19445
+                                                                                                                                           DHBAMPLIG-RXN
+                                                                                                                                           RXN0-6442
+                                                                                                                                           ENTF-RXN
+                                                                                                                                           RXN-15890
+                                                                                                                                           RXN-15891
+                                                                                                                                           ENTG-RXN
+                                                                                                                                           RXN-15889
+                                                                                                                                           ENTDB-RXN)
+Resolved unmatched enzyme name "acetylase for 30S ribosomal subunit protein S18" via gene "rimI" to (2.3.1.128-RXN
+                                                                                                     TUBULIN-N-ACETYLTRANSFERASE-RXN
+                                                                                                     HISTONE-ACETYLTRANSFERASE-RXN
+                                                                                                     RXN0-7160)
+Resolved unmatched enzyme name "alkyl hydroperoxide reductase, F52a subunit, FAD/NAD(P)-binding" via gene "ahpF" to (R4-RXN
+                                                                                                                     RXN-19953
+                                                                                                                     RXN-19954
+                                                                                                                     RXN-20692
+                                                                                                                     RXN-20691)
+20 40 60 80 100 120 140 160 180 20 20 20 40 60 20 20 20 20 40 20 20 20 20 20 20 20 20 20 40 20 40 20 
+104911744 bytes have been tenured, next gc will be global.
+See the documentation for variable EXCL:*GLOBAL-GC-BEHAVIOR* for more information.
+20 40 60 
+Imported 861 pubs from MetaCyc
+[Indexed IAI1BASE class DNAs of 8 frames yielding hash table of 12 entries]
+[Indexed IAI1BASE class Reactions of 2133 frames yielding hash table of 2387 entries]
+[Indexed IAI1BASE class Pathways of 1133 frames yielding hash table of 2348 entries]
+[Indexed IAI1BASE class Compounds of 6000 frames yielding hash table of 18313 entries]
+[Indexed IAI1BASE class Polynucleotides of 596 frames yielding hash table of 1114 entries]
+[Indexed IAI1BASE class Proteins of 5135 frames yielding hash table of 9184 entries]
+[Indexed IAI1BASE class Enzymatic-Reactions of 2494 frames yielding hash table of 3603 entries]
+[Indexed IAI1BASE class RNAs of 531 frames yielding hash table of 970 entries]
+[Indexed IAI1BASE class All-Genes of 4650 frames yielding hash table of 13183 entries]

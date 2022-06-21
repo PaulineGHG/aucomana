@@ -1,0 +1,14 @@
+query_seq_id	blastp_sseqid	blastp_evalue	blastp_bitscore	tblastn_sseqid	tblastn_evalue	tblastn_bitscore	tblastn_sstart	tblastn_send	exonerate_score	exonerate_hit_range	predicted_gene
+SF2761	UTI89_C4428	5.84e-32	121	CP000243.1	2.76e-30	118	4311424	4312389			
+SF4382											
+SF3718											
+SF2762	UTI89_C2595	2.10e-68	204	CP000243.1	8.96e-62	204	2560760	2560203			
+SF2586											
+SF2587											
+SF4380											
+SF2585											
+SF2588											
+SF0306	UTI89_C2536	1.84e-48	162	CP000243.1	4.08e-38	141	2503115	2504026			
+SF4373	UTI89_C1070	1.59e-43	140	CP000243.1	7.13e-40	140	1057277	1056807			
+SF4384	UTI89_C1366	1.35e-38	136	CP000243.1	1.66e-32	128	1301561	1302118			
+SF0633											

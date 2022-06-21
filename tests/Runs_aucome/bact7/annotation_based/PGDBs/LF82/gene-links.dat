@@ -1,0 +1,4550 @@
+#
+#  lf82cyc 1.0 Genes link table generated on Tue Jun 21, 2022
+#  All columns are separated by tab characters.
+#  Columns are: 
+#
+#  GENE-ID  EG#  b#  y-name  CGSC-ID  UniProt-ID  GENE-NAME  
+#
+#   GENE-ID      = Pathway Tools unique identifier for the gene
+#   UniProt-ID = Swiss-Prot identifier
+#   GENE-NAME    = Pathway Tools gene name
+#
+#
+LF82_365			
+LF82_0544		eco	
+LF82_1386		mqo	
+LF82_3614		yojI	
+LF82_T0897		glyW	
+LF82_0067		alkB	
+LF82_0032		ada	
+LF82_0098		apbE	
+LF82_1560		ompC	
+LF82_1826		rcsD	
+LF82_1824		rcsB	
+LF82_S0528		dsrA	
+LF82_1825		rcsC	
+LF82_0190		atoS	
+LF82_0187		atoC	
+LF82_0188		atoD	
+LF82_S2020		rsex	
+LF82_0185		atoA	
+LF82_0189		atoE	
+LF82_0186		atoB	
+LF82_T2120		serU	
+LF82_3037		yfaP	
+LF82_3038		yfaQ	
+LF82_3039		yfaS	
+LF82_3040		yfaT	
+LF82_3033		yfaA	
+LF82_T0169		asnT	
+LF82_0962		gyrA	
+LF82_2352		ubiG	
+LF82_3036		yfal	
+LF82_1511		nrdA	
+LF82_1512		nrdB	
+LF82_3035		yfae	
+LF82_T0172		asnW	
+LF82_1113		inaA	
+LF82_0871		glpQ	
+LF82_0873		glpT	
+LF82_0863		glpA	
+LF82_0864		glpB	
+LF82_0865		glpC	
+LF82_T0170		asnU	
+LF82_3034		yfad	
+LF82_3041		yfaU	
+LF82_3042		yfaV	
+LF82_3043		yfaW	
+LF82_3044		yfaX	
+LF82_S2186		ssrS	
+LF82_3045		yfaY	
+LF82_T0171		asnV	
+LF82_3046		yfaZ	
+LF82_1535		nudI	
+LF82_0057		ais	
+LF82_0137		arnB	
+LF82_0138		arnC	
+LF82_0136		arnA	
+LF82_S2066		ryeC	
+LF82_3048		yfbH	
+LF82_0139		arnT	
+LF82_3058		yfbW	
+LF82_3049		yfbJ	
+LF82_1675		pmrD	
+LF82_1314		menE	
+LF82_1312		menC	
+LF82_S2068		ryeE	
+LF82_1311		menB	
+LF82_3047		yfbB	
+LF82_1313		menD	
+LF82_1315		menF	
+LF82_0551		elaB	
+LF82_0550		elaA	
+LF82_1814		rbn	
+LF82_3050		yfbL	
+LF82_S1348		micF	
+LF82_3051		yfbM	
+LF82_1551		nuoN	
+LF82_T0132		argW	
+LF82_1550		nuoM	
+LF82_1549		nuoL	
+LF82_1548		nuoK	
+LF82_1547		nuoJ	
+LF82_T0063		alaX	
+LF82_1546		nuoI	
+LF82_1545		nuoH	
+LF82_1544		nuoG	
+LF82_1543		nuoF	
+LF82_1542		nuoE	
+LF82_1541		nuoC	
+LF82_T0062		alaW	
+LF82_1540		nuoB	
+LF82_1539		nuoA	
+LF82_1233		lrhA	
+LF82_3052		yfbQ	
+LF82_3053		yfbR	
+LF82_T2409		valU	
+LF82_3054		yfbS	
+LF82_3055		yfbT	
+LF82_3056		yfbU	
+LF82_3057		yfbV	
+LF82_0017		ackA	
+LF82_1763		pta	
+LF82_3060		yfcC	
+LF82_3061		yfcD	
+LF82_3062		yfcE	
+LF82_3063		yfcF	
+LF82_T2413		valY	
+LF82_3064		yfcG	
+LF82_0729		folX	
+LF82_3065		yfch	
+LF82_3066		yfcI	
+LF82_1008		hisP	
+LF82_1007		hisM	
+LF82_T1246		lysV	
+LF82_1009		hisQ	
+LF82_1006		hisJ	
+LF82_0129		argT	
+LF82_2354		ubiX	
+LF82_1778		purF	
+LF82_0393		cvpA	
+LF82_S2069		ryfA	
+LF82_0459		dedD	
+LF82_0723		folC	
+LF82_0011		accD	
+LF82_0458		dedA	
+LF82_T1191		leuX	
+LF82_2318		truA	
+LF82_2385		usg	
+LF82_1606		pdxB	
+LF82_S2070		ryfB	
+LF82_0717		flk	
+LF82_3067		yfcJ	
+LF82_0605		fabB	
+LF82_1360		mnmC	
+LF82_S2071		ryfC	
+LF82_3068		yfcL	
+LF82_3069		yfcM	
+LF82_3059		yfcA	
+LF82_R1997		rrfG	
+LF82_1316		mepA	
+LF82_0142		aroC	
+LF82_1724		prmB	
+LF82_3070		yfcN	
+LF82_R2004		rrlG	
+LF82_366			
+LF82_367			
+LF82_368			
+LF82_T0887		gltW	
+LF82_369			
+LF82_370			
+LF82_371			
+LF82_372			
+LF82_2133		sixA	
+LF82_0619		fadJ	
+LF82_R2013		rrsG	
+LF82_0618		fadI	
+LF82_3071		yfcZ	
+LF82_0621		fadL	
+LF82_S2072		ryfD	
+LF82_2406		vacJ	
+LF82_780			
+LF82_3072		yfdC	
+LF82_0526		dsdC	
+LF82_0527		dsdX	
+LF82_0525		dsdA	
+LF82_0559		emrY	
+LF82_0558		emrK	
+LF82_S1346		micA	
+LF82_0597		evgA	
+LF82_0598		evgS	
+LF82_3073		yfdE	
+LF82_3074		yfdV	
+LF82_T0126		argQ	
+LF82_1583		oxc	
+LF82_0731		frc	
+LF82_S1585		oxyS	
+LF82_3075		yfdX	
+LF82_3620		ypdI	
+LF82_T0176		aspT	
+LF82_3076		yfdY	
+LF82_1232		lpxP	
+LF82_T0135		argZ	
+LF82_3077		yfdZ	
+LF82_T1333		metV	
+LF82_3615		ypdA	
+LF82_3616		ypdB	
+LF82_3617		ypdC	
+LF82_0749		fryA	
+LF82_3618		ypdE	
+LF82_T0134		argY	
+LF82_3619		ypdF	
+LF82_0751		fryC	
+LF82_0750		fryB	
+LF82_0842		glk	
+LF82_3084		yfeO	
+LF82_T0131		argV	
+LF82_3623		ypeC	
+LF82_1363		mntH	
+LF82_1552		nupC	
+LF82_3078		yfeA	
+LF82_3079		yfeC	
+LF82_3080		yfeD	
+LF82_T2121		serV	
+LF82_0888		gltX	
+LF82_2442		xapR	
+LF82_2441		xapB	
+LF82_2440		xapA	
+LF82_3083		yfen	
+LF82_3085		yfeR	
+LF82_S0379		csrB	
+LF82_3081		yfeH	
+LF82_3622		ypeB	
+LF82_1196		ligA	
+LF82_3721		zipA	
+LF82_S0818		gcvB	
+LF82_0427		cysZ	
+LF82_0418		cysK	
+LF82_1769		ptsH	
+LF82_1770		ptsI	
+LF82_T1336		metZ	
+LF82_0357		crr	
+LF82_1609		pdxK	
+LF82_3082		yfeK	
+LF82_0419		cysM	
+LF82_0409		cysA	
+LF82_0426		cysW	
+LF82_T1334		metW	
+LF82_0425		cysU	
+LF82_0421		cysP	
+LF82_2355		ucpA	
+LF82_S2075		ryhA	
+LF82_1424		murQ	
+LF82_1423		murP	
+LF82_3086		yfex	
+LF82_3087		yfeY	
+LF82_3088		yfeZ	
+LF82_3621		ypeA	
+LF82_0081		amiA	
+LF82_0980		hemF	
+LF82_0594		eutR	
+LF82_S1568		omrA	
+LF82_0588		eutK	
+LF82_0589		eutL	
+LF82_0582		eutC	
+LF82_S1569		omrB	
+LF82_0581		eutB	
+LF82_0580		eutA	
+LF82_0586		eutH	
+LF82_0585		eutG	
+LF82_T0895		glyU	
+LF82_0587		eutJ	
+LF82_0584		eutE	
+LF82_0591		eutN	
+LF82_0590		eutM	
+LF82_0583		eutD	
+LF82_0596		eutT	
+LF82_0593		eutQ	
+LF82_0592		eutP	
+LF82_0595		eutS	
+LF82_1255		maeB	
+LF82_S2073		rygC	
+LF82_2215		talA	
+LF82_2271		tktB	
+LF82_3624		ypfG	
+LF82_1537		nudK	
+LF82_T1641		pheV	
+LF82_0042		aegA	
+LF82_1466		narQ	
+LF82_S0791		gadY	
+LF82_0026		acrD	
+LF82_3089		yffB	
+LF82_0440		dapE	
+LF82_3628		ypfN	
+LF82_S2074		rygE	
+LF82_3625		ypfH	
+LF82_3626		ypfI	
+LF82_T1100		ilex	
+LF82_3627		ypfJ	
+LF82_1775		purC	
+LF82_1499		nlpB	
+LF82_S1756		psrN	
+LF82_0437		dapA	
+LF82_0821		gcvR	
+LF82_S1915		rnpB	
+LF82_0209		bcp	
+LF82_3099		yfgO	
+LF82_3092		yfgC	
+LF82_3093		yfgD	
+LF82_T1335		metY	
+LF82_0968		hda	
+LF82_2384		uraA	
+LF82_S2076		ryhB	
+LF82_2383		upp	
+LF82_T1188		leuU	
+LF82_1782		purM	
+LF82_1783		purN	
+LF82_1707		ppk	
+LF82_1710		ppx	
+LF82_3094		yfgF	
+LF82_R1996		rrfF	
+LF82_373			
+LF82_3095		yfgH	
+LF82_3096		yfgI	
+LF82_0953		guaA	
+LF82_T2265		thrV	
+LF82_0954		guaB	
+LF82_2450		xseA	
+LF82_374			
+LF82_R1994		rrfD	
+LF82_375			
+LF82_376			
+LF82_377			
+LF82_0469		der	
+LF82_R2002		rrlD	
+LF82_3097		yfgl	
+LF82_3098		yfgM	
+LF82_1011		hisS	
+LF82_1130		ispG	
+LF82_T0060		alaU	
+LF82_3090		yfgA	
+LF82_3091		yfgB	
+LF82_1474		ndk	
+LF82_1599		pbpC	
+LF82_T1098		ileU	
+LF82_3107		yfhM	
+LF82_2180		sseA	
+LF82_2181		sseB	
+LF82_1612		pepB	
+LF82_R2011		rrsD	
+LF82_1124		iscX	
+LF82_0637		fdx	
+LF82_1034		hscA	
+LF82_1035		hscB	
+LF82_1120		iscA	
+LF82_1123		iscU	
+LF82_1122		iscS	
+LF82_1121		iscR	
+LF82_2308		trmJ	
+LF82_2207		suhB	
+LF82_S1831		rdlD	
+LF82_3108		yfhR	
+LF82_0368		csiE	
+LF82_0964		hcaT	
+LF82_T1729		proK	
+LF82_3629		yphA	
+LF82_3630		yphB	
+LF82_3631		yphC	
+LF82_3632		yphD	
+LF82_S2152		sokA	
+LF82_3633		yphE	
+LF82_3634		yphF	
+LF82_3635		yphG	
+LF82_S2112		selC	
+LF82_3636		yphH	
+LF82_0891		glyA	
+LF82_1012		hmp	
+LF82_0847		glnB	
+LF82_R2010		rrsC	
+LF82_3100		yfhA	
+LF82_3103		yfhG	
+LF82_3105		yfhK	
+LF82_1781		purL	
+LF82_T0885		gltU	
+LF82_781			
+LF82_3102		yfhD	
+LF82_2213		tadA	
+LF82_3101		yfhB	
+LF82_3104		yfhH	
+LF82_3106		yfhL	
+LF82_R2001		rrlC	
+LF82_0022		acpS	
+LF82_1608		pdxJ	
+LF82_1841		recO	
+LF82_R1993		rrfC	
+LF82_0576		era	
+LF82_1907		rnc	
+LF82_1177		lepB	
+LF82_1176		lepA	
+LF82_2018		rseC	
+LF82_2017		rseB	
+LF82_2016		rseA	
+LF82_1962		rpoE	
+LF82_1433		nadB	
+LF82_3110		yfiC	
+LF82_T2317		trpT	
+LF82_2175		srmB	
+LF82_3112		yfiE	
+LF82_0538		eamB	
+LF82_3111		yfiD	
+LF82_2382		ung	
+LF82_3113		yfiF	
+LF82_T0133		argX	
+LF82_782			
+LF82_2324		trxC	
+LF82_3119		yfiP	
+LF82_3120		yfiQ	
+LF82_1758		pssA	
+LF82_3116		yfiM	
+LF82_1161		kgtP	
+LF82_378			
+LF82_379			
+LF82_380			
+LF82_0318		clpB	
+LF82_3114		yfiH	
+LF82_1900		rluD	
+LF82_3118		yfiO	
+LF82_1808		raiA	
+LF82_1636		pheA	
+LF82_2338		tyrA	
+LF82_T1731		proM	
+LF82_0145		aroF	
+LF82_3115		yfiL	
+LF82_3121		yfiR	
+LF82_3117		yfiN	
+LF82_3109		yfiB	
+LF82_S2077		ryiA	
+LF82_1941		rplS	
+LF82_2305		trmD	
+LF82_1890		rimM	
+LF82_1983		rpsP	
+LF82_R2008		rrsA	
+LF82_0647		ffh	
+LF82_3637		ypjD	
+LF82_3122		yfjD	
+LF82_T1097		ilet	
+LF82_0925		grpE	
+LF82_1437		nadK	
+LF82_1840		recN	
+LF82_2144		smpA	
+LF82_3123		yfjF	
+LF82_3124		yfjG	
+LF82_T0059		alaT	
+LF82_2145		smpB	
+LF82_783			
+LF82_381			
+LF82_382			
+LF82_R1999		rrlA	
+LF82_383			
+LF82_784			
+LF82_384			
+LF82_385			
+LF82_R1991		rrfA	
+LF82_386			
+LF82_387			
+LF82_785			
+LF82_786			
+LF82_S2164		spf	
+LF82_388			
+LF82_389			
+LF82_390			
+LF82_391			
+LF82_S0380		csrC	
+LF82_392			
+LF82_393			
+LF82_787			
+LF82_394			
+LF82_395			
+LF82_396			
+LF82_397			
+LF82_R2009		rrsB	
+LF82_398			
+LF82_399			
+LF82_T2263		thrT	
+LF82_400			
+LF82_401			
+LF82_T0884		gltT	
+LF82_402			
+LF82_403			
+LF82_404			
+LF82_405			
+LF82_788			
+LF82_R2000		rrlB	
+LF82_789			
+LF82_790			
+LF82_406			
+LF82_791			
+LF82_R1992		rrfB	
+LF82_407			
+LF82_408			
+LF82_409			
+LF82_410			
+LF82_T2264		thrU	
+LF82_411			
+LF82_412			
+LF82_792			
+LF82_413			
+LF82_414			
+LF82_T2344		tyrU	
+LF82_415			
+LF82_0367		csiD	
+LF82_3127		ygaF	
+LF82_0782		gabD	
+LF82_0784		gabT	
+LF82_T0894		glyT	
+LF82_0783		gabP	
+LF82_0369		csiR	
+LF82_3131		ygaU	
+LF82_3640		yqae	
+LF82_3132		ygaV	
+LF82_3130		ygaP	
+LF82_2194		stpA	
+LF82_3133		ygaW	
+LF82_3125		ygac	
+LF82_3129		ygaM	
+LF82_416			
+LF82_417			
+LF82_R2012		rrsE	
+LF82_1517		nrdH	
+LF82_1518		nrdI	
+LF82_1514		nrdE	
+LF82_1515		nrdF	
+LF82_T0886		gltV	
+LF82_1735		proV	
+LF82_1736		proW	
+LF82_R1995		rrfE	
+LF82_1737		proX	
+LF82_R2003		rrlE	
+LF82_3134		ygaY	
+LF82_3135		ygaZ	
+LF82_3128		ygaH	
+LF82_1385		mprA	
+LF82_0553		emrA	
+LF82_0554		emrB	
+LF82_1237		luxS	
+LF82_0930		gshA	
+LF82_3638		yqaA	
+LF82_S2078		ryjA	
+LF82_0378		csrA	
+LF82_0058		alaS	
+LF82_1844		recX	
+LF82_1833		recA	
+LF82_T1640		pheU	
+LF82_3126		ygad	
+LF82_1356		mltB	
+LF82_2170		srlA	
+LF82_2173		srlE	
+LF82_2171		srlB	
+LF82_2172		srlD	
+LF82_T0896		glyV	
+LF82_0960		gutM	
+LF82_2174		srlR	
+LF82_0961		gutQ	
+LF82_1507		norR	
+LF82_1508		norV	
+LF82_1509		norW	
+LF82_T0898		glyX	
+LF82_1079		hypF	
+LF82_1072		hydN	
+LF82_0160		ascG	
+LF82_0159		ascF	
+LF82_T0899		glyY	
+LF82_0158		ascB	
+LF82_418			
+LF82_1071		hycI	
+LF82_1070		hych	
+LF82_1069		hycG	
+LF82_1068		hycF	
+LF82_1067		hycE	
+LF82_1066		hycD	
+LF82_1065		hycC	
+LF82_1064		hycB	
+LF82_S2079		ryjC	
+LF82_1063		hycA	
+LF82_1074		hypA	
+LF82_T1189		leuV	
+LF82_1075		hypB	
+LF82_1076		hypC	
+LF82_1077		hypD	
+LF82_1078		hypE	
+LF82_T1184		leuP	
+LF82_0649		fhlA	
+LF82_419			
+LF82_3136		ygbA	
+LF82_1428		mutS	
+LF82_1702		pphB	
+LF82_T1185		leuQ	
+LF82_3138		ygbi	
+LF82_3139		ygbJ	
+LF82_3140		ygbK	
+LF82_3141		ygbL	
+LF82_3142		ygbM	
+LF82_3143		ygbN	
+LF82_420			
+LF82_421			
+LF82_1965		rpoS	
+LF82_1501		nlpD	
+LF82_1602		pcm	
+LF82_2210		surE	
+LF82_2321		truD	
+LF82_1129		ispF	
+LF82_1127		ispD	
+LF82_0758		ftsB	
+LF82_3137		ygbE	
+LF82_0411		cysC	
+LF82_0420		cysN	
+LF82_0412		cysD	
+LF82_1083		iap	
+LF82_793			
+LF82_0415		cysH	
+LF82_0416		cysI	
+LF82_0417		cysJ	
+LF82_2179		sscR	
+LF82_3146		ygcN	
+LF82_3147		ygcO	
+LF82_3148		ygcP	
+LF82_3149		ygcQ	
+LF82_3150		ygcR	
+LF82_3151		ygcS	
+LF82_3152		ygcU	
+LF82_3153		ygcW	
+LF82_3643		yqcE	
+LF82_3144		ygcE	
+LF82_3145		ygcF	
+LF82_422			
+LF82_423			
+LF82_424			
+LF82_425			
+LF82_0562		eno	
+LF82_1796		pyrG	
+LF82_1282		mazG	
+LF82_0304		chpA	
+LF82_0305		chpR	
+LF82_1845		relA	
+LF82_2046		rumA	
+LF82_0205		barA	
+LF82_0957		gudD	
+LF82_0959		gudX	
+LF82_0958		gudP	
+LF82_3641		yqcA	
+LF82_2320		truC	
+LF82_3642		yqcC	
+LF82_2212		syd	
+LF82_1806		queF	
+LF82_3157		ygdH	
+LF82_2096		sdac	
+LF82_2095		sdaB	
+LF82_2449		xni	
+LF82_0772		fucO	
+LF82_0769		fucA	
+LF82_0773		fucP	
+LF82_0770		fucI	
+LF82_0771		fucK	
+LF82_0775		fucU	
+LF82_0774		fucR	
+LF82_3156		ygdE	
+LF82_3155		ygdD	
+LF82_0817		gcvA	
+LF82_3158		ygdI	
+LF82_0358		csdA	
+LF82_0359		csdE	
+LF82_3159		ygdL	
+LF82_1355		mltA	
+LF82_426			
+LF82_427			
+LF82_428			
+LF82_429			
+LF82_430			
+LF82_431			
+LF82_432			
+LF82_433			
+LF82_434			
+LF82_435			
+LF82_436			
+LF82_437			
+LF82_438			
+LF82_439			
+LF82_440			
+LF82_441			
+LF82_442			
+LF82_443			
+LF82_444			
+LF82_445			
+LF82_446			
+LF82_447			
+LF82_448			
+LF82_449			
+LF82_450			
+LF82_451			
+LF82_0083		amiC	
+LF82_0116		argA	
+LF82_1836		recD	
+LF82_1834		recB	
+LF82_1765		ptrA	
+LF82_1835		recC	
+LF82_1699		ppdC	
+LF82_3154		ygdB	
+LF82_1698		ppdB	
+LF82_1697		ppdA	
+LF82_2267		thyA	
+LF82_1195		lgt	
+LF82_1772		ptsP	
+LF82_1534		nudH	
+LF82_452			
+LF82_1425		mutH	
+LF82_3160		ygdQ	
+LF82_3161		ygdR	
+LF82_2219		tas	
+LF82_1220		lplT	
+LF82_0005		aas	
+LF82_0797		galR	
+LF82_1238		lysA	
+LF82_1242		lysR	
+LF82_3162		ygeA	
+LF82_0109		arae	
+LF82_1154		kduD	
+LF82_1155		kduI	
+LF82_3647		yqeF	
+LF82_3648		yqeG	
+LF82_3163		ygeR	
+LF82_2443		xdhA	
+LF82_2444		xdhB	
+LF82_2445		xdhC	
+LF82_3164		ygeV	
+LF82_3165		ygeW	
+LF82_3166		ygex	
+LF82_3167		ygeY	
+LF82_1080		hyuA	
+LF82_3644		yqeA	
+LF82_3645		yqeB	
+LF82_3646		yqeC	
+LF82_3171		ygfJ	
+LF82_3172		ygfK	
+LF82_2182		ssnA	
+LF82_3173		ygfM	
+LF82_2446		xdhD	
+LF82_3174		ygfO	
+LF82_0956		guad	
+LF82_3175		ygfQ	
+LF82_3176		ygfS	
+LF82_3177		ygfT	
+LF82_3178		ygfU	
+LF82_1088		idi	
+LF82_1243		lysS	
+LF82_1715		prfB	
+LF82_1839		recJ	
+LF82_0523		dsbC	
+LF82_2448		xerD	
+LF82_0677		fldB	
+LF82_3179		ygfX	
+LF82_3180		ygfY	
+LF82_3181		ygfZ	
+LF82_3649		yqfA	
+LF82_3650		yqfB	
+LF82_0225		bglA	
+LF82_0820		gcvP	
+LF82_0819		gcvH	
+LF82_0822		gcvT	
+LF82_2417		visC	
+LF82_2353		ubiH	
+LF82_1616		pepP	
+LF82_3169		ygfB	
+LF82_3720		zapA	
+LF82_3168		ygfA	
+LF82_2115		serA	
+LF82_1922		rpiA	
+LF82_3651		yqfE	
+LF82_0125		argP	
+LF82_453			
+LF82_3170		ygfI	
+LF82_3184		yggE	
+LF82_0124		argO	
+LF82_1400		mscS	
+LF82_0623		fbaA	
+LF82_1630		pgk	
+LF82_0573		epd	
+LF82_454			
+LF82_455			
+LF82_456			
+LF82_457			
+LF82_458			
+LF82_3182		yggC	
+LF82_3183		yggD	
+LF82_794			
+LF82_795			
+LF82_3190		yggP	
+LF82_0327		cmtA	
+LF82_0328		cmtB	
+LF82_459			
+LF82_2270		tktA	
+LF82_3185		yggG	
+LF82_2158		speB	
+LF82_460			
+LF82_2157		speA	
+LF82_3653		yqgB	
+LF82_3654		yqgC	
+LF82_3655		yqgD	
+LF82_1326		metK	
+LF82_0796		galP	
+LF82_3186		yggI	
+LF82_0561		endA	
+LF82_2025		rsmE	
+LF82_0931		gshB	
+LF82_3656		yqgE	
+LF82_3657		yqgF	
+LF82_3191		yggR	
+LF82_3192		yggS	
+LF82_3193		yggT	
+LF82_3194		yggU	
+LF82_1828		rdgB	
+LF82_3195		yggW	
+LF82_3188		yggM	
+LF82_0094		ansB	
+LF82_3189		yggN	
+LF82_3187		yggl	
+LF82_2307		trmI	
+LF82_1430		mutY	
+LF82_3196		yggX	
+LF82_1357		mltC	
+LF82_1553		nupG	
+LF82_2159		speC	
+LF82_3652		yqgA	
+LF82_461			
+LF82_462			
+LF82_463			
+LF82_464			
+LF82_465			
+LF82_466			
+LF82_467			
+LF82_468			
+LF82_469			
+LF82_470			
+LF82_471			
+LF82_472			
+LF82_473			
+LF82_474			
+LF82_3199		yghD	
+LF82_3200		yghE	
+LF82_475			
+LF82_476			
+LF82_477			
+LF82_478			
+LF82_479			
+LF82_480			
+LF82_481			
+LF82_482			
+LF82_3201		yghF	
+LF82_3202		yghG	
+LF82_1708		pppA	
+LF82_3203		yghJ	
+LF82_0828		glcA	
+LF82_0829		glcB	
+LF82_0834		glcG	
+LF82_0833		glcF	
+LF82_0832		glcE	
+LF82_0831		glcD	
+LF82_0830		glcC	
+LF82_3204		yghO	
+LF82_483			
+LF82_484			
+LF82_485			
+LF82_486			
+LF82_487			
+LF82_488			
+LF82_489			
+LF82_490			
+LF82_3205		yghQ	
+LF82_3206		yghR	
+LF82_3207		yghS	
+LF82_3208		yghT	
+LF82_1668		pitB	
+LF82_0937		gsp	
+LF82_3209		yghU	
+LF82_1061		hybG	
+LF82_1060		hybF	
+LF82_1059		hybE	
+LF82_1058		hybD	
+LF82_1057		hybC	
+LF82_1056		hybB	
+LF82_1055		hybA	
+LF82_1062		hybO	
+LF82_3210		yghW	
+LF82_3211		yghX	
+LF82_3212		yghZ	
+LF82_3658		yqhA	
+LF82_3197		yghA	
+LF82_0600		exbD	
+LF82_0599		exbB	
+LF82_1319		metC	
+LF82_3198		yghB	
+LF82_3659		yqhC	
+LF82_3660		yqhD	
+LF82_0493		dkgA	
+LF82_3661		yqhG	
+LF82_3662		yqhH	
+LF82_3219		ygiQ	
+LF82_491			
+LF82_492			
+LF82_493			
+LF82_494			
+LF82_495			
+LF82_496			
+LF82_497			
+LF82_2204		sufI	
+LF82_1672		plsC	
+LF82_1597		parC	
+LF82_3220		ygiS	
+LF82_3221		ygiV	
+LF82_3222		ygiW	
+LF82_1802		qseB	
+LF82_1803		qseC	
+LF82_3223		ygiZ	
+LF82_498			
+LF82_499			
+LF82_1283		mdaB	
+LF82_3218		ygiN	
+LF82_500			
+LF82_501			
+LF82_502			
+LF82_503			
+LF82_504			
+LF82_505			
+LF82_1598		parE	
+LF82_3663		yqiA	
+LF82_0343		cpdA	
+LF82_3664		yqiB	
+LF82_1532		nudF	
+LF82_2278		tolC	
+LF82_3213		ygiB	
+LF82_3214		ygiC	
+LF82_506			
+LF82_507			
+LF82_508			
+LF82_3215		ygiD	
+LF82_3731		zupT	
+LF82_509			
+LF82_510			
+LF82_511			
+LF82_512			
+LF82_1878		ribB	
+LF82_3665		yqiC	
+LF82_0840		glgS	
+LF82_3666		yqiJ	
+LF82_3667		yqiK	
+LF82_1849		rfae	
+LF82_0849		glnE	
+LF82_3216		ygiF	
+LF82_1046		htrG	
+LF82_0272		cca	
+LF82_0202		bacA	
+LF82_0722		folB	
+LF82_3217		ygiH	
+LF82_2332		ttdR	
+LF82_2330		ttdA	
+LF82_2331		ttdB	
+LF82_2333		ttdT	
+LF82_3224		ygjD	
+LF82_1988		rpsU	
+LF82_0505		dnaG	
+LF82_1961		rpoD	
+LF82_1411		mug	
+LF82_3675		yqjH	
+LF82_3676		yqjI	
+LF82_3225		ygjG	
+LF82_3226		ygjH	
+LF82_0541		ebgR	
+LF82_0539		ebgA	
+LF82_0540		ebgC	
+LF82_3227		ygjI	
+LF82_3228		ygjJ	
+LF82_3229		ygjK	
+LF82_0617		fadH	
+LF82_3230		ygjM	
+LF82_1893		rlmG	
+LF82_3231		ygjP	
+LF82_3232		ygjQ	
+LF82_3233		ygjR	
+LF82_0080		alx	
+LF82_2187		sstT	
+LF82_3234		ygjV	
+LF82_2400		uxaA	
+LF82_2402		uxac	
+LF82_0603		exuT	
+LF82_0602		exuR	
+LF82_3668		yqjA	
+LF82_3669		yqjB	
+LF82_3670		yqjC	
+LF82_3671		yqjD	
+LF82_3672		yqjE	
+LF82_3677		yqjK	
+LF82_3673		yqjF	
+LF82_3674		yqjG	
+LF82_3235		yhaH	
+LF82_3236		yhaJ	
+LF82_3237		yhaK	
+LF82_3238		yhal	
+LF82_3239		yhaM	
+LF82_3240		yhaO	
+LF82_2236		tdcG	
+LF82_2235		tdcF	
+LF82_2234		tdcE	
+LF82_2233		tdcD	
+LF82_2232		tdcC	
+LF82_2231		tdcB	
+LF82_2230		tdcA	
+LF82_2237		tdcR	
+LF82_0804		garK	
+LF82_0807		garR	
+LF82_0805		garL	
+LF82_0806		garP	
+LF82_0803		garD	
+LF82_2150		sohA	
+LF82_3241		yhaV	
+LF82_0049		agaR	
+LF82_1139		kbaZ	
+LF82_0051		agaV	
+LF82_0052		agaW	
+LF82_513			
+LF82_514			
+LF82_515			
+LF82_0050		agaS	
+LF82_1138		kbaY	
+LF82_0045		agaB	
+LF82_0046		agac	
+LF82_0047		agad	
+LF82_0048		agaI	
+LF82_3678		yral	
+LF82_3679		yraM	
+LF82_3680		yraN	
+LF82_0483		diaA	
+LF82_3681		yraP	
+LF82_3682		yraQ	
+LF82_3683		yraR	
+LF82_3245		yhbP	
+LF82_3246		yhbQ	
+LF82_3247		yhbS	
+LF82_3248		yhbT	
+LF82_3249		yhbU	
+LF82_3250		yhbV	
+LF82_3251		yhbW	
+LF82_1410		mtr	
+LF82_0457		dead	
+LF82_1503		nlpI	
+LF82_1678		pnp	
+LF82_1982		rpsO	
+LF82_2319		truB	
+LF82_1813		rbfA	
+LF82_1115		infB	
+LF82_1554		nusA	
+LF82_3242		yhbC	
+LF82_0121		argG	
+LF82_3252		yhbX	
+LF82_2107		secG	
+LF82_0843		glmM	
+LF82_0728		folP	
+LF82_0988		hflB	
+LF82_2007		rrmJ	
+LF82_3253		yhbY	
+LF82_0921		greA	
+LF82_0430		dacB	
+LF82_1557		obgE	
+LF82_3243		yhbE	
+LF82_1948		rpmA	
+LF82_1943		rplU	
+LF82_1126		ispB	
+LF82_2126		sfsB	
+LF82_1415		murA	
+LF82_3684		yrbA	
+LF82_3685		yrbB	
+LF82_3686		yrbC	
+LF82_3687		yrbD	
+LF82_3688		yrbE	
+LF82_3689		yrbF	
+LF82_3690		yrbG	
+LF82_1153		kdsD	
+LF82_1152		kdsC	
+LF82_3691		yrbK	
+LF82_1222		lptA	
+LF82_1223		lptB	
+LF82_1964		rpoN	
+LF82_1030		hpf	
+LF82_1771		ptsN	
+LF82_3244		yhbJ	
+LF82_1510		npr	
+LF82_3692		yrbL	
+LF82_1405		mtgA	
+LF82_0552		elbB	
+LF82_0115		arcB	
+LF82_3255		yhcC	
+LF82_0876		gltB	
+LF82_0877		gltD	
+LF82_3256		yhcG	
+LF82_3257		yhch	
+LF82_1449		nanK	
+LF82_1448		nanE	
+LF82_1451		nanT	
+LF82_1446		nanA	
+LF82_1450		nanR	
+LF82_2184		sspB	
+LF82_2183		sspA	
+LF82_1976		rpsI	
+LF82_1935		rplM	
+LF82_3258		yhcM	
+LF82_3254		yhcB	
+LF82_0462		degQ	
+LF82_0463		degS	
+LF82_1284		mdh	
+LF82_0127		argR	
+LF82_3259		yhcN	
+LF82_3260		yhcO	
+LF82_0002		aaeB	
+LF82_0001		aaeA	
+LF82_0004		aaex	
+LF82_0003		aaeR	
+LF82_2272		tldD	
+LF82_3266		yhdP	
+LF82_1910		rng	
+LF82_3261		yhdE	
+LF82_1396		mreD	
+LF82_1395		mreC	
+LF82_1394		mreB	
+LF82_0381		csrD	
+LF82_3262		yhdH	
+LF82_0009		accB	
+LF82_0010		accC	
+LF82_516			
+LF82_517			
+LF82_518			
+LF82_519			
+LF82_520			
+LF82_521			
+LF82_522			
+LF82_523			
+LF82_3267		yhdT	
+LF82_1596		panF	
+LF82_1723		prmA	
+LF82_0532		dusB	
+LF82_0667		fis	
+LF82_3263		yhdJ	
+LF82_3268		yhdU	
+LF82_0571		envR	
+LF82_0027		acrE	
+LF82_0028		acrF	
+LF82_3269		yhdV	
+LF82_3270		yhdW	
+LF82_3271		yhdX	
+LF82_3272		yhdY	
+LF82_3273		yhdZ	
+LF82_3693		yrdA	
+LF82_3694		yrdB	
+LF82_0144		aroE	
+LF82_1891		rimN	
+LF82_3695		yrdD	
+LF82_2143		smg	
+LF82_2142		smf	
+LF82_0460		def	
+LF82_0718		fmt	
+LF82_2022		rsmB	
+LF82_2302		trkA	
+LF82_1399		mscL	
+LF82_3264		yhdL	
+LF82_3724		zntR	
+LF82_3265		yhdN	
+LF82_1939		rplQ	
+LF82_1958		rpoA	
+LF82_1971		rpsD	
+LF82_1978		rpsK	
+LF82_1980		rpsM	
+LF82_1957		rpmJ	
+LF82_2109		secY	
+LF82_1937		rplO	
+LF82_1951		rpmD	
+LF82_1972		rpsE	
+LF82_1940		rplR	
+LF82_1930		rplF	
+LF82_1975		rpsH	
+LF82_1981		rpsN	
+LF82_1929		rplE	
+LF82_1946		rplX	
+LF82_1936		rplN	
+LF82_1984		rpsQ	
+LF82_1950		rpmC	
+LF82_1938		rplP	
+LF82_1970		rpsC	
+LF82_1944		rplV	
+LF82_1986		rpsS	
+LF82_1926		rplB	
+LF82_1945		rplW	
+LF82_1928		rplD	
+LF82_1927		rplC	
+LF82_1977		rpsJ	
+LF82_0939		gspB	
+LF82_0938		gspA	
+LF82_0940		gspC	
+LF82_0941		gspD	
+LF82_0942		gspE	
+LF82_0943		gspF	
+LF82_0944		gspG	
+LF82_0945		gspH	
+LF82_0946		gspI	
+LF82_0947		gspJ	
+LF82_0948		gspK	
+LF82_0949		gspL	
+LF82_0224		bfr	
+LF82_0223		bfd	
+LF82_0302		chiA	
+LF82_2335		tufB	
+LF82_0780		fusA	
+LF82_1974		rpsG	
+LF82_1979		rpsL	
+LF82_3274		yhel	
+LF82_3275		yheM	
+LF82_3276		yhen	
+LF82_3277		yheO	
+LF82_0674		fkpA	
+LF82_2141		slyX	
+LF82_2140		slyD	
+LF82_3281		yheV	
+LF82_1157		kefB	
+LF82_1160		kefG	
+LF82_3278		yhes	
+LF82_3279		yhet	
+LF82_3280		yheU	
+LF82_1721		prkB	
+LF82_3282		yhfA	
+LF82_0356		crp	
+LF82_3284		yhfK	
+LF82_0119		argD	
+LF82_1586		pabA	
+LF82_0656		fic	
+LF82_3283		yhfG	
+LF82_1703		ppiA	
+LF82_2326		tsgA	
+LF82_1495		nirB	
+LF82_1497		nirD	
+LF82_1496		nirC	
+LF82_0414		cysG	
+LF82_3285		yhfL	
+LF82_3286		yhfS	
+LF82_3287		yhfT	
+LF82_3288		yhfU	
+LF82_1664		php	
+LF82_3289		yhfW	
+LF82_3290		yhfX	
+LF82_3291		yhfY	
+LF82_3292		yhfZ	
+LF82_2316		trpS	
+LF82_0915		gph	
+LF82_1920		rpe	
+LF82_0435		dam	
+LF82_0436		damX	
+LF82_0141		aroB	
+LF82_0148		aroK	
+LF82_1020		hofQ	
+LF82_1019		hofP	
+LF82_1018		hofO	
+LF82_1017		hofN	
+LF82_1016		hofM	
+LF82_1390		mrcA	
+LF82_1531		nudE	
+LF82_3696		yrfF	
+LF82_3697		yrfG	
+LF82_1038		hslR	
+LF82_1037		hslO	
+LF82_3294		yhgE	
+LF82_1601		pck	
+LF82_0572		envZ	
+LF82_1564		ompR	
+LF82_0922		greB	
+LF82_3295		yhgF	
+LF82_0638		feoB	
+LF82_0639		feoC	
+LF82_3293		yhgA	
+LF82_0238		bioH	
+LF82_0912		gntX	
+LF82_0913		gntY	
+LF82_0910		gntT	
+LF82_1264		malQ	
+LF82_1263		malP	
+LF82_1266		malT	
+LF82_2041		rtcA	
+LF82_2042		rtcB	
+LF82_2043		rtcR	
+LF82_0872		glpR	
+LF82_0869		glpG	
+LF82_0867		glpE	
+LF82_0866		glpD	
+LF82_524			
+LF82_525			
+LF82_526			
+LF82_527			
+LF82_528			
+LF82_529			
+LF82_530			
+LF82_531			
+LF82_532			
+LF82_533			
+LF82_0839		glgP	
+LF82_0836		glgA	
+LF82_0838		glgC	
+LF82_0841		glgX	
+LF82_0837		glgB	
+LF82_0161		asd	
+LF82_3296		yhgN	
+LF82_0911		gntU	
+LF82_0908		gntK	
+LF82_0909		gntR	
+LF82_3307		yhhW	
+LF82_3308		yhhX	
+LF82_3309		yhhy	
+LF82_3310		yhhZ	
+LF82_3698		yrhA	
+LF82_3699		yrhB	
+LF82_0824		ggt	
+LF82_2259		thrA	
+LF82_3297		yhhA	
+LF82_2260		thrB	
+LF82_2363		ugpQ	
+LF82_2261		thrC	
+LF82_2361		ugpC	
+LF82_2465		yaaX	
+LF82_2362		ugpE	
+LF82_2359		ugpA	
+LF82_2459		yaaA	
+LF82_2360		ugpB	
+LF82_2462		yaaJ	
+LF82_1201		livF	
+LF82_2216		talB	
+LF82_1202		livG	
+LF82_1379		mog	
+LF82_1206		livM	
+LF82_2460		yaaH	
+LF82_1203		livH	
+LF82_2464		yaaW	
+LF82_1205		livK	
+LF82_2461		yaaI	
+LF82_3300		yhhK	
+LF82_0507		dnaK	
+LF82_1204		livJ	
+LF82_0506		dnaJ	
+LF82_1963		rpoH	
+LF82_1022		hokC	
+LF82_0766		ftsX	
+LF82_001			
+LF82_0759		ftsE	
+LF82_002			
+LF82_0767		ftsY	
+LF82_003			
+LF82_2024		rsmD	
+LF82_1484		nhaA	
+LF82_3301		yhhL	
+LF82_1486		nhaR	
+LF82_3302		yhhM	
+LF82_1987		rpsT	
+LF82_3303		yhhN	
+LF82_2466		yaaY	
+LF82_3723		zntA	
+LF82_1882		ribF	
+LF82_2132		sirA	
+LF82_1096		iles	
+LF82_3304		yhhQ	
+LF82_1235		lspA	
+LF82_0446		dcrB	
+LF82_0675		fkpB	
+LF82_3305		yhhS	
+LF82_1131		ispH	
+LF82_3306		yhhT	
+LF82_1885		rihC	
+LF82_0023		acpT	
+LF82_004			
+LF82_1488		nikA	
+LF82_0438		dapB	
+LF82_1489		nikB	
+LF82_0265		carA	
+LF82_1490		nikC	
+LF82_0266		carB	
+LF82_1491		nikD	
+LF82_746			
+LF82_0262		caiF	
+LF82_1492		nikE	
+LF82_0261		caiE	
+LF82_1493		nikR	
+LF82_0260		caiD	
+LF82_534			
+LF82_0259		caiC	
+LF82_535			
+LF82_0258		caiB	
+LF82_796			
+LF82_0257		caiA	
+LF82_536			
+LF82_0263		caiT	
+LF82_537			
+LF82_0669		fixA	
+LF82_797			
+LF82_0670		fixB	
+LF82_538			
+LF82_0671		fixC	
+LF82_3299		yhhJ	
+LF82_0672		fixX	
+LF82_1812		rbbA	
+LF82_2463		yaaU	
+LF82_3312		yhiI	
+LF82_1159		kefF	
+LF82_1158		kefC	
+LF82_3313		yhiM	
+LF82_0721		folA	
+LF82_3314		yhiN	
+LF82_005			
+LF82_1667		pitA	
+LF82_006			
+LF82_2388		uspB	
+LF82_0097		apaH	
+LF82_2387		uspA	
+LF82_0096		apaG	
+LF82_3315		yhiP	
+LF82_1163		ksgA	
+LF82_3316		yhiQ	
+LF82_1605		pdxA	
+LF82_1722		prlC	
+LF82_3317		yhiR	
+LF82_2209		surA	
+LF82_0914		gor	
+LF82_539			
+LF82_1112		imp	
+LF82_0152		arsC	
+LF82_0492		djlA	
+LF82_2136		slp	
+LF82_1897		rluA	
+LF82_0448		dctR	
+LF82_0987		hepA	
+LF82_540			
+LF82_1683		polB	
+LF82_541			
+LF82_0108		arad	
+LF82_542			
+LF82_0105		araA	
+LF82_0106		araB	
+LF82_543			
+LF82_544			
+LF82_0107		arac	
+LF82_545			
+LF82_007			
+LF82_008			
+LF82_546			
+LF82_2467		yabi	
+LF82_547			
+LF82_2257		thiQ	
+LF82_3311		yhiD	
+LF82_2256		thiP	
+LF82_0970		hdeB	
+LF82_0969		hdeA	
+LF82_2229		tbpA	
+LF82_0971		hdeD	
+LF82_0788		gadE	
+LF82_2130		sgrR	
+LF82_1296		mdtE	
+LF82_1297		mdtF	
+LF82_1181		leuD	
+LF82_0789		gadW	
+LF82_1180		leuC	
+LF82_0790		gadX	
+LF82_1179		leuB	
+LF82_0785		gadA	
+LF82_1178		leuA	
+LF82_3318		yhjA	
+LF82_1183		leuO	
+LF82_2300		treF	
+LF82_1108		ilvI	
+LF82_3319		yhjB	
+LF82_1107		ilvH	
+LF82_3320		yhjC	
+LF82_0745		fruR	
+LF82_3321		yhjD	
+LF82_1389		mraZ	
+LF82_3322		yhjE	
+LF82_1387		mraW	
+LF82_3323		yhjG	
+LF82_0762		ftsL	
+LF82_3324		yhjH	
+LF82_0760		ftsI	
+LF82_1142		kdgK	
+LF82_1419		murE	
+LF82_3325		yhjJ	
+LF82_1420		murF	
+LF82_0447		dctA	
+LF82_1388		mraY	
+LF82_3326		yhjK	
+LF82_1418		murD	
+LF82_0213		bcsC	
+LF82_0765		ftsW	
+LF82_0217		bcsZ	
+LF82_1421		murG	
+LF82_0212		bcsB	
+LF82_1417		murC	
+LF82_0211		bcsA	
+LF82_0456		ddlB	
+LF82_3327		yhjQ	
+LF82_0764		ftsQ	
+LF82_3328		yhjR	
+LF82_0757		ftsA	
+LF82_0214		bcsE	
+LF82_0768		ftsZ	
+LF82_0215		bcsF	
+LF82_1226		lpxC	
+LF82_0216		bcsG	
+LF82_2108		secM	
+LF82_1175		ldrD	
+LF82_3329		yhjV	
+LF82_2102		secA	
+LF82_0519		dppF	
+LF82_0518		dppD	
+LF82_1429		mutT	
+LF82_0517		dppC	
+LF82_2470		yacG	
+LF82_0516		dppB	
+LF82_2469		yacF	
+LF82_0515		dppA	
+LF82_0332		coae	
+LF82_0575		eptB	
+LF82_0955		guac	
+LF82_1015		hofC	
+LF82_548			
+LF82_1014		hofB	
+LF82_549			
+LF82_1700		ppdD	
+LF82_1434		nadC	
+LF82_550			
+LF82_0086		ampD	
+LF82_551			
+LF82_0087		ampE	
+LF82_552			
+LF82_0151		aroP	
+LF82_3330		yhjX	
+LF82_009			
+LF82_3331		yhjY	
+LF82_010			
+LF82_2214		tag	
+LF82_747			
+LF82_3334		yiac	
+LF82_011			
+LF82_0240		bisC	
+LF82_748			
+LF82_3335		yiad	
+LF82_012			
+LF82_0826		ghrB	
+LF82_1604		pdhR	
+LF82_3336		yiaF	
+LF82_0014		aceE	
+LF82_3337		yiaG	
+LF82_0015		aceF	
+LF82_0370		cspA	
+LF82_1218		lpd	
+LF82_1021		hokA	
+LF82_2471		yach	
+LF82_0893		glyS	
+LF82_0019		acnB	
+LF82_0892		glyQ	
+LF82_2472		yacL	
+LF82_553			
+LF82_2160		speD	
+LF82_2431		wech	
+LF82_2161		speE	
+LF82_3332		yiaA	
+LF82_2468		yacC	
+LF82_3333		yiaB	
+LF82_0383		cueO	
+LF82_2454		xylB	
+LF82_0815		gcd	
+LF82_2453		xylA	
+LF82_1031		hpt	
+LF82_2455		xylF	
+LF82_0264		can	
+LF82_2456		xylG	
+LF82_2477		yadG	
+LF82_2457		xylH	
+LF82_2458		xylR	
+LF82_2478		yadH	
+LF82_0208		bax	
+LF82_2479		yadI	
+LF82_1265		malS	
+LF82_2476		yadE	
+LF82_0200		avtA	
+LF82_1594		panD	
+LF82_3700		ysaA	
+LF82_2475		yadD	
+LF82_3338		yiaJ	
+LF82_1593		panC	
+LF82_3339		yiaK	
+LF82_1592		panB	
+LF82_3340		yial	
+LF82_2474		yadC	
+LF82_554			
+LF82_2480		yadK	
+LF82_3341		yiaM	
+LF82_2481		yadL	
+LF82_3342		yiaN	
+LF82_2482		yadM	
+LF82_3343		yiaO	
+LF82_1045		htrE	
+LF82_1250		lyx	
+LF82_0545		ecpD	
+LF82_2128		sgbH	
+LF82_2483		yadN	
+LF82_0726		folK	
+LF82_2129		sgbU	
+LF82_1603		pcnB	
+LF82_2127		sgbE	
+LF82_0065		aldB	
+LF82_2473		yadB	
+LF82_0495		dksA	
+LF82_555			
+LF82_2125		sfsA	
+LF82_1198		ligT	
+LF82_3344		yiaY	
+LF82_1033		hrpB	
+LF82_2111		selB	
+LF82_1391		mrcB	
+LF82_2110		selA	
+LF82_3346		yibF	
+LF82_3347		yibH	
+LF82_0652		fhuC	
+LF82_3348		yibi	
+LF82_0653		fhuD	
+LF82_1406		mtlA	
+LF82_0651		fhuB	
+LF82_0983		hemL	
+LF82_1407		mtlD	
+LF82_0314		clcA	
+LF82_2484		yadR	
+LF82_1408		mtlR	
+LF82_2485		yadS	
+LF82_0252		btuF	
+LF82_798			
+LF82_1409		mtn	
+LF82_3350		yibL	
+LF82_0478		dgt	
+LF82_556			
+LF82_0461		degP	
+LF82_0281		cdaR	
+LF82_557			
+LF82_2488		yaeH	
+LF82_0439		dapD	
+LF82_1208		lldP	
+LF82_0848		glnD	
+LF82_1274		map	
+LF82_1209		lldR	
+LF82_1969		rpsB	
+LF82_1207		lldD	
+LF82_2325		tsf	
+LF82_3349		yibK	
+LF82_1797		pyrH	
+LF82_0413		cysE	
+LF82_0740		frr	
+LF82_0919		gpsA	
+LF82_0535		dxr	
+LF82_2103		secB	
+LF82_1132		ispU	
+LF82_0928		grxC	
+LF82_0284		cdsA	
+LF82_3351		yibN	
+LF82_2019		rseP	
+LF82_0917		gpmM	
+LF82_2493		yaet	
+LF82_0570		envC	
+LF82_2134		skp	
+LF82_3352		yibQ	
+LF82_1227		lpxD	
+LF82_3345		yibD	
+LF82_0612		fabZ	
+LF82_2238		tdh	
+LF82_1140		kbl	
+LF82_1224		lpxA	
+LF82_1848		rfad	
+LF82_1850		rfaF	
+LF82_1225		lpxB	
+LF82_1847		rfac	
+LF82_1912		rnhB	
+LF82_558			
+LF82_0504		dnae	
+LF82_559			
+LF82_0008		accA	
+LF82_560			
+LF82_1172		ldcC	
+LF82_561			
+LF82_2492		yaeR	
+LF82_562			
+LF82_2269		tilS	
+LF82_563			
+LF82_1919		rof	
+LF82_1853		rfaP	
+LF82_2490		yaeP	
+LF82_1851		rfaG	
+LF82_2491		yaeQ	
+LF82_1854		rfaQ	
+LF82_2489		yaeJ	
+LF82_2419		waaA	
+LF82_1502		nlpE	
+LF82_0331		coad	
+LF82_2487		yaeF	
+LF82_1427		mutM	
+LF82_1734		proS	
+LF82_1954		rpmG	
+LF82_2486		yaeB	
+LF82_1949		rpmB	
+LF82_1827		rcsF	
+LF82_3362		yicR	
+LF82_1329		metQ	
+LF82_0470		dfp	
+LF82_1324		metI	
+LF82_0534		dut	
+LF82_2135		slmA	
+LF82_1328		metN	
+LF82_1794		pyrE	
+LF82_0901		gmhB	
+LF82_1921		rph	
+LF82_0494		dkgB	
+LF82_3353		yicC	
+LF82_2494		yafC	
+LF82_0487		dinD	
+LF82_2495		yafD	
+LF82_3355		yicG	
+LF82_2496		yafE	
+LF82_1197		ligB	
+LF82_1358		mltD	
+LF82_799			
+LF82_0862		gloB	
+LF82_0902		gmk	
+LF82_2504		yafS	
+LF82_1966		rpoZ	
+LF82_1911		rnhA	
+LF82_2165		spoT	
+LF82_0509		dnaQ	
+LF82_2306		trmH	
+LF82_2505		yafT	
+LF82_1838		recG	
+LF82_013			
+LF82_0883		gltS	
+LF82_014			
+LF82_3354		yicE	
+LF82_015			
+LF82_3356		yich	
+LF82_016			
+LF82_564			
+LF82_017			
+LF82_018			
+LF82_565			
+LF82_019			
+LF82_020			
+LF82_566			
+LF82_021			
+LF82_567			
+LF82_022			
+LF82_568			
+LF82_023			
+LF82_569			
+LF82_024			
+LF82_570			
+LF82_025			
+LF82_571			
+LF82_026			
+LF82_3357		yicI	
+LF82_027			
+LF82_3358		yicJ	
+LF82_028			
+LF82_572			
+LF82_029			
+LF82_573			
+LF82_030			
+LF82_574			
+LF82_031			
+LF82_3359		yicL	
+LF82_032			
+LF82_1498		nlpA	
+LF82_033			
+LF82_3363		yicS	
+LF82_034			
+LF82_1477		nepI	
+LF82_035			
+LF82_3360		yicN	
+LF82_036			
+LF82_3361		yicO	
+LF82_749			
+LF82_0034		ade	
+LF82_037			
+LF82_2367		uhpT	
+LF82_038			
+LF82_2366		uhpC	
+LF82_039			
+LF82_2365		uhpB	
+LF82_2506		yafV	
+LF82_2364		uhpA	
+LF82_1135		ivy	
+LF82_575			
+LF82_0616		fadE	
+LF82_1110		ilvN	
+LF82_1217		lpcA	
+LF82_1102		ilvB	
+LF82_1134		ivbL	
+LF82_2497		yafJ	
+LF82_0555		emrD	
+LF82_2498		yafK	
+LF82_3369		yidF	
+LF82_3370		yidG	
+LF82_2499		yafL	
+LF82_3371		yidH	
+LF82_3372		yidJ	
+LF82_2500		yafM	
+LF82_3373		yidK	
+LF82_3374		yidL	
+LF82_1194		lfhA	
+LF82_3368		yidE	
+LF82_1085		ibpB	
+LF82_1169		lafU	
+LF82_1084		ibpA	
+LF82_3375		yidQ	
+LF82_0486		dinB	
+LF82_3376		yidR	
+LF82_2501		yafN	
+LF82_0270		cbrA	
+LF82_2502		yafO	
+LF82_2503		yafP	
+LF82_0476		dgoT	
+LF82_040			
+LF82_0473		dgoD	
+LF82_1717		prfH	
+LF82_0472		dgoA	
+LF82_1613		pepD	
+LF82_0474		dgoK	
+LF82_0475		dgoR	
+LF82_0920		gpt	
+LF82_576			
+LF82_0741		frsA	
+LF82_3364		yidA	
+LF82_0355		crl	
+LF82_3365		yidB	
+LF82_1658		phoE	
+LF82_0963		gyrB	
+LF82_1727		proB	
+LF82_1837		recF	
+LF82_0508		dnaN	
+LF82_1726		proA	
+LF82_0501		dnaA	
+LF82_041			
+LF82_042			
+LF82_1955		rpmH	
+LF82_043			
+LF82_1914		rnpA	
+LF82_044			
+LF82_3367		yidD	
+LF82_045			
+LF82_3366		yidC	
+LF82_1361		mnmE	
+LF82_750			
+LF82_2274		tnaA	
+LF82_046			
+LF82_2275		tnaB	
+LF82_751			
+LF82_1303		mdtL	
+LF82_2507		yagU	
+LF82_3377		yidZ	
+LF82_3519		ykgJ	
+LF82_3378		yieE	
+LF82_2508		yagV	
+LF82_3379		yieF	
+LF82_3380		yieG	
+LF82_2509		yagW	
+LF82_3381		yieH	
+LF82_0271		cbrB	
+LF82_2510		yagX	
+LF82_3382		yieK	
+LF82_3383		yiel	
+LF82_1281		matC	
+LF82_0229		bglH	
+LF82_1280		matB	
+LF82_0226		bglB	
+LF82_1279		matA	
+LF82_0227		bglF	
+LF82_0228		bglG	
+LF82_047			
+LF82_1663		phoU	
+LF82_1760		pstB	
+LF82_3520		ykgM	
+LF82_1759		pstA	
+LF82_048			
+LF82_1761		pstC	
+LF82_049			
+LF82_1762		pstS	
+LF82_050			
+LF82_0844		glmS	
+LF82_051			
+LF82_0845		glmU	
+LF82_052			
+LF82_0193		atpC	
+LF82_053			
+LF82_0194		atpD	
+LF82_054			
+LF82_0197		atpG	
+LF82_3510		ykgA	
+LF82_0191		atpA	
+LF82_055			
+LF82_0198		atpH	
+LF82_3511		ykgB	
+LF82_0196		atpF	
+LF82_3518		ykgI	
+LF82_0195		atpE	
+LF82_3512		ykgC	
+LF82_0192		atpB	
+LF82_3513		ykgD	
+LF82_0199		atpI	
+LF82_3514		ykgE	
+LF82_3515		ykgF	
+LF82_0827		gidB	
+LF82_3516		ykgG	
+LF82_1362		mnmG	
+LF82_3517		ykgH	
+LF82_1352		mioC	
+LF82_0167		asnC	
+LF82_056			
+LF82_0165		asnA	
+LF82_2416		viaA	
+LF82_057			
+LF82_1811		ravA	
+LF82_1164		kup	
+LF82_058			
+LF82_1818		rbsD	
+LF82_059			
+LF82_1815		rbsA	
+LF82_060			
+LF82_1817		rbsC	
+LF82_0219		betA	
+LF82_1816		rbsB	
+LF82_1819		rbsK	
+LF82_0220		betB	
+LF82_1820		rbsR	
+LF82_0221		betI	
+LF82_1042		hsrA	
+LF82_0222		betT	
+LF82_3384		yieP	
+LF82_2511		yahA	
+LF82_0972		hdfR	
+LF82_2512		yahB	
+LF82_3386		yifE	
+LF82_2513		yahC	
+LF82_3385		yifB	
+LF82_1106		ilvG	
+LF82_2514		yahD	
+LF82_1109		ilvM	
+LF82_2515		yahE	
+LF82_1105		ilvE	
+LF82_2516		yahF	
+LF82_1104		ilvD	
+LF82_2517		yahG	
+LF82_1101		ilvA	
+LF82_2518		yahI	
+LF82_1111		ilvY	
+LF82_2519		yahJ	
+LF82_1103		ilvC	
+LF82_2520		yahK	
+LF82_1705		ppiC	
+LF82_752			
+LF82_1846		rep	
+LF82_2521		yahN	
+LF82_0918		gpp	
+LF82_2522		yahO	
+LF82_1871		rhlB	
+LF82_1743		prpR	
+LF82_2322		trxA	
+LF82_1739		prpB	
+LF82_1873		rho	
+LF82_1740		prpC	
+LF82_1855		rfe	
+LF82_1741		prpD	
+LF82_2439		wzzE	
+LF82_1742		prpE	
+LF82_1859		rffE	
+LF82_0339		codB	
+LF82_1858		rffD	
+LF82_0338		codA	
+LF82_1860		rffG	
+LF82_1165		lacA	
+LF82_1861		rffH	
+LF82_1167		lacY	
+LF82_1857		rffC	
+LF82_1168		lacZ	
+LF82_1856		rffA	
+LF82_1166		lacI	
+LF82_2437		wzxE	
+LF82_2526		yaiL	
+LF82_1863		rffT	
+LF82_0738		frmB	
+LF82_2438		wzyE	
+LF82_0737		frmA	
+LF82_1862		rffM	
+LF82_0739		frmR	
+LF82_3387		yifK	
+LF82_2527		yaiO	
+LF82_0163		aslB	
+LF82_061			
+LF82_0162		aslA	
+LF82_2528		yaiP	
+LF82_0986		hemY	
+LF82_2529		yaiS	
+LF82_0985		hemX	
+LF82_2225		tauA	
+LF82_0978		hemD	
+LF82_2226		tauB	
+LF82_0977		hemC	
+LF82_2227		tauC	
+LF82_0395		cyaA	
+LF82_2228		tauD	
+LF82_0396		cyaY	
+LF82_0976		hemB	
+LF82_3388		yifL	
+LF82_062			
+LF82_0441		dapF	
+LF82_2530		yaiV	
+LF82_3389		yigA	
+LF82_0089		ampH	
+LF82_2447		xerC	
+LF82_753			
+LF82_3390		yigB	
+LF82_2091		sbmA	
+LF82_2398		uvrD	
+LF82_2531		yaiW	
+LF82_577			
+LF82_2532		yaiY	
+LF82_3391		yigE	
+LF82_2533		yaiZ	
+LF82_0342		corA	
+LF82_0455		ddlA	
+LF82_578			
+LF82_1119		iraP	
+LF82_579			
+LF82_1656		phoA	
+LF82_1810		rarD	
+LF82_1747		psiF	
+LF82_3392		yigI	
+LF82_0041		adrA	
+LF82_1728		proC	
+LF82_1669		pldA	
+LF82_2525		yaiI	
+LF82_1842		recQ	
+LF82_0149		aroL	
+LF82_1876		rhtC	
+LF82_2523		yaiA	
+LF82_1875		rhtB	
+LF82_0150		aroM	
+LF82_1670		pldB	
+LF82_2524		yaiE	
+LF82_3393		yigl	
+LF82_3521		ykiA	
+LF82_3394		yigM	
+LF82_1829		rdgC	
+LF82_1330		metR	
+LF82_1256		mak	
+LF82_1320		metE	
+LF82_0113		araJ	
+LF82_580			
+LF82_2089		sbcC	
+LF82_581			
+LF82_2090		sbcD	
+LF82_582			
+LF82_1657		phoB	
+LF82_583			
+LF82_584			
+LF82_1662		phoR	
+LF82_585			
+LF82_0245		brnQ	
+LF82_586			
+LF82_1738		proY	
+LF82_587			
+LF82_1269		malZ	
+LF82_588			
+LF82_0020		acpH	
+LF82_589			
+LF82_1804		queA	
+LF82_590			
+LF82_2245		tgt	
+LF82_591			
+LF82_2534		yajC	
+LF82_592			
+LF82_2104		secD	
+LF82_593			
+LF82_2106		secF	
+LF82_594			
+LF82_2535		yajD	
+LF82_595			
+LF82_2328		tsx	
+LF82_3701		ysgA	
+LF82_2537		yajI	
+LF82_2357		udp	
+LF82_1519		nrdR	
+LF82_596			
+LF82_1880		ribD	
+LF82_1881		ribE	
+LF82_597			
+LF82_1555		nusB	
+LF82_598			
+LF82_2254		thiL	
+LF82_599			
+LF82_1633		pgpA	
+LF82_600			
+LF82_2539		yajO	
+LF82_0536		dxs	
+LF82_601			
+LF82_1125		ispA	
+LF82_1904		rmuC	
+LF82_2451		xseB	
+LF82_2350		ubiE	
+LF82_2252		thiI	
+LF82_3395		yigP	
+LF82_2538		yajL	
+LF82_2347		ubiB	
+LF82_1595		panE	
+LF82_2220		tatA	
+LF82_2540		yajQ	
+LF82_2221		tatB	
+LF82_2541		yajR	
+LF82_2222		tatC	
+LF82_0408		cyoE	
+LF82_2223		tatD	
+LF82_0407		cyoD	
+LF82_1852		rfaH	
+LF82_0406		cyoC	
+LF82_2349		ubiD	
+LF82_0405		cyoB	
+LF82_0736		fre	
+LF82_0404		cyoA	
+LF82_0613		fadA	
+LF82_0088		ampG	
+LF82_0614		fadB	
+LF82_2536		yajG	
+LF82_1617		pepQ	
+LF82_0243		bolA	
+LF82_3396		yigZ	
+LF82_754			
+LF82_2303		trkH	
+LF82_2268		tig	
+LF82_0981		hemG	
+LF82_1371		mobB	
+LF82_0319		clpP	
+LF82_1370		mobA	
+LF82_0321		clpX	
+LF82_3398		yihD	
+LF82_1216		lon	
+LF82_1832		rdoA	
+LF82_1048		hupB	
+LF82_0521		dsbA	
+LF82_1706		ppiD	
+LF82_3399		yihF	
+LF82_2555		ybaV	
+LF82_3400		yihG	
+LF82_2556		ybaW	
+LF82_1682		polA	
+LF82_1805		queC	
+LF82_3397		yihA	
+LF82_2544		ybae	
+LF82_3401		yihI	
+LF82_0340		cof	
+LF82_0984		hemN	
+LF82_2550		ybaO	
+LF82_0850		glnG	
+LF82_1285		mdlA	
+LF82_0853		glnL	
+LF82_1286		mdlB	
+LF82_0846		glnA	
+LF82_0852		glnK	
+LF82_2337		typA	
+LF82_0090		amtB	
+LF82_602			
+LF82_2243		tesB	
+LF82_603			
+LF82_2557		ybaY	
+LF82_604			
+LF82_2558		ybaZ	
+LF82_605			
+LF82_2542		ybaA	
+LF82_606			
+LF82_3522		ylaB	
+LF82_607			
+LF82_3523		ylac	
+LF82_608			
+LF82_1251		maa	
+LF82_609			
+LF82_0994		hha	
+LF82_610			
+LF82_2545		ybaJ	
+LF82_611			
+LF82_0025		acrB	
+LF82_612			
+LF82_0024		acrA	
+LF82_613			
+LF82_0029		acrR	
+LF82_614			
+LF82_1156		kefA	
+LF82_615			
+LF82_2548		ybaM	
+LF82_3402		yihX	
+LF82_1720		priC	
+LF82_2549		ybaN	
+LF82_3403		yihy	
+LF82_0103		apt	
+LF82_0530		dtd	
+LF82_0511		dnaX	
+LF82_2543		ybaB	
+LF82_3404		yiiD	
+LF82_1843		recR	
+LF82_616			
+LF82_1043		htpG	
+LF82_617			
+LF82_0040		adk	
+LF82_618			
+LF82_0982		hemH	
+LF82_0044		aes	
+LF82_619			
+LF82_0936		gsk	
+LF82_3405		yiiE	
+LF82_2547		ybal	
+LF82_0628		fdhE	
+LF82_0635		fdoI	
+LF82_0754		fsr	
+LF82_0634		fdoH	
+LF82_2386		ushA	
+LF82_0633		fdoG	
+LF82_063			
+LF82_0627		fdhD	
+LF82_064			
+LF82_620			
+LF82_2546		ybaK	
+LF82_621			
+LF82_2551		ybaP	
+LF82_1867		rhaM	
+LF82_2552		ybaQ	
+LF82_1866		rhad	
+LF82_0341		copA	
+LF82_1864		rhaA	
+LF82_2553		ybaS	
+LF82_1865		rhaB	
+LF82_2554		ybaT	
+LF82_1869		rhaS	
+LF82_0384		cueR	
+LF82_1868		rhaR	
+LF82_065			
+LF82_2561		ybbJ	
+LF82_1870		rhaT	
+LF82_1800		qmcA	
+LF82_2562		ybbL	
+LF82_2147		sodA	
+LF82_2563		ybbM	
+LF82_1144		kdgT	
+LF82_2564		ybbN	
+LF82_3406		yiiM	
+LF82_2565		ybbO	
+LF82_0347		cpxA	
+LF82_2242		tesA	
+LF82_0349		cpxR	
+LF82_2559		ybbA	
+LF82_0348		cpxP	
+LF82_2566		ybbP	
+LF82_0657		fieF	
+LF82_2560		ybbB	
+LF82_0073		allS	
+LF82_1619		pfkA	
+LF82_0068		allA	
+LF82_0072		allR	
+LF82_2093		sbp	
+LF82_0816		gcl	
+LF82_0283		cdh	
+LF82_1073		hyi	
+LF82_2292		tpiA	
+LF82_0890		glxR	
+LF82_3407		yiiQ	
+LF82_2567		ybbW	
+LF82_3408		yiiR	
+LF82_0069		allB	
+LF82_3409		yiiS	
+LF82_2390		uspD	
+LF82_2568		ybbY	
+LF82_0730		fpr	
+LF82_0874		glpX	
+LF82_0889		glxK	
+LF82_0870		glpK	
+LF82_0868		glpF	
+LF82_3524		ylbA	
+LF82_3410		yiiU	
+LF82_1989		rraA	
+LF82_0070		allC	
+LF82_1310		menA	
+LF82_0071		allD	
+LF82_0636		fdrA	
+LF82_1039		hslU	
+LF82_3525		ylbE	
+LF82_1040		hslV	
+LF82_3526		ylbF	
+LF82_0763		ftsN	
+LF82_2569		ybcF	
+LF82_0428		cytR	
+LF82_1780		purK	
+LF82_1718		priA	
+LF82_1777		purE	
+LF82_066			
+LF82_1952		rpmE	
+LF82_1228		lpxH	
+LF82_3411		yiiX	
+LF82_1704		ppiB	
+LF82_1325		metJ	
+LF82_0423		cysS	
+LF82_2571		ybcI	
+LF82_1318		metB	
+LF82_2572		ybcJ	
+LF82_0724		folD	
+LF82_1327		metL	
+LF82_067			
+LF82_068			
+LF82_622			
+LF82_069			
+LF82_070			
+LF82_623			
+LF82_2581		ybcY	
+LF82_624			
+LF82_1565		ompT	
+LF82_625			
+LF82_2570		ybch	
+LF82_626			
+LF82_1480		nfrA	
+LF82_1321		metF	
+LF82_1481		nfrB	
+LF82_1137		katG	
+LF82_0390		cusS	
+LF82_3413		yijE	
+LF82_0389		cusR	
+LF82_3414		yijF	
+LF82_0387		cusC	
+LF82_0835		gldA	
+LF82_0388		cusF	
+LF82_0753		fsaB	
+LF82_1767		ptsA	
+LF82_0386		cusB	
+LF82_0747		frwC	
+LF82_0385		cusA	
+LF82_0746		frwB	
+LF82_1624		pflD	
+LF82_1637		pheP	
+LF82_1623		pflC	
+LF82_0748		frwD	
+LF82_2585		ybdG	
+LF82_3415		yijO	
+LF82_1483		nfsB	
+LF82_3416		yijP	
+LF82_2584		ybdF	
+LF82_1696		ppc	
+LF82_2587		ybdJ	
+LF82_0120		argE	
+LF82_2588		ybdK	
+LF82_0118		argC	
+LF82_1024		hokE	
+LF82_0117		argB	
+LF82_071			
+LF82_0122		argH	
+LF82_755			
+LF82_2027		rspA	
+LF82_0566		entD	
+LF82_627			
+LF82_0640		fepA	
+LF82_1584		oxyR	
+LF82_0646		fes	
+LF82_2193		sthA	
+LF82_2593		ybdZ	
+LF82_628			
+LF82_0568		entF	
+LF82_629			
+LF82_0644		fepE	
+LF82_0611		fabR	
+LF82_0642		fepC	
+LF82_3412		yijD	
+LF82_0645		fepG	
+LF82_2304		trmA	
+LF82_0643		fepD	
+LF82_0248		btuB	
+LF82_0569		entS	
+LF82_1422		muri	
+LF82_0641		fepB	
+LF82_1416		murB	
+LF82_0565		entC	
+LF82_0239		birA	
+LF82_0567		entE	
+LF82_0330		coaA	
+LF82_0564		entB	
+LF82_2334		tufB	
+LF82_0563		entA	
+LF82_2105		secE	
+LF82_1556		nusG	
+LF82_2582		ybdB	
+LF82_1933		rplK	
+LF82_0382		cstA	
+LF82_1925		rplA	
+LF82_2583		ybdD	
+LF82_1932		rplJ	
+LF82_2586		ybdH	
+LF82_1934		rplL	
+LF82_2589		ybdL	
+LF82_1959		rpoB	
+LF82_2590		ybdM	
+LF82_1960		rpoC	
+LF82_2591		ybdN	
+LF82_2251		thiH	
+LF82_2592		ybdO	
+LF82_2250		thiG	
+LF82_0524		dsbG	
+LF82_2258		thiS	
+LF82_0054		ahpC	
+LF82_2249		thiF	
+LF82_0055		ahpF	
+LF82_2248		thiE	
+LF82_2393		uspG	
+LF82_2246		thiC	
+LF82_1913		rnk	
+LF82_2015		rsd	
+LF82_1905		rna	
+LF82_1530		nudC	
+LF82_0312		citT	
+LF82_0979		hemE	
+LF82_0311		citG	
+LF82_1478		nfi	
+LF82_0313		citX	
+LF82_3419		yjaG	
+LF82_1047		hupA	
+LF82_0310		citF	
+LF82_3420		yjaH	
+LF82_0309		citE	
+LF82_0308		citD	
+LF82_3728		zraP	
+LF82_0307		citC	
+LF82_3730		zraS	
+LF82_0514		dpiB	
+LF82_3729		zraR	
+LF82_0513		dpiA	
+LF82_1776		purD	
+LF82_0451		dcuC	
+LF82_1779		purH	
+LF82_1590		pagP	
+LF82_3417		yjaA	
+LF82_0374		cspE	
+LF82_3418		yjaB	
+LF82_0350		crcB	
+LF82_2598		ybeM	
+LF82_1317		metA	
+LF82_2224		tatE	
+LF82_1199		lipA	
+LF82_0013		aceB	
+LF82_1200		lipB	
+LF82_0012		aceA	
+LF82_2596		ybeD	
+LF82_0016		aceK	
+LF82_0429		dacA	
+LF82_1087		iclR	
+LF82_1895		rlpA	
+LF82_1323		metH	
+LF82_1393		mrdB	
+LF82_630			
+LF82_1392		mrdA	
+LF82_631			
+LF82_2594		ybeA	
+LF82_2595		ybeB	
+LF82_3421		yjbB	
+LF82_1614		pepE	
+LF82_0334		cobC	
+LF82_632			
+LF82_1435		nadD	
+LF82_633			
+LF82_1025		holA	
+LF82_634			
+LF82_1896		rlpB	
+LF82_635			
+LF82_1186		leuS	
+LF82_636			
+LF82_2597		ybel	
+LF82_637			
+LF82_1883		rihA	
+LF82_638			
+LF82_0881		gltL	
+LF82_1902		rluF	
+LF82_0880		gltK	
+LF82_1589		pagB	
+LF82_0879		gltJ	
+LF82_1239		lysC	
+LF82_0878		gltI	
+LF82_1629		pgi	
+LF82_073			
+LF82_3422		yjbE	
+LF82_1210		lnt	
+LF82_3423		yjbF	
+LF82_2599		ybex	
+LF82_3424		yjbG	
+LF82_2600		ybeY	
+LF82_3425		yjbH	
+LF82_2601		ybeZ	
+LF82_1345		miaB	
+LF82_639			
+LF82_2351		ubiF	
+LF82_1746		psiE	
+LF82_0166		asnB	
+LF82_1259		malG	
+LF82_1442		nagD	
+LF82_1258		malF	
+LF82_1441		nagC	
+LF82_1257		malE	
+LF82_1439		nagA	
+LF82_1261		malK	
+LF82_1440		nagB	
+LF82_1170		lamB	
+LF82_1443		nagE	
+LF82_1262		malM	
+LF82_074			
+LF82_2348		ubiC	
+LF82_756			
+LF82_2346		ubiA	
+LF82_075			
+LF82_1671		plsB	
+LF82_076			
+LF82_0471		dgkA	
+LF82_077			
+LF82_1193		lexA	
+LF82_078			
+LF82_0488		dinF	
+LF82_079			
+LF82_3426		yjbJ	
+LF82_080			
+LF82_081			
+LF82_3732		zur	
+LF82_0856		glnS	
+LF82_0531		dusA	
+LF82_2605		ybfM	
+LF82_1754		pspG	
+LF82_2606		ybfN	
+LF82_1801		qor	
+LF82_0779		fur	
+LF82_0502		dnaB	
+LF82_0676		fldA	
+LF82_0074		alr	
+LF82_2603		ybfE	
+LF82_2339		tyrB	
+LF82_2604		ybfF	
+LF82_640			
+LF82_2114		seqA	
+LF82_641			
+LF82_1632		pgm	
+LF82_642			
+LF82_1688		potE	
+LF82_643			
+LF82_2162		speF	
+LF82_644			
+LF82_1149		kdpE	
+LF82_645			
+LF82_1148		kdpD	
+LF82_646			
+LF82_1147		kdpC	
+LF82_647			
+LF82_1146		kdpB	
+LF82_648			
+LF82_1145		kdpA	
+LF82_0099		aphA	
+LF82_2602		ybfA	
+LF82_2607		ybgA	
+LF82_3427		yjbQ	
+LF82_1665		phr	
+LF82_3428		yjbR	
+LF82_2611		ybgH	
+LF82_2395		uvrA	
+LF82_2178		ssb	
+LF82_2612		ybgI	
+LF82_3429		yjcB	
+LF82_3430		yjcC	
+LF82_2613		ybgJ	
+LF82_2156		soxS	
+LF82_2155		soxR	
+LF82_2614		ybgK	
+LF82_3431		yjcD	
+LF82_3432		yjcE	
+LF82_2615		ybgl	
+LF82_649			
+LF82_1475		nei	
+LF82_650			
+LF82_651			
+LF82_0007		abrB	
+LF82_0031		actP	
+LF82_3433		yjch	
+LF82_082			
+LF82_0030		acs	
+LF82_1520		nrfA	
+LF82_0875		gltA	
+LF82_1521		nrfB	
+LF82_1522		nrfC	
+LF82_2099		sdhC	
+LF82_1523		nrfD	
+LF82_2100		sdhD	
+LF82_1524		nrfE	
+LF82_2097		sdhA	
+LF82_1525		nrfF	
+LF82_2098		sdhB	
+LF82_1526		nrfG	
+LF82_0882		gltP	
+LF82_2195		sucA	
+LF82_3434		yjcO	
+LF82_2196		sucB	
+LF82_652			
+LF82_2197		sucC	
+LF82_653			
+LF82_2198		sucD	
+LF82_654			
+LF82_083			
+LF82_655			
+LF82_084			
+LF82_656			
+LF82_0400		cydA	
+LF82_0629		fdhF	
+LF82_0401		cydB	
+LF82_1306		mdtP	
+LF82_2617		ybgT	
+LF82_1305		mdtO	
+LF82_2609		ybgE	
+LF82_1304		mdtN	
+LF82_2608		ybgC	
+LF82_657			
+LF82_2279		tolQ	
+LF82_3435		yjcS	
+LF82_0079		alsK	
+LF82_2280		tolR	
+LF82_0078		alsE	
+LF82_2276		tolA	
+LF82_2277		tolB	
+LF82_0077		alsC	
+LF82_1591		pal	
+LF82_0075		alsA	
+LF82_2610		ybgF	
+LF82_0076		alsB	
+LF82_1432		nadA	
+LF82_1924		rpiR	
+LF82_1681		pnuC	
+LF82_1923		rpiB	
+LF82_3722		zitB	
+LF82_3447		yjdP	
+LF82_2616		ybgS	
+LF82_1655		phnP	
+LF82_0146		aroG	
+LF82_1654		phnO	
+LF82_0916		gpmA	
+LF82_1653		phnN	
+LF82_0795		galM	
+LF82_1652		phnM	
+LF82_0794		galK	
+LF82_1651		phnL	
+LF82_0799		galT	
+LF82_1650		phnK	
+LF82_0792		galE	
+LF82_1649		phnJ	
+LF82_1376		modF	
+LF82_1648		phnI	
+LF82_1375		modE	
+LF82_1647		phnH	
+LF82_2636		ybhT	
+LF82_1646		phnG	
+LF82_1372		modA	
+LF82_1645		phnF	
+LF82_1373		modB	
+LF82_1644		phnE	
+LF82_1374		modC	
+LF82_1643		phnD	
+LF82_2618		ybhA	
+LF82_1642		phnC	
+LF82_1631		pgl	
+LF82_3445		yjdN	
+LF82_2621		ybhD	
+LF82_3444		yjdM	
+LF82_2624		ybhH	
+LF82_3437		yjdA	
+LF82_2625		ybhI	
+LF82_3436		yjcZ	
+LF82_1732		proP	
+LF82_2626		ybhJ	
+LF82_0207		basS	
+LF82_2620		ybhC	
+LF82_0206		basR	
+LF82_2619		ybhB	
+LF82_0574		eptA	
+LF82_085		GipA	
+LF82_0038		adiC	
+LF82_0233		bioA	
+LF82_0039		adiY	
+LF82_0234		bioB	
+LF82_0037		adiA	
+LF82_0237		bioF	
+LF82_1309		melR	
+LF82_0235		bioC	
+LF82_1308		melA	
+LF82_0236		bioD	
+LF82_3439		yjdF	
+LF82_086			
+LF82_2396		uvrB	
+LF82_0777		fumB	
+LF82_2627		ybhK	
+LF82_0450		dcuB	
+LF82_1365		moaA	
+LF82_0452		dcuR	
+LF82_1366		moaB	
+LF82_0453		dcuS	
+LF82_1367		moac	
+LF82_3440		yjdI	
+LF82_1368		moad	
+LF82_3441		yjdJ	
+LF82_1369		moae	
+LF82_3442		yjdK	
+LF82_2628		ybhL	
+LF82_3446		yjdO	
+LF82_2629		ybhM	
+LF82_1245		lysU	
+LF82_2630		ybhN	
+LF82_3443		yjdL	
+LF82_2631		ybhO	
+LF82_0254		cadA	
+LF82_2632		ybhP	
+LF82_0255		cadB	
+LF82_2633		ybhQ	
+LF82_0256		cadC	
+LF82_2634		ybhR	
+LF82_800			
+LF82_2635		ybhS	
+LF82_658			
+LF82_2622		ybhF	
+LF82_659			
+LF82_2623		ybhG	
+LF82_660			
+LF82_2639		ybiH	
+LF82_661			
+LF82_1872		rhlE	
+LF82_662			
+LF82_0489		dinG	
+LF82_663			
+LF82_2637		ybiB	
+LF82_664			
+LF82_2638		ybiC	
+LF82_801			
+LF82_665			
+LF82_2641		ybiJ	
+LF82_666			
+LF82_2640		ybiI	
+LF82_667			
+LF82_2651		ybiX	
+LF82_668			
+LF82_0668		fiu	
+LF82_669			
+LF82_2642		ybiM	
+LF82_802			
+LF82_670			
+LF82_2643		ybiN	
+LF82_671			
+LF82_672			
+LF82_2644		ybiO	
+LF82_673			
+LF82_0855		glnQ	
+LF82_674			
+LF82_0854		glnP	
+LF82_675			
+LF82_0851		glnH	
+LF82_087			
+LF82_676			
+LF82_0520		dps	
+LF82_1874		rhtA	
+LF82_677			
+LF82_1567		ompX	
+LF82_678			
+LF82_2645		ybiP	
+LF82_1364		mntR	
+LF82_679			
+LF82_2646		ybiR	
+LF82_680			
+LF82_2647		ybiS	
+LF82_681			
+LF82_2648		ybiT	
+LF82_803			
+LF82_2649		ybiV	
+LF82_682			
+LF82_2650		ybiW	
+LF82_683			
+LF82_2652		ybiY	
+LF82_684			
+LF82_0752		fsaA	
+LF82_685			
+LF82_1378		moeB	
+LF82_686			
+LF82_1377		moeA	
+LF82_1081		iaaA	
+LF82_687			
+LF82_0932		gsiA	
+LF82_688			
+LF82_0933		gsiB	
+LF82_689			
+LF82_0934		gsiC	
+LF82_690			
+LF82_0935		gsiD	
+LF82_691			
+LF82_3528		yliE	
+LF82_692			
+LF82_3529		yliF	
+LF82_693			
+LF82_3530		yliG	
+LF82_694			
+LF82_0246		bssR	
+LF82_695			
+LF82_3531		yliI	
+LF82_804			
+LF82_3532		yliJ	
+LF82_805			
+LF82_0431		dacC	
+LF82_696			
+LF82_0468		deoR	
+LF82_697			
+LF82_2656		ybjG	
+LF82_806			
+LF82_0326		cmr	
+LF82_807			
+LF82_2657		ybjH	
+LF82_2658		ybjI	
+LF82_808			
+LF82_2659		ybjJ	
+LF82_2660		ybjK	
+LF82_698			
+LF82_2661		ybjL	
+LF82_809			
+LF82_2662		ybjM	
+LF82_699			
+LF82_0926		grxA	
+LF82_700			
+LF82_2653		ybjC	
+LF82_810			
+LF82_1482		nfsA	
+LF82_701			
+LF82_1888		rimK	
+LF82_702			
+LF82_2663		ybjN	
+LF82_703			
+LF82_1689		potF	
+LF82_1690		potG	
+LF82_3438		yjdC	
+LF82_1691		potH	
+LF82_0491		dipZ	
+LF82_1692		potI	
+LF82_0391		cutA	
+LF82_2664		ybjO	
+LF82_0449		dcuA	
+LF82_2047		rumB	
+LF82_0173		aspA	
+LF82_0154		artJ	
+LF82_0781		fxsA	
+LF82_0155		artM	
+LF82_3450		yjeH	
+LF82_0157		artQ	
+LF82_0924		groS	
+LF82_0153		artI	
+LF82_0923		groL	
+LF82_0156		artP	
+LF82_3451		yjeI	
+LF82_2665		ybjP	
+LF82_2666		ybjQ	
+LF82_3452		yjeJ	
+LF82_2667		ybjR	
+LF82_3453		yjeK	
+LF82_2668		ybjS	
+LF82_0549		efp	
+LF82_2669		ybjT	
+LF82_0542		ecnA	
+LF82_1236		ltae	
+LF82_0543		ecnB	
+LF82_1694		poxB	
+LF82_2206		sugE	
+LF82_0967		hcr	
+LF82_0241		blc	
+LF82_0966		hcp	
+LF82_0085		ampC	
+LF82_0735		frdD	
+LF82_2655		ybjE	
+LF82_0734		frdC	
+LF82_0104		aqpZ	
+LF82_0733		frdB	
+LF82_2654		ybjD	
+LF82_0732		frdA	
+LF82_1693		poxA	
+LF82_2670		ybjX	
+LF82_3454		yjeM	
+LF82_1252		macA	
+LF82_3455		yjeP	
+LF82_1253		macB	
+LF82_1745		psd	
+LF82_2021		rsgA	
+LF82_0373		cspD	
+LF82_1575		orn	
+LF82_3456		yjes	
+LF82_0320		clpS	
+LF82_3449		yjeF	
+LF82_3448		yjeE	
+LF82_0317		clpA	
+LF82_0082		amiB	
+LF82_088			
+LF82_1426		mutL	
+LF82_1344		miaA	
+LF82_089			
+LF82_0993		hfq	
+LF82_0992		hflX	
+LF82_090			
+LF82_0991		hflK	
+LF82_0989		hflC	
+LF82_091			
+LF82_3457		yjet	
+LF82_1773		purA	
+LF82_092			
+LF82_1527		nsrR	
+LF82_1916		rnr	
+LF82_093			
+LF82_1892		rlmB	
+LF82_1114		infA	
+LF82_3460		yjfI	
+LF82_0006		aat	
+LF82_3461		yjfJ	
+LF82_0402		cydC	
+LF82_3462		yjfK	
+LF82_0403		cydD	
+LF82_3463		yjfL	
+LF82_2323		trxB	
+LF82_3464		yjfM	
+LF82_1234		lrp	
+LF82_3458		yjfC	
+LF82_0761		ftsK	
+LF82_0056		aidB	
+LF82_1211		lolA	
+LF82_3465		yjfN	
+LF82_1809		rarA	
+LF82_3466		yjfO	
+LF82_2118		serS	
+LF82_0497		dmsA	
+LF82_3467		yjfP	
+LF82_0498		dmsB	
+LF82_2379		ulaR	
+LF82_0499		dmsC	
+LF82_2378		ulaG	
+LF82_2671		ycac	
+LF82_2672		ycad	
+LF82_2372		ulaA	
+LF82_1621		pflA	
+LF82_2373		ulaB	
+LF82_1622		pflB	
+LF82_2374		ulac	
+LF82_0720		focA	
+LF82_2675		ycaO	
+LF82_2375		ulad	
+LF82_2676		ycaP	
+LF82_2376		ulae	
+LF82_2117		serC	
+LF82_0140		aroA	
+LF82_2377		ulaF	
+LF82_2674		ycal	
+LF82_3468		yjfY	
+LF82_0323		cmk	
+LF82_1968		rpsA	
+LF82_1973		rpsF	
+LF82_1095		ihfB	
+LF82_2673		ycaI	
+LF82_1719		priB	
+LF82_1398		msbA	
+LF82_1229		lpxK	
+LF82_1985		rpsR	
+LF82_2677		ycaQ	
+LF82_2678		ycaR	
+LF82_1931		rplI	
+LF82_1151		kdsB	
+LF82_704			
+LF82_2682		ycbJ	
+LF82_705			
+LF82_2680		ycbC	
+LF82_706			
+LF82_2146		smtA	
+LF82_707			
+LF82_1414		mukF	
+LF82_708			
+LF82_1413		mukE	
+LF82_709			
+LF82_1412		mukB	
+LF82_710			
+LF82_2679		ycbB	
+LF82_711			
+LF82_2683		ycbK	
+LF82_3702		ytfA	
+LF82_2684		ycbL	
+LF82_3703		ytfB	
+LF82_0174		aspC	
+LF82_0673		fklB	
+LF82_1561		ompF	
+LF82_0399		cycA	
+LF82_0168		asnS	
+LF82_3704		ytfE	
+LF82_1677		pncB	
+LF82_3705		ytfF	
+LF82_1615		pepN	
+LF82_3706		ytfG	
+LF82_2189		ssuB	
+LF82_3707		ytfH	
+LF82_2190		ssuC	
+LF82_0344		cpdB	
+LF82_2191		ssuD	
+LF82_0422		cysQ	
+LF82_2188		ssuA	
+LF82_3708		ytfJ	
+LF82_2192		ssuE	
+LF82_3709		ytfK	
+LF82_1793		pyrD	
+LF82_3710		ytfL	
+LF82_2685		ycbW	
+LF82_1401		msrA	
+LF82_2686		ycbX	
+LF82_3711		ytfM	
+LF82_1894		rlmL	
+LF82_3712		ytfN	
+LF82_2394		uup	
+LF82_3713		ytfP	
+LF82_1711		pqiA	
+LF82_712			
+LF82_1712		pqiB	
+LF82_1695		ppa	
+LF82_3533		ymbA	
+LF82_3714		ytfQ	
+LF82_1903		rmf	
+LF82_3715		ytfR	
+LF82_0604		fabA	
+LF82_3716		ytfT	
+LF82_2687		ycbZ	
+LF82_3459		yjfF	
+LF82_2681		ycbG	
+LF82_0625		fbp	
+LF82_1559		ompA	
+LF82_1383		mpl	
+LF82_2208		sulA	
+LF82_3469		yjgA	
+LF82_2211		sxy	
+LF82_1674		pmbA	
+LF82_2693		yccS	
+LF82_0398		cybC	
+LF82_2689		yccF	
+LF82_1516		nrdG	
+LF82_0974		helD	
+LF82_1513		nrdD	
+LF82_1342		mgsA	
+LF82_2299		treC	
+LF82_2694		yccT	
+LF82_2298		treB	
+LF82_2695		yccU	
+LF82_2301		treR	
+LF82_1041		hspQ	
+LF82_1343		mgtA	
+LF82_2696		yccW	
+LF82_3471		yjgF	
+LF82_2697		yccX	
+LF82_1798		pyri	
+LF82_2691		yccK	
+LF82_1791		pyrB	
+LF82_2688		yccA	
+LF82_1799		pyrL	
+LF82_757			
+LF82_713			
+LF82_1049		hyaA	
+LF82_714			
+LF82_1050		hyaB	
+LF82_715			
+LF82_1051		hyac	
+LF82_716			
+LF82_1052		hyad	
+LF82_717			
+LF82_1053		hyae	
+LF82_3472		yjgK	
+LF82_1054		hyaF	
+LF82_0123		argI	
+LF82_0102		appC	
+LF82_1990		rraB	
+LF82_0101		appB	
+LF82_3473		yjgM	
+LF82_0100		appA	
+LF82_718			
+LF82_0376		cspH	
+LF82_2407		valS	
+LF82_0375		cspG	
+LF82_1027		holC	
+LF82_3534		ymcE	
+LF82_1611		pepA	
+LF82_0906		gnsA	
+LF82_3474		yjgP	
+LF82_2692		yccM	
+LF82_3475		yjgQ	
+LF82_2288		torS	
+LF82_3476		yjgR	
+LF82_094			
+LF82_1092		idnR	
+LF82_095			
+LF82_1093		idnT	
+LF82_096			
+LF82_1091		idnO	
+LF82_097			
+LF82_1089		idnD	
+LF82_758			
+LF82_1090		idnK	
+LF82_098			
+LF82_3470		yjgB	
+LF82_099			
+LF82_811			
+LF82_100			
+LF82_719			
+LF82_101			
+LF82_720			
+LF82_102			
+LF82_3477		yjhS	
+LF82_103			
+LF82_3478		yjhT	
+LF82_759			
+LF82_1447		nanC	
+LF82_104			
+LF82_721			
+LF82_105			
+LF82_0659		fimB	
+LF82_106			
+LF82_107			
+LF82_0662		fimE	
+LF82_108			
+LF82_0658		fimA	
+LF82_109			
+LF82_0666		fimI	
+LF82_110			
+LF82_0660		fimC	
+LF82_111			
+LF82_0661		fimD	
+LF82_112			
+LF82_0663		fimF	
+LF82_760			
+LF82_761			
+LF82_0664		fimG	
+LF82_113			
+LF82_114			
+LF82_0665		fimH	
+LF82_115			
+LF82_116			
+LF82_2403		uxuA	
+LF82_117			
+LF82_118			
+LF82_2404		uxuB	
+LF82_119			
+LF82_2405		uxuR	
+LF82_120			
+LF82_3480		yjiD	
+LF82_722			
+LF82_121			
+LF82_723			
+LF82_122			
+LF82_724			
+LF82_123			
+LF82_725			
+LF82_124			
+LF82_726			
+LF82_125			
+LF82_727			
+LF82_126			
+LF82_728			
+LF82_762			
+LF82_729			
+LF82_763			
+LF82_730			
+LF82_731			
+LF82_127			
+LF82_732			
+LF82_128			
+LF82_733			
+LF82_129			
+LF82_734			
+LF82_130			
+LF82_735			
+LF82_131			
+LF82_3481		yjiE	
+LF82_132			
+LF82_1082		iadA	
+LF82_3482		yjiG	
+LF82_133			
+LF82_3483		yjiH	
+LF82_134			
+LF82_1162		kptA	
+LF82_135			
+LF82_3484		yjiJ	
+LF82_136			
+LF82_3485		yjiK	
+LF82_812			
+LF82_137			
+LF82_3486		yjiL	
+LF82_138			
+LF82_3487		yjiM	
+LF82_139			
+LF82_3488		yjiN	
+LF82_764			
+LF82_3489		yjiP	
+LF82_140			
+LF82_736			
+LF82_765			
+LF82_3490		yjiW	
+LF82_2289		torT	
+LF82_737			
+LF82_2287		torR	
+LF82_738			
+LF82_2285		torC	
+LF82_739			
+LF82_2284		torA	
+LF82_740			
+LF82_2286		torD	
+LF82_3479		yjiA	
+LF82_0269		cbpM	
+LF82_3491		yjiX	
+LF82_0268		cbpA	
+LF82_3492		yjiY	
+LF82_0053		agp	
+LF82_2327		tsr	
+LF82_741			
+LF82_2690		yccJ	
+LF82_742			
+LF82_743			
+LF82_2432		wrbA	
+LF82_744			
+LF82_3538		ymdF	
+LF82_3499		yjjM	
+LF82_2055		rutG	
+LF82_3500		yjjN	
+LF82_2054		rutF	
+LF82_1287		mdoB	
+LF82_2053		rutE	
+LF82_2052		rutD	
+LF82_3493		yjjA	
+LF82_2051		rutC	
+LF82_0503		dnac	
+LF82_2050		rutB	
+LF82_0510		dnaT	
+LF82_2049		rutA	
+LF82_3494		yjjB	
+LF82_2056		rutR	
+LF82_1787		putA	
+LF82_3501		yjjP	
+LF82_1788		putP	
+LF82_0548		efeU	
+LF82_3502		yjjQ	
+LF82_2699		ycdO	
+LF82_0230		bglJ	
+LF82_2698		ycdB	
+LF82_0655		fhuF	
+LF82_1659		phoH	
+LF82_3508		yjjZ	
+LF82_1628		pgad	
+LF82_2023		rsmC	
+LF82_1627		pgac	
+LF82_1028		holD	
+LF82_1626		pgaB	
+LF82_1886		rimI	
+LF82_1625		pgaA	
+LF82_3495		yjjG	
+LF82_2700		ycdT	
+LF82_0825		ghrA	
+LF82_1716		prfC	
+LF82_2701		ycdX	
+LF82_1580		osmY	
+LF82_2702		ycdY	
+LF82_2703		ycdZ	
+LF82_3717		ytjA	
+LF82_0366		csgG	
+LF82_3503		yjjU	
+LF82_0365		csgF	
+LF82_3504		yjjV	
+LF82_0364		csgE	
+LF82_3505		yjjW	
+LF82_0363		csgD	
+LF82_3496		yjjI	
+LF82_0466		deoC	
+LF82_0361		csgB	
+LF82_0464		deoA	
+LF82_0360		csgA	
+LF82_0465		deoB	
+LF82_0362		csgC	
+LF82_0467		deoD	
+LF82_3535		ymdA	
+LF82_3497		yjjJ	
+LF82_3536		ymdB	
+LF82_1219		lplA	
+LF82_3537		ymdC	
+LF82_1288		mdoC	
+LF82_3718		ytjB	
+LF82_1290		mdoG	
+LF82_2116		serB	
+LF82_1807		radA	
+LF82_1291		mdoH	
+LF82_1438		nadR	
+LF82_813			
+LF82_2712		yceK	
+LF82_745			
+LF82_1403		msyB	
+LF82_3498		yjjK	
+LF82_1298		mdtG	
+LF82_2137		slt	
+LF82_1230		lpxL	
+LF82_2315		trpR	
+LF82_2704		yceA	
+LF82_3506		yjjX	
+LF82_2710		yceI	
+LF82_3719		ytjC	
+LF82_2711		yceJ	
+LF82_1918		rob	
+LF82_2715		yceO	
+LF82_0351		creA	
+LF82_2154		solA	
+LF82_0352		creB	
+LF82_0247		bssS	
+LF82_0353		creC	
+LF82_0490		dinI	
+LF82_0354		creD	
+LF82_1792		pyrC	
+LF82_0114		arcA	
+LF82_3507		yjjY	
+LF82_2705		yceB	
+LF82_3509		yjtD	
+LF82_0927		grxB	
+LF82_1299		mdtH	
+LF82_1887		rimJ	
+LF82_2709		yceH	
+LF82_2713		yceM	
+LF82_2714		ycen	
+LF82_0691		flgN	
+LF82_0690		flgM	
+LF82_0678		flgA	
+LF82_0679		flgB	
+LF82_0680		flgC	
+LF82_0681		flgD	
+LF82_0682		flgE	
+LF82_0683		flgF	
+LF82_0684		flgG	
+LF82_0685		flgH	
+LF82_0686		flgI	
+LF82_0687		flgJ	
+LF82_0688		flgK	
+LF82_0689		flgl	
+LF82_1909		rne	
+LF82_2716		yceQ	
+LF82_1899		rluC	
+LF82_2707		yceF	
+LF82_2706		yceD	
+LF82_1953		rpmF	
+LF82_1673		plsX	
+LF82_0609		fabH	
+LF82_0606		fabD	
+LF82_0608		fabG	
+LF82_0021		acpP	
+LF82_0607		fabF	
+LF82_1588		pabC	
+LF82_2708		yceG	
+LF82_2273		tmk	
+LF82_1026		holB	
+LF82_2718		ycfH	
+LF82_1768		ptsG	
+LF82_0654		fhuE	
+LF82_0995		hinT	
+LF82_2720		ycfL	
+LF82_2721		ycfM	
+LF82_2253		thiK	
+LF82_1445		nagZ	
+LF82_2722		ycfP	
+LF82_1473		ndh	
+LF82_2719		ycfJ	
+LF82_2723		ycfQ	
+LF82_0232		bhsA	
+LF82_2724		ycfS	
+LF82_1337		mfd	
+LF82_2725		ycfT	
+LF82_1213		lolC	
+LF82_1214		lolD	
+LF82_1215		lolE	
+LF82_1444		nagK	
+LF82_2726		ycfZ	
+LF82_3539		ymfA	
+LF82_1687		potD	
+LF82_1686		potC	
+LF82_1685		potB	
+LF82_1684		potA	
+LF82_1618		pepT	
+LF82_2717		ycfD	
+LF82_1661		phoQ	
+LF82_1660		phoP	
+LF82_1774		purB	
+LF82_0990		hflD	
+LF82_1359		mnmA	
+LF82_1536		nudJ	
+LF82_1901		rluE	
+LF82_1086		icd	
+LF82_141			
+LF82_142			
+LF82_143			
+LF82_144			
+LF82_145			
+LF82_146			
+LF82_147			
+LF82_148			
+LF82_149			
+LF82_150			
+LF82_151			
+LF82_152			
+LF82_153			
+LF82_154			
+LF82_766			
+LF82_155			
+LF82_156			
+LF82_157			
+LF82_158			
+LF82_0556		emrE	
+LF82_2573		ybcK	
+LF82_159			
+LF82_2576		ybcN	
+LF82_1494		ninE	
+LF82_2577		ybcO	
+LF82_2048		rusA	
+LF82_3527		ylcG	
+LF82_2578		ybcQ	
+LF82_1505		nmpC	
+LF82_0578		essD	
+LF82_767			
+LF82_2835		ydfQ	
+LF82_2080		rzpD	
+LF82_0244		borD	
+LF82_160			
+LF82_1506		nohB	
+LF82_161			
+LF82_162			
+LF82_163			
+LF82_164			
+LF82_165			
+LF82_166			
+LF82_167			
+LF82_168			
+LF82_169			
+LF82_170			
+LF82_171			
+LF82_172			
+LF82_173			
+LF82_174			
+LF82_175			
+LF82_176			
+LF82_177			
+LF82_178			
+LF82_179			
+LF82_180			
+LF82_181			
+LF82_182			
+LF82_183			
+LF82_184			
+LF82_185			
+LF82_186			
+LF82_187			
+LF82_188			
+LF82_189			
+LF82_2737		ycgX	
+LF82_2728		ycgE	
+LF82_2729		ycgF	
+LF82_2738		ycgZ	
+LF82_3540		ymgA	
+LF82_3541		ymgB	
+LF82_3542		ymgC	
+LF82_190			
+LF82_3545		ymgF	
+LF82_191			
+LF82_192			
+LF82_3543		ymgD	
+LF82_3546		ymgG	
+LF82_3547		ymgI	
+LF82_193			
+LF82_2730		ycgI	
+LF82_1351		minE	
+LF82_1350		minD	
+LF82_1349		minC	
+LF82_194			
+LF82_2731		ycgJ	
+LF82_2732		ycgK	
+LF82_2733		ycgl	
+LF82_2734		ycgM	
+LF82_2735		ycgN	
+LF82_195			
+LF82_2381		umuD	
+LF82_2380		umuC	
+LF82_0522		dsbB	
+LF82_1485		nhaB	
+LF82_0622		fadR	
+LF82_2727		ycgB	
+LF82_0433		dadA	
+LF82_0434		dadX	
+LF82_0394		cvrA	
+LF82_1171		ldcA	
+LF82_0560		emtA	
+LF82_2736		ycgR	
+LF82_3544		ymgE	
+LF82_196			
+LF82_197			
+LF82_198			
+LF82_199			
+LF82_200			
+LF82_201			
+LF82_2297		treA	
+LF82_0481		dhaM	
+LF82_0480		dhal	
+LF82_0479		dhaK	
+LF82_0482		dhaR	
+LF82_2741		ychF	
+LF82_1764		pth	
+LF82_2742		ychH	
+LF82_2744		ychM	
+LF82_1744		prs	
+LF82_1128		ispE	
+LF82_1212		lolB	
+LF82_0975		hemA	
+LF82_1714		prfA	
+LF82_1725		prmC	
+LF82_2747		ychQ	
+LF82_2739		ychA	
+LF82_1150		kdsA	
+LF82_1174		ldrA	
+LF82_0287		chaA	
+LF82_0288		chaB	
+LF82_0289		chac	
+LF82_2745		ychN	
+LF82_2746		ychO	
+LF82_1464		narL	
+LF82_1470		narX	
+LF82_1463		narK	
+LF82_1459		narG	
+LF82_1460		narH	
+LF82_1462		narJ	
+LF82_1461		nari	
+LF82_202			
+LF82_203			
+LF82_204			
+LF82_205			
+LF82_206			
+LF82_207			
+LF82_208			
+LF82_2294		tpr	
+LF82_1786		purU	
+LF82_2743		ychJ	
+LF82_2030		rssA	
+LF82_2031		rssB	
+LF82_0800		galU	
+LF82_1013		hns	
+LF82_2239		tdk	
+LF82_1117		insG	
+LF82_0035		adhE	
+LF82_2740		ychE	
+LF82_209			
+LF82_1570		oppA	
+LF82_1571		oppB	
+LF82_1572		oppC	
+LF82_1573		oppD	
+LF82_1574		oppF	
+LF82_2763		yciU	
+LF82_0322		cls	
+LF82_210			
+LF82_1141		kch	
+LF82_2755		yciI	
+LF82_2281		tonB	
+LF82_2748		yciA	
+LF82_2749		yciB	
+LF82_2750		yciC	
+LF82_1566		ompW	
+LF82_2751		yciE	
+LF82_2752		yciF	
+LF82_2753		yciG	
+LF82_2309		trpA	
+LF82_2310		trpB	
+LF82_2311		trpC	
+LF82_2312		trpD	
+LF82_2313		trpE	
+LF82_2314		trpH	
+LF82_2759		yciO	
+LF82_2760		yciQ	
+LF82_1898		rluB	
+LF82_0253		btuR	
+LF82_2756		yciK	
+LF82_2151		sohB	
+LF82_2758		yciN	
+LF82_2282		topA	
+LF82_0410		cysB	
+LF82_3548		ymiA	
+LF82_2765		yciX	
+LF82_0018		acnA	
+LF82_1877		ribA	
+LF82_1634		pgpB	
+LF82_2761		yciS	
+LF82_2757		yciM	
+LF82_1795		pyrF	
+LF82_2754		yciH	
+LF82_1576		osmB	
+LF82_2762		yciT	
+LF82_2766		yciZ	
+LF82_0904		gmr	
+LF82_1906		rnb	
+LF82_2764		yciW	
+LF82_0610		fabi	
+LF82_211			
+LF82_212			
+LF82_213			
+LF82_214			
+LF82_215			
+LF82_2087		sapF	
+LF82_2086		sapD	
+LF82_2085		sapC	
+LF82_2084		sapB	
+LF82_2083		sapA	
+LF82_3549		ymjA	
+LF82_1753		pspF	
+LF82_1748		pspA	
+LF82_1749		pspB	
+LF82_1750		pspC	
+LF82_1751		pspD	
+LF82_1752		pspE	
+LF82_2769		ycjM	
+LF82_2770		ycjN	
+LF82_2771		ycjO	
+LF82_2772		ycjP	
+LF82_2773		ycjQ	
+LF82_2774		ycjR	
+LF82_2775		ycjS	
+LF82_2776		ycjT	
+LF82_2777		ycjU	
+LF82_2778		ycjV	
+LF82_1562		ompG	
+LF82_2779		ycjW	
+LF82_2780		ycjX	
+LF82_2767		ycjF	
+LF82_2341		tyrR	
+LF82_2295		tpx	
+LF82_2768		ycjG	
+LF82_1382		mpaA	
+LF82_216			
+LF82_2781		ycjY	
+LF82_2782		ycjZ	
+LF82_1384		mppA	
+LF82_3550		ynaI	
+LF82_3551		ynaJ	
+LF82_2391		uspE	
+LF82_0719		fnr	
+LF82_1558		ogt	
+LF82_217			
+LF82_218			
+LF82_219			
+LF82_220			
+LF82_2783		ydal	
+LF82_2784		ydaM	
+LF82_2785		ydaN	
+LF82_0442		dbpA	
+LF82_2329		ttcA	
+LF82_221			
+LF82_2392		uspF	
+LF82_1563		ompN	
+LF82_2789		ydbK	
+LF82_2788		ydbJ	
+LF82_1036		hslJ	
+LF82_1173		ldhA	
+LF82_2787		ydbH	
+LF82_3556		ynbE	
+LF82_2790		ydbL	
+LF82_222			
+LF82_2786		ydbC	
+LF82_3552		ynbA	
+LF82_3553		ynbB	
+LF82_3554		ynbC	
+LF82_3555		ynbD	
+LF82_0201		azoR	
+LF82_1032		hrpA	
+LF82_2792		ydcF	
+LF82_0064		aldA	
+LF82_0802		gapC	
+LF82_0397		cybB	
+LF82_2791		ydcA	
+LF82_223			
+LF82_2794		ydcI	
+LF82_2795		ydcJ	
+LF82_1289		mdoD	
+LF82_2793		ydch	
+LF82_1889		rimL	
+LF82_2796		ydcK	
+LF82_2240		tehA	
+LF82_2241		tehB	
+LF82_2797		ydcL	
+LF82_2799		ydcO	
+LF82_2798		ydcN	
+LF82_2800		ydcP	
+LF82_3560		yncJ	
+LF82_224			
+LF82_2801		ydcR	
+LF82_2802		ydcS	
+LF82_2803		ydcT	
+LF82_2804		ydcU	
+LF82_2805		ydcV	
+LF82_2806		ydcW	
+LF82_2807		ydcX	
+LF82_2808		ydcY	
+LF82_2809		ydcZ	
+LF82_3557		yncA	
+LF82_768			
+LF82_3558		yncD	
+LF82_3559		yncE	
+LF82_0095		ansP	
+LF82_225			
+LF82_226			
+LF82_227			
+LF82_228			
+LF82_229			
+LF82_230			
+LF82_769			
+LF82_231			
+LF82_232			
+LF82_233			
+LF82_234			
+LF82_235			
+LF82_236			
+LF82_237			
+LF82_2812		yddH	
+LF82_1487		nhoA	
+LF82_2810		yddE	
+LF82_1468		narV	
+LF82_1469		narW	
+LF82_1471		narY	
+LF82_1472		narZ	
+LF82_1467		narU	
+LF82_2811		yddG	
+LF82_0630		fdnG	
+LF82_0631		fdnH	
+LF82_0632		fdnI	
+LF82_2813		yddM	
+LF82_238			
+LF82_0036		adhP	
+LF82_1254		maeA	
+LF82_2169		sra	
+LF82_0218		bdm	
+LF82_1577		osmC	
+LF82_0512		dos	
+LF82_239			
+LF82_2814		yddW	
+LF82_0787		gadC	
+LF82_0786		gadB	
+LF82_240			
+LF82_2818		ydeM	
+LF82_2819		yden	
+LF82_2820		ydeO	
+LF82_241			
+LF82_2821		ydeP	
+LF82_2822		ydeQ	
+LF82_S2244		tff	
+LF82_2823		ydeR	
+LF82_2824		ydes	
+LF82_242			
+LF82_243			
+LF82_244			
+LF82_245			
+LF82_S1757		psrO	
+LF82_246			
+LF82_247			
+LF82_248			
+LF82_249			
+LF82_250			
+LF82_251			
+LF82_252			
+LF82_0996		hipA	
+LF82_0997		hipB	
+LF82_2217		tam	
+LF82_3561		yneE	
+LF82_2401		uxaB	
+LF82_3562		yneF	
+LF82_3563		yneG	
+LF82_3564		yneH	
+LF82_3565		yneI	
+LF82_3566		yneJ	
+LF82_T1730		proL	
+LF82_2815		ydeA	
+LF82_T1248		lysY	
+LF82_1277		marC	
+LF82_1278		marR	
+LF82_1275		marA	
+LF82_1276		marB	
+LF82_253			
+LF82_254			
+LF82_255			
+LF82_256			
+LF82_257			
+LF82_258			
+LF82_S2177		sroF	
+LF82_0537		eamA	
+LF82_2816		ydeE	
+LF82_2817		ydeH	
+LF82_T1010		hisR	
+LF82_0445		dcp	
+LF82_2829		ydfG	
+LF82_2830		ydfH	
+LF82_2840		ydfZ	
+LF82_2831		ydfI	
+LF82_2832		ydfJ	
+LF82_2833		ydfK	
+LF82_1666		pinR	
+LF82_259			
+LF82_260			
+LF82_770			
+LF82_261			
+LF82_262			
+LF82_263			
+LF82_264			
+LF82_265			
+LF82_266			
+LF82_267			
+LF82_268			
+LF82_269			
+LF82_270			
+LF82_271			
+LF82_272			
+LF82_273			
+LF82_274			
+LF82_S2185		ssrA	
+LF82_275			
+LF82_276			
+LF82_771			
+LF82_277			
+LF82_278			
+LF82_2580		ybcW	
+LF82_2579		ybcV	
+LF82_0907		gnsB	
+LF82_3578		ynfN	
+LF82_0377		cspI	
+LF82_2834		ydfP	
+LF82_2836		ydfQ	
+LF82_2837		ydfR	
+LF82_0579		essQ	
+LF82_0371		cspB	
+LF82_2838		ydfT	
+LF82_2839		ydfU	
+LF82_279			
+LF82_280			
+LF82_281			
+LF82_1023		hokD	
+LF82_282			
+LF82_283			
+LF82_284			
+LF82_285			
+LF82_286			
+LF82_287			
+LF82_2825		ydfA	
+LF82_2826		ydfB	
+LF82_2081		rzpQ	
+LF82_0484		dicB	
+LF82_2827		ydfD	
+LF82_2828		ydfE	
+LF82_288			
+LF82_1118		intQ	
+LF82_2029		rspB	
+LF82_2028		rspA	
+LF82_3567		ynfA	
+LF82_3568		ynfB	
+LF82_2163		speG	
+LF82_3569		ynfC	
+LF82_3570		ynfD	
+LF82_3571		ynfE	
+LF82_3573		ynfG	
+LF82_3574		ynfH	
+LF82_0500		dmsD	
+LF82_0315		clcB	
+LF82_3575		ynfK	
+LF82_0477		dgsA	
+LF82_3576		ynfL	
+LF82_3577		ynfM	
+LF82_0179		asr	
+LF82_2843		ydgD	
+LF82_1300		mdtI	
+LF82_1301		mdtJ	
+LF82_2296		tqsA	
+LF82_1680		pntB	
+LF82_1679		pntA	
+LF82_2844		ydgH	
+LF82_2845		ydgI	
+LF82_0727		folM	
+LF82_2842		ydgC	
+LF82_2032		rstA	
+LF82_2033		rstB	
+LF82_2336		tus	
+LF82_0778		fumC	
+LF82_0776		fumA	
+LF82_1270		manA	
+LF82_2841		ydgA	
+LF82_2370		uidC	
+LF82_2369		uidB	
+LF82_2368		uidA	
+LF82_2371		uidR	
+LF82_0973		hdhA	
+LF82_1260		malI	
+LF82_1267		malX	
+LF82_1268		malY	
+LF82_0033		add	
+LF82_2846		ydgJ	
+LF82_0242		blr	
+LF82_0329		cnu	
+LF82_2847		ydgK	
+LF82_2035		rsxA	
+LF82_2036		rsxB	
+LF82_2037		rsxC	
+LF82_2038		rsxD	
+LF82_2040		rsxG	
+LF82_2039		rsxE	
+LF82_1528		nth	
+LF82_2293		tppB	
+LF82_0952		gst	
+LF82_1610		pdxY	
+LF82_2342		tyrS	
+LF82_1607		pdxH	
+LF82_2848		ydhA	
+LF82_0092		anmK	
+LF82_2139		slyB	
+LF82_2138		slyA	
+LF82_2852		ydhI	
+LF82_2853		ydhJ	
+LF82_2854		ydhK	
+LF82_2149		sodC	
+LF82_2851		ydhF	
+LF82_2855		ydhL	
+LF82_2856		ydhM	
+LF82_1476		nemA	
+LF82_0861		gloA	
+LF82_1917		rnt	
+LF82_0929		grxD	
+LF82_2857		ydhO	
+LF82_2148		sodB	
+LF82_2858		ydhP	
+LF82_1784		purR	
+LF82_2849		ydhB	
+LF82_2850		ydhC	
+LF82_0286		cfa	
+LF82_1879		ribC	
+LF82_1302		mdtK	
+LF82_2859		ydhQ	
+LF82_2860		ydhR	
+LF82_2861		ydhS	
+LF82_2862		ydhT	
+LF82_2863		ydhU	
+LF82_2866		ydhX	
+LF82_2865		ydhW	
+LF82_2864		ydhV	
+LF82_2867		ydhy	
+LF82_2868		ydhZ	
+LF82_1790		pykF	
+LF82_1221		lpp	
+LF82_3579		ynhG	
+LF82_2203		sufE	
+LF82_2205		sufS	
+LF82_2202		sufD	
+LF82_2201		sufC	
+LF82_2200		sufB	
+LF82_2199		sufA	
+LF82_2873		ydiH	
+LF82_2874		ydiI	
+LF82_2875		ydiJ	
+LF82_2876		ydiK	
+LF82_2877		ydiL	
+LF82_2878		ydiM	
+LF82_2879		ydiN	
+LF82_2870		ydiB	
+LF82_0143		aroD	
+LF82_2872		ydiF	
+LF82_2880		ydiO	
+LF82_2881		ydiP	
+LF82_2882		ydiQ	
+LF82_2883		ydiR	
+LF82_2884		ydiS	
+LF82_2885		ydiT	
+LF82_0620		fadK	
+LF82_1709		pps	
+LF82_2869		ydiA	
+LF82_0147		aroH	
+LF82_2871		ydiE	
+LF82_2886		ydiU	
+LF82_2887		ydiV	
+LF82_1500		nlpC	
+LF82_0250		btuD	
+LF82_0251		btuE	
+LF82_0249		btuC	
+LF82_1094		ihfA	
+LF82_1639		phet	
+LF82_1638		phes	
+LF82_1942		rplT	
+LF82_1956		rpmI	
+LF82_1116		infC	
+LF82_2262		thrS	
+LF82_3583		yniD	
+LF82_2888		ydiY	
+LF82_1620		pfkB	
+LF82_2889		ydiZ	
+LF82_3580		yniA	
+LF82_3581		yniB	
+LF82_3582		yniC	
+LF82_2899		ydjM	
+LF82_2900		ydjN	
+LF82_0285		cedA	
+LF82_1136		katE	
+LF82_0294		chbG	
+LF82_0293		chbF	
+LF82_0295		chbR	
+LF82_0290		chbA	
+LF82_0292		chbC	
+LF82_0291		chbB	
+LF82_1578		osmE	
+LF82_1436		nadE	
+LF82_0303		cho	
+LF82_2415		ves	
+LF82_2168		spy	
+LF82_0184		astE	
+LF82_0181		astB	
+LF82_T2412		valX	
+LF82_0183		astD	
+LF82_0180		astA	
+LF82_0182		astC	
+LF82_2452		xthA	
+LF82_2901		ydjX	
+LF82_2902		ydjY	
+LF82_2903		ydjZ	
+LF82_3584		ynjA	
+LF82_3585		ynjB	
+LF82_3586		ynjC	
+LF82_3587		ynjD	
+LF82_3588		ynjE	
+LF82_3589		ynjF	
+LF82_1533		nudG	
+LF82_3590		ynjH	
+LF82_0823		gdhA	
+LF82_2283		topB	
+LF82_2113		selD	
+LF82_2890		ydjA	
+LF82_2166		sppA	
+LF82_0093		ansA	
+LF82_1676		pncA	
+LF82_2891		ydjE	
+LF82_2892		ydjF	
+LF82_2893		ydjG	
+LF82_2894		ydjH	
+LF82_2895		ydjI	
+LF82_2896		ydjJ	
+LF82_2897		ydjK	
+LF82_2898		ydjL	
+LF82_2904		yeac	
+LF82_1402		msrB	
+LF82_0801		gapA	
+LF82_2905		yead	
+LF82_2906		yeae	
+LF82_1353		mipA	
+LF82_2907		yeaG	
+LF82_2908		yeaH	
+LF82_2909		yeaI	
+LF82_2910		yeaJ	
+LF82_2911		yeaK	
+LF82_772			
+LF82_2912		yeal	
+LF82_2913		yeaM	
+LF82_2914		yeaN	
+LF82_2915		yeaO	
+LF82_3596		yoaF	
+LF82_2916		yeaP	
+LF82_2917		yeaQ	
+LF82_3597		yoaG	
+LF82_2918		yeaR	
+LF82_1182		leuE	
+LF82_289			
+LF82_1908		rnd	
+LF82_0615		fadD	
+LF82_2919		yeaY	
+LF82_2920		yeaZ	
+LF82_3591		yoaA	
+LF82_3592		yoaB	
+LF82_3593		yoac	
+LF82_3598		yoaH	
+LF82_1587		pabB	
+LF82_1538		nudL	
+LF82_2094		sdaA	
+LF82_3594		yoad	
+LF82_3595		yoae	
+LF82_1271		manX	
+LF82_1272		manY	
+LF82_1273		manZ	
+LF82_3601		yobD	
+LF82_2928		yebN	
+LF82_2006		rrmA	
+LF82_0372		cspC	
+LF82_3602		yobF	
+LF82_2929		yebO	
+LF82_1341		mgrB	
+LF82_3603		yobH	
+LF82_1143		kdgR	
+LF82_2930		yebQ	
+LF82_290			
+LF82_773			
+LF82_1044		htpX	
+LF82_1713		prc	
+LF82_1733		proQ	
+LF82_2931		yebR	
+LF82_2932		yebS	
+LF82_2933		yebT	
+LF82_2026		rsmF	
+LF82_2934		yebV	
+LF82_2935		yebW	
+LF82_1701		pphA	
+LF82_2936		yebY	
+LF82_2937		yebZ	
+LF82_3599		yobA	
+LF82_1029		holE	
+LF82_3600		yobB	
+LF82_0601		exoX	
+LF82_1766		ptrB	
+LF82_2924		yebE	
+LF82_2925		yebF	
+LF82_2926		yebG	
+LF82_1785		purT	
+LF82_0546		eda	
+LF82_0547		edd	
+LF82_3733		zwf	
+LF82_2927		yebK	
+LF82_1789		pykA	
+LF82_1231		lpxM	
+LF82_2921		yebA	
+LF82_3725		znuA	
+LF82_3727		znuC	
+LF82_3726		znuB	
+LF82_2058		ruvB	
+LF82_2057		ruvA	
+LF82_2922		yebB	
+LF82_2059		ruvC	
+LF82_2923		yebC	
+LF82_1529		nudB	
+LF82_0175		aspS	
+LF82_2940		yecD	
+LF82_2941		yecE	
+LF82_2946		yecN	
+LF82_0324		cmoA	
+LF82_0325		cmoB	
+LF82_2291		torZ	
+LF82_2290		torY	
+LF82_0392		cutC	
+LF82_2945		yecM	
+LF82_0128		argS	
+LF82_0696		flhE	
+LF82_0692		flhA	
+LF82_0693		flhB	
+LF82_0301		cheZ	
+LF82_0300		cheY	
+LF82_0297		cheB	
+LF82_0298		cheR	
+LF82_2218		tar	
+LF82_0299		cheW	
+LF82_0296		cheA	
+LF82_1381		motB	
+LF82_1380		motA	
+LF82_0694		flhC	
+LF82_0695		flhD	
+LF82_2389		uspC	
+LF82_1581		otsA	
+LF82_1582		otsB	
+LF82_0112		araH	
+LF82_0111		araG	
+LF82_0110		araF	
+LF82_0756		ftnB	
+LF82_2944		yecJ	
+LF82_2947		yecR	
+LF82_0755		ftnA	
+LF82_2943		yech	
+LF82_2340		tyrP	
+LF82_2938		yecA	
+LF82_1635		pgsA	
+LF82_2397		uvrC	
+LF82_2399		uvrY	
+LF82_2942		yecF	
+LF82_2101		sdiA	
+LF82_2939		yecC	
+LF82_2948		yecS	
+LF82_0454		dcyD	
+LF82_0715		fliY	
+LF82_0716		fliZ	
+LF82_0697		fliA	
+LF82_291			
+LF82_0698		fliD	
+LF82_0713		fliS	
+LF82_0714		fliT	
+LF82_0091		amyA	
+LF82_2950		yedD	
+LF82_2951		yedE	
+LF82_2952		yedF	
+LF82_2955		yedK	
+LF82_1504		nmpC	
+LF82_2575		ybcM	
+LF82_2574		ybcL	
+LF82_0557		emrE	
+LF82_0699		fliE	
+LF82_0700		fliF	
+LF82_0701		fliG	
+LF82_0702		fliH	
+LF82_0703		fliI	
+LF82_0704		fliJ	
+LF82_0705		fliK	
+LF82_0706		fliL	
+LF82_0707		fliM	
+LF82_0708		fliN	
+LF82_0709		fliO	
+LF82_0710		fliP	
+LF82_0711		fliQ	
+LF82_0712		fliR	
+LF82_1823		rcsA	
+LF82_0529		dsrB	
+LF82_3606		yodD	
+LF82_2956		yedP	
+LF82_2957		yedQ	
+LF82_3605		yodC	
+LF82_2953		yedI	
+LF82_2949		yedA	
+LF82_2418		vsr	
+LF82_0444		dcm	
+LF82_2954		yedJ	
+LF82_2958		yedR	
+LF82_292			
+LF82_0965		hchA	
+LF82_2959		yedV	
+LF82_2960		yedW	
+LF82_2961		yedX	
+LF82_2962		yedY	
+LF82_2963		yedZ	
+LF82_3604		yodA	
+LF82_293			
+LF82_1404		mtfA	
+LF82_294			
+LF82_295			
+LF82_296			
+LF82_297			
+LF82_298			
+LF82_299			
+LF82_300			
+LF82_301			
+LF82_302			
+LF82_303			
+LF82_304			
+LF82_305			
+LF82_306			
+LF82_307			
+LF82_308			
+LF82_2966		yeel	
+LF82_2131		shiA	
+LF82_0084		amn	
+LF82_2967		yeen	
+LF82_2968		yeeO	
+LF82_0267		cbl	
+LF82_1431		nac	
+LF82_309			
+LF82_310			
+LF82_311			
+LF82_312			
+LF82_313			
+LF82_774			
+LF82_314			
+LF82_3298		yhhI	
+LF82_315			
+LF82_316			
+LF82_317			
+LF82_318			
+LF82_319			
+LF82_320			
+LF82_321			
+LF82_322			
+LF82_775			
+LF82_323			
+LF82_324			
+LF82_776			
+LF82_325			
+LF82_777			
+LF82_326			
+LF82_327			
+LF82_0577		erfK	
+LF82_0336		cobT	
+LF82_0335		cobS	
+LF82_0337		cobU	
+LF82_S2153		sokC	
+LF82_328			
+LF82_329			
+LF82_330			
+LF82_778			
+LF82_331			
+LF82_332			
+LF82_333			
+LF82_334			
+LF82_R2014		rrsH	
+LF82_335			
+LF82_336			
+LF82_337			
+LF82_338			
+LF82_T1099		ileV	
+LF82_339			
+LF82_340			
+LF82_341			
+LF82_342			
+LF82_343			
+LF82_T0061		alaV	
+LF82_344			
+LF82_345			
+LF82_346			
+LF82_347			
+LF82_348			
+LF82_2969		yeex	
+LF82_R2005		rrlH	
+LF82_2964		yeeA	
+LF82_2092		sbmC	
+LF82_0432		dacD	
+LF82_2088		sbcB	
+LF82_R1998		rrfH	
+LF82_2965		yeeF	
+LF82_2970		yeeY	
+LF82_2971		yeeZ	
+LF82_3607		yoeB	
+LF82_T0177		aspU	
+LF82_2972		yefM	
+LF82_1003		hisG	
+LF82_1001		hisD	
+LF82_1000		hisC	
+LF82_T0178		aspV	
+LF82_0999		hisB	
+LF82_1004		hisH	
+LF82_0998		hisA	
+LF82_1002		hisF	
+LF82_1005		hisI	
+LF82_0316		cld	
+LF82_T2266		thrW	
+LF82_2358		ugd	
+LF82_0905		gnd	
+LF82_349			
+LF82_350			
+LF82_351			
+LF82_352			
+LF82_S0648		ffs	
+LF82_353			
+LF82_354			
+LF82_355			
+LF82_356			
+LF82_S2176		sroB	
+LF82_0793		galF	
+LF82_2430		wcaM	
+LF82_2429		wcal	
+LF82_T0130		argU	
+LF82_2428		wcaK	
+LF82_2436		wzxC	
+LF82_2427		wcaJ	
+LF82_0346		cpsG	
+LF82_T0860		glnX	
+LF82_0345		cpsB	
+LF82_2426		wcaI	
+LF82_T2411		valW	
+LF82_0903		gmm	
+LF82_0626		fcl	
+LF82_0900		gmd	
+LF82_T0858		glnV	
+LF82_2425		wcaF	
+LF82_2424		wcae	
+LF82_2423		wcad	
+LF82_2422		wcac	
+LF82_2421		wcaB	
+LF82_T1332		metU	
+LF82_2420		wcaA	
+LF82_2435		wzc	
+LF82_2434		wzb	
+LF82_2433		wza	
+LF82_2975		yegH	
+LF82_0164		asmA	
+LF82_T0859		glnW	
+LF82_0443		dcd	
+LF82_2356		udk	
+LF82_2974		yegE	
+LF82_0066		alkA	
+LF82_2973		yegD	
+LF82_T0857		glnU	
+LF82_2976		yegI	
+LF82_2977		yegK	
+LF82_2978		yegl	
+LF82_1292		mdtA	
+LF82_1293		mdtB	
+LF82_1294		mdtC	
+LF82_T1190		leuW	
+LF82_1295		mdtD	
+LF82_0204		baes	
+LF82_0203		baeR	
+LF82_2979		yegP	
+LF82_357			
+LF82_T1331		metT	
+LF82_358			
+LF82_359			
+LF82_360			
+LF82_2980		yegQ	
+LF82_2981		yegR	
+LF82_2982		yegS	
+LF82_T1244		lysT	
+LF82_0812		gatR	
+LF82_0811		gatD	
+LF82_0810		gatC	
+LF82_0809		gatB	
+LF82_0808		gatA	
+LF82_0814		gatZ	
+LF82_T2408		valT	
+LF82_0813		gatY	
+LF82_0624		fbaB	
+LF82_2983		yegT	
+LF82_2984		yegU	
+LF82_2985		yegV	
+LF82_2986		yegW	
+LF82_T1247		lysW	
+LF82_2987		yegX	
+LF82_2247		thiD	
+LF82_2255		thiM	
+LF82_1822		rcnR	
+LF82_1821		rcnA	
+LF82_T2414		valZ	
+LF82_3613		yohN	
+LF82_2988		yehA	
+LF82_2989		yehB	
+LF82_T1187		leuT	
+LF82_2990		yehC	
+LF82_T2122		serW	
+LF82_2991		yehD	
+LF82_2992		yehE	
+LF82_T1249		lysZ	
+LF82_1397		mrp	
+LF82_1322		metG	
+LF82_2993		yehH	
+LF82_2994		yehI	
+LF82_2995		yehK	
+LF82_2996		yehL	
+LF82_T1241		lysQ	
+LF82_2997		yehM	
+LF82_2998		yehP	
+LF82_2999		yehQ	
+LF82_3000		yehR	
+LF82_3001		yehS	
+LF82_3002		yehT	
+LF82_S2060		rybA	
+LF82_3003		yehU	
+LF82_1354		mlrA	
+LF82_3004		yehW	
+LF82_3005		yehX	
+LF82_S2061		rybB	
+LF82_3006		yehy	
+LF82_1579		osmF	
+LF82_0231		bglX	
+LF82_0496		dld	
+LF82_1600		pbpG	
+LF82_3608		yohC	
+LF82_3609		yohD	
+LF82_3610		yohF	
+LF82_T2119		serT	
+LF82_1307		mdtQ	
+LF82_0533		dusC	
+LF82_S2067		ryeD	
+LF82_3611		yohJ	
+LF82_3612		yohK	
+LF82_0282		cdd	
+LF82_T2123		serX	
+LF82_2082		sanA	
+LF82_3020		yeiS	
+LF82_3021		yeiT	
+LF82_3007		yeiA	
+LF82_1340		mglC	
+LF82_1338		mglA	
+LF82_S1755		psrD	
+LF82_1339		mglB	
+LF82_0798		galS	
+LF82_3008		yeiB	
+LF82_S1830		rdlA	
+LF82_0725		folE	
+LF82_779			
+LF82_S2045		rttR	
+LF82_3011		yeiG	
+LF82_0306		cirA	
+LF82_1240		lysP	
+LF82_3010		yeiE	
+LF82_T2345		tyrV	
+LF82_3012		yeiH	
+LF82_1479		nfo	
+LF82_3013		yeiI	
+LF82_T2343		tyrT	
+LF82_1884		rihB	
+LF82_3014		yeiL	
+LF82_3015		yeiM	
+LF82_3016		yeiN	
+LF82_S1347		micC	
+LF82_3009		yeiC	
+LF82_0742		fruA	
+LF82_0744		fruK	
+LF82_0743		fruB	
+LF82_S2063		rydC	
+LF82_2124		setB	
+LF82_3023		yeiW	
+LF82_3017		yeiP	
+LF82_3018		yeiQ	
+LF82_S0485		dicF	
+LF82_3019		yeiR	
+LF82_3022		yeiU	
+LF82_2167		spr	
+LF82_T2410		valV	
+LF82_2044		rtn	
+LF82_3024		yejA	
+LF82_3025		yejB	
+LF82_3026		yejE	
+LF82_3027		yejF	
+LF82_3028		yejG	
+LF82_0210		bcr	
+LF82_2034		rsuA	
+LF82_3029		yejH	
+LF82_1947		rplY	
+LF82_3030		yejK	
+LF82_S2062		rydB	
+LF82_3031		yejL	
+LF82_3032		yejM	
+LF82_361			
+LF82_362			
+LF82_S1967		rprA	
+LF82_363			
+LF82_364			
+LF82_1465		narP	
+LF82_0280		ccmH	
+LF82_S2064		ryeA	
+LF82_0279		ccmG	
+LF82_0278		ccmF	
+LF82_S2065		ryeB	
+LF82_0277		ccmE	
+LF82_0276		ccmD	
+LF82_S1133		isrB	
+LF82_0275		ccmC	
+LF82_0274		ccmB	
+LF82_0273		ccmA	
+LF82_T1192		leuZ	
+LF82_1454		napC	
+LF82_1453		napB	
+LF82_1458		napH	
+LF82_1457		napG	
+LF82_1452		napA	
+LF82_T0424		cysT	
+LF82_1455		napD	
+LF82_1456		napF	

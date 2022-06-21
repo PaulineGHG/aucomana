@@ -1,0 +1,69 @@
+# 
+#
+# Authors:
+#
+# Please see the license agreement regarding the use of and distribution of this file.
+# The format of this file is defined at http://bioinformatics.ai.sri.com/ptools/flatfile-format.html .
+#
+# Filename: /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/ec042cyc/1.0/data/protligandcplxes.dat
+#
+# Organism: Escherichia coli
+# Database: NIL
+# Version: 1.0
+# Date and time generated: June 21, 2022, 11:29:58
+#
+# Attributes:
+#    UNIQUE-ID
+#    TYPES
+#    COMMON-NAME
+#    ABBREV-NAME
+#    AROMATIC-RINGS
+#    ATOM-CHARGES
+#    CATALYZES
+#    CELL-TYPES
+#    CITATIONS
+#    COFACTORS-OF
+#    COMMENT
+#    COMPONENT-COEFFICIENTS
+#    COMPONENT-OF
+#    COMPONENTS
+#    CONSENSUS-SEQUENCE
+#    COPY-NUMBER
+#    CREDITS
+#    DATA-SOURCE
+#    DBLINKS
+#    DNA-FOOTPRINT-SIZE
+#    DOCUMENTATION
+#    ENZYME-NOT-USED-IN
+#    GIBBS-0
+#    GO-TERMS
+#    HAS-NO-STRUCTURE?
+#    HIDE-SLOT?
+#    IN-MIXTURE
+#    INSTANCE-NAME-TEMPLATE
+#    ISOZYME-SEQUENCE-SIMILARITY
+#    LOCATIONS
+#    MEMBER-SORT-FN
+#    MODIFIED-FORM
+#    MOLECULAR-WEIGHT
+#    MOLECULAR-WEIGHT-EXP
+#    MOLECULAR-WEIGHT-KD
+#    MOLECULAR-WEIGHT-SEQ
+#    N+1-NAME
+#    N-1-NAME
+#    N-NAME
+#    NEIDHARDT-SPOT-NUMBER
+#    NON-STANDARD-INCHI
+#    PATHOLOGIC-NAME-MATCHER-EVIDENCE
+#    PATHOLOGIC-PWY-EVIDENCE
+#    PI
+#    RADICAL-ATOMS
+#    REGULATED-BY
+#    REGULATES
+#    SPECIES
+#    STRUCTURE-BONDS
+#    SUPERATOMS
+#    SYMMETRY
+#    SYNONYMS
+#
+# The EC042 database contains no Protein-Small-Molecule-Complexes.

@@ -1,0 +1,16 @@
+query_seq_id	blastp_sseqid	blastp_evalue	blastp_bitscore	tblastn_sseqid	tblastn_evalue	tblastn_bitscore	tblastn_sstart	tblastn_send	exonerate_score	exonerate_hit_range	predicted_gene
+SF2761	LF82_2349	1.86e-32	122	CU651637.1	1.06e-30	119	4093242	4094207			
+SF4382											
+SF3718											
+SF2762	LF82_2354	1.88e-68	204	CU651637.1	8.26e-62	204	2437230	2436673			
+SF2586											
+SF0218											
+SF2587											
+SF4380											
+SF2585											
+SF2588											
+SF0692	LF82_2080	5.48e-54	164	CU651637.1	5.84e-48	162	1192910	1193305			
+SF0306	LF82_0138	1.65e-48	162	CU651637.1	3.76e-38	141	2381229	2382140			
+SF4373	LF82_2054	2.29e-44	141	CU651637.1	2.91e-40	141	1050536	1050066			
+SF4384	LF82_2734	1.21e-38	136	CU651637.1	1.53e-32	128	1237067	1237624			
+SF0633											

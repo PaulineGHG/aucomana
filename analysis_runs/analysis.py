@@ -18,10 +18,9 @@ class Analysis:
     TO_CALCULATE = ("nb_genes", "nb_rnx", "nb_pw > 80%", "nb_pw 100%")
 # ## Various utils fnc
 
-    def __init__(self, path_runs, path_study, org_file):
+    def __init__(self, path_runs, path_study):
         self.path_runs = path_runs
         self.path_study = path_study
-        self.org_file = org_file
         self.__create_folders()
 
     def __create_folders(self):
@@ -37,7 +36,7 @@ class Analysis:
                 ['output_data', 'reactions_data', 'genes_assoc'],
                 ['output_data', 'genes_data'],
                 ['output_data', 'metabolites_data'],
-                ['output_data', 'pages']]
+                ['output_data', 'renamed_id_padmet']]
         for folder in arbo:
             folder_path = os.path.join(self.path_study, *folder)
             if not os.path.exists(folder_path):
@@ -70,7 +69,7 @@ class Analysis:
 
     # ## Extract species according to groups from organisms file
 
-    def get_grp_l(self, run: str, group: Tuple[str, int],
+    def get_grp_l(self, run: str, group: str,
                   species_list: List[str] = None) -> List[str]:
         """ Select species according to the group they belong to. The groups must be specified in a
         TSV file (organisms-file as input).
@@ -90,29 +89,23 @@ class Analysis:
         group_l: List[str]
             List of species corresponding to the category chosen
         """
-        if species_list is not None:
-            species_l = set(species_list)
-        else:
-            grp_template_f = os.path.join(self.path_runs, run, "analysis",
-                                          "group_template.tsv")
-            with open(grp_template_f, "r") as grp_f:
-                species_l = set()
-                for line in grp_f:
-                    line = line.split("\t")
-                    if line[0] == "all":
-                        for species in line[1:]:
-                            species_l.add(species.strip())
+        grp_template_f = os.path.join(self.path_runs, run, "analysis",
+                                      "group_template.tsv")
         group_list = []
-        df = pd.read_csv(self.org_file, sep="\t", index_col=0, header=None)
-        if group[1] not in list(df.columns):
+        df = pd.read_csv(grp_template_f, sep="\t", index_col=0, header=True)
+        if species_list is not None:
+            species_set = set(species_list)
+        else:
+            species_set = set(df.index)
+        if group not in list(df.index):
             raise ValueError(f"No column {group[1]} in {self.org_file} file. (Number of columns = "
                              f"{df.shape[1]})")
         if group[0] not in list(df[group[1]]):
             warnings.warn(f"No species of group {group[0]} are in the column {group[1]} of the "
                           f"{self.org_file}. All species has been kept.")
-            return list(species_l)
+            return list(species_set)
         else:
-            for sp in species_l:
+            for sp in species_set:
                 if df.loc[sp, group[1]] == group[0]:
                     group_list.append(sp)
         return group_list
@@ -484,11 +477,14 @@ class Analysis:
     def rename_padmet_id(self, run):
         assodict = {}
         path_species = os.path.join(self.path_runs, run, "studied_organisms")
-        path_padmet = os.path.join(self.path_runs, run, "network")
+        path_padmet = os.path.join(self.path_runs, run, "networks", "PADMETs")
         for species_folder in os.listdir(path_species):
             assodict = get_dict(run, species_folder, assodict, self.path_runs)
         automaton = make_automaton(assodict)
-        for species_folder in os.listdir(path_species):
-            apply_automaton(automaton, os.path.join(path_padmet),
-                            os.path.join(self.path_study, "output_data"))
+        out_path = os.path.join(self.path_study, "output_data", "renamed_id_padmet")
+        for species in os.listdir(path_species):
+            print(f"ID renamed for {species}.padmet")
+            apply_automaton(automaton, os.path.join(path_padmet, f"{species}.padmet"),
+                            os.path.join(out_path, f"{species}.padmet"))
+        print(f"New padmets saved in : {out_path}")
 

@@ -1,0 +1,7 @@
+query_seq_id	blastp_sseqid	blastp_evalue	blastp_bitscore	tblastn_sseqid	tblastn_evalue	tblastn_bitscore	tblastn_sstart	tblastn_send	exonerate_score	exonerate_hit_range	predicted_gene
+c0323											
+c0018				CU651637.1	0.0	1259	13883	11850	3546	9999-12033	predicted_c0018_vs_CU651637.1
+c0319											
+c1252	LF82_0646	1.48e-28	112	CU651637.1	2.90e-24	103	585649	586728			
+c1395				CU651637.1	6.90e-168	512	1156192	1157010	1438	9999-10818	predicted_c1395_vs_CU651637.1
+c1655				CU651637.1	8.91e-44	146	1261476	1261688			

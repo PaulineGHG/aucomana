@@ -1,0 +1,559 @@
+21-Jun-2022  11:24:57 
+Started processing test/studied_organisms/IAI1/
+Reading file  test/studied_organisms/IAI1/organism-params.dat
+;; ensure-directories-exist: creating
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/input/
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/ does
+;;   not exist, will create.
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/
+;;   does not exist, will create.
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/input/
+;;   does not exist, will create.
+;; ensure-directories-exist: creating
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/data/
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/data/
+;;   does not exist, will create.
+;; ensure-directories-exist: creating
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/reports/
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/reports/
+;;   does not exist, will create.
+;; ensure-directories-exist: creating
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/kb/
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/kb/
+;;   does not exist, will create.
+
+Created iai1cyc directory tree.
+Saved /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/input/organism.dat
+Saved /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/input/organism-init.dat
+Reading file  /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/input/organism-init.dat
+Copying class Organisms from METABASE to IAI1BASE.
+[Copying class hierarchy into IAI1BASE]
+Found 0 stub frames or stub references
+[Completed initialization of new PGDB for IAI1]
+[Saving KB IAI1BASE to V4-FASL file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/kb/iai1base.ocelot
+ 7378 frames saved]
+
+[Processed 4 data rows from file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/input/genetic-elements.dat]
+
+[Processed 1 data frames]
+
+
+Extracting one sequence from
+/mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/input/IAI1.gbk
+into
+/mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/input/IAI1-CU928160.fsa ...
+
+     :::::  Processing genetic element "CU928160" with ID CU928160 and file NIL  :::::
+
+Genetic Element CU928160 is new to the PGDB.
+Adding genetic element and processing its components.
+Copying /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/input/IAI1-CU928160.fsa
+     to /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/data/iai1-CU928160.fsa
+[Creating gene frames]
+
+[Creating monomers]
+Warning: Amino acid U is invalid.
+
+Classifying ECIAI1_4210-MONOMER/stationary phase protein, binds sigma 70 RNA polymerase subunit as a sigma factor.
+Warning: Amino acid U is invalid.
+
+Classifying ECIAI1_3607-MONOMER/RNA polymerase, sigma 32 (sigma H) factor as a sigma factor.
+
+Classifying ECIAI1_3350-MONOMER/RNA polymerase, sigma 54 (sigma N) factor as a sigma factor.
+
+Classifying ECIAI1_3215-MONOMER/RNA polymerase, sigma 70 (sigma D) factor as a sigma factor.
+
+Classifying ECIAI1_2686-MONOMER/RNA polymerase, sigma 24 (sigma E) factor as a sigma factor.
+
+Classifying ECIAI1_2007-MONOMER/RNA polymerase, sigma 28 (sigma F) factor as a sigma factor.
+Warning: Amino acid U is invalid.
+;;; No information exists for linked database ID PSEUDO. Links to this database will not be live until you create a description for it using the File -> Create -> External Database Description command in the Navigator.
+;;; No information exists for linked database ID ENSEMBLGENOMES-GN. Links to this database will not be live until you create a description for it using the File -> Create -> External Database Description command in the Navigator.
+;;; No information exists for linked database ID ENSEMBLGENOMES-TR. Links to this database will not be live until you create a description for it using the File -> Create -> External Database Description command in the Navigator.
+The following is a summary of the features recognized in the
+specified genetic elements.
+  
+A full report on parsing can be found in file:
+    /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/reports/trial-parse-report_2022-06-21.txt
+
+           Genes       Proteins    RNAs   Pseudogenes
+-----------------------------------------------------
+CU928160     4640         4354       197       89    
+
+
+Matches found using supplied GO terms: 0
+Warning: tRNA ECIAI1_TRNA51 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA52 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA53 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA50 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA49 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA48 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA47 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA54 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA46 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA45 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA44 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA43 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA42 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA41 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA40 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA39 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA38 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA37 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA36 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA35 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA34 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA33 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA32 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA31 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA55 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA56 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA57 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA58 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA59 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA60 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA30 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA29 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA61 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA28 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA27 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA26 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA62 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA63 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA64 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA65 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA66 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA67 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA25 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA24 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA23 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA22 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA68 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA69 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA21 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA20 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA19 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA18 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA70 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA17 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA71 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA72 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA73 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA74 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA16 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA15 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA75 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA76 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA77 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA78 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA79 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA14 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA13 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA12 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA11 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA10 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA9 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA8 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA80 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA81 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA82 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA83 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA84 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA85 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA86 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA7 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA6 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA5 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA4 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA3 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA2 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA ECIAI1_TRNA1 (NIL) may not have had parsable anticodon
+         information. None assigned.
+
+     :::::  Running reaction inference from EC numbers and MetaCyc IDs  :::::
+
+EC 2.3.1.128 has been transferred by the Enzyme Commission to multiple EC numbers (2.3.1.266, 2.3.1.267) and is therefore ambiguous.
+EC 2.1.1.52 has been transferred by the Enzyme Commission to multiple EC numbers (2.1.1.174, 2.1.1.173, 2.1.1.172, 2.1.1.171) and is therefore ambiguous.
+EC 3.6.3.1 has been transferred by the Enzyme Commission to EC 7.6.2.1.
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC 1.3.99.1 has been transferred by the Enzyme Commission to EC 1.3.5.1.
+EC 1.3.99.1 has been transferred by the Enzyme Commission to EC 1.3.5.1.
+EC 1.2.1.2 has been transferred by the Enzyme Commission to EC 1.17.1.9.
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC 1.2.1.2 has been transferred by the Enzyme Commission to EC 1.17.1.9.
+EC 1.5.1.29 has been transferred by the Enzyme Commission to multiple EC numbers (1.5.1.41, 1.5.1.39, 1.5.1.38) and is therefore ambiguous.
+EC 3.6.3.14 has been transferred by the Enzyme Commission to EC 7.1.2.2.
+EC 3.6.3.14 has been transferred by the Enzyme Commission to EC 7.1.2.2.
+EC 3.6.3.14 has been transferred by the Enzyme Commission to EC 7.1.2.2.
+EC 3.6.3.14 has been transferred by the Enzyme Commission to EC 7.1.2.2.
+EC 3.6.3.14 has been transferred by the Enzyme Commission to EC 7.1.2.2.
+EC 3.6.3.14 has been transferred by the Enzyme Commission to EC 7.1.2.2.
+EC 3.6.3.14 has been transferred by the Enzyme Commission to EC 7.1.2.2.
+EC 3.6.3.14 has been transferred by the Enzyme Commission to EC 7.1.2.2.
+EC 3.6.3.14 has been transferred by the Enzyme Commission to EC 7.1.2.2.
+EC 3.6.3.27 has been transferred by the Enzyme Commission to EC 7.3.2.1.
+EC# inference disabled for EC 2.7.1.69
+EC 5.99.1.3 has been deleted by the Enzyme Commission.
+EC# inference disabled for EC 2.7.1.69
+EC 5.4.2.1 has been transferred by the Enzyme Commission to multiple EC numbers (5.4.2.11, 5.4.2.12) and is therefore ambiguous.
+EC# inference disabled for EC 2.7.1.69
+EC 3.6.3.5 has been transferred by the Enzyme Commission to EC 7.2.2.12.
+EC 3.6.3.3 has been transferred by the Enzyme Commission to EC 7.2.2.21.
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC 4.4.1.8 has been transferred by the Enzyme Commission to EC 4.4.1.13.
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC 4.1.1.41 has been transferred by the Enzyme Commission to EC 7.2.4.3.
+EC 1.5.1.29 has been transferred by the Enzyme Commission to multiple EC numbers (1.5.1.41, 1.5.1.39, 1.5.1.38) and is therefore ambiguous.
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC 2.1.1.31 has been transferred by the Enzyme Commission to multiple EC numbers (2.1.1.228, 2.1.1.221) and is therefore ambiguous.
+EC 3.6.3.25 has been transferred by the Enzyme Commission to EC 7.3.2.3.
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC 1.6.5.3 has been transferred by the Enzyme Commission to EC 7.1.1.2.
+EC 1.6.5.3 has been transferred by the Enzyme Commission to EC 7.1.1.2.
+EC 1.6.5.3 has been transferred by the Enzyme Commission to EC 7.1.1.2.
+EC 1.6.5.3 has been transferred by the Enzyme Commission to EC 7.1.1.2.
+EC 1.6.5.3 has been transferred by the Enzyme Commission to EC 7.1.1.2.
+EC 1.6.5.3 has been transferred by the Enzyme Commission to EC 7.1.1.2.
+EC 5.99.1.3 has been deleted by the Enzyme Commission.
+EC 1.7.99.4 has been transferred by the Enzyme Commission to multiple EC numbers (1.7.1.1, 1.7.1.2, 1.7.1.3, 1.7.5.1, 1.7.7.2, 1.9.6.1) and is therefore ambiguous.
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC 3.6.3.14 has been transferred by the Enzyme Commission to EC 7.1.2.2.
+EC 1.6.6.9 has been transferred by the Enzyme Commission to EC 1.7.2.3.
+EC 3.1.22.4 has been transferred by the Enzyme Commission to EC 3.1.21.c.
+EC 3.1.22.4 has been transferred by the Enzyme Commission to EC 3.1.21.c.
+EC 3.1.22.4 has been transferred by the Enzyme Commission to EC 3.1.21.c.
+EC 4.1.1.3 has been transferred by the Enzyme Commission to multiple EC numbers (7.2.4.2, 4.1.1.112) and is therefore ambiguous.
+EC 2.1.1.51 has been transferred by the Enzyme Commission to multiple EC numbers (2.1.1.188, 2.1.1.187) and is therefore ambiguous.
+EC# inference disabled for EC 2.7.1.69
+EC 5.99.1.2 has been transferred by the Enzyme Commission to EC 5.6.2.2.
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC 3.6.3.33 has been transferred by the Enzyme Commission to EC 7.6.2.8.
+EC 4.4.1.8 has been transferred by the Enzyme Commission to EC 4.4.1.13.
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC 1.2.1.2 has been transferred by the Enzyme Commission to EC 1.17.1.9.
+EC 1.7.99.4 has been transferred by the Enzyme Commission to multiple EC numbers (1.7.1.1, 1.7.1.2, 1.7.1.3, 1.7.5.1, 1.7.7.2, 1.9.6.1) and is therefore ambiguous.
+EC 1.7.99.4 has been transferred by the Enzyme Commission to multiple EC numbers (1.7.1.1, 1.7.1.2, 1.7.1.3, 1.7.5.1, 1.7.7.2, 1.9.6.1) and is therefore ambiguous.
+EC 1.7.99.4 has been transferred by the Enzyme Commission to multiple EC numbers (1.7.1.1, 1.7.1.2, 1.7.1.3, 1.7.5.1, 1.7.7.2, 1.9.6.1) and is therefore ambiguous.
+EC 1.7.99.4 has been transferred by the Enzyme Commission to multiple EC numbers (1.7.1.1, 1.7.1.2, 1.7.1.3, 1.7.5.1, 1.7.7.2, 1.9.6.1) and is therefore ambiguous.
+EC 5.99.1.2 has been transferred by the Enzyme Commission to EC 5.6.2.2.
+EC 1.7.99.4 has been transferred by the Enzyme Commission to multiple EC numbers (1.7.1.1, 1.7.1.2, 1.7.1.3, 1.7.5.1, 1.7.7.2, 1.9.6.1) and is therefore ambiguous.
+EC 1.7.99.4 has been transferred by the Enzyme Commission to multiple EC numbers (1.7.1.1, 1.7.1.2, 1.7.1.3, 1.7.5.1, 1.7.7.2, 1.9.6.1) and is therefore ambiguous.
+EC 1.7.99.4 has been transferred by the Enzyme Commission to multiple EC numbers (1.7.1.1, 1.7.1.2, 1.7.1.3, 1.7.5.1, 1.7.7.2, 1.9.6.1) and is therefore ambiguous.
+EC 1.7.99.4 has been transferred by the Enzyme Commission to multiple EC numbers (1.7.1.1, 1.7.1.2, 1.7.1.3, 1.7.5.1, 1.7.7.2, 1.9.6.1) and is therefore ambiguous.
+EC 1.4.99.1 has been transferred by the Enzyme Commission to EC 1.4.99.6.
+EC 1.6.99.3 has been transferred by the Enzyme Commission to EC 7.1.1.2.
+EC# inference disabled for EC 2.7.1.69
+EC 2.3.1.128 has been transferred by the Enzyme Commission to multiple EC numbers (2.3.1.266, 2.3.1.267) and is therefore ambiguous.
+EC 1.6.6.9 has been transferred by the Enzyme Commission to EC 1.7.2.3.
+EC 1.5.1.29 has been transferred by the Enzyme Commission to multiple EC numbers (1.5.1.41, 1.5.1.39, 1.5.1.38) and is therefore ambiguous.
+EC 1.2.2.2 has been deleted by the Enzyme Commission.
+EC 3.1.22.4 has been transferred by the Enzyme Commission to EC 3.1.21.c.
+EC 3.6.3.29 has been transferred by the Enzyme Commission to EC 7.3.2.5.
+EC 5.4.2.1 has been transferred by the Enzyme Commission to multiple EC numbers (5.4.2.11, 5.4.2.12) and is therefore ambiguous.
+EC# inference disabled for EC 2.7.1.69
+EC 1.3.99.1 has been transferred by the Enzyme Commission to EC 1.3.5.1.
+EC 1.3.99.1 has been transferred by the Enzyme Commission to EC 1.3.5.1.
+EC 3.6.3.12 has been transferred by the Enzyme Commission to EC 7.2.2.6.
+EC 3.6.3.12 has been transferred by the Enzyme Commission to EC 7.2.2.6.
+EC 3.6.3.12 has been transferred by the Enzyme Commission to EC 7.2.2.6.
+EC# inference disabled for EC 2.7.1.69
+EC 3.1.27.6 has been transferred by the Enzyme Commission to EC 4.6.1.21.
+EC 1.11.1.15 has been transferred by the Enzyme Commission to multiple EC numbers (1.11.1.24, 1.11.1.25, 1.11.1.26, 1.11.1.27, 1.11.1.28, 1.11.1.29) and is therefore ambiguous.
+EC 1.11.1.15 has been transferred by the Enzyme Commission to multiple EC numbers (1.11.1.24, 1.11.1.25, 1.11.1.26, 1.11.1.27, 1.11.1.28, 1.11.1.29) and is therefore ambiguous.
+EC 2.7.7.58 has been transferred by the Enzyme Commission to EC 6.2.1.ac.
+EC 3.6.3.4 has been transferred by the Enzyme Commission to EC 7.2.2.9.
+EC 3.6.3.17 has been transferred by the Enzyme Commission to multiple EC numbers (7.5.2.7, 7.5.2.8, 7.5.2.9, 7.5.2.10, 7.5.2.11, 7.5.2.12) and is therefore ambiguous.
+EC 3.4.13.3 has been transferred by the Enzyme Commission to multiple EC numbers (3.4.13.18, 3.4.13.20) and is therefore ambiguous.
+EC 1.3.99.3 has been transferred by the Enzyme Commission to multiple EC numbers (1.3.8.9, 1.3.8.8, 1.3.8.7) and is therefore ambiguous.
+EC 1.17.1.2 has been transferred by the Enzyme Commission to EC 1.17.7.4.
+Inferred 4385 enzymatic reactions from 901 rawgenes; 0 id-rxns, 901 ec-rxns
+
+     :::::  Finished EC number reaction inference for "CU928160"  :::::
+
+
+     :::::  Running reaction inference from GO terms  :::::
+
+
+
+     :::::  Running enzyme name matcher on 3660 input proteins  :::::
+
+Warning: enter-into-lookup-table-internal: Why does  have 51 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does  have 53 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does  have 54 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does acylactivatingenzyme have 52 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does acylactivating have 53 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does  have 55 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does fattyacylcoasynthasesystem have 56 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does fattyacylcoasynthetasesystem have 56 associated reactions?? 
+
+[Loaded 1165 lines from file pathologic:data;nonspecific-enzyme-names.dat]
+[Loaded 230 lines from file pathologic:data;metabolic-enzyme-ruleout-words.dat]
+
+[Processed 1830 data rows from file pathologic:data;enzyme-mappings.dat]
+Name-mapping hash table contains 56011 entries, of which 1340 are ambiguous
+Matching enzyme names for an enzyme-name-list with 3660 elements
+500 1000 1500 2000 2500 3000 3500 
+Solid matches found by enzyme name matcher: 1093
+Full report available in /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/reports/name-matching-report_2022-06-21.txt.
+
+     :::::  End enzyme name matcher  :::::
+
+
+     :::::  Begin Pathway Inference  :::::
+
+Taxonomic Pruning is turned on.
+Importing pathways that each have at least one reaction present...
+Imported 1117 pathways that each had at least one reaction present
+Imported 1184 new or changed pathways based on existing reactions.
+Writing inference report in /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/reports/pwy-inference-report_2022-06-21.txt.
+
+Pathway Inference Report File written                [subsequent runs will append to file]
+  to /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/reports/pwy-inference-report_2022-06-21.txt at 21-Jun-2022  11:26:24
+Importing 205 super pathways and their subpathways, some of which may be pruned in the next steps.
+
+Analyzing 1114 base pathways as to whether to keep or delete with cutoff score 0.15
+
+Pruning 735 base pathways, 379 remain
+Pruned 131 super-pathways, 74 remain
+[Checking inverses under class  Notes]
+[Checking inverses under class  KB-DESCRIPTOR]
+[Checking inverses under class  Enzymatic-Reactions]
+[Checking inverses under class  EC-BOOKKEEPING]
+[Checking inverses under class  Databases]
+[Checking inverses under class  Compound-Mixtures]
+[Checking inverses under class  Collections]
+[Checking inverses under class  Chemicals]
+[Checking inverses under class  Cell-Types]
+[Checking inverses under class  CCO]
+[Checking inverses under class  Regulation]
+[Checking inverses under class  Pseudo-Products]
+[Checking inverses under class  Protein-Features]
+[Checking inverses under class  Polymer-Segments]
+[Checking inverses under class  PGDB-Metadata]
+[Checking inverses under class  Notes]
+[Checking inverses under class  Growth-Observations]
+[Checking inverses under class  Generalized-Reactions]
+[Checking inverses under class  Gene-Ontology-Terms]
+[Checking inverses under class  Evidence]
+[Checking inverses under class  Organizations]
+[Checking inverses under class  People]
+[Checking inverses under class  Organisms]
+[Checking inverses under class  Publications]
+Pruning out unneeded reactions, compounds, etc...
+Deleting empty pathway PWY-6196
+Deleted 638 reactions whose enzymes each catalyzed more than 10 reactions (204 reactions were not pruned)
+Deleted 3112 orphan reactions and 1155 unreferenced compounds
+Inferring spontaneous reactions.
+Imported 71 spontaneous reactions.
+
+Importing composite reaction RXN-19445 because all its sub-reactions are either catalyzed by ECIAI1_0565-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction RXN-19474 because all its sub-reactions are either catalyzed by ECIAI1_0565-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction RXN-13158 because all its sub-reactions are either catalyzed by ECIAI1_0074-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction RXN-9787 because all its sub-reactions are either catalyzed by ECIAI1_2582-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction RXN-21566 because all its sub-reactions are either catalyzed by ECIAI1_2582-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction BTUR2-RXN because all its sub-reactions are either catalyzed by ECIAI1_1288-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction RXN-19335 because all its sub-reactions are either catalyzed by ECIAI1_1288-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+Removing link from pwy GLUAMCAT-PWY to nonexistent pwys ((TRANS-RXN-167A
+                                                          . INCOMING))
+Removing link from pwy UDPNAGSYN-PWY to nonexistent pwys ((TRANS-RXN-167A
+                                                           . INCOMING))
+Removing link from pwy PWY-6901 to nonexistent pwys ((TRANS-RXN-157
+                                                      . INCOMING))
+Removing link from pwy PWY-7395 to nonexistent pwys ((TRANS-RXN-167
+                                                      . INCOMING))
+Removing link from pwy MANNIDEG-PWY to nonexistent pwys ((TRANS-RXN-156
+                                                          . INCOMING))
+Removing link from pwy PWY-8004 to nonexistent pwys ((TRANS-RXN-157
+                                                      . INCOMING))
+Removing link from pwy PWY-8121 to nonexistent pwys ((TRANS-RXN0-540
+                                                      . INCOMING))
+Removing link from pwy PWY0-1309 to nonexistent pwys ((TRANS-RXN-155B
+                                                       . INCOMING))
+Removing link from pwy TREDEGLOW-PWY to nonexistent pwys ((TRANS-RXN-168
+                                                           . INCOMING))
+Deleting 8272 publication frames that are not cited in IAI1BASE
+
+Inferred  379  base pathways.
+
+     :::::  Ending Pathway Inference at 2022-06-21 11:28:56  :::::
+
+Inferring spontaneous reactions.
+Imported 0 spontaneous reactions.
+Updated 4354 protein molecular weights from sequence
+
+ This field gap_accession won't be parsed.
+ This field submitter_handle won't be parsed.
+ This field biospecimen_repository won't be parsed.
+ This field study_name won't be parsed.
+ This field study_design won't be parsed.
+ This field biospecimen_repository_sample_id won't be parsed.
+ This field submitted_sample_id won't be parsed.
+ This field submitted_subject_id won't be parsed.
+ This field gap_sample_id won't be parsed.
+ This field gap_subject_id won't be parsed.
+ This field sex won't be parsed.
+ This field histological_type won't be parsed.
+ This field analyte_type won't be parsed.
+ This field is_tumor won't be parsed.
+ This field molecular_data_type won't be parsed.
+ This field molecular_data_type won't be parsed.
+ This field gap_consent_code won't be parsed.
+ This field gap_consent_short_name won't be parsed.
+PGDB IAI1, slot ENVIRONMENT: Adding values NILCount of protein+RNA frames (the frames that could contain GO terms) : 4733
+Total GO term annotations : 0
+Count of proteins/RNAs with at least 1 GO term : 0
+Count of proteins/RNAs with at least 1 experimental GO term : 0
+Count of genes whose product or complex or modified form contains at least 1 GO term : 0
+Count of genes whose product or complex or modified form contains at least 1 experimental GO term : 0
+Count of distinct GO terms encountered : 0
+
+Creating report pathway file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/reports/pathways-report_2022-06-21.txt.
+[Creating /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/data/protseq.fsa]
+[Wrote 4354 protein sequences]
+[Creating /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/data/dnaseq.fsa]
+PGDB build done.
+PGDB contains 4551 genes, 4360 polypeptides, 379 base pathways, 2093 reactions, 1450 compounds
+[Saving KB IAI1BASE to V4-FASL file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/kb/iai1base.ocelot
+ 25343 frames saved]
+Creating Protein Complexes for IAI1.
+
+69 Protein complexes were created.
+Count of protein+RNA frames (the frames that could contain GO terms) : 4802
+Total GO term annotations : 0
+Count of proteins/RNAs with at least 1 GO term : 0
+Count of proteins/RNAs with at least 1 experimental GO term : 0
+Count of genes whose product or complex or modified form contains at least 1 GO term : 0
+Count of genes whose product or complex or modified form contains at least 1 experimental GO term : 0
+Count of distinct GO terms encountered : 0
+
+[Saving KB IAI1BASE to V4-FASL file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/iai1cyc/1.0/kb/iai1base.ocelot
+ 25215 frames saved]
+21-Jun-2022  11:29:24 Done

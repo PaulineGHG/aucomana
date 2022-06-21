@@ -1,0 +1,5507 @@
+#
+#  cft073cyc 1.0 Genes link table generated on Tue Jun 21, 2022
+#  All columns are separated by tab characters.
+#  Columns are: 
+#
+#  GENE-ID  EG#  b#  y-name  CGSC-ID  UniProt-ID  GENE-NAME  
+#
+#   GENE-ID      = Pathway Tools unique identifier for the gene
+#   UniProt-ID = Swiss-Prot identifier
+#   GENE-NAME    = Pathway Tools gene name
+#
+#
+C0796		gltA	
+C0797			
+C0798		sdhC	
+C0799			
+C0800		sdhD	
+C0801		sdhA	
+C0802		sdhB	
+C0803		sucA	
+C0804		sucB	
+C0805		sucC	
+C0806		sucD	
+C0807			
+C0808			
+C0809			
+C0810			
+C0811		cydA	
+C0812		cydB	
+C0813			
+C0814		ybgE	
+C0816		tolQ	
+C0817		tolR	
+C0818		tolA	
+C0819		tolB	
+C0820			
+C0821		pal	
+C0822		ybgF	
+C0823			
+C0824			
+C0825		nadA	
+C0826		pnuC	
+C0827			
+C0828			
+C0829		ybgS	
+C0830		aroG	
+C0832		galM	
+C0833		galK	
+C0834		galT	
+C0835		galE	
+C0836		modF	
+C0837		modE	
+C0838		ybhT	
+C0839			
+C0840		modA	
+C0841		modB	
+C0842		modC	
+C0844		ybhE	
+C0845		ybhD	
+C0846		ybhH	
+C0847		ybhI	
+C0848		ybhJ	
+C0849		ybhC	
+C0850		ybhB	
+C0851		gipA	
+C0852			
+C0853		bioA	
+C0854			
+C0855		bioB	
+C0856		bioF	
+C0857		bioC	
+C0858		bioD	
+C0859			
+C0860		uvrB	
+C0861		ybhK	
+C0862		moaA	
+C0863		moaB	
+C0864			
+C0865		moaC	
+C0871		ybhN	
+C0867		moaE	
+C0868		ybhL	
+C0869			
+C0870		ybhM	
+C0878		ybhG	
+C0872		ybhO	
+C0873		ybhP	
+C0874		ybhQ	
+C0875		ybhR	
+C0876		ybhS	
+C0877		ybhF	
+C0879		ybiH	
+C0880		rhlE	
+C0881			
+C0882			
+C0883		dinG	
+C0884		ybiB	
+C0885		ybiC	
+C0886		ybiJ	
+C0887			
+C0888			
+C0889		ybiX	
+C0941			
+C0890		ybiL	
+C0891		ybiM	
+C0892		ybiN	
+C0893		ybiO	
+C0895		glnP	
+C0896		glnH	
+C0897			
+C0898		dps	
+C0899		ybiF	
+C0900		ompX	
+C0913		ybiK	
+C0902			
+C0903			
+C0904		ybiR	
+C0905		ybiS	
+C0906		ybiT	
+C0907		ybiV	
+C0909			
+C0910		mipB	
+C0911		moeB	
+C0912		moeA	
+C0964			
+C0914		yliA	
+C0915			
+C0916		yliC	
+C0917		yliD	
+C0918		yliE	
+C0919		yliF	
+C0920		yliG	
+C0921		yliH	
+C0922		yliI	
+C0923		yliJ	
+C0925		deoR	
+C0926		ybjG	
+C0927		cmr	
+C0928		ybjH	
+C0948			
+C0929			
+C0930		ybjJ	
+C0931		ybjK	
+C0932		intT	
+C0933			
+C0934			
+C0935		coxT	
+C0937			
+C0938			
+C0953			
+C0939			
+C0940			
+C0942			
+C0943			
+C0944			
+C0945			
+C0946			
+C0947			
+C0949			
+C0950			
+C0951			
+C0954			
+C0955			
+C0956			
+C0957			
+C0958			
+C0960			
+C0961			
+C0962			
+C0963			
+C0965			
+C0966			
+C0967			
+C0968			
+C0969		yfdK	
+C0970			
+C0971			
+C0992		ybjF	
+C0972			
+C0973			
+C0974			
+C0976			
+C0977			
+C0978			
+C0979		ogrK	
+C0981		ybjM	
+C0543		cyoA	
+C0982		grxA	
+C0983		ybjC	
+C0984		mdaA	
+C0985		rimK	
+C0986		ybjN	
+C0988		potG	
+C0989		potH	
+C0990		potI	
+C0991		ybjO	
+C0993		artJ	
+C0994		artM	
+C0995		artQ	
+C0996		artI	
+C0997		artP	
+C0998		ybjP	
+C0999		ybjQ	
+C1000		ybjR	
+C1001			
+C1002		ybjT	
+C1003		ybjU	
+C1005			
+C1006		ybjW	
+C1007		ybjE	
+C1008			
+C1009		aqpZ	
+C1010			
+C1011		ybjD	
+C0924		dacC	
+C1012		ybjX	
+C1013			
+C1014		macA	
+C1016			
+C1017		cspD	
+C1018		yljA	
+C1019		clpA	
+C1060		ycbJ	
+C1021		infA	
+C1022		aat	
+C1023		cydC	
+C1024		cydD	
+C1025		trxB	
+C1026		lrp	
+C1032		dmsB	
+C1028		lolA	
+C1029		ycaJ	
+C1044		ycaP	
+C1030		serS	
+C1031		dmsA	
+C1033		dmsC	
+C1034		ycaC	
+C1035			
+C1036			
+C1037		ycaD	
+C1038		pflA	
+C1067		ycbB	
+C0392			
+C1040			
+C1042		focA_2	
+C1043		ycaO	
+C1045		serC	
+C1046		aroA	
+C1047		ycaL	
+C1048		cmk	
+C1049		rpsA	
+C1050		himD	
+C1051			
+C1052		ycaI	
+C1053			
+C1054		msbA	
+C1057		ycaQ	
+C1058		ycaR	
+C1059		kdsB	
+C1061		ycbC	
+C1062			
+C1063		smtA	
+C1064		mukF	
+C1065		mukE	
+C1068		ycbK	
+C1069		ycbL	
+C1070		aspC	
+C1072		asnS	
+C1073		pncB	
+C1074			
+C1075		pepN	
+C1076		ycbE	
+C1077		ycbM	
+C1079		ycbO	
+C1080		ycbP	
+C1081		pyrD	
+C1082		ycbW	
+C1084		ycbY	
+C1085		uup	
+C1086		pqiA	
+C1087		pqiB	
+C1088		ymbA	
+C1089			
+C1090		fabA	
+C1091			
+C1092		ycbG	
+C1093		ompA	
+C1094			
+C1095		sulA	
+C1102			
+C1096		yccR	
+C1097		yccS	
+C1098		yccF	
+C1099		helD	
+C1100		mgsA	
+C1101		yccT	
+C1103			
+C1104		yccV	
+C1105		yccW	
+C1106			
+C1107		yccK	
+C1125			
+C1109			
+C1110		yccA	
+C1111			
+C1112			
+C1114		hyaB	
+C1115		hyaC	
+C1116		hyaD	
+C1117		hyaE	
+C1118		hyaF	
+C1120		appB	
+C1119		appC	
+C1121		appA	
+C1122		cspH	
+C1123		cspG	
+C1124		sfa	
+C1137		agp	
+C1130		torT	
+C1126			
+C1127		yccM	
+C1128		torS	
+C1129			
+C1131		torR	
+C1132		torC	
+C1133		torA	
+C1134		torD	
+C1135		yccD	
+C1136		cbpA	
+C1138			
+C1139		yccJ	
+C1140		wrbA	
+C1148		ycdL	
+C1142			
+C1143		ycdG	
+C1144			
+C1145			
+C1146		ycdJ	
+C1147		ycdK	
+C1153			
+C1149			
+C1150		ycdC	
+C1151		putA	
+C1152			
+C1188			
+C1154		putP	
+C1155			
+C1156		ycdO	
+C1157		ycdB	
+C1158			
+C1160		ycdP	
+C1161		ycdQ	
+C1162		ycdR	
+C1163		ycdS	
+C1165			
+C1166			
+C1167			
+C1168			
+C1169		alpA	
+C1170			
+C1171			
+C1172			
+C1173			
+C1174			
+C1175			
+C1183			
+C1184			
+C1185			
+C1186			
+C1189			
+C1190			
+C1191			
+C1234			
+C1193			
+C1194			
+C1195			
+C1196			
+C0773		ybfF	
+C1197			
+C1198			
+C1199			
+C1200			
+C1201			
+C1202			
+C1203			
+C1204			
+C1205			
+C1206			
+C1207			
+C1208			
+C1209			
+C1210			
+C1213			
+C1214			
+C1215			
+C1216			
+C1257			
+C1218			
+C1219			
+C1220			
+C1221			
+C1224			
+C1225			
+C1227		mchB	
+C1262			
+C1230		mchD	
+C1231		mchE	
+C1246			
+C1232		mchF	
+C1233			
+C1235			
+C1236			
+C1237		sfaC	
+C1238		sfaB	
+C1240		sfaD	
+C1239		focA	
+C1241		focC	
+C1242		focD	
+C1243		focF	
+C1244		focG	
+C1245		focH	
+C1251	A0A0H2V871	iroE	
+C1258			
+C1247		focX	
+C1248			
+C1249			
+C1252	A0A0H2V660	iroD	
+C1253		iroC	
+C1254	A0A0H2V630	iroB	
+C1255			
+C1256			
+C1263			
+C1259			
+C1260			
+C1261			
+C1020			
+C1264			
+C1265			
+C1266			
+C1267			
+C1268			
+C1269			
+C1274			
+C1270			
+C1271			
+C1272			
+C1273			
+C1275			
+C1276			
+C1277			
+C1278			
+C1279			
+C1280			
+C1281			
+C1282			
+C1284			
+C1285			
+C1286			
+C1287			
+C1288			
+C1289			
+C1290			
+C1291			
+C1292			
+C1293			
+C1294			
+C1295		ycdW	
+C1297		ycdY	
+C1298		ycdZ	
+C1299		csgG	
+C1300		csgF	
+C1301		csgE	
+C1302		csgD	
+C1303			
+C1304			
+C1305		csgB	
+C1306		csgA	
+C1307		csgC	
+C1308		ymdA	
+C1309		ymdB	
+C1310		ymdC	
+C1311		ymdD	
+C1312			
+C1313		mdoG	
+C1314		mdoH	
+C1315			
+C1316		yceK	
+C1317			
+C1318		msyB	
+C1319		yceE	
+C1320		htrB	
+C1321		yceA	
+C1322		yceI	
+C1323			
+C1324			
+C1325		yceO	
+C1326		solA	
+C1327		yceP	
+C1328		dinI	
+C1329		pyrC	
+C1330		yceB	
+C1331		grxB	
+C1332		yceL	
+C1333		rimJ	
+C1334		yceH	
+C1337			
+C2247		pphA	
+C1339		flgN	
+C1340		flgM	
+C1341		flgA	
+C1342		flgB	
+C1343		flgC	
+C1344		flgD	
+C1345		flgE	
+C2628		yegW	
+C1346		flgF	
+C2096		ydiT	
+C1347		flgG	
+C1348		flgH	
+C1349		flgI	
+C1350		flgJ	
+C1351		flgK	
+C1352		flgL	
+C1353		rne	
+C1354			
+C1355		rluC	
+C1356		yceF	
+C1360		fabH	
+C1357			
+C1358		yceD	
+C1359		plsX	
+C1361		fabD	
+C1363			
+C1364		acpP	
+C1365		fabF	
+C1366		pabC	
+C1367			
+C1368			
+C1369		yceG	
+C1370		tmk	
+C1371		holB	
+C1372		ycfH	
+C2477		cobT	
+C1373		ptsG	
+C1374		fhuE	
+C1375			
+C1376		ycfF	
+C1377		ycfL	
+C2897			
+C1378		ycfM	
+C1379		ycfN	
+C1380		nagZ	
+C1381		ycfP	
+C2328			
+C1382		ndh	
+C1383		ycfJ	
+C1384			
+C1385		ycfQ	
+C2709		yeiQ	
+C1386		ycfR	
+C2177		ydjI	
+C1387		ycfS	
+C2558			
+C2939		xapB	
+C1390		ycfT	
+C1391		lolC	
+C1392		lolD	
+C1394		ycfX	
+C1393		lolE	
+C1395		cobB	
+C2788		yfaV	
+C1396		ycfZ	
+C1397		ymfA	
+C1398		potD	
+C1399		potC	
+C1400			
+C1401		xisN	
+C1402		recE	
+C1403			
+C1404		ydfD	
+C1405		dicB	
+C2219		sdaA	
+C1406			
+C1407		ydfC	
+C1408		ydfB	
+C1409		ydfA	
+C1410			
+C1411			
+C1412			
+C1413			
+C1414			
+C1415			
+C1416			
+C1417			
+C1418			
+C1419			
+C1420			
+C1421			
+C1422			
+C1423			
+C1424			
+C1425			
+C1426			
+C1427			
+C1428			
+C1429		ycgW	
+C1430			
+C1431			
+C1432			
+C1433			
+C1434		ydfR	
+C1435			
+C1436			
+C1437			
+C1438			
+C1439			
+C1440		ydfO	
+C1441			
+C1442			
+C1443			
+C1444			
+C1445			
+C1446			
+C1452			
+C1448			
+C1449			
+C1450			
+C1451			
+C1453			
+C1454			
+C1455			
+C1456			
+C1457			
+C1458			
+C1459			
+C1460			
+C1461			
+C1462			
+C1463			
+C1464			
+C1465			
+C1466			
+C1467		lomP	
+C1468			
+C1469			
+C1470			
+C1471			
+C1472			
+C1473			
+C1474			
+C1480		ycfD	
+C1475		ylcE	
+C1476		potB	
+C1477		potA	
+C1478			
+C1479		pepT	
+C1481			
+C1482			
+C1483			
+C1484			
+C1485			
+C1486			
+C1487			
+C1488			
+C2068			
+C1489			
+C1490			
+C1491			
+C1492			
+C1493			
+C1494			
+C1495			
+C2449			
+C1496			
+C2298		cheB	
+C1497			
+C2679		yeiT	
+C1510		purB	
+C1499			
+C1500			
+C1501			
+C1502			
+C1503			
+C1504			
+C1505			
+C1506			
+C1507			
+C1508		phoQ	
+C1509		phoP	
+C1511		ycfC	
+C1512		ycfB	
+C1513			
+C1514			
+C1515			
+C1516			
+C1518			
+C1517		icdA	
+C1519			
+C1520			
+C1521			
+C1522			
+C1523			
+C1524			
+C1525			
+C1526			
+C1527			
+C1528			
+C1529			
+C1530			
+C1531			
+C1532			
+C1533			
+C1534			
+C1535			
+C2189		yeaH	
+C1536			
+C1537		gamW	
+C1538			
+C1539			
+C1540			
+C1541			
+C1542			
+C1543			
+C1810			
+C1544			
+C1545			
+C1546			
+C1547			
+C1548			
+C1549			
+C1550			
+C1551			
+C1552			
+C1553			
+C1740			
+C1554			
+C1555			
+C1556			
+C1557		rus	
+C1562		ybcS	
+C1558			
+C1559		ybcQ	
+C1560		nmpC	
+C1561			
+C1563			
+C1564		ybcU	
+C1565			
+C1566			
+C1567			
+C1569			
+C1570			
+C1571			
+C1572			
+C1573			
+C1574			
+C1575			
+C1576			
+C1577			
+C1578			
+C1579			
+C1580			
+C1581			
+C1583			
+C1584			
+C1585			
+C1586			
+C1587			
+C1588			
+C1589			
+C1590			
+C1591			
+C1592			
+C1593			
+C1594			
+C1595			
+C1596			
+C1597		sitD	
+C1598		sitC	
+C1599		sitB	
+C1600		sitA	
+C1601			
+C1602			
+C1603		ycgX	
+C1604		ycgE	
+C1605			
+C1606		ycgF	
+C1607		ycgZ	
+C1608			
+C1609		ymgB	
+C1610			
+C1611			
+C1615			
+C1616		ymgD	
+C1617			
+C1618			
+C1619			
+C1620			
+C1970		rspB	
+C1621		minE	
+C1622		minD	
+C1623		minC	
+C1624			
+C1631		umuD	
+C1625		ycgJ	
+C1626		ycgK	
+C1861			
+C1627		ycgL	
+C1628			
+C1629		ycgN	
+C1630			
+C1942		tam	
+C1632		umuC	
+C1633		dsbB	
+C1634		nhaB	
+C1635		fadR	
+C1636			
+C1637		ycgB	
+C1791		ompG	
+C1638		dadA	
+C2800			
+C1639		dadX	
+C1640		ycgO	
+C1641		ldcA	
+C1642			
+C1250		iroN	
+C1643		mltE	
+C1644		ycgR	
+C1645		ymgE	
+C1646		prrA	
+C1647		modD	
+C1648			
+C1833			
+C1682		narX	
+C1650			
+C1651		fecD	
+C1652			
+C1653			
+C1654		treA	
+C1655			
+C1656		ycgC	
+C1657			
+C1658		ycgT	
+C1659			
+C1660			
+C1661		ychF	
+C1662		pth	
+C1663		ychH	
+C2310		otsA	
+C1664		ychM	
+C1665		prsA	
+C1666		ispE	
+C1667		hemM	
+C1668		hemA	
+C1669		prfA	
+C1670		hemK	
+C1671			
+C1672		ychA	
+C1673			
+C1674		kdsA	
+C1675			
+C1676		chaA	
+C1678		chaC	
+C1679		ychN	
+C2540		yeeF	
+C1680		ychP	
+C1681		narL	
+C1683			
+C1684		narK	
+C1685		narG	
+C1686		narH	
+C1687		narJ	
+C1688		narI	
+C1689			
+C1690			
+C2770			
+C1691			
+C1724		yciF	
+C1692			
+C1693			
+C1954		marB	
+C1694			
+C2201			
+C1695			
+C1696		purU	
+C2050		sodB	
+C1697		ychJ	
+C1698		ychK	
+C1699		hnr	
+C1700		galU	
+C1701		hns	
+C1702			
+C1703		tdk	
+C1704			
+C1705		adhE	
+C1706		ychE	
+C1707		oppA	
+C1708		oppB	
+C1709		oppC	
+C1710		oppD	
+C1711		oppF	
+C2621		gatY	
+C1712		yciU	
+C1713		cls	
+C2470			
+C1714			
+C1715		kch	
+C2851		hisJ	
+C1716		yciI	
+C1717		tonB	
+C1718			
+C1720		ispZ	
+C1721		yciC	
+C1722		ompW	
+C1723		yciE	
+C1884			
+C1725		trpA	
+C1726		trpB	
+C2131		katE	
+C1729		trpD	
+C2512			
+C1730		trpE	
+C5494		trpL	
+C1731		trpH	
+C1732		yciO	
+C1733		yciQ	
+C1734		yciL	
+C1735		btuR	
+C1736		yciK	
+C1737		sohB	
+C1747		pgpB	
+C1738			
+C1739		yciN	
+C1759		fabI	
+C1741		topA	
+C1742		cysB	
+C1743			
+C1744			
+C1745		acnA	
+C1752			
+C1746		ribA	
+C1764			
+C1748		yciS	
+C1749		yciM	
+C1750		pyrF	
+C1751		yciH	
+C1753		osmB	
+C1754		yciT	
+C1755			
+C1756		yciR	
+C1757		rnb	
+C1758		yciW	
+C1760			
+C1761			
+C1762			
+C1763			
+C1765			
+C1766			
+C1767		sapF	
+C1768		sapD	
+C1770		sapB	
+C1769		sapC	
+C1771		sapA	
+C1772		ymjA	
+C1773		pspF	
+C1774		pspA	
+C2361		fliL	
+C1775		pspB	
+C1776			
+C1777		pspC	
+C1778		pspD	
+C2742			
+C1779		pspE	
+C1780		ycjM	
+C1781			
+C1782		ycjN	
+C1783		ycjO	
+C2591		asmA	
+C1784		ycjP	
+C1926		ydeM	
+C1785		ycjQ	
+C2022		ydgO	
+C1787		ycjS	
+C1788		ycjT	
+C1789		ycjU	
+C1790		ycjV	
+C2403			
+C2252		holE	
+C1792		ycjW	
+C1793		ycjX	
+C1794		ycjF	
+C1795		tyrR	
+C1796		tpx	
+C1797		ycjG	
+C2633		yohM	
+C1800			
+C1801			
+C1802			
+C1803		mppA	
+C1804		ynaI	
+C1805		ynaJ	
+C1806		ydaA	
+C1807		fnr	
+C1808		ogt	
+C1809			
+C2482			
+C1811			
+C1812			
+C1813			
+C1814		ydaL	
+C1815		ydaM	
+C1816		ydaN	
+C1817		dbpA	
+C1818		ydaO	
+C1819			
+C1820			
+C1821		ynaF	
+C1822		ompN	
+C1823		ydbK	
+C1896		yddE	
+C1824			
+C1825			
+C1826		hslJ	
+C1829		ynbE	
+C1827		ldhA	
+C1834		ynbA	
+C1830		ydbL	
+C1832		ydbC	
+C1835		ynbB	
+C1836		ynbC	
+C1837		ynbD	
+C1838			
+C1839		acpD	
+C1840		hrpA	
+C2333		yedO	
+C1841		ydcF	
+C2714		yejA	
+C1842		aldA	
+C2182		yeaC	
+C1843			
+C2563			
+C1844		cybB	
+C1845		ydcA	
+C1846			
+C1847		ycdI	
+C1848		ydcJ	
+C2793		yfaO	
+C1849		ydcG	
+C1850		ydcH	
+C1851		rimL	
+C1852		ydcK	
+C1853		tehA	
+C1854		tehB	
+C1855			
+C1856		ydcL	
+C1857		ydcO	
+C1858		ydcN	
+C1859		ydcP	
+C1862			
+C1860		yncJ	
+C1863		ydcR	
+C1864		ydcS	
+C1865		ydcT	
+C1866		ydcU	
+C1867		ydcV	
+C1869		ydcW	
+C1870			
+C1871		ydc	
+C1977		ynfE	
+C1872		ydcZ	
+C1873		yncA	
+C1874			
+C1877		yncE	
+C2224		manY	
+C1878		ansP	
+C2605		baeR	
+C2073		ynhG	
+C1880			
+C2454			
+C1881			
+C2835			
+C1882			
+C1883			
+C1885			
+C1886			
+C1887			
+C1888			
+C1889			
+C1890			
+C1891			
+C1892			
+C1893			
+C1894		yddH	
+C1895		nhoA	
+C1897		narV	
+C2684		mglB	
+C1898		narW	
+C1899		narY	
+C2115		infC	
+C1900		narZ	
+C1901		narU	
+C1902		yddG	
+C5623		fdnG	
+C2345		yedF	
+C1905			
+C1906		fdnH	
+C1907		fdnI	
+C1908			
+C2726		yejM	
+C1909		yddM	
+C1910			
+C1911		adhP	
+C2194		yeaL	
+C1912		sfcA	
+C2575		cpsB	
+C1913		rpsV	
+C1914			
+C2006		ydgA	
+C1915			
+C1916		osmC	
+C2426			
+C1918			
+C1919			
+C1920		yddW	
+C1921		xasA	
+C2807		yfbB	
+C1922		gadB	
+C2275		ruvA	
+C1923		pqqL	
+C1924		yddB	
+C2656		yehU	
+C1925		yddA	
+C2317			
+C1927		ydeN	
+C1928		ydeO	
+C2166		topB	
+C1929			
+C1930		ydeP	
+C2547		hisD	
+C1931		ydeQ	
+C2396			
+C1932		ydeR	
+C1933		ydeS	
+C2777		nrdB	
+C1934			
+C1935			
+C1936			
+C2208		rnd	
+C1937			
+C1938		oprR	
+C2057		ydhE	
+C1939			
+C2438			
+C1940		hipA	
+C2287		yecK	
+C1941		hipB	
+C1943		yneE	
+C1945		yneF	
+C1946		yneG	
+C1947		yneH	
+C1948		yneI	
+C1950		sotB	
+C1951		marC	
+C1952		marR	
+C1953		marA	
+C1955			
+C1956			
+C1957			
+C1958			
+C1959			
+C1960			
+C1961		ydeD	
+C1962		ydeF	
+C1963		ydeH	
+C1964		dcp	
+C2138		osmE	
+C1965		ydfG	
+C1966		ydfH	
+C2368			
+C1967		ydfZ	
+C1968			
+C1969		ydfJ	
+C2749			
+C1971		rspA	
+C2598		yegK	
+C1972		ynfA	
+C1973		ynfB	
+C1974		speG	
+C1975		ynfC	
+C1976		ynfD	
+C1978		ynfF	
+C1979		ynfG	
+C1980			
+C1981		ynfH	
+C2029		tyrS	
+C1982		ynfI	
+C1983		ynfJ	
+C1984		ynfK	
+C1985		mlc	
+C1986		ynfL	
+C1987		ynfM	
+C1988		asr	
+C1994		pntB	
+C1989			
+C1990			
+C1991		ydgE	
+C1992		ydgF	
+C1993			
+C2000		rstA	
+C1995		pntA	
+C1996		ydgH	
+C1997		ydgI	
+C1998		ydgB	
+C1999		ydgC	
+C2001		rstB	
+C2002		tus	
+C2003		fumC	
+C2004		fumA	
+C2005		manA	
+C2007		uidC	
+C2008		uidB	
+C2009		uidA	
+C2010		uidR	
+C2011		hdhA	
+C2012		malI	
+C2013		malX	
+C2014		malY	
+C2015		add	
+C2016		ydgJ	
+C2018		ydgK	
+C2019			
+C2020			
+C2021			
+C2120		ydiY	
+C2023			
+C2024		ydgQ	
+C2025		nth	
+C2026		ydgR	
+C2027		gst	
+C2028		pdxY	
+C2030		pdxH	
+C2031		ydhA	
+C2032		ydhH	
+C2034		slyA	
+C2035		ydhI	
+C2036		ydhJ	
+C2037		ydhK	
+C2038		sodC	
+C2039		ydhF	
+C2040		ydhL	
+C2041			
+C2042		ydhM	
+C2043		nemA	
+C2044		gloA	
+C2046			
+C2047			
+C2048		ydhD	
+C2049		ydhO	
+C2062		ydhT	
+C2051		ydhP	
+C2052		purR	
+C2053		ydhB	
+C2054		ydhC	
+C2104		nlpC	
+C2055		cfa	
+C2056		ribE	
+C2085		ydiM	
+C2058		ydhQ	
+C2059			
+C2060		ydhS	
+C2061			
+C2063			
+C2069		ydhZ	
+C2064		ydhU	
+C2065			
+C2066		ydhW	
+C2067		ydhV	
+C2070			
+C2071		pykF	
+C2072		lpp	
+C2090		ydiO	
+C2074		ynhA	
+C2075			
+C2076		ynhC	
+C2077		ynhD	
+C2078		ynhE	
+C2079		ydiC	
+C2080		ydiH	
+C2081		ydiI	
+C2082		ydiJ	
+C2083		ydiK	
+C2086		ydiN	
+C2087		ydiB	
+C2088		aroD	
+C2089		ydiF	
+C2091		ydiP	
+C2092			
+C2093		ydiQ	
+C2094		ydiR	
+C2095		ydiS	
+C2097		ydiD	
+C2098		ppsA	
+C2099		ydiA	
+C2100		aroH	
+C2101		ydiE	
+C2102		ydiU	
+C2103		ydiV	
+C2105		btuD	
+C2106		btuE	
+C2107		btuC	
+C2108			
+C2109		himA	
+C2112		pheS	
+C5495		pheM	
+C2113		rplT	
+C2114			
+C2116		thrS	
+C2117			
+C2118			
+C2119			
+C2121		pfkB	
+C2122			
+C2123		ydiZ	
+C2124		yniA	
+C2125		yniB	
+C2127		ydjM	
+C2143		spy	
+C2128		ydjN	
+C2129			
+C2130			
+C2132		ydjC	
+C2133		celF	
+C2134		celD	
+C2135		celC	
+C2136		celB	
+C2137		celA	
+C2139		nadE	
+C2140		ydjQ	
+C2141		ydjR	
+C2142			
+C2144		ydjS	
+C2145			
+C2146			
+C2147			
+C2148		cstC	
+C2149			
+C2150		xthA	
+C2151		ydjX	
+C2152		ydjY	
+C2153		ydjZ	
+C2155			
+C2156		ynjC	
+C2157		ynjD	
+C2158			
+C2159		ynjF	
+C2160			
+C2161		ynjH	
+C2162		gdhA	
+C2259		yebF	
+C2163			
+C2164		ybeW	
+C2165			
+C2167		selD	
+C2168		ydjA	
+C2169			
+C2170		sppA	
+C2171		ansA	
+C2172		ydjB	
+C2173		ydjE	
+C2174		ydjF	
+C2175		ydjG	
+C2176		ydjH	
+C2489			
+C2178		ydjJ	
+C2179		ydjK	
+C2180			
+C2181		ydjL	
+C2183		yeaA	
+C2184		gapA	
+C2185		yeaD	
+C2186		yeaE	
+C2187		yeaF	
+C2188		yeaG	
+C2190		yeaI	
+C2191		yeaJ	
+C2192		yeaK	
+C2193			
+C2195		yeaM	
+C2196		yeaN	
+C2197		yeaO	
+C2198		yoaF	
+C2199		yeaP	
+C2200		yeaQ	
+C2202		yoaG	
+C2203			
+C2204		yeaR	
+C2205		yeaS	
+C2206			
+C2207			
+C2209		fadD	
+C2210		yeaY	
+C2211		yeaZ	
+C2212			
+C2213		yoaB	
+C2214		yoaC	
+C2215			
+C2216		yoaH	
+C2217		pabB	
+C2218		yeaB	
+C2220			
+C2221		yoaD	
+C2222		yoaE	
+C2223		manX	
+C2225			
+C2226		manZ	
+C2227		yobD	
+C2228		yebN	
+C2229		yebH	
+C2230			
+C2231		cspC	
+C2232		yobF	
+C2233		yebO	
+C2234		yobG	
+C2235			
+C2236			
+C2237		yebQ	
+C2238		htpX	
+C2239		prc	
+C2240		proQ	
+C2241			
+C2242		yebS	
+C2243		yebT	
+C2244		yebU	
+C2245		yebV	
+C5600		rrsH	
+C2246		yebW	
+C5511			
+C5512			
+C2248			
+C5601		rrlH	
+C2249		yebY	
+C2250		yebZ	
+C5602		rrfH	
+C2251			
+C5513		aspU	
+C5514		aspV	
+C2253		yobB	
+C5503		ffs	
+C2254			
+C2255			
+C5515		thrW	
+C5516			
+C2256		ptrB	
+C2257			
+C5517			
+C5518		glnX	
+C2258		yebE	
+C5519		glnV	
+C2260		yebG	
+C5520		metU	
+C5521		glnW	
+C5522		glnU	
+C5523			
+C5524			
+C5525		lysT	
+C5526		valT	
+C2264		edd	
+C5527		lysW	
+C2265		zwf	
+C5528		valZ	
+C2266			
+C5529		lysY	
+C2267		yebK	
+C2268		pykA	
+C5530		lysZ	
+C2269		msbB	
+C5531		lysQ	
+C2270		yebA	
+C5532		serW	
+C2271		yebL	
+C5504		dicF	
+C2272		yebM	
+C5533		serT	
+C2273		yebI	
+C5534			
+C2274		ruvB	
+C5535		serX	
+C2276		yebB	
+C5536			
+C5537			
+C2277		ruvC	
+C5538			
+C2278		yebC	
+C5539		tyrV	
+C2279		ntpA	
+C5540		tyrT	
+C2280		aspS	
+C5505		dsrA	
+C2281		yecD	
+C5541		valV	
+C2282		yecE	
+C2283		yecN	
+C5542		valW	
+C5543		leuZ	
+C2284		yecO	
+C2285		yecP	
+C5544		cysT	
+C5545		glyW	
+C2286		bisZ	
+C5546		serU	
+C2350		ybcL	
+C2288			
+C5547		asnT	
+C2289			
+C5548		asnV	
+C5549		asnU	
+C2290		yecM	
+C5550		asnW	
+C2291		argS	
+C5551		proL	
+C2292		flhE	
+C5552		argW	
+C2293		flhA	
+C5553		alaX	
+C2294		flhB	
+C2295			
+C5554		alaW	
+C2322		yecH	
+C5555		valU	
+C2296		cheZ	
+C5556		valX	
+C2297		cheY	
+C5557		valY	
+C2306		flhC	
+C5558		lysV	
+C2299		cheR	
+C2311		otsB	
+C2300			
+C5615		rrfG	
+C5616		rrlG	
+C2301		tar	
+C5559		gltW	
+C2302		cheW	
+C5617		rrsG	
+C2303		cheA	
+C5508		ssrS	
+C2304		motB	
+C5560			
+C2307			
+C5561		argQ	
+C2308		flhD	
+C5562		argZ	
+C5563		argY	
+C2309		yecG	
+C5564		argV	
+C5565		serV	
+C5566		metZ	
+C2312		araH	
+C2313		araG	
+C5567		metW	
+C2314		araF	
+C5568		metV	
+C2315		yecI	
+C5569		glyU	
+C2316			
+C5570		pheV	
+C5509		rnpB	
+C2318			
+C2319		yecR	
+C5571		ileX	
+C2320			
+C2321		ftn	
+C5572		metY	
+C2329		yecF	
+C2323		tyrP	
+C5573		leuU	
+C2324		yecA	
+C2334			
+C5618		rrfD	
+C2325		pgsA	
+C5619		rrlD	
+C2326		uvrC	
+C5574			
+C2327		uvrY	
+C5620		rrsD	
+C5575		proK	
+C5576		selC	
+C2330		sdiA	
+C5510		spf	
+C2331		yecC	
+C5603		rrsC	
+C2332		yecS	
+C5577		gltU	
+C2335		fliY	
+C5604		rrlC	
+C5605		rrfC	
+C2336		fliZ	
+C5578		aspT	
+C2337		fliA	
+C5579		trpT	
+C5580		argX	
+C2338		fliC	
+C5581		hisR	
+C2339		fliD	
+C5582		leuT	
+C2340		fliS	
+C5583		proM	
+C2341		fliT	
+C5606		rrsA	
+C2342		amyA	
+C5584		ileT	
+C2343		yedD	
+C5585		alaT	
+C2344		yedE	
+C5607		rrlA	
+C5608		rrfA	
+C2346		yedK	
+C5609		rrsB	
+C2347			
+C5586		gltT	
+C2348			
+C5610		rrlB	
+C2349		ybcM	
+C5611		rrfB	
+C2351			
+C5587		thrU	
+C5588		tyrU	
+C2352		emrE	
+C5589		glyT	
+C2353		fliE	
+C5590		thrT	
+C2354		fliF	
+C5612		rrsE	
+C2355		fliG	
+C5591		gltV	
+C5613		rrlE	
+C2357		fliH	
+C5614		rrfE	
+C2358		fliI	
+C5592		pheU	
+C2359		fliJ	
+C5593		glyV	
+C2360		fliK	
+C5594		glyX	
+C5595		glyY	
+C2362		fliM	
+C5596		leuX	
+C2363		fliN	
+C5597		leuV	
+C2364		fliO	
+C5598		leuP	
+C2365		fliP	
+C5599		leuQ	
+C2366		fliQ	
+C2367		fliR	
+C2369		rcsA	
+C2370		dsrB	
+C2371			
+C2372		yodD	
+C2373		yedP	
+C2374		yedQ	
+C2375			
+C2376		yodC	
+C2377		yedI	
+C2378		yedA	
+C2379		vsr	
+C2380		dcm	
+C2381		yedJ	
+C2382		yedR	
+C2385		yedU	
+C2383			
+C2390		yedZ	
+C2386		yedV	
+C2387		yedW	
+C2388			
+C2389		yedY	
+C2391		yodA	
+C2392			
+C2393			
+C2394			
+C2395			
+C2397			
+C2398			
+C2399			
+C2400			
+C2401			
+C2402			
+C2404			
+C2405			
+C2406			
+C2407			
+C2408			
+C2409			
+C2410			
+C2411			
+C2412			
+C2413			
+C2415			
+C2416			
+C2417		yeeI	
+C2418			
+C2420			
+C2419			
+C2421			
+C2422			
+C2423			
+C2424			
+C2425			
+C2427			
+C2428			
+C2429			
+C2430			
+C2431			
+C2432			
+C2433			
+C2434			
+C2435			
+C2436			
+C2437			
+C2439			
+C2440			
+C2441			
+C2442			
+C2443		shiA	
+C2610			
+C2444		amn	
+C2445		yeeN	
+C2446		nac	
+C2447		cbl	
+C2448		yeeO	
+C2840		pta	
+C2450			
+C2451			
+C2452			
+C2501			
+C2453			
+C2731		ccmH	
+C2580		wcaF	
+C2455			
+C2456			
+C2457			
+C2458			
+C2459			
+C2460			
+C2461			
+C2462			
+C2463			
+C2464			
+C2466			
+C2471			
+C2467			
+C2468			
+C2469			
+C2472			
+C2473			
+C2474			
+C2475			
+C2476		erfK	
+C2478		cobS	
+C2479		cobU	
+C2480			
+C2481			
+C2812		elaC	
+C2483			
+C2484			
+C2485			
+C2486			
+C2661		yehZ	
+C2490			
+C2492			
+C2703		fruK	
+C2494			
+C2495			
+C2496			
+C2497			
+C2498			
+C2499			
+C2500			
+C2502			
+C2503			
+C2552		hisF	
+C2504			
+C2782		glpA	
+C2505			
+C2506			
+C2508			
+C2509			
+C2510			
+C2511			
+C2824		nuoG	
+C2513			
+C2514			
+C2515			
+C2516			
+C2517			
+C2518			
+C2673		yohJ	
+C2520			
+C2521			
+C2522			
+C2523			
+C2524			
+C2525			
+C2526			
+C2527			
+C2528			
+C2529			
+C2530			
+C2531			
+C2532			
+C2533		yeeW	
+C2534		yeeX	
+C2754		ada	
+C2536		yeeA	
+C2537		sbmC	
+C2538		dacD	
+C2539		sbcB	
+C2541			
+C2542		yeeY	
+C2543			
+C2544			
+C2545		yefM	
+C5496		hisL	
+C2546		hisG	
+C2645			
+C2548		hisC	
+C2549		hisB	
+C2550		hisH	
+C2551		hisA	
+C2553		hisI	
+C2554		wzzB	
+C2555		ugd	
+C2556		gnd	
+C2557		manB	
+C2559			
+C2560			
+C2617		gatC	
+C2561			
+C2562			
+C2847		yfcH	
+C2564			
+C2565			
+C2566			
+C2567		galF	
+C2696		yeiK	
+C2568		wcaM	
+C2569		wcaL	
+C2570		wcaK	
+C2571		wzxC	
+C2572		wcaJ	
+C2573		cpsG	
+C2574			
+C2738		ccmA	
+C2576		wcaI	
+C2577		wcaH	
+C2578		wcaG	
+C2579		gmd	
+C2587			
+C2581		wcaE	
+C2582		wcaD	
+C2583		wcaC	
+C2584		wcaB	
+C2585		wcaA	
+C2819		nuoL	
+C2668		yohD	
+C2588			
+C2589			
+C2590		yegH	
+C2592		dcd	
+C2593		udk	
+C2594		yegE	
+C2595		alkA	
+C2789		yfaW	
+C2596		yegD	
+C2597		yegI	
+C2599		yegL	
+C2600		yegM	
+C2601		yegN	
+C2602		yegO	
+C2603		yegB	
+C2604		baeS	
+C2606		yegP	
+C2607			
+C2608			
+C2609			
+C2611		yegQ	
+C2801		yfbJ	
+C2612			
+C2613		yegR	
+C2650		yehM	
+C2614		yegS	
+C2615			
+C2771		yfaT	
+C2622			
+C2618		gatB	
+C2619		gatA	
+C2620		gatZ	
+C2743		napH	
+C2634		yohN	
+C2623			
+C2715		yejB	
+C2624			
+C2625		yegT	
+C2794		ais	
+C2626		yegU	
+C2627		yegV	
+C2629		yegX	
+C2836		yfbV	
+C2630		thiD	
+C2685		galS	
+C2631		thiM	
+C2632		yohL	
+C2766		atoE	
+C2808		menD	
+C2657		yehV	
+C2635		yehA	
+C2636		yehB	
+C2637		yehC	
+C2638		yehD	
+C2639			
+C2640		yehE	
+C2641		mrp	
+C2642		metG	
+C2643			
+C2778		yfaE	
+C2646			
+C2647			
+C2648			
+C2649		yehL	
+C2651		yehP	
+C2652		yehQ	
+C2653		yehR	
+C2654		yehS	
+C2655		yehT	
+C2662			
+C1786		ycjR	
+C2658		yehW	
+C2659		yehX	
+C2033		slyB	
+C2660		yehY	
+C2663		bglX	
+C0399		yagU	
+C2664		dld	
+C2665		pbpG	
+C2666			
+C2667		yohC	
+C2414			
+C2669			
+C2670			
+C2671		yohG	
+C2672		yohI	
+C2674		yohK	
+C2675		cdd	
+C2676			
+C2677		sanA	
+C2263		eda	
+C2678		yeiS	
+C1217			
+C2680		yeiA	
+C2681			
+C2682		mglC	
+C2683		mglA	
+C2644		yehI	
+C2686			
+C2687		yeiB	
+C2688		folE	
+C2689		yeiG	
+C2690		cirA	
+C1066		mukB	
+C2691		lysP	
+C2692		yeiE	
+C2693		yeiH	
+C2694		nfo	
+C2493			
+C2720		rsuA	
+C2697		yeiL	
+C1447			
+C2698		yeiM	
+C2874		mepA	
+C2701		yeiC	
+C2702		fruA	
+C1828		ydbH	
+C2841		yfcC	
+C2704		fruB	
+C2705			
+C1296		ycdX	
+C2706		yeiO	
+C2707			
+C2708		yeiP	
+C1677		chaB	
+C2710		yeiR	
+C2711		yeiU	
+C2712		spr	
+C2713		rtn	
+C2732		dsbE	
+C2716		yejE	
+C2717		yejF	
+C2718		yejG	
+C2719		bcr	
+C2721		yejH	
+C2722		rplY	
+C2723			
+C2724		yejK	
+C2725		yejL	
+C2727			
+C2728			
+C2729			
+C2730		narP	
+C2813		yfbK	
+C2733		ccmF	
+C2734		ccmE	
+C0099		yabB	
+C2735		ccmD	
+C2305		motA	
+C2736		ccmC	
+C2783		glpB	
+C2755			
+C2739		napC	
+C2740			
+C2741		napB	
+C2744		napG	
+C2745		napA	
+C2154		ynjA	
+C2746		napD	
+C2747		napF	
+C1108			
+C2748			
+C2750		eco	
+C2535			
+C2751		yojH	
+C2752		yojI	
+C2753		alkB	
+C2916		yfdZ	
+C2848		hisP	
+C2384			
+C2756		yojL	
+C1338		mviN	
+C2757			
+C2758		ompC	
+C2759		yojN	
+C2760		rcsB	
+C2761		rcsC	
+C2765		atoA	
+C2762		atoS	
+C2763		atoC	
+C1719		yciA	
+C2764		atoD	
+C2767		atoB	
+C2772		yfaA	
+C2768		yfaP	
+C2769		yfaQ	
+C1187			
+C2773		gyrA	
+C1568		nohA	
+C2774		ubiG	
+C2775		yfaL	
+C2776		nrdA	
+C2830		lrhA	
+C1949		yneJ	
+C2779		inaA	
+C2780		glpQ	
+C2802		pmrD	
+C2781		glpT	
+C2784		glpC	
+C2785			
+C2786		yfaD	
+C2787		yfaU	
+C2790		yfaX	
+C2791			
+C2792		yfaZ	
+C2825		nuoF	
+C2795		yfbE	
+C2045		rnt	
+C2796			
+C2797		yfbG	
+C2798		yfbH	
+C2799		yfbI	
+C2809		menF	
+C2803		menE	
+C2804		menC	
+C2805		menB	
+C2616		gatD	
+C2806			
+C2814			
+C1229		mchC	
+C2810		elaB	
+C2811		elaA	
+C2084		ydiL	
+C2815		yfbL	
+C2816		yfbM	
+C2817		nuoN	
+C2465			
+C2818		nuoM	
+C2820		nuoK	
+C2821		nuoJ	
+C1078		ycbN	
+C2822		nuoI	
+C2823		nuoH	
+C2826		nuoE	
+C2846		folX	
+C2831			
+C2827		nuoC	
+C2828		nuoB	
+C2829		nuoA	
+C2832		yfbR	
+C2695		yeiI	
+C1649			
+C2833		yfbS	
+C2834		yfbT	
+C2837			
+C2838		ackA	
+C2839			
+C2842		yfcD	
+C2843		yfcE	
+C2844		yfcF	
+C2845		yfcG	
+C1498			
+C1879			
+C2849		hisM	
+C2850		hisQ	
+C2126		yniC	
+C2854			
+C2855		ubiX	
+C2856		purF	
+C2857		cvpA	
+C2858			
+C2859		dedD	
+C2860		folC	
+C2861		accD	
+C2862		dedA	
+C2863		truA	
+C2864		usg	
+C2865		pdxB	
+C2866		div	
+C2356			
+C2737		ccmB	
+C2869		fabB	
+C2870		yfcK	
+C2871		yfcL	
+C2872		yfcM	
+C2873		yfcA	
+C2886			
+C2875		aroC	
+C1159		phoH	
+C2876		yfcB	
+C2877		yfcN	
+C2878		yfcO	
+C2879		yfcP	
+C2586			
+C2880		yfcQ	
+C2881		yfcR	
+C2882		yfcS	
+C2883		yfcU	
+C2967		yfeZ	
+C2884		yfcV	
+C2885			
+C2887			
+C2888		yfcZ	
+C2889		fadL	
+C1389		mfd	
+C2890		vacJ	
+C2891			
+C2892		yfdC	
+C2893			
+C2894		ydeU	
+C2895			
+C2896			
+C2898			
+C2899		dsdC	
+C2900		dsdX	
+C2901		dsdA	
+C2017		ydgT	
+C2902		emrY	
+C2903			
+C2904		emrK	
+C2905		evgA	
+C3007		gcvR	
+C2906		evgS	
+C2907		yfdE	
+C2908		yfdV	
+C2909			
+C2910		yfdW	
+C2911			
+C2912		ypdI	
+C2913			
+C2914		yfdY	
+C2915		ddg	
+C2917			
+C2918			
+C2919		ypdA	
+C2921		ypdC	
+C2920		ypdB	
+C2922			
+C2923		ypdE	
+C2924			
+C2925			
+C2926			
+C2927		glk	
+C2928		yfeO	
+C2929		ypeC	
+C2930			
+C2933		yfeA	
+C2931			
+C2932		nupC	
+C2934		yfeC	
+C2935		yfeD	
+C2936		gltX	
+C2937		xapR	
+C2938			
+C2944			
+C2940		xapA	
+C2941		yfeN	
+C2942		yfeR	
+C2943		yfeH	
+C2945		lig	
+C2946		zipA	
+C2947		cysZ	
+C2948		cysK	
+C2949			
+C2950		ptsH	
+C2951		ptsI	
+C2952		crr	
+C2953		pdxK	
+C2954		yfeK	
+C2955		cysM	
+C2956		cysA	
+C2957			
+C2958		cysU	
+C2959		cysP	
+C2960		ucpA	
+C2961		yfeU	
+C2962			
+C2963			
+C2964			
+C2965		yfeX	
+C2966		yfeY	
+C3019		ppk	
+C2968		ypeA	
+C2969		amiA	
+C2970		hemF	
+C2971		yfeG	
+C2972			
+C2973			
+C2974		eutC	
+C2975		eutB	
+C2976			
+C2977		eutH	
+C2978		eutG	
+C2979		eutJ	
+C2980		eutE	
+C0520		yajD	
+C2981		cchB	
+C2982		cchA	
+C2983		eutI	
+C2984			
+C2985			
+C2986			
+C2987			
+C2988			
+C0901		ybiP	
+C2989		talA	
+C2990		tktB	
+C2991		ypfG	
+C2992			
+C2993			
+C2994		yffH	
+C2995		yffG	
+C2996		narQ	
+C2997		acrD	
+C2998		yffB	
+C0750		nagD	
+C2999		dapE	
+C3000			
+C3001		ypfH	
+C3002		ypfI	
+C3003		ypfJ	
+C3004		purC	
+C3005		nlpB	
+C3006		dapA	
+C3008		bcp	
+C3009		perM	
+C3010			
+C3011		yfgC	
+C3012			
+C3013		yfgE	
+C3014		uraA	
+C3015		upp	
+C3016			
+C3017		purM	
+C0980		ybjL	
+C3018		purN	
+C3020		ppx	
+C3021		yfgF	
+C3022			
+C3023			
+C3024		yfgH	
+C3025		yfgI	
+C3026		guaA	
+C3027		guaB	
+C3028		xseA	
+C3029			
+C3030			
+C3031			
+C0030		ileS	
+C3032		yfgJ	
+C3033			
+C3034		yfgL	
+C3035		yfgM	
+C0411			
+C3036		hisS	
+C3037		gcpE	
+C3038		yfgA	
+C3039		yfgB	
+C3040			
+C3041		ndk	
+C3042		pbpC	
+C3043		yfhM	
+C3044		sseA	
+C3045			
+C3046			
+C3047		sseB	
+C3048		pepB	
+C3049		yfhJ	
+C3050		fdx	
+C3051		hscA	
+C0260			
+C3052		yfhE	
+C3053		yfhF	
+C3054			
+C3055			
+C3056		yfhO	
+C0831		gpmA	
+C3057		yfhP	
+C3058		yfhQ	
+C3059		suhB	
+C3060		yfhR	
+C3061		csiE	
+C3062		hcaT	
+C3063			
+C3064			
+C3065		yphA	
+C3066		yphB	
+C0680		entC	
+C3067		yphC	
+C3068		yphD	
+C3069		yphE	
+C3070		yphF	
+C3071		yphG	
+C3072		yphH	
+C3073		glyA	
+C3075		hmpA	
+C3076		glnB	
+C3077		yfhA	
+C3078		yfhG	
+C3079		yfhK	
+C3080		purL	
+C3081		yfhD	
+C3082		yfhC	
+C3083		yfhB	
+C3084			
+C3085		yfhH	
+C3086		yfhL	
+C3087		acpS	
+C3088		pdxJ	
+C3089		recO	
+C3090		era	
+C3091		rnc	
+C0111		ftsQ	
+C3092		lepB	
+C3093		lepA	
+C3094		rseC	
+C3095		rseB	
+C3096		rseA	
+C3097		rpoE	
+C3098		nadB	
+C3099		yfiC	
+C3100		srmB	
+C3101		yfiE	
+C3102		yfiK	
+C3103		yfiD	
+C3104			
+C3105		ung	
+C3106		yfiF	
+C3107		trxC	
+C3108		yfiP	
+C3109		yfiQ	
+C3110		pssA	
+C3111		yfiM	
+C3112		kgtP	
+C3113			
+C3114		clpB	
+C3115		yfiH	
+C3116		sfhB	
+C3117		yfiO	
+C3118			
+C3119		yfiA	
+C5497		pheL	
+C3120		pheA	
+C3121		tyrA	
+C3122		aroF	
+C0341			
+C3123		yfiL	
+C3124		yfiR	
+C3125		yfiN	
+C3126		yfiB	
+C3127		rplS	
+C3128		trmD	
+C3129		yfjA	
+C3130		rpsP	
+C3131		ffh	
+C3132		ypjD	
+C3133			
+C3134			
+C3135		grpE	
+C3136			
+C3137		yfjB	
+C3138		recN	
+C3139			
+C3140			
+C3141		yfjG	
+C3142		smpB	
+C3143			
+C3144			
+C3145		ydfK	
+C3146			
+C3147			
+C0722		dacA	
+C3148			
+C3149			
+C3150			
+C0190		yadQ	
+C3151			
+C3152			
+C3153			
+C3154			
+C3155			
+C3156			
+C3157			
+C3158			
+C3159			
+C3160			
+C3161			
+C3162			
+C3163			
+C3164			
+C3165			
+C3166			
+C3167			
+C3168			
+C3169			
+C3170			
+C0571		tesB	
+C3171			
+C3172			
+C3173			
+C3174		nohB	
+C3175			
+C3176			
+C3177		cspI	
+C3178			
+C3179		ydfP	
+C3180			
+C3181			
+C3182			
+C3183			
+C3184		cspB	
+C3185		cspF	
+C3186			
+C3187			
+C3188			
+C3189			
+C3190			
+C3191		yfdN	
+C3192			
+C3193			
+C3194			
+C3195		ymfL	
+C0952			
+C3196			
+C3197			
+C3198			
+C3199			
+C3200			
+C3201		yfdQ	
+C3202		yfdR	
+C3203			
+C3204			
+C3205			
+C3206			
+C3207		ygaT	
+C3208		ygaF	
+C3209		gabD	
+C3210		gabT	
+C3211		gabP	
+C3212		ygaE	
+C3213		ygaU	
+C3214			
+C3215		yqaE	
+C0002			
+C3216		ygaV	
+C3217		ygaP	
+C3218		stpA	
+C3219			
+C3220			
+C3221		ygaW	
+C3222		ygaC	
+C3223		ygaM	
+C3224			
+C3225			
+C3226		nrdH	
+C3227		nrdI	
+C3228		nrdE	
+C3229		nrdF	
+C3230		proV	
+C3231		proW	
+C3232		proX	
+C3233			
+C3234			
+C3235		ygaZ	
+C3236		ygaH	
+C3237		emrR	
+C3238		emrA	
+C3239		emrB	
+C3240			
+C3241			
+C3242			
+C3243			
+C3244		ygaG	
+C3245		gshA	
+C3246		yqaA	
+C3247		yqaB	
+C3248			
+C3249		csrA	
+C0232			
+C3251			
+C3252		oraA	
+C0613		ybbN	
+C3253		recA	
+C3254		ygaD	
+C3255		mltB	
+C3256		srlA	
+C3257		srlE	
+C0081		yabI	
+C3258		srlB	
+C3259		srlD	
+C3260		gutM	
+C3261		srlR	
+C3262		gutQ	
+C3263		ygaA	
+C0462		yaiL	
+C3264			
+C3267		ygbD	
+C3268		hypF	
+C3269		hydN	
+C0843		ybhA	
+C3270			
+C3271			
+C3272			
+C3273			
+C3274			
+C3275			
+C3276			
+C3277		hycI	
+C3278		hycH	
+C3279		hycG	
+C3280		hycF	
+C3281		hycE	
+C3282		hycD	
+C3283		hycC	
+C3284		hycB	
+C3285		hycA	
+C3286		hypA	
+C3287		hypB	
+C3288		hypC	
+C3289		hypD	
+C3290		hypE	
+C3291		fhlA	
+C3292			
+C3293		ygbA	
+C3294		mutS	
+C3295		pphB	
+C3296		ygbI	
+C3297		ygbJ	
+C3298		ygbK	
+C3299		ygbL	
+C3300		ygbM	
+C3301		ygbN	
+C0692		dsbG	
+C3302			
+C3303			
+C3304			
+C3305			
+C3306			
+C3307			
+C3308		nlpD	
+C3309			
+C0204		rpsB	
+C3310		pcm	
+C3311		surE	
+C3312		ygbO	
+C3313		ygbB	
+C3314		ygbP	
+C3315		ygbQ	
+C3316		ygbE	
+C0053		fixC	
+C3317		cysC	
+C3318		cysN	
+C3319		cysD	
+C3320		iap	
+C3321		cysH	
+C3322		cysI	
+C3323		cysJ	
+C3324		ygcM	
+C3325		ygcN	
+C3326		ygcO	
+C3328		ygcQ	
+C3329		ygcR	
+C3330		ygcS	
+C3331			
+C3332		ygcW	
+C3333		yqcE	
+C3334		ygcE	
+C3335		ygcF	
+C3336			
+C3337			
+C3338			
+C3339			
+C3340			
+C3341			
+C3342		ygcG	
+C3343			
+C3344		eno	
+C3345		pyrG	
+C3346		mazG	
+C3347		relA	
+C3348		ygcA	
+C3349		barA	
+C3350		ygcX	
+C3352		ygcY	
+C3353			
+C3354			
+C3355			
+C3356		yqcA	
+C3357		yqcB	
+C3358		yqcC	
+C3359		syd	
+C3360		yqcD	
+C3361		ygdH	
+C3362			
+C3363			
+C3364		sdaC	
+C3365		sdaB	
+C3366		exo	
+C3367		fucO	
+C3368		fucA	
+C3369			
+C3370		fucP	
+C3371		fucI	
+C3374		fucU	
+C3375		fucR	
+C3376		ygdE	
+C3377		ygdD	
+C3378		gcvA	
+C3379			
+C3380		ygdI	
+C3381			
+C3382		ygdK	
+C3383		ygdL	
+C3384		mltA	
+C3385			
+C3386			
+C3387			
+C3388			
+C3389			
+C3390			
+C3391			
+C3392			
+C3393			
+C3394			
+C3395			
+C3396			
+C3397			
+C3398			
+C3399			
+C3400			
+C3401			
+C3402			
+C3403			
+C3404			
+C3405			
+C3406			
+C3407			
+C3408			
+C3409			
+C3410			
+C3411			
+C3412		argA	
+C3413		recD	
+C3414		recB	
+C3415		ptr	
+C3416		recC	
+C3417		ppdC	
+C0434		betT	
+C3418		ygdB	
+C3419		ppdB	
+C0815		ybgC	
+C3420		ppdA	
+C3421			
+C3422		thyA	
+C3423		lgt	
+C3424		ptsP	
+C3425		ygdP	
+C3426		mutH	
+C3427			
+C0283			
+C3428		ygdR	
+C3429			
+C3430		ygeD	
+C3431		aas	
+C3432			
+C3433			
+C3434		galR	
+C3435		lysA	
+C3436		lysR	
+C3437		ygeA	
+C3438		araE	
+C3439		kduD	
+C3440		kduI	
+C3441		yqeF	
+C3442		yqeG	
+C3443		ygeR	
+C0664		nfnB	
+C3444			
+C3445		ygeT	
+C3446			
+C3447		ygeV	
+C3448		ygeW	
+C3449		ygeX	
+C3450		ygeY	
+C3451		ygeZ	
+C3452		yqeA	
+C3453		yqeB	
+C3454		yqeC	
+C3455		ygfJ	
+C3456		ygfK	
+C3457			
+C3458		ygfM	
+C3459			
+C3460		ygfO	
+C3461		ygfP	
+C3462			
+C3463		ygfS	
+C3464		ygfT	
+C3465		ygfU	
+C3466			
+C3467			
+C3468			
+C3469		lysS	
+C3470			
+C5622		prfB	
+C3472		recJ	
+C3473		dsbC	
+C3474		xerD	
+C3475		fldB	
+C3476		ygfX	
+C3477		ygfY	
+C3478			
+C3479		ygfZ	
+C3480		yqfA	
+C3481		yqfB	
+C3482		bglA	
+C3483		gcvP	
+C3484		gcvH	
+C3485		gcvT	
+C3486			
+C3487			
+C3488		visC	
+C3489		ubiH	
+C3490		pepP	
+C3491		ygfB	
+C3492		ygfE	
+C3493		ygfA	
+C3494		serA	
+C3495		rpiA	
+C3496		yqfE	
+C3497		iciA	
+C3498			
+C3499		ygfI	
+C3500		yggE	
+C3501		yggA	
+C3502		yggB	
+C3503		fba	
+C3504		pgk	
+C3505		epd	
+C3506			
+C3507			
+C3508			
+C3509			
+C3510			
+C3511		yggC	
+C3512		yggD	
+C3513			
+C3514			
+C3515		cmtA	
+C3516		cmtB	
+C3517			
+C3518			
+C3519			
+C3520		tktA	
+C3521		yggG	
+C3522		speB	
+C3523			
+C3524		speA	
+C3525		yqgB	
+C3526			
+C3527		yqgD	
+C3528		metK	
+C3529		galP	
+C3530		sprT	
+C3531		endA	
+C3532		yggJ	
+C3533		gshB	
+C3534		yqgE	
+C3535		yqgF	
+C3536		yggR	
+C3537		yggS	
+C3538		yggT	
+C3539		yggU	
+C3540		yggV	
+C3541		yggW	
+C3542		yggM	
+C3543		ansB	
+C3544		yggN	
+C3545			
+C3546		yggL	
+C3547		yggH	
+C3548		mutY	
+C3549			
+C3550		yggX	
+C3551		mltC	
+C3552		nupG	
+C3553		speC	
+C3554			
+C3555		yqgA	
+C3556			
+C3557			
+C3558			
+C3559			
+C3560			
+C3561			
+C3562			
+C3563			
+C3564			
+C3565			
+C3566			
+C3567			
+C3568			
+C3569		hlyC	
+C3570		hlyA	
+C3571			
+C3572			
+C3573		hlyB	
+C3574		hlyD	
+C3575			
+C3576			
+C3577			
+C3578			
+C3579			
+C3580			
+C3581			
+C3582		papX	
+C3583		papG	
+C3584		papF	
+C3585		papE	
+C3586		papK	
+C3587			
+C3588		papJ	
+C3589		papD	
+C3590		papC	
+C3591		papH	
+C3592		papA	
+C3593		papI	
+C3594			
+C3595			
+C3596			
+C3597			
+C3598			
+C3599			
+C3600			
+C3601			
+C3602			
+C3603			
+C3604			
+C3605			
+C3606			
+C3607			
+C3608			
+C3609			
+C3610			
+C3611			
+C3612			
+C3613			
+C3614			
+C3615			
+C3616			
+C3617			
+C3618			
+C3619		sat	
+C3620			
+C3621			
+C3622			
+C3623		iutA	
+C3624		iucD	
+C3625		iucC	
+C3626		iucB	
+C3627		iucA	
+C3628		shiF	
+C3629			
+C3630			
+C3631			
+C3632			
+C3633			
+C3634			
+C3635			
+C3636			
+C3637			
+C3638			
+C3639			
+C3640			
+C3641			
+C3642			
+C3643			
+C3644			
+C3645			
+C3646			
+C3647			
+C3648			
+C3649			
+C3650			
+C3651			
+C3652			
+C3653			
+C3654			
+C3655			
+C3656			
+C3657			
+C3658			
+C3659			
+C3660			
+C3661			
+C3662			
+C3663			
+C3664			
+C3665			
+C3666			
+C3667			
+C3668			
+C3669			
+C3670			
+C3671			
+C3672			
+C3673			
+C3674			
+C3675			
+C3676			
+C3677			
+C3678			
+C3679			
+C3680			
+C3681			
+C3682			
+C3683			
+C3684			
+C3685			
+C3686			
+C3687		kpsE	
+C3688		kpsD	
+C3689			
+C3690		kpsC	
+C3691		kpsS	
+C3692			
+C3693			
+C3694			
+C3695			
+C3696			
+C3697		kpsT	
+C3698		kpsM	
+C3699		yghD	
+C3702			
+C3703			
+C3704		yghK	
+C3705		glcB	
+C3706		glcG	
+C3709		glcD	
+C3710		glcC	
+C3711		yghO	
+C3712			
+C3713			
+C3714			
+C3715			
+C3716			
+C3717			
+C3718			
+C3719			
+C3720		yghQ	
+C3721		yghR	
+C3722		yghS	
+C3723		yghT	
+C3724		pitB	
+C3725		gsp	
+C3726		yghU	
+C3727		hybG	
+C3728		hybF	
+C3729		hybE	
+C3730		hybD	
+C3731		hybC	
+C3732		hybB	
+C3733		hybA	
+C3734			
+C3735		yghW	
+C3736			
+C3737		yghZ	
+C3738		yqhA	
+C3739		yghA	
+C3740		exbD	
+C3741		exbB	
+C3742		metC	
+C3743		yghB	
+C3744		yqhC	
+C3745		yqhD	
+C3746			
+C3747		yqhG	
+C3748		yqhH	
+C3749			
+C3750			
+C3751			
+C3752			
+C3753			
+C3754			
+C3755			
+C3756		ygiK	
+C3757		sufI	
+C3758		plsC	
+C3759			
+C3760		parC	
+C3761			
+C3762		ygiV	
+C3763		ygiW	
+C3764		ygiX	
+C3765		ygiY	
+C3766			
+C3767			
+C3768		mdaB	
+C3769		ygiN	
+C3770			
+C3771			
+C3772			
+C3773			
+C3774			
+C3775			
+C3776		parE	
+C3777		yqiA	
+C3778		icc	
+C3779		yqiB	
+C3780		yqiE	
+C3781		tolC	
+C3782		ygiA	
+C3783		ygiB	
+C3784		ygiC	
+C3785		asst	
+C3786			
+C3787			
+C3788		ygiD	
+C3789		ygiE	
+C3790			
+C3791		ygiL	
+C3792		yqiG	
+C3793		yqiH	
+C3794			
+C3795		ribB	
+C3796		yqiC	
+C3797		glgS	
+C3798		yqiJ	
+C3799		yqiK	
+C3800			
+C3801		glnE	
+C3802		ygiF	
+C3803			
+C3804		ydcM	
+C3805		ygiM	
+C3806		cca	
+C3807		bacA	
+C3808		ygiG	
+C3809		ygiH	
+C3810		ygiP	
+C3811			
+C3812		ttdA	
+C3813		ttdB	
+C3814		ygjE	
+C3815		ygjD	
+C3816		rpsU	
+C3817		dnaG	
+C3818			
+C3819			
+C3820			
+C3821		rpoD	
+C3822		ygjF	
+C3823		yqjH	
+C3824		yqjI	
+C3825		aer	
+C3826			
+C3827			
+C3828		ygjG	
+C3829			
+C3830		ygjH	
+C3831			
+C3832		ebgR	
+C3833		ebgA	
+C3834		ebgC	
+C3835			
+C3836		ygjI	
+C3837		ygjJ	
+C3838		ygjK	
+C3839		ygjL	
+C3840			
+C3841			
+C3842		ygjO	
+C3843		ygjP	
+C3844		ygjQ	
+C3845		ygjR	
+C3846		ygjT	
+C3847		ygjU	
+C3848		ygjV	
+C3849		uxaA	
+C3850		uxaC	
+C3851		exuT	
+C3852		exuR	
+C3853		yqjA	
+C3854		yqjB	
+C3855		yqjC	
+C3856		yqjD	
+C3857		yqjE	
+C3858		yqjK	
+C3859		yqjF	
+C3862		yhaH	
+C3863		yhaJ	
+C3864		yhaK	
+C3865			
+C3866		yhaL	
+C3867			
+C3870			
+C3871		yhaR	
+C3872		tdcE	
+C3873			
+C3874		tdcC	
+C3875		tdcB	
+C3876		tdcA	
+C3877		tdcR	
+C3878			
+C3879		yhaD	
+C3880		yhaE	
+C3881		yhaF	
+C3882		yhaU	
+C3883		yhaG	
+C3884		sohA	
+C3885		yhaV	
+C3886		agaR	
+C3887		agaZ	
+C3888		agaV	
+C3889			
+C3890			
+C3891			
+C3892			
+C3893		agaS	
+C3894		agaY	
+C3895		agaB	
+C3896		agaC	
+C3897		agaD	
+C3898		agaI	
+C3899		yraL	
+C3900		yraM	
+C3901		yraN	
+C3902			
+C3903		yraO	
+C3904		yraP	
+C3905		yraQ	
+C3906		yraR	
+C3907		yhbP	
+C3908		yhbQ	
+C3909		yhbS	
+C3910		yhbT	
+C3911		yhbU	
+C3912		yhbV	
+C3913		yhbW	
+C3914		mtr	
+C3915			
+C3916		deaD	
+C3917			
+C3918		yhbM	
+C3919			
+C3920		pnp	
+C3921		rpsO	
+C3922		truB	
+C3923		rbfA	
+C3924		infB	
+C3925			
+C3926		nusA	
+C3927		yhbC	
+C3928			
+C3929		argG	
+C3930		yhbX	
+C3931		secG	
+C3932		mrsA	
+C3933		folP	
+C3935			
+C3936		ftsJ	
+C3937		yhbY	
+C3938		greA	
+C3939		dacB	
+C3940		yhbZ	
+C3941		yhbE	
+C3942		rpmA	
+C3943			
+C3944			
+C3945		ispB	
+C3946		nlp	
+C3947		murA	
+C3948		yrbA	
+C3949			
+C3950		yrbB	
+C3951			
+C3952		yrbC	
+C3953		yrbD	
+C3954		yrbE	
+C3955		yrbF	
+C3956		yrbG	
+C3957			
+C3958		yrbI	
+C3959		yrbK	
+C3960		yhbN	
+C3961		yhbG	
+C3962		rpoN	
+C3963		yhbH	
+C3964		ptsN	
+C3965		yhbJ	
+C3966		ptsO	
+C3967		yrbL	
+C3968		mtgA	
+C3969		yhbL	
+C3970		arcB	
+C3971		yhcC	
+C3972			
+C3973		gltB	
+C3974		gltD	
+C3975		yhcH	
+C3976			
+C3977		yhcJ	
+C3978		nanT	
+C3979		nanA	
+C3980		yhcK	
+C3981		sspB	
+C3982		sspA	
+C3983			
+C3984		rpsI	
+C3985		rplM	
+C3986		yhcM	
+C3987		yhcB	
+C3988			
+C3989		degQ	
+C3990		degS	
+C3991		mdh	
+C3992		argR	
+C3993		yhcN	
+C3994		yhcO	
+C3995		yhcP	
+C3996		yhcQ	
+C3997		yhcR	
+C3998		yhcS	
+C3999		tldD	
+C4000		yhdP	
+C4001		cafA	
+C4002		yhdE	
+C4003		mreD	
+C4004			
+C4005		mreC	
+C4006		mreB	
+C4007			
+C4008		yhdA	
+C4009		yhdH	
+C4010			
+C4011		accB	
+C4012		accC	
+C4013			
+C4014			
+C4015			
+C4016			
+C4017			
+C4018			
+C4019			
+C4020			
+C4021			
+C4022		yhdT	
+C4023		panF	
+C4024		prmA	
+C4025			
+C0894		glnQ	
+C4026		yhdG	
+C4027		fis	
+C4028		yhdJ	
+C4029		yhdU	
+C4030		envR	
+C4031		acrE	
+C4032		acrF	
+C4033		yhdV	
+C4034		yhdW	
+C4035		yhdX	
+C4036		yhdY	
+C4037		yhdZ	
+C4040		yrdA	
+C4041		yrdB	
+C4042		aroE	
+C4043		yrdC	
+C4044		yrdD	
+C4045		smg	
+C4046		smf	
+C4047		def	
+C4048		fmt	
+C4049		sun	
+C4050		trkA	
+C4051		mscL	
+C4052		yhdL	
+C4053		yhdM	
+C4054		yhdN	
+C4055		rplQ	
+C4056		rpoA	
+C4057		rpsD	
+C4058		rpsK	
+C4059			
+C4060		rpsM	
+C4061		prlA	
+C4062		rplO	
+C4063		rpmD	
+C4064			
+C4065		rpsE	
+C4066		rplR	
+C4067			
+C4068		rplF	
+C4069			
+C4070		rpsH	
+C4071		rpsN	
+C4072		rplE	
+C4073		rplX	
+C4074			
+C4075		rplN	
+C4076		rpsQ	
+C4077		rpmC	
+C4078			
+C4079		rplP	
+C4080		rpsC	
+C4081			
+C4082		rplV	
+C4083		rpsS	
+C4084			
+C1141			
+C4085		rplB	
+C4086			
+C4087		rplW	
+C4088			
+C4089		rplD	
+C4090			
+C4091		rplC	
+C4092		rpsJ	
+C4093		pinO	
+C4094		yheD	
+C4095		yheE	
+C4096		yheF	
+C4097		yheG	
+C0174			
+C4098		hofF	
+C4099		hofG	
+C4100		hofH	
+C4101		yheH	
+C4102		yheI	
+C4103		yheJ	
+C4104		yheK	
+C4105		pshM	
+C4106		hofD	
+C4107		bfr	
+C4108		yheA	
+C4109		yheB	
+C4110			
+C4111		tufA	
+C4112		fusA	
+C4113			
+C4114		rpsG	
+C4115			
+C4116		rpsL	
+C4117		yheL	
+C4118		yheM	
+C4119		yheN	
+C4120		yheO	
+C4121		fkpA	
+C4122		slyX	
+C4123		slyD	
+C4124			
+C4125		kefB	
+C4126		yheR	
+C4127		yheS	
+C4128		yheT	
+C4129		yheU	
+C4130		prkB	
+C4131		yhfA	
+C4132		crp	
+C4133		yhfK	
+C4134		argD	
+C4135		pabA	
+C4136		fic	
+C4137		yhfG	
+C4138		ppiA	
+C4139		yhfC	
+C4140			
+C4141		nirB	
+C4142		nirD	
+C4143		nirC	
+C4144		cysG	
+C4145		yhfL	
+C4146		yhfS	
+C4147		yhfT	
+C4148		yhfU	
+C4149		yhfV	
+C4150		yhfW	
+C4151		yhfX	
+C4152		yhfY	
+C4153		yhfZ	
+C4154		trpS	
+C4155		gph	
+C4156		rpe	
+C4157		dam	
+C4158		damX	
+C4159		aroB	
+C4160		aroK	
+C4161		hofQ	
+C4162		yrfA	
+C4163		yrfB	
+C4164		yrfC	
+C4165		yrfD	
+C4166		mrcA	
+C4167		yrfE	
+C4168			
+C4169		yrfF	
+C4170		yrfG	
+C4171		yrfH	
+C4172		yrfI	
+C4173		yhgE	
+C4174			
+C4175			
+C4176		pckA	
+C4177			
+C4178			
+C4179			
+C4180		envZ	
+C4181		ompR	
+C4182			
+C4183		greB	
+C4184		yhgF	
+C4185		feoA	
+C4186		feoB	
+C4187		yhgG	
+C4188		yhgA	
+C4189		bioH	
+C0146		yacH	
+C4190		yhgH	
+C4191		yhgI	
+C4192		gntT	
+C4193		malQ	
+C4194		malP	
+C4195			
+C4196		malT	
+C4197			
+C4198		rtcB	
+C4199		rtcR	
+C4200		glpR	
+C4201		glpG	
+C4202		glpE	
+C4203		glpD	
+C4204			
+C4205			
+C4206			
+C4207			
+C4208			
+C4209			
+C4210			
+C4211			
+C4212		ycbS	
+C4213			
+C4214			
+C4215		glgP	
+C4216		glgA	
+C4217		glgC	
+C4218		glgX	
+C4219		glgB	
+C4220		asd	
+C4221		yhgN	
+C4222			
+C4223			
+C4224		gntU	
+C4225		gntK	
+C4226			
+C4227		gntR	
+C4228		yhhW	
+C4229		yhhX	
+C4230			
+C0037		dapB	
+C4233		yhhZ	
+C4234		yrhA	
+C0009			
+C4235		yrhB	
+C0088			
+C4236		ggt	
+C4237		yhhA	
+C4238		ugpQ	
+C4239		ugpC	
+C4240		ugpE	
+C4241		ugpA	
+C4242		ugpB	
+C4243			
+C4244		livF	
+C4245		livG	
+C4246		livM	
+C4247		livH	
+C4248		livK	
+C4249			
+C4250			
+C4251		yhhK	
+C4252			
+C4253		livJ	
+C4254		rpoH	
+C4255		ftsX	
+C4256		ftsE	
+C4257		ftsY	
+C4258		yhhF	
+C4259		yhhL	
+C4260		yhhM	
+C4261		yhhN	
+C4262		zntA	
+C4263		yhhP	
+C4264		yhhQ	
+C4265			
+C4266		yhhS	
+C4267		yhhT	
+C4268		yhhU	
+C4269		nikA	
+C4270		nikB	
+C4271		nikC	
+C4272		nikD	
+C4273		nikE	
+C4274		yhhG	
+C4275			
+C4276			
+C4277			
+C4278			
+C4279			
+C4280			
+C4281			
+C4282			
+C4283			
+C4284			
+C4285		yhhJ	
+C4286		yhiH	
+C4287		yhiI	
+C4288			
+C4289		yhiM	
+C4290		yhiN	
+C4291		pitA	
+C4292		yhiO	
+C4293		uspA	
+C5491		thrL	
+C4294			
+C4295		yhiP	
+C4296		yhiQ	
+C4297		prlC	
+C0003		thrA	
+C4298		yhiR	
+C4299		gor	
+C0004		thrB	
+C4300			
+C4301		arsC	
+C0005		thrC	
+C4302			
+C4303			
+C0006			
+C4304		slp	
+C4305			
+C0007		yaaX	
+C4306		yhiF	
+C4307		chuS	
+C0008			
+C4308		chuA	
+C4309			
+C4310			
+C4311			
+C0010		yaaA	
+C4312			
+C4313		chuT	
+C0011		yaaJ	
+C4314		chuW	
+C0012		talB	
+C4315		chuX	
+C4316		chuY	
+C0013		mog	
+C4317		chuU	
+C4318			
+C0014			
+C4319		yhiD	
+C0015		yaaH	
+C4320		hdeB	
+C0016		yaaW	
+C4321		hdeA	
+C4322		hdeD	
+C0017		yaaI	
+C4323		yhiE	
+C0018			
+C4324		yhiU	
+C4325		yhiV	
+C0019		dnaK	
+C4326		yhiW	
+C4327		yhiX	
+C0020		dnaJ	
+C4328		gadA	
+C0021			
+C4329		yhjA	
+C0022			
+C4330		treF	
+C4331		yhjB	
+C0023			
+C4332		yhjC	
+C4333		yhjD	
+C0024		nhaA	
+C4334		yhjE	
+C4335		yhjG	
+C0025		nhaR	
+C4336		yhjH	
+C4337		kdgK	
+C0026			
+C4338			
+C4339		yhjJ	
+C0027		rpsT	
+C4340		dctA	
+C4341		yhjK	
+C0028		yaaY	
+C4342		yhjL	
+C4343		yhjM	
+C0029		ribF	
+C4344		yhjN	
+C4345		yhjO	
+C0031		lspA	
+C4346		yhjQ	
+C4347		yhjR	
+C4348		yhjS	
+C4349		yhjT	
+C0032		slpA	
+C4350		yhjU	
+C4351			
+C0033		lytB	
+C4352			
+C4353			
+C4354		yhjV	
+C4355		dppF	
+C4356		dppD	
+C4357		dppC	
+C4358		dppB	
+C4359			
+C4360			
+C0100		yabC	
+C4361		dppA	
+C0036			
+C4362			
+C0070		hepA	
+C4363			
+C4364		yhjW	
+C0038			
+C4365		yhjX	
+C4366		yhjY	
+C0039			
+C4367		tag	
+C4368		yiaC	
+C0040		carA	
+C4369		bisC	
+C4370		yiaD	
+C0041		carB	
+C4371			
+C0042			
+C4372		yiaE	
+C4373		yiaF	
+C0043		caiF	
+C4374			
+C0044		caiE	
+C4375			
+C4376			
+C0045		caiD	
+C4377		cspA	
+C0046		caiC	
+C4378		glyS	
+C4379		glyQ	
+C0047		caiB	
+C4380			
+C4381		yiaH	
+C0048		caiA	
+C4382		yiaA	
+C4383		yiaB	
+C0049		caiT	
+C4384		xylB	
+C0050		fixA	
+C4385		xylA	
+C4386		xylF	
+C4387		xylG	
+C4388		xylH	
+C4389		xylR	
+C4390		bax	
+C4391			
+C4392		malS	
+C4393		avtA	
+C4394		yiaI	
+C0054		fixX	
+C4395		yiaJ	
+C0055		yaaU	
+C4396		yiaK	
+C4397		yiaL	
+C0056		yabF	
+C4398			
+C4399		yiaM	
+C0057		kefC	
+C4400		yiaN	
+C4401			
+C0058		folA	
+C4402		yiaO	
+C4403		lyxK	
+C0059			
+C4404		sgbH	
+C0060			
+C4405		sgbU	
+C4406		sgbE	
+C0061		apaH	
+C4407			
+C4408		aldB	
+C0062			
+C4409			
+C4410		yiaY	
+C0063		apaG	
+C4411		selB	
+C4412		selA	
+C0064		ksgA	
+C4413		yibF	
+C4414		yibH	
+C0065		pdxA	
+C4415		yibI	
+C4416		mtlA	
+C0066		surA	
+C4417		mtlD	
+C0067		imp	
+C4418		mtlR	
+C4419			
+C0068		yabH	
+C4420			
+C4421		yibL	
+C0069		yabO	
+C4422			
+C0151		yacC	
+C4423			
+C0071		polB	
+C4424			
+C4425		lldP	
+C0072			
+C4426		lldR	
+C4427		lldD	
+C0073		araD	
+C4428		yibK	
+C4429		cysE	
+C0074		araA	
+C4430		gpsA	
+C4431			
+C0075		araB	
+C4432		secB	
+C4433		grxC	
+C0076		araC	
+C4434			
+C4435			
+C0077			
+C4436		yibN	
+C4437			
+C0078			
+C4438		yibO	
+C4439		yibP	
+C0079			
+C4440		yibQ	
+C4441		yibD	
+C0080			
+C4442			
+C0082		yabJ	
+C4443		tdh	
+C4444		kbl	
+C4445		rfaD	
+C0083		yabK	
+C4446		rfaF	
+C4447		rfaC	
+C4448		waaL	
+C0084		tbpA	
+C4449		waaV	
+C0085		yabN	
+C4450		waaW	
+C4451		rfaY	
+C0086			
+C4452		rfaJ	
+C4453		rfaI	
+C0087		leuD	
+C4454		rfaP	
+C4455		rfaG	
+C4456		rfaQ	
+C4457		kdtA	
+C0089		leuC	
+C4458		kdtB	
+C4459		mutM	
+C0090		leuB	
+C4460		rpmG	
+C0091		leuA	
+C4461		rpmB	
+C4462		radC	
+C5492		leuL	
+C4463		dfp	
+C4464		dut	
+C0092			
+C4465		ttk	
+C4466		pyrE	
+C0093		leuO	
+C4467		rph	
+C4468		yicC	
+C0094			
+C4469		dinD	
+C4470		yicG	
+C0095		ilvI	
+C4471		yicF	
+C0096		ilvH	
+C4472			
+C4473		gmk	
+C5493		fruL	
+C4474		rpoZ	
+C4475		spoT	
+C0097			
+C4476		spoU	
+C0098		fruR	
+C4477		recG	
+C4478		gltS	
+C4479		yicE	
+C4480		yicH	
+C4481			
+C4482			
+C0101		ftsL	
+C4483			
+C4484			
+C0102		ftsI	
+C4485			
+C0107		ftsW	
+C4486			
+C0103		murE	
+C4487			
+C4488			
+C0104		murF	
+C4489		yicI	
+C4490		yicJ	
+C0105		mraY	
+C4491		intC	
+C4492			
+C0106		murD	
+C4493			
+C4494			
+C0158		yadI	
+C4495			
+C4496			
+C0108		murG	
+C4497			
+C4498			
+C0109		murC	
+C4499			
+C4500			
+C0110		ddlB	
+C4501			
+C4502			
+C4503			
+C0112		ftsA	
+C4504		insB	
+C0113		ftsZ	
+C4505			
+C0114		lpxC	
+C4506		insI	
+C0115		yacA	
+C4507			
+C4508			
+C0116		secA	
+C4509			
+C0117		mutT	
+C4510			
+C4511			
+C0118			
+C4512			
+C4513			
+C0119			
+C4514			
+C0140		pdhR	
+C0120			
+C0121		yacG	
+C4517			
+C0122		yacF	
+C4518			
+C4519			
+C0163			
+C4520			
+C4521			
+C0124		guaC	
+C4522			
+C4523			
+C0125		hofC	
+C4524			
+C4525			
+C0126		hofB	
+C4526			
+C4527			
+C0127		ppdD	
+C4528			
+C4529			
+C0128		nadC	
+C4530		tdcD	
+C4531			
+C0129		ampD	
+C4532			
+C4533			
+C0130		ampE	
+C4534			
+C4535			
+C0131		aroP	
+C4536			
+C4537			
+C4538			
+C4539			
+C4540			
+C4541			
+C0133			
+C4542			
+C4543			
+C0134			
+C4544			
+C4545			
+C4546			
+C4547			
+C0147		acnB	
+C4548			
+C4549			
+C0136			
+C4550			
+C4551			
+C0137			
+C4552			
+C0138			
+C4553			
+C4554			
+C0139			
+C4555			
+C4556			
+C4557			
+C4558			
+C0141			
+C4559			
+C4560			
+C0142		aceE	
+C4561			
+C4562			
+C0145		lpdA	
+C4563			
+C4564			
+C4565			
+C4566			
+C0148		yacL	
+C4567			
+C0149		speD	
+C4568			
+C0150		speE	
+C4569			
+C0152		yacK	
+C4570			
+C0159		yadE	
+C4571			
+C4572			
+C0164		panC	
+C4573			
+C0153		gcd	
+C4574			
+C0154		hpt	
+C4575			
+C4576			
+C0155		yadF	
+C4577			
+C4578			
+C0156		yadG	
+C4579			
+C4580			
+C0157		yadH	
+C4581			
+C4582		yicL	
+C4583		nlpA	
+C4584			
+C4585			
+C4586		yicM	
+C0160		panD	
+C4587		yicN	
+C4588		yicO	
+C0161			
+C4589		yicP	
+C4590		uhpT	
+C0162		yadD	
+C4591		uhpC	
+C4592		uhpB	
+C4593		uhpA	
+C4594			
+C4595		ilvN	
+C4596		ilvB	
+C0165		panB	
+C5498		ivbL	
+C4597		emrD	
+C0166		yadC	
+C4598		yidF	
+C4599		yidG	
+C0167		yadK	
+C4600		yidH	
+C4601		yidJ	
+C0168		yadL	
+C4602		yidK	
+C0169		yadM	
+C4603		yidL	
+C4604		yidE	
+C0170		htrE	
+C4605			
+C4606		ibpB	
+C0171		ecpD	
+C4607		ibpA	
+C4608		yidQ	
+C0172		yadN	
+C4609		yidR	
+C0173			
+C4610			
+C0175		folK	
+C4611		yidS	
+C4612		dgoT	
+C0176		pcnB	
+C0177		yadB	
+C4615		dgoK	
+C0178		dksA	
+C4616			
+C0179		sfsA	
+C4617			
+C4618			
+C0180		yadP	
+C4619		yidA	
+C4620		yidB	
+C0181		hrpB	
+C4621		gyrB	
+C0182			
+C4622		recF	
+C0183		mrcB	
+C4623		dnaN	
+C0184			
+C0185		fhuA	
+C4626			
+C0186		fhuC	
+C4627		rpmH	
+C0255			
+C4628		rnpA	
+C0187		fhuD	
+C4629		yidC	
+C4630		thdF	
+C0188		fhuB	
+C5499		tnaL	
+C4631		tnaA	
+C0189		hemL	
+C4632		tnaB	
+C4633		yidY	
+C4634		yidZ	
+C4635		yieE	
+C0191		yadR	
+C4636		yieF	
+C0192			
+C4637		yieG	
+C0193		yadS	
+C4638		yieH	
+C4639		yieI	
+C4640		yieK	
+C4641		yieL	
+C0194		yadT	
+C4642			
+C0195		pfs	
+C4643		bglB	
+C4644		bglF	
+C0196		dgt	
+C4645			
+C4646		bglG	
+C0197		htrA	
+C4647			
+C4648		phoU	
+C0198			
+C4649		pstB	
+C4650			
+C0199		yaeG	
+C4651		pstA	
+C0200		yaeH	
+C4652		pstC	
+C4653		pstS	
+C0201		dapD	
+C4654		glmS	
+C4655		glmU	
+C0202		glnD	
+C4656			
+C4657		atpC	
+C0203		map	
+C4658		atpD	
+C4659		atpG	
+C0205			
+C4660		atpA	
+C4661			
+C4662		atpH	
+C4663			
+C0206		tsf	
+C4664		atpF	
+C4665		atpE	
+C0207		pyrH	
+C4666		atpB	
+C0216		lpxD	
+C4667		atpI	
+C0208		frr	
+C4668		gidB	
+C4669		gidA	
+C4670		mioC	
+C4671		asnC	
+C4672		asnA	
+C4673		yieM	
+C4674		yieN	
+C4675		kup	
+C4676		rbsD	
+C0211		yaeS	
+C4677		rbsA	
+C4678		rbsC	
+C0212		cdsA	
+C4679		rbsB	
+C4680		rbsK	
+C0213		yaeL	
+C4681		rbsR	
+C4682		yieO	
+C0214		yaeT	
+C4683		yieP	
+C4685		yifA	
+C0215		hlpA	
+C4686		yifE	
+C4687		yifB	
+C0217		fabZ	
+C4688			
+C4689			
+C0218		lpxA	
+C5500		ilvL	
+C4690		ilvG	
+C4691		ilvM	
+C4692		ilvE	
+C0219		lpxB	
+C4693		ilvD	
+C4694		ilvA	
+C0220		rnhB	
+C4695		ilvY	
+C4696		ilvC	
+C0221		dnaE	
+C4697		ppiC	
+C4698		rep	
+C0222			
+C4699		gppA	
+C4700		rhlB	
+C0223		accA	
+C4701		trxA	
+C5501		rhoL	
+C0224		ldcC	
+C4702		rho	
+C4703			
+C0225		yaeR	
+C4704		rfe	
+C4705		wzzE	
+C0226		mesJ	
+C4706		wecB	
+C4707		wecC	
+C0227		yaeO	
+C4708		rffG	
+C4709		rffH	
+C0228			
+C4710		wecD	
+C4711		wecE	
+C0229		yaeQ	
+C4712			
+C4713		wzxE	
+C0230		yaeJ	
+C4714			
+C4715		wecF	
+C0231		cutF	
+C4716		wecG	
+C4717		yifK	
+C4718		aslB	
+C4719		aslA	
+C0233			
+C4720			
+C4721		hemY	
+C0234		yaeF	
+C4722		hemX	
+C0235		proS	
+C4723		hemD	
+C4724		hemC	
+C0236		yaeB	
+C4725		cyaA	
+C4726		cyaY	
+C0237		rcsF	
+C4727			
+C4728			
+C0238		yaeC	
+C4729			
+C0239		yaeE	
+C4730		dapF	
+C4731		yigA	
+C0240		abc	
+C4732		xerC	
+C4733		yigB	
+C0241		yaeD	
+C4734		uvrD	
+C4735			
+C0244		yafB	
+C4736			
+C4737		corA	
+C0245		yafC	
+C4738			
+C4739			
+C0246		yafD	
+C4740		rarD	
+C4741		yigI	
+C0247		yafE	
+C4742		pldA	
+C4743			
+C0248		dniR	
+C4744		recQ	
+C4745			
+C0249		gloB	
+C4746		yigK	
+C4747		pldB	
+C0250		yafS	
+C4748			
+C0251		rnhA	
+C4749		yigM	
+C0252		dnaQ	
+C4750		metR	
+C0253			
+C4751		metE	
+C4752			
+C0254			
+C4753			
+C4754			
+C0302			
+C4755			
+C0272			
+C4756			
+C0256			
+C4757			
+C4758			
+C0257			
+C4759			
+C4760			
+C0258			
+C4761			
+C0259			
+C4762			
+C4763			
+C4764			
+C0261			
+C4765			
+C0262			
+C4766			
+C4767			
+C4768			
+C4769			
+C0263			
+C4770			
+C4771			
+C0264			
+C4772			
+C4773		udp	
+C0265			
+C4774			
+C4775			
+C0279			
+C4776			
+C4777			
+C4778			
+C0268			
+C4779			
+C4780			
+C0269			
+C4781		yigN	
+C4782		ubiE	
+C0270			
+C4783		yigP	
+C4784		yigR	
+C0271			
+C4785			
+C4786			
+C0273			
+C4787		yigU	
+C4788		yigW	
+C4789		rfaH	
+C0274			
+C4790		yigC	
+C0275			
+C4791		ubiB	
+C0276			
+C4792		fadA	
+C0277			
+C4793		fadB	
+C4794		pepQ	
+C0278			
+C4795		yigZ	
+C4796		trkH	
+C0280			
+C4797		hemG	
+C0281			
+C4800		mobB	
+C0282			
+C4801		mobA	
+C4802		yihD	
+C4803		yihE	
+C0284			
+C4804		dsbA	
+C0285			
+C4805			
+C0295			
+C0286			
+C4806		yihF	
+C0287			
+C4807		yihG	
+C0288			
+C4808			
+C0289			
+C0290			
+C0291			
+C0292			
+C4811			
+C4812		yihA	
+C0293			
+C4813			
+C4814			
+C0294			
+C4815		yihI	
+C4816		hemN	
+C4817		glnG	
+C4818		glnL	
+C0296			
+C4819		glnA	
+C0297			
+C4820		yihK	
+C4821		yihL	
+C4822		yihM	
+C0298			
+C4823		yihN	
+C4824		yihW	
+C0299			
+C4825		yihV	
+C0300			
+C4826		yihU	
+C4827		yihT	
+C4828			
+C0301			
+C4829			
+C4830			
+C4831			
+C4832		yihX	
+C0303			
+C4833		rbn	
+C4834		yihZ	
+C0304			
+C4835		yiiD	
+C4836			
+C0305			
+C4837			
+C4838			
+C0306			
+C4839			
+C4840		yiiE	
+C0307			
+C4841		fdhE	
+C4842		fdoI	
+C0308			
+C4843		fdoH	
+C5624		fdoG	
+C0309			
+C4846			
+C0310			
+C4847		fdhD	
+C4848			
+C4849			
+C0311			
+C4850		yiiL	
+C4851		rhaD	
+C0312			
+C4852		rhaA	
+C4853		rhaB	
+C0313			
+C4854			
+C4855		rhaS	
+C0314			
+C4856		rhaR	
+C0325			
+C4857		rhaT	
+C0315			
+C4858			
+C4859		sodA	
+C0316			
+C4860			
+C4861		kdgT	
+C0317			
+C4862		yiiM	
+C4863		cpxA	
+C0318			
+C4864		cpxR	
+C4865		cpxP	
+C0319			
+C4866		yiiP	
+C4867		pfkA	
+C0320			
+C4868			
+C4869		sbp	
+C0321			
+C4870		cdh	
+C4871		tpiA	
+C0322			
+C4872		yiiQ	
+C4873		yiiR	
+C0323			
+C4874		yiiS	
+C4875		yiiT	
+C0324			
+C4876		fpr	
+C4877		glpX	
+C4878		glpK	
+C4879		glpF	
+C0326			
+C4880		yiiU	
+C4881		menG	
+C0327			
+C4882			
+C0330			
+C4883		menA	
+C0328			
+C4884		hslU	
+C4885		hslV	
+C0329			
+C4886		ftsN	
+C4887		cytR	
+C0337			
+C4888		priA	
+C4889			
+C0331			
+C4890		yiiX	
+C4891		metJ	
+C0332			
+C4892		metB	
+C4893		metL	
+C0333			
+C4894			
+C4895			
+C0334			
+C4896			
+C4897			
+C0335			
+C4898			
+C4899		metF	
+C0336			
+C4900		katG	
+C4901		yijE	
+C4902		yijF	
+C4903			
+C0338			
+C4904		gldA	
+C4905		talC	
+C0339			
+C4906		ptsA	
+C4907		frwC	
+C0340			
+C4908		frwB	
+C4909			
+C0706		citE	
+C4910		pflD	
+C4911		pflC	
+C4912		frwD	
+C4913		yijO	
+C4914		yijP	
+C4915		ppc	
+C4916		argE	
+C4917		argC	
+C4918		argB	
+C4919		argH	
+C4920			
+C4921		yjiZ	
+C4922		oxyR	
+C0345			
+C4923		udhA	
+C4924			
+C4925			
+C4926		yijC	
+C4927		yijD	
+C4928		trmA	
+C4929		btuB	
+C4930		murI	
+C4931		murB	
+C4932		birA	
+C0348			
+C4933		coaA	
+C4934			
+C0349			
+C4935		tufB	
+C4936		secE	
+C0350			
+C4937		nusG	
+C4938			
+C0351			
+C4939		rplK	
+C4940		rplA	
+C0352			
+C4941		rplJ	
+C4942			
+C0354			
+C4943		rplL	
+C4944		rpoB	
+C0355			
+C4945		rpoC	
+C4946		thiH	
+C4947		thiG	
+C4948		thiS	
+C4949		thiF	
+C0555		lon	
+C4950		thiE	
+C0357			
+C4951		thiC	
+C4952		yjaE	
+C0358			
+C4953		yjaD	
+C4954		hemE	
+C0359			
+C4955		nfi	
+C0936			
+C4956		yjaG	
+C0360			
+C4957		hupA	
+C4958		yjaH	
+C0361			
+C4959		yjaI	
+C0975			
+C4960			
+C0362			
+C4961		hydH	
+C1222			
+C4962		hydG	
+C0363			
+C4963		purD	
+C4964		purH	
+C0364			
+C4965			
+C4968		yjaA	
+C0365			
+C4969		yjaB	
+C4970		metA	
+C0366			
+C4971		aceB	
+C4972		aceA	
+C0367			
+C4973			
+C0370		ykfE	
+C4974		aceK	
+C0368			
+C4975		iclR	
+C4976		metH	
+C0369		yafV	
+C4977			
+C4978			
+C0371		yafH	
+C4979		yjbB	
+C4980		pepE	
+C4981			
+C4982			
+C0372		gmhA	
+C4983			
+C4984			
+C0373		yafJ	
+C4985			
+C4986			
+C0374		yafK	
+C4987			
+C4988		yjbC	
+C0375			
+C4989		yjbD	
+C4990		lysC	
+C0376		yafL	
+C4991		pgi	
+C4992			
+C0377		fhiA	
+C4993			
+C4994		yjbE	
+C0378		mbhA	
+C4995		yjbF	
+C4996		yjbG	
+C0379		dinP	
+C4997		yjbH	
+C4998			
+C0380		yafP	
+C4999			
+C5000			
+C0381			
+C5001		yjbA	
+C5002		malG	
+C0382		prfH	
+C5003		malF	
+C5004		malE	
+C0383		pepD	
+C5005		malK	
+C5006		lamB	
+C0384		gpt	
+C5007		malM	
+C5008			
+C0385			
+C5009		ubiC	
+C5010		ubiA	
+C0386		yafA	
+C5011		plsB	
+C5012			
+C0387		crl	
+C5013		dgkA	
+C1071		ompF	
+C5014		lexA	
+C0388		phoE	
+C5015		dinF	
+C0406			
+C5016		yjbJ	
+C0389		proB	
+C5017		yjbK	
+C5018		yjbN	
+C0390		proA	
+C5019		yjbO	
+C0636		purK	
+C5020		qor	
+C0391			
+C5021			
+C0485			
+C5022			
+C0866		moaD	
+C5023			
+C1113		hyaA	
+C5024			
+C0393			
+C5025			
+C5026		dnaB	
+C0394			
+C5027			
+C5028		alr	
+C0395			
+C5029			
+C1192			
+C5030			
+C0396			
+C5031		tyrB	
+C5032			
+C0397			
+C5033			
+C5034			
+C0398			
+C5035			
+C5036			
+C0527		nusB	
+C5037			
+C5038			
+C0400		yagV	
+C5039			
+C5040			
+C0401		yagW	
+C5041			
+C5042			
+C0402		yagX	
+C5043			
+C0908		ybiW	
+C5044			
+C0403		yagY	
+C5045		aphA	
+C5046		yjbQ	
+C0404		matB	
+C5047		yjbR	
+C0757			
+C5048		uvrA	
+C0405		matA	
+C5049		ssb	
+C1004		poxB	
+C5050		yjcB	
+C5051			
+C0407		ykgM	
+C5052		yjcC	
+C5053		soxS	
+C0408			
+C5054		soxR	
+C5055			
+C0409			
+C5056			
+C5057			
+C0410			
+C5058			
+C5059			
+C0987		potF	
+C5060			
+C0412			
+C5061			
+C0413			
+C5062		yjcG	
+C0414			
+C5063		yjcH	
+C0415		eaeH	
+C5064		acs	
+C5065			
+C0416		ykgA	
+C5066		nrfA	
+C5067		nrfB	
+C0417			
+C5068		nrfC	
+C5069		nrfD	
+C0418		ykgB	
+C5070		nrfE	
+C0497			
+C5071		nrfF	
+C0419		ykgI	
+C5072		nrfG	
+C5073			
+C0420		ykgC	
+C5074		gltP	
+C5075			
+C0421		ykgD	
+C5076		yjcO	
+C5077		yddO	
+C0422		ykgE	
+C5078			
+C5079		yddQ	
+C0423		ykgF	
+C5080		yddR	
+C5081			
+C0424		ykgG	
+C5625		fdhF	
+C5083			
+C0425		ykgH	
+C5085		yjcP	
+C5086		yjcQ	
+C0426			
+C5087		yjcR	
+C5088			
+C0427			
+C5089		yjcS	
+C5090		yjcT	
+C0428			
+C5091		yjcU	
+C5092		yjcV	
+C0429			
+C5093		yjcW	
+C0430			
+C5094		yjcX	
+C5095		rpiR	
+C0431		betA	
+C5096		rpiB	
+C5097			
+C0432		betB	
+C5098		phnP	
+C5099		phnO	
+C0433		betI	
+C5101		phnM	
+C5102		phnL	
+C5103		phnK	
+C5104		phnJ	
+C0435			
+C5105		phnI	
+C5106		phnH	
+C0436		yahB	
+C5107		phnG	
+C5108		phnF	
+C0437		yahC	
+C5109		phnE	
+C5110		phnD	
+C0438			
+C5111		phnC	
+C5112		phnB	
+C0439		yahD	
+C5113		phnA	
+C5114		yjdA	
+C0440		yahE	
+C5115		yjcZ	
+C5116		proP	
+C0441			
+C5117		basS	
+C5118		basR	
+C0444			
+C5119		yjdB	
+C5120		yjdE	
+C0445		yahJ	
+C5121		adiY	
+C5122		adiA	
+C0446			
+C5123		melR	
+C5124		melA	
+C0447		yahK	
+C0448		yahN	
+C0449		yahO	
+C5127		fumB	
+C5128		dcuB	
+C0450		prpR	
+C5129			
+C5130		yjdG	
+C0451		prpB	
+C5131		yjdH	
+C5132			
+C0452		prpC	
+C5133		yjdI	
+C5134		yjdJ	
+C0453		prpD	
+C5135			
+C5136			
+C0454		prpE	
+C5137			
+C5138		lysU	
+C0455		codB	
+C5139		yjdL	
+C5140		cadA	
+C0456		codA	
+C5141		cadB	
+C5142		cadC	
+C0457		lacA	
+C5143			
+C5144			
+C0458		lacY	
+C5145			
+C5146			
+C0459		lacZ	
+C5147			
+C5148			
+C0460			
+C5149			
+C5150			
+C0469			
+C5151			
+C5152			
+C0463			
+C5153			
+C5154			
+C0464		yaiM	
+C5155			
+C5156			
+C0465		adhC	
+C5157			
+C5158			
+C0466		yaiN	
+C5159			
+C5160			
+C0467			
+C5161			
+C5162			
+C0468			
+C5163			
+C5164			
+C5165			
+C5166			
+C0470			
+C5167			
+C5168			
+C0471			
+C5169			
+C5170			
+C0472		tauA	
+C5171			
+C5172			
+C0473		tauB	
+C5173			
+C5174			
+C0474			
+C5175			
+C5176			
+C0475		tauC	
+C5177			
+C5178			
+C0476		tauD	
+C5179		papG_2	
+C0490		phoA	
+C5180		papF_2	
+C0477		hemB	
+C5181		papE_2	
+C0478			
+C5182		papK_2	
+C0479		yaiV	
+C5183			
+C5184		papJ_2	
+C0480		yaiH	
+C5185		papD_2	
+C5186		papC_2	
+C0481			
+C5187		papH_2	
+C5188		papA_2	
+C0482		sbmA	
+C5189		papI_2	
+C5190			
+C0483		yaiW	
+C5191			
+C0504		araJ	
+C5192			
+C0484		yaiY	
+C5193			
+C5194			
+C0486		yaiZ	
+C5195			
+C5196			
+C5197			
+C5198			
+C0487		ddlA	
+C5199			
+C5200			
+C0488			
+C5201		pgtP	
+C5202		pgtC	
+C0489		yaiB	
+C5203		pgtB	
+C5204		pgtA	
+C0491		psiF	
+C5205			
+C5206			
+C0492		yaiC	
+C5207			
+C0493		proC	
+C5208			
+C0494		yaiI	
+C5209			
+C5210			
+C5211			
+C0495		aroL	
+C5212			
+C5213			
+C0496		yaiA	
+C5214			
+C0498		aroM	
+C5215			
+C5216			
+C5217		yjdC	
+C5218		dsbD	
+C5219		cutA	
+C0499		yaiE	
+C5220		dcuA	
+C5221			
+C0500			
+C5222		aspA	
+C5223			
+C0501		ykiA	
+C5224		yjeH	
+C5225			
+C0502		rdgC	
+C5226		mopB	
+C0516		tgt	
+C5227		mopA	
+C0503			
+C5228		yjeI	
+C5229			
+C5230		yjeJ	
+C5231		yjeK	
+C0505		sbcC	
+C5232		efp	
+C5233			
+C0506		sbcD	
+C5234		ecnA	
+C5235		ecnB	
+C0507			
+C5236		sugE	
+C5237		blc	
+C0508		phoB	
+C5238		ampC	
+C5239		frdD	
+C0509		phoR	
+C5240		frdC	
+C5241		frdB	
+C0510			
+C5242		frdA	
+C5243		yjeA	
+C0511		brnQ	
+C5244		yjeM	
+C5245		yjeP	
+C0512		proY	
+C5246			
+C5247		psd	
+C0513		malZ	
+C5248		yjeQ	
+C5249		yjeR	
+C0514		yajB	
+C5250		yjeS	
+C5251		yjeF	
+C0515		queA	
+C5252		yjeE	
+C5253		amiB	
+C5254		mutL	
+C0517		yajC	
+C5255		miaA	
+C5256		hfq	
+C5257		hflX	
+C0518		secD	
+C5258		hflK	
+C5259		hflC	
+C0519		secF	
+C5260		yjeT	
+C5261		purA	
+C1083		ycbX	
+C5262		yjeB	
+C5263		vacB	
+C0521		tsx	
+C5264		yjfH	
+C5265		yjfI	
+C0522		yajI	
+C5266		yjfJ	
+C5267		yjfK	
+C0523		ybaD	
+C5268		yjfL	
+C5269			
+C0524		ribD	
+C5270			
+C5271			
+C0525		ribH	
+C5272		yjfM	
+C5274		yjfC	
+C0526			
+C5275		aidB	
+C5276		yjfN	
+C5277		yjfO	
+C5278		yjfP	
+C0528		thiL	
+C5279		yjfQ	
+C5280		yjfR	
+C0529		pgpA	
+C5281		sgaT	
+C5282			
+C0530		yajO	
+C5283		sgaB	
+C5284		ptxA	
+C0531		dxs	
+C5285		sgaH	
+C0532		ispA	
+C5286			
+C5287		sgaU	
+C5288		sgaE	
+C0533		xseB	
+C5289		yjfY	
+C5290			
+C0534		yajK	
+C5291		rpsF	
+C5292		rpsR	
+C0535		thiJ	
+C5293			
+C5294		rplI	
+C0536		apbA	
+C5295			
+C5296			
+C0537		yajQ	
+C5297			
+C5298			
+C0538		yajR	
+C5299			
+C5300			
+C0539		cyoE	
+C5301			
+C5302			
+C0540		cyoD	
+C5303			
+C5304			
+C0541		cyoC	
+C5305		ytfB	
+C0542		cyoB	
+C5306		fklB	
+C5307		cycA	
+C5308		ytfE	
+C5309		ytfF	
+C0544		ampG	
+C5310		ytfG	
+C5311		ytfH	
+C0545			
+C5312			
+C0546		yajG	
+C5313		cysQ	
+C5314			
+C0547			
+C5315		ytfK	
+C5316		ytfL	
+C0548		bolA	
+C5317		msrA	
+C5318		ytfM	
+C0549			
+C5319		ytfN	
+C5320		ytfP	
+C0550			
+C5321			
+C0578		hha	
+C5322			
+C0551		tig	
+C5323		ppa	
+C5324			
+C0552			
+C5325		ytfQ	
+C5326		ytfR	
+C0553		clpP	
+C5327		ytfT	
+C5328		yjfF	
+C0554		clpX	
+C5329		fbp	
+C5330			
+C5331		yjfG	
+C5332		yjgA	
+C0556		hupB	
+C5333		pmbA	
+C5334			
+C0557		ybaU	
+C5335		cybC	
+C5336		nrdG	
+C0558		ybaV	
+C5337		nrdD	
+C5338		treC	
+C0559		ybaW	
+C5339		treB	
+C5340		treR	
+C0560		ybaX	
+C5341		mgtA	
+C5342		yjgF	
+C0561		ybaE	
+C5343			
+C5344		pyrI	
+C0562		cof	
+C5345		pyrB	
+C0567			
+C5502		pyrL	
+C0563			
+C5346			
+C5347			
+C0564		ybaO	
+C5348			
+C5349			
+C0565		mdlA	
+C5350			
+C5351			
+C0566		mdlB	
+C5352		yjgK	
+C5353		argI	
+C5354		yjgD	
+C5355			
+C0568		glnK	
+C5356			
+C0569			
+C5357			
+C5358		valS	
+C0570		amtB	
+C5359		holC	
+C5360		pepA	
+C0583			
+C5361			
+C5362		yjgP	
+C0572		ybaY	
+C5363		yjgQ	
+C5364		yjgR	
+C0573		ybaZ	
+C5365		idnR	
+C5366		idnT	
+C0574		ybaA	
+C5367		idnO	
+C5368		idnD	
+C0575		ylaB	
+C5369		idnK	
+C5370		yjgB	
+C0576		ylaC	
+C5371			
+C5372			
+C0577		ylaD	
+C5373			
+C5374			
+C5375			
+C5376			
+C0579		ybaJ	
+C5377			
+C5378			
+C0580		acrB	
+C5379			
+C5380			
+C0581		acrA	
+C5381			
+C5382			
+C0582		acrR	
+C5383			
+C5384			
+C5385			
+C5386			
+C0584		aefA	
+C5387			
+C5388			
+C0585		ybaM	
+C5389			
+C5390			
+C0586		priC	
+C5391		fimB	
+C5392		fimE	
+C0587		ybaN	
+C5393		fimA	
+C5394		fimI	
+C0588		apt	
+C5395		fimC	
+C5396		fimD	
+C0589		dnaX	
+C5397		fimF	
+C5398			
+C0590			
+C5399		fimG	
+C5400		fimH	
+C0591		ybaB	
+C5401		gntP	
+C5402		uxuA	
+C0592		recR	
+C5403		uxuB	
+C5404		uxuR	
+C0593		htpG	
+C5405		yjiD	
+C5406			
+C0594		adk	
+C5407		yjiE	
+C0595		hemH	
+C5408		iadA	
+C0609		ybbJ	
+C5409		yjiG	
+C0596		ybaC	
+C5410		yjiH	
+C5411			
+C0597		gsk	
+C0598		ybaL	
+C0599		fsr	
+C5414		yjiJ	
+C5415		yjiK	
+C0600		ushA	
+C5416			
+C5417		yjiL	
+C0601		ybaK	
+C5418		yjiM	
+C5419		yjiN	
+C0602		ybaP	
+C5420		yfcI	
+C5421			
+C0603		ybaQ	
+C5422		yjiW	
+C5423			
+C0604		ybaR	
+C5424			
+C5425			
+C0605		ybaS	
+C5426			
+C5427		yjiA	
+C0606		ybaT	
+C5428			
+C5429		yjiY	
+C0607		ybbI	
+C5430		tsr	
+C5431			
+C0608			
+C5432			
+C5433			
+C5434			
+C0610		ybbK	
+C5435			
+C5436		yjjM	
+C0611		ybbL	
+C5437			
+C5438		mdoB	
+C5439		yjjA	
+C5440		dnaC	
+C5441		dnaT	
+C5442		yjjB	
+C0641		ppiB	
+C5443		yjjP	
+C0614		ybbO	
+C5444		yjjQ	
+C5445		bglJ	
+C0615		tesA	
+C5446		fhuF	
+C5447			
+C0616		ybbA	
+C5448			
+C5449			
+C0617		ybbP	
+C5450		yjjT	
+C5451			
+C0618		ybbB	
+C5452		holD	
+C5453		rimI	
+C0619		ybbS	
+C5454		yjjG	
+C5455			
+C0620		ybbT	
+C5456		prfC	
+C0625		ybbW	
+C5457		osmY	
+C0621		ybbU	
+C5458			
+C5459			
+C0622		gcl	
+C5460		yjjU	
+C5461		yjjV	
+C0623		gip	
+C5462		yjjW	
+C5463		yjjI	
+C0624		ybbQ	
+C5464			
+C5465		deoC	
+C5466		deoA	
+C5467		deoB	
+C0626		ybbX	
+C5468		deoD	
+C5469			
+C0627		ybbY	
+C5470		yjjJ	
+C5471		lplA	
+C0628		ybbZ	
+C5472		smp	
+C5473		serB	
+C0629		ylbA	
+C5474		sms	
+C5475		nadR	
+C0630		ylbB	
+C5476			
+C5477			
+C0631			
+C5478		yjjK	
+C5479		slt	
+C0632		fdrA	
+C5480		trpR	
+C5481		yjjX	
+C0633		ylbE	
+C5482		gpmB	
+C5483		rob	
+C0634		ylbF	
+C5484		creA	
+C0637		purE	
+C0635		arcC	
+C5485		creB	
+C5486		creC	
+C5487		creD	
+C5488		arcA	
+C5489		yjjY	
+C0638			
+C5490		lasT	
+C0639		ybbF	
+C0640			
+C0642		cysS	
+C0643		ybcI	
+C0644		ybcJ	
+C0645		folD	
+C0646			
+C0649		ydfM	
+C0650			
+C1164		ycdT	
+C0651			
+C0652		ompT	
+C0653		ybcH	
+C0654		nfrA	
+C0655		nfrB	
+C0656		cusS	
+C0657		cusR	
+C0658		cusC	
+C0659		cusX	
+C0660		cusB	
+C0661		cusA	
+C0662		pheP	
+C0663		ybdG	
+C0665		ybdF	
+C0666		ybdJ	
+C0667		ybdK	
+C0668		entD	
+C0669		fepA	
+C0670			
+C0671		fes	
+C0672			
+C0673		entF	
+C0674		fepE	
+C0729		phpB	
+C0675		fepC	
+C0676		fepG	
+C0677		fepD	
+C0678		ybdA	
+C0679		fepB	
+C0681		entE	
+C0682		entB	
+C0683		entA	
+C0684		ybdB	
+C0685		cstA	
+C0686			
+C0687		ybdH	
+C0688		ybdL	
+C0123		yacE	
+C0689			
+C0690			
+C0691		ybdO	
+C0693			
+C0959			
+C0694		ahpC	
+C0695		ahpF	
+C0696		ybdQ	
+C0697			
+C0698		rnk	
+C0699		rna	
+C0700		ybdS	
+C0701		citG	
+C0702		ybdU	
+C0703			
+C0704		citF	
+C0705			
+C0709		citC	
+C0710		citA	
+C0711		citB	
+C0712		dcuC	
+C0713		crcA	
+C0714		cspE	
+C0715		crcB	
+C0716		ybeM	
+C0717		ybeC	
+C0718		lipA	
+C0719			
+C0720		lipB	
+C0721		ybeD	
+C0723			
+C0724		rlpA	
+C0725		mrdB	
+C0726		mrdA	
+C0727		ybeA	
+C0728		ybeB	
+C0730		ybeN	
+C0731		holA	
+C0734		ybeL	
+C0732		rlpB	
+C0733		leuS	
+C0746			
+C0735		ybeK	
+C0736		gltL	
+C0737		gltK	
+C0738		gltJ	
+C0739		ybeJ	
+C0740			
+C0741			
+C0742		lnt	
+C0743		ybeX	
+C0744		ybeY	
+C0745		ybeZ	
+C0747		yleA	
+C0748		yleB	
+C0749		asnB	
+C0751		nagC	
+C0752		nagA	
+C0753		nagB	
+C0754			
+C0755		nagE	
+C0756			
+C0758			
+C0759			
+C0760			
+C0761			
+C0762			
+C0763			
+C0764			
+C0765			
+C0766		glnS	
+C0767			
+C0768		ybfM	
+C0769		ybfN	
+C0770		fur	
+C0771		fldA	
+C0772		ybfE	
+C1176			
+C0774		seqA	
+C0775		pgm	
+C0776		potE	
+C0777		speF	
+C0778			
+C0779		kdpE	
+C0780		kdpD	
+C0781		kdpC	
+C0782		kdpB	
+C0783		kdpA	
+C0784			
+C0785		ybfA	
+C0786		ybgA	
+C0787		phrB	
+C0788		ybgH	
+C0789		ybgI	
+C0790		ybgJ	
+C0791		ybgK	
+C1027		ftsK	
+C0792		ybgL	
+C0793		nei	
+C0794		abrB	
+C0795			

@@ -1,0 +1,35 @@
+query_seq_id	blastp_sseqid	blastp_evalue	blastp_bitscore	tblastn_sseqid	tblastn_evalue	tblastn_bitscore	tblastn_sstart	tblastn_send	exonerate_score	exonerate_hit_range	predicted_gene
+EcHS_A1412											
+EcHS_A4262											
+EcHS_A1593	UTI89_C4124	4.83e-38	143	CP000243.1	1.71e-29	121	4013788	4015218			
+EcHS_A2694											
+EcHS_A1475											
+EcHS_A0416											
+EcHS_A0414											
+EcHS_A3078	UTI89_C3303	9.69e-26	105	CP000243.1	4.18e-24	104	3239397	3239546			
+EcHS_A2693											
+EcHS_A1415	UTI89_C4129	1.94e-111	338	CP000243.1	1.51e-96	317	4018980	4017553			
+EcHS_A2691											
+EcHS_A1595	UTI89_C4304	9.32e-104	317	CP000243.1	5.39e-92	305	4194655	4196136			
+EcHS_A1472	UTI89_C1663	2.24e-104	317	CP000243.1	7.16e-94	310	1586659	1588077			
+EcHS_A4582											
+EcHS_A4584	UTI89_C1366	3.15e-38	135	CP000243.1	2.92e-32	127	1301567	1302118			
+EcHS_A2692											
+EcHS_A1477											
+EcHS_A0413											
+EcHS_A1479	UTI89_C0875	3.62e-29	112	CP000243.1	1.20e-27	112	873076	872165			
+EcHS_A1485											
+EcHS_A0412											
+EcHS_A1413											
+EcHS_A1476											
+EcHS_A1473											
+EcHS_A2690											
+EcHS_A0405											
+EcHS_A1573											
+EcHS_A4580											
+EcHS_A1416											
+EcHS_A0411											
+EcHS_A1484	UTI89_C4430	1.18e-105	314	CP000243.1	1.07e-92	302	4315101	4313941			
+EcHS_A3077	UTI89_C4622	5.36e-37	129	CP000243.1	1.92e-34	129	4515972	4515244			
+EcHS_A3893	UTI89_C1927	2.16e-47	166	CP000243.1	4.99e-44	162	1851954	1850860			
+EcHS_A1478											

@@ -1,0 +1,6 @@
+all	HS	IAI1	CFT073	UTI89	sf301	ec042	LF82
+group1	HS	IAI1	CFT073	UTI89			
+group2				UTI89	sf301	ec042	LF82
+groupA	HS	IAI1					
+groupB			CFT073	UTI89	sf301		
+groupC					sf301	ec042	LF82

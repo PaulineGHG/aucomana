@@ -1,0 +1,15 @@
+idRef	Comment	Genes	Action
+RXN-20784	Has Orthologues with LF82;IAI1;UTI89;ec042;HS	predicted_EcHS_A1022_vs_AE014075.1;predicted_LF82_1229_vs_AE014075.1;predicted_ECIAI1_0956_vs_AE014075.1;predicted_UTI89_C0986_vs_AE014075.1;predicted_EC042_1005_vs_AE014075.1	add
+RXN0-2721	Has Orthologues with LF82;IAI1;UTI89;ec042;HS	predicted_EC042_2903_vs_AE014075.1;predicted_LF82_1508_vs_AE014075.1;predicted_ECIAI1_2802_vs_AE014075.1;predicted_EcHS_A2846_vs_AE014075.1;predicted_UTI89_C3072_vs_AE014075.1	add
+TETRAACYLDISACC4KIN-RXN	Has Orthologues with LF82;IAI1;UTI89;ec042;HS	predicted_EcHS_A1022_vs_AE014075.1;predicted_LF82_1229_vs_AE014075.1;predicted_ECIAI1_0956_vs_AE014075.1;predicted_UTI89_C0986_vs_AE014075.1;predicted_EC042_1005_vs_AE014075.1	add
+RXN-22238	Has Orthologues with LF82;IAI1;UTI89;ec042;HS	predicted_EcHS_A1022_vs_AE014075.1;predicted_LF82_1229_vs_AE014075.1;predicted_ECIAI1_0956_vs_AE014075.1;predicted_UTI89_C0986_vs_AE014075.1;predicted_EC042_1005_vs_AE014075.1	add
+IGPSYN-RXN	Has Orthologues with sf301;IAI1;UTI89;ec042;HS	predicted_SF1265_vs_AE014075.1;predicted_UTI89_C1531_vs_AE014075.1;predicted_EC042_1388_vs_AE014075.1;predicted_EcHS_A1371_vs_AE014075.1;predicted_ECIAI1_1282_vs_AE014075.1	add
+RXN2B4Q-53	Has Orthologues with LF82;IAI1;UTI89;ec042;HS	predicted_EcHS_A1022_vs_AE014075.1;predicted_LF82_1229_vs_AE014075.1;predicted_ECIAI1_0956_vs_AE014075.1;predicted_UTI89_C0986_vs_AE014075.1;predicted_EC042_1005_vs_AE014075.1	add
+GARTRANSFORMYL2-RXN	Has Orthologues with sf301;LF82;IAI1;UTI89;ec042;HS	predicted_EC042_2016_vs_AE014075.1;predicted_ECIAI1_1922_vs_AE014075.1;predicted_EcHS_A1941_vs_AE014075.1;predicted_UTI89_C2052_vs_AE014075.1;predicted_SF1859_vs_AE014075.1;predicted_LF82_1785_vs_AE014075.1	add
+PRAISOM-RXN	Has Orthologues with sf301;IAI1;UTI89;ec042;HS	predicted_SF1265_vs_AE014075.1;predicted_UTI89_C1531_vs_AE014075.1;predicted_EC042_1388_vs_AE014075.1;predicted_EcHS_A1371_vs_AE014075.1;predicted_ECIAI1_1282_vs_AE014075.1	add
+2.7.1.160-RXN	Has Orthologues with IAI1	predicted_ECIAI1_4548_vs_AE014075.1	add
+ALANINE--TRNA-LIGASE-RXN	Has Orthologues with sf301;LF82;IAI1;UTI89;ec042;HS	predicted_UTI89_C3058_vs_AE014075.1;predicted_SF2720_vs_AE014075.1;predicted_EcHS_A2833_vs_AE014075.1;predicted_ECIAI1_2788_vs_AE014075.1;predicted_LF82_0058_vs_AE014075.1;predicted_EC042_2890_vs_AE014075.1	add
+DXPREDISOM-RXN	Has Orthologues with LF82;IAI1;UTI89;ec042;HS	predicted_UTI89_C0188_vs_AE014075.1;predicted_EC042_0171_vs_AE014075.1;predicted_ECIAI1_0171_vs_AE014075.1;predicted_EcHS_A0175_vs_AE014075.1;predicted_LF82_0535_vs_AE014075.1	add
+RXN0-1401	Has Orthologues with ec042;IAI1	predicted_ECIAI1_4324_vs_AE014075.1;predicted_EC042_4461_vs_AE014075.1	add
+LYSINEARGININE-CARBOXYPEPTIDASE-RXN	Has Orthologues with UTI89	predicted_UTI89_C1597_vs_AE014075.1	add
+GLY-X-CARBOXYPEPTIDASE-RXN	Has Orthologues with ec042;sf301	predicted_SF1332_vs_AE014075.1;predicted_EC042_1442_vs_AE014075.1	add

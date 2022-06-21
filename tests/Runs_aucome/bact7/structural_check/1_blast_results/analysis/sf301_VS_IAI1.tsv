@@ -1,0 +1,7 @@
+query_seq_id	blastp_sseqid	blastp_evalue	blastp_bitscore	tblastn_sseqid	tblastn_evalue	tblastn_bitscore	tblastn_sstart	tblastn_send	exonerate_score	exonerate_hit_range	predicted_gene
+SF3718											
+SF0218											
+SF2921				CU928160.2	0.0	625	3138705	3137782	1675	9011-9999	predicted_SF2921_vs_CU928160.2
+SF0692	ECIAI1_0778	1.22e-56	171	CU928160.2	4.24e-51	171	827764	828159			
+SF0306	ECIAI1_2330	2.11e-48	161	CU928160.2	4.57e-38	140	2414040	2414951			
+SF4088				CU928160.2	1.21e-74	251	3138774	3137812			

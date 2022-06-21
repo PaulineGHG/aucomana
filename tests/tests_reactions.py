@@ -5,15 +5,6 @@ from analysis_runs.reactions import Reactions
 STUDY_PATH = "Study_folder"
 RUNS_PATH = "Runs_aucome"
 
-FILE_TEST = f"{RUNS_PATH}/file_test"
-ORG_TSV = f"{STUDY_PATH}/species_group.tsv"
-
-g1 = ["org1", "org2"]
-R = Reactions(FILE_TEST)
-RS = Reactions(FILE_TEST, g1)
-RSO1 = Reactions(FILE_TEST, g1, out=1)
-RSO2 = Reactions(FILE_TEST, g1, out=2)
-
 
 class Test(unittest.TestCase):
 

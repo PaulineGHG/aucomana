@@ -1,0 +1,5 @@
+idRef	Comment	Genes	Action
+3.2.1.8-RXN	Has Orthologues with UTI89;IAI1;sf301	predicted_UTI89_C4270_vs_CP000802.1;predicted_ECIAI1_3899_vs_CP000802.1;predicted_SF3738_vs_CP000802.1	add
+GLUTAMATE-DEHYDROGENASE-RXN	Has Orthologues with UTI89;CFT073	predicted_UTI89_C0015_vs_CP000802.1;predicted_c0018_vs_CP000802.1	add
+ACYLPHOSPHATASE-RXN	Has Orthologues with UTI89;IAI1;CFT073	predicted_UTI89_C1035_vs_CP000802.1;predicted_c1106_vs_CP000802.1;predicted_ECIAI1_1009_vs_CP000802.1	add
+3.1.3.70-RXN	Has Orthologues with LF82;ec042;IAI1	predicted_EC042_2113_vs_CP000802.1;predicted_LF82_2956_vs_CP000802.1;predicted_ECIAI1_2035_vs_CP000802.1	add

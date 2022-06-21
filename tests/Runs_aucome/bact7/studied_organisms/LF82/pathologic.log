@@ -1,0 +1,430 @@
+21-Jun-2022  11:24:57 
+Started processing test/studied_organisms/LF82/
+Reading file  test/studied_organisms/LF82/organism-params.dat
+;; ensure-directories-exist: creating
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/input/
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/ does
+;;   not exist, will create.
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/
+;;   does not exist, will create.
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/input/
+;;   does not exist, will create.
+;; ensure-directories-exist: creating
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/data/
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/data/
+;;   does not exist, will create.
+;; ensure-directories-exist: creating
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/reports/
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/reports/
+;;   does not exist, will create.
+;; ensure-directories-exist: creating
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/kb/
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/kb/
+;;   does not exist, will create.
+
+Created lf82cyc directory tree.
+Saved /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/input/organism.dat
+Saved /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/input/organism-init.dat
+Reading file  /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/input/organism-init.dat
+Copying class Organisms from METABASE to LF82BASE.
+[Copying class hierarchy into LF82BASE]
+Found 0 stub frames or stub references
+[Completed initialization of new PGDB for LF82]
+[Saving KB LF82BASE to V4-FASL file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/kb/lf82base.ocelot
+ 7378 frames saved]
+
+[Processed 4 data rows from file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/input/genetic-elements.dat]
+
+[Processed 1 data frames]
+
+
+Extracting one sequence from
+/mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/input/LF82.gbk
+into
+/mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/input/LF82-CU651637.fsa ...
+
+Parsing the GenBank file resulted in 11 warnings, which may indicate possible problems.
+Please see this log file for the details:
+/mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/reports/annotation-parse-log-LF82_2022-06-21.txt
+
+
+     :::::  Processing genetic element "CU651637" with ID CU651637 and file NIL  :::::
+
+Genetic Element CU651637 is new to the PGDB.
+Adding genetic element and processing its components.
+Copying /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/input/LF82-CU651637.fsa
+     to /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/data/lf82-CU651637.fsa
+[Creating gene frames]
+
+[Creating monomers]
+Warning: Amino acid U is invalid.
+Warning: Amino acid U is invalid.
+
+Classifying LF82_1963-MONOMER/RNA polymerase sigma-32 factor as a sigma factor.
+
+Classifying LF82_1964-MONOMER/RNA polymerase sigma-54 factor as a sigma factor.
+
+Classifying LF82_1961-MONOMER/RNA polymerase sigma factor rpoD as a sigma factor.
+
+Classifying LF82_1965-MONOMER/RNA polymerase sigma factor rpoS as a sigma factor.
+
+Classifying LF82_1962-MONOMER/RNA polymerase sigma-E factor as a sigma factor.
+
+Classifying LF82_0697-MONOMER/RNA polymerase sigma factor for flagellar operon as a sigma factor.
+Warning: Amino acid U is invalid.
+;;; No information exists for linked database ID ENSEMBLGENOMES-GN. Links to this database will not be live until you create a description for it using the File -> Create -> External Database Description command in the Navigator.
+;;; No information exists for linked database ID ENSEMBLGENOMES-TR. Links to this database will not be live until you create a description for it using the File -> Create -> External Database Description command in the Navigator.
+The following is a summary of the features recognized in the
+specified genetic elements.
+  
+A full report on parsing can be found in file:
+    /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/reports/trial-parse-report_2022-06-21.txt
+
+           Genes       Proteins    RNAs   Pseudogenes
+-----------------------------------------------------
+CU651637     4545         4376       158       7     
+
+
+Matches found using supplied GO terms: 0
+Warning: tRNA LF82_T1185 (leuQ) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1184 (leuP) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1189 (leuV) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1191 (leuX) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0899 (glyY) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0898 (glyX) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0896 (glyV) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1640 (pheU) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0886 (gltV) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T2263 (thrT) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0894 (glyT) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T2344 (tyrU) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T2264 (thrU) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0884 (gltT) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0059 (alaT) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1097 (ilet) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1731 (proM) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1187 (leuT) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1010 (hisR) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0133 (argX) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T2317 (trpT) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0176 (aspT) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0885 (gltU) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1729 (proK) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1098 (ileU) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0060 (alaU) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T2265 (thrV) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1188 (leuU) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1335 (metY) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1100 (ilex) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1641 (pheV) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0895 (glyU) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1333 (metV) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1334 (metW) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1336 (metZ) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T2121 (serV) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0131 (argV) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0134 (argY) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0135 (argZ) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0126 (argQ) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0887 (gltW) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1246 (lysV) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T2413 (valY) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T2412 (valX) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T2409 (valU) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0062 (alaW) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0063 (alaX) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0132 (argW) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1730 (proL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0171 (asnV) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0170 (asnU) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0172 (asnW) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0169 (asnT) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T2120 (serU) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0897 (glyW) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0424 (cysT) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1192 (leuZ) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T2411 (valW) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T2410 (valV) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T2343 (tyrT) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T2345 (tyrV) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T2123 (serX) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T2119 (serT) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T2122 (serW) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1241 (lysQ) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1249 (lysZ) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1248 (lysY) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T2414 (valZ) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1247 (lysW) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T2408 (valT) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1244 (lysT) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1331 (metT) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1190 (leuW) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0857 (glnU) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0859 (glnW) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1332 (metU) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0858 (glnV) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0860 (glnX) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0130 (argU) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T2266 (thrW) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0178 (aspV) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0177 (aspU) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T0061 (alaV) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA LF82_T1099 (ileV) may not have had parsable anticodon
+         information. None assigned.
+
+     :::::  Running reaction inference from EC numbers and MetaCyc IDs  :::::
+
+Inferred 0 enzymatic reactions from 0 rawgenes; 0 id-rxns, 0 ec-rxns
+
+     :::::  Finished EC number reaction inference for "CU651637"  :::::
+
+
+     :::::  Running reaction inference from GO terms  :::::
+
+
+
+     :::::  Running enzyme name matcher on 4055 input proteins  :::::
+
+Warning: enter-into-lookup-table-internal: Why does  have 51 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does  have 53 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does  have 54 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does acylactivatingenzyme have 52 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does acylactivating have 53 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does  have 55 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does fattyacylcoasynthasesystem have 56 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does fattyacylcoasynthetasesystem have 56 associated reactions?? 
+
+[Loaded 1165 lines from file pathologic:data;nonspecific-enzyme-names.dat]
+[Loaded 230 lines from file pathologic:data;metabolic-enzyme-ruleout-words.dat]
+
+[Processed 1830 data rows from file pathologic:data;enzyme-mappings.dat]
+Name-mapping hash table contains 56011 entries, of which 1340 are ambiguous
+Matching enzyme names for an enzyme-name-list with 4055 elements
+500 1000 1500 2000 2500 3000 3500 4000 
+Solid matches found by enzyme name matcher: 1017
+Full report available in /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/reports/name-matching-report_2022-06-21.txt.
+
+     :::::  End enzyme name matcher  :::::
+
+
+     :::::  Begin Pathway Inference  :::::
+
+Taxonomic Pruning is turned on.
+Importing pathways that each have at least one reaction present...
+Imported 926 pathways that each had at least one reaction present
+Imported 985 new or changed pathways based on existing reactions.
+Writing inference report in /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/reports/pwy-inference-report_2022-06-21.txt.
+
+Pathway Inference Report File written                [subsequent runs will append to file]
+  to /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/reports/pwy-inference-report_2022-06-21.txt at 21-Jun-2022  11:26:17
+Importing 184 super pathways and their subpathways, some of which may be pruned in the next steps.
+
+Analyzing 928 base pathways as to whether to keep or delete with cutoff score 0.15
+
+Pruning 629 base pathways, 299 remain
+Pruned 126 super-pathways, 58 remain
+[Checking inverses under class  Notes]
+[Checking inverses under class  KB-DESCRIPTOR]
+[Checking inverses under class  Enzymatic-Reactions]
+[Checking inverses under class  EC-BOOKKEEPING]
+[Checking inverses under class  Databases]
+[Checking inverses under class  Compound-Mixtures]
+[Checking inverses under class  Collections]
+[Checking inverses under class  Chemicals]
+[Checking inverses under class  Cell-Types]
+[Checking inverses under class  CCO]
+[Checking inverses under class  Regulation]
+[Checking inverses under class  Pseudo-Products]
+[Checking inverses under class  Protein-Features]
+[Checking inverses under class  Polymer-Segments]
+[Checking inverses under class  PGDB-Metadata]
+[Checking inverses under class  Notes]
+[Checking inverses under class  Growth-Observations]
+[Checking inverses under class  Generalized-Reactions]
+[Checking inverses under class  Gene-Ontology-Terms]
+[Checking inverses under class  Evidence]
+[Checking inverses under class  Organizations]
+[Checking inverses under class  People]
+[Checking inverses under class  Organisms]
+[Checking inverses under class  Publications]
+Pruning out unneeded reactions, compounds, etc...
+Deleting empty pathway PWY-6196
+Deleted 290 reactions whose enzymes each catalyzed more than 10 reactions (72 reactions were not pruned)
+Deleted 2479 orphan reactions and 916 unreferenced compounds
+Inferring spontaneous reactions.
+Imported 67 spontaneous reactions.
+
+Importing composite reaction RXN-21566 because all its sub-reactions are either catalyzed by LF82_1122-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction RXN-9787 because all its sub-reactions are either catalyzed by LF82_1122-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction RXN-13158 because all its sub-reactions are either catalyzed by LF82_1179-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction RXN-22435 because all its sub-reactions are either catalyzed by LF82_0014-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction RXN-19335 because all its sub-reactions are either catalyzed by LF82_0253-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction BTUR2-RXN because all its sub-reactions are either catalyzed by LF82_0253-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction RXN-19474 because all its sub-reactions are either catalyzed by LF82_0568-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+Deleting 6846 publication frames that are not cited in LF82BASE
+
+Inferred  299  base pathways.
+
+     :::::  Ending Pathway Inference at 2022-06-21 11:28:07  :::::
+
+Inferring spontaneous reactions.
+Imported 0 spontaneous reactions.
+Updated 4376 protein molecular weights from sequence
+
+ This field gap_accession won't be parsed.
+ This field submitter_handle won't be parsed.
+ This field biospecimen_repository won't be parsed.
+ This field study_name won't be parsed.
+ This field study_design won't be parsed.
+ This field biospecimen_repository_sample_id won't be parsed.
+ This field submitted_sample_id won't be parsed.
+ This field submitted_subject_id won't be parsed.
+ This field gap_sample_id won't be parsed.
+ This field gap_subject_id won't be parsed.
+ This field sex won't be parsed.
+ This field histological_type won't be parsed.
+ This field analyte_type won't be parsed.
+ This field is_tumor won't be parsed.
+ This field molecular_data_type won't be parsed.
+ This field molecular_data_type won't be parsed.
+ This field gap_consent_code won't be parsed.
+ This field gap_consent_short_name won't be parsed.
+PGDB LF82, slot ENVIRONMENT: Adding values NILCount of protein+RNA frames (the frames that could contain GO terms) : 4633
+Total GO term annotations : 0
+Count of proteins/RNAs with at least 1 GO term : 0
+Count of proteins/RNAs with at least 1 experimental GO term : 0
+Count of genes whose product or complex or modified form contains at least 1 GO term : 0
+Count of genes whose product or complex or modified form contains at least 1 experimental GO term : 0
+Count of distinct GO terms encountered : 0
+
+Creating report pathway file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/reports/pathways-report_2022-06-21.txt.
+[Creating /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/data/protseq.fsa]
+[Wrote 4376 protein sequences]
+[Creating /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/data/dnaseq.fsa]
+PGDB build done.
+PGDB contains 4538 genes, 4381 polypeptides, 299 base pathways, 1657 reactions, 1202 compounds
+[Saving KB LF82BASE to V4-FASL file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/kb/lf82base.ocelot
+ 23222 frames saved]
+Creating Protein Complexes for LF82.
+
+42 Protein complexes were created.
+Count of protein+RNA frames (the frames that could contain GO terms) : 4675
+Total GO term annotations : 0
+Count of proteins/RNAs with at least 1 GO term : 0
+Count of proteins/RNAs with at least 1 experimental GO term : 0
+Count of genes whose product or complex or modified form contains at least 1 GO term : 0
+Count of genes whose product or complex or modified form contains at least 1 experimental GO term : 0
+Count of distinct GO terms encountered : 0
+
+[Saving KB LF82BASE to V4-FASL file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/lf82cyc/1.0/kb/lf82base.ocelot
+ 23178 frames saved]
+21-Jun-2022  11:28:35 Done

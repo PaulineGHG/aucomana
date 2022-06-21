@@ -1,0 +1,4325 @@
+#
+#  sf301cyc 1.0 Genes link table generated on Tue Jun 21, 2022
+#  All columns are separated by tab characters.
+#  Columns are: 
+#
+#  GENE-ID  EG#  b#  y-name  CGSC-ID  UniProt-ID  GENE-NAME  
+#
+#   GENE-ID      = Pathway Tools unique identifier for the gene
+#   UniProt-ID = Swiss-Prot identifier
+#   GENE-NAME    = Pathway Tools gene name
+#
+#
+SF2297		ada	
+SF2298		yojL	
+SF2299		ompC	
+SF2300		yojN	
+SF2301		rcsB	
+SF2302		rcsC	
+SF2303			
+SF2304			
+SF2305			
+SF2306			
+SF2307			
+SF2309			
+SF2311		gyrA	
+SF2312		ubiG	
+SF2313			
+SF2314			
+SF2316		nrdA	
+SF2317		nrdB	
+SF2318		yfaE	
+SF2319		inaA	
+SF2320		yfaH	
+SF2321		glpQ	
+SF2322		glpT	
+SF2323		glpA	
+SF2324		glpB	
+SF2325		glpC	
+SF2326		yfaD	
+SF2328			
+SF2329			
+SF2330		yfaO	
+SF2331		ais	
+SF2332			
+SF2333			
+SF2334		ybfG	
+SF2335			
+SF2336			
+SF2337			
+SF2338		pmrD	
+SF2339		menE	
+SF2340		menC	
+SF2341		menB	
+SF2342		yfbB	
+SF2343		menD	
+SF2344		menF	
+SF2345		elaB	
+SF2346		elaA	
+SF2347		elaC	
+SF2348		insA	
+SF2349		insB	
+SF2351		yfbM	
+SF2352		nuoN	
+SF2353		nuoM	
+SF2354		nuoL	
+SF2355		nuoK	
+SF2356		nuoJ	
+SF2357		nuoI	
+SF2358		nuoH	
+SF2359		nuoG	
+SF2360		nuoF	
+SF2361		nuoE	
+SF2362		nuoC	
+SF2363		nuoB	
+SF2364		nuoA	
+SF4465			
+SF2365		lrhA	
+SF2366			
+SF2367			
+SF2368		yfbS	
+SF2369		yfbT	
+SF2370			
+SF4508			
+SF2371			
+SF2372		ackA	
+SF2373		pta	
+SF2374		yfcC	
+SF2375			
+SF2376		yfcE	
+SF4541		rrsE	
+SF2377		yfcF	
+SF2378		yfcG	
+SF2379		folX	
+SF2380			
+SF4487			
+SF2381		yfcI	
+SF2382		hisP	
+SF2383		hisM	
+SF2384		hisQ	
+SF2385		hisJ	
+SF2386		argT	
+SF2387		ubiX	
+SF2388		purF	
+SF2389		cvpA	
+SF2390		dedD	
+SF2391		folC	
+SF2392		accD	
+SF2393		dedA	
+SF2394		truA	
+SF2395		usg	
+SF4563		oxyS	
+SF2396		pdxB	
+SF2397		div	
+SF2398			
+SF2399		fabB	
+SF2400			
+SF2401			
+SF2402			
+SF2403		yfcA	
+SF2404		mepA	
+SF2405		aroC	
+SF2407		yfcB	
+SF2406			
+SF2408			
+SF2409			
+SF2410			
+SF2411			
+SF2413			
+SF2415			
+SF2416		insB	
+SF2417		insA	
+SF2418			
+SF2419			
+SF2420			
+SF2421		fadL	
+SF2422			
+SF2423			
+SF2424		vacJ	
+SF2425		yfdC	
+SF2426			
+SF2427			
+SF2428			
+SF2429			
+SF2430			
+SF2431			
+SF2432			
+SF2433		dsdA	
+SF2434		emrY	
+SF2435		emrK	
+SF2436		evgA	
+SF2437		evgS	
+SF2438		yfdE	
+SF2439		yfdV	
+SF2440			
+SF2441			
+SF2442			
+SF2443			
+SF2444		ddg	
+SF2445			
+SF2447			
+SF2449			
+SF2450			
+SF2452			
+SF2453			
+SF2454		glk	
+SF2455			
+SF2456			
+SF2457		mntH	
+SF2458		nupC	
+SF2460		yfeC	
+SF2461		yfeD	
+SF2462		gltX	
+SF2463		flxA	
+SF2464		yfeR	
+SF2465		yfeH	
+SF2466		lig	
+SF2467		zipA	
+SF2468		cysZ	
+SF2469		cysK	
+SF2470		ptsH	
+SF2471		ptsI	
+SF2472		crr	
+SF2473		pdxK	
+SF2474		yfeK	
+SF2476		cysM	
+SF2478		cysU	
+SF2479		cysP	
+SF2480		ucpA	
+SF2482		yfeT	
+SF2481		yfeU	
+SF2483			
+SF2484			
+SF2485			
+SF2486			
+SF2487			
+SF2488		amiA	
+SF2489		hemF	
+SF2491			
+SF2492			
+SF2493			
+SF2494			
+SF2495			
+SF2496			
+SF2497			
+SF2498			
+SF2499			
+SF2500			
+SF2501			
+SF2502			
+SF2503			
+SF2504			
+SF2505			
+SF2506		talA	
+SF2507		tktB	
+SF2508			
+SF2509		yffH	
+SF2510		yffG	
+SF2512		acrD	
+SF2513		yffB	
+SF2514		dapE	
+SF2515			
+SF2516		ypfH	
+SF2517		ypfI	
+SF2518			
+SF2519		purC	
+SF2520		nlpB	
+SF2521		dapA	
+SF2522		gcvR	
+SF2523		bcp	
+SF2524		hyfA	
+SF2526		hyfC	
+SF2527		hyfD	
+SF2528		hyfE	
+SF2529		hyfF	
+SF2530			
+SF2531			
+SF2532		hyfH	
+SF2533		hyfI	
+SF2534			
+SF2535			
+SF2537		perM	
+SF2538			
+SF2539			
+SF2540			
+SF2541		uraA	
+SF2542		upp	
+SF2543		purM	
+SF2544		purN	
+SF2545		ppk	
+SF2546		ppx	
+SF2547			
+SF2548			
+SF2550			
+SF2551			
+SF2552			
+SF2553		guaA	
+SF2554		guaB	
+SF2555		xseA	
+SF2556			
+SF2557			
+SF2558			
+SF2559			
+SF2560		hisS	
+SF2561		gcpE	
+SF2562		yfgA	
+SF2563		yfgB	
+SF2564		ndk	
+SF2565			
+SF2566			
+SF2567			
+SF2569		sseB	
+SF2570		pepB	
+SF2571		yfhJ	
+SF2572		fdx	
+SF2573		hscA	
+SF2574		yfhE	
+SF2575		yfhF	
+SF2576			
+SF2577		yfhO	
+SF2578			
+SF2579			
+SF2580		suhB	
+SF2581			
+SF2582		csiE	
+SF2583		hcaT	
+SF2584		hcaR	
+SF2585		hcaA1	
+SF2586		hcaA2	
+SF2587		hcaC	
+SF2588		hcaB	
+SF2590		yphA	
+SF2591		yphB	
+SF2592		yphC	
+SF2593		yphD	
+SF2594		yphE	
+SF2596		yphG	
+SF2597		yphH	
+SF2598		glyA	
+SF2599		hmpA	
+SF2600		glnB	
+SF2601		yfhA	
+SF2602		yfhG	
+SF2603		yfhK	
+SF2604		purL	
+SF2605		yfhD	
+SF2606		yfhC	
+SF2607		yfhB	
+SF2608		yfhH	
+SF2609			
+SF2610		ipaH_7	
+SF2611			
+SF2612			
+SF2613			
+SF2614			
+SF2615			
+SF2616			
+SF2617			
+SF2618			
+SF2619			
+SF2620			
+SF2621			
+SF2622			
+SF2623			
+SF2624		yfhL	
+SF2625		acpS	
+SF2626		pdxJ	
+SF2627		recO	
+SF2628		era	
+SF2629		rnc	
+SF2630		lepB	
+SF2631		lepA	
+SF2632		rseC	
+SF2633		rseB	
+SF2634		rseA	
+SF2635		rpoE	
+SF2637		yfiC	
+SF2638		srmB	
+SF2639		yfiE	
+SF2640		yfiK	
+SF2641		yfiD	
+SF2642		ung	
+SF2643		yfiF	
+SF2644		trxC	
+SF2645		yfiP	
+SF2646		yfiQ	
+SF2647		pssA	
+SF2648		yfiM	
+SF2649		kgtP	
+SF2650			
+SF2651			
+SF2652			
+SF2653		sfhB	
+SF2654		yfiH	
+SF2655		clpB	
+SF2656			
+SF2657		yfiA	
+SF2658		pheL	
+SF2659		pheA	
+SF2660		tyrA	
+SF2661		aroF	
+SF2662		yfiL	
+SF2663			
+SF2665		yfiB	
+SF2666		rplS	
+SF2667		trmD	
+SF2668		yfjA	
+SF2669		rpsP	
+SF2670		ffh	
+SF2671			
+SF2672		yfjD	
+SF2673		grpE	
+SF2674		yfjB	
+SF2675		recN	
+SF2676		smpA	
+SF2677			
+SF2678			
+SF2679		smpB	
+SF2680			
+SF2681		insA	
+SF2682		insB	
+SF2683			
+SF2684			
+SF2686			
+SF2687		ygaF	
+SF2689		gabT	
+SF2690		gabP	
+SF2691		ygaE	
+SF2692		ygaU	
+SF2693			
+SF2694			
+SF2695			
+SF2696		ygaP	
+SF2697		stpA	
+SF2698			
+SF2699		ygaC	
+SF2700		ygaM	
+SF2701		nrdH	
+SF2702		nrdI	
+SF2703		nrdE	
+SF2704		nrdF	
+SF2705		proV	
+SF2706		proW	
+SF2707		proX	
+SF2708			
+SF2709			
+SF2710		ygaH	
+SF2711		emrR	
+SF2713		emrB	
+SF2714		ygaG	
+SF2715		gshA	
+SF2716			
+SF2717		yqaB	
+SF2718			
+SF2719		csrA	
+SF2720		alaS	
+SF2721		oraA	
+SF2722		recA	
+SF2723		ygaD	
+SF2724		mltB	
+SF2726		srlE	
+SF2727		srlB	
+SF2728		srlD	
+SF2729		gutM	
+SF2730		srlR	
+SF2731		gutQ	
+SF2732		ygaA	
+SF2733			
+SF2734		ygbD	
+SF2735		hypF	
+SF2736		hydN	
+SF2737		ascG	
+SF2738		hycE	
+SF2739		hycD	
+SF2740		hycC	
+SF2741		hycB	
+SF2742		hycA	
+SF2743		hypA	
+SF2744		hypB	
+SF2745		hypC	
+SF2746		hypD	
+SF2747		hypE	
+SF2748		fhlA	
+SF2749		ygbA	
+SF2750		insB	
+SF2751			
+SF2752		mutS	
+SF2754		ygbI	
+SF2756			
+SF2757			
+SF2758			
+SF2759			
+SF2760			
+SF2761		yclC	
+SF2762		padI	
+SF2763			
+SF2764			
+SF2765		nlpD	
+SF2766		pcm	
+SF2767		surE	
+SF2768		ygbO	
+SF2769		ygbB	
+SF2770		ygbP	
+SF2771			
+SF2772		ygbE	
+SF2773		cysC	
+SF2774		cysN	
+SF2775		cysD	
+SF2776		iap	
+SF2777			
+SF2778		cysH	
+SF2779		cysI	
+SF2780		cysJ	
+SF2781		ygcM	
+SF2782		ygcN	
+SF2783		ygcO	
+SF2785		ygcQ	
+SF2786		ygcR	
+SF2787		ygcS	
+SF2788			
+SF2789		insB	
+SF2790		ygcF	
+SF2791		insA	
+SF2792		insB	
+SF2793		ygcG	
+SF2794		eno	
+SF2795		pyrG	
+SF2796		mazG	
+SF2797		relA	
+SF2798		ygcA	
+SF2799		barA	
+SF2800		ygcX	
+SF2801		ygcY	
+SF2802			
+SF2803			
+SF2804		yqcB	
+SF2805			
+SF2806		syd	
+SF2807		yqcD	
+SF2808		ygdH	
+SF2809			
+SF2810		sdaC	
+SF2811		sdaB	
+SF2812		exo	
+SF2813		fucO	
+SF2814		fucA	
+SF2815		fucP	
+SF2816		fucI	
+SF2818		fucU	
+SF2819		fucR	
+SF2820		ygdE	
+SF2821		ygdD	
+SF2822		gcvA	
+SF2823			
+SF2824			
+SF2825		ygdK	
+SF2826		ygdL	
+SF2827		mltA	
+SF2828			
+SF2829		argA	
+SF2830		recD	
+SF2831		recB	
+SF2832		ptr	
+SF2833		recC	
+SF2834		ppdC	
+SF2835		ygdB	
+SF2837		thyA	
+SF2838		lgt	
+SF2839		ptsP	
+SF2840		ygdP	
+SF2841		mutH	
+SF2842			
+SF2843			
+SF2844			
+SF2845		ygeD	
+SF2846		aas	
+SF2847		galR	
+SF2848		lysA	
+SF2849		lysR	
+SF2850		ygeA	
+SF2851		araE	
+SF2852		kduD	
+SF2853		kduI	
+SF2854		yqeF	
+SF2855			
+SF2856			
+SF4435		rrsH	
+SF2857			
+SF2858			
+SF2859			
+SF2860			
+SF4436			
+SF2861			
+SF2862			
+SF2863			
+SF2864			
+SF4437			
+SF2865			
+SF2866			
+SF2867			
+SF2868			
+SF4438			
+SF2869		ygeT	
+SF2870			
+SF2871		insA	
+SF2872			
+SF4439		rrlH	
+SF2873			
+SF2874		ygfU	
+SF2875			
+SF4440		rrfH	
+SF2876		lysS	
+SF4441			
+SF2878		recJ	
+SF2879		dsbC	
+SF2880		xerD	
+SF4442			
+SF2881		fldB	
+SF2882			
+SF2883		ygfY	
+SF4443			
+SF2884		ygfZ	
+SF2885			
+SF4554		ffs	
+SF2887		bglA	
+SF2888		ygfF	
+SF2889		gcvP	
+SF4444			
+SF2890		gcvH	
+SF2891		gcvT	
+SF2892		visC	
+SF2893		ubiH	
+SF2894		pepP	
+SF2895		ygfB	
+SF4445			
+SF2896		ygfE	
+SF2897		ygfA	
+SF2898		serA	
+SF2899		rpiA	
+SF4446			
+SF2901		iciA	
+SF2902		sbm	
+SF2903		ygfD	
+SF2904		ygfG	
+SF4447			
+SF2906		ygfI	
+SF4448			
+SF2907		yggE	
+SF2908		yggA	
+SF4500			
+SF2909		yggB	
+SF2910		fba	
+SF2911		pgk	
+SF4449			
+SF2912		epd	
+SF2913			
+SF2914			
+SF2916			
+SF4450			
+SF2917			
+SF2918			
+SF2919		yggD	
+SF2920		yggF	
+SF2921			
+SF2922		insB	
+SF4451			
+SF2923		insA	
+SF2924			
+SF2925		tktA	
+SF2926		yggG	
+SF2927		speB	
+SF2928			
+SF4452			
+SF2929		insB	
+SF2930		insA	
+SF2931		speA	
+SF2932		yqgB	
+SF2933		metK	
+SF2934		galP	
+SF4453			
+SF2935		sprT	
+SF2936		endA	
+SF2937		yggJ	
+SF2938		gshB	
+SF2939		yqgE	
+SF4454			
+SF2940		yqgF	
+SF2942		yggR	
+SF2941		yggS	
+SF2943		yggT	
+SF2944		yggU	
+SF4455			
+SF2945		yggV	
+SF2946		yggW	
+SF4522		rrfC	
+SF2947			
+SF2948			
+SF2949			
+SF4456			
+SF2950		insB	
+SF2951		insA	
+SF2952			
+SF2953		yggM	
+SF2954		ansB	
+SF2955		yggN	
+SF4457			
+SF2956		yggL	
+SF2957		yggH	
+SF2958		mutY	
+SF2959		yggX	
+SF2960		mltC	
+SF2961		nupG	
+SF4458			
+SF2962		speC	
+SF2963		yqgA	
+SF2964			
+SF2965			
+SF4459			
+SF2966			
+SF2967			
+SF2968		sigA	
+SF2969			
+SF2970			
+SF2971			
+SF4460			
+SF2972			
+SF2973		pic	
+SF2973A		set1B	
+SF2973B		set1A	
+SF2974			
+SF2976			
+SF4461			
+SF2975			
+SF2977			
+SF2978			
+SF2979			
+SF2980			
+SF2981			
+SF4462			
+SF2982			
+SF2983			
+SF2984			
+SF2985			
+SF2986			
+SF2987			
+SF4463			
+SF2988			
+SF2989			
+SF2990		sap	
+SF2991			
+SF2992			
+SF2993			
+SF4464			
+SF2994			
+SF2995			
+SF2996		yeeS	
+SF2997		yeeT	
+SF2998		yeeU	
+SF2999		yeeV	
+SF3000		yeeW	
+SF3001			
+SF3002			
+SF3003			
+SF3004			
+SF3005			
+SF4466			
+SF3006			
+SF3007			
+SF3008			
+SF3009			
+SF3010		insB	
+SF3011		insA	
+SF4467			
+SF3012		insB	
+SF3013		insA	
+SF3014		yghK	
+SF3015		glcB	
+SF3016		glcG	
+SF4468			
+SF3019		glcC	
+SF4469			
+SF3021			
+SF3022			
+SF3023			
+SF3024			
+SF3025			
+SF3026			
+SF4470			
+SF3027			
+SF3028			
+SF3029			
+SF3030		yghQ	
+SF3031		yghR	
+SF3032		yghS	
+SF4471			
+SF3033		yghT	
+SF3034		pitB	
+SF3035		gsp	
+SF3036			
+SF3037		hybG	
+SF3038		hybF	
+SF4472			
+SF3039		hybE	
+SF3040		hybD	
+SF3041		hybC	
+SF4473			
+SF3042		hybB	
+SF3043		hybA	
+SF3044			
+SF3045			
+SF3046			
+SF4474			
+SF3047			
+SF3048		yqhA	
+SF3049		yghA	
+SF3050		exbD	
+SF3051		exbB	
+SF3052			
+SF4475			
+SF3053		metC	
+SF3054		yghB	
+SF3056		yqhC	
+SF3055		yqhD	
+SF3057		yqhE	
+SF4476			
+SF3058		yqhG	
+SF3059		yqhH	
+SF3060			
+SF3061		sufI	
+SF3062		plsC	
+SF3063		parC	
+SF4555		dsrA	
+SF3064			
+SF3065		ygiW	
+SF3066		ygiX	
+SF3067		ygiY	
+SF4477			
+SF3068		mdaB	
+SF3069		ygiN	
+SF3070		parE	
+SF3071		yqiA	
+SF3072		icc	
+SF3073		yqiB	
+SF4478			
+SF3074		yqiE	
+SF3075		tolC	
+SF3076		ygiA	
+SF3077		ygiB	
+SF3078		ygiC	
+SF3079		ygiD	
+SF4479			
+SF3080		ygiE	
+SF3081		ribB	
+SF3082			
+SF3083			
+SF3084			
+SF3085		insA	
+SF4480			
+SF3086		insB	
+SF3087			
+SF3089		glgS	
+SF3090		insB	
+SF4481			
+SF3092			
+SF3093			
+SF3094		glnE	
+SF3095		ygiF	
+SF4482			
+SF3096		ygiM	
+SF3097		cca	
+SF3098		bacA	
+SF3099		ygiG	
+SF3100		ygiH	
+SF3101		ygiP	
+SF4483			
+SF3102		ttdA	
+SF3103		ttdB	
+SF3104		ygjE	
+SF3105		ygjD	
+SF3106		rpsU	
+SF3107		dnaG	
+SF4484			
+SF3108		rpoD	
+SF3109			
+SF4485			
+SF3112		yqjI	
+SF4486			
+SF3114		ygjG	
+SF3115		ebgR	
+SF4556		micF	
+SF3116		ebgA	
+SF3117		ebgC	
+SF3118		ygjI	
+SF3120		ygjK	
+SF3121		ygjL	
+SF3122		ygjM	
+SF4488			
+SF3123		ygjN	
+SF3124		ygjO	
+SF3125		ygjP	
+SF3126		ygjQ	
+SF3127		ygjR	
+SF3128		ygjT	
+SF4489			
+SF3129		ygjU	
+SF3130		ygjV	
+SF3131		uxaA	
+SF3132		uxaC	
+SF3133		exuT	
+SF3134			
+SF4490			
+SF3135		insA	
+SF3136		insB	
+SF3137		exuR	
+SF3138		yqjA	
+SF0001		thrL	
+SF3139		yqjB	
+SF0002		thrA	
+SF4491			
+SF0003		thrB	
+SF3141		yqjD	
+SF0004		thrC	
+SF3142		yqjE	
+SF3144			
+SF3143			
+SF0005			
+SF0006		yaaA	
+SF4492			
+SF3145		yqjG	
+SF3146		yhaH	
+SF3147		yhaJ	
+SF3148		yhaK	
+SF3150		yhaM	
+SF3149		yhaL	
+SF0008			
+SF4493		rrfG	
+SF0009		talB	
+SF3151		yhaO	
+SF3152			
+SF0010		mog	
+SF3153		yhaR	
+SF0011		yaaH	
+SF4494		rrlG	
+SF3154		tdcE	
+SF3155		tdcD	
+SF0012			
+SF3156		tdcC	
+SF0013		yaaI	
+SF3157		tdcB	
+SF4495			
+SF3158		tdcA	
+SF0014		dnaK	
+SF3159		tdcR	
+SF0015		dnaJ	
+SF3161		yhaD	
+SF0016		nhaA	
+SF4496			
+SF0017		nhaR	
+SF3162		yhaE	
+SF0018		insB	
+SF0019		insA	
+SF0020		rpsT	
+SF3164		yhaU	
+SF3165		yhaG	
+SF0021		ribF	
+SF4497		rrsG	
+SF3166		agaR	
+SF3167		agaZ	
+SF0022		ileS	
+SF3168		agaV	
+SF4557		ssrA	
+SF3169		agaW	
+SF0023		lspA	
+SF3170		agaE	
+SF0024		slpA	
+SF3171		agaF	
+SF4498			
+SF3172		agaA	
+SF0025		slpA	
+SF3173		insA	
+SF3174		insB	
+SF0026		lytB	
+SF3175		agaC	
+SF0027		yaaF	
+SF4499			
+SF3176		agaD	
+SF0028		dapB	
+SF3177		agaI	
+SF0029		carA	
+SF3179		insB	
+SF0030		carB	
+SF3180		insA	
+SF3181		yraI	
+SF0031		caiF	
+SF0032		caiE	
+SF3183			
+SF3184			
+SF0033		caiD	
+SF3185			
+SF4501			
+SF3186		yraK	
+SF0034		caiC	
+SF3187		yraL	
+SF3212			
+SF3188		yraM	
+SF0035		caiB	
+SF3189		yraN	
+SF3201		yhbW	
+SF3190		yraO	
+SF0036		caiA	
+SF3191		yraP	
+SF3192		yraQ	
+SF4502			
+SF0037		caiT	
+SF3193		yraR	
+SF3200		yhbV	
+SF3194		yhbO	
+SF0038		fixA	
+SF3195		yhbP	
+SF0039			
+SF3196		yhbQ	
+SF3198		yhbT	
+SF3197		yhbS	
+SF0040		fixC	
+SF4503			
+SF0041		fixX	
+SF3199		yhbU	
+SF0042		yaaU	
+SF0047		apaG	
+SF0043		yabF	
+SF4558		csrB	
+SF0044		kefC	
+SF3202		mtr	
+SF0045		folA	
+SF3203		deaD	
+SF0046		apaH	
+SF3204		yhbM	
+SF3205		pnp	
+SF4559		gcvB	
+SF0048		ksgA	
+SF3206		rpsO	
+SF0049		pdxA	
+SF3207		truB	
+SF0050		surA	
+SF3208		rbfA	
+SF0051		imp	
+SF3209		infB	
+SF0052		yabH	
+SF3210		nusA	
+SF0053		yabO	
+SF3211		yhbC	
+SF0054		hepA	
+SF4504			
+SF0055		polB	
+SF3213		argG	
+SF0056		araD	
+SF3220		yhbY	
+SF3215		secG	
+SF0058		araB	
+SF0060		yabI	
+SF0059		araC	
+SF3216		mrsA	
+SF4505			
+SF3217		folP	
+SF0061		yabJ	
+SF3218		ftsH	
+SF0062		yabK	
+SF3219		ftsJ	
+SF0063		tbpA	
+SF0065		yabM	
+SF0064		yabN	
+SF3221		greA	
+SF3222		dacB	
+SF4506			
+SF0066		leuD	
+SF3223		yhbZ	
+SF0067		leuC	
+SF3224		yhbE	
+SF0068		leuB	
+SF3225		rpmA	
+SF3226		rplU	
+SF0069		leuA	
+SF3227		ispB	
+SF4560		ssrS	
+SF3228		nlp	
+SF0070		leuL	
+SF3229		murA	
+SF3232		yrbC	
+SF3230		yrbA	
+SF0071		leuO	
+SF3231		yrbB	
+SF0072		ilvI	
+SF4507			
+SF0073		ilvH	
+SF3233		vpsC	
+SF0074		fruL	
+SF3234		vpsB	
+SF3235		vpsA	
+SF0075		fruR	
+SF3236		yrbG	
+SF0076		insA	
+SF3237		yrbH	
+SF0077		insB	
+SF3238		yrbI	
+SF0078		yabB	
+SF3239		yrbK	
+SF0079		yabC	
+SF3240		yhbN	
+SF3244		ptsN	
+SF3241		yhbG	
+SF0080		ftsL	
+SF3242		rpoN	
+SF0081		ftsI	
+SF3243		yhbH	
+SF0082		murE	
+SF4561		rnpB	
+SF0083		murF	
+SF3245		yhbJ	
+SF0084		mraY	
+SF3246		ptsO	
+SF0085		murD	
+SF3247		yrbL	
+SF0086		ftsW	
+SF4509			
+SF0087		murG	
+SF3373		yheU	
+SF0088		murC	
+SF3364		yheO	
+SF0089		ddlB	
+SF3251		yhcC	
+SF0090		ftsQ	
+SF3249		yhbL	
+SF0091		ftsA	
+SF3250		arcB	
+SF0092		ftsZ	
+SF4510			
+SF0093		lpxC	
+SF3252		gltB	
+SF0094		yacA	
+SF3253		gltD	
+SF0095		secA	
+SF3267		yhcL	
+SF3259		yhcJ	
+SF0098		yacG	
+SF0096		mutT	
+SF3255			
+SF0097			
+SF3256			
+SF4511		rrfF	
+SF3257		yhcH	
+SF0099		yacF	
+SF3258		yhcI	
+SF0100		yacE	
+SF0102			
+SF0101		guaC	
+SF3260		nanT	
+SF4512			
+SF3261		nanA	
+SF0103		hofC	
+SF3262		yhcK	
+SF3265			
+SF3263		insA	
+SF4513		rrfD	
+SF3264		insB	
+SF0105		ppdD	
+SF3270		rpsI	
+SF0106		nadC	
+SF3266		insB	
+SF0107		ampD	
+SF4515			
+SF0108		ampE	
+SF3268		sspB	
+SF0109		aroP	
+SF3269		sspA	
+SF0110		pdhR	
+SF4514		rrlD	
+SF0111		aceE	
+SF3271		rplM	
+SF0112		aceF	
+SF3272		yhcM	
+SF0113		lpdA	
+SF3273		yhcB	
+SF3361		yheL	
+SF3274			
+SF3356		yheA	
+SF3275		degS	
+SF3320		sun	
+SF3276		mdh	
+SF0115		acnB	
+SF3277		argR	
+SF0116		yacL	
+SF3278		yhcN	
+SF3281		yhcQ	
+SF3279		yhcO	
+SF0117		speD	
+SF3280		yhcP	
+SF4516		rrsD	
+SF0119		yacK	
+SF0118		speE	
+SF3282		yhcS	
+SF0120		yacC	
+SF3283		tldD	
+SF4517			
+SF3284		yhdP	
+SF0121		gcd	
+SF3285		cafA	
+SF3286		yhdE	
+SF4537			
+SF0122		hpt	
+SF3287		mreD	
+SF0123		yadF	
+SF3288		mreC	
+SF0124		yadG	
+SF3289		mreB	
+SF3290		yhdA	
+SF0125		yadH	
+SF4518			
+SF3291		yhdH	
+SF3317		smf	
+SF3292			
+SF0126		yadI	
+SF3293		accB	
+SF3301		yhdU	
+SF3294		accC	
+SF0127		yadE	
+SF3295		yhdT	
+SF0128		panD	
+SF0129		yadD	
+SF4519		rrsC	
+SF3296		panF	
+SF3298		yhdG	
+SF3297		prmA	
+SF0130		panC	
+SF0132			
+SF0131		panB	
+SF3299		fis	
+SF4564			
+SF3300		yhdJ	
+SF0133		insB	
+SF4521		rrlC	
+SF0134		folK	
+SF3302		insB	
+SF0135		pcnB	
+SF3303			
+SF0136		yadB	
+SF3304		yhdW	
+SF0137		dksA	
+SF3305			
+SF0138		sfsA	
+SF3306		insB	
+SF0139		yadP	
+SF3307		insA	
+SF0140		hrpB	
+SF3316		smg	
+SF0141		mrcB	
+SF3312		yrdB	
+SF0142		fhuA	
+SF3309		yhdY	
+SF0143		fhuC	
+SF3310		yhdZ	
+SF0144		fhuD	
+SF3311		yrdA	
+SF0145		fhuB	
+SF4523			
+SF0146		hemL	
+SF3313		aroE	
+SF0147		yadQ	
+SF3314		yrdC	
+SF0148		yadR	
+SF3315		yrdD	
+SF0149		yadS	
+SF0184		yaeF	
+SF0150		yadT	
+SF0151		pfs	
+SF4524			
+SF3318		def	
+SF0152		dgt	
+SF3319		fmt	
+SF0153		htrA	
+SF0167		yaeT	
+SF0166		yaeL	
+SF3321		trkA	
+SF4525			
+SF3322			
+SF0155		yaeH	
+SF3323			
+SF0156		dapD	
+SF3324			
+SF4526			
+SF3325			
+SF0157		glnD	
+SF3326		rplQ	
+SF0158		map	
+SF3327		rpoA	
+SF0159		rpsB	
+SF3328		rpsD	
+SF0160		tsf	
+SF3329		rpsK	
+SF0161		pyrH	
+SF3330		rpsM	
+SF0162		frr	
+SF3331		rpmJ	
+SF0163		yaeM	
+SF3332		prlA	
+SF0164		yaeS	
+SF3333		rplO	
+SF0165		cdsA	
+SF3334		rpmD	
+SF3341		rplX	
+SF3335		rpsE	
+SF3336		rplR	
+SF4527			
+SF0168		hlpA	
+SF3337		rplF	
+SF0169		lpxD	
+SF3338		rpsH	
+SF0170		fabZ	
+SF3339		rpsN	
+SF0171		lpxA	
+SF3340		rplE	
+SF0172		lpxB	
+SF4528			
+SF0173		rnhB	
+SF3342		rplN	
+SF0174		dnaE	
+SF0180		yaeP	
+SF0175		accA	
+SF3343		rpsQ	
+SF0176		ldcC	
+SF3344		rpmC	
+SF0177		yaeR	
+SF3345		rplP	
+SF0178		mesJ	
+SF3346		rpsC	
+SF0179		yaeO	
+SF3347		rplV	
+SF4529		rrsA	
+SF3348		rpsS	
+SF0181		yaeQ	
+SF3349		rplB	
+SF0182		yaeJ	
+SF3350		rplW	
+SF0183		cutF	
+SF3351		rplD	
+SF4530			
+SF3352		rplC	
+SF0185		proS	
+SF3353		rpsJ	
+SF0186		yaeB	
+SF3354		hopD	
+SF0187		rcsF	
+SF3355		bfr	
+SF0188		yaeC	
+SF4531		rrlA	
+SF0189		yaeE	
+SF3357		tufA	
+SF0190		abc	
+SF3358		fusA	
+SF0191		yaeD	
+SF3359		rpsG	
+SF0192		yafB	
+SF3360		rpsL	
+SF0193			
+SF4532		rrfA	
+SF0194		yafC	
+SF3362		yheM	
+SF0195		yafD	
+SF3363		yheN	
+SF0196		yafE	
+SF4562		spf	
+SF0197		dniR	
+SF3365		fkpA	
+SF0198		gloB	
+SF3366		slyX	
+SF0199		yafS	
+SF3367		slyD	
+SF0201		rnhA	
+SF3368		yheV	
+SF0200		dnaQ	
+SF3369		kefB	
+SF0202		safA	
+SF3370		yheR	
+SF0203		safB	
+SF3371		yheS	
+SF0204		safC	
+SF3372		yheT	
+SF0205			
+SF0206		sat1	
+SF4533		rrsB	
+SF3374		prkB	
+SF0207		sat2	
+SF3375		yhfA	
+SF3376		crp	
+SF0208			
+SF3377		yhfK	
+SF4534			
+SF3378		argD	
+SF0209			
+SF3379		pabA	
+SF3383		yhfC	
+SF3380		fic	
+SF0210			
+SF3381		yhfG	
+SF0211			
+SF3382		ppiA	
+SF0212			
+SF4535		rrlB	
+SF0213			
+SF3384		nirB	
+SF0214			
+SF3385		nirD	
+SF0215			
+SF4536		rrfB	
+SF0216			
+SF3386		nirC	
+SF0217			
+SF3387		cysG	
+SF0218			
+SF3388		yhfL	
+SF0219			
+SF0220			
+SF3390		yhfN	
+SF3391		yhfP	
+SF0221			
+SF3392		yhfQ	
+SF3393		yhfR	
+SF0222			
+SF3394		yhfS	
+SF4538			
+SF3395		yhfT	
+SF0223			
+SF3396		yhfU	
+SF3397		yhfV	
+SF0224			
+SF3398		yhfW	
+SF3399		yhfX	
+SF0225			
+SF3400		yhfY	
+SF3401		yhfZ	
+SF4539			
+SF0226			
+SF3402		trpS	
+SF3403		gph	
+SF0227			
+SF3404		rpe	
+SF3406		damX	
+SF3405		dam	
+SF0228			
+SF4540			
+SF0229		psiF	
+SF3407		aroB	
+SF0230		phoA	
+SF3408		aroK	
+SF0231		yaiB	
+SF3409		hofQ	
+SF0232		ddlA	
+SF0233			
+SF0234			
+SF3411		yrfB	
+SF0235		yaiW	
+SF3412		yrfC	
+SF0236		sbmA	
+SF3413		yrfD	
+SF0237		yaiH	
+SF3414		mrcA	
+SF0238		yaiV	
+SF3415		yrfE	
+SF3421			
+SF3416		yrfF	
+SF4542			
+SF3417		yrfG	
+SF0240			
+SF3420		yhgE	
+SF0241			
+SF3418		yrfH	
+SF0242			
+SF3419		yrfI	
+SF0243			
+SF0248			
+SF0244			
+SF4543		rrlE	
+SF0245			
+SF3422		pckA	
+SF0246		insA	
+SF3423		envZ	
+SF0247		insB	
+SF3424		ompR	
+SF4544		rrfE	
+SF3425		greB	
+SF0249		hemB	
+SF3426		yhgF	
+SF0250		tauD	
+SF0251		tauC	
+SF3427		feoA	
+SF0252		tauB	
+SF3428		feoB	
+SF4545			
+SF3429		yhgG	
+SF0253		tauA	
+SF3430		yhgA	
+SF0254		insB	
+SF3431			
+SF0255		insA	
+SF3432			
+SF0256		ykgH	
+SF3433			
+SF3434			
+SF4546			
+SF3435		bioH	
+SF3437		yhgI	
+SF3436		yhgH	
+SF0258		ykgG	
+SF0259		ykgF	
+SF4547			
+SF3438		gntT	
+SF0260		ykgE	
+SF3439		malQ	
+SF0261		insA	
+SF3440		malP	
+SF0262		insB	
+SF3449		yzgL	
+SF0263			
+SF3443		rtcB	
+SF0264			
+SF3442		yhgJ	
+SF0265			
+SF4548			
+SF0266			
+SF3444		rtcR	
+SF0267			
+SF3445		glpR	
+SF0268			
+SF3446		glpG	
+SF0269		yafV	
+SF3447		glpE	
+SF0270		ykfE	
+SF3448		glpD	
+SF0271		yafH	
+SF0274		yafK	
+SF0272		gmhA	
+SF3450			
+SF0273		yafJ	
+SF3451		glgP	
+SF4549			
+SF3452		glgA	
+SF3463		yhhY	
+SF3453		glgC	
+SF3457		yhgN	
+SF3454		glgX	
+SF0276		yafM	
+SF3455		glgB	
+SF0278		fhiA	
+SF3456		asd	
+SF0277		mbhA	
+SF4550			
+SF0279		dinP	
+SF3458		gntU	
+SF0280		yafN	
+SF3459		gntK	
+SF0281		yafO	
+SF3460		gntR	
+SF0282		yafP	
+SF3461		yhhW	
+SF0283			
+SF3462		yhhX	
+SF0284		prfH	
+SF4551			
+SF0285		pepD	
+SF3464		ggt	
+SF0286		gpt	
+SF3465		yhhA	
+SF0287		yafA	
+SF3466		ugpQ	
+SF0288		crl	
+SF4552			
+SF3472		livF	
+SF0289		phoE	
+SF3467			
+SF0290		insA	
+SF3469		ugpE	
+SF0291		insB	
+SF3470		ugpA	
+SF0292		proB	
+SF3471		ugpB	
+SF0293		proA	
+SF4553			
+SF0294			
+SF3473		livG	
+SF0295			
+SF3474		livM	
+SF0296			
+SF3475		livH	
+SF0297			
+SF3476		livK	
+SF0298		yfdT	
+SF3477		yhhK	
+SF0299			
+SF3478		livJ	
+SF0300			
+SF3479		rpoH	
+SF0301			
+SF3480		ftsX	
+SF0302			
+SF3481		ftsE	
+SF3482		ftsY	
+SF0303			
+SF3483		yhhF	
+SF3484		yhhL	
+SF0304			
+SF3485		yhhM	
+SF3486		yhhN	
+SF0305		gtrAI	
+SF3487		zntA	
+SF0306		gtrBI	
+SF3488		yhhP	
+SF0307		gtrII	
+SF3489		yhhQ	
+SF0308			
+SF3490			
+SF0309			
+SF3491		yhhS	
+SF0310			
+SF3492		yhhT	
+SF0311			
+SF3493		yhhU	
+SF0312			
+SF3494		nikA	
+SF0313			
+SF3495		nikB	
+SF0314			
+SF3496		nikC	
+SF3497		nikD	
+SF0315			
+SF3498		nikE	
+SF0316			
+SF3499		yhhG	
+SF0317			
+SF3500			
+SF0318			
+SF3501		yhhJ	
+SF0319			
+SF3502		yhiH	
+SF0320			
+SF4520			
+SF0321		yaiC	
+SF3503		yhiI	
+SF0322		proC	
+SF3504		yhiJ	
+SF0323		yaiI	
+SF3505			
+SF0324		aroL	
+SF0325		yaiA	
+SF0326		aroM	
+SF3507			
+SF0327		yaiE	
+SF3508			
+SF0328			
+SF3509			
+SF0329			
+SF3510			
+SF0331		yaiD	
+SF3511			
+SF0330		yajF	
+SF3512			
+SF3513			
+SF3514			
+SF3515			
+SF0333		araJ	
+SF3516			
+SF0334		sbcC	
+SF3517			
+SF0335		sbcD	
+SF3518		insB	
+SF0336		phoB	
+SF0337		phoR	
+SF0338		brnQ	
+SF3520		yhdW	
+SF0339		proY	
+SF3521			
+SF0340		malZ	
+SF3522		insB	
+SF0341		yajB	
+SF3523		yhiN	
+SF0342		queA	
+SF0343		tgt	
+SF3524		pitA	
+SF0344		yajC	
+SF3525		yhiO	
+SF0345		secD	
+SF3526		uspA	
+SF0346		secF	
+SF0347		yajD	
+SF0348		tsx	
+SF3528		yhiQ	
+SF0349		yajI	
+SF3529		prlC	
+SF0350		ybaD	
+SF3530		yhiR	
+SF0351		ribD	
+SF3531		gor	
+SF0352		ribH	
+SF3532		insB	
+SF0353		nusB	
+SF3533		insA	
+SF0354		thiL	
+SF3534			
+SF0355		pgpA	
+SF3535		arsB	
+SF0356			
+SF3536		arsC	
+SF0357		dxs	
+SF3537		insB	
+SF0358		ispA	
+SF3538			
+SF0359		xseB	
+SF3539			
+SF0360		yajK	
+SF3540		slp	
+SF0361		thiJ	
+SF0362		apbA	
+SF3541		yhiF	
+SF0363		yajQ	
+SF0364			
+SF0365			
+SF0366		insB	
+SF3543		hdeB	
+SF0367			
+SF3544		hdeA	
+SF0368			
+SF3545		hdeD	
+SF0369		cyoE	
+SF3546		yhiE	
+SF0370		cyoD	
+SF0371		cyoC	
+SF3548		insB	
+SF3549		insA	
+SF0374			
+SF3550		treF	
+SF0375			
+SF0376			
+SF0377		ampG	
+SF3552		yhjB	
+SF0378		yajG	
+SF3553		yhjC	
+SF0379		bolA	
+SF3554		yhjD	
+SF0380			
+SF3555		yhjE	
+SF0381		tig	
+SF3556		yhjG	
+SF0382		clpP	
+SF3558		yhjH	
+SF0383		clpX	
+SF3557		kdgK	
+SF0384		lon	
+SF3559		yhjJ	
+SF0385		hupB	
+SF3560		dctA	
+SF0386		ybaU	
+SF3561		yhjK	
+SF0387		ybaV	
+SF0388		ybaW	
+SF0389		ybaX	
+SF0390			
+SF3563		yhjN	
+SF0391		cof	
+SF0392		ybaO	
+SF0393		mdlA	
+SF3565		yhjQ	
+SF0394		mdlB	
+SF3566		insB	
+SF0395		glnK	
+SF3567		insA	
+SF0396		amtB	
+SF3568		yhjS	
+SF0397		tesB	
+SF3569		yhjT	
+SF0398		ybaY	
+SF3570		yhjU	
+SF0399			
+SF3571			
+SF0400		ybaZ	
+SF0401		ybaA	
+SF3572			
+SF0402		ylaB	
+SF3573			
+SF0403		ylaC	
+SF3574		yhjV	
+SF3575		dppF	
+SF0405		hha	
+SF3576		dppD	
+SF0406		ybaJ	
+SF3577		dppC	
+SF0407		acrB	
+SF0408		acrA	
+SF3578		dppB	
+SF0409		acrR	
+SF0410		aefA	
+SF3579		dppA	
+SF0411		ybaM	
+SF3580		yhjW	
+SF0412		priC	
+SF3581		yhjX	
+SF0413		ybaN	
+SF3583		yhjY	
+SF0414		apt	
+SF3582		tag	
+SF0415		dnaX	
+SF3584		yiaC	
+SF0416		ybaB	
+SF3585		bisC	
+SF0417		recR	
+SF3586		yiaD	
+SF0418		htpG	
+SF3587		yiaE	
+SF0419		adk	
+SF3588		yiaF	
+SF0420		hemH	
+SF3589		cspA	
+SF0421		ybaC	
+SF3590			
+SF3591			
+SF0422		gsk	
+SF3592		insB	
+SF3593		yhjA	
+SF0423		ybaL	
+SF3594		gadA	
+SF3595		yhiX	
+SF0424		fsr	
+SF3596		yhiW	
+SF3597			
+SF0425		ushA	
+SF3598			
+SF0426		ybaK	
+SF3600		insA	
+SF0427		ybaP	
+SF3601		insB	
+SF3602		glyS	
+SF0428		ybaQ	
+SF3603		glyQ	
+SF3604			
+SF0429		ybaR	
+SF3605		yiaH	
+SF3606		yiaA	
+SF0430		ybaS	
+SF3607		yiaB	
+SF3608		xylB	
+SF0431		ybaT	
+SF0432		ybbI	
+SF3610		xylF	
+SF3611		xylG	
+SF0433		ybbJ	
+SF3612		xylH	
+SF0434		ybbK	
+SF0435		ybbL	
+SF3614		bax	
+SF3615		malS	
+SF0436		ybbM	
+SF3616		avtA	
+SF3617		yiaI	
+SF0437		ybbN	
+SF3618		yiaJ	
+SF0438		ybbO	
+SF3619		yiaK	
+SF3620		insA	
+SF0439		ybbA	
+SF3621		insB	
+SF0441		ybbP	
+SF0442		ybbB	
+SF0443		ybbS	
+SF3623			
+SF0444		ybbT	
+SF3624		insA	
+SF0445		ybbU	
+SF3625		insB	
+SF0446		gcl	
+SF3626		aldB	
+SF0447		insB	
+SF3627		yiaY	
+SF0448		insA	
+SF3628		selB	
+SF0449		ylbA	
+SF3629		selA	
+SF0450		ylbB	
+SF3630		yibF	
+SF0451		ylbF	
+SF3631		yibH	
+SF0452		arcC	
+SF3632		yibI	
+SF0453		purK	
+SF3633		mtlA	
+SF0454		purE	
+SF3634		mtlD	
+SF0455		ybbF	
+SF3635		mtlR	
+SF0456		ppiB	
+SF3636		yibL	
+SF0457		cysS	
+SF3637		insB	
+SF0458		ybcI	
+SF3638		insA	
+SF0459		ybcJ	
+SF3639			
+SF0460		folD	
+SF3640			
+SF0461		sfmA	
+SF3641			
+SF0462		sfmC	
+SF3642		lldP	
+SF3643		lldR	
+SF0463			
+SF3644		lldD	
+SF0464		insB	
+SF3645		yibK	
+SF3646		cysE	
+SF0465		insA	
+SF3647		gpsA	
+SF0466			
+SF3648		secB	
+SF3649		grxC	
+SF0467		envY	
+SF3650		yibN	
+SF3651		yibO	
+SF0468		ybcH	
+SF3652		yibP	
+SF3653		yibQ	
+SF3654		insB	
+SF3655		insA	
+SF3656		tdh	
+SF3657		kbl	
+SF0470		nfrB	
+SF3658		htrL	
+SF3659		rfaD	
+SF0471		ybcZ	
+SF3660		rfaF	
+SF3661		rfaC	
+SF0472		ylcA	
+SF3662		waaI	
+SF3663		waaD	
+SF0473		ylcB	
+SF0474		ylcC	
+SF3664		waaJ	
+SF3665		waaY	
+SF3666		waaL	
+SF0476			
+SF3667		waaP	
+SF0477			
+SF3668		waaG	
+SF3669		waaQ	
+SF3670		insB	
+SF0479			
+SF3671		insA	
+SF3672		kdtA	
+SF0480			
+SF3673		kdtB	
+SF0481		ybdE	
+SF3674		mutM	
+SF3675		rpmG	
+SF0482		pheP	
+SF3676		rpmB	
+SF3677		radC	
+SF0483		ybdG	
+SF3678		dfp	
+SF3679		dut	
+SF3680		ttk	
+SF0484			
+SF3681		pyrE	
+SF0486		ybdF	
+SF3682		rph	
+SF0487		ybdJ	
+SF3683		yicC	
+SF0488		ybdK	
+SF3684		dinD	
+SF0489			
+SF3685		yicG	
+SF0490			
+SF3686		yicF	
+SF0491			
+SF3687			
+SF0492			
+SF3688		gmk	
+SF0493			
+SF3689		rpoZ	
+SF0494			
+SF3690		spoT	
+SF0495		entD	
+SF3691		spoU	
+SF0496		fepA	
+SF3692		recG	
+SF0497		fes	
+SF3693		gltS	
+SF0498		entF	
+SF0499		insA	
+SF3694		yicE	
+SF0500		insB	
+SF3695		yicH	
+SF3696		yicI	
+SF0502		fepC	
+SF0503		fepG	
+SF3698			
+SF0504		fepD	
+SF3699		shiA	
+SF0505		ybdA	
+SF3700		shiB	
+SF0506		fepB	
+SF3701			
+SF3702			
+SF3703			
+SF3704		shiC	
+SF0508		entE	
+SF3705			
+SF0509		entB	
+SF3706			
+SF0510		entA	
+SF3707			
+SF0511		ybdB	
+SF3708			
+SF0512		cstA	
+SF3709			
+SF0513			
+SF3710			
+SF0514		ybdH	
+SF3711		shiD	
+SF0515		ybdL	
+SF3712		insB	
+SF3713		shiE	
+SF3714		imm	
+SF0516			
+SF3715		iucA	
+SF0517			
+SF3716		iucB	
+SF3717		iucC	
+SF3718		iucD	
+SF3719		iutA	
+SF0519			
+SF3720			
+SF0520			
+SF3721			
+SF0522			
+SF3722			
+SF0523		dsbG	
+SF3723		lpfC	
+SF0524		ahpC	
+SF3724		insB	
+SF0525		ahpF	
+SF3725		insA	
+SF0526		ybdQ	
+SF3726			
+SF0527		ybdR	
+SF3727		pstS	
+SF0528		rnk	
+SF3728		pstC	
+SF0529		rna	
+SF3729		pstA	
+SF3730		pstB	
+SF3731		phoU	
+SF3732		bglG	
+SF3733		bglF	
+SF0532		citF	
+SF0533		citE	
+SF0534		citD	
+SF3735		insA	
+SF0535		citC	
+SF3736		insB	
+SF0536		insB	
+SF3737		yieC	
+SF0537			
+SF3738		yieL	
+SF0538		ybhA	
+SF3739		yieK	
+SF0539		modC	
+SF0540		modB	
+SF0541		modA	
+SF3740			
+SF0542			
+SF3741			
+SF0543		modE	
+SF3742			
+SF0544		modF	
+SF3744		yieI	
+SF0545		galE	
+SF3745		yieH	
+SF0546		galT	
+SF3746		yieG	
+SF0547		galK	
+SF3747		yieF	
+SF0548		galM	
+SF3748		yieE	
+SF0549		gpmA	
+SF0550		aroG	
+SF0551			
+SF3749			
+SF0552		ybgR	
+SF3750			
+SF0553		pnuC	
+SF3752		yidY	
+SF0554		nadA	
+SF3753		tnaB	
+SF0555		ybgF	
+SF3754		tnaA	
+SF0556		pal	
+SF3755		tnaL	
+SF0557		tolB	
+SF3756		insA	
+SF0558		tolA	
+SF3757		insB	
+SF0559		tolR	
+SF3758		thdF	
+SF0560		tolQ	
+SF3759		yidC	
+SF0561		ybgC	
+SF3760		rnpA	
+SF0562		ybgE	
+SF3761		rpmH	
+SF0563		cydB	
+SF3762		dnaA	
+SF0564		cydA	
+SF3763		dnaN	
+SF0565		ybgG	
+SF3764		recF	
+SF0566		hrsA	
+SF3765		gyrB	
+SF0567		farR	
+SF3766		yidB	
+SF0568		sucD	
+SF3767		yidA	
+SF0569		sucC	
+SF3768			
+SF0570		sucB	
+SF3769		yidW	
+SF0571		sucA	
+SF3770		dgoK	
+SF0572			
+SF0573		sdhB	
+SF0574		sdhA	
+SF3772		dgoT	
+SF0575		sdhD	
+SF3773		yidS	
+SF0576		sdhC	
+SF0577		gltA	
+SF3774		yidR	
+SF0578		ybgD	
+SF3775		yidQ	
+SF0579		ybgQ	
+SF3776		ibpA	
+SF0580		ybgP	
+SF3777		ibpB	
+SF3778		yidE	
+SF3779		yidP	
+SF3780		glvB	
+SF0582		abrB	
+SF0583		nei	
+SF3782		yidL	
+SF3783		yidK	
+SF0584		ybgL	
+SF3785		yidI	
+SF0586		ybgJ	
+SF3786		yidH	
+SF0587		ybgI	
+SF3787		yidG	
+SF0588		ybgH	
+SF3788		yidF	
+SF0589		phrB	
+SF3789		emrD	
+SF0590		ybgA	
+SF3790		ilvB	
+SF0591			
+SF3791		ilvN	
+SF0592			
+SF3792		uhpA	
+SF0593			
+SF3793		uhpB	
+SF0594			
+SF3794		uhpC	
+SF0595		insB	
+SF3795		uhpT	
+SF0596		insA	
+SF3796		yicP	
+SF0597		ybfA	
+SF3797		yicO	
+SF0598		kdpA	
+SF3798		yicN	
+SF3799		yicM	
+SF3800			
+SF3801			
+SF3802			
+SF3803			
+SF3804			
+SF3805			
+SF0602			
+SF3806			
+SF3807		lpfA	
+SF0604		potE	
+SF3808			
+SF0605		pgm	
+SF3809		glmS	
+SF0606		seqA	
+SF0607		ybfF	
+SF3810		glmU	
+SF0608		ybfE	
+SF3811		atpC	
+SF0609		fldA	
+SF3812		atpD	
+SF0610		fur	
+SF3813		atpG	
+SF0611		ybfN	
+SF3814		atpA	
+SF0612		ybfM	
+SF3815		atpH	
+SF0613		glnS	
+SF0614		nagE	
+SF3816		atpF	
+SF0615		nagB	
+SF0616		nagA	
+SF3817		atpE	
+SF0617		nagC	
+SF3818		atpB	
+SF0619		asnB	
+SF3819		atpI	
+SF0620		yleB	
+SF0621		yleA	
+SF3820		gidB	
+SF0622		ybeZ	
+SF0623		ybeY	
+SF3821		gidA	
+SF0624		ybeX	
+SF0625		lnt	
+SF3822		mioC	
+SF0626		ybeJ	
+SF0627		gltJ	
+SF3823		asnC	
+SF0628		gltK	
+SF0629		gltL	
+SF3824		asnA	
+SF0630		ybeK	
+SF3825		yieM	
+SF3826		yieN	
+SF0632		ybeV	
+SF3827			
+SF0633		ybeU	
+SF3828		kup	
+SF0634		ybeT	
+SF3829		rbsD	
+SF0635		ybeS	
+SF0636		ybeR	
+SF0637		ybeQ	
+SF3831		insA	
+SF0638		ybeL	
+SF3832		insB	
+SF0639		leuS	
+SF3833		rbsC	
+SF0640		rlpB	
+SF0641		holA	
+SF0642		ybeN	
+SF3835		rbsK	
+SF0643		phpB	
+SF3836		rbsR	
+SF0644		ybeB	
+SF3837		yieO	
+SF0645		ybeA	
+SF3838		yieP	
+SF0646		mrdA	
+SF3839		yifA	
+SF0647		mrdB	
+SF3840		yifE	
+SF0648		rlpA	
+SF0649		dacA	
+SF0650		ybeD	
+SF3842		ilvL	
+SF0651		lipB	
+SF3843		ilvG	
+SF0652		ybeF	
+SF3844		ilvM	
+SF0653		lipA	
+SF3845		ilvE	
+SF0654		ybeC	
+SF3846		ilvD	
+SF0655		ybeM	
+SF3847		ilvA	
+SF0656		crcB	
+SF3849		ilvY	
+SF0657		cspE	
+SF3848		ilvC	
+SF0658		crcA	
+SF3850		ppiC	
+SF0659		dcuC	
+SF3851		rep	
+SF3852		gppA	
+SF3853		rhlB	
+SF0661			
+SF3854		trxA	
+SF0662			
+SF3855		rhoL	
+SF0663			
+SF3856		rho	
+SF0664			
+SF3857			
+SF0665			
+SF3858		rfe	
+SF0666			
+SF3859		wzzE	
+SF0667			
+SF3860		wecB	
+SF3861		wecC	
+SF0668			
+SF3862		rffG	
+SF0669			
+SF3863		rffH	
+SF0670			
+SF3864		wecD	
+SF0671			
+SF3865		wecE	
+SF3866		wzxE	
+SF0672			
+SF3867		yifM	
+SF0673			
+SF3868		wecF	
+SF0674			
+SF3869		wecG	
+SF0675			
+SF3870		yifK	
+SF0676			
+SF3871		aslB	
+SF0677			
+SF3872			
+SF0678			
+SF3873			
+SF0679			
+SF3874		hemY	
+SF0680			
+SF3875		hemX	
+SF0681			
+SF3876		hemD	
+SF0682			
+SF3877		hemC	
+SF0683			
+SF3878		cyaA	
+SF0685			
+SF3880		cyaY	
+SF0684			
+SF0686			
+SF0687			
+SF0688		ybcQ	
+SF3881		insA	
+SF3882		insB	
+SF0689			
+SF3883			
+SF0690			
+SF0691			
+SF3884			
+SF0692			
+SF3885			
+SF0693			
+SF3886		yifL	
+SF0694			
+SF3887		dapF	
+SF0695			
+SF3888		yigA	
+SF0696			
+SF3889		xerC	
+SF0697			
+SF3890		yigB	
+SF0698			
+SF3891		uvrD	
+SF0699			
+SF0700			
+SF0701			
+SF3892			
+SF0702			
+SF3894		corA	
+SF0703			
+SF3895		yigF	
+SF0704			
+SF3896		yigG	
+SF0705			
+SF3897		rarD	
+SF0706			
+SF3898		yigI	
+SF0707			
+SF3899		pldA	
+SF0708			
+SF3900		recQ	
+SF0709			
+SF3901		yigJ	
+SF0710			
+SF3902		yigK	
+SF0711			
+SF3903		pldB	
+SF0712			
+SF3904		yigL	
+SF0713			
+SF3905		yigM	
+SF0714			
+SF0715			
+SF3906		metR	
+SF0716			
+SF0717			
+SF3907		metE	
+SF0718			
+SF3908			
+SF0719			
+SF3909		udp	
+SF0720			
+SF3910		yigN	
+SF0721			
+SF3911		ubiE	
+SF0722		ipaH_1	
+SF3912		yigP	
+SF0723		ybhB	
+SF3913		yigR	
+SF0725		bioA	
+SF3914			
+SF0724		bioB	
+SF3915			
+SF0726		bioF	
+SF3916		yigU	
+SF0727		bioC	
+SF3917		yigW	
+SF0728		bioD	
+SF3918		rfaH	
+SF0729		uvrB	
+SF0730		ybhK	
+SF3919		yigC	
+SF0731		moaA	
+SF3920		ubiB	
+SF0732		moaB	
+SF3921		fadA	
+SF0733		moaC	
+SF3922		fadB	
+SF0734		moaD	
+SF3923		pepQ	
+SF0735		moaE	
+SF3924		yigZ	
+SF0736		ybhL	
+SF3925		trkH	
+SF0737		ybhM	
+SF3926		hemG	
+SF0738		ybhN	
+SF3927		mobB	
+SF0739		ybhO	
+SF3928		mobA	
+SF0740		ybhP	
+SF3929		yihD	
+SF0741		ybhQ	
+SF0742		ybhR	
+SF3930		yihE	
+SF0743		ybhS	
+SF3931		dsbA	
+SF0744		ybhF	
+SF3932		yihF	
+SF0745			
+SF3933		yihG	
+SF0746		ybiH	
+SF3934		polA	
+SF0747		rhlE	
+SF3935		yihA	
+SF0749		ybiA	
+SF3936		yihI	
+SF0748		dinG	
+SF3937		hemN	
+SF0750		ybiB	
+SF3938		glnG	
+SF0751		ybiC	
+SF3939		glnL	
+SF0752		ybiJ	
+SF3940		glnA	
+SF0753		ybiI	
+SF3941		yihK	
+SF0754		ybiX	
+SF3942		yihL	
+SF3943		yihM	
+SF3944		yihN	
+SF0755			
+SF3945		insA	
+SF0757		ybiM	
+SF3946		insB	
+SF0758		ybiN	
+SF3947			
+SF3948		yihO	
+SF0759		ybiO	
+SF3949			
+SF0760		glnQ	
+SF3950		yihQ	
+SF0761		glnP	
+SF3951		yihR	
+SF0762		glnH	
+SF3952		yihS	
+SF0763		dps	
+SF3953		yihT	
+SF0764		ybiF	
+SF3954		yihU	
+SF0765		ompX	
+SF3955		yihV	
+SF0766		ybiP	
+SF3956		yihW	
+SF3957		yihX	
+SF0767			
+SF3958		rbn	
+SF0768		ybiR	
+SF3959		yihZ	
+SF0769		ybiS	
+SF3960		yiiD	
+SF0770		ybiT	
+SF3961		insB	
+SF0771		ybiU	
+SF3962		insA	
+SF0772			
+SF3963			
+SF0773		ybiW	
+SF3964			
+SF0774		ybiY	
+SF3965		yiiE	
+SF0775		mipB	
+SF3966		yiiF	
+SF0776		moeB	
+SF3967		fdhE	
+SF0777		moeA	
+SF3968		fdoI	
+SF0778		ybiK	
+SF3969		fdoH	
+SF0779			
+SF3970		fdoG	
+SF0780			
+SF3971		fdhD	
+SF0781			
+SF0782			
+SF3972		insB	
+SF3973		insA	
+SF0784			
+SF3975		frvX	
+SF0785		yliG	
+SF3976		frvB	
+SF0786			
+SF3977		frvA	
+SF0787		yliI	
+SF3978		yiiL	
+SF0788		yliJ	
+SF3979		rhaD	
+SF0789			
+SF3980		rhaA	
+SF3981		rhaB	
+SF0790			
+SF3982		rhaS	
+SF3983		rhaR	
+SF0791			
+SF3984			
+SF0792			
+SF3985		sodA	
+SF0793		deoR	
+SF0794		ybjG	
+SF3986		kdgT	
+SF0795		cmr	
+SF0796		ybjH	
+SF3987			
+SF0797			
+SF0798			
+SF3988			
+SF0799			
+SF0800			
+SF3989		yiiM	
+SF0801		ybjM	
+SF0802		grxA	
+SF3990		cpxA	
+SF0803		ybjC	
+SF3991		cpxR	
+SF0804			
+SF3992			
+SF0805		mdaA	
+SF3993		yiiP	
+SF0806		rimK	
+SF3994		pfkA	
+SF0807		ybjN	
+SF0808		potF	
+SF3995		sbp	
+SF0809		potG	
+SF3996		cdh	
+SF0810		potH	
+SF3997		tpiA	
+SF0811		potI	
+SF3998		yiiQ	
+SF0812		ybjO	
+SF0813		ybjF	
+SF0814		artJ	
+SF4000		yiiS	
+SF0815		artM	
+SF4001		yiiT	
+SF0816		artQ	
+SF4002		fpr	
+SF0817		artI	
+SF4003		glpX	
+SF0818		artP	
+SF0819		ybjP	
+SF4004		glpK	
+SF0820			
+SF4005		glpF	
+SF0821			
+SF0822			
+SF4006		yiiU	
+SF0823			
+SF0824		ybjT	
+SF4007		menG	
+SF0825		ybjU	
+SF4008		menA	
+SF0826		poxB	
+SF4009		hslU	
+SF0827			
+SF4010		hslV	
+SF0828		ybjW	
+SF4011		ftsN	
+SF0829		ybjE	
+SF4012		cytR	
+SF0830			
+SF4013		priA	
+SF0831			
+SF4014		rpmE	
+SF0832		aqpZ	
+SF4015		yiiX	
+SF0833		insB	
+SF4016		metJ	
+SF0834		insA	
+SF4017		metB	
+SF0835		ybjD	
+SF4018		metL	
+SF0836		ybjX	
+SF4019		metF	
+SF4020		katG	
+SF0837			
+SF4021			
+SF0838			
+SF0839		ybjZ	
+SF0840		cspD	
+SF0841		yljA	
+SF4024			
+SF0842		clpA	
+SF0843		infA	
+SF0844		aat	
+SF0845		cydC	
+SF4026		frwC	
+SF0846		cydD	
+SF4027		frwB	
+SF0847		trxB	
+SF4028		pflD	
+SF0848		lrp	
+SF4029		pflC	
+SF0849		ftsK	
+SF4030		frwD	
+SF0850		lolA	
+SF4031		yijO	
+SF0851		ycaJ	
+SF4032		yijP	
+SF0852		serS	
+SF4033		ppc	
+SF4034		argE	
+SF0853		dmsA	
+SF4035		argC	
+SF4036		argB	
+SF0854		dmsB	
+SF4037		argH	
+SF4038			
+SF0855		dmsC	
+SF4039			
+SF0856		ycaC	
+SF0857		ycaD	
+SF0858			
+SF0859			
+SF4041		insA	
+SF0860			
+SF0861			
+SF4042		insB	
+SF0862			
+SF4043		oxyR	
+SF4044		udhA	
+SF0863			
+SF4045		yijC	
+SF4046		yijD	
+SF0864			
+SF4047		trmA	
+SF0865			
+SF4048		btuB	
+SF0866			
+SF4049		murI	
+SF0867			
+SF4050		murB	
+SF0868			
+SF4051		birA	
+SF0869			
+SF4052		coaA	
+SF0870			
+SF4053		tufA	
+SF0871			
+SF4054		secE	
+SF4055		nusG	
+SF4056		rplK	
+SF0873			
+SF0874			
+SF4057		rplA	
+SF0875			
+SF4058		rplJ	
+SF0876			
+SF0877			
+SF4059		rplL	
+SF0878			
+SF4060		rpoB	
+SF0879			
+SF4061		rpoC	
+SF0880			
+SF4062		thiH	
+SF0881			
+SF4063		thiG	
+SF0882			
+SF4064		thiF	
+SF0883			
+SF4065		thiE	
+SF0884			
+SF4066		thiC	
+SF0885			
+SF4067		yjaE	
+SF0886			
+SF4068		yjaD	
+SF4069		hemE	
+SF4070		nfi	
+SF0888		ybhE	
+SF4071		yjaG	
+SF4072		hupA	
+SF4073		yjaH	
+SF0890		ybhH	
+SF4074		yjaI	
+SF0891		ybhI	
+SF4075		hydH	
+SF0892		ybhJ	
+SF4076		hydG	
+SF0893		ybhC	
+SF4077		purD	
+SF0894			
+SF4078		purH	
+SF0895			
+SF0896			
+SF0897		pflA	
+SF0898		pflB	
+SF0899		focA	
+SF0900		ycaO	
+SF0901			
+SF0902		serC	
+SF4081		aceA	
+SF0903		aroA	
+SF0904			
+SF0905		ycaL	
+SF0906		cmk	
+SF0907		rpsA	
+SF0908		himD	
+SF4084		iclR	
+SF4085		metH	
+SF4086		yjbB	
+SF0910		msbA	
+SF4087		pepE	
+SF0911		ycaH	
+SF0912		ycaQ	
+SF4088		sorE	
+SF0913		ycaR	
+SF4089		sorM	
+SF0914		kdsB	
+SF4090		sorA	
+SF4091		sorB	
+SF0915			
+SF4092		sorF	
+SF0916		ycbC	
+SF4093		sorD	
+SF0917		smtA	
+SF4094		sorC	
+SF0918		mukF	
+SF4095		yjbC	
+SF0919		mukE	
+SF4096			
+SF0920		mukB	
+SF0921			
+SF4097			
+SF0922		ycbB	
+SF4098		yjdH	
+SF0923		ycbK	
+SF4099		yjdG	
+SF0924		ycbL	
+SF4100		dcuB	
+SF0925		aspC	
+SF4101		fumB	
+SF0926		ompF	
+SF4102		yjdF	
+SF0927		asnS	
+SF4103		melB	
+SF0928		pncB	
+SF4104		melA	
+SF0929		pepN	
+SF4105		melR	
+SF0930		ycbE	
+SF4106		adiA	
+SF0931			
+SF4107		adiY	
+SF0932			
+SF4108		yjdE	
+SF0933			
+SF4109		yjdB	
+SF0934		ycbN	
+SF4110		basR	
+SF0935		ycbO	
+SF4111		basS	
+SF0936		ycbP	
+SF4112		proP	
+SF0937			
+SF4113		yjcZ	
+SF0938		insA	
+SF0939		insB	
+SF4114		yjdA	
+SF0940		insA	
+SF4115		phnA	
+SF0941		ycbS	
+SF4116		phnB	
+SF0942			
+SF4117		phnC	
+SF0943			
+SF4118		phnD	
+SF0944			
+SF4119		insB	
+SF0945		ycbF	
+SF4120		insA	
+SF0946		pyrD	
+SF4122		soxS	
+SF0947		ycbW	
+SF4123		soxR	
+SF4124		yjcD	
+SF0948			
+SF4125		yjcE	
+SF4126		yjcF	
+SF0949		ycbY	
+SF4127		yjcG	
+SF4128		yjcH	
+SF0950		uup	
+SF0951		pqiA	
+SF4130		nrfA	
+SF0952		pqiB	
+SF4131		nrfB	
+SF4132		nrfC	
+SF0953		ymbA	
+SF4133		nrfD	
+SF4134		nrfE	
+SF0954		fabA	
+SF4135		nrfF	
+SF0955			
+SF4136		nrfG	
+SF0956		ycbG	
+SF4137		gltP	
+SF0957		ompA	
+SF4138		yjcO	
+SF0958		sulA	
+SF4140		yjcP	
+SF0960			
+SF4141		yjcQ	
+SF0961			
+SF4142		yjcR	
+SF0962			
+SF4143			
+SF0963		yccF	
+SF4144		insB	
+SF0964		helD	
+SF4145		ssb	
+SF0965		mgsA	
+SF4146		uvrA	
+SF0966			
+SF4147		yjbR	
+SF0967			
+SF4148		yjbQ	
+SF0968		yccV	
+SF4149		aphA	
+SF0970			
+SF4150			
+SF0969			
+SF4151		tyrB	
+SF0971		yccK	
+SF0972		yccA	
+SF4152		alr	
+SF0973		hyaA	
+SF0974		hyaB	
+SF4154		dnaB	
+SF0975		hyaC	
+SF4153		qor	
+SF0976		hyaD	
+SF4155		yjbO	
+SF0977		hyaE	
+SF4156		yjbN	
+SF0978		hyaF	
+SF4157		yjbM	
+SF0979			
+SF4158		yjbL	
+SF4159		yjbK	
+SF0980		appC	
+SF4160		yjbJ	
+SF4161		dinF	
+SF0981		appB	
+SF4162		lexA	
+SF0982		appA	
+SF4163		dgkA	
+SF0983			
+SF4164		plsB	
+SF4165		ubiA	
+SF0984		yccY	
+SF4166		ubiC	
+SF0985		yccZ	
+SF0986		ymcA	
+SF4168		malM	
+SF0987		ymcB	
+SF4169		lamB	
+SF0988		ymcC	
+SF4170		malK	
+SF0989		ymcD	
+SF4171		malE	
+SF0990		cspH	
+SF4172		malF	
+SF0991		cspG	
+SF4173		malG	
+SF0992		ymcE	
+SF4174		xylE	
+SF0993		yccL	
+SF4175		yjbA	
+SF0994		yccM	
+SF4176		yjbH	
+SF0995			
+SF4177		yjbG	
+SF0996		torT	
+SF4178		yjbF	
+SF0998		torR	
+SF4179		yjbE	
+SF0997		torC	
+SF4180		pgi	
+SF4181		lysC	
+SF4182			
+SF4183			
+SF4184			
+SF1001		insB	
+SF4185			
+SF1002		insA	
+SF4186			
+SF1003		yccD	
+SF4187		yjiI	
+SF1004		cbpA	
+SF4188		yjiH	
+SF1005		yccE	
+SF4189		yjiG	
+SF1006		agp	
+SF4190		iadA	
+SF1007		yccJ	
+SF4191		yjiE	
+SF1008		wrbA	
+SF4192		yjiD	
+SF1009		ycdG	
+SF4193		insB	
+SF1010			
+SF4194		insA	
+SF1011			
+SF4195		yjiC	
+SF1012			
+SF4196		uxuR	
+SF1013			
+SF4197		uxuB	
+SF1014			
+SF4198		uxuA	
+SF1015			
+SF4199		gntP	
+SF1016		ycdC	
+SF4200		fimH	
+SF1017			
+SF4201		fimG	
+SF1018			
+SF1019			
+SF4202		fimF	
+SF1020		ycdO	
+SF1021		ycdB	
+SF1022			
+SF4203		insB	
+SF1023			
+SF4204		insA	
+SF1024			
+SF4206		fimC	
+SF4207		fimI	
+SF1026		ycdU	
+SF4208		fimA	
+SF4209		fimE	
+SF4210		fimB	
+SF1028		ycdX	
+SF1029		ycdY	
+SF4211		yjhA	
+SF1030		ycdZ	
+SF4212		yjhT	
+SF4213		yjhS	
+SF4214		insB	
+SF1032			
+SF4215		insA	
+SF1033		csgE	
+SF4216			
+SF1034		csgD	
+SF4217			
+SF1035		csgB	
+SF4218			
+SF1037			
+SF1038			
+SF4220			
+SF4221		insB	
+SF1039		csgC	
+SF4222			
+SF1040			
+SF1041			
+SF4223			
+SF1042		ymdC	
+SF4224			
+SF1043		ymdD	
+SF4225		yjgB	
+SF4226		yjgR	
+SF1044		mdoG	
+SF4227		yjgQ	
+SF1045		mdoH	
+SF4228		yjgP	
+SF1046			
+SF4229		pepA	
+SF1048			
+SF4230		holC	
+SF1047			
+SF4231		valS	
+SF1049			
+SF4232		yjgN	
+SF1050			
+SF4233			
+SF1051			
+SF4234		yjgD	
+SF1052			
+SF4235		argI	
+SF1053			
+SF4236		insA	
+SF1054			
+SF4237		insB	
+SF1055			
+SF1056			
+SF1057			
+SF4239		yjgK	
+SF1058			
+SF4240		yjgJ	
+SF1059			
+SF4241		yjgI	
+SF1060			
+SF4242		yjgH	
+SF1061		htrB	
+SF1062		yceA	
+SF1063		yceI	
+SF1064			
+SF1065		yceO	
+SF1066		solA	
+SF1067		dinI	
+SF1068		pyrC	
+SF1069		yceB	
+SF1070		grxB	
+SF1071		yceL	
+SF1072		rimJ	
+SF1073		yceH	
+SF1074		mviM	
+SF1075		mviN	
+SF1076		flgN	
+SF1077		flgM	
+SF1078		flgA	
+SF1079		flgB	
+SF1080		flgE	
+SF1082		flgG	
+SF1083		flgH	
+SF1084		flgI	
+SF1085		flgJ	
+SF1088		rne	
+SF1089			
+SF1090		yceC	
+SF1091		yceF	
+SF1092		yceD	
+SF1093		rpmF	
+SF1094		plsX	
+SF1095		fabH	
+SF1096		fabD	
+SF1097		fabG	
+SF1098		acpP	
+SF1099		fabF	
+SF1100		pabC	
+SF1101		yceG	
+SF1102		tmk	
+SF1103		holB	
+SF1104		ycfH	
+SF1105		ptsG	
+SF1107		ycfF	
+SF1108		ycfL	
+SF1109		ycfM	
+SF1110		ycfN	
+SF1111		ycfO	
+SF1112		ycfP	
+SF1113		ndh	
+SF1114		ycfJ	
+SF1115		ycfQ	
+SF1116		ycfR	
+SF1117		ycfS	
+SF1118		mfd	
+SF1119		ycfT	
+SF1120		ycfU	
+SF1121		ycfV	
+SF1122		ycfW	
+SF1123		ycfX	
+SF1124		cobB	
+SF1125		potD	
+SF1126		potC	
+SF1127		potB	
+SF1128		potA	
+SF1129		pepT	
+SF1130		ycfD	
+SF1131			
+SF1132			
+SF1133			
+SF1134			
+SF1135			
+SF1136			
+SF1137			
+SF1139			
+SF1140			
+SF1141			
+SF1142			
+SF1143			
+SF1144			
+SF1145			
+SF1146			
+SF1147			
+SF1148		phoQ	
+SF1149		phoP	
+SF1150		purB	
+SF1151		ycfC	
+SF1152		ycfB	
+SF1153			
+SF1154		ymfC	
+SF1155		icdA	
+SF1156			
+SF1157			
+SF1158			
+SF1159			
+SF1161		minE	
+SF1162		minD	
+SF1163		minC	
+SF1164			
+SF1165			
+SF1166			
+SF1167			
+SF1168		ycgL	
+SF1169			
+SF1170		ycgN	
+SF1172		umuD	
+SF1173		umuC	
+SF1174		dsbB	
+SF1175		nhaB	
+SF1176		fadR	
+SF1177		ycgB	
+SF1178		dadA	
+SF1179		dadX	
+SF1180			
+SF1181			
+SF1182			
+SF1183		mltE	
+SF1184		ycgR	
+SF1185			
+SF1186		mltE	
+SF1187			
+SF1188		ymgE	
+SF1190		modD	
+SF1191			
+SF1192			
+SF1193			
+SF1194			
+SF1195			
+SF1196		insB	
+SF1197		insA	
+SF1198			
+SF1200		treA	
+SF1201		ycgC	
+SF1202			
+SF1203			
+SF1204			
+SF1205			
+SF1206		ychF	
+SF1207		pth	
+SF1208		ychH	
+SF1209		ychM	
+SF1210		prsA	
+SF1211		ychB	
+SF1212		hemM	
+SF1213		hemA	
+SF1214		prfA	
+SF1215		hemK	
+SF1216			
+SF1217		ychA	
+SF1218		kdsA	
+SF1219		chaA	
+SF1220		chaB	
+SF1221		chaC	
+SF1222		ychN	
+SF1223		ychP	
+SF1224		narL	
+SF1225		narX	
+SF1226		narK	
+SF1227		narG	
+SF1228		narH	
+SF1229		narJ	
+SF1230		narI	
+SF1231			
+SF1232		purU	
+SF1233		ychJ	
+SF1234		ychK	
+SF1235		hnr	
+SF1236		galU	
+SF1237		hns	
+SF1238		tdk	
+SF1239			
+SF1240		adhE	
+SF1241		ychE	
+SF1242		insB	
+SF1243		insA	
+SF1244		oppA	
+SF1245		oppB	
+SF1246		oppC	
+SF1247		oppD	
+SF1248		oppF	
+SF1249			
+SF1250		cls	
+SF1251		kch	
+SF1252			
+SF1253			
+SF1254		yciI	
+SF1255		tonB	
+SF1256		yciA	
+SF1257		yciB	
+SF1258		yciC	
+SF1259		yciD	
+SF1260		yciE	
+SF1261		yciF	
+SF1262		yciG	
+SF1263		trpA	
+SF1264		trpB	
+SF1265		trpC	
+SF1266		trpD	
+SF1267		trpE	
+SF1268		trpL	
+SF1269		yciV	
+SF1270		yciO	
+SF4244		yjgG	
+SF4243		pyrL	
+SF4245		pyrB	
+SF1272		btuR	
+SF4246		pyrI	
+SF1273		yciK	
+SF4247		yjgF	
+SF1274		sohB	
+SF4248		mgtA	
+SF1275		yciN	
+SF4249		treR	
+SF1276		topA	
+SF4250		treB	
+SF1277		cysB	
+SF1278			
+SF4251		treC	
+SF1279		yciX	
+SF4252		nrdD	
+SF1280		acnA	
+SF4253		nrdG	
+SF1281		ribA	
+SF4254		cybC	
+SF1282		pgpB	
+SF4255		pmbA	
+SF1283		yciS	
+SF4256		yjgA	
+SF1284		yciM	
+SF4257		yjfG	
+SF4258		fbp	
+SF1285		pyrF	
+SF4259			
+SF1286		yciH	
+SF4260			
+SF1287		osmB	
+SF4261		ytfT	
+SF1288			
+SF4262		ytfR	
+SF1289			
+SF4263		ytfQ	
+SF4264		ppa	
+SF1291		rnb	
+SF1292		yciW	
+SF4265		ytfP	
+SF1293		fabI	
+SF4266		ytfN	
+SF4267		ytfM	
+SF1294		ycjD	
+SF4268		msrA	
+SF4269		ytfL	
+SF1295		sapF	
+SF4270		ytfJ	
+SF4271		ytfI	
+SF1296		sapD	
+SF4272		cysQ	
+SF1297		sapC	
+SF4273		cpdB	
+SF1298		sapB	
+SF1299		sapA	
+SF4275		ytfH	
+SF1300		ymjA	
+SF4274		ytfG	
+SF1301		ycjJ	
+SF4276		ytfF	
+SF1302			
+SF4277		ytfE	
+SF1303		ycjL	
+SF4278		cycA	
+SF1304		ycjC	
+SF4279			
+SF1305		aldH	
+SF4280		ytfB	
+SF1306		ordL	
+SF4281		ytfA	
+SF1307		goaG	
+SF4282			
+SF1308		pspF	
+SF4283			
+SF1309		pspA	
+SF4284		insB	
+SF4285			
+SF1310		pspB	
+SF4286			
+SF1311		pspC	
+SF4287		insA	
+SF1312		pspD	
+SF4288		insB	
+SF1313		pspE	
+SF4289		yjdC	
+SF4290		dsbD	
+SF4291		cutA	
+SF1315		insA	
+SF4292		dcuA	
+SF4293		aspA	
+SF4294			
+SF1317		ycjO	
+SF4295		yjeH	
+SF1318		ycjP	
+SF4296		mopB	
+SF1319		ycjQ	
+SF4297		mopA	
+SF4298		yjeI	
+SF4299		yjeJ	
+SF4300		insA	
+SF4301		insB	
+SF1322		ycjT	
+SF4302		yjeK	
+SF4303		efp	
+SF1323		ycjU	
+SF4304		ecnA	
+SF4305		ecnB	
+SF1324		ycjV	
+SF4306		sugE	
+SF4307		blc	
+SF4308		ampC	
+SF4309		frdD	
+SF4310		frdC	
+SF4311		frdB	
+SF1326		ycjW	
+SF4312		frdA	
+SF1327		ycjX	
+SF4313		yjeA	
+SF1328		ycjF	
+SF1329		tyrR	
+SF1330		tpx	
+SF4315		insB	
+SF1331		ycjG	
+SF4316		insA	
+SF1332		ycjI	
+SF4317		yjeP	
+SF1333			
+SF4318		psd	
+SF1334			
+SF4320		yjeQ	
+SF1335			
+SF4319		yjeR	
+SF1336			
+SF4322		yjeS	
+SF1337		ycjY	
+SF4321		yjeF	
+SF4323		yjeE	
+SF4324		amiB	
+SF1339			
+SF4325		mutL	
+SF1340			
+SF4326		miaA	
+SF4327		hfq	
+SF4328		hflX	
+SF1342			
+SF4329		hflK	
+SF1343			
+SF4330		hflC	
+SF1344			
+SF4331		yjeT	
+SF1345			
+SF4332		purA	
+SF1346			
+SF4333		yjeB	
+SF1347			
+SF4334		vacB	
+SF1348			
+SF4335		yjfH	
+SF4336		insA	
+SF1349			
+SF4337		insB	
+SF4338		yjfM	
+SF1350			
+SF4339		yjfC	
+SF4340			
+SF1351		insB	
+SF4341		insB	
+SF4342		insA	
+SF1352		insA	
+SF4343		yjfN	
+SF4344		yjfO	
+SF1353			
+SF4345		yjfP	
+SF4346		yjfQ	
+SF1354			
+SF4347		yjfR	
+SF4348		sgaT	
+SF1355			
+SF4349		sgaB	
+SF1356			
+SF4350		ptxA	
+SF1357			
+SF4351		sgaH	
+SF1358			
+SF4352		sgaU	
+SF1359			
+SF4353		sgaE	
+SF4354		rpsF	
+SF1360			
+SF4355		rpsR	
+SF4356		rplI	
+SF1361			
+SF1362		sitD	
+SF1363		sitC	
+SF4358			
+SF1364		sitB	
+SF4359			
+SF1365		sitA	
+SF4360			
+SF4361			
+SF4362			
+SF1366		insA	
+SF4363			
+SF1367		insB	
+SF4364			
+SF1369		ydaQ	
+SF4365			
+SF1370			
+SF4366			
+SF1371			
+SF4367		insA	
+SF1372			
+SF4368		insB	
+SF1373			
+SF4369			
+SF1374			
+SF4370		yjiA	
+SF1375			
+SF1376			
+SF4371		yjiX	
+SF1377		kil	
+SF1378			
+SF4372		yjiY	
+SF1379			
+SF1380			
+SF4373		hpaC	
+SF1381			
+SF4374			
+SF1382			
+SF4375			
+SF1383		ipaH_3	
+SF4376			
+SF1384		insA	
+SF4377		hpaA	
+SF1385		insB	
+SF4378		hpaX	
+SF4379		hpaI	
+SF4380		hpaH	
+SF1387			
+SF4381		hpaF	
+SF1388			
+SF4382		hpaD	
+SF1389			
+SF4383		hpaE	
+SF1390		yebU	
+SF4384		hpaG	
+SF4385		hpcR	
+SF4386		tsr	
+SF1392			
+SF4387		yjiZ	
+SF1393			
+SF4388		yjjM	
+SF1394		yebJ	
+SF1395		prc	
+SF1396		htpX	
+SF4390		mdoB	
+SF1397			
+SF4391		yjjA	
+SF1398			
+SF4392		dnaC	
+SF1399			
+SF4393		dnaT	
+SF1400			
+SF4394		yjjB	
+SF1401			
+SF4395		yjjP	
+SF1402			
+SF4396		insA	
+SF1403		cspC	
+SF1404		yebH	
+SF4397		insB	
+SF1405			
+SF4398		yjjQ	
+SF1406		insB	
+SF1407		insA	
+SF4399		bglJ	
+SF1408			
+SF4400		fhuF	
+SF1409		manZ	
+SF4401			
+SF1410		manY	
+SF4402		yjjT	
+SF1411		manX	
+SF4403		holD	
+SF1412		yoaE	
+SF4404		rimI	
+SF1413			
+SF4405		yjjG	
+SF1414		sdaA	
+SF4406		prfC	
+SF1415		yeaB	
+SF4407		osmY	
+SF1416		pabB	
+SF4408			
+SF1417			
+SF1418			
+SF4409		yjjU	
+SF1419			
+SF1420			
+SF4410		yjjV	
+SF1421		yeaZ	
+SF4411		yjjW	
+SF1422			
+SF4412		yjjI	
+SF1423		fadD	
+SF4413		deoC	
+SF1424		rnd	
+SF4414		deoA	
+SF4415		deoB	
+SF1425		yeaX	
+SF4416		deoD	
+SF4417			
+SF1427			
+SF4419		smp	
+SF1428			
+SF4420		serB	
+SF1429			
+SF1430		yeaP	
+SF4421		sms	
+SF1431		yoaF	
+SF1432		yeaO	
+SF4422		nadR	
+SF1433		yeaN	
+SF4423		yjjK	
+SF4424		slt	
+SF4425		trpR	
+SF1435		yeaL	
+SF1436			
+SF1437		yeaK	
+SF4427		gpmB	
+SF4428		rob	
+SF4429		creA	
+SF1439			
+SF4430		creB	
+SF1440			
+SF4431		creC	
+SF1441		yeaF	
+SF1442			
+SF4432		creD	
+SF1443		yeaD	
+SF1444		gapA	
+SF4433		arcA	
+SF1445		yeaA	
+SF1446			
+SF4434		lasT	
+SF1447			
+SF1448			
+SF1450			
+SF1451			
+SF1452			
+SF1453			
+SF1454		ydjE	
+SF1455		ydjB	
+SF1456		ansA	
+SF1457		sppA	
+SF1458		ydjA	
+SF1459		selD	
+SF1460		topB	
+SF1461		ynjI	
+SF1462		gdhA	
+SF1463			
+SF1464			
+SF1465			
+SF1466			
+SF1467			
+SF1469			
+SF1471			
+SF1473		ynjA	
+SF1474		ydjZ	
+SF1475		ydjY	
+SF1476		ydjX	
+SF1477		xthA	
+SF1479			
+SF1480			
+SF1482		ydjS	
+SF1483		spy	
+SF1484			
+SF1485			
+SF1486		nadE	
+SF1487		osmE	
+SF1488		celA	
+SF1489		celB	
+SF1490		celC	
+SF1492		insB	
+SF1493		insA	
+SF1494		celF	
+SF1495		ydjC	
+SF1496		katE	
+SF1497			
+SF1498		ydjO	
+SF1499		insB	
+SF1500		insA	
+SF1501			
+SF1502			
+SF1503		yniC	
+SF1504			
+SF1505			
+SF1506			
+SF1507		pfkB	
+SF1508			
+SF1510		insB	
+SF1511		insA	
+SF1512		thrS	
+SF1513		infC	
+SF1514		rpmI	
+SF1515		rplT	
+SF1516		pheM	
+SF1517		pheS	
+SF1518		pheT	
+SF1519		himA	
+SF1520		btuC	
+SF1521		btuE	
+SF1522		btuD	
+SF1523		nlpC	
+SF1524			
+SF1525			
+SF1526		aroH	
+SF1527		ydiA	
+SF1528		ppsA	
+SF1529		ydiD	
+SF1530		ydiT	
+SF1531		ydiS	
+SF1532		ydiR	
+SF1533		ydiQ	
+SF1535		insA	
+SF1536		insB	
+SF1537			
+SF1538			
+SF1539			
+SF1540		insA	
+SF1541		insB	
+SF1542			
+SF1543		ycgW	
+SF1544			
+SF1545		rus	
+SF1546			
+SF1547			
+SF1548		relE	
+SF1549		relB	
+SF1550			
+SF1551			
+SF1552			
+SF1553		ydfI	
+SF1554			
+SF1555		ydfH	
+SF1556		ydfG	
+SF1557		dcp	
+SF1558		ydeJ	
+SF1559			
+SF1560		ydeF	
+SF1561		ydeD	
+SF1562		marB	
+SF1563		marA	
+SF1564		marR	
+SF1565		ydeB	
+SF1566		ydeA	
+SF1567			
+SF1569		yneH	
+SF1570			
+SF1571			
+SF1572		uxaB	
+SF1573			
+SF1574			
+SF1575			
+SF1576			
+SF1577			
+SF1578			
+SF1579			
+SF1580			
+SF1582		ydeW	
+SF1583			
+SF1584		ydeY	
+SF1585		ydeZ	
+SF1587			
+SF1588			
+SF1589			
+SF1590			
+SF1591		rspA	
+SF1592			
+SF1593			
+SF1595		ynfC	
+SF1596			
+SF1597			
+SF1598			
+SF1599			
+SF1600			
+SF1601			
+SF1602			
+SF1603			
+SF1604			
+SF1605			
+SF1606			
+SF1608			
+SF1607			
+SF1610			
+SF1611			
+SF1612			
+SF1613			
+SF1614			
+SF1615		mlc	
+SF1616		ynfL	
+SF1618		asr	
+SF1619			
+SF1620			
+SF1621			
+SF1622			
+SF1623		pntB	
+SF1624		pntA	
+SF1625			
+SF1626			
+SF1627		ydgB	
+SF1628		ydgC	
+SF1629		rstA	
+SF1630			
+SF1631			
+SF1632		rstB	
+SF1633		tus	
+SF1634		fumC	
+SF1635		fumA	
+SF1636		manA	
+SF1637		ydgA	
+SF1638		uidC	
+SF1640		uidA	
+SF1641		uidR	
+SF1642		insB	
+SF1643		insA	
+SF1644			
+SF1646		malI	
+SF1645		malX	
+SF1647		malY	
+SF1648		add	
+SF1649			
+SF1650			
+SF1651			
+SF1652			
+SF1653			
+SF1654			
+SF1655		ydgO	
+SF1656			
+SF1657		ydgQ	
+SF1658		nth	
+SF1659		ydgR	
+SF1660		gst	
+SF1661		pdxY	
+SF1662		tyrS	
+SF1663		pdxH	
+SF1664		ydhA	
+SF1665			
+SF1666			
+SF1667			
+SF1668		slyB	
+SF1669		slyA	
+SF1670			
+SF1671			
+SF1673		sodC	
+SF1674			
+SF1675			
+SF1676			
+SF1677		nemA	
+SF1678		gloA	
+SF1679		rnt	
+SF1682		ydhD	
+SF1683		ydhO	
+SF1684		sodB	
+SF1685			
+SF1686		purR	
+SF1687		ydhB	
+SF1688		ydhC	
+SF1689		cfa	
+SF1690		ribE	
+SF1692			
+SF1693			
+SF1694			
+SF1695			
+SF1697			
+SF1698		ydhU	
+SF1699			
+SF1700			
+SF1701		ydhV	
+SF1702			
+SF1703			
+SF1704		insB	
+SF1705		pykF	
+SF1706		lpp	
+SF1707		ynhG	
+SF1708		ynhA	
+SF1709			
+SF1711		ynhC	
+SF1712		ynhD	
+SF1713		ynhE	
+SF1714		ydiC	
+SF1715			
+SF1716			
+SF1717		ydiJ	
+SF1718			
+SF1719			
+SF1720			
+SF1721			
+SF1722		ydiB	
+SF1723		aroD	
+SF1724		insB	
+SF1725		insA	
+SF1726		ydeN	
+SF1727			
+SF1729		yddB	
+SF1730		insB	
+SF1731			
+SF1732		insA	
+SF1733		insB	
+SF1734		gadB	
+SF1735		xasA	
+SF1736			
+SF1737		yddV	
+SF1741			
+SF1742			
+SF1743		osmC	
+SF1744		insB	
+SF1745		insA	
+SF1746		sfcA	
+SF1747		adhP	
+SF1748		yddM	
+SF1749		fdnI	
+SF1750		fdnH	
+SF1751		fdnG	
+SF1752		yddG	
+SF1753		insB	
+SF1754		insA	
+SF1755			
+SF1756			
+SF1757			
+SF1758		insA	
+SF1759		insB	
+SF1760		narU	
+SF1762			
+SF1763			
+SF1764			
+SF1765			
+SF1766		yncB	
+SF1767			
+SF1768			
+SF1769			
+SF1770			
+SF1771			
+SF1772			
+SF1773			
+SF1774			
+SF1775			
+SF1777			
+SF1779			
+SF1780		tehB	
+SF1781		tehA	
+SF1782			
+SF1783		rimL	
+SF1784		ydcH	
+SF1785			
+SF1786		ydcG	
+SF1787			
+SF1788			
+SF1789		trg	
+SF1790			
+SF1791			
+SF1792			
+SF1793		ydcA	
+SF1794		cybB	
+SF1795			
+SF1796		gapC	
+SF1797		aldA	
+SF1799			
+SF1800			
+SF1801			
+SF1802		hrpA	
+SF1803		acpD	
+SF1804			
+SF1805			
+SF1807			
+SF1808			
+SF1809			
+SF1810			
+SF1811		ydbD	
+SF1812		insB	
+SF1814		ldhA	
+SF1815		ydbH	
+SF1816		ynbE	
+SF1817		ydbL	
+SF1818		insA	
+SF1819		insB	
+SF1821			
+SF1822		ydbK	
+SF1823			
+SF1824		ynaF	
+SF1825		ydaO	
+SF1826		dbpA	
+SF1827			
+SF1830			
+SF1831			
+SF1832			
+SF1834			
+SF1835		ogt	
+SF1836		fnr	
+SF1837		ydaA	
+SF1838			
+SF1839			
+SF1840			
+SF1841			
+SF1843			
+SF1844			
+SF1845			
+SF1846			
+SF1847			
+SF1848			
+SF1850			
+SF1852			
+SF1853		holE	
+SF1855			
+SF1856		ptrB	
+SF1857		yebE	
+SF1858		yebF	
+SF1859		purT	
+SF1860		eda	
+SF1861		edd	
+SF1862		zwf	
+SF1863		yebK	
+SF1864		pykA	
+SF1865		msbB	
+SF1866		yebA	
+SF1868		yebL	
+SF1867		yebM	
+SF1869		yebI	
+SF1870		ruvB	
+SF1871		ruvA	
+SF1872			
+SF1873		ruvC	
+SF1875		ntpA	
+SF1876		aspS	
+SF1878			
+SF1879			
+SF1880		ipaH_4	
+SF1881			
+SF1882			
+SF1883			
+SF1884			
+SF1885			
+SF1886			
+SF1887			
+SF1888			
+SF1889			
+SF1890			
+SF1891			
+SF1892			
+SF1893			
+SF1894			
+SF1895			
+SF1896			
+SF1897			
+SF1898			
+SF1899			
+SF1900			
+SF1901			
+SF1902		insB	
+SF1903		insA	
+SF1904			
+SF1905			
+SF1906			
+SF1907			
+SF1908			
+SF1910		yecN	
+SF1911		yecO	
+SF1912		yecP	
+SF1913		bisZ	
+SF1914		yecK	
+SF1915		cutC	
+SF1916		yecM	
+SF1917		argS	
+SF1918		yecT	
+SF1919			
+SF1920			
+SF1921			
+SF1922		flhE	
+SF1924		flhB	
+SF1925			
+SF1926			
+SF1927			
+SF1928			
+SF1929			
+SF1930		cheZ	
+SF1931		cheY	
+SF1932		cheB	
+SF1933		cheR	
+SF1934		tap	
+SF1935		tar	
+SF1936		cheW	
+SF1937		cheA	
+SF1938		motB	
+SF1939		motA	
+SF1940		flhC	
+SF1941		insA	
+SF1942		insB	
+SF1944		otsB	
+SF1945		araH	
+SF1946		araG	
+SF1948		yecI	
+SF1949			
+SF1950			
+SF1951		ftn	
+SF1952		yecH	
+SF1953		tyrP	
+SF1954		yecA	
+SF1955		pgsA	
+SF1956		uvrC	
+SF1957		uvrY	
+SF1958		yecF	
+SF1959		sdiA	
+SF1960		yecC	
+SF1961		yecS	
+SF1962		yedO	
+SF1963			
+SF1964		fliZ	
+SF1966		fliC	
+SF1967		fliD	
+SF1968		fliS	
+SF1969		fliT	
+SF1970		amyA	
+SF1971		yedD	
+SF1972		yedE	
+SF1973		yedF	
+SF1975			
+SF1976			
+SF1977		nmpC	
+SF1978			
+SF1979		ybcL	
+SF1980			
+SF1982		fliE	
+SF1984		fliG	
+SF1985		fliH	
+SF1986		fliI	
+SF1987		fliJ	
+SF1988		fliK	
+SF1989		fliL	
+SF1990		fliM	
+SF1991		fliN	
+SF1992		fliO	
+SF1993		fliP	
+SF1994		fliQ	
+SF1995		fliR	
+SF1996		rcsA	
+SF1997		dsrB	
+SF1998			
+SF2000		yedQ	
+SF2001			
+SF2002		yedI	
+SF2003		yedA	
+SF2004		vsr	
+SF2005		dcm	
+SF2007			
+SF2008			
+SF2009			
+SF2010			
+SF2011			
+SF2012		insA	
+SF2013		insB	
+SF2014		yedU	
+SF2015		yedV	
+SF2016		yedW	
+SF2017			
+SF2019			
+SF2020			
+SF2021			
+SF2023			
+SF2024			
+SF2025			
+SF2026		insB	
+SF2027			
+SF2028			
+SF2029			
+SF2030			
+SF2031			
+SF2032			
+SF2033			
+SF2034			
+SF2035			
+SF2036			
+SF2037			
+SF2038			
+SF2039			
+SF2040			
+SF2041			
+SF2042			
+SF2043			
+SF2044			
+SF2045			
+SF2046			
+SF2047			
+SF2048			
+SF2049			
+SF2051			
+SF2052			
+SF2053		amn	
+SF2054			
+SF2056		cbl	
+SF2057		nac	
+SF2058		erfK	
+SF2059		cobT	
+SF2060		cobS	
+SF2061		cobU	
+SF2062			
+SF2063			
+SF2064			
+SF2065			
+SF2066			
+SF2067		yeeX	
+SF2069			
+SF2070		sbcB	
+SF2071		yeeD	
+SF2072		yeeE	
+SF2073		yeeF	
+SF2074		yeeY	
+SF2075			
+SF2076		yoeB	
+SF2077		insB	
+SF2078		insA	
+SF2079		yefM	
+SF2080		hisL	
+SF2081		hisG	
+SF2082		hisD	
+SF2083		hisC	
+SF2084		hisB	
+SF2085		hisH	
+SF2086		hisA	
+SF2087		hisF	
+SF2088		hisI	
+SF2089		wzzB	
+SF2091		gnd	
+SF2092			
+SF2093			
+SF2094			
+SF2095		rfbJ	
+SF2096		rfbI	
+SF2097		rfc	
+SF2098		rfbG	
+SF2099		rfbF	
+SF2100		rfbE	
+SF2101		rfbC	
+SF2102		rfbA	
+SF2103		rfbD	
+SF2104		rfbB	
+SF2105		galF	
+SF2106		wcaM	
+SF2107		wcaL	
+SF2108		wcaK	
+SF2109		wzxC	
+SF2110		wcaJ	
+SF2111		cpsG	
+SF2112		cpsB	
+SF2113		wcaI	
+SF2114		wcaH	
+SF2115		wcaG	
+SF2116		gmd	
+SF2117		wcaF	
+SF2118		insA	
+SF2119		insB	
+SF2121		wcaC	
+SF2122		wcaB	
+SF2124			
+SF2125		wzb	
+SF2126		wza	
+SF2127		yegH	
+SF2128		asmA	
+SF2129		dcd	
+SF2130		udk	
+SF2132			
+SF2133		alkA	
+SF2135			
+SF2136			
+SF2137			
+SF2138			
+SF2139			
+SF2141		yegO	
+SF2142		yegB	
+SF2143		baeS	
+SF2144		baeR	
+SF2145			
+SF2146		yegQ	
+SF2148			
+SF2149			
+SF2150		gatR	
+SF2151		gatD	
+SF2152		insB	
+SF2153		insA	
+SF2154		gatC	
+SF2155		gatB	
+SF2156		gatA	
+SF2157		gatZ	
+SF2158		gatY	
+SF2159			
+SF2161			
+SF2162			
+SF2164		yegX	
+SF2165		thiD	
+SF2166		thiM	
+SF2167		yohL	
+SF2169		yohN	
+SF2170		yehA	
+SF2171		yehB	
+SF2172		insA	
+SF2173		insB	
+SF2175		yehD	
+SF2176		insB	
+SF2177		insA	
+SF2178		mrp	
+SF2179		metG	
+SF2181			
+SF2182			
+SF2183		insA	
+SF2184		insB	
+SF2187			
+SF2188		yehL	
+SF2189		yehM	
+SF2190		yehP	
+SF2191		yehQ	
+SF2192		insB	
+SF2193		yehR	
+SF2194		insB	
+SF2195		insA	
+SF2196		yehS	
+SF2197		yehT	
+SF2198		yehU	
+SF2200			
+SF2201			
+SF2203			
+SF2204			
+SF2205			
+SF2206			
+SF2207			
+SF2208		insA	
+SF2209		insB	
+SF2211			
+SF2212			
+SF2213		yehW	
+SF2214		yehX	
+SF2215		yehY	
+SF2216		yehZ	
+SF2217		bglX	
+SF2218		dld	
+SF2219		pbpG	
+SF2220		yohC	
+SF2221		yohD	
+SF2223			
+SF2224			
+SF2225		yohI	
+SF2226		yohJ	
+SF2227		yohK	
+SF2228		cdd	
+SF2229		sanA	
+SF2230			
+SF2231			
+SF2233		mglC	
+SF2234		mglA	
+SF2235		mglB	
+SF2236		galS	
+SF2237		yeiB	
+SF2238		folE	
+SF2241		lysP	
+SF2242		yeiE	
+SF2243		yeiH	
+SF2244		nfo	
+SF2245		yeiI	
+SF2246		yeiJ	
+SF2247		yeiK	
+SF2248		yeiL	
+SF2249		yeiM	
+SF2250		yeiN	
+SF2251		yeiC	
+SF2252		fruA	
+SF2253		fruK	
+SF2254		fruB	
+SF2255		yeiO	
+SF2256		insB	
+SF2257		insA	
+SF2258		yeiP	
+SF2259		yeiQ	
+SF2260		yeiR	
+SF2261			
+SF2262		spr	
+SF2263		rtn	
+SF2264		yejA	
+SF2265		yejB	
+SF2266		yejE	
+SF2267		yejF	
+SF2268		yejG	
+SF2269		bcr	
+SF2270		rsuA	
+SF2271		yejH	
+SF2272		rplY	
+SF2273		yejK	
+SF2274		yejL	
+SF2275		yejM	
+SF2276		yejO	
+SF2277		narP	
+SF2278		ccmH	
+SF2279		dsbE	
+SF2280		ccmF	
+SF2281		ccmE	
+SF2282		ccmD	
+SF2283		ccmC	
+SF2284		ccmB	
+SF2285		ccmA	
+SF2286		napC	
+SF2287		napB	
+SF2288		napH	
+SF2289		napG	
+SF2290		napA	
+SF2291		napD	
+SF2292		napF	
+SF2293		eco	
+SF2295		yojI	
+SF2296		alkB	

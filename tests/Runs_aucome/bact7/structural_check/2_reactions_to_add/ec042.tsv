@@ -1,0 +1,14 @@
+idRef	Comment	Genes	Action
+DCDPKIN-RXN	Has Orthologues with sf301;LF82;CFT073;UTI89;HS;IAI1	predicted_LF82_1474_vs_FN554766.1;predicted_SF2564_vs_FN554766.1;predicted_EcHS_A2669_vs_FN554766.1;predicted_c3041_vs_FN554766.1;predicted_ECIAI1_2570_vs_FN554766.1;predicted_UTI89_C2840_vs_FN554766.1	add
+DUDPKIN-RXN	Has Orthologues with sf301;LF82;CFT073;UTI89;HS;IAI1	predicted_LF82_1474_vs_FN554766.1;predicted_SF2564_vs_FN554766.1;predicted_EcHS_A2669_vs_FN554766.1;predicted_c3041_vs_FN554766.1;predicted_ECIAI1_2570_vs_FN554766.1;predicted_UTI89_C2840_vs_FN554766.1	add
+UDPKIN-RXN	Has Orthologues with sf301;LF82;CFT073;UTI89;HS;IAI1	predicted_LF82_1474_vs_FN554766.1;predicted_SF2564_vs_FN554766.1;predicted_EcHS_A2669_vs_FN554766.1;predicted_c3041_vs_FN554766.1;predicted_ECIAI1_2570_vs_FN554766.1;predicted_UTI89_C2840_vs_FN554766.1	add
+O-SUCCINYLBENZOATE-COA-SYN-RXN	Has Orthologues with IAI1;LF82;sf301;HS	predicted_SF2340_vs_FN554766.1;predicted_EcHS_A2407_vs_FN554766.1;predicted_LF82_1312_vs_FN554766.1;predicted_ECIAI1_2339_vs_FN554766.1	add
+RXN0-5214	Has Orthologues with UTI89;IAI1;LF82;HS	predicted_EcHS_A4436_vs_FN554766.1;predicted_LF82_2378_vs_FN554766.1;predicted_UTI89_C4792_vs_FN554766.1;predicted_ECIAI1_4425_vs_FN554766.1	add
+CDPKIN-RXN	Has Orthologues with sf301;LF82;CFT073;UTI89;HS;IAI1	predicted_LF82_1474_vs_FN554766.1;predicted_SF2564_vs_FN554766.1;predicted_EcHS_A2669_vs_FN554766.1;predicted_c3041_vs_FN554766.1;predicted_ECIAI1_2570_vs_FN554766.1;predicted_UTI89_C2840_vs_FN554766.1	add
+GDPKIN-RXN	Has Orthologues with sf301;LF82;CFT073;UTI89;HS;IAI1	predicted_LF82_1474_vs_FN554766.1;predicted_SF2564_vs_FN554766.1;predicted_EcHS_A2669_vs_FN554766.1;predicted_c3041_vs_FN554766.1;predicted_ECIAI1_2570_vs_FN554766.1;predicted_UTI89_C2840_vs_FN554766.1	add
+DADPKIN-RXN	Has Orthologues with sf301;LF82;CFT073;UTI89;HS;IAI1	predicted_LF82_1474_vs_FN554766.1;predicted_SF2564_vs_FN554766.1;predicted_EcHS_A2669_vs_FN554766.1;predicted_c3041_vs_FN554766.1;predicted_ECIAI1_2570_vs_FN554766.1;predicted_UTI89_C2840_vs_FN554766.1	add
+DGDPKIN-RXN	Has Orthologues with sf301;LF82;CFT073;UTI89;HS;IAI1	predicted_LF82_1474_vs_FN554766.1;predicted_SF2564_vs_FN554766.1;predicted_EcHS_A2669_vs_FN554766.1;predicted_c3041_vs_FN554766.1;predicted_ECIAI1_2570_vs_FN554766.1;predicted_UTI89_C2840_vs_FN554766.1	add
+DTDPKIN-RXN	Has Orthologues with sf301;LF82;CFT073;UTI89;HS;IAI1	predicted_LF82_1474_vs_FN554766.1;predicted_SF2564_vs_FN554766.1;predicted_EcHS_A2669_vs_FN554766.1;predicted_c3041_vs_FN554766.1;predicted_ECIAI1_2570_vs_FN554766.1;predicted_UTI89_C2840_vs_FN554766.1	add
+GLUTAMATE-DEHYDROGENASE-RXN	Has Orthologues with UTI89;CFT073	predicted_UTI89_C0015_vs_FN554766.1;predicted_c0018_vs_FN554766.1	add
+RXN-11209	Has Orthologues with UTI89	predicted_UTI89_C2420_vs_FN554766.1	add
+1.3.1.2-RXN	Has Orthologues with UTI89	predicted_UTI89_C2420_vs_FN554766.1	add

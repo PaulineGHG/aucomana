@@ -1,0 +1,434 @@
+21-Jun-2022  11:24:58 
+Started processing test/studied_organisms/sf301/
+Reading file  test/studied_organisms/sf301/organism-params.dat
+;; ensure-directories-exist: creating
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/input/
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/
+;;   does not exist, will create.
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/
+;;   does not exist, will create.
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/input/
+;;   does not exist, will create.
+;; ensure-directories-exist: creating
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/data/
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/data/
+;;   does not exist, will create.
+;; ensure-directories-exist: creating
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/reports/
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/reports/
+;;   does not exist, will create.
+;; ensure-directories-exist: creating
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/kb/
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/kb/
+;;   does not exist, will create.
+
+Created sf301cyc directory tree.
+Saved /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/input/organism.dat
+Saved /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/input/organism-init.dat
+Reading file  /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/input/organism-init.dat
+Copying class Organisms from METABASE to SF301BASE.
+[Copying class hierarchy into SF301BASE]
+Found 0 stub frames or stub references
+[Completed initialization of new PGDB for SF301]
+[Saving KB SF301BASE to V4-FASL file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/kb/sf301base.ocelot
+ 7379 frames saved]
+
+[Processed 4 data rows from file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/input/genetic-elements.dat]
+
+[Processed 1 data frames]
+
+
+Extracting one sequence from
+/mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/input/sf301.gbk
+into
+/mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/input/sf301-AE005674.fsa ...
+
+Parsing the GenBank file resulted in 1 warnings, which may indicate possible problems.
+Please see this log file for the details:
+/mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/reports/annotation-parse-log-sf301_2022-06-21.txt
+
+
+     :::::  Processing genetic element "AE005674" with ID AE005674 and file NIL  :::::
+
+Genetic Element AE005674 is new to the PGDB.
+Adding genetic element and processing its components.
+Copying /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/input/sf301-AE005674.fsa
+     to /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/data/sf301-AE005674.fsa
+[Creating gene frames]
+
+[Creating monomers]
+Warning: Amino acid U is invalid.
+
+Classifying SF3479-MONOMER/sigma(32) factor of RNA polymerase as a sigma factor.
+
+Classifying SF3242-MONOMER/sigma(54 or 60) factor of RNA polymerase as a sigma factor.
+
+Classifying SF3108-MONOMER/sigmaD(70) factor of RNA polymerase as a sigma factor.
+
+Classifying SF2764-MONOMER/sigmaD(70) factor of RNA polymerase-like protein as a sigma factor.
+
+Classifying SF2635-MONOMER/sigma-E factor of RNA polymerase as a sigma factor.
+Warning: Amino acid U is invalid.
+The following is a summary of the features recognized in the
+specified genetic elements.
+  
+A full report on parsing can be found in file:
+    /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/reports/trial-parse-report_2022-06-21.txt
+
+           Genes       Proteins    RNAs   Pseudogenes
+-----------------------------------------------------
+AE005674     4566         4183       129       253   
+
+
+Matches found using supplied GO terms: 0
+Warning: tRNA SF4553 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4552 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4551 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4550 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4549 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4548 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4547 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4546 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4545 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4542 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4540 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4539 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4538 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4537 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4534 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4530 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4528 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4527 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4526 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4525 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4524 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4523 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4564 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4518 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4517 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4515 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4512 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4510 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4509 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4508 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4507 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4506 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4505 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4504 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4503 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4502 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4501 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4500 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4499 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4498 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4496 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4495 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4492 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4491 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4490 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4489 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4488 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4487 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4486 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4485 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4484 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4483 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4482 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4481 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4480 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4479 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4478 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4477 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4476 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4475 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4474 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4473 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4472 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4471 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4470 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4469 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4468 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4467 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4466 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4465 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4464 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4463 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4462 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4461 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4460 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4459 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4458 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4457 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4456 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4455 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4454 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4453 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4452 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4451 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4450 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4449 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4448 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4447 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4446 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4445 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4444 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4443 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4442 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4441 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4438 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4437 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA SF4436 (NIL) may not have had parsable anticodon
+         information. None assigned.
+
+     :::::  Running reaction inference from EC numbers and MetaCyc IDs  :::::
+
+No reaction or class having EC number 2.5 can be found in the MetaCyc DB.
+  -- See the MetaCyc database for a more comprehensive listing of EC numbers.
+No reaction or class having EC number 1.5 can be found in the MetaCyc DB.
+  -- See the MetaCyc database for a more comprehensive listing of EC numbers.
+Inferred 0 enzymatic reactions from 0 rawgenes; 0 id-rxns, 0 ec-rxns
+
+     :::::  Finished EC number reaction inference for "AE005674"  :::::
+
+
+     :::::  Running reaction inference from GO terms  :::::
+
+
+
+     :::::  Running enzyme name matcher on 3090 input proteins  :::::
+
+Warning: enter-into-lookup-table-internal: Why does  have 51 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does  have 53 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does  have 54 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does acylactivatingenzyme have 52 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does acylactivating have 53 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does  have 55 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does fattyacylcoasynthasesystem have 56 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does fattyacylcoasynthetasesystem have 56 associated reactions?? 
+
+[Loaded 1165 lines from file pathologic:data;nonspecific-enzyme-names.dat]
+[Loaded 230 lines from file pathologic:data;metabolic-enzyme-ruleout-words.dat]
+
+[Processed 1830 data rows from file pathologic:data;enzyme-mappings.dat]
+Name-mapping hash table contains 56011 entries, of which 1340 are ambiguous
+Matching enzyme names for an enzyme-name-list with 3090 elements
+500 1000 1500 2000 2500 3000 
+Solid matches found by enzyme name matcher: 814
+Full report available in /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/reports/name-matching-report_2022-06-21.txt.
+
+     :::::  End enzyme name matcher  :::::
+
+
+     :::::  Begin Pathway Inference  :::::
+
+Taxonomic Pruning is turned on.
+Importing pathways that each have at least one reaction present...
+Imported 830 pathways that each had at least one reaction present
+Imported 893 new or changed pathways based on existing reactions.
+Writing inference report in /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/reports/pwy-inference-report_2022-06-21.txt.
+
+Pathway Inference Report File written                [subsequent runs will append to file]
+  to /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/reports/pwy-inference-report_2022-06-21.txt at 21-Jun-2022  11:26:11
+Importing 171 super pathways and their subpathways, some of which may be pruned in the next steps.
+
+Analyzing 839 base pathways as to whether to keep or delete with cutoff score 0.15
+
+Pruning 601 base pathways, 238 remain
+Pruned 135 super-pathways, 36 remain
+[Checking inverses under class  Notes]
+[Checking inverses under class  KB-DESCRIPTOR]
+[Checking inverses under class  Enzymatic-Reactions]
+[Checking inverses under class  EC-BOOKKEEPING]
+[Checking inverses under class  Databases]
+[Checking inverses under class  Compound-Mixtures]
+[Checking inverses under class  Collections]
+[Checking inverses under class  Chemicals]
+[Checking inverses under class  Cell-Types]
+[Checking inverses under class  CCO]
+[Checking inverses under class  Regulation]
+[Checking inverses under class  Pseudo-Products]
+[Checking inverses under class  Protein-Features]
+[Checking inverses under class  Polymer-Segments]
+[Checking inverses under class  PGDB-Metadata]
+[Checking inverses under class  Notes]
+[Checking inverses under class  Growth-Observations]
+[Checking inverses under class  Generalized-Reactions]
+[Checking inverses under class  Gene-Ontology-Terms]
+[Checking inverses under class  Evidence]
+[Checking inverses under class  Organizations]
+[Checking inverses under class  People]
+[Checking inverses under class  Organisms]
+[Checking inverses under class  Publications]
+Pruning out unneeded reactions, compounds, etc...
+Deleting empty pathway PWY-6196
+Deleted 289 reactions whose enzymes each catalyzed more than 10 reactions (83 reactions were not pruned)
+Deleted 2344 orphan reactions and 825 unreferenced compounds
+Inferring spontaneous reactions.
+Imported 58 spontaneous reactions.
+
+Importing composite reaction RXN-13158 because all its sub-reactions are either catalyzed by SF0068-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction RXN-22435 because all its sub-reactions are either catalyzed by SF0111-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction CYSTATHIONINE-BETA-LYASE-RXN because all its sub-reactions are either catalyzed by SF3053-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction RXN-19474 because all its sub-reactions are either catalyzed by SF0495-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction RXN-19445 because all its sub-reactions are either catalyzed by SF0495-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+Deleting 6353 publication frames that are not cited in SF301BASE
+
+Inferred  238  base pathways.
+
+     :::::  Ending Pathway Inference at 2022-06-21 11:27:52  :::::
+
+Inferring spontaneous reactions.
+Imported 0 spontaneous reactions.
+Updated 4183 protein molecular weights from sequence
+
+ This field strain won't be parsed.
+ This field serotype won't be parsed.
+ This field serotype won't be parsed.
+ This field strain won't be parsed.Count of protein+RNA frames (the frames that could contain GO terms) : 4668
+Total GO term annotations : 0
+Count of proteins/RNAs with at least 1 GO term : 0
+Count of proteins/RNAs with at least 1 experimental GO term : 0
+Count of genes whose product or complex or modified form contains at least 1 GO term : 0
+Count of genes whose product or complex or modified form contains at least 1 experimental GO term : 0
+Count of distinct GO terms encountered : 0
+
+Creating report pathway file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/reports/pathways-report_2022-06-21.txt.
+[Creating /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/data/protseq.fsa]
+[Wrote 4183 protein sequences]
+[Creating /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/data/dnaseq.fsa]
+PGDB build done.
+PGDB contains 4313 genes, 4188 polypeptides, 238 base pathways, 1358 reactions, 1077 compounds
+[Saving KB SF301BASE to V4-FASL file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/kb/sf301base.ocelot
+ 22371 frames saved]
+Creating Protein Complexes for SF301.
+
+35 Protein complexes were created.
+Count of protein+RNA frames (the frames that could contain GO terms) : 4703
+Total GO term annotations : 0
+Count of proteins/RNAs with at least 1 GO term : 0
+Count of proteins/RNAs with at least 1 experimental GO term : 0
+Count of genes whose product or complex or modified form contains at least 1 GO term : 0
+Count of genes whose product or complex or modified form contains at least 1 experimental GO term : 0
+Count of distinct GO terms encountered : 0
+
+[Saving KB SF301BASE to V4-FASL file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/sf301cyc/1.0/kb/sf301base.ocelot
+ 22353 frames saved]
+21-Jun-2022  11:28:17 Done

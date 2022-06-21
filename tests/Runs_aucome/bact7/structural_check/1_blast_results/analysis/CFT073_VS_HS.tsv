@@ -1,0 +1,24 @@
+query_seq_id	blastp_sseqid	blastp_evalue	blastp_bitscore	tblastn_sseqid	tblastn_evalue	tblastn_bitscore	tblastn_sstart	tblastn_send	exonerate_score	exonerate_hit_range	predicted_gene
+c5090	EcHS_A1241	3.74e-21	88.6								
+c1252	EcHS_A0634	1.82e-27	109	CP000802.1	2.08e-24	103	648902	649981			
+c2578											
+c2584											
+c0323											
+c1106				CP000802.1	9.39e-86	270	1091558	1091953	680	9999-10395	predicted_c1106_vs_CP000802.1
+c2434											
+c5078	EcHS_A3740	2.59e-59	189	CP000802.1	1.18e-56	194	3733391	3732486			
+c2576											
+c3785											
+c5024	EcHS_A4451	6.58e-92	287	CP000802.1	1.07e-83	281	4457891	4456428			
+c0018				CP000802.1	0.0	1227	14156	12123	3453	9999-12033	predicted_c0018_vs_CP000802.1
+c2583											
+c0319											
+c5350											
+c2579											
+c2433	EcHS_A0645	1.85e-95	293	CP000802.1	1.81e-78	262	662223	663434			
+c2577											
+c2580											
+c2089	EcHS_A4451	1.83e-112	340	CP000802.1	0.0	887	1797613	1798929	2646	9999-11591	predicted_c2089_vs_CP000802.1
+c5091	EcHS_A3582	3.63e-45	147	CP000802.1	1.48e-41	148	3559389	3558802			
+c2581											
+c3696											
