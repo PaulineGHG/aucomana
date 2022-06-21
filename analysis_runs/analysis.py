@@ -130,7 +130,7 @@ class Analysis:
         reactions_dict: Dict[str, 'Reactions']
             Dictionary of Reactions instances : Dict[ID of the run, Reactions instance of the run]
         """
-        reactions_dict = {}
+        reactions_list = []
         if runs is None:
             runs = os.listdir(self.path_runs)
         if type(runs) == str:
@@ -141,14 +141,12 @@ class Analysis:
             if os.path.exists(r_path):
                 if group is not None:
                     grp_species_l = list(self.get_grp_set(run, group, species_list))
-                    reactions_dict[run] = Reactions(self.path_runs, self.path_study, r_path, grp_species_l, out)
+                    reactions_list.append(Reactions(self.path_runs, self.path_study, r_path, grp_species_l, out))
                 else:
-                    reactions_dict[run] = Reactions(self.path_runs, self.path_study, r_path, species_list, out)
-        for run in runs:
-            if run in reactions_dict.keys():
-                print(f"Reactions instances has been created for run : {run} with group = {group} and out = "
-                      f"{out}")
-        return reactions_dict
+                    reactions_list.append(Reactions(self.path_runs, self.path_study, r_path, species_list, out))
+            print(f"Reactions instances has been created for run : {run} with group = {group} and out = "
+                  f"{out}")
+        return reactions_list
 
     def get_pathways_inst(self, runs: List[str] = None, species_list: List[str] = None,
                           group: Tuple[str, int] = None, out: int = None,
