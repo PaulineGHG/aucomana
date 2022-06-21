@@ -10,7 +10,7 @@ from analysis_runs.pathways import Pathways
 from analysis_runs.genes import Genes
 from analysis_runs.metabolites import Metabolites
 from analysis_runs.rename_padmets_id import make_automaton, apply_automaton, get_dict
-from typing import Tuple, List, Dict
+from typing import Tuple, List, Dict, Set
 
 
 class Analysis:
@@ -73,8 +73,8 @@ class Analysis:
 
     # ## Extract species according to groups from organisms file
 
-    def get_grp_l(self, run: str, group: str,
-                  species_list: List[str] = None) -> List[str]:
+    def get_grp_set(self, run: str, group: str,
+                    species_list: List[str] = None) -> Set[str]:
         """ Select species according to the group they belong to. The groups must be specified in the
         "group_template.tsv" file in path : <path runs>/<runID>/analysis/
 
@@ -90,8 +90,8 @@ class Analysis:
 
         Returns
         -------
-        List[str]
-            List of species corresponding to the group chosen
+        Set[str]
+            Set of species corresponding to the group chosen
         """
         grp_template_f = os.path.join(self.path_runs, run, "analysis",
                                       "group_template.tsv")
@@ -103,7 +103,7 @@ class Analysis:
             species_set = set(species_list)
         else:
             species_set = set(df.columns)
-        return list(group_set.intersection(species_set))
+        return group_set.intersection(species_set)
 
     # ## Create instances
 
