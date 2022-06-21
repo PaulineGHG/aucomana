@@ -23,7 +23,11 @@ class Analysis:
         self.path_study = path_study
         self.__create_folders()
 
+    # Create folders to save output files
+
     def __create_folders(self):
+        """ Create the folder hierarchy where the outputs will be stored. Folders created in <path_study> directory
+        """
         arbo = [['output_data'],
                 ['output_data', 'compare_groups'],
                 ['output_data', 'dendro_tanglegrams'],
@@ -71,49 +75,40 @@ class Analysis:
 
     def get_grp_l(self, run: str, group: str,
                   species_list: List[str] = None) -> List[str]:
-        """ Select species according to the group they belong to. The groups must be specified in a
-        TSV file (organisms-file as input).
+        """ Select species according to the group they belong to. The groups must be specified in the
+        "group_template.tsv" file in path : <path runs>/<runID>/analysis/
 
         Parameters
         ----------
         run: str
             ID of the run
-        group: Tuple[str, int]
-            The group to consider : Tuple(name of the group, column of the group in the organisms_file)
+        group: str
+            The group to consider
         species_list: List[str], optional (default=None)
             List of species to consider to be filtered according to their group belonging
-            If None will be all the species of the run
+            If None, it will be all the species of the run
 
         Returns
         -------
-        group_l: List[str]
-            List of species corresponding to the category chosen
+        List[str]
+            List of species corresponding to the group chosen
         """
         grp_template_f = os.path.join(self.path_runs, run, "analysis",
                                       "group_template.tsv")
-        group_list = []
-        df = pd.read_csv(grp_template_f, sep="\t", index_col=0, header=True)
+        df = pd.read_csv(grp_template_f, sep="\t", index_col=0)
+        if group not in list(df.index):
+            raise ValueError(f"No group {group} in {grp_template_f} file. Groups are : {list(df.index)}.")
+        group_set = set(df.loc[group])
         if species_list is not None:
             species_set = set(species_list)
         else:
-            species_set = set(df.index)
-        if group not in list(df.index):
-            raise ValueError(f"No column {group[1]} in {self.org_file} file. (Number of columns = "
-                             f"{df.shape[1]})")
-        if group[0] not in list(df[group[1]]):
-            warnings.warn(f"No species of group {group[0]} are in the column {group[1]} of the "
-                          f"{self.org_file}. All species has been kept.")
-            return list(species_set)
-        else:
-            for sp in species_set:
-                if df.loc[sp, group[1]] == group[0]:
-                    group_list.append(sp)
-        return group_list
+            species_set = set(df.columns)
+        return list(group_set.intersection(species_set))
 
     # ## Create instances
 
-    def get_reactions_inst(self, runs: List[str] = None, species_list: List[str] = None,
-                           group: Tuple[str, int] = None, out: int = None) -> Dict[str, 'Reactions']:
+    def get_reactions_inst(self, runs: str or List[str] = None, species_list: List[str] or List[List[str]] = None,
+                           group: str or List[str] = None, out: int or List[int] = None) -> Dict[str, 'Reactions']:
         """ Create Reactions instances in a dictionary.
 
         Parameters
@@ -123,9 +118,8 @@ class Analysis:
             If None, will be the list of all runs in the Runs path
         species_list: List[str], optional (default=None)
             List of species to consider for instances creation
-        group: Tuple[str, int], optional (default=None)
-            The group to consider for species filtering : Tuple(name of the group, column of the
-            group in the organisms_file)
+        group: str, optional (default=None)
+            The group to consider for species filtering
             If None will be all the species of each run
         out: int, optional (default=None)
             Number of species maximum not having the reaction for the reaction to be kept
