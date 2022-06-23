@@ -108,6 +108,12 @@ class Test(unittest.TestCase):
         self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/bact7_compare_groupA_groupB_groupC/'
                                        'groupC_hist.png'))
 
+    def test_intersect_rxn_groups(self):
+        A.intersect_rnx_groups(RUN, ['groupA', 'groupB', 'groupC'], venn_plot=True)
+        self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/'
+                                       'bact7_intersect_groupA_groupB_groupC.txt'))
+        self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/'
+                                       'bact7_intersect_groupA_groupB_groupC.png'))
 
 
 

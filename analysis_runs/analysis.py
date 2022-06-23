@@ -445,7 +445,7 @@ class Analysis:
             union_nb = len(union)
             intersect_nb = len(intersect)
             txt_file = os.path.join(self.path_study, "output_data", "compare_groups",
-                                    f"{run}_intersect_{grp_str}.txt")
+                                    f"{run}_intersect_{grp_str[:-1]}.txt")
             with open(txt_file, "w") as f:
                 s = f"Over {union_nb} reactions, {intersect_nb} reactions in common = " \
                     f"{round((intersect_nb/union_nb) * 100, 2)} % of the union."
@@ -465,7 +465,7 @@ class Analysis:
         if venn_plot:
             venn.venn(group_rnx_dict, cmap="plasma")
             plt.savefig(os.path.join(self.path_study, "output_data", "compare_groups",
-                                     f"{run}_intersect_{grp_str}.png"))
+                                     f"{run}_intersect_{grp_str[:-1]}.png"))
 
     # Rename padmet id
 
