@@ -349,46 +349,53 @@ class Analysis:
         boxplot: bool, optional (default=False)
             Indicate whether boxplot output (PNG file) must be created
         """
+        # Input path of TSV files
         in_path = os.path.join(self.path_runs, run, "analysis", "all")
 
+        # String concatenating named of each groups
         grp_str = ""
         for group in groups_list:
             grp_str += group + "_"
 
+        # Create output directory
         out_dir = os.path.join(self.path_study, "output_data", "compare_groups", f"{run}_compare_{grp_str[:-1]}")
         if not os.path.exists(out_dir):
             os.mkdir(out_dir)
 
+        # Path of the compare_gX.tsv file
         res_file = os.path.join(out_dir, f"compare_{grp_str[:-1]}.tsv")
 
+        # Create main DataFrame with groups as index and stats to calculate as columns
         col_stat = []
         for x in self.TO_CALCULATE:
             for y in self.STAT:
                 col_stat.append(x + y)
         df_comp = pd.DataFrame(columns=col_stat, index=groups_list)
 
+        # Create dictionary storing for each group his DataFrame
         df_grp_dict = {}
         for group in groups_list:
             grp_sp_list = list(self.get_grp_set(run, group))
-
+            # Create Reactions, Pathways and Genes instances for the group
             r_g = Reactions(self.path_runs, self.path_study, os.path.join(in_path, "reactions.tsv"), grp_sp_list)
             p_g = Pathways(self.path_runs, self.path_study, os.path.join(in_path, "pathways.tsv"), grp_sp_list)
             g_g = Genes(os.path.join(in_path, "genes.tsv"), grp_sp_list)
-
+            # Path of group.tsv file (group stats)
             g_res_file = os.path.join(out_dir, f"{group}.tsv")
-
+            # Create DataFrame with species of the group as index and stats to calculate as columns
             df_g = pd.DataFrame(columns=self.TO_CALCULATE, index=grp_sp_list)
-
+            # Calculate stats for each species and fill the DataFrame
             for sp in grp_sp_list:
                 df_g.loc[sp, self.TO_CALCULATE[0]] = g_g.nb_genes_species[sp]
                 df_g.loc[sp, self.TO_CALCULATE[1]] = r_g.nb_reactions_sp[sp]
                 df_g.loc[sp, self.TO_CALCULATE[2]] = p_g.get_pw_over_treshold(sp, 0.8)[sp][0]
                 df_g.loc[sp, self.TO_CALCULATE[3]] = p_g.get_pw_complete(sp, False)[sp][0]
-
+            # Store DataFrame in dict and save it in TSV file
             df_grp_dict[group] = df_g
             df_g.to_csv(g_res_file, sep="\t")
             print(f"{group} stats saved to path : {g_res_file}")
 
+            # Fill the main DataFrame with stats for the group
             for calc in self.TO_CALCULATE:
                 df_comp.loc[group, calc + self.STAT[0]] = round(float(np.mean(df_g[calc])), 1)
                 df_comp.loc[group, calc + self.STAT[1]] = np.median(df_g[calc])
@@ -396,11 +403,14 @@ class Analysis:
                 df_comp.loc[group, calc + self.STAT[3]] = min(df_g[calc])
                 df_comp.loc[group, calc + self.STAT[4]] = max(df_g[calc])
 
-            df_comp.to_csv(res_file, sep="\t")
-            print(f"groups stats comparisons saved to path : {res_file}")
+        # Save main DataFrame in TSV file
+        df_comp.to_csv(res_file, sep="\t")
+        print(f"groups stats comparisons saved to path : {res_file}")
 
+        # Generate histograms for each groups
         if hist:
             self.__hist_comp(out_dir, df_comp, df_grp_dict)
+        # Generate boxplot comparing all groups
         if boxplot:
             self.__boxplot_comp(out_dir, df_grp_dict)
 
