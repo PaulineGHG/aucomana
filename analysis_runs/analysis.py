@@ -183,79 +183,69 @@ class Analysis:
         else:
             raise OSError(f"No file reactions.tsv in path {p_path}")
 
-    def get_genes_inst(self, runs: List[str] = None, species_list: List[str] = None,
-                       group: Tuple[str, int] = None) -> Dict[str, 'Genes']:
-        """ Create Genes instances in a dictionary.
+    def genes(self, run: str, species_list: List[str] = None, group: str = None) -> 'Genes':
+        """ Create Genes instance.
 
         Parameters
         ----------
-        runs: List[str], optional (default=None)
-            List of the runs ID to consider
-            If None, will be the list of all runs in the Runs path
+        run: str
+            The run ID to consider
         species_list: List[str], optional (default=None)
-            List of species to consider for instances creation
-        group: Tuple[str, int], optional (default=None)
-            The group to consider for species filtering : Tuple(name of the group, column of the
-            group in the organisms_file)
-            If None will be all the species of each run
+            List of species to consider for instance creation
+        group: str, optional (default=None)
+            The group to consider for species filtering
+            If None will be all the species in species_list
 
         Returns
         -------
-        genes_dict: Dict[str, 'Genes']
-            Dictionary of Genes instances : Dict[ID of the run, Genes instance of the run]
+        GN: Genes
+            Genes instance
         """
-        genes_dict = {}
-        if runs is None:
-            runs = os.listdir(self.path_runs)
-        for run in runs:
-            r_path = os.path.join(self.path_runs, run, "analysis", "all", "genes.tsv")
-            if os.path.exists(r_path):
-                if group is not None:
-                    grp_species_l = self.get_grp_l(run, group, species_list)
-                    genes_dict[run] = Genes(r_path, grp_species_l)
-                else:
-                    genes_dict[run] = Genes(r_path, species_list)
-        for run in runs:
-            if run in genes_dict.keys():
-                print(f"Genes instances has been created for run : {run} with group = {group}")
-        return genes_dict
+        g_path = os.path.join(self.path_runs, run, "analysis", "all", "genes.tsv")
+        if os.path.exists(g_path):
+            if group is not None:
+                grp_species_l = list(self.get_grp_set(run, group, species_list))
+                GN = Genes(g_path, grp_species_l)
+                print(f"Genes instance has been created for run : {run} with group = {group}")
+                return GN
+            else:
+                GN = Genes(g_path, species_list)
+                print(f"Genes instance has been created for run : {run}")
+                return GN
+        else:
+            raise OSError(f"No file reactions.tsv in path {g_path}")
 
-    def get_metabolites_inst(self, runs: List[str] = None, species_list: List[str] = None,
-                             group: Tuple[str, int] = None) -> Dict[str, 'Metabolites']:
-        """ Create Genes instances in a dictionary.
+    def metabolites(self, run: str, species_list: List[str] = None, group: str = None) -> 'Metabolites':
+        """ Create Metabolites instance.
 
         Parameters
         ----------
-        runs: List[str], optional (default=None)
-            List of the runs ID to consider
-            If None, will be the list of all runs in the Runs path
+        run: str
+            The runs ID to consider
         species_list: List[str], optional (default=None)
-            List of species to consider for instances creation
-        group: Tuple[str, int], optional (default=None)
-            The group to consider for species filtering : Tuple(name of the group, column of the
-            group in the organisms_file)
-            If None will be all the species of each run
+            List of species to consider for instance creation
+        group: str, optional (default=None)
+            The group to consider for species filtering
+            If None will be all the species in species_list
 
         Returns
         -------
-        metabolites_dict: Dict[str, 'Metabolites']
-            Dictionary of Genes instances : Dict[ID of the run, Metabolites instance of the run]
+        MB: Metabolites
+            Metabolites instance
         """
-        metabolites_dict = {}
-        if runs is None:
-            runs = os.listdir(self.path_runs)
-        for run in runs:
-            r_path = os.path.join(self.path_runs, run, "analysis", "all", "metabolites.tsv")
-            if os.path.exists(r_path):
-                if group is not None:
-                    grp_species_l = self.get_grp_l(run, group, species_list)
-                    metabolites_dict[run] = Metabolites(r_path, grp_species_l)
-                else:
-                    metabolites_dict[run] = Metabolites(r_path, species_list)
-        for run in runs:
-            if run in metabolites_dict.keys():
+        m_path = os.path.join(self.path_runs, run, "analysis", "all", "metabolites.tsv")
+        if os.path.exists(m_path):
+            if group is not None:
+                grp_species_l = list(self.get_grp_set(run, group, species_list))
+                MB = Metabolites(m_path, grp_species_l)
                 print(f"Metabolites instances has been created for run : {run} with group = {group}")
-        return metabolites_dict
+                return MB
+            else:
+                MB = Metabolites(m_path, species_list)
+                print(f"Metabolites instances has been created for run : {run}")
+                return MB
+        else:
+            raise OSError(f"No file reactions.tsv in path {m_path}")
 
     # ## Group comparisons and figures generation
 
