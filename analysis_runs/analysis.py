@@ -107,101 +107,81 @@ class Analysis:
 
     # ## Create instances
 
-    def get_reactions_inst(self, runs: str or List[str] = None, species_list: List[str] or List[List[str]] = None,
-                           group: str or List[str] = None, out: int or List[int] = None) -> Dict[str, 'Reactions']:
-        """ Create Reactions instances in a dictionary.
+    def reactions(self, run: str, species_list: List[str] = None, group: str = None, out: int = None) -> 'Reactions':
+        """ Create Reactions instance.
 
         Parameters
         ----------
-        runs: List[str], optional (default=None)
-            List of the runs ID to consider
-            If None, will be the list of all runs in the Runs path
+        run: str
+            The run ID to consider
         species_list: List[str], optional (default=None)
-            List of species to consider for instances creation
+            List of species to consider for instance creation
         group: str, optional (default=None)
             The group to consider for species filtering
-            If None will be all the species of each run
+            If None will be all the species in species_list
         out: int, optional (default=None)
             Number of species maximum not having the reaction for the reaction to be kept
             If None, will not filter the reactions
 
         Returns
         -------
-        reactions_dict: Dict[str, 'Reactions']
-            Dictionary of Reactions instances : Dict[ID of the run, Reactions instance of the run]
+        RXN : Reactions
+            Reactions instance
         """
-        reactions_list = []
-        if runs is None:
-            runs = os.listdir(self.path_runs)
+        r_path = os.path.join(self.path_runs, run, "analysis", "all", "reactions.tsv")
+        if os.path.exists(r_path):
+            if group is not None:
+                grp_species_l = list(self.get_grp_set(run, group, species_list))
+                RXN = Reactions(self.path_runs, self.path_study, r_path, grp_species_l, out)
+                print(f"Reactions instance has been created for run : {run} with group = {group} and out = {out}")
+                return RXN
+            else:
+                RXN = Reactions(self.path_runs, self.path_study, r_path, species_list, out)
+                print(f"Reactions instances has been created for run : {run} and out = {out}")
+                return RXN
+        else:
+            raise OSError(f"No file reactions.tsv in path {r_path}")
 
-        # Change to list
-        if type(runs) == str:
-            runs = [runs]
-        if type(species_list) == List[str]:
-            species_list = [species_list]
-        if type(group) == str:
-            group = [group]
-        if type(out) == int:
-            out = [out]
-
-        for run in runs:
-            r_path = os.path.join(self.path_runs, run, "analysis", "all", "reactions.tsv")
-            if os.path.exists(r_path):
-                if group is not None:
-                    grp_species_l = list(self.get_grp_set(run, group, species_list))
-                    reactions_list.append(Reactions(self.path_runs, self.path_study, r_path, grp_species_l, out))
-                else:
-                    reactions_list.append(Reactions(self.path_runs, self.path_study, r_path, species_list, out))
-            print(f"Reactions instances has been created for run : {run} with group = {group} and out = "
-                  f"{out}")
-        return reactions_list
-
-    def get_pathways_inst(self, runs: List[str] = None, species_list: List[str] = None,
-                          group: Tuple[str, int] = None, out: int = None,
-                          nb_rnx_px_min: int = 0) -> Dict[str, 'Pathways']:
-        """ Create Pathways instances in a dictionary.
+    def pathways(self, run: str, species_list: List[str] = None, group: str = None, out: int = None,
+                 nb_rxn_pw_min: int = 0) -> 'Pathways':
+        """ Create Pathways instance.
 
         Parameters
         ----------
-        runs: List[str], optional (default=None)
-            List of the runs ID to consider
-            If None, will be the list of all runs in the Runs path
+        run: str
+            The run ID to consider
         species_list: List[str], optional (default=None)
-            List of species to consider for instances creation
-        group: Tuple[str, int], optional (default=None)
-            The group to consider for species filtering : Tuple(name of the group, column of the
-            group in the organisms_file)
-            If None will be all the species of each run
+            List of species to consider for instance creation
+        group: str, optional (default=None)
+            The group to consider for species filtering
+            If None will be all the species in species_list
         out: int, optional (default=None)
             Number of species maximum not having the pathway for the pathway to be kept
             If None, will not filter the reactions
-        nb_rnx_px_min: int, optional (default=0)
+        nb_rxn_pw_min: int, optional (default=0)
             Minimal number of reactions in a pathway for the pathway to be kept
-            If not specified, will be 0 (=> no filter)
+            If not specified, will be 0 (<==> no filter)
 
         Returns
         -------
-        pathways_dict: Dict[str, 'Pathways']
-            Dictionary of Pathways instances : Dict[ID of the run, Pathways instance of the run]
+        PW: Pathways
+            Pathways instance
         """
-        pathways_dict = {}
-        if runs is None:
-            runs = os.listdir(self.path_runs)
-        for run in runs:
-            p_path = os.path.join(self.path_runs, run, "analysis", "all", "pathways.tsv")
-            if os.path.exists(p_path):
-                if group is not None:
-                    grp_species_l = self.get_grp_l(run, group, species_list)
-                    pathways_dict[run] = Pathways(self.path_runs, self.path_study, p_path, grp_species_l, out,
-                                                  nb_rnx_px_min)
-                else:
-                    pathways_dict[run] = Pathways(self.path_runs, self.path_study, p_path, species_list, out,
-                                                  nb_rnx_px_min)
-        for run in runs:
-            if run in pathways_dict.keys():
-                print(f"Pathways instances has been created for run : {run} with group = {group}, out = "
-                      f"{out} and minimal number of rnx in pw = {nb_rnx_px_min}")
-        return pathways_dict
+        p_path = os.path.join(self.path_runs, run, "analysis", "all", "pathways.tsv")
+        if os.path.exists(p_path):
+            if group is not None:
+                grp_species_l = list(self.get_grp_set(run, group, species_list))
+                PW = Pathways(self.path_runs, self.path_study, p_path, grp_species_l, out, nb_rxn_pw_min)
+                print(f"Pathways instance has been created for run : {run} with group = {group}, out = "
+                      f"{out} and minimal number of rnx in pw = {nb_rxn_pw_min}")
+                return PW
+            else:
+                PW = Pathways(self.path_runs, self.path_study, p_path, species_list, out, nb_rxn_pw_min)
+                print(f"Pathways instances has been created for run : {run}, out = "
+                      f"{out} and minimal number of rnx in pw = {nb_rxn_pw_min}")
+                return PW
+        else:
+            raise OSError(f"No file reactions.tsv in path {p_path}")
 
     def get_genes_inst(self, runs: List[str] = None, species_list: List[str] = None,
                        group: Tuple[str, int] = None) -> Dict[str, 'Genes']:
