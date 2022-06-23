@@ -1,6 +1,5 @@
 import os
 import unittest
-import linecache
 from analysis_runs.analysis import Analysis
 from analysis_runs.reactions import Reactions
 from analysis_runs.pathways import Pathways
@@ -123,5 +122,10 @@ class Test(unittest.TestCase):
         self.assertTrue(os.path.exists('Study_folder/output_data/renamed_id_padmet/HS.padmet'))
         self.assertTrue(os.path.exists('Study_folder/output_data/renamed_id_padmet/IAI1.padmet'))
         self.assertTrue(os.path.exists('Study_folder/output_data/renamed_id_padmet/UTI89.padmet'))
-        line = linecache.getline('Study_folder/output_data/renamed_id_padmet/HS.padmet', 53374)
+        i = 0
+        with open('Study_folder/output_data/renamed_id_padmet/HS.padmet', 'r') as f:
+            for line in f:
+                i += 1
+                if i == 53374:
+                    break
         self.assertIn('EcHS_A0002**', line)
