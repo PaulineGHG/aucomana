@@ -1,5 +1,6 @@
 import os
 import unittest
+import linecache
 from analysis_runs.analysis import Analysis
 from analysis_runs.reactions import Reactions
 from analysis_runs.pathways import Pathways
@@ -9,6 +10,7 @@ from analysis_runs.metabolites import Metabolites
 STUDY_PATH = 'Study_folder'
 RUNS_PATH = 'Runs_aucome'
 RUN = 'bact7'
+RUN2 = 'bact4'
 
 A = Analysis(RUNS_PATH, STUDY_PATH)
 
@@ -115,4 +117,11 @@ class Test(unittest.TestCase):
         self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/'
                                        'bact7_intersect_groupA_groupB_groupC.png'))
 
-    # TODO : Generate Run with renamed IDs to test rename_padmets_id method
+    def test_rename_padmet_id(self):
+        A.rename_padmet_id(RUN2)
+        self.assertTrue(os.path.exists('Study_folder/output_data/renamed_id_padmet/ec042.padmet'))
+        self.assertTrue(os.path.exists('Study_folder/output_data/renamed_id_padmet/HS.padmet'))
+        self.assertTrue(os.path.exists('Study_folder/output_data/renamed_id_padmet/IAI1.padmet'))
+        self.assertTrue(os.path.exists('Study_folder/output_data/renamed_id_padmet/UTI89.padmet'))
+        line = linecache.getline('Study_folder/output_data/renamed_id_padmet/HS.padmet', 53374)
+        self.assertIn('EcHS_A0002**', line)
