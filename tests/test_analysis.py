@@ -43,4 +43,8 @@ class Test(unittest.TestCase):
         PW = A.pathways(RUN, species_list=['IAI1', 'HS', 'sf301'], group='groupA')
         self.assertEqual(set(PW.species_list), {'IAI1', 'HS'})
         PW = A.pathways(RUN, out=1)
+        self.assertEqual(len(PW.pathways_list), 1225)
+        PW = A.pathways(RUN, nb_rxn_pw_min=3)
+        self.assertEqual(len(PW.pathways_list), 993)
+
 
