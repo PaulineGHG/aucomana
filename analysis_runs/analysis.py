@@ -249,8 +249,7 @@ class Analysis:
 
     # ## Group comparisons and figures generation
 
-    def __hist_comp(self, out_dir: str, df_comp: 'pd.DataFrame',
-                    df_grp_dict: Dict[Tuple[str, int], 'pd.DataFrame']):
+    def __hist_comp(self, out_dir: str, df_comp: 'pd.DataFrame', df_grp_dict: Dict[str, 'pd.DataFrame']):
         """Generate histogram figures for each group in df_grp_dict keys.
 
         Parameters
@@ -259,9 +258,9 @@ class Analysis:
             Path of the directory to save figures
         df_comp: pd.DataFrame
             Data Frame of the comparison between all the groups
-        df_grp_dict: Dict[Tuple[str, int], pd.DataFrame]
+        df_grp_dict: Dict[str, pd.DataFrame]
             Dictionary associating for each group, its data_frame of calculated stats
-            Dict[Tuple[name of group, column], DataFrame of the group]
+            Dict[name of group, DataFrame of the group]
 
         Save a total of the number of groups of histogram figures in out_dir path.
         """
@@ -289,7 +288,7 @@ class Analysis:
                 axs.grid(True)
                 axs.legend(bbox_to_anchor=(1.0, 1), loc='upper left')
             fig.tight_layout()
-            path_fig = os.path.join(out_dir, f"{group[0]}_hist.png")
+            path_fig = os.path.join(out_dir, f"{group}_hist.png")
             plt.savefig(path_fig)
 
     def __boxplot_comp(self, out_dir: str, df_grp_dict: Dict[str, 'pd.DataFrame']):
@@ -301,7 +300,7 @@ class Analysis:
                Path of the directory to save figures
            df_grp_dict: Dict[str, pd.DataFrame]
                Dictionary associating for each group, its data_frame of calculated stats
-               Dict[Tuple[name of group, column], DataFrame of the group]
+               Dict[name of group, DataFrame of the group]
 
            Save a boxplot figure in out_dir path.
            """
@@ -356,7 +355,7 @@ class Analysis:
         for group in groups_list:
             grp_str += group + "_"
 
-        out_dir = os.path.join("output_data", "compare_groups", f"{run}_compare_{grp_str[:-1]}")
+        out_dir = os.path.join(self.path_study, "output_data", "compare_groups", f"{run}_compare_{grp_str[:-1]}")
         if not os.path.exists(out_dir):
             os.mkdir(out_dir)
 
@@ -388,6 +387,7 @@ class Analysis:
 
             df_grp_dict[group] = df_g
             df_g.to_csv(g_res_file, sep="\t")
+            print(f"{group} stats saved to path : {g_res_file}")
 
             for calc in self.TO_CALCULATE:
                 df_comp.loc[group, calc + self.STAT[0]] = round(float(np.mean(df_g[calc])), 1)
@@ -397,6 +397,7 @@ class Analysis:
                 df_comp.loc[group, calc + self.STAT[4]] = max(df_g[calc])
 
             df_comp.to_csv(res_file, sep="\t")
+            print(f"groups stats comparisons saved to path : {res_file}")
 
         if hist:
             self.__hist_comp(out_dir, df_comp, df_grp_dict)

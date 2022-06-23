@@ -1,3 +1,4 @@
+import os
 import unittest
 from analysis_runs.analysis import Analysis
 from analysis_runs.reactions import Reactions
@@ -73,8 +74,40 @@ class Test(unittest.TestCase):
         with self.assertRaises(OSError):
             A.metabolites('run_not_existing')
 
-    def test_compare_groups(self):
-        pass
+    def test_compare_2groups(self):
+        A.compare_groups(RUN, ['group1', 'group2'], hist=True, boxplot=True)
+        self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/bact7_compare_group1_group2/'
+                                       'compare_group1_group2.tsv'))
+        self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/bact7_compare_group1_group2/'
+                                       'group1.tsv'))
+        self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/bact7_compare_group1_group2/'
+                                       'group2.tsv'))
+        self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/bact7_compare_group1_group2/'
+                                       'boxplot.png'))
+        self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/bact7_compare_group1_group2/'
+                                       'group1_hist.png'))
+        self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/bact7_compare_group1_group2/'
+                                       'group2_hist.png'))
+
+    def test_compare_3groups(self):
+        A.compare_groups(RUN, ['groupA', 'groupB', 'groupC'], hist=True, boxplot=True)
+        self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/bact7_compare_groupA_groupB_groupC/'
+                                       'compare_groupA_groupB_groupC.tsv'))
+        self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/bact7_compare_groupA_groupB_groupC/'
+                                       'groupA.tsv'))
+        self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/bact7_compare_groupA_groupB_groupC/'
+                                       'groupB.tsv'))
+        self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/bact7_compare_groupA_groupB_groupC/'
+                                       'groupC.tsv'))
+        self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/bact7_compare_groupA_groupB_groupC/'
+                                       'boxplot.png'))
+        self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/bact7_compare_groupA_groupB_groupC/'
+                                       'groupA_hist.png'))
+        self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/bact7_compare_groupA_groupB_groupC/'
+                                       'groupB_hist.png'))
+        self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/bact7_compare_groupA_groupB_groupC/'
+                                       'groupC_hist.png'))
+
 
 
 
