@@ -1,0 +1,14 @@
+2022-06-23 14:24:16 : Started OrthoFinder version 2.5.4
+Command Line: /programs/OrthoFinder/orthofinder -f test//orthology_based/0_Orthofinder_WD -t 8 -S diamond
+
+WorkingDirectory_Base: /mnt/go-docker/data/aucome_runs/test/orthology_based/0_Orthofinder_WD/OrthoFinder/Results_Jun23/WorkingDirectory/
+
+Species used: 
+0: HS.faa
+1: IAI1.faa
+2: UTI89.faa
+3: ec042.faa
+
+FN_Orthogroups: /mnt/go-docker/data/aucome_runs/test/orthology_based/0_Orthofinder_WD/OrthoFinder/Results_Jun23/WorkingDirectory/clusters_OrthoFinder_I1.5.txt_id_pairs.txt
+WorkingDirectory_Trees: /mnt/go-docker/data/aucome_runs/test/orthology_based/0_Orthofinder_WD/OrthoFinder/Results_Jun23/WorkingDirectory/
+2022-06-23 14:29:45 : OrthoFinder run completed

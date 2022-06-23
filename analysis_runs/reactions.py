@@ -248,8 +248,7 @@ class Reactions:
                             elif write_seq:
                                 o.write(line)
 
-    @classmethod
-    def get_common_reactions(cls, datas: List["Reactions"], species: str, output_file=False,
+    def get_common_reactions(self, datas: List["Reactions"], species: str, output_file=False,
                              union=False) -> Tuple[int, Set[str]]:
         """ Returns the reactions lost in common between at least 2 Reactions instance for 1
         common species
@@ -280,9 +279,9 @@ class Reactions:
         else:
             common_reactions = set.union(*set_reac_list)
         if output_file:
-            cls.nb_common_reac += 1
-            cls.__write_common_reactions_json(datas, common_reactions, species, union)
-            cls.__write_common_reactions_txt(datas, common_reactions, species, union)
+            self.nb_common_reac += 1
+            self.__write_common_reactions_json(datas, common_reactions, species, union)
+            self.__write_common_reactions_txt(datas, common_reactions, species, union)
         else:
             return len(common_reactions), common_reactions
 

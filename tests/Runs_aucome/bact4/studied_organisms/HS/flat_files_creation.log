@@ -1,0 +1,640 @@
+;; Optimization settings: safety 3, space 1, speed 1, debug 3.
+;; For a complete description of all compiler switches given the
+;; current optimization settings evaluate (EXPLAIN-COMPILER-SETTINGS).
+
+*** This Pathway Tools executable built on Fri May 21, 2021 at 17:33:57. ***
+[oot::acache-connect: Note that another Ocelot KB named NCBI-TAXONOMY already exists (#<OCELOT-FILE-KB
+                                                                                        NCBI-TAXONOMY NIL
+                                                                                        @
+                                                                                        #x1003f076902>); creating new KB named NCBI-TAXONOMY]
+[Opened acache database /programs/pathway-tools/aic-export/pathway-tools/ocelot-acache/, which contains 1 ocelot KBs]
+[Reading Pathway Tools init file "/mnt/go-docker/data/pwt_data/ptools-local/ptools-init.dat" ]
+[Scanning PGDB directories in   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/   6 total PGDBs have now been found]
+[Scanning PGDB directories in   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/registry/   6 total PGDBs have now been found]
+[Loading Ocelot KB from /programs/pathway-tools/aic-export/pgdbs/biocyc/PGDB-METADATA.ocelot
+ KB name=PGDB-METADATA, format=V1-SEXPR
+Warning: Skipping load of frame META-NIL which already exists in PGDB-METADATA
+Warning: Skipping load of frame ECOLI-0 which already exists in PGDB-METADATA
+ 0 frames loaded]
+[Scanning PGDB directories in   /programs/pathway-tools/aic-export/pgdbs/biocyc/   6 total PGDBs have now been found]
+[Loading Ocelot KB from /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/kb/hsbase.ocelot
+ KB name=HSBASE, format=V4-FASL
+Warning: Skipping load of frame TEMPLATE-COUNTERS which already exists in HSBASE
+ 24774 frames loaded]
+
+[Dumping data for HS]
+
+[Creating attribute-value file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/species.dat]
+[Creating attribute-value file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/enzrxns.dat]
+[Creating attribute-value file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/genes.dat]
+[Creating attribute-value file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/pathways.dat]
+[Creating attribute-value file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/proteins.dat]
+[Creating attribute-value file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/rnas.dat]
+[Creating attribute-value file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/protein-features.dat]
+[Creating attribute-value file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/protligandcplxes.dat]
+[Creating attribute-value file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/regulation.dat]
+[Creating attribute-value file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/reactions.dat]
+[Creating attribute-value file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/compounds.dat]
+;;; Error: No value is stored in the GROUP-INTERNALS slot of |X-HEP-X:X|  (from glycan-chemical-formula for |L-Heptoses| )
+;;; Error: No value is stored in the GROUP-INTERNALS slot of |X-HEP-X:X|  (from glycan-chemical-formula for |D-Heptoses| )
+;;; Error: No value is stored in the GROUP-INTERNALS slot of |X-HEP-X:X|  (from glycan-chemical-formula for |Heptoses| )
+Warning: implement the more general atom-is-first-p case for no
+         implicit-h-p, for stereo-center
+         #<COORD-ATOM  0 C · Formate-acetyltrans-glycine-radical @
+           #x1007b104ad2>
+Warning: Chiral C atom #<COORD-ATOM 14 C NCCS @ #x10076e06a92> does not
+         have only single bonds, but instead:
+         (#<BOND C(19) = C(14) @ #x10076e08382>
+          #<BOND C(14) - C(17) @ #x10076e08292>
+          #<BOND C(14) -v C(3) @ #x10076e081a2>)
+Warning: Chiral C atom
+         #<COORD-ATOM  5 C Deoxy-GlcA-Man-Xanthan-Backbone @
+           #x10075f46002>
+         does not have only single bonds, but instead:
+         (#<BOND C(5) -v C(11) @ #x10075f47142>
+          #<BOND O(24) - C(5) @ #x10075f470f2>
+          #<BOND C(1) = C(5) @ #x10075f46fb2>)
+Warning: Chiral C atom
+         #<COORD-ATOM  2 C Delta-GalA-rhamnogalacturonan @
+           #x10076cef6c2>
+         does not have only single bonds, but instead:
+         (#<BOND O(11) - C(2) @ #x10076cf0002>
+          #<BOND C(2) = C(0) @ #x10076ceff62>
+          #<BOND C(2) -^ C(4) @ #x10076cefd32>)
+[Creating attribute-value file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/classes.dat]
+[Creating attribute-value file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/pubs.dat]
+[Creating attribute-value file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/regulons.dat]
+[Creating attribute-value file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/transunits.dat]
+[Creating attribute-value file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/promoters.dat]
+[Creating attribute-value file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/terminators.dat]
+[Creating attribute-value file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/dnabindsites.dat]
+[Creating tabular file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/enzymes.col]
+[Creating tabular file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/genes.col]
+[Creating tabular file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/pathways.col]
+[Creating tabular file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/protcplxs.col]
+[Creating tabular file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/transporters.col]
+[Loading Ocelot KB from ptools:misc;biopax-level2.ocelot
+ KB name=BIOPAX, format=NIL
+ 105 frames loaded]
+[Loading Ocelot KB from /programs/pathway-tools/aic-export/pathway-tools/ptools/25.0/misc/biopax-level2.ocelot
+ KB name=BIOPAX, format=NIL
+ 105 frames loaded]
+[Copying slotunits into biopax0]
+[Copied 67 slotunits]
+[Copying 38 classes...      classes copied]
+[Copying 0 instances...    instances copied]
+[Wrote file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/biopax-level2.owl]
+[Loading Ocelot KB from ptools:misc;biopax-level3.ocelot
+ KB name=BIOPAX, format=V4-FASL
+Warning: file #P"ptools:misc;biopax-level3.ocelot" compiled with
+         outdated compiler; recompilation strongly suggested
+ 161 frames loaded]
+[Copying slotunits into biopax38235]
+[Copied 97 slotunits]
+[Copying 64 classes...      classes copied]
+[Copying 0 instances...    instances copied]
+TTTTTTTTTTTTT
+[Wrote file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/biopax-level3.owl]
+[Creating /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/protseq.fsa]
+[Wrote 4384 protein sequences]
+[Creating /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/dnaseq.fsa]
+Creating XML (SBML) file for HS
+These polymer instantiation candidates for B-KETOACYL-ACP with monomer-count = 1 have the same chemical formulas: (|4-Methyl-3-Oxopentanoyl-ACP|
+                                                                                                                   |3-oxo-hexanoyl-ACPs|)
+These polymer instantiation candidates for B-KETOACYL-ACP with monomer-count = 2 have the same chemical formulas: (|3-Oxo-octanoyl-ACPs|
+                                                                                                                   |6-Methyl-3-Oxoheptanoyl-ACP|)
+These polymer instantiation candidates for OH-ACYL-ACP with monomer-count = 1 have the same chemical formulas: (|R-3-hydroxyhexanoyl-ACPs|
+                                                                                                                |4-Methyl-3-Hydroxypentanoyl-ACP|)
+These polymer instantiation candidates for B-KETOACYL-ACP with monomer-count = 1 have the same chemical formulas: (|4-Methyl-3-Oxopentanoyl-ACP|
+                                                                                                                   |3-oxo-hexanoyl-ACPs|)
+These polymer instantiation candidates for TRANS-D2-ENOYL-ACP with monomer-count = 1 have the same chemical formulas: (|4-Methylpent-2-enoyl-ACP|
+                                                                                                                       |Hex-2-enoyl-ACPs|)
+These polymer instantiation candidates for TRANS-D2-ENOYL-ACP with monomer-count = 1 have the same chemical formulas: (|4-Methylpent-2-enoyl-ACP|
+                                                                                                                       |Hex-2-enoyl-ACPs|)
+These polymer instantiation candidates for OH-ACYL-ACP with monomer-count = 1 have the same chemical formulas: (|R-3-hydroxyhexanoyl-ACPs|
+                                                                                                                |4-Methyl-3-Hydroxypentanoyl-ACP|)
+These polymer instantiation candidates for TRANS-D2-ENOYL-ACP with monomer-count = 1 have the same chemical formulas: (|4-Methylpent-2-enoyl-ACP|
+                                                                                                                       |Hex-2-enoyl-ACPs|)
+These polymer instantiation candidates for B-KETOACYL-ACP with monomer-count = 3 have the same chemical formulas: (|3-oxo-decanoyl-ACPs|
+                                                                                                                   |8-Methyl-3-Oxononanoyl-ACPs|)
+These polymer instantiation candidates for OH-ACYL-ACP with monomer-count = 2 have the same chemical formulas: (|3-Hydroxy-octanoyl-ACPs|
+                                                                                                                |3-Hydroxy-6-Methylheptanoyl-ACPs|)
+These polymer instantiation candidates for B-KETOACYL-ACP with monomer-count = 2 have the same chemical formulas: (|3-Oxo-octanoyl-ACPs|
+                                                                                                                   |6-Methyl-3-Oxoheptanoyl-ACP|)
+These polymer instantiation candidates for TRANS-D2-ENOYL-ACP with monomer-count = 2 have the same chemical formulas: (|2-Octenoyl-ACPs|
+                                                                                                                       |6-Methyl-Hept-2-enoyl-ACPs|)
+These polymer instantiation candidates for TRANS-D2-ENOYL-ACP with monomer-count = 2 have the same chemical formulas: (|2-Octenoyl-ACPs|
+                                                                                                                       |6-Methyl-Hept-2-enoyl-ACPs|)
+These polymer instantiation candidates for OH-ACYL-ACP with monomer-count = 2 have the same chemical formulas: (|3-Hydroxy-octanoyl-ACPs|
+                                                                                                                |3-Hydroxy-6-Methylheptanoyl-ACPs|)
+These polymer instantiation candidates for TRANS-D2-ENOYL-ACP with monomer-count = 2 have the same chemical formulas: (|2-Octenoyl-ACPs|
+                                                                                                                       |6-Methyl-Hept-2-enoyl-ACPs|)
+These polymer instantiation candidates for B-KETOACYL-ACP with monomer-count = 4 have the same chemical formulas: (|10-Methyl-3-Oxoundecanoyl-ACPs|
+                                                                                                                   |3-oxo-dodecanoyl-ACPs|)
+These polymer instantiation candidates for OH-ACYL-ACP with monomer-count = 3 have the same chemical formulas: (|Beta-hydroxydecanoyl-ACPs|
+                                                                                                                |3-Hydroxy-8-Methylnonanoyl-ACPs|)
+These polymer instantiation candidates for B-KETOACYL-ACP with monomer-count = 3 have the same chemical formulas: (|3-oxo-decanoyl-ACPs|
+                                                                                                                   |8-Methyl-3-Oxononanoyl-ACPs|)
+These polymer instantiation candidates for TRANS-D2-ENOYL-ACP with monomer-count = 3 have the same chemical formulas: (|Trans-D2-decenoyl-ACPs|
+                                                                                                                       |8-Methyl-Non-2-enoyl-ACPs|)
+These polymer instantiation candidates for TRANS-D2-ENOYL-ACP with monomer-count = 3 have the same chemical formulas: (|Trans-D2-decenoyl-ACPs|
+                                                                                                                       |8-Methyl-Non-2-enoyl-ACPs|)
+These polymer instantiation candidates for OH-ACYL-ACP with monomer-count = 3 have the same chemical formulas: (|Beta-hydroxydecanoyl-ACPs|
+                                                                                                                |3-Hydroxy-8-Methylnonanoyl-ACPs|)
+These polymer instantiation candidates for TRANS-D2-ENOYL-ACP with monomer-count = 3 have the same chemical formulas: (|Trans-D2-decenoyl-ACPs|
+                                                                                                                       |8-Methyl-Non-2-enoyl-ACPs|)
+These polymer instantiation candidates for B-KETOACYL-ACP with monomer-count = 5 have the same chemical formulas: (|12-Methyl-3-Oxotridecanoyl-ACPs|
+                                                                                                                   |3-oxo-myristoyl-ACPs|)
+These polymer instantiation candidates for OH-ACYL-ACP with monomer-count = 4 have the same chemical formulas: (|R-3-hydroxydodecanoyl-ACPs|
+                                                                                                                |3-Hydroxy-10-Methylundecanoyl-ACPs|)
+These polymer instantiation candidates for B-KETOACYL-ACP with monomer-count = 4 have the same chemical formulas: (|10-Methyl-3-Oxoundecanoyl-ACPs|
+                                                                                                                   |3-oxo-dodecanoyl-ACPs|)
+These polymer instantiation candidates for TRANS-D2-ENOYL-ACP with monomer-count = 4 have the same chemical formulas: (|Dodec-2-enoyl-ACPs|
+                                                                                                                       |10-Methyl-Undec-2-enoyl-ACPs|)
+These polymer instantiation candidates for TRANS-D2-ENOYL-ACP with monomer-count = 4 have the same chemical formulas: (|Dodec-2-enoyl-ACPs|
+                                                                                                                       |10-Methyl-Undec-2-enoyl-ACPs|)
+These polymer instantiation candidates for OH-ACYL-ACP with monomer-count = 4 have the same chemical formulas: (|R-3-hydroxydodecanoyl-ACPs|
+                                                                                                                |3-Hydroxy-10-Methylundecanoyl-ACPs|)
+These polymer instantiation candidates for TRANS-D2-ENOYL-ACP with monomer-count = 4 have the same chemical formulas: (|Dodec-2-enoyl-ACPs|
+                                                                                                                       |10-Methyl-Undec-2-enoyl-ACPs|)
+These polymer instantiation candidates for B-KETOACYL-ACP with monomer-count = 6 have the same chemical formulas: (|3-oxo-palmitoyl-ACPs|
+                                                                                                                   |14-Methyl-3-Oxopentadecanoyl-ACPs|)
+These polymer instantiation candidates for OH-ACYL-ACP with monomer-count = 5 have the same chemical formulas: (|R-3-hydroxymyristoyl-ACPs|
+                                                                                                                |3-Hydroxy-12-Methyltridecanoyl-ACPs|)
+These polymer instantiation candidates for B-KETOACYL-ACP with monomer-count = 5 have the same chemical formulas: (|12-Methyl-3-Oxotridecanoyl-ACPs|
+                                                                                                                   |3-oxo-myristoyl-ACPs|)
+These polymer instantiation candidates for TRANS-D2-ENOYL-ACP with monomer-count = 5 have the same chemical formulas: (|12-Methyltridec-2-enoyl-ACPs|
+                                                                                                                       |Tetradec-2-enoyl-ACPs|)
+These polymer instantiation candidates for TRANS-D2-ENOYL-ACP with monomer-count = 5 have the same chemical formulas: (|12-Methyltridec-2-enoyl-ACPs|
+                                                                                                                       |Tetradec-2-enoyl-ACPs|)
+These polymer instantiation candidates for OH-ACYL-ACP with monomer-count = 5 have the same chemical formulas: (|R-3-hydroxymyristoyl-ACPs|
+                                                                                                                |3-Hydroxy-12-Methyltridecanoyl-ACPs|)
+These polymer instantiation candidates for TRANS-D2-ENOYL-ACP with monomer-count = 5 have the same chemical formulas: (|12-Methyltridec-2-enoyl-ACPs|
+                                                                                                                       |Tetradec-2-enoyl-ACPs|)
+These polymer instantiation candidates for OH-ACYL-ACP with monomer-count = 6 have the same chemical formulas: (R-3-HYDROXYPALMITOYL-ACP
+                                                                                                                |R-3-Hydroxypalmitoyl-ACPs|
+                                                                                                                |3-Hydroxy-14-Methylpentadecanoyl-ACPs|)
+These polymer instantiation candidates for B-KETOACYL-ACP with monomer-count = 6 have the same chemical formulas: (|3-oxo-palmitoyl-ACPs|
+                                                                                                                   |14-Methyl-3-Oxopentadecanoyl-ACPs|)
+These polymer instantiation candidates for TRANS-D2-ENOYL-ACP with monomer-count = 6 have the same chemical formulas: (|2-Hexadecenoyl-ACPs|
+                                                                                                                       |14-Methyl-Pentadec-2-enoyl-ACPs|)
+These polymer instantiation candidates for TRANS-D2-ENOYL-ACP with monomer-count = 6 have the same chemical formulas: (|2-Hexadecenoyl-ACPs|
+                                                                                                                       |14-Methyl-Pentadec-2-enoyl-ACPs|)
+These polymer instantiation candidates for OH-ACYL-ACP with monomer-count = 6 have the same chemical formulas: (R-3-HYDROXYPALMITOYL-ACP
+                                                                                                                |R-3-Hydroxypalmitoyl-ACPs|
+                                                                                                                |3-Hydroxy-14-Methylpentadecanoyl-ACPs|)
+These polymer instantiation candidates for TRANS-D2-ENOYL-ACP with monomer-count = 6 have the same chemical formulas: (|2-Hexadecenoyl-ACPs|
+                                                                                                                       |14-Methyl-Pentadec-2-enoyl-ACPs|)
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+;;; Warning: Reaction #S(INSTANTIATED-RXN :BASE-RXN #<"RXN0-6373" instance frame in HSBASE[F]
+                                                      @
+                                                      #x1007498e242>
+                                          :EPHEMERAL-ID |RXN0-6373-Glucopyranose/UBIQUINONE-8//GLC-D-LACTONE/CPD-9956.51.|
+                                          :LEFT-CPD-INSTANCES (#<"Glucopyranose" class frame in HSBASE[F]
+                                                                 @
+                                                                 #x10075635bd2>
+                                                               #<"UBIQUINONE-8" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x100756ab722>)
+                                          :RIGHT-CPD-INSTANCES (#<"GLC-D-LACTONE" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x10075637452>
+                                                                #<"CPD-9956" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x100756ab702>)
+                                          :LEFT-CPD-LOCS (CCO-OUT
+                                                          CCO-PM-BAC-NEG)
+                                          :RIGHT-CPD-LOCS (CCO-OUT
+                                                           CCO-PM-BAC-NEG)
+                                          :LEFT-STOICHS (1 1)
+                                          :RIGHT-STOICHS (1
+                                                          1)) has more than one unresolved compartment, namely: (CCO-OUT
+                                                                                                                 CCO-PM-BAC-NEG)  Code fix needed, or curation ?
+;;; Warning: Reaction #S(INSTANTIATED-RXN :BASE-RXN #<"RXN0-6373" instance frame in HSBASE[F]
+                                                      @
+                                                      #x1007498e242>
+                                          :EPHEMERAL-ID RXN0-6373-ALPHA-GLUCOSE/UBIQUINONE-8//GLC-D-LACTONE/CPD-9956.51.
+                                          :LEFT-CPD-INSTANCES (#<"ALPHA-GLUCOSE" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x1007563be12>
+                                                               #<"UBIQUINONE-8" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x100756ab722>)
+                                          :RIGHT-CPD-INSTANCES (#<"GLC-D-LACTONE" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x10075637452>
+                                                                #<"CPD-9956" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x100756ab702>)
+                                          :LEFT-CPD-LOCS (CCO-OUT
+                                                          CCO-PM-BAC-NEG)
+                                          :RIGHT-CPD-LOCS (CCO-OUT
+                                                           CCO-PM-BAC-NEG)
+                                          :LEFT-STOICHS (1 1)
+                                          :RIGHT-STOICHS (1
+                                                          1)) has more than one unresolved compartment, namely: (CCO-OUT
+                                                                                                                 CCO-PM-BAC-NEG)  Code fix needed, or curation ?
+;;; Warning: Reaction #S(INSTANTIATED-RXN :BASE-RXN #<"RXN0-6373" instance frame in HSBASE[F]
+                                                      @
+                                                      #x1007498e242>
+                                          :EPHEMERAL-ID RXN0-6373-GLC/UBIQUINONE-8//GLC-D-LACTONE/CPD-9956.41.
+                                          :LEFT-CPD-INSTANCES (#<"GLC" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x1007563bdf2>
+                                                               #<"UBIQUINONE-8" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x100756ab722>)
+                                          :RIGHT-CPD-INSTANCES (#<"GLC-D-LACTONE" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x10075637452>
+                                                                #<"CPD-9956" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x100756ab702>)
+                                          :LEFT-CPD-LOCS (CCO-OUT
+                                                          CCO-PM-BAC-NEG)
+                                          :RIGHT-CPD-LOCS (CCO-OUT
+                                                           CCO-PM-BAC-NEG)
+                                          :LEFT-STOICHS (1 1)
+                                          :RIGHT-STOICHS (1
+                                                          1)) has more than one unresolved compartment, namely: (CCO-OUT
+                                                                                                                 CCO-PM-BAC-NEG)  Code fix needed, or curation ?
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+Warning: Compound CPD-9728 does not exist in the HS PGDB.  Please
+         export from MetaCyc, for ETR instantiation.
+;;; Warning: Reaction #S(INSTANTIATED-RXN :BASE-RXN #<"RXN0-6373" instance frame in HSBASE[F]
+                                                      @
+                                                      #x1007498e242>
+                                          :EPHEMERAL-ID |RXN0-6373-Glucopyranose/UBIQUINONE-8//GLC-D-LACTONE/CPD-9956.51.|
+                                          :LEFT-CPD-INSTANCES (#<"Glucopyranose" class frame in HSBASE[F]
+                                                                 @
+                                                                 #x10075635bd2>
+                                                               #<"UBIQUINONE-8" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x100756ab722>)
+                                          :RIGHT-CPD-INSTANCES (#<"GLC-D-LACTONE" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x10075637452>
+                                                                #<"CPD-9956" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x100756ab702>)
+                                          :LEFT-CPD-LOCS (CCO-OUT
+                                                          CCO-PM-BAC-NEG)
+                                          :RIGHT-CPD-LOCS (CCO-OUT
+                                                           CCO-PM-BAC-NEG)
+                                          :LEFT-STOICHS (1 1)
+                                          :RIGHT-STOICHS (1
+                                                          1)) has more than one unresolved compartment, namely: (CCO-OUT
+                                                                                                                 CCO-PM-BAC-NEG)  Code fix needed, or curation ?
+;;; Warning: Reaction #S(INSTANTIATED-RXN :BASE-RXN #<"RXN0-6373" instance frame in HSBASE[F]
+                                                      @
+                                                      #x1007498e242>
+                                          :EPHEMERAL-ID RXN0-6373-ALPHA-GLUCOSE/UBIQUINONE-8//GLC-D-LACTONE/CPD-9956.51.
+                                          :LEFT-CPD-INSTANCES (#<"ALPHA-GLUCOSE" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x1007563be12>
+                                                               #<"UBIQUINONE-8" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x100756ab722>)
+                                          :RIGHT-CPD-INSTANCES (#<"GLC-D-LACTONE" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x10075637452>
+                                                                #<"CPD-9956" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x100756ab702>)
+                                          :LEFT-CPD-LOCS (CCO-OUT
+                                                          CCO-PM-BAC-NEG)
+                                          :RIGHT-CPD-LOCS (CCO-OUT
+                                                           CCO-PM-BAC-NEG)
+                                          :LEFT-STOICHS (1 1)
+                                          :RIGHT-STOICHS (1
+                                                          1)) has more than one unresolved compartment, namely: (CCO-OUT
+                                                                                                                 CCO-PM-BAC-NEG)  Code fix needed, or curation ?
+;;; Warning: Reaction #S(INSTANTIATED-RXN :BASE-RXN #<"RXN0-6373" instance frame in HSBASE[F]
+                                                      @
+                                                      #x1007498e242>
+                                          :EPHEMERAL-ID RXN0-6373-GLC/UBIQUINONE-8//GLC-D-LACTONE/CPD-9956.41.
+                                          :LEFT-CPD-INSTANCES (#<"GLC" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x1007563bdf2>
+                                                               #<"UBIQUINONE-8" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x100756ab722>)
+                                          :RIGHT-CPD-INSTANCES (#<"GLC-D-LACTONE" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x10075637452>
+                                                                #<"CPD-9956" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x100756ab702>)
+                                          :LEFT-CPD-LOCS (CCO-OUT
+                                                          CCO-PM-BAC-NEG)
+                                          :RIGHT-CPD-LOCS (CCO-OUT
+                                                           CCO-PM-BAC-NEG)
+                                          :LEFT-STOICHS (1 1)
+                                          :RIGHT-STOICHS (1
+                                                          1)) has more than one unresolved compartment, namely: (CCO-OUT
+                                                                                                                 CCO-PM-BAC-NEG)  Code fix needed, or curation ?
+;;; Warning: Reaction #S(INSTANTIATED-RXN :BASE-RXN #<"RXN0-5330" instance frame in HSBASE[F]
+                                                      @
+                                                      #x10075639352>
+                                          :EPHEMERAL-ID RXN0-5330-UBIQUINONE-8/NADH/PROTON//CPD-9956/NAD.39.
+                                          :LEFT-CPD-INSTANCES (#<"UBIQUINONE-8" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x100756ab722>
+                                                               #<"NADH" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x10075635672>
+                                                               #<"PROTON" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x10075630d92>)
+                                          :RIGHT-CPD-INSTANCES (#<"CPD-9956" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x100756ab702>
+                                                                #<"NAD" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x100756356b2>)
+                                          :LEFT-CPD-LOCS (CCO-OUT-CCO-IN
+                                                          CCO-IN
+                                                          CCO-IN)
+                                          :RIGHT-CPD-LOCS (CCO-OUT-CCO-IN
+                                                           CCO-IN)
+                                          :LEFT-STOICHS (1 1 1)
+                                          :RIGHT-STOICHS (1
+                                                          1)) has more than one unresolved compartment, namely: (CCO-OUT-CCO-IN
+                                                                                                                 CCO-IN)  Code fix needed, or curation ?
+;;; Warning: Reaction #<"RXN-15740" instance frame in HSBASE[F] @
+                        #x100756392d2> has more than one unresolved compartment, namely: (CCO-CYTOSOL
+                                                                                          CCO-IN)  Code fix needed, or curation ?
+;;; Warning: Reaction #<"R601-RXN" instance frame in HSBASE[F] @
+                        #x1007502e592> has more than one unresolved compartment, namely: (CCO-CYTOSOL
+                                                                                          CCO-IN)  Code fix needed, or curation ?
+;;; Warning: Reaction #S(INSTANTIATED-RXN :BASE-RXN #<"MALATE-DEHYDROGENASE-ACCEPTOR-RXN" instance frame in HSBASE[F]
+                                                      @
+                                                      #x10075636a72>
+                                          :EPHEMERAL-ID MALATE-DEHYDROGENASE-ACCEPTOR-RXN-MAL/UBIQUINONE-8//OXALACETIC_ACID/CPD-9956.43.
+                                          :LEFT-CPD-INSTANCES (#<"MAL" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x100756adc62>
+                                                               #<"UBIQUINONE-8" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x100756ab722>)
+                                          :RIGHT-CPD-INSTANCES (#<"OXALACETIC_ACID" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x10075631152>
+                                                                #<"CPD-9956" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x100756ab702>)
+                                          :LEFT-CPD-LOCS (CCO-IN
+                                                          CCO-OUT-CCO-IN)
+                                          :RIGHT-CPD-LOCS (CCO-IN
+                                                           CCO-OUT-CCO-IN)
+                                          :LEFT-STOICHS (1 1)
+                                          :RIGHT-STOICHS (1
+                                                          1)) has more than one unresolved compartment, namely: (CCO-IN
+                                                                                                                 CCO-OUT-CCO-IN)  Code fix needed, or curation ?
+;;; Warning: Reaction #<"DIMESULFREDUCT-RXN" instance frame in HSBASE[F]
+                        @
+                        #x10074c6da62> has more than one unresolved compartment, namely: (CCO-CYTOSOL
+                                                                                          CCO-OUT)  Code fix needed, or curation ?
+;;; Warning: Reaction #S(INSTANTIATED-RXN :BASE-RXN #<"SUCCINATE-DEHYDROGENASE-UBIQUINONE-RXN" instance frame in HSBASE[F]
+                                                      @
+                                                      #x10075639392>
+                                          :EPHEMERAL-ID SUCCINATE-DEHYDROGENASE-UBIQUINONE-RXN-SUC/UBIQUINONE-8//FUM/CPD-9956.31.
+                                          :LEFT-CPD-INSTANCES (#<"SUC" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x10075632672>
+                                                               #<"UBIQUINONE-8" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x100756ab722>)
+                                          :RIGHT-CPD-INSTANCES (#<"FUM" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x100756335f2>
+                                                                #<"CPD-9956" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x100756ab702>)
+                                          :LEFT-CPD-LOCS (CCO-IN
+                                                          CCO-OUT-CCO-IN)
+                                          :RIGHT-CPD-LOCS (CCO-IN
+                                                           CCO-OUT-CCO-IN)
+                                          :LEFT-STOICHS (1 1)
+                                          :RIGHT-STOICHS (1
+                                                          1)) has more than one unresolved compartment, namely: (CCO-IN
+                                                                                                                 CCO-OUT-CCO-IN)  Code fix needed, or curation ?
+;;; Warning: Reaction #S(INSTANTIATED-RXN :BASE-RXN #<"RXN-14971" instance frame in HSBASE[F]
+                                                      @
+                                                      #x10075631b72>
+                                          :EPHEMERAL-ID RXN-14971-SUC/UBIQUINONE-8//FUM/CPD-9956.31.
+                                          :LEFT-CPD-INSTANCES (#<"SUC" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x10075632672>
+                                                               #<"UBIQUINONE-8" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x100756ab722>)
+                                          :RIGHT-CPD-INSTANCES (#<"FUM" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x100756335f2>
+                                                                #<"CPD-9956" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x100756ab702>)
+                                          :LEFT-CPD-LOCS (CCO-IN
+                                                          CCO-OUT-CCO-IN)
+                                          :RIGHT-CPD-LOCS (CCO-IN
+                                                           CCO-OUT-CCO-IN)
+                                          :LEFT-STOICHS (1 1)
+                                          :RIGHT-STOICHS (1
+                                                          1)) has more than one unresolved compartment, namely: (CCO-IN
+                                                                                                                 CCO-OUT-CCO-IN)  Code fix needed, or curation ?
+;;; Warning: Reaction #<"RXN0-6259" instance frame in HSBASE[F] @
+                        #x10075639252> has more than one unresolved compartment, namely: (CCO-CYTOSOL
+                                                                                          CCO-IN)  Code fix needed, or curation ?
+;;; Warning: Reaction #S(INSTANTIATED-RXN :BASE-RXN #<"L-LACTDEHYDROGFMN-RXN" instance frame in HSBASE[F]
+                                                      @
+                                                      #x10075636a32>
+                                          :EPHEMERAL-ID L-LACTDEHYDROGFMN-RXN-L-LACTATE/UBIQUINONE-8//PYRUVATE/CPD-9956.42.
+                                          :LEFT-CPD-INSTANCES (#<"L-LACTATE" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x100756380f2>
+                                                               #<"UBIQUINONE-8" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x100756ab722>)
+                                          :RIGHT-CPD-INSTANCES (#<"PYRUVATE" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x1007498c362>
+                                                                #<"CPD-9956" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x100756ab702>)
+                                          :LEFT-CPD-LOCS (CCO-IN
+                                                          CCO-OUT-CCO-IN)
+                                          :RIGHT-CPD-LOCS (CCO-IN
+                                                           CCO-OUT-CCO-IN)
+                                          :LEFT-STOICHS (1 1)
+                                          :RIGHT-STOICHS (1
+                                                          1)) has more than one unresolved compartment, namely: (CCO-IN
+                                                                                                                 CCO-OUT-CCO-IN)  Code fix needed, or curation ?
+;;; Warning: Reaction #S(INSTANTIATED-RXN :BASE-RXN #<"RXN-14903" instance frame in HSBASE[F]
+                                                      @
+                                                      #x10075636a52>
+                                          :EPHEMERAL-ID RXN-14903-PRO/UBIQUINONE-8//L-DELTA1-PYRROLINE_5-CARBOXYLATE/CPD-9956/PROTON.67.
+                                          :LEFT-CPD-INSTANCES (#<"PRO" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x10075635b72>
+                                                               #<"UBIQUINONE-8" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x100756ab722>)
+                                          :RIGHT-CPD-INSTANCES (#<"L-DELTA1-PYRROLINE_5-CARBOXYLATE" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x10075635692>
+                                                                #<"CPD-9956" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x100756ab702>
+                                                                #<"PROTON" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x10075630d92>)
+                                          :LEFT-CPD-LOCS (CCO-IN
+                                                          CCO-OUT-CCO-IN)
+                                          :RIGHT-CPD-LOCS (CCO-IN
+                                                           CCO-OUT-CCO-IN
+                                                           CCO-IN)
+                                          :LEFT-STOICHS (1 1)
+                                          :RIGHT-STOICHS (1
+                                                          1
+                                                          1)) has more than one unresolved compartment, namely: (CCO-IN
+                                                                                                                 CCO-OUT-CCO-IN)  Code fix needed, or curation ?
+;;; Warning: Reaction #S(INSTANTIATED-RXN :BASE-RXN #<"RXN0-7008" instance frame in HSBASE[F]
+                                                      @
+                                                      #x10075639312>
+                                          :EPHEMERAL-ID RXN0-7008-PRO/UBIQUINONE-8//L-DELTA1-PYRROLINE_5-CARBOXYLATE/CPD-9956/PROTON.67.
+                                          :LEFT-CPD-INSTANCES (#<"PRO" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x10075635b72>
+                                                               #<"UBIQUINONE-8" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x100756ab722>)
+                                          :RIGHT-CPD-INSTANCES (#<"L-DELTA1-PYRROLINE_5-CARBOXYLATE" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x10075635692>
+                                                                #<"CPD-9956" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x100756ab702>
+                                                                #<"PROTON" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x10075630d92>)
+                                          :LEFT-CPD-LOCS (CCO-IN
+                                                          CCO-OUT-CCO-IN)
+                                          :RIGHT-CPD-LOCS (CCO-IN
+                                                           CCO-OUT-CCO-IN
+                                                           CCO-IN)
+                                          :LEFT-STOICHS (1 1)
+                                          :RIGHT-STOICHS (1
+                                                          1
+                                                          1)) has more than one unresolved compartment, namely: (CCO-IN
+                                                                                                                 CCO-OUT-CCO-IN)  Code fix needed, or curation ?
+;;; Warning: Reaction #S(INSTANTIATED-RXN :BASE-RXN #<"RXN-18584" instance frame in HSBASE[F]
+                                                      @
+                                                      #x1007502e5b2>
+                                          :EPHEMERAL-ID |RXN-18584-Oxidized-NapC-proteins/CPD-9956//Reduced-NapC-proteins/UBIQUINONE-8/PROTON.75.|
+                                          :LEFT-CPD-INSTANCES (#<"Oxidized-NapC-proteins" class frame in HSBASE[F]
+                                                                 @
+                                                                 #x1007569d012>
+                                                               #<"CPD-9956" instance frame in HSBASE[F]
+                                                                 @
+                                                                 #x100756ab702>)
+                                          :RIGHT-CPD-INSTANCES (#<"Reduced-NapC-proteins" class frame in HSBASE[F]
+                                                                  @
+                                                                  #x1007569cfe2>
+                                                                #<"UBIQUINONE-8" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x100756ab722>
+                                                                #<"PROTON" instance frame in HSBASE[F]
+                                                                  @
+                                                                  #x10075630d92>)
+                                          :LEFT-CPD-LOCS (CCO-OUT
+                                                          CCO-OUT-CCO-IN)
+                                          :RIGHT-CPD-LOCS (CCO-OUT
+                                                           CCO-OUT-CCO-IN
+                                                           CCO-OUT)
+                                          :LEFT-STOICHS (2 1)
+                                          :RIGHT-STOICHS (2
+                                                          1
+                                                          2)) has more than one unresolved compartment, namely: (CCO-OUT
+                                                                                                                 CCO-OUT-CCO-IN)  Code fix needed, or curation ?
+
+Number of entries of each object type:
+listOfUnitDefinitions: 1
+listOfCompartments: 5
+listOfSpecies: 1856
+listOfReactions: 1897
+listOfGeneProducts: 1064
+[Creating /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/reaction-links.dat]
+[Creating /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/compound-links.dat]
+[Creating /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/pathway-links.dat]
+[Creating /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/gene-links.dat]
+[Creating /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/protein-links.dat]
+====== SCIP, package: #<The SCIP
+                        package>, #+-scip: SCIP, (fboundp 'load-scip-lib-at-execution-time): #<Function LOAD-SCIP-LIB-AT-EXECUTION-TIME>.
+Loading SCIP Library at Start Up (Runtime?: PTOOLS-RUNTIME)...
+Loading scip lib from scip-interface: /programs/pathway-tools/aic-export/pathway-tools/ptools/25.0/exe/libScipAll.so
+Opening Navigator window.

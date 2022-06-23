@@ -1,0 +1,27 @@
+Build done: 4
+Species: HS, ec042, IAI1, UTI89
+
+------------ Species: HS
+PGDB build done.
+Number of warning: 99. More information in test//studied_organisms/HS/pathologic.log.
+PGDB contains 4542 genes, 4390 polypeptides, 357 base pathways, 1956 reactions, 1393 compounds
+------------
+
+------------ Species: ec042
+PGDB build done.
+Number of warning: 49. More information in test//studied_organisms/ec042/pathologic.log.
+PGDB contains 5009 genes, 4924 polypeptides, 355 base pathways, 1957 reactions, 1403 compounds
+------------
+
+------------ Species: IAI1
+PGDB build done.
+Number of warning: 97. More information in test//studied_organisms/IAI1/pathologic.log.
+PGDB contains 4551 genes, 4360 polypeptides, 379 base pathways, 2094 reactions, 1443 compounds
+------------
+
+------------ Species: UTI89
+PGDB build done.
+Number of warning: 97. More information in test//studied_organisms/UTI89/pathologic.log.
+PGDB contains 5321 genes, 5217 polypeptides, 380 base pathways, 2058 reactions, 1457 compounds
+------------
+

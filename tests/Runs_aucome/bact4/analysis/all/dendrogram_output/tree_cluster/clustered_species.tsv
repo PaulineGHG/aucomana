@@ -1,0 +1,8 @@
+	UTI89	IAI1	HS	ec042
+cluster_0	True	False	False	False
+cluster_1	False	True	False	False
+cluster_2	False	False	True	False
+cluster_3	False	False	False	True
+cluster_4	False	True	True	False
+cluster_5	True	False	False	True
+cluster_6	True	True	True	True

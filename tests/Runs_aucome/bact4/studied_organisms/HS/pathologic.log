@@ -1,0 +1,570 @@
+23-Jun-2022  14:14:26 
+Started processing test/studied_organisms/HS/
+Reading file  test/studied_organisms/HS/organism-params.dat
+;; ensure-directories-exist: creating
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/input/
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/ does
+;;   not exist, will create.
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/
+;;   does not exist, will create.
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/input/
+;;   does not exist, will create.
+;; ensure-directories-exist: creating
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/
+;;   does not exist, will create.
+;; ensure-directories-exist: creating
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/reports/
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/reports/
+;;   does not exist, will create.
+;; ensure-directories-exist: creating
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/kb/
+;; Directory
+;;   /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/kb/
+;;   does not exist, will create.
+
+Created hscyc directory tree.
+Saved /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/input/organism.dat
+Saved /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/input/organism-init.dat
+Reading file  /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/input/organism-init.dat
+Copying class Organisms from METABASE to HSBASE.
+[Copying class hierarchy into HSBASE]
+Found 0 stub frames or stub references
+[Completed initialization of new PGDB for HS]
+[Saving KB HSBASE to V4-FASL file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/kb/hsbase.ocelot
+ 7378 frames saved]
+
+[Processed 4 data rows from file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/input/genetic-elements.dat]
+
+[Processed 1 data frames]
+
+
+Extracting one sequence from
+/mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/input/HS.gbk
+into
+/mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/input/HS-CP000802.fsa ...
+
+Parsing the GenBank file resulted in 95 warnings, which may indicate possible problems.
+Please see this log file for the details:
+/mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/reports/annotation-parse-log-HS_2022-06-23.txt
+
+
+     :::::  Processing genetic element "CP000802" with ID CP000802 and file NIL  :::::
+
+Genetic Element CP000802 is new to the PGDB.
+Adding genetic element and processing its components.
+Copying /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/input/HS-CP000802.fsa
+     to /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/hs-CP000802.fsa
+[Creating gene frames]
+
+[Creating monomers]
+Warning: Amino acid U is invalid.
+Warning: Amino acid U is invalid.
+
+Classifying CP000802_1_3397-MONOMER/RNA polymerase sigma-54 factor as a sigma factor.
+
+Classifying CP000802_1_3246-MONOMER/RNA polymerase sigma factor RpoD as a sigma factor.
+
+Classifying CP000802_1_2870-MONOMER/RNA polymerase sigma factor RpoS as a sigma factor.
+
+Classifying CP000802_1_2719-MONOMER/RNA polymerase sigma-E factor as a sigma factor.
+
+Classifying CP000802_1_2016-MONOMER/RNA polymerase sigma factor for flagellar operon as a sigma factor.
+Warning: Amino acid U is invalid.
+The following is a summary of the features recognized in the
+specified genetic elements.
+  
+A full report on parsing can be found in file:
+    /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/reports/trial-parse-report_2022-06-23.txt
+
+           Genes       Proteins    RNAs   Pseudogenes
+-----------------------------------------------------
+CP000802     4636         4384       158       94    
+
+
+Matches found using supplied GO terms: 0
+Warning: tRNA CP000802_1_4602 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_4601 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_4600 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_4525 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_4406 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_4405 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_4404 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_4374 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_4244 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_4212 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_4211 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_4210 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_4209 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_4203 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_4076 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_4075 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_4018 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_4017 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_4016 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_4015 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_3980 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_3979 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_3976 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_3870 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_3749 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_3473 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_3472 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_3469 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_3368 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_3365 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_3248 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_3125 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_3019 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2955 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2954 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2953 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2952 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2822 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2821 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2820 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2819 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2818 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2782 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2738 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2530 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2529 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2528 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2527 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2523 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2522 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2489 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2317 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2104 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2101 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2099 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2093 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2091 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2004 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2003 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_2002 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_1739 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_1738 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_1333 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_1332 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_1143 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_1075 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0984 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0800 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0799 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0798 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0797 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0796 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0795 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0794 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0715 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0714 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0713 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0712 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0711 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0710 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0709 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0611 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0392 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0272 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0221 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0211 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0208 (NIL) may not have had parsable anticodon
+         information. None assigned.
+Warning: tRNA CP000802_1_0207 (NIL) may not have had parsable anticodon
+         information. None assigned.
+
+     :::::  Running reaction inference from EC numbers and MetaCyc IDs  :::::
+
+EC 2.3.1.128 has been transferred by the Enzyme Commission to multiple EC numbers (2.3.1.266, 2.3.1.267) and is therefore ambiguous.
+EC 3.6.3.2 has been transferred by the Enzyme Commission to EC 7.2.2.14.
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC 1.3.99.1 has been transferred by the Enzyme Commission to EC 1.3.5.1.
+EC 1.3.99.1 has been transferred by the Enzyme Commission to EC 1.3.5.1.
+EC 3.6.3.28 has been transferred by the Enzyme Commission to EC 7.3.2.2.
+EC 1.2.1.2 has been transferred by the Enzyme Commission to EC 1.17.1.9.
+EC 3.6.3.19 has been transferred by the Enzyme Commission to EC 7.5.2.1.
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC 1.2.1.2 has been transferred by the Enzyme Commission to EC 1.17.1.9.
+EC 1.2.1.2 has been transferred by the Enzyme Commission to EC 1.17.1.9.
+EC 1.2.1.2 has been transferred by the Enzyme Commission to EC 1.17.1.9.
+EC 1.3.99.22 has been transferred by the Enzyme Commission to EC 1.3.98.3.
+EC 1.16.1.3 has been deleted by the Enzyme Commission.
+EC 3.6.3.14 has been transferred by the Enzyme Commission to EC 7.1.2.2.
+EC 3.6.3.14 has been transferred by the Enzyme Commission to EC 7.1.2.2.
+EC 3.6.3.14 has been transferred by the Enzyme Commission to EC 7.1.2.2.
+EC 3.6.3.14 has been transferred by the Enzyme Commission to EC 7.1.2.2.
+EC 3.6.3.14 has been transferred by the Enzyme Commission to EC 7.1.2.2.
+EC 3.6.3.14 has been transferred by the Enzyme Commission to EC 7.1.2.2.
+EC 3.6.3.14 has been transferred by the Enzyme Commission to EC 7.1.2.2.
+EC 3.6.3.14 has been transferred by the Enzyme Commission to EC 7.1.2.2.
+EC 3.6.3.14 has been transferred by the Enzyme Commission to EC 7.1.2.2.
+EC 3.6.3.27 has been transferred by the Enzyme Commission to EC 7.3.2.1.
+EC# inference disabled for EC 2.7.1.69
+EC 5.99.1.3 has been deleted by the Enzyme Commission.
+EC# inference disabled for EC 2.7.1.69
+EC 5.4.2.1 has been transferred by the Enzyme Commission to multiple EC numbers (5.4.2.11, 5.4.2.12) and is therefore ambiguous.
+EC# inference disabled for EC 2.7.1.69
+EC 3.6.3.24 has been transferred by the Enzyme Commission to EC 7.2.2.i.
+EC 3.6.3.24 has been transferred by the Enzyme Commission to EC 7.2.2.i.
+EC 3.6.3.24 has been transferred by the Enzyme Commission to EC 7.2.2.i.
+EC 3.6.3.24 has been transferred by the Enzyme Commission to EC 7.2.2.i.
+EC 3.6.3.24 has been transferred by the Enzyme Commission to EC 7.2.2.i.
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC 4.4.1.8 has been transferred by the Enzyme Commission to EC 4.4.1.13.
+EC 4.1.1.41 has been transferred by the Enzyme Commission to EC 7.2.4.3.
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC 1.11.1.15 has been transferred by the Enzyme Commission to multiple EC numbers (1.11.1.24, 1.11.1.25, 1.11.1.26, 1.11.1.27, 1.11.1.28, 1.11.1.29) and is therefore ambiguous.
+EC# inference disabled for EC 2.7.1.69
+EC 3.6.3.25 has been transferred by the Enzyme Commission to EC 7.3.2.3.
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC 1.6.99.5 has been transferred by the Enzyme Commission to EC 1.6.5.11.
+EC 1.6.5.11 has been transferred by the Enzyme Commission to EC 1.6.5.9.
+EC 1.6.99.5 has been transferred by the Enzyme Commission to EC 1.6.5.11.
+EC 1.6.5.11 has been transferred by the Enzyme Commission to EC 1.6.5.9.
+EC 1.6.99.5 has been transferred by the Enzyme Commission to EC 1.6.5.11.
+EC 1.6.5.11 has been transferred by the Enzyme Commission to EC 1.6.5.9.
+EC 1.6.99.5 has been transferred by the Enzyme Commission to EC 1.6.5.11.
+EC 1.6.5.11 has been transferred by the Enzyme Commission to EC 1.6.5.9.
+EC 1.6.99.5 has been transferred by the Enzyme Commission to EC 1.6.5.11.
+EC 1.6.5.11 has been transferred by the Enzyme Commission to EC 1.6.5.9.
+EC 1.6.99.5 has been transferred by the Enzyme Commission to EC 1.6.5.11.
+EC 1.6.5.11 has been transferred by the Enzyme Commission to EC 1.6.5.9.
+EC 1.6.99.5 has been transferred by the Enzyme Commission to EC 1.6.5.11.
+EC 1.6.5.11 has been transferred by the Enzyme Commission to EC 1.6.5.9.
+EC 1.6.99.5 has been transferred by the Enzyme Commission to EC 1.6.5.11.
+EC 1.6.5.11 has been transferred by the Enzyme Commission to EC 1.6.5.9.
+EC 1.6.99.5 has been transferred by the Enzyme Commission to EC 1.6.5.11.
+EC 1.6.5.11 has been transferred by the Enzyme Commission to EC 1.6.5.9.
+EC 1.6.99.5 has been transferred by the Enzyme Commission to EC 1.6.5.11.
+EC 1.6.5.11 has been transferred by the Enzyme Commission to EC 1.6.5.9.
+EC 1.6.99.5 has been transferred by the Enzyme Commission to EC 1.6.5.11.
+EC 1.6.5.11 has been transferred by the Enzyme Commission to EC 1.6.5.9.
+EC 1.6.99.5 has been transferred by the Enzyme Commission to EC 1.6.5.11.
+EC 1.6.5.11 has been transferred by the Enzyme Commission to EC 1.6.5.9.
+EC 1.6.99.5 has been transferred by the Enzyme Commission to EC 1.6.5.11.
+EC 1.6.5.11 has been transferred by the Enzyme Commission to EC 1.6.5.9.
+EC 5.99.1.3 has been deleted by the Enzyme Commission.
+EC 1.7.99.4 has been transferred by the Enzyme Commission to multiple EC numbers (1.7.1.1, 1.7.1.2, 1.7.1.3, 1.7.5.1, 1.7.7.2, 1.9.6.1) and is therefore ambiguous.
+EC# inference disabled for EC 2.7.1.69
+EC 3.6.3.17 has been transferred by the Enzyme Commission to multiple EC numbers (7.5.2.7, 7.5.2.8, 7.5.2.9, 7.5.2.10, 7.5.2.11, 7.5.2.12) and is therefore ambiguous.
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC 3.6.3.14 has been transferred by the Enzyme Commission to EC 7.1.2.2.
+EC 3.6.3.17 has been transferred by the Enzyme Commission to multiple EC numbers (7.5.2.7, 7.5.2.8, 7.5.2.9, 7.5.2.10, 7.5.2.11, 7.5.2.12) and is therefore ambiguous.
+EC 3.6.3.17 has been transferred by the Enzyme Commission to multiple EC numbers (7.5.2.7, 7.5.2.8, 7.5.2.9, 7.5.2.10, 7.5.2.11, 7.5.2.12) and is therefore ambiguous.
+EC 3.6.3.17 has been transferred by the Enzyme Commission to multiple EC numbers (7.5.2.7, 7.5.2.8, 7.5.2.9, 7.5.2.10, 7.5.2.11, 7.5.2.12) and is therefore ambiguous.
+EC 3.1.22.4 has been transferred by the Enzyme Commission to EC 3.1.21.c.
+EC# inference disabled for EC 2.7.1.69
+EC 5.99.1.2 has been transferred by the Enzyme Commission to EC 5.6.2.2.
+EC# inference disabled for EC 2.7.1.69
+EC 3.6.3.33 has been transferred by the Enzyme Commission to EC 7.6.2.8.
+EC 4.4.1.8 has been transferred by the Enzyme Commission to EC 4.4.1.13.
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC# inference disabled for EC 2.7.1.69
+EC 1.11.1.15 has been transferred by the Enzyme Commission to multiple EC numbers (1.11.1.24, 1.11.1.25, 1.11.1.26, 1.11.1.27, 1.11.1.28, 1.11.1.29) and is therefore ambiguous.
+EC 1.2.1.2 has been transferred by the Enzyme Commission to EC 1.17.1.9.
+EC 1.2.1.2 has been transferred by the Enzyme Commission to EC 1.17.1.9.
+EC 1.2.1.2 has been transferred by the Enzyme Commission to EC 1.17.1.9.
+EC 1.7.99.4 has been transferred by the Enzyme Commission to multiple EC numbers (1.7.1.1, 1.7.1.2, 1.7.1.3, 1.7.5.1, 1.7.7.2, 1.9.6.1) and is therefore ambiguous.
+EC 1.7.99.4 has been transferred by the Enzyme Commission to multiple EC numbers (1.7.1.1, 1.7.1.2, 1.7.1.3, 1.7.5.1, 1.7.7.2, 1.9.6.1) and is therefore ambiguous.
+EC 1.7.99.4 has been transferred by the Enzyme Commission to multiple EC numbers (1.7.1.1, 1.7.1.2, 1.7.1.3, 1.7.5.1, 1.7.7.2, 1.9.6.1) and is therefore ambiguous.
+EC 5.99.1.2 has been transferred by the Enzyme Commission to EC 5.6.2.2.
+EC 1.7.99.4 has been transferred by the Enzyme Commission to multiple EC numbers (1.7.1.1, 1.7.1.2, 1.7.1.3, 1.7.5.1, 1.7.7.2, 1.9.6.1) and is therefore ambiguous.
+EC 1.7.99.4 has been transferred by the Enzyme Commission to multiple EC numbers (1.7.1.1, 1.7.1.2, 1.7.1.3, 1.7.5.1, 1.7.7.2, 1.9.6.1) and is therefore ambiguous.
+EC 1.7.99.4 has been transferred by the Enzyme Commission to multiple EC numbers (1.7.1.1, 1.7.1.2, 1.7.1.3, 1.7.5.1, 1.7.7.2, 1.9.6.1) and is therefore ambiguous.
+EC 1.4.99.1 has been transferred by the Enzyme Commission to EC 1.4.99.6.
+EC 3.6.3.31 has been transferred by the Enzyme Commission to EC 7.6.2.11.
+EC 1.6.99.3 has been transferred by the Enzyme Commission to EC 7.1.1.2.
+EC# inference disabled for EC 2.7.1.69
+EC 2.3.1.128 has been transferred by the Enzyme Commission to multiple EC numbers (2.3.1.266, 2.3.1.267) and is therefore ambiguous.
+EC 1.5.99.8 has been transferred by the Enzyme Commission to EC 1.5.5.2.
+EC 3.6.3.29 has been transferred by the Enzyme Commission to EC 7.3.2.5.
+EC 5.4.2.1 has been transferred by the Enzyme Commission to multiple EC numbers (5.4.2.11, 5.4.2.12) and is therefore ambiguous.
+EC 1.3.99.1 has been transferred by the Enzyme Commission to EC 1.3.5.1.
+EC 3.6.3.12 has been transferred by the Enzyme Commission to EC 7.2.2.6.
+EC 3.6.3.12 has been transferred by the Enzyme Commission to EC 7.2.2.6.
+EC 3.6.3.12 has been transferred by the Enzyme Commission to EC 7.2.2.6.
+EC 3.6.3.12 has been transferred by the Enzyme Commission to EC 7.2.2.6.
+EC# inference disabled for EC 2.7.1.69
+EC 3.1.27.6 has been transferred by the Enzyme Commission to EC 4.6.1.21.
+EC 1.11.1.15 has been transferred by the Enzyme Commission to multiple EC numbers (1.11.1.24, 1.11.1.25, 1.11.1.26, 1.11.1.27, 1.11.1.28, 1.11.1.29) and is therefore ambiguous.
+EC 1.11.1.15 has been transferred by the Enzyme Commission to multiple EC numbers (1.11.1.24, 1.11.1.25, 1.11.1.26, 1.11.1.27, 1.11.1.28, 1.11.1.29) and is therefore ambiguous.
+EC 2.7.7.58 has been transferred by the Enzyme Commission to EC 6.2.1.ac.
+EC 3.5.3.19 has been transferred by the Enzyme Commission to EC 3.5.1.116.
+EC 3.6.3.4 has been transferred by the Enzyme Commission to EC 7.2.2.9.
+EC 3.6.3.44 has been transferred by the Enzyme Commission to EC 7.6.2.2.
+EC 3.6.3.44 has been transferred by the Enzyme Commission to EC 7.6.2.2.
+EC 3.6.3.36 has been transferred by the Enzyme Commission to EC 7.6.2.7.
+EC 3.1.22.4 has been transferred by the Enzyme Commission to EC 3.1.21.c.
+EC 1.17.1.2 has been transferred by the Enzyme Commission to EC 1.17.7.4.
+Inferred 3955 enzymatic reactions from 907 rawgenes; 0 id-rxns, 907 ec-rxns
+
+     :::::  Finished EC number reaction inference for "CP000802"  :::::
+
+
+     :::::  Running reaction inference from GO terms  :::::
+
+
+
+     :::::  Running enzyme name matcher on 3604 input proteins  :::::
+
+Warning: enter-into-lookup-table-internal: Why does  have 51 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does  have 53 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does  have 54 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does acylactivatingenzyme have 52 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does acylactivating have 53 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does  have 55 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does fattyacylcoasynthasesystem have 56 associated reactions?? 
+
+Warning: enter-into-lookup-table-internal: Why does fattyacylcoasynthetasesystem have 56 associated reactions?? 
+
+[Loaded 1165 lines from file pathologic:data;nonspecific-enzyme-names.dat]
+[Loaded 230 lines from file pathologic:data;metabolic-enzyme-ruleout-words.dat]
+
+[Processed 1830 data rows from file pathologic:data;enzyme-mappings.dat]
+Name-mapping hash table contains 56011 entries, of which 1340 are ambiguous
+Matching enzyme names for an enzyme-name-list with 3604 elements
+500 1000 1500 2000 2500 3000 3500 
+Solid matches found by enzyme name matcher: 1158
+Full report available in /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/reports/name-matching-report_2022-06-23.txt.
+
+     :::::  End enzyme name matcher  :::::
+
+
+     :::::  Begin Pathway Inference  :::::
+
+Taxonomic Pruning is turned on.
+Importing pathways that each have at least one reaction present...
+Imported 1083 pathways that each had at least one reaction present
+Imported 1142 new or changed pathways based on existing reactions.
+Writing inference report in /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/reports/pwy-inference-report_2022-06-23.txt.
+
+Pathway Inference Report File written                [subsequent runs will append to file]
+  to /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/reports/pwy-inference-report_2022-06-23.txt at 23-Jun-2022  14:15:42
+Importing 196 super pathways and their subpathways, some of which may be pruned in the next steps.
+
+Analyzing 1077 base pathways as to whether to keep or delete with cutoff score 0.15
+
+Pruning 720 base pathways, 357 remain
+Pruned 125 super-pathways, 71 remain
+[Checking inverses under class  Notes]
+[Checking inverses under class  KB-DESCRIPTOR]
+[Checking inverses under class  Enzymatic-Reactions]
+[Checking inverses under class  EC-BOOKKEEPING]
+[Checking inverses under class  Databases]
+[Checking inverses under class  Compound-Mixtures]
+[Checking inverses under class  Collections]
+[Checking inverses under class  Chemicals]
+[Checking inverses under class  Cell-Types]
+[Checking inverses under class  CCO]
+[Checking inverses under class  Regulation]
+[Checking inverses under class  Pseudo-Products]
+[Checking inverses under class  Protein-Features]
+[Checking inverses under class  Polymer-Segments]
+[Checking inverses under class  PGDB-Metadata]
+[Checking inverses under class  Notes]
+[Checking inverses under class  Growth-Observations]
+[Checking inverses under class  Generalized-Reactions]
+[Checking inverses under class  Gene-Ontology-Terms]
+[Checking inverses under class  Evidence]
+[Checking inverses under class  Organizations]
+[Checking inverses under class  People]
+[Checking inverses under class  Organisms]
+[Checking inverses under class  Publications]
+Pruning out unneeded reactions, compounds, etc...
+Deleting empty pathway PWY-6196
+Deleted 653 reactions whose enzymes each catalyzed more than 10 reactions (170 reactions were not pruned)
+Deleted 3154 orphan reactions and 1183 unreferenced compounds
+Inferring spontaneous reactions.
+Imported 73 spontaneous reactions.
+
+Importing composite reaction RXN-13158 because all its sub-reactions are either catalyzed by CP000802_1_0078-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction RXN-22435 because all its sub-reactions are either catalyzed by CP000802_1_0118-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction BTUR2-RXN because all its sub-reactions are either catalyzed by CP000802_1_2577-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction RXN-19335 because all its sub-reactions are either catalyzed by CP000802_1_2577-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction RXN-9787 because all its sub-reactions are either catalyzed by CP000802_1_2670-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction RXN-21566 because all its sub-reactions are either catalyzed by CP000802_1_2670-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction RXN-19445 because all its sub-reactions are either catalyzed by CP000802_1_0644-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+
+Importing composite reaction RXN-19474 because all its sub-reactions are either catalyzed by CP000802_1_0635-MONOMER or related protein, or are spontaneous.
+[Copied 1 primary frames; overwrote 0 of them]
+Removing link from pwy PWY-6901 to nonexistent pwys ((TRANS-RXN-157
+                                                      . INCOMING))
+Removing link from pwy PWY0-1309 to nonexistent pwys ((TRANS-RXN-155B
+                                                       . INCOMING))
+Removing link from pwy PWY-6902 to nonexistent pwys ((TRANS-RXN-167
+                                                      . OUTGOING))
+Removing link from pwy PWY-8004 to nonexistent pwys ((TRANS-RXN-157
+                                                      . INCOMING))
+Removing link from pwy TREDEGLOW-PWY to nonexistent pwys ((TRANS-RXN-168
+                                                           . INCOMING))
+Removing link from pwy PWY-7395 to nonexistent pwys ((TRANS-RXN-167
+                                                      . INCOMING))
+Removing link from pwy PWY0-1261 to nonexistent pwys ((RXN0-17
+                                                       . INCOMING))
+Removing link from pwy MANNIDEG-PWY to nonexistent pwys ((TRANS-RXN-156
+                                                          . INCOMING))
+Removing link from pwy GLUAMCAT-PWY to nonexistent pwys ((TRANS-RXN-167A
+                                                          . INCOMING))
+Removing link from pwy UDPNAGSYN-PWY to nonexistent pwys ((TRANS-RXN-167A
+                                                           . INCOMING))
+Removing link from pwy PWY-8121 to nonexistent pwys ((TRANS-RXN0-540
+                                                      . INCOMING))
+Deleting 7837 publication frames that are not cited in HSBASE
+
+Inferred  357  base pathways.
+
+     :::::  Ending Pathway Inference at 2022-06-23 14:17:55  :::::
+
+Inferring spontaneous reactions.
+Imported 0 spontaneous reactions.
+Updated 4384 protein molecular weights from sequence
+
+ This field strain won't be parsed.
+ This field strain won't be parsed.Count of protein+RNA frames (the frames that could contain GO terms) : 4731
+Total GO term annotations : 0
+Count of proteins/RNAs with at least 1 GO term : 0
+Count of proteins/RNAs with at least 1 experimental GO term : 0
+Count of genes whose product or complex or modified form contains at least 1 GO term : 0
+Count of genes whose product or complex or modified form contains at least 1 experimental GO term : 0
+Count of distinct GO terms encountered : 0
+
+Creating report pathway file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/reports/pathways-report_2022-06-23.txt.
+[Creating /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/protseq.fsa]
+[Wrote 4384 protein sequences]
+[Creating /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/data/dnaseq.fsa]
+PGDB build done.
+PGDB contains 4542 genes, 4390 polypeptides, 357 base pathways, 1956 reactions, 1393 compounds
+[Saving KB HSBASE to V4-FASL file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/kb/hsbase.ocelot
+ 24869 frames saved]
+Creating Protein Complexes for HS.
+
+62 Protein complexes were created.
+Count of protein+RNA frames (the frames that could contain GO terms) : 4793
+Total GO term annotations : 0
+Count of proteins/RNAs with at least 1 GO term : 0
+Count of proteins/RNAs with at least 1 experimental GO term : 0
+Count of genes whose product or complex or modified form contains at least 1 GO term : 0
+Count of genes whose product or complex or modified form contains at least 1 experimental GO term : 0
+Count of distinct GO terms encountered : 0
+
+[Saving KB HSBASE to V4-FASL file /mnt/go-docker/data/pwt_data/ptools-local/pgdbs/user/hscyc/1.0/kb/hsbase.ocelot
+ 24775 frames saved]
+23-Jun-2022  14:18:21 Done
