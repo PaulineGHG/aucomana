@@ -116,7 +116,3 @@ class Test(unittest.TestCase):
                                        'bact7_intersect_groupA_groupB_groupC.png'))
 
     # TODO : Generate Run with renamed IDs to test rename_padmets_id method
-
-
-
-

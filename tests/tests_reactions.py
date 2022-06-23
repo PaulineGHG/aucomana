@@ -1,9 +1,13 @@
 import unittest
 import pandas as pd
+from analysis_runs.analysis import Analysis
 from analysis_runs.reactions import Reactions
 
-STUDY_PATH = "Study_folder"
-RUNS_PATH = "Runs_aucome"
+STUDY_PATH = 'Study_folder'
+RUNS_PATH = 'Runs_aucome'
+
+RUN = 'bact7'
+A = Analysis(RUNS_PATH, STUDY_PATH)
 
 
 class Test(unittest.TestCase):

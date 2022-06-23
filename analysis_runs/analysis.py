@@ -349,9 +349,6 @@ class Analysis:
         boxplot: bool, optional (default=False)
             Indicate whether boxplot output (PNG file) must be created
         """
-        # Input path of TSV files
-        in_path = os.path.join(self.path_runs, run, "analysis", "all")
-
         # String concatenating named of each groups
         grp_str = ""
         for group in groups_list:
@@ -377,9 +374,9 @@ class Analysis:
         for group in groups_list:
             grp_sp_list = list(self.get_grp_set(run, group))
             # Create Reactions, Pathways and Genes instances for the group
-            r_g = Reactions(self.path_runs, self.path_study, os.path.join(in_path, "reactions.tsv"), grp_sp_list)
-            p_g = Pathways(self.path_runs, self.path_study, os.path.join(in_path, "pathways.tsv"), grp_sp_list)
-            g_g = Genes(os.path.join(in_path, "genes.tsv"), grp_sp_list)
+            r_g = self.reactions(run, grp_sp_list)
+            p_g = self.pathways(run, grp_sp_list)
+            g_g = self.genes(run, grp_sp_list)
             # Path of group.tsv file (group stats)
             g_res_file = os.path.join(out_dir, f"{group}.tsv")
             # Create DataFrame with species of the group as index and stats to calculate as columns
@@ -429,15 +426,13 @@ class Analysis:
         venn_plot : bool, optional (default=True)
             True to save venn plot of the intersection
         """
-        # Path to the reactions.tsv file
-        rxn_file = os.path.join(self.path_runs, run, "analysis", "all", "reactions.tsv")
         group_rnx_dict = {}
         grp_str = ""
         for group in groups_list:
             # Create string concatenating groups names
             grp_str += group + "_"
             group_list = list(self.get_grp_set(run, group))
-            r = Reactions(self.path_runs, self.path_study, rxn_file, group_list)
+            r = self.reactions(run, group_list)
             reactions_g = set(r.reactions_list)
             # Add reactions list of the groups in dict
             group_rnx_dict[group] = reactions_g
