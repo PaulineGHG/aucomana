@@ -73,6 +73,9 @@ class Test(unittest.TestCase):
         with self.assertRaises(OSError):
             A.metabolites('run_not_existing')
 
+    def test_compare_groups(self):
+        pass
+
 
 
 

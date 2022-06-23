@@ -257,9 +257,9 @@ class Analysis:
         ----------
         out_dir: str
             Path of the directory to save figures
-        df_comp: 'pd.DataFrame'
+        df_comp: pd.DataFrame
             Data Frame of the comparison between all the groups
-        df_grp_dict: Dict[Tuple[str, int], 'pd.DataFrame']
+        df_grp_dict: Dict[Tuple[str, int], pd.DataFrame]
             Dictionary associating for each group, its data_frame of calculated stats
             Dict[Tuple[name of group, column], DataFrame of the group]
 
@@ -275,11 +275,11 @@ class Analysis:
                 axs.hist(X, len(X) - len(X) // 2, density=True, facecolor='g')
                 axs.set_xlabel(calc)
                 axs.set_ylabel('Density')
-                mu = df_comp.loc[group[0], calc + self.STAT[0]]
-                med = df_comp.loc[group[0], calc + self.STAT[1]]
-                sd = df_comp.loc[group[0], calc + self.STAT[2]]
-                mini = df_comp.loc[group[0], calc + self.STAT[3]]
-                maxi = df_comp.loc[group[0], calc + self.STAT[4]]
+                mu = df_comp.loc[group, calc + self.STAT[0]]
+                med = df_comp.loc[group, calc + self.STAT[1]]
+                sd = df_comp.loc[group, calc + self.STAT[2]]
+                mini = df_comp.loc[group, calc + self.STAT[3]]
+                maxi = df_comp.loc[group, calc + self.STAT[4]]
                 axs.set_title(f"Histogram of {calc} for the {group[0]} group\n"
                               f"$\mu={mu},\ \sigma={sd}$")
                 axs.axvline(x=mu, color='b', label=f"$\mu={mu}$")
@@ -292,14 +292,14 @@ class Analysis:
             path_fig = os.path.join(out_dir, f"{group[0]}_hist.png")
             plt.savefig(path_fig)
 
-    def __boxplot_comp(self, out_dir: str, df_grp_dict: Dict[Tuple[str, int], 'pd.DataFrame']):
+    def __boxplot_comp(self, out_dir: str, df_grp_dict: Dict[str, 'pd.DataFrame']):
         """Generate boxplot figure comparing each group of df_grp_dict keys.
 
            Parameters
            ----------
            out_dir: str
                Path of the directory to save figures
-           df_grp_dict: Dict[Tuple[str, int], 'pd.DataFrame']
+           df_grp_dict: Dict[str, pd.DataFrame]
                Dictionary associating for each group, its data_frame of calculated stats
                Dict[Tuple[name of group, column], DataFrame of the group]
 
@@ -310,10 +310,10 @@ class Analysis:
         str_grp_names = ""
         for group in df_grp_dict:
             if i == nb_grp - 1:
-                str_grp_names += f"{group[0]} and "
+                str_grp_names += f"{group} and "
                 i += 1
             else:
-                str_grp_names += f"{group[0]}, "
+                str_grp_names += f"{group}, "
                 i += 1
         fig = plt.figure(figsize=[12.8, 9.6])
         i = 1
@@ -324,14 +324,14 @@ class Analysis:
             labels_lst = []
             for group, df_group in df_grp_dict.items():
                 x_lst.append(list(df_group[calc]))
-                labels_lst.append(group[0])
+                labels_lst.append(group)
             axs.boxplot(x_lst, labels=labels_lst)
             axs.set_ylabel(calc)
             axs.set_title(f"Boxplot of {calc} for the {str_grp_names[:-2]} groups")
         fig.tight_layout()
         plt.savefig(os.path.join(out_dir, f"boxplot.png"))
 
-    def compare_groups(self, run: str, groups_list: List[Tuple[str, int]], hist: bool = False,
+    def compare_groups(self, run: str, groups_list: List[str], hist: bool = False,
                        boxplot: bool = False):
         """ Compare groups given according to : their number of genes, number of reactions, number of
         pathways with completion > 80% and number of pathways with completion = 100%. For each of this
@@ -343,18 +343,18 @@ class Analysis:
         ----------
         run: str
             ID of the run to consider
-        groups_list: List[Tuple[str, int]]
-            List of groups to compare, groups are selected from groups specified in org_file
+        groups_list: List[str]
+            List of groups to compare
         hist: bool, optional (default=False)
             Indicate whether histograms output (PNG files) must be created
         boxplot: bool, optional (default=False)
             Indicate whether boxplot output (PNG file) must be created
         """
-        path = os.path.join(self.path_runs, run, "analysis", "all")
+        in_path = os.path.join(self.path_runs, run, "analysis", "all")
 
         grp_str = ""
         for group in groups_list:
-            grp_str += group[0] + "_"
+            grp_str += group + "_"
 
         out_dir = os.path.join("output_data", "compare_groups", f"{run}_compare_{grp_str[:-1]}")
         if not os.path.exists(out_dir):
@@ -366,17 +366,17 @@ class Analysis:
         for x in self.TO_CALCULATE:
             for y in self.STAT:
                 col_stat.append(x + y)
-        df_comp = pd.DataFrame(columns=col_stat, index=[group[0] for group in groups_list])
+        df_comp = pd.DataFrame(columns=col_stat, index=groups_list)
 
         df_grp_dict = {}
         for group in groups_list:
-            grp_sp_list = self.get_grp_l(run, group)
+            grp_sp_list = list(self.get_grp_set(run, group))
 
-            r_g = Reactions(self.path_runs, self.path_study, os.path.join(path, "reactions.tsv"), grp_sp_list)
-            p_g = Pathways(self.path_runs, self.path_study, os.path.join(path, "pathways.tsv"), grp_sp_list)
-            g_g = Genes(os.path.join(path, "genes.tsv"), grp_sp_list)
+            r_g = Reactions(self.path_runs, self.path_study, os.path.join(in_path, "reactions.tsv"), grp_sp_list)
+            p_g = Pathways(self.path_runs, self.path_study, os.path.join(in_path, "pathways.tsv"), grp_sp_list)
+            g_g = Genes(os.path.join(in_path, "genes.tsv"), grp_sp_list)
 
-            g_res_file = os.path.join(out_dir, f"{group[0]}.tsv")
+            g_res_file = os.path.join(out_dir, f"{group}.tsv")
 
             df_g = pd.DataFrame(columns=self.TO_CALCULATE, index=grp_sp_list)
 
@@ -390,11 +390,11 @@ class Analysis:
             df_g.to_csv(g_res_file, sep="\t")
 
             for calc in self.TO_CALCULATE:
-                df_comp.loc[group[0], calc + self.STAT[0]] = round(float(np.mean(df_g[calc])), 1)
-                df_comp.loc[group[0], calc + self.STAT[1]] = np.median(df_g[calc])
-                df_comp.loc[group[0], calc + self.STAT[2]] = round(np.sqrt(np.var(df_g[calc])), 1)
-                df_comp.loc[group[0], calc + self.STAT[3]] = min(df_g[calc])
-                df_comp.loc[group[0], calc + self.STAT[4]] = max(df_g[calc])
+                df_comp.loc[group, calc + self.STAT[0]] = round(float(np.mean(df_g[calc])), 1)
+                df_comp.loc[group, calc + self.STAT[1]] = np.median(df_g[calc])
+                df_comp.loc[group, calc + self.STAT[2]] = round(np.sqrt(np.var(df_g[calc])), 1)
+                df_comp.loc[group, calc + self.STAT[3]] = min(df_g[calc])
+                df_comp.loc[group, calc + self.STAT[4]] = max(df_g[calc])
 
             df_comp.to_csv(res_file, sep="\t")
 
