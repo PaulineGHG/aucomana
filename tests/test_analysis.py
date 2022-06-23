@@ -1,6 +1,7 @@
 import unittest
 from analysis_runs.analysis import Analysis
 from analysis_runs.reactions import Reactions
+from analysis_runs.pathways import Pathways
 
 STUDY_PATH = 'Study_folder'
 RUNS_PATH = 'Runs_aucome'
@@ -33,4 +34,13 @@ class Test(unittest.TestCase):
         self.assertEqual(set(RXN.species_list), {'IAI1', 'HS'})
         RXN = A.reactions(RUN, out=1)
         self.assertEqual(len(RXN.reactions_list), 2196)
+
+    def test_pathways(self):
+        PW = A.pathways(RUN)
+        self.assertIsInstance(PW, Pathways)
+        PW = A.pathways(RUN, species_list=['IAI1', 'HS', 'sf301'])
+        self.assertEqual(PW.species_list, ['IAI1', 'HS', 'sf301'])
+        PW = A.pathways(RUN, species_list=['IAI1', 'HS', 'sf301'], group='groupA')
+        self.assertEqual(set(PW.species_list), {'IAI1', 'HS'})
+        PW = A.pathways(RUN, out=1)
 

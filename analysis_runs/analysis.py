@@ -173,12 +173,12 @@ class Analysis:
                 grp_species_l = list(self.get_grp_set(run, group, species_list))
                 PW = Pathways(self.path_runs, self.path_study, p_path, grp_species_l, out, nb_rxn_pw_min)
                 print(f"Pathways instance has been created for run : {run} with group = {group}, out = "
-                      f"{out} and minimal number of rnx in pw = {nb_rxn_pw_min}")
+                      f"{out} and minimal number of reactions in pathway = {nb_rxn_pw_min}")
                 return PW
             else:
                 PW = Pathways(self.path_runs, self.path_study, p_path, species_list, out, nb_rxn_pw_min)
                 print(f"Pathways instances has been created for run : {run}, out = "
-                      f"{out} and minimal number of rnx in pw = {nb_rxn_pw_min}")
+                      f"{out} and minimal number of reactions in pathway = {nb_rxn_pw_min}")
                 return PW
         else:
             raise OSError(f"No file reactions.tsv in path {p_path}")
