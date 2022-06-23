@@ -2,13 +2,13 @@ import os.path
 import ahocorasick
 
 
-def make_automaton(gene_to_replace):
+def make_automaton(genes_to_replace):
     """Build an Aho-Corasick automaton from a dictionary file and return
     it. The lines in the dictionary file must consist of a key and a
     value separated by a space.
     """
     automaton = ahocorasick.Automaton()
-    for key, value in gene_to_replace.items():
+    for key, value in genes_to_replace.items():
         automaton.add_word(key, (key, value))
     automaton.make_automaton()
     return automaton

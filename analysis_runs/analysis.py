@@ -429,14 +429,17 @@ class Analysis:
         venn_plot : bool, optional (default=True)
             True to save venn plot of the intersection
         """
+        # Path to the reactions.tsv file
         rxn_file = os.path.join(self.path_runs, run, "analysis", "all", "reactions.tsv")
         group_rnx_dict = {}
         grp_str = ""
         for group in groups_list:
+            # Create string concatenating groups names
             grp_str += group + "_"
             group_list = list(self.get_grp_set(run, group))
             r = Reactions(self.path_runs, self.path_study, rxn_file, group_list)
             reactions_g = set(r.reactions_list)
+            # Add reactions list of the groups in dict
             group_rnx_dict[group] = reactions_g
 
         if percentage:
@@ -470,16 +473,29 @@ class Analysis:
     # Rename padmet id
 
     def rename_padmet_id(self, run):
-        assodict = {}
+        """ Rename the genes IDs to their original IDs in the final network PADMETs if they had been renamed by AuCoMe.
+        Useful to create WIKIs.
+
+        Parameters
+        ----------
+        run : str
+            The run to consider to rename IDs
+        """
+        asso_dict = {}
+        # Path to studied_organisms
         path_species = os.path.join(self.path_runs, run, "studied_organisms")
+        # Path to final neworks PADMETs
         path_padmet = os.path.join(self.path_runs, run, "networks", "PADMETs")
+        # Enrich asso_dict for every species having been renamed
         for species_folder in os.listdir(path_species):
-            assodict = get_dict(run, species_folder, assodict, self.path_runs)
-        automaton = make_automaton(assodict)
+            asso_dict = get_dict(run, species_folder, asso_dict, self.path_runs)
+        # Make python ahocorasick automaton from asso_dict
+        automaton = make_automaton(asso_dict)
         out_path = os.path.join(self.path_study, "output_data", "renamed_id_padmet")
+        # Replace renamed IDs to original IDs in PADMETs files
         for species in os.listdir(path_species):
             print(f"ID renamed for {species}.padmet")
             apply_automaton(automaton, os.path.join(path_padmet, f"{species}.padmet"),
                             os.path.join(out_path, f"{species}.padmet"))
-        print(f"New padmets saved in : {out_path}")
+        print(f"New PADMETs saved in : {out_path}")
 

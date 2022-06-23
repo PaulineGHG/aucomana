@@ -115,6 +115,8 @@ class Test(unittest.TestCase):
         self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/'
                                        'bact7_intersect_groupA_groupB_groupC.png'))
 
+    # TODO : Generate Run with renamed IDs to test rename_padmets_id method
+
 
 
 
