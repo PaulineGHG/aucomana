@@ -1,5 +1,4 @@
 import os
-import warnings
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -10,7 +9,7 @@ from analysis_runs.pathways import Pathways
 from analysis_runs.genes import Genes
 from analysis_runs.metabolites import Metabolites
 from analysis_runs.rename_padmets_id import make_automaton, apply_automaton, get_dict
-from typing import Tuple, List, Dict, Set
+from typing import List, Dict, Set
 
 
 class Analysis:

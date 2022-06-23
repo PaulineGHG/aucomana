@@ -8,6 +8,7 @@ RUNS_PATH = 'Runs_aucome'
 
 RUN = 'bact7'
 A = Analysis(RUNS_PATH, STUDY_PATH)
+R = A.reactions(RUN)
 
 
 class Test(unittest.TestCase):

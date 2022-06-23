@@ -298,6 +298,7 @@ class Reactions:
             Set of common reactions between all the datas
         species : str
             Interest species
+        union : bool
         """
         now = datetime.datetime.now().strftime('%d_%m_%Y__%Hh_%Mmin_%Ss')
         if not union:
@@ -342,6 +343,7 @@ class Reactions:
            Set of common reactions between all the datas
        species : str
            Interest species
+        union : bool
        """
         now = datetime.datetime.now().strftime('%d_%m_%Y__%Hh_%Mmin_%Ss')
         if not union:
