@@ -414,17 +414,30 @@ class Analysis:
         if boxplot:
             self.__boxplot_comp(out_dir, df_grp_dict)
 
-    def intersect_rnx_groups(self, run: str, groups_list, percentage=True, venn_plot=False):
-        file = os.path.join(self.path_runs, run, "analysis", "all", "reactions.tsv")
+    def intersect_rnx_groups(self, run: str, groups_list: List[str], percentage: bool = True, venn_plot: bool = False):
+        """ Intersects the set of reactions of groups to compare them. Can show percentages comparisons and/or venn
+        plot.
+
+        Parameters
+        ----------
+        run : str
+            The ID of the run to consider
+        groups_list : List[str]
+            List of the groups to intersect (max 6 if venn plot)
+        percentage : bool, optional (default=True)
+            True to save txt file of the percentages
+        venn_plot : bool, optional (default=True)
+            True to save venn plot of the intersection
+        """
+        rxn_file = os.path.join(self.path_runs, run, "analysis", "all", "reactions.tsv")
         group_rnx_dict = {}
         grp_str = ""
         for group in groups_list:
-            grp_str += group[0] + "_"
-        for group in groups_list:
-            group_list = self.get_grp_l(run, group)
-            r = Reactions(self.path_runs, self.path_study, file, group_list)
+            grp_str += group + "_"
+            group_list = list(self.get_grp_set(run, group))
+            r = Reactions(self.path_runs, self.path_study, rxn_file, group_list)
             reactions_g = set(r.reactions_list)
-            group_rnx_dict[group[0]] = reactions_g
+            group_rnx_dict[group] = reactions_g
 
         if percentage:
             union = set.union(*group_rnx_dict.values())
@@ -456,7 +469,6 @@ class Analysis:
 
     # Rename padmet id
 
-    # TODO: Finalize fnc
     def rename_padmet_id(self, run):
         assodict = {}
         path_species = os.path.join(self.path_runs, run, "studied_organisms")
