@@ -1,5 +1,6 @@
 import unittest
 import pandas as pd
+import typing
 from analysis_runs.analysis import Analysis
 from analysis_runs.reactions import Reactions
 
@@ -17,42 +18,43 @@ class Test(unittest.TestCase):
         self.assertIsInstance(R, Reactions)
 
     def test_init_species_default(self):
-        species_obj = []
+        species_obj = ['HS', 'IAI1', 'CFT073', 'UTI89', 'sf301', 'ec042', 'LF82']
         self.assertEqual(species_obj, R.species_list)
 
     def test_species_precised(self):
-        self.assertEqual(g1, RS.species_list)
+        sp_l = ['HS', 'UTI89', 'ec042']
+        rs = A.reactions(RUN, species_list=sp_l)
+        self.assertEqual(sp_l, rs.species_list)
 
     def test_name(self):
-        self.assertEqual(R.name, 'runA1')
+        self.assertEqual(R.name, 'bact7')
 
     def test_reactions(self):
-        self.assertEqual(3737, len(RS.reactions_list))
-        self.assertEqual('RXN-14728', RS.reactions_list[0])
-        self.assertEqual('RXN-18669', RS.reactions_list[-1])
+        self.assertIs(type(R.reactions_list), list)
+        self.assertEqual(2402, len(R.reactions_list))
+        self.assertEqual('3.2.2.21-RXN', R.reactions_list[0])
+        self.assertEqual('2.7.7.46-RXN', R.reactions_list[-1])
 
     def test_reactions_filtered1(self):
-        self.assertEqual(2859, len(RSO1.reactions_list))
-        self.assertIn('RXN-14728', RSO1.reactions_list)
-        self.assertIn('XYLULOKIN-RXN', RSO1.reactions_list)
-        self.assertNotIn('1.1.1.285-RXN', RSO1.reactions_list)
-
-    def test_reactions_filtered2(self):
-        self.assertEqual(3053, len(RSO2.reactions_list))
-        self.assertIn('RXN-14728', RSO2.reactions_list)
-        self.assertIn('1.1.1.285-RXN', RSO2.reactions_list)
-        self.assertNotIn('1.1.4.2-RXN', RSO1.reactions_list)
+        ro1 = A.reactions(RUN, out=1)
+        self.assertEqual(2196, len(ro1.reactions_list))
+        self.assertIn('RXN-17824', ro1.reactions_list)
+        self.assertIn('BETAGALACTOSID-RXN', ro1.reactions_list)
+        self.assertNotIn('RXN-10016', ro1.reactions_list)
+        ro2 = A.reactions(RUN, out=2)
+        self.assertIn('RXN-10016', ro2.reactions_list)
 
     def test_data_reactions(self):
-        self.assertIsInstance(RSO1.data_reactions, pd.DataFrame)
-        self.assertListEqual(RSO1.reactions_list, list(RSO1.data_reactions.index))
-        self.assertListEqual(RSO1.species_list, list(RSO1.data_reactions.columns))
+        self.assertIsInstance(R.data_reactions, pd.DataFrame)
+        self.assertListEqual(R.reactions_list, list(R.data_reactions.index))
+        self.assertListEqual(R.species_list, list(R.data_reactions.columns))
+        self.assertEqual(R.data_reactions.loc['RXN0-962', 'CFT073'], 0)
 
     def test_data_genes_assoc(self):
-        self.assertIsInstance(RSO1.data_genes_assoc, pd.DataFrame)
-        self.assertListEqual(RSO1.reactions_list, list(RSO1.data_genes_assoc.index))
-        index_list = [x + RSO1.STR_GENE_ASSOC for x in RSO1.species_list]
-        self.assertListEqual(index_list, list(RSO1.data_genes_assoc.columns))
+        self.assertIsInstance(R.data_genes_assoc, pd.DataFrame)
+        self.assertListEqual(R.reactions_list, list(R.data_genes_assoc.index))
+        index_list = [x + R.STR_GENE_ASSOC for x in R.species_list]
+        self.assertListEqual(index_list, list(R.data_genes_assoc.columns))
 
 
 if __name__ == '__main__':

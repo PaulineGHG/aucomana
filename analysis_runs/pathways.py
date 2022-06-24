@@ -345,7 +345,7 @@ class Pathways:
         species: str
             species to be considered
         pathway: str
-            species to be considered
+            pathway to be considered
         unique: bool
             True if the presence is unique, False otherwise
 

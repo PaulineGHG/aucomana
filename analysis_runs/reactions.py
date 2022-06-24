@@ -68,8 +68,8 @@ class Reactions:
             self.data_genes_assoc, \
             self.reactions_list = self.__init_data(file_reactions_tsv, out)
         self.nb_reactions, self.nb_species = self.data_reactions.shape
-        self.reactions_loss = self.__init_reactions_loss()
-        self.nb_reactions_sp = self.__get_reaction_nb()
+        # self.reactions_loss = self.__init_reactions_loss()
+        # self.nb_reactions_sp = self.__get_reaction_nb()
 
     def __init_data(self, file_reactions_tsv: str, out: int) \
             -> Tuple['pd.DataFrame', 'pd.DataFrame', List[str]]:
@@ -141,37 +141,59 @@ class Reactions:
                 filtered_reactions.append(reaction)
         return filtered_reactions
 
-    def __get_reactions_loss_1_species(self, species: str) -> Tuple[int, Set[str]]:
-        """ Capture the reaction lost for a given species
+    def is_present(self, species: str, reaction: str, unique: bool) -> bool:
+        """ Indicate if the reaction is present for the species (unique or not) : considered unique if only this species
+        is having the reaction among all species
 
         Parameters
         ----------
-        species : str
-            Name of the species
+        species: str
+            species to be considered
+        reaction: str
+            reaction to be considered
+        unique: bool
+            True if the presence is unique, False otherwise
 
         Returns
         -------
-        Tuple[int, Set[str]]
-            Tuple with the number of reactions lost and the list of these reactions
+        bool
+            True if the reaction for the species is present (unique or not),
+            False otherwise
         """
-        loss = set()
-        for reaction in self.reactions_list:
-            if self.data_reactions[species][reaction] == 0:
-                loss.add(reaction)
-        return len(loss), loss
+        if unique:
+            row = list(self.data_reactions.loc[reaction])
+            return self.data_reactions.loc[reaction, species] == sum(row) == 1
+        else:
+            return self.data_reactions.loc[reaction, species] == 1
 
-    def __init_reactions_loss(self) -> Dict[str, Tuple[int, Set[str]]]:
-        """ Init the reactions_loss attribute
+    def get_rxn_present(self, species: str or List[str], unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+        """ Returns for each species the number and the set of present reactions (unique or not) : considered unique if
+        only this species is having the reaction among all species
+
+        Parameters
+        ----------
+        species: str or List[str]
+            species or list of species to be considered
+        unique: bool, optional (default=True)
+            True if the presence is unique, False otherwise
 
         Returns
         -------
-        reactions_loss : Dict[str, Tuple[int, Set[str]]]
-            reactions_loss attribute
+        min_pw: Dict[str, Tuple[int, Set[str]]]
+            (Dict[species, Tuple[number_pathways, Set[pathways]]]) dictionary associating for each species the number of
+            present pathways and its set (unique or not)
         """
-        reactions_loss = {}
-        for species in self.species_list:
-            reactions_loss[species] = self.__get_reactions_loss_1_species(species)
-        return reactions_loss
+        if type(species) == str:
+            species = [species]
+        present_pw_dict = {}
+        for sp in species:
+            sp += self.STR_COMP
+            present_pw = set()
+            for pw in self.pathways_list:
+                if self.is_present(sp, pw, unique):
+                    present_pw.add(pw)
+            present_pw_dict[sp[:-len(self.STR_COMP)]] = (len(present_pw), present_pw)
+        return present_pw_dict
 
     def __get_reaction_nb(self):
         reactions_nb_dict = {}
