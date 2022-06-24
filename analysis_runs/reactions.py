@@ -166,40 +166,92 @@ class Reactions:
         else:
             return self.data_reactions.loc[reaction, species] == 1
 
-    def get_rxn_present(self, species: str or List[str], unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_rxn_present(self, species: str or List[str] = None, unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of present reactions (unique or not) : considered unique if
         only this species is having the reaction among all species
 
         Parameters
         ----------
-        species: str or List[str]
+        species: str or List[str], optional (default=None)
             species or list of species to be considered
+            if None, will be all the species
         unique: bool, optional (default=True)
             True if the presence is unique, False otherwise
 
         Returns
         -------
-        min_pw: Dict[str, Tuple[int, Set[str]]]
-            (Dict[species, Tuple[number_pathways, Set[pathways]]]) dictionary associating for each species the number of
-            present pathways and its set (unique or not)
+        present_rxn_dict: Dict[str, Tuple[int, Set[str]]]
+            (Dict[species, Tuple[number_reactions, Set[reactions]]]) dictionary associating for each species the number
+            of present reactions and its set (unique or not)
         """
-        if type(species) == str:
+        if species is None:
+            species = self.nb_species
+        elif type(species) == str:
             species = [species]
-        present_pw_dict = {}
+        present_rxn_dict = {}
         for sp in species:
-            sp += self.STR_COMP
-            present_pw = set()
-            for pw in self.pathways_list:
-                if self.is_present(sp, pw, unique):
-                    present_pw.add(pw)
-            present_pw_dict[sp[:-len(self.STR_COMP)]] = (len(present_pw), present_pw)
-        return present_pw_dict
+            present_rxn = set()
+            for rxn in self.reactions_list:
+                if self.is_present(sp, rxn, unique):
+                    present_rxn.add(rxn)
+            present_rxn_dict[sp] = (len(present_rxn), present_rxn)
+        return present_rxn_dict
 
-    def __get_reaction_nb(self):
-        reactions_nb_dict = {}
-        for species in self.species_list:
-            reactions_nb_dict[species] = sum(self.data_reactions[species])
-        return reactions_nb_dict
+    def is_absent(self, species: str, reaction: str, unique: bool) -> bool:
+        """ Indicate if the reaction is absent for the species (unique or not) : considered unique if only this species
+        is not having the reaction among all species
+
+        Parameters
+        ----------
+        species: str
+            species to be considered
+        reaction: str
+            reaction to be considered
+        unique: bool
+            True if the absence is unique, False otherwise
+
+        Returns
+        -------
+        bool
+            True if the reaction for the species is absent (unique or not),
+            False otherwise
+        """
+        if unique:
+            row = list(self.data_reactions.loc[reaction])
+            return self.data_reactions.loc[reaction, species] == 0 and sum(row) == self.nb_species - 1
+        else:
+            return self.data_reactions.loc[reaction, species] == 0
+
+    def get_rxn_absent(self, species: str or List[str] = None, unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+        """ Returns for each species the number and the set of absent reactions (unique or not) : considered unique if
+        only this species is not having the reaction among all species
+
+        Parameters
+        ----------
+        species: str or List[str], optional (default=None)
+            species or list of species to be considered
+            if None will be all the species
+        unique: bool, optional (default=True)
+            True if the absence is unique, False otherwise
+
+        Returns
+        -------
+        absent_rxn_dict: Dict[str, Tuple[int, Set[str]]]
+            (Dict[species, Tuple[number_reactions, Set[reactions]]]) dictionary associating for each species the number
+            of absent reactions and its set (unique or not)
+        """
+        if species is None:
+            species = self.nb_species
+        elif type(species) == str:
+            species = [species]
+        absent_rxn_dict = {}
+        for sp in species:
+            absent_rxn = set()
+            for rxn in self.reactions_list:
+                if self.is_absent(sp, rxn, unique):
+                    absent_rxn.add(rxn)
+            absent_rxn_dict[sp] = (len(absent_rxn), absent_rxn)
+        return absent_rxn_dict
 
     def get_genes_assoc(self, reactions_set: Set[str] = None,
                         output_file=False) -> Dict[str, Dict[str, Dict[str, List[str]]]]:

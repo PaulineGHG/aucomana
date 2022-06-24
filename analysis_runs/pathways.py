@@ -374,7 +374,7 @@ class Pathways:
 
         Returns
         -------
-        min_pw: Dict[str, Tuple[int, Set[str]]]
+        present_pw_dict: Dict[str, Tuple[int, Set[str]]]
             (Dict[species, Tuple[number_pathways, Set[pathways]]]) dictionary associating for each species the number of
             present pathways and its set (unique or not)
         """
