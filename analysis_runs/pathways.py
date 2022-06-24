@@ -210,7 +210,7 @@ class Pathways:
             pathways and its set having the minimal (unique or not) completion value
         """
         if species is None:
-            species = self.nb_species
+            species = self.species_list
         elif type(species) == str:
             species = [species]
         min_pw_dict = {}
@@ -269,7 +269,7 @@ class Pathways:
             absent pathways and its set (unique or not)
         """
         if species is None:
-            species = self.nb_species
+            species = self.species_list
         elif type(species) == str:
             species = [species]
         absent_pw_dict = {}
@@ -328,7 +328,7 @@ class Pathways:
             incomplete pathways and its set (unique or not)
         """
         if species is None:
-            species = self.nb_species
+            species = self.species_list
         elif type(species) == str:
             species = [species]
         incomplete_pw_dict = {}
@@ -389,7 +389,7 @@ class Pathways:
             present pathways and its set (unique or not)
         """
         if species is None:
-            species = self.nb_species
+            species = self.species_list
         elif type(species) == str:
             species = [species]
         present_pw_dict = {}
@@ -447,7 +447,7 @@ class Pathways:
             pathways and its set having the maximum (unique or not) completion value
         """
         if species is None:
-            species = self.nb_species
+            species = self.species_list
         elif type(species) == str:
             species = [species]
         max_pw_dict = {}
@@ -506,7 +506,7 @@ class Pathways:
             complete pathways and its set (unique or not)
         """
         if species is None:
-            species = self.nb_species
+            species = self.species_list
         elif type(species) == str:
             species = [species]
         complete_pw_dict = {}

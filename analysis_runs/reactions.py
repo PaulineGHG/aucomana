@@ -161,7 +161,7 @@ class Reactions:
         else:
             return self.data_reactions.loc[reaction, species] == 1
 
-    def get_rxn_present(self, species: str or List[str] = None, unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_rxn_present(self, species: str or List[str] = None, unique: bool = False) -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of present reactions (unique or not) : considered unique if
         only this species is having the reaction among all species
 
@@ -170,7 +170,7 @@ class Reactions:
         species: str or List[str], optional (default=None)
             species or list of species to be considered
             if None, will be all the species
-        unique: bool, optional (default=True)
+        unique: bool, optional (default=False)
             True if the presence is unique, False otherwise
 
         Returns
@@ -180,7 +180,7 @@ class Reactions:
             of present reactions and its set (unique or not)
         """
         if species is None:
-            species = self.nb_species
+            species = self.species_list
         elif type(species) == str:
             species = [species]
         present_rxn_dict = {}
@@ -217,7 +217,7 @@ class Reactions:
         else:
             return self.data_reactions.loc[reaction, species] == 0
 
-    def get_rxn_absent(self, species: str or List[str] = None, unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_rxn_absent(self, species: str or List[str] = None, unique: bool = False) -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of absent reactions (unique or not) : considered unique if
         only this species is not having the reaction among all species
 
@@ -226,7 +226,7 @@ class Reactions:
         species: str or List[str], optional (default=None)
             species or list of species to be considered
             if None will be all the species
-        unique: bool, optional (default=True)
+        unique: bool, optional (default=False)
             True if the absence is unique, False otherwise
 
         Returns
@@ -236,7 +236,7 @@ class Reactions:
             of absent reactions and its set (unique or not)
         """
         if species is None:
-            species = self.nb_species
+            species = self.species_list
         elif type(species) == str:
             species = [species]
         absent_rxn_dict = {}

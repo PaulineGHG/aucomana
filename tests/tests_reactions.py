@@ -1,6 +1,5 @@
 import unittest
 import pandas as pd
-import typing
 from analysis_runs.analysis import Analysis
 from analysis_runs.reactions import Reactions
 
@@ -67,6 +66,11 @@ class Test(unittest.TestCase):
         self.assertFalse(R.is_absent('CFT073', 'RXN-12615'))
         self.assertTrue(R.is_absent('ec042', '5.1.99.4-RXN', unique=True))
         self.assertFalse(R.is_absent('ec042', 'RXN-12615', unique=True))
+
+    def test_get_rxn_present(self):
+        dict_rxn_pres = R.get_rxn_present()
+        print(R.get_rxn_present())
+        self.assertIs(type(dict_rxn_pres), dict)
 
 
 if __name__ == '__main__':
