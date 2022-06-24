@@ -191,14 +191,15 @@ class Pathways:
         else:
             return self.data_pathways_float.loc[pathway, species] == min_completion and min_completion > 0
 
-    def get_pw_min(self, species: str or List[str], unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_pw_min(self, species: str or List[str] = None, unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of pathways having the minimal completion (unique or not),
         the pathways returned are not absent (at least 1 reaction in the pathway)
 
         Parameters
         ----------
-        species: str or List[str]
+        species: str or List[str], optional (default=None)
             species or list of species to be considered
+            if None will be all the species
         unique: bool, optional (default=True)
             True if the minimum is unique, False otherwise
 
@@ -208,7 +209,9 @@ class Pathways:
             (Dict[species, Tuple[number_pathways, Set[pathways]]]) dictionary associating for each species the number of
             pathways and its set having the minimal (unique or not) completion value
         """
-        if type(species) == str:
+        if species is None:
+            species = self.nb_species
+        elif type(species) == str:
             species = [species]
         min_pw_dict = {}
         for sp in species:
@@ -247,14 +250,15 @@ class Pathways:
         else:
             return self.data_pathways_float.loc[pathway, species] == 0
 
-    def get_pw_absent(self, species: str or List[str], unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_pw_absent(self, species: str or List[str] = None, unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of absent pathways (unique or not) : considered unique if
         only this species is not having the pathway among all species
 
         Parameters
         ----------
-        species: str or List[str]
+        species: str or List[str], optional (default=None)
             species or list of species to be considered
+            if None will be all the species
         unique: bool, optional (default=True)
             True if the absence is unique, False otherwise
 
@@ -264,7 +268,9 @@ class Pathways:
             (Dict[species, Tuple[number_pathways, Set[pathways]]]) dictionary associating for each species the number of
             absent pathways and its set (unique or not)
         """
-        if type(species) == str:
+        if species is None:
+            species = self.nb_species
+        elif type(species) == str:
             species = [species]
         absent_pw_dict = {}
         for sp in species:
@@ -303,14 +309,15 @@ class Pathways:
         else:
             return 0 < self.data_pathways_float.loc[pathway, species] < 1
 
-    def get_pw_incomplete(self, species: str or List[str], unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_pw_incomplete(self, species: str or List[str] = None, unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of incomplete pathways (unique or not) : considered unique
         if all other species have the pathway completed
 
         Parameters
         ----------
-        species: str or List[str]
+        species: str or List[str], optional (default=None)
             species or list of species to be considered
+            if None will be all the species
         unique: bool, optional (default=True)
             True if the incomplete pathway is unique, False otherwise
 
@@ -320,7 +327,9 @@ class Pathways:
             (Dict[species, Tuple[number_pathways, Set[pathways]]]) dictionary associating for each species the number of
             incomplete pathways and its set (unique or not)
         """
-        if type(species) == str:
+        if species is None:
+            species = self.nb_species
+        elif type(species) == str:
             species = [species]
         incomplete_pw_dict = {}
         for sp in species:
@@ -361,14 +370,15 @@ class Pathways:
         else:
             return self.data_pathways_float.loc[pathway, species] > 0
 
-    def get_pw_present(self, species: str or List[str], unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_pw_present(self, species: str or List[str] = None, unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of present pathways (unique or not) : considered unique if
         only this species is having the pathway among all species
 
         Parameters
         ----------
-        species: str or List[str]
+        species: str or List[str], optional (default=None)
             species or list of species to be considered
+            if None will be all the species
         unique: bool, optional (default=True)
             True if the presence is unique, False otherwise
 
@@ -378,7 +388,9 @@ class Pathways:
             (Dict[species, Tuple[number_pathways, Set[pathways]]]) dictionary associating for each species the number of
             present pathways and its set (unique or not)
         """
-        if type(species) == str:
+        if species is None:
+            species = self.nb_species
+        elif type(species) == str:
             species = [species]
         present_pw_dict = {}
         for sp in species:
@@ -417,13 +429,14 @@ class Pathways:
         else:
             return self.data_pathways_float.loc[pathway, species] == max_comp
 
-    def get_pw_max(self, species: str or List[str], unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_pw_max(self, species: str or List[str] = None, unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of pathways having the maximal completion (unique or not),
 
         Parameters
         ----------
-        species: str or List[str]
+        species: str or List[str], optional (default=None)
             species or list of species to be considered
+            if None will be all the species
         unique: bool, optional (default=True)
             True if the maximum is unique, False otherwise
 
@@ -433,7 +446,9 @@ class Pathways:
             (Dict[species, Tuple[number_pathways, Set[pathways]]]) dictionary associating for each species the number of
             pathways and its set having the maximum (unique or not) completion value
         """
-        if type(species) == str:
+        if species is None:
+            species = self.nb_species
+        elif type(species) == str:
             species = [species]
         max_pw_dict = {}
         for sp in species:
@@ -472,14 +487,15 @@ class Pathways:
         else:
             return self.data_pathways_float.loc[pathway, species] == 1
 
-    def get_pw_complete(self, species: str or List[str], unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_pw_complete(self, species: str or List[str] = None, unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of complete pathways (unique or not) : considered unique
         if all other species have not the pathway completed
 
         Parameters
         ----------
-        species: str or List[str]
+        species: str or List[str], optional (default=None)
             species or list of species to be considered
+            if None will be all the species
         unique: bool, optional (default=True)
             True if the complete pathway is unique, False otherwise
 
@@ -489,7 +505,9 @@ class Pathways:
             (Dict[species, Tuple[number_pathways, Set[pathways]]]) dictionary associating for each species the number of
             complete pathways and its set (unique or not)
         """
-        if type(species) == str:
+        if species is None:
+            species = self.nb_species
+        elif type(species) == str:
             species = [species]
         complete_pw_dict = {}
         for sp in species:

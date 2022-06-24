@@ -68,8 +68,6 @@ class Reactions:
             self.data_genes_assoc, \
             self.reactions_list = self.__init_data(file_reactions_tsv, out)
         self.nb_reactions, self.nb_species = self.data_reactions.shape
-        # self.reactions_loss = self.__init_reactions_loss()
-        # self.nb_reactions_sp = self.__get_reaction_nb()
 
     def __init_data(self, file_reactions_tsv: str, out: int) \
             -> Tuple['pd.DataFrame', 'pd.DataFrame', List[str]]:
