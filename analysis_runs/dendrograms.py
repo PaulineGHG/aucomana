@@ -26,8 +26,8 @@ ape = importr(packnames[3])
 
 class Dendrogram:
 
-    def __init__(self, a, path_study, df_binary, run, name, phylo_file):
-        self.a = a
+    def __init__(self, path_runs, path_study, df_binary, run, name, phylo_file):
+        self.path_runs = path_runs
         self.path_study = path_study
         self.df_binary = df_binary
         self.run = run
@@ -43,8 +43,7 @@ class Dendrogram:
         file = os.path.join(self.path_study, "output_data", "dendro_tanglegrams", "dendro_groups.tsv")
         if not os.path.exists(file):
             with open(file, "w") as f:
-                f.write("\t".join(["group name", "column", "color",
-                                   "element (B for branch, L for leave)"]))
+                f.write("\t".join(["group name", "color", "element (B for branch, L for leave)"]))
             print(f"dendro_groups.tsv file created in path : {file}")
         return file
 
@@ -70,10 +69,11 @@ class Dendrogram:
         groups_branch = {}
         groups_leaves = {}
         for i in d_grp.index:
-            group = (d_grp.loc[i, "group name"], d_grp.loc[i, "column"])
+            group = d_grp.loc[i, "group name"]
             color = d_grp.loc[i, "color"]
             element = d_grp.loc[i, "element (B for branch, L for leave)"]
-            group_list = self.a.get_grp_l(run=self.run, group=group)
+            a = Analysis(self.path_runs, self.path_study)
+            group_list = a.get_grp_set(run=self.run, group=group)
             if element == "B":
                 groups_branch[group] = {"list": group_list, "color": color}
             elif element == "L":

@@ -56,6 +56,18 @@ class Test(unittest.TestCase):
         index_list = [x + R.STR_GENE_ASSOC for x in R.species_list]
         self.assertListEqual(index_list, list(R.data_genes_assoc.columns))
 
+    def test_is_present(self):
+        self.assertTrue(R.is_present('UTI89', 'RXN-16632'))
+        self.assertFalse(R.is_present('UTI89', 'RXN0-963'))
+        self.assertTrue(R.is_present('sf301', 'RXN-14500', unique=True))
+        self.assertFalse(R.is_present('IAI1', 'RXNMETA-12672', unique=True))
+
+    def test_is_absent(self):
+        self.assertTrue(R.is_absent('CFT073', 'RXN0-962'))
+        self.assertFalse(R.is_absent('CFT073', 'RXN-12615'))
+        self.assertTrue(R.is_absent('ec042', '5.1.99.4-RXN', unique=True))
+        self.assertFalse(R.is_absent('ec042', 'RXN-12615', unique=True))
+
 
 if __name__ == '__main__':
     unittest.main()

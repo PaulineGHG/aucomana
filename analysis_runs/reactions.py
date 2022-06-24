@@ -8,6 +8,7 @@ import pandas as pd
 import json
 import os
 import datetime
+import Bio
 
 
 class Reactions:
@@ -32,10 +33,6 @@ class Reactions:
         number of reactions (filtered)
     nb_species : int
         number of species studied
-    reactions_loss : Dict[str, Tuple[int, Set[str]]]
-        Dictionary indicating for each species how many and which reactions are lost
-    nb_reactions_sp : Dict[str, int]
-        Dictionary indicating for each species how many reactions are found
     """
     nb_common_reac = 0
     nb_genes_assoc = 0
@@ -139,7 +136,7 @@ class Reactions:
                 filtered_reactions.append(reaction)
         return filtered_reactions
 
-    def is_present(self, species: str, reaction: str, unique: bool) -> bool:
+    def is_present(self, species: str, reaction: str, unique: bool = False) -> bool:
         """ Indicate if the reaction is present for the species (unique or not) : considered unique if only this species
         is having the reaction among all species
 
@@ -149,7 +146,7 @@ class Reactions:
             species to be considered
         reaction: str
             reaction to be considered
-        unique: bool
+        unique: bool, optional (default=False)
             True if the presence is unique, False otherwise
 
         Returns
@@ -195,7 +192,7 @@ class Reactions:
             present_rxn_dict[sp] = (len(present_rxn), present_rxn)
         return present_rxn_dict
 
-    def is_absent(self, species: str, reaction: str, unique: bool) -> bool:
+    def is_absent(self, species: str, reaction: str, unique: bool = False) -> bool:
         """ Indicate if the reaction is absent for the species (unique or not) : considered unique if only this species
         is not having the reaction among all species
 
@@ -205,7 +202,7 @@ class Reactions:
             species to be considered
         reaction: str
             reaction to be considered
-        unique: bool
+        unique: bool, optional (default=False)
             True if the absence is unique, False otherwise
 
         Returns
@@ -320,113 +317,113 @@ class Reactions:
                             elif write_seq:
                                 o.write(line)
 
-    def get_common_reactions(self, datas: List["Reactions"], species: str, output_file=False,
-                             union=False) -> Tuple[int, Set[str]]:
-        """ Returns the reactions lost in common between at least 2 Reactions instance for 1
-        common species
+    # def get_common_reactions(self, datas: List["Reactions"], species: str, output_file=False,
+    #                          union=False) -> Tuple[int, Set[str]]:
+    #     """ Returns the reactions lost in common between at least 2 Reactions instance for 1
+    #     common species
+    #
+    #     Parameters
+    #     ----------
+    #     datas : List["Reactions"]
+    #         List of Reactions instance to compare
+    #     species : str
+    #         Species of interest compare
+    #     output_file : bool, optional (default=False)
+    #         True : write json and txt output
+    #         False : returns the output
+    #     union : bool, optional (default=False)
+    #         True : get the union set of reactions between runs
+    #         False : get the intersection set of reactions between runs
+    #
+    #     Returns
+    #     -------
+    #     Tuple[int, Set[str]]
+    #         Number of reactions in common and their list
+    #     """
+    #     set_reac_list = []
+    #     for data in datas:
+    #         set_reac_list.append(data.reactions_loss[species][1])
+    #     if not union:
+    #         common_reactions = set.intersection(*set_reac_list)
+    #     else:
+    #         common_reactions = set.union(*set_reac_list)
+    #     if output_file:
+    #         self.nb_common_reac += 1
+    #         self.__write_common_reactions_json(datas, common_reactions, species, union)
+    #         self.__write_common_reactions_txt(datas, common_reactions, species, union)
+    #     else:
+    #         return len(common_reactions), common_reactions
+    #
+    # def __write_common_reactions_txt(self, datas_list: List["Reactions"],
+    #                                  common_reactions: Set[str], species: str, union: bool):
+    #     """Write get_common_reactions results in a .txt file
+    #
+    #     Parameters
+    #     ----------
+    #     datas_list : List["Reactions"]
+    #         List of Reactions instance compared
+    #     common_reactions : Set[str]
+    #         Set of common reactions between all the datas
+    #     species : str
+    #         Interest species
+    #     union : bool
+    #     """
+    #     now = datetime.datetime.now().strftime('%d_%m_%Y__%Hh_%Mmin_%Ss')
+    #     if not union:
+    #         outfile_name = f'{self.path_study}/output_data/reactions_data/common_reac/intersection/' \
+    #                        f'{now}_{self.nb_common_reac}.txt'
+    #     else:
+    #         outfile_name = f'{self.path_study}/output_data/reactions_data/common_reac/union/{now}_' \
+    #                        f'{self.nb_common_reac}.txt'
+    #     with open(outfile_name, 'w') as o:
+    #         o.write("Compared files :\n"
+    #                 "----------------\n")
+    #         for data in datas_list:
+    #             o.write(data.name + "\n")
+    #         o.write(f"\nInterest species :\n"
+    #                 f"------------------\n"
+    #                 f"{species}\n\n")
+    #         o.write(f"Number of common reactions : {len(common_reactions)}\n"
+    #                 f"----------------------------\n\n"
+    #                 f"Reactions :\n"
+    #                 f"-----------\n")
+    #         for reaction in common_reactions:
+    #             o.write(reaction + "\n")
 
-        Parameters
-        ----------
-        datas : List["Reactions"]
-            List of Reactions instance to compare
-        species : str
-            Species of interest compare
-        output_file : bool, optional (default=False)
-            True : write json and txt output
-            False : returns the output
-        union : bool, optional (default=False)
-            True : get the union set of reactions between runs
-            False : get the intersection set of reactions between runs
+    # def __write_common_reactions_json(self, datas_list: List["Reactions"],
+    #                                   common_reactions: Set[str], species: str, union: bool):
+    #     """Write get_common_reactions results in a .json file
+    #
+    #    Parameters
+    #    ----------
+    #    datas_list : List["Reactions"]
+    #        List of Reactions instance compared
+    #    common_reactions : Set[str]
+    #        Set of common reactions between all the datas
+    #    species : str
+    #        Interest species
+    #     union : bool
+    #    """
+    #     now = datetime.datetime.now().strftime('%d_%m_%Y__%Hh_%Mmin_%Ss')
+    #     if not union:
+    #         outfile_name = f'{self.path_study}/output_data/reactions_data/common_reac/intersection/' \
+    #                        f'{now}_{self.nb_common_reac}.json'
+    #     else:
+    #         outfile_name = f'{self.path_study}/output_data/reactions_data/common_reac/union/{now}_' \
+    #                        f'{self.nb_common_reac}.json'
+    #     data = {"Compared files": [data.name for data in datas_list],
+    #             "Interest species": species,
+    #             "Number of common reactions": len(common_reactions),
+    #             "Reactions": [reaction for reaction in common_reactions]}
+    #     with open(outfile_name, 'w') as o:
+    #         json.dump(data, o, indent=4)
 
-        Returns
-        -------
-        Tuple[int, Set[str]]
-            Number of reactions in common and their list
-        """
-        set_reac_list = []
-        for data in datas:
-            set_reac_list.append(data.reactions_loss[species][1])
-        if not union:
-            common_reactions = set.intersection(*set_reac_list)
-        else:
-            common_reactions = set.union(*set_reac_list)
-        if output_file:
-            self.nb_common_reac += 1
-            self.__write_common_reactions_json(datas, common_reactions, species, union)
-            self.__write_common_reactions_txt(datas, common_reactions, species, union)
-        else:
-            return len(common_reactions), common_reactions
-
-    def __write_common_reactions_txt(self, datas_list: List["Reactions"],
-                                     common_reactions: Set[str], species: str, union: bool):
-        """Write get_common_reactions results in a .txt file
-
-        Parameters
-        ----------
-        datas_list : List["Reactions"]
-            List of Reactions instance compared
-        common_reactions : Set[str]
-            Set of common reactions between all the datas
-        species : str
-            Interest species
-        union : bool
-        """
-        now = datetime.datetime.now().strftime('%d_%m_%Y__%Hh_%Mmin_%Ss')
-        if not union:
-            outfile_name = f'{self.path_study}/output_data/reactions_data/common_reac/intersection/' \
-                           f'{now}_{self.nb_common_reac}.txt'
-        else:
-            outfile_name = f'{self.path_study}/output_data/reactions_data/common_reac/union/{now}_' \
-                           f'{self.nb_common_reac}.txt'
-        with open(outfile_name, 'w') as o:
-            o.write("Compared files :\n"
-                    "----------------\n")
-            for data in datas_list:
-                o.write(data.name + "\n")
-            o.write(f"\nInterest species :\n"
-                    f"------------------\n"
-                    f"{species}\n\n")
-            o.write(f"Number of common reactions : {len(common_reactions)}\n"
-                    f"----------------------------\n\n"
-                    f"Reactions :\n"
-                    f"-----------\n")
-            for reaction in common_reactions:
-                o.write(reaction + "\n")
-
-    def generate_rnx_dendrogram(self, a, name=None, phylo_file=None, n_boot=10000):
+    def generate_rnx_dendrogram(self, name=None, phylo_file=None, n_boot=10000):
         if name is None:
             self.nb_dend += 1
             name = f"dendrogram{self.nb_dend}"
         name = "rnx_" + name
-        d = analysis_runs.dendrograms.Dendrogram(a, self.path_study, self.data_reactions,
+        d = analysis_runs.dendrograms.Dendrogram(self.path_runs, self.path_study, self.data_reactions,
                                                  self.name, name, phylo_file)
         d.get_dendro_pvclust(n_boot)
-
-    def __write_common_reactions_json(self, datas_list: List["Reactions"],
-                                      common_reactions: Set[str], species: str, union: bool):
-        """Write get_common_reactions results in a .json file
-
-       Parameters
-       ----------
-       datas_list : List["Reactions"]
-           List of Reactions instance compared
-       common_reactions : Set[str]
-           Set of common reactions between all the datas
-       species : str
-           Interest species
-        union : bool
-       """
-        now = datetime.datetime.now().strftime('%d_%m_%Y__%Hh_%Mmin_%Ss')
-        if not union:
-            outfile_name = f'{self.path_study}/output_data/reactions_data/common_reac/intersection/' \
-                           f'{now}_{self.nb_common_reac}.json'
-        else:
-            outfile_name = f'{self.path_study}/output_data/reactions_data/common_reac/union/{now}_' \
-                           f'{self.nb_common_reac}.json'
-        data = {"Compared files": [data.name for data in datas_list],
-                "Interest species": species,
-                "Number of common reactions": len(common_reactions),
-                "Reactions": [reaction for reaction in common_reactions]}
-        with open(outfile_name, 'w') as o:
-            json.dump(data, o, indent=4)
 
