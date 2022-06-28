@@ -21,6 +21,7 @@ class Test(unittest.TestCase):
         self.assertEqual(species_obj, R.species_list)
 
     def test_species_precised(self):
+        # SPECIES_LIST = ['HS', 'UTI89', 'ec042']
         sp_l = ['HS', 'UTI89', 'ec042']
         rs = A.reactions(RUN, species_list=sp_l)
         self.assertEqual(sp_l, rs.species_list)
@@ -35,11 +36,14 @@ class Test(unittest.TestCase):
         self.assertEqual('2.7.7.46-RXN', R.reactions_list[-1])
 
     def test_reactions_filtered1(self):
+        # OUT = 1
         ro1 = A.reactions(RUN, out=1)
         self.assertEqual(2196, len(ro1.reactions_list))
         self.assertIn('RXN-17824', ro1.reactions_list)
         self.assertIn('BETAGALACTOSID-RXN', ro1.reactions_list)
         self.assertNotIn('RXN-10016', ro1.reactions_list)
+
+        # OUT = 2
         ro2 = A.reactions(RUN, out=2)
         self.assertIn('RXN-10016', ro2.reactions_list)
 
@@ -56,14 +60,20 @@ class Test(unittest.TestCase):
         self.assertListEqual(index_list, list(R.data_genes_assoc.columns))
 
     def test_is_present(self):
+        # NO PARAMETER (UNIQUE = FALSE)
         self.assertTrue(R.is_present('UTI89', 'RXN-16632'))
         self.assertFalse(R.is_present('UTI89', 'RXN0-963'))
+
+        # UNIQUE = TRUE
         self.assertTrue(R.is_present('sf301', 'RXN-14500', unique=True))
         self.assertFalse(R.is_present('IAI1', 'RXNMETA-12672', unique=True))
 
     def test_is_absent(self):
+        # NO PARAMETER (UNIQUE = FALSE)
         self.assertTrue(R.is_absent('CFT073', 'RXN0-962'))
         self.assertFalse(R.is_absent('CFT073', 'RXN-12615'))
+
+        # UNIQUE = TRUE
         self.assertTrue(R.is_absent('ec042', '5.1.99.4-RXN', unique=True))
         self.assertFalse(R.is_absent('ec042', 'RXN-12615', unique=True))
 
@@ -75,24 +85,43 @@ class Test(unittest.TestCase):
         self.assertIs(type(dict_rxn_pres['HS'][1]), set)
         self.assertIn('RXN-15149', dict_rxn_pres['HS'][1])
         self.assertEqual(set(dict_rxn_pres.keys()), set(R.species_list))
+
         # UNIQUE = TRUE
         dict_rxn_pres_uni = R.get_rxn_present(unique=True)
         self.assertEqual(dict_rxn_pres_uni['HS'][0], 0)
         self.assertEqual(dict_rxn_pres_uni['IAI1'][0], 5)
         self.assertIn('RXN-20706', dict_rxn_pres_uni['IAI1'][1])
 
+        # SPECIES STR
+        dict_rxn_pres = R.get_rxn_present(species='HS')
+        self.assertEqual(dict_rxn_pres.keys(), {'HS'})
+
+        # SPECIES LIST
+        dict_rxn_pres = R.get_rxn_present(species=['HS', 'IAI1', 'ec042'])
+        self.assertEqual(dict_rxn_pres.keys(), {'HS', 'IAI1', 'ec042'})
+
     def test_get_rxn_absent(self):
+        # NO PARAMETER
         dict_rxn_abs = R.get_rxn_absent()
         self.assertIs(type(dict_rxn_abs), dict)
         self.assertEqual(dict_rxn_abs['HS'][0], 98)
         self.assertIs(type(dict_rxn_abs['HS'][1]), set)
         self.assertIn('TRANS-RXN0-268', dict_rxn_abs['HS'][1])
         self.assertEqual(set(dict_rxn_abs.keys()), set(R.species_list))
+
+        # UNIQUE = TRUE
         dict_rxn_abs_uni = R.get_rxn_absent(unique=True)
-        print(dict_rxn_abs_uni)
         self.assertEqual(dict_rxn_abs_uni['HS'][0], 15)
         self.assertEqual(dict_rxn_abs_uni['IAI1'][0], 0)
         self.assertIn('RXN0-7341', dict_rxn_abs_uni['HS'][1])
+
+        # SPECIES STR
+        dict_rxn_pres = R.get_rxn_present(species='HS')
+        self.assertEqual(dict_rxn_pres.keys(), {'HS'})
+
+        # SPECIES LIST
+        dict_rxn_pres = R.get_rxn_present(species=['HS', 'IAI1', 'ec042'])
+        self.assertEqual(dict_rxn_pres.keys(), {'HS', 'IAI1', 'ec042'})
 
 
 if __name__ == '__main__':
