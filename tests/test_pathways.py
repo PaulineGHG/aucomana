@@ -80,6 +80,17 @@ class Test(unittest.TestCase):
         self.assertTrue(PW.is_present('sf301', 'PWY-5517', unique=True))
         self.assertFalse(PW.is_present('sf301', 'AEROBACTINSYN-PWY', unique=True))
 
+    def test_is_max(self):
+        # NO PARAMETER (UNIQUE = FALSE)
+        self.assertTrue(PW.is_max('HS', 'PWY-6538'))
+        self.assertFalse(PW.is_max('ec042', 'PWY-6538'))
+
+        # UNIQUE = TRUE
+        self.assertTrue(PW.is_max('IAI1', 'PWY-6854', unique=True))
+        self.assertFalse(PW.is_max('HS', 'PWY-6538', unique=True))
+
+    # PWY-5698 UNIQUE MIN
+
     # def test_is_absent(self):
     #     # NO PARAMETER (UNIQUE = FALSE)
     #     self.assertTrue(R.is_absent('CFT073', 'RXN0-962'))
@@ -89,29 +100,29 @@ class Test(unittest.TestCase):
     #     self.assertTrue(R.is_absent('ec042', '5.1.99.4-RXN', unique=True))
     #     self.assertFalse(R.is_absent('ec042', 'RXN-12615', unique=True))
     #
-    # def test_get_rxn_present(self):
-    #     # NO PARAMETER
-    #     dict_rxn_pres = R.get_rxn_present()
-    #     self.assertIs(type(dict_rxn_pres), dict)
-    #     self.assertEqual(dict_rxn_pres['HS'][0], 2304)
-    #     self.assertIs(type(dict_rxn_pres['HS'][1]), set)
-    #     self.assertIn('RXN-15149', dict_rxn_pres['HS'][1])
-    #     self.assertEqual(set(dict_rxn_pres.keys()), set(R.species_list))
-    #
-    #     # UNIQUE = TRUE
-    #     dict_rxn_pres_uni = R.get_rxn_present(unique=True)
-    #     self.assertEqual(dict_rxn_pres_uni['HS'][0], 0)
-    #     self.assertEqual(dict_rxn_pres_uni['IAI1'][0], 5)
-    #     self.assertIn('RXN-20706', dict_rxn_pres_uni['IAI1'][1])
-    #
-    #     # SPECIES STR
-    #     dict_rxn_pres = R.get_rxn_present(species='HS')
-    #     self.assertEqual(dict_rxn_pres.keys(), {'HS'})
-    #
-    #     # SPECIES LIST
-    #     dict_rxn_pres = R.get_rxn_present(species=['HS', 'IAI1', 'ec042'])
-    #     self.assertEqual(dict_rxn_pres.keys(), {'HS', 'IAI1', 'ec042'})
-    #
+    def test_get_rxn_present(self):
+        # NO PARAMETER
+        dict_pw_pres = PW.get_pw_present()
+        self.assertIs(type(dict_pw_pres), dict)
+        self.assertEqual(dict_pw_pres['HS'][0], 1252)
+        self.assertIs(type(dict_pw_pres['HS'][1]), set)
+        self.assertIn('PWY-5087', dict_pw_pres['HS'][1])
+        self.assertEqual(set(dict_pw_pres.keys()), set(PW.species_list))
+
+        # UNIQUE = TRUE
+        dict_pw_pres_uni = PW.get_pw_present(unique=True)
+        self.assertEqual(dict_pw_pres_uni['HS'][0], 0)
+        self.assertEqual(dict_pw_pres_uni['IAI1'][0], 1)
+        self.assertIn('PWY-5934', dict_pw_pres_uni['IAI1'][1])
+
+        # SPECIES STR
+        dict_pw_pres = PW.get_pw_present(species='HS')
+        self.assertEqual(dict_pw_pres.keys(), {'HS'})
+
+        # SPECIES LIST
+        dict_rxn_pres = PW.get_pw_present(species=['HS', 'IAI1', 'ec042'])
+        self.assertEqual(dict_rxn_pres.keys(), {'HS', 'IAI1', 'ec042'})
+
     # def test_get_rxn_absent(self):
     #     # NO PARAMETER
     #     dict_rxn_abs = R.get_rxn_absent()

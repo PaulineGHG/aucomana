@@ -371,7 +371,7 @@ class Pathways:
         else:
             return self.data_pathways_float.loc[pathway, species] > 0
 
-    def get_pw_present(self, species: str or List[str] = None, unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_pw_present(self, species: str or List[str] = None, unique: bool = False) -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of present pathways (unique or not) : considered unique if
         only this species is having the pathway among all species
 
@@ -380,7 +380,7 @@ class Pathways:
         species: str or List[str], optional (default=None)
             species or list of species to be considered
             if None will be all the species
-        unique: bool, optional (default=True)
+        unique: bool, optional (default=False)
             True if the presence is unique, False otherwise
 
         Returns
@@ -395,12 +395,11 @@ class Pathways:
             species = [species]
         present_pw_dict = {}
         for sp in species:
-            sp += self.STR_COMP
             present_pw = set()
             for pw in self.pathways_list:
                 if self.is_present(sp, pw, unique):
                     present_pw.add(pw)
-            present_pw_dict[sp[:-len(self.STR_COMP)]] = (len(present_pw), present_pw)
+            present_pw_dict[sp] = (len(present_pw), present_pw)
         return present_pw_dict
 
     # ## Max
@@ -423,6 +422,7 @@ class Pathways:
             True if the completion of the pathway for the species is maximal (unique or not) between all species,
             False otherwise
         """
+        species += self.STR_COMP
         row = list(self.data_pathways_float.loc[pathway])
         max_comp = max(row)
         if unique:
@@ -453,12 +453,11 @@ class Pathways:
             species = [species]
         max_pw_dict = {}
         for sp in species:
-            sp += self.STR_COMP
             max_pw = set()
             for pw in self.pathways_list:
                 if self.is_max(sp, pw, unique):
                     max_pw.add(pw)
-            max_pw_dict[sp[:-len(self.STR_COMP)]] = (len(max_pw), max_pw)
+            max_pw_dict[sp] = (len(max_pw), max_pw)
         return max_pw_dict
 
     # ## Complete
