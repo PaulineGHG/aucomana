@@ -248,13 +248,13 @@ class Reactions:
             absent_rxn_dict[sp] = (len(absent_rxn), absent_rxn)
         return absent_rxn_dict
 
-    def get_genes_assoc(self, reactions_set: Set[str] = None,
+    def get_genes_assoc(self, reactions_list: str or List[str] = None,
                         output_file=False) -> Dict[str, Dict[str, Dict[str, List[str]]]]:
         """
         Parameters
         ----------
-        reactions_set : List[str], optional (default=None)
-            Set of reactions to find genes associated with.
+        reactions_list : str or List[str], optional (default=None)
+            List of reactions to find genes associated with.
             If None, will be reactions_list attribute.
         output_file : Bool, optional (default=False)
             If False, return the gene_assoc dict
@@ -266,11 +266,13 @@ class Reactions:
             Dictionary of genes associated with each reaction for each species
         """
         genes_assoc = {}
-        if reactions_set is None:
-            reactions_set = self.reactions_list
-        for reaction in reactions_set:
+        if reactions_list is None:
+            reactions_list = self.reactions_list
+        elif type(reactions_list) == str:
+            reactions_list = [reactions_list]
+        for reaction in reactions_list:
             genes_assoc[reaction] = {}
-        for reaction in reactions_set:
+        for reaction in reactions_list:
             for species in self.species_list:
                 genes_assoc[reaction][species] = str(
                     self.data_genes_assoc[species + self.STR_GENE_ASSOC][reaction]).split(";")

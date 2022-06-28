@@ -134,14 +134,22 @@ class Test(unittest.TestCase):
         self.assertIs(type(dict_assoc['3.2.2.21-RXN']['HS']), list)
         self.assertIn('EcHS_A2209', dict_assoc['3.2.2.21-RXN']['HS'])
 
-        # REACTIONS_SET = {'3.2.2.21-RXN', 'RXN-16632'}
-        dict_assoc = R.get_genes_assoc(reactions_set={'3.2.2.21-RXN', 'RXN-16632'})
+        # REACTIONS_LIST = ['3.2.2.21-RXN', 'RXN-16632'] (LIST)
+        dict_assoc = R.get_genes_assoc(reactions_list=['3.2.2.21-RXN', 'RXN-16632'])
         self.assertEqual(dict_assoc.keys(), {'3.2.2.21-RXN', 'RXN-16632'})
 
+        # REACTIONS_LIST = '3.2.2.21-RXN' (STR)
+        dict_assoc = R.get_genes_assoc(reactions_list='3.2.2.21-RXN')
+        self.assertEqual(dict_assoc.keys(), {'3.2.2.21-RXN'})
+
         # OUTPUT_FILE = TRUE
-        R.get_genes_assoc(reactions_set={'3.2.2.21-RXN', 'RXN-16632'}, output_file=True)
+        R.get_genes_assoc(reactions_list=['3.2.2.21-RXN', 'RXN-16632'], output_file=True)
         self.assertEqual(os.path.exists(os.path.join(R.path_study, "output_data", "reactions_data", "genes_assoc",
-                                        str(R.nb_genes_assoc))))
+                                        str(R.nb_genes_assoc), '3.2.2.21-RXN.fa')), True)
+        self.assertEqual(os.path.exists(os.path.join(R.path_study, "output_data", "reactions_data", "genes_assoc",
+                                        str(R.nb_genes_assoc), 'RXN-16632.fa')), True)
+        self.assertEqual(os.path.exists(os.path.join(R.path_study, "output_data", "reactions_data", "genes_assoc",
+                                        str(R.nb_genes_assoc), 'bact7_genes_assoc.json')), True)
 
 
 if __name__ == '__main__':
