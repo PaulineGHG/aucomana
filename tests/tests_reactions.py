@@ -153,10 +153,24 @@ class Test(unittest.TestCase):
 
     def test_generate_rnx_dendrogram(self):
         # FILE Study_folder/output_data/dendro_tanglegrams/dendro_groups.tsv FILLED BEFORE
-        R.generate_rnx_dendrogram("test", n_boot=10)
+        # NO PHYLO REF FILE
+        R.generate_rnx_dendrogram(name="test_no_phylo", n_boot=10)
+        self.assertEqual(os.path.exists(os.path.join(R.path_study, 'output_data', 'dendro_tanglegrams', 'bact7',
+                                                     'rnx_test_no_phylo', 'rnx_test_no_phylo_dendextend_dend.png')),
+                         True)
+        self.assertEqual(os.path.exists(os.path.join(R.path_study, 'output_data', 'dendro_tanglegrams', 'bact7',
+                                                     'rnx_test_no_phylo', 'rnx_test_no_phylo_pvclust_dend.png')),
+                         True)
+
+        # PHYLO REF FILE
+        # phylo_file = os.path.join(A.path_study, 'Phylo.nexus')
+        # R.generate_rnx_dendrogram(name="test_phylo", n_boot=10, phylo_file=phylo_file)
 
 
 if __name__ == '__main__':
     unittest.main()
+
+
+
 
 

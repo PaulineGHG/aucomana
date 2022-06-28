@@ -1,1 +1,6 @@
 group name	color	element (B for branch, L for leave)
+group1	#43C268	B
+group2	#C25B43	B
+groupA	blue	L
+groupB	orange	L
+groupC	magenta	L
