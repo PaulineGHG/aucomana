@@ -165,7 +165,7 @@ class Pathways:
 
     # ## Min
 
-    def is_min(self, species: str, pathway: str, unique) -> bool:
+    def is_min(self, species: str, pathway: str, unique: bool = False) -> bool:
         """ Indicate if the completion of the pathway for the species is minimal (unique or not) between all species
 
         Parameters
@@ -174,7 +174,7 @@ class Pathways:
             species to be considered
         pathway: str
             species to be considered
-        unique: bool
+        unique: bool, optional (default=False)
             True if the minimum is unique, False otherwise
 
         Returns
@@ -225,7 +225,7 @@ class Pathways:
 
     # ## Absent
 
-    def is_absent(self, species: str, pathway: str, unique: bool) -> bool:
+    def is_absent(self, species: str, pathway: str, unique: bool = False) -> bool:
         """ Indicate if the pathway is absent for the species (unique or not) : considered unique if only this species
         is not having the pathway among all species
 
@@ -235,7 +235,7 @@ class Pathways:
             species to be considered
         pathway: str
             species to be considered
-        unique: bool
+        unique: bool, optional (default=False)
             True if the absence is unique, False otherwise
 
         Returns
@@ -284,7 +284,7 @@ class Pathways:
 
     # ## Incomplete
 
-    def is_incomplete(self, species: str, pathway: str, unique: bool) -> bool:
+    def is_incomplete(self, species: str, pathway: str, unique: bool = False) -> bool:
         """ Indicate if the pathway is incomplete for the species (unique or not) : considered unique if all other
         species have the pathway completed
 
@@ -294,7 +294,7 @@ class Pathways:
             species to be considered
         pathway: str
             species to be considered
-        unique: bool
+        unique: bool, optional (default=False)
             True if the incomplete pathway is unique, False otherwise
 
         Returns
@@ -345,7 +345,7 @@ class Pathways:
 
     # ## Present
 
-    def is_present(self, species: str, pathway: str, unique: bool) -> bool:
+    def is_present(self, species: str, pathway: str, unique: bool = False) -> bool:
         """ Indicate if the pathway is present for the species (unique or not) : considered unique if only this species
         is having the pathway among all species
 
@@ -355,7 +355,7 @@ class Pathways:
             species to be considered
         pathway: str
             pathway to be considered
-        unique: bool
+        unique: bool, optional (default=False)
             True if the presence is unique, False otherwise
 
         Returns
@@ -364,6 +364,7 @@ class Pathways:
             True if the pathway for the species is present (unique or not),
             False otherwise
         """
+        species += self.STR_COMP
         if unique:
             row = list(self.data_pathways_float.loc[pathway])
             return 0 < self.data_pathways_float.loc[pathway, species] == sum(row)
@@ -404,7 +405,7 @@ class Pathways:
 
     # ## Max
 
-    def is_max(self, species: str, pathway: str, unique: bool) -> bool:
+    def is_max(self, species: str, pathway: str, unique: bool = False) -> bool:
         """ Indicate if the completion of the pathway for the species is maximal (unique or not) between all species
 
         Parameters
@@ -413,7 +414,7 @@ class Pathways:
             species to be considered
         pathway: str
             species to be considered
-        unique: bool
+        unique: bool, optional (default=False)
             True if the maximum is unique, False otherwise
 
         Returns
@@ -462,7 +463,7 @@ class Pathways:
 
     # ## Complete
 
-    def is_complete(self, species: str, pathway: str, unique: bool) -> bool:
+    def is_complete(self, species: str, pathway: str, unique: bool = False) -> bool:
         """ Indicate if the pathway is complete for the species (unique or not) : considered unique if all other
         species have not the pathway completed
 
@@ -472,7 +473,7 @@ class Pathways:
             species to be considered
         pathway: str
             species to be considered
-        unique: bool
+        unique: bool, optional (default=False)
             True if the complete pathway is unique, False otherwise
 
         Returns

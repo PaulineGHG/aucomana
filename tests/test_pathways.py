@@ -70,3 +70,67 @@ class Test(unittest.TestCase):
         self.assertListEqual(PW.pathways_list, list(PW.data_rxn_assoc.index))
         columns_list = [x + PW.STR_RXN_ASSOC for x in PW.species_list]
         self.assertListEqual(columns_list, list(PW.data_rxn_assoc.columns))
+
+    def test_is_present(self):
+        # NO PARAMETER (UNIQUE = FALSE)
+        self.assertTrue(PW.is_present('HS', 'PWY-8259'))
+        self.assertFalse(PW.is_present('UTI89', 'PWY-7716'))
+
+        # UNIQUE = TRUE
+        self.assertTrue(PW.is_present('sf301', 'PWY-5517', unique=True))
+        self.assertFalse(PW.is_present('sf301', 'AEROBACTINSYN-PWY', unique=True))
+
+    # def test_is_absent(self):
+    #     # NO PARAMETER (UNIQUE = FALSE)
+    #     self.assertTrue(R.is_absent('CFT073', 'RXN0-962'))
+    #     self.assertFalse(R.is_absent('CFT073', 'RXN-12615'))
+    #
+    #     # UNIQUE = TRUE
+    #     self.assertTrue(R.is_absent('ec042', '5.1.99.4-RXN', unique=True))
+    #     self.assertFalse(R.is_absent('ec042', 'RXN-12615', unique=True))
+    #
+    # def test_get_rxn_present(self):
+    #     # NO PARAMETER
+    #     dict_rxn_pres = R.get_rxn_present()
+    #     self.assertIs(type(dict_rxn_pres), dict)
+    #     self.assertEqual(dict_rxn_pres['HS'][0], 2304)
+    #     self.assertIs(type(dict_rxn_pres['HS'][1]), set)
+    #     self.assertIn('RXN-15149', dict_rxn_pres['HS'][1])
+    #     self.assertEqual(set(dict_rxn_pres.keys()), set(R.species_list))
+    #
+    #     # UNIQUE = TRUE
+    #     dict_rxn_pres_uni = R.get_rxn_present(unique=True)
+    #     self.assertEqual(dict_rxn_pres_uni['HS'][0], 0)
+    #     self.assertEqual(dict_rxn_pres_uni['IAI1'][0], 5)
+    #     self.assertIn('RXN-20706', dict_rxn_pres_uni['IAI1'][1])
+    #
+    #     # SPECIES STR
+    #     dict_rxn_pres = R.get_rxn_present(species='HS')
+    #     self.assertEqual(dict_rxn_pres.keys(), {'HS'})
+    #
+    #     # SPECIES LIST
+    #     dict_rxn_pres = R.get_rxn_present(species=['HS', 'IAI1', 'ec042'])
+    #     self.assertEqual(dict_rxn_pres.keys(), {'HS', 'IAI1', 'ec042'})
+    #
+    # def test_get_rxn_absent(self):
+    #     # NO PARAMETER
+    #     dict_rxn_abs = R.get_rxn_absent()
+    #     self.assertIs(type(dict_rxn_abs), dict)
+    #     self.assertEqual(dict_rxn_abs['HS'][0], 98)
+    #     self.assertIs(type(dict_rxn_abs['HS'][1]), set)
+    #     self.assertIn('TRANS-RXN0-268', dict_rxn_abs['HS'][1])
+    #     self.assertEqual(set(dict_rxn_abs.keys()), set(R.species_list))
+    #
+    #     # UNIQUE = TRUE
+    #     dict_rxn_abs_uni = R.get_rxn_absent(unique=True)
+    #     self.assertEqual(dict_rxn_abs_uni['HS'][0], 15)
+    #     self.assertEqual(dict_rxn_abs_uni['IAI1'][0], 0)
+    #     self.assertIn('RXN0-7341', dict_rxn_abs_uni['HS'][1])
+    #
+    #     # SPECIES STR
+    #     dict_rxn_pres = R.get_rxn_present(species='HS')
+    #     self.assertEqual(dict_rxn_pres.keys(), {'HS'})
+    #
+    #     # SPECIES LIST
+    #     dict_rxn_pres = R.get_rxn_present(species=['HS', 'IAI1', 'ec042'])
+    #     self.assertEqual(dict_rxn_pres.keys(), {'HS', 'IAI1', 'ec042'})
