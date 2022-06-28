@@ -37,15 +37,8 @@ class Dendrogram:
                                     self.name)
         if not os.path.exists(self.out_dir):
             os.makedirs(self.out_dir)
-        self.dendro_groups_file = self.__create_dendro_groups_file()
-
-    def __create_dendro_groups_file(self):
-        file = os.path.join(self.path_study, "output_data", "dendro_tanglegrams", "dendro_groups.tsv")
-        if not os.path.exists(file):
-            with open(file, "w") as f:
-                f.write("\t".join(["group name", "color", "element (B for branch, L for leave)"]))
-            print(f"dendro_groups.tsv file created in path : {file}")
-        return file
+        self.dendro_groups_file = os.path.join(self.path_study, "output_data", "dendro_tanglegrams",
+                                               "dendro_groups.tsv")
 
     def get_dendro_pvclust(self, n_boot=10000):
         # Make pandas dataframe compatible with R dataframe.

@@ -322,7 +322,6 @@ class Reactions:
                         o.write(id_gene + "\n")
                         o.write(seq + "\n")
 
-
     # def get_common_reactions(self, datas: List["Reactions"], species: str, output_file=False,
     #                          union=False) -> Tuple[int, Set[str]]:
     #     """ Returns the reactions lost in common between at least 2 Reactions instance for 1

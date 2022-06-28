@@ -21,6 +21,7 @@ class Analysis:
         self.path_runs = path_runs
         self.path_study = path_study
         self.__create_folders()
+        self.__create_dendro_groups_file()
 
     # Create folders to save output files
 
@@ -45,6 +46,13 @@ class Analysis:
             if not os.path.exists(folder_path):
                 os.mkdir(folder_path)
                 print(f'Folder {folder_path} created')
+
+    def __create_dendro_groups_file(self):
+        file = os.path.join(self.path_study, "output_data", "dendro_tanglegrams", "dendro_groups.tsv")
+        if not os.path.exists(file):
+            with open(file, "w") as f:
+                f.write("\t".join(["group name", "color", "element (B for branch, L for leave)"]))
+            print(f"dendro_groups.tsv file created in path : {file}")
 
     @staticmethod
     def get_abbr_name(name: str) -> str:
@@ -492,4 +500,5 @@ class Analysis:
             apply_automaton(automaton, os.path.join(path_padmet, f"{species}.padmet"),
                             os.path.join(out_path, f"{species}.padmet"))
         print(f"New PADMETs saved in : {out_path}")
+
 

@@ -1,0 +1,7 @@
+Over 2402 reactions, 2297 reactions in common = 95.63 % of the union.
+2351 present among the groupA group = 97.88 % of the union.
+54 only present among the groupA group = 2.25 % of the union.
+2352 present among the groupB group = 97.92 % of the union.
+55 only present among the groupB group = 2.29 % of the union.
+2354 present among the groupC group = 98.0 % of the union.
+57 only present among the groupC group = 2.37 % of the union.

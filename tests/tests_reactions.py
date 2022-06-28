@@ -151,6 +151,10 @@ class Test(unittest.TestCase):
         self.assertEqual(os.path.exists(os.path.join(R.path_study, "output_data", "reactions_data", "genes_assoc",
                                         str(R.nb_genes_assoc), 'bact7_genes_assoc.json')), True)
 
+    def test_generate_rnx_dendrogram(self):
+        # FILE Study_folder/output_data/dendro_tanglegrams/dendro_groups.tsv FILLED BEFORE
+        R.generate_rnx_dendrogram("test", n_boot=10)
+
 
 if __name__ == '__main__':
     unittest.main()
