@@ -57,8 +57,8 @@ class Test(unittest.TestCase):
     def test_data_genes_assoc(self):
         self.assertIsInstance(R.data_genes_assoc, pd.DataFrame)
         self.assertListEqual(R.reactions_list, list(R.data_genes_assoc.index))
-        index_list = [x + R.STR_GENE_ASSOC for x in R.species_list]
-        self.assertListEqual(index_list, list(R.data_genes_assoc.columns))
+        columns_list = [x + R.STR_GENE_ASSOC for x in R.species_list]
+        self.assertListEqual(columns_list, list(R.data_genes_assoc.columns))
 
     def test_is_present(self):
         # NO PARAMETER (UNIQUE = FALSE)

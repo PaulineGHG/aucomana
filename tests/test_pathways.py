@@ -50,19 +50,23 @@ class Test(unittest.TestCase):
         self.assertNotIn('PWY0-1569', pwo2.pathways_list)
 
     def test_data_pathways_str(self):
-        self.assertIsInstance(R.data_reactions, pd.DataFrame)
-        self.assertListEqual(R.reactions_list, list(R.data_reactions.index))
-        self.assertListEqual(R.species_list, list(R.data_reactions.columns))
-        self.assertEqual(R.data_reactions.loc['RXN0-962', 'CFT073'], 0)
+        self.assertIsInstance(PW.data_pathways_str, pd.DataFrame)
+        columns_list = [x + PW.STR_COMP for x in PW.species_list]
+        self.assertListEqual(PW.pathways_list, list(PW.data_pathways_str.index))
+        self.assertListEqual(columns_list, list(PW.data_pathways_str.columns))
+        self.assertEqual(PW.data_pathways_str.loc['PWY-5515', 'UTI89_completion_rate'], '1/3')
+        self.assertEqual(PW.data_pathways_str.loc['PWY-6550', 'UTI89_completion_rate'], '0/5')
 
     def test_data_pathways_float(self):
-        self.assertIsInstance(R.data_reactions, pd.DataFrame)
-        self.assertListEqual(R.reactions_list, list(R.data_reactions.index))
-        self.assertListEqual(R.species_list, list(R.data_reactions.columns))
-        self.assertEqual(R.data_reactions.loc['RXN0-962', 'CFT073'], 0)
-    #
-    # def test_data_genes_assoc(self):
-    #     self.assertIsInstance(R.data_genes_assoc, pd.DataFrame)
-    #     self.assertListEqual(R.reactions_list, list(R.data_genes_assoc.index))
-    #     index_list = [x + R.STR_GENE_ASSOC for x in R.species_list]
-    #     self.assertListEqual(index_list, list(R.data_genes_assoc.columns))
+        self.assertIsInstance(PW.data_pathways_float, pd.DataFrame)
+        columns_list = [x + PW.STR_COMP for x in PW.species_list]
+        self.assertListEqual(PW.pathways_list, list(PW.data_pathways_float.index))
+        self.assertListEqual(columns_list, list(PW.data_pathways_float.columns))
+        self.assertEqual(PW.data_pathways_float.loc['PWY-5515', 'UTI89_completion_rate'], float(1/3))
+        self.assertEqual(PW.data_pathways_float.loc['PWY-6550', 'UTI89_completion_rate'], 0)
+
+    def test_data_rxn_assoc(self):
+        self.assertIsInstance(PW.data_rxn_assoc, pd.DataFrame)
+        self.assertListEqual(PW.pathways_list, list(PW.data_rxn_assoc.index))
+        columns_list = [x + PW.STR_RXN_ASSOC for x in PW.species_list]
+        self.assertListEqual(columns_list, list(PW.data_rxn_assoc.columns))
