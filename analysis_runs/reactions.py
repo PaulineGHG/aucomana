@@ -8,7 +8,7 @@ import pandas as pd
 import json
 import os
 import datetime
-import Bio
+from Bio import SeqIO
 
 
 class Reactions:
@@ -290,32 +290,36 @@ class Reactions:
 
         Write results in {PATH_STUDY}/output_data/reactions_data/genes_assoc/{now}_{self.nb_genes_assoc}/
         """
-        fa_file_path = f"{self.path_runs}/{self.name}/studied_organisms/"
-        now = datetime.datetime.now().strftime('%d-%m-%Y_%Hh-%Mmin-%Ss')
-        out_file = f"{self.path_study}/output_data/reactions_data/genes_assoc/{now}_{self.nb_genes_assoc}/"
-        if not os.path.exists(out_file):
-            os.makedirs(out_file)
-        file_out_json = f"{out_file}{self.name}_genes_assoc.json"
+        # PATH TO FASTA FILES
+        fa_file_path = os.path.join(self.path_runs, self.name, "studied_organisms")
 
+        # GET OUTFILE PATH NOT EXISTING IN DIRECTORY
+        out_file = os.path.join(self.path_study, "output_data", "reactions_data", "genes_assoc",
+                                str(self.nb_genes_assoc))
+        while os.path.exists(out_file):
+            self.nb_genes_assoc += 1
+            out_file = os.path.join(self.path_study, "output_data", "reactions_data", "genes_assoc",
+                                    str(self.nb_genes_assoc))
+        os.makedirs(out_file)
+
+        # CREATE JSON FILE
+        file_out_json = os.path.join(out_file, f"{self.name}_genes_assoc.json")
         with open(file_out_json, 'w') as o:
             json.dump(genes_assoc, o, indent=4)
 
+        # FILL FASTA FILE
         for reaction, species_dict in genes_assoc.items():
-            fasta = f"{out_file}{reaction}.fa"
-            with open(fasta, 'w') as o:
+            fasta_file = os.path.join(out_file, f"{reaction}.fa")
+            with open(fasta_file, 'w') as o:
                 for species, genes_list in species_dict.items():
-                    genes_fa = f"{fa_file_path}{species}/{species}.faa"
-                    with open(genes_fa, 'r') as f:
-                        write_seq = False
-                        for line in f:
-                            if line[0] == ">":
-                                write_seq = False
-                                gene = line[1:][:-1]
-                                if gene in genes_list:
-                                    o.write(f">{species}|{gene}\n")
-                                    write_seq = True
-                            elif write_seq:
-                                o.write(line)
+                    genes_fa_file = os.path.join(fa_file_path, species, f"{species}.faa")
+                    seq_dict = SeqIO.to_dict(SeqIO.parse(genes_fa_file, "fasta"))
+                    for gene in genes_list:
+                        id_gene = f">{species}|{gene}"
+                        seq = str(seq_dict[gene].seq)
+                        o.write(id_gene + "\n")
+                        o.write(seq + "\n")
+
 
     # def get_common_reactions(self, datas: List["Reactions"], species: str, output_file=False,
     #                          union=False) -> Tuple[int, Set[str]]:

@@ -1,3 +1,4 @@
+import os.path
 import unittest
 import pandas as pd
 from analysis_runs.analysis import Analysis
@@ -122,6 +123,25 @@ class Test(unittest.TestCase):
         # SPECIES LIST
         dict_rxn_pres = R.get_rxn_present(species=['HS', 'IAI1', 'ec042'])
         self.assertEqual(dict_rxn_pres.keys(), {'HS', 'IAI1', 'ec042'})
+
+    def test_get_genes_assoc(self):
+        # NO PARAMETER
+        dict_assoc = R.get_genes_assoc()
+        self.assertEqual(dict_assoc.keys(), set(R.reactions_list))
+        self.assertIs(type(dict_assoc), dict)
+        self.assertIs(type(dict_assoc['3.2.2.21-RXN']), dict)
+        self.assertEqual(dict_assoc['3.2.2.21-RXN'].keys(), set(R.species_list))
+        self.assertIs(type(dict_assoc['3.2.2.21-RXN']['HS']), list)
+        self.assertIn('EcHS_A2209', dict_assoc['3.2.2.21-RXN']['HS'])
+
+        # REACTIONS_SET = {'3.2.2.21-RXN', 'RXN-16632'}
+        dict_assoc = R.get_genes_assoc(reactions_set={'3.2.2.21-RXN', 'RXN-16632'})
+        self.assertEqual(dict_assoc.keys(), {'3.2.2.21-RXN', 'RXN-16632'})
+
+        # OUTPUT_FILE = TRUE
+        R.get_genes_assoc(reactions_set={'3.2.2.21-RXN', 'RXN-16632'}, output_file=True)
+        self.assertEqual(os.path.exists(os.path.join(R.path_study, "output_data", "reactions_data", "genes_assoc",
+                                        str(R.nb_genes_assoc))))
 
 
 if __name__ == '__main__':
