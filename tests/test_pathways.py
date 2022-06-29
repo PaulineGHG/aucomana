@@ -71,6 +71,8 @@ class Test(unittest.TestCase):
         columns_list = [x + PW.STR_RXN_ASSOC for x in PW.species_list]
         self.assertListEqual(columns_list, list(PW.data_rxn_assoc.columns))
 
+    # Gain
+
     def test_is_present(self):
         # NO PARAMETER (UNIQUE = FALSE)
         self.assertTrue(PW.is_present('HS', 'PWY-8259'))
@@ -89,18 +91,15 @@ class Test(unittest.TestCase):
         self.assertTrue(PW.is_max('IAI1', 'PWY-6854', unique=True))
         self.assertFalse(PW.is_max('HS', 'PWY-6538', unique=True))
 
-    # PWY-5698 UNIQUE MIN
+    def test_is_complete(self):
+        # NO PARAMETER (UNIQUE = FALSE)
+        self.assertTrue(PW.is_complete('HS', 'GLYCOLYSIS'))
+        self.assertFalse(PW.is_complete('ec042', 'SUCUTIL-PWY'))
 
-    # def test_is_absent(self):
-    #     # NO PARAMETER (UNIQUE = FALSE)
-    #     self.assertTrue(R.is_absent('CFT073', 'RXN0-962'))
-    #     self.assertFalse(R.is_absent('CFT073', 'RXN-12615'))
-    #
-    #     # UNIQUE = TRUE
-    #     self.assertTrue(R.is_absent('ec042', '5.1.99.4-RXN', unique=True))
-    #     self.assertFalse(R.is_absent('ec042', 'RXN-12615', unique=True))
-    #
-    def test_get_rxn_present(self):
+        # UNIQUE = TRUE
+        self.assertFalse(PW.is_complete('HS', 'PWY-6538', unique=True))
+
+    def test_get_pw_present(self):
         # NO PARAMETER
         dict_pw_pres = PW.get_pw_present()
         self.assertIs(type(dict_pw_pres), dict)
@@ -120,28 +119,63 @@ class Test(unittest.TestCase):
         self.assertEqual(dict_pw_pres.keys(), {'HS'})
 
         # SPECIES LIST
-        dict_rxn_pres = PW.get_pw_present(species=['HS', 'IAI1', 'ec042'])
-        self.assertEqual(dict_rxn_pres.keys(), {'HS', 'IAI1', 'ec042'})
+        dict_pw_pres = PW.get_pw_present(species=['HS', 'IAI1', 'ec042'])
+        self.assertEqual(dict_pw_pres.keys(), {'HS', 'IAI1', 'ec042'})
 
-    # def test_get_rxn_absent(self):
-    #     # NO PARAMETER
-    #     dict_rxn_abs = R.get_rxn_absent()
-    #     self.assertIs(type(dict_rxn_abs), dict)
-    #     self.assertEqual(dict_rxn_abs['HS'][0], 98)
-    #     self.assertIs(type(dict_rxn_abs['HS'][1]), set)
-    #     self.assertIn('TRANS-RXN0-268', dict_rxn_abs['HS'][1])
-    #     self.assertEqual(set(dict_rxn_abs.keys()), set(R.species_list))
-    #
-    #     # UNIQUE = TRUE
-    #     dict_rxn_abs_uni = R.get_rxn_absent(unique=True)
-    #     self.assertEqual(dict_rxn_abs_uni['HS'][0], 15)
-    #     self.assertEqual(dict_rxn_abs_uni['IAI1'][0], 0)
-    #     self.assertIn('RXN0-7341', dict_rxn_abs_uni['HS'][1])
-    #
-    #     # SPECIES STR
-    #     dict_rxn_pres = R.get_rxn_present(species='HS')
-    #     self.assertEqual(dict_rxn_pres.keys(), {'HS'})
-    #
-    #     # SPECIES LIST
-    #     dict_rxn_pres = R.get_rxn_present(species=['HS', 'IAI1', 'ec042'])
-    #     self.assertEqual(dict_rxn_pres.keys(), {'HS', 'IAI1', 'ec042'})
+    def test_get_pw_max(self):
+        # NO PARAMETER
+        dict_pw_max = PW.get_pw_max()
+        self.assertIs(type(dict_pw_max), dict)
+        self.assertEqual(dict_pw_max['HS'][0], 1217)
+        self.assertIs(type(dict_pw_max['HS'][1]), set)
+        self.assertIn('PWY0-901', dict_pw_max['HS'][1])
+        self.assertEqual(set(dict_pw_max.keys()), set(PW.species_list))
+
+        # UNIQUE = TRUE
+        dict_pw_max_uni = PW.get_pw_max(unique=True)
+        self.assertEqual(dict_pw_max_uni['HS'][0], 0)
+        self.assertEqual(dict_pw_max_uni['IAI1'][0], 3)
+        self.assertIn('PWY-6854', dict_pw_max_uni['IAI1'][1])
+
+        # SPECIES STR
+        dict_pw_max = PW.get_pw_max(species='HS')
+        self.assertEqual(dict_pw_max.keys(), {'HS'})
+
+        # SPECIES LIST
+        dict_pw_max = PW.get_pw_max(species=['HS', 'IAI1', 'ec042'])
+        self.assertEqual(dict_pw_max.keys(), {'HS', 'IAI1', 'ec042'})
+
+    def test_get_pw_complete(self):
+        # NO PARAMETER
+        dict_pw_complete = PW.get_pw_complete()
+        self.assertIs(type(dict_pw_complete), dict)
+        self.assertEqual(dict_pw_complete['HS'][0], 391)
+        self.assertIs(type(dict_pw_complete['HS'][1]), set)
+        self.assertIn('PWY-6587', dict_pw_complete['HS'][1])
+        self.assertEqual(set(dict_pw_complete.keys()), set(PW.species_list))
+
+        # UNIQUE = TRUE
+        dict_pw_complete_uni = PW.get_pw_complete(unique=True)
+        self.assertEqual(dict_pw_complete_uni['HS'][0], 0)
+        self.assertEqual(dict_pw_complete_uni['IAI1'][0], 0)
+
+        # SPECIES STR
+        dict_pw_complete = PW.get_pw_complete(species='HS')
+        self.assertEqual(dict_pw_complete.keys(), {'HS'})
+
+        # SPECIES LIST
+        dict_pw_complete = PW.get_pw_complete(species=['HS', 'IAI1', 'ec042'])
+        self.assertEqual(dict_pw_complete.keys(), {'HS', 'IAI1', 'ec042'})
+
+    # Loss
+
+    def test_is_absent(self):
+        # NO PARAMETER (UNIQUE = FALSE)
+        self.assertTrue(PW.is_present('HS', 'PWY-8259'))
+        self.assertFalse(PW.is_present('UTI89', 'PWY-7716'))
+
+        # UNIQUE = TRUE
+        self.assertTrue(PW.is_present('sf301', 'PWY-5517', unique=True))
+        self.assertFalse(PW.is_present('sf301', 'AEROBACTINSYN-PWY', unique=True))
+
+    # PWY-5698 UNIQUE MIN

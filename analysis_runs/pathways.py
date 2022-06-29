@@ -430,7 +430,7 @@ class Pathways:
         else:
             return self.data_pathways_float.loc[pathway, species] == max_comp
 
-    def get_pw_max(self, species: str or List[str] = None, unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_pw_max(self, species: str or List[str] = None, unique: bool = False) -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of pathways having the maximal completion (unique or not),
 
         Parameters
@@ -438,7 +438,7 @@ class Pathways:
         species: str or List[str], optional (default=None)
             species or list of species to be considered
             if None will be all the species
-        unique: bool, optional (default=True)
+        unique: bool, optional (default=False)
             True if the maximum is unique, False otherwise
 
         Returns
@@ -481,13 +481,14 @@ class Pathways:
             True if the pathway for the species is complete (unique or not),
             False otherwise
         """
+        species += self.STR_COMP
         if unique:
             row = list(self.data_pathways_float.loc[pathway])
             return self.data_pathways_float.loc[pathway, species] == 1 and row.count(1) == 1
         else:
             return self.data_pathways_float.loc[pathway, species] == 1
 
-    def get_pw_complete(self, species: str or List[str] = None, unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_pw_complete(self, species: str or List[str] = None, unique: bool = False) -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of complete pathways (unique or not) : considered unique
         if all other species have not the pathway completed
 
@@ -496,7 +497,7 @@ class Pathways:
         species: str or List[str], optional (default=None)
             species or list of species to be considered
             if None will be all the species
-        unique: bool, optional (default=True)
+        unique: bool, optional (default=False)
             True if the complete pathway is unique, False otherwise
 
         Returns
@@ -511,12 +512,11 @@ class Pathways:
             species = [species]
         complete_pw_dict = {}
         for sp in species:
-            sp += self.STR_COMP
             complete_pw = set()
             for pw in self.pathways_list:
                 if self.is_complete(sp, pw, unique):
                     complete_pw.add(pw)
-            complete_pw_dict[sp[:-len(self.STR_COMP)]] = (len(complete_pw), complete_pw)
+            complete_pw_dict[sp] = (len(complete_pw), complete_pw)
         return complete_pw_dict
 
     def get_pw_over_treshold(self, species: str or List[str], threshold: float, strict: bool = False) \
