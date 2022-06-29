@@ -187,6 +187,15 @@ class Test(unittest.TestCase):
         self.assertTrue(PW.is_min('sf301', 'PWY-7799', unique=True))
         self.assertFalse(PW.is_min('ec042', 'PWY-6538', unique=True))
 
+    def test_is_incomplete(self):
+        # NO PARAMETER (UNIQUE = FALSE)
+        self.assertTrue(PW.is_incomplete('HS', 'PWY-8171'))
+        self.assertFalse(PW.is_incomplete('HS', 'ORNDEG-PWY'))
+
+        # UNIQUE = TRUE
+        self.assertTrue(PW.is_incomplete('sf301', 'PWY-1801', unique=True))
+        self.assertFalse(PW.is_incomplete('CFT073', 'CYANCAT-PWY', unique=True))
+
     def test_get_pw_absent(self):
         # NO PARAMETER
         dict_pw_abs = PW.get_pw_absent()
@@ -221,7 +230,6 @@ class Test(unittest.TestCase):
 
         # UNIQUE = TRUE
         dict_pw_min_uni = PW.get_pw_min(unique=True)
-        print(dict_pw_min_uni)
         self.assertEqual(dict_pw_min_uni['HS'][0], 5)
         self.assertEqual(dict_pw_min_uni['IAI1'][0], 0)
         self.assertIn('PWY-5177', dict_pw_min_uni['HS'][1])
@@ -233,6 +241,29 @@ class Test(unittest.TestCase):
         # SPECIES LIST
         dict_pw_min = PW.get_pw_min(species=['HS', 'IAI1', 'ec042'])
         self.assertEqual(dict_pw_min.keys(), {'HS', 'IAI1', 'ec042'})
+
+    def test_get_pw_incomplete(self):
+        # NO PARAMETER
+        dict_pw_incomplete = PW.get_pw_incomplete()
+        self.assertIs(type(dict_pw_incomplete), dict)
+        self.assertEqual(dict_pw_incomplete['HS'][0], 861)
+        self.assertIs(type(dict_pw_incomplete['HS'][1]), set)
+        self.assertIn('PWY0-1591', dict_pw_incomplete['HS'][1])
+        self.assertEqual(set(dict_pw_incomplete.keys()), set(PW.species_list))
+
+        # UNIQUE = TRUE
+        dict_pw_incomplete_uni = PW.get_pw_incomplete(unique=True)
+        self.assertEqual(dict_pw_incomplete_uni['HS'][0], 22)
+        self.assertEqual(dict_pw_incomplete_uni['IAI1'][0], 20)
+        self.assertIn('PWY-5690', dict_pw_incomplete_uni['HS'][1])
+
+        # SPECIES STR
+        dict_pw_incomplete = PW.get_pw_incomplete(species='HS')
+        self.assertEqual(dict_pw_incomplete.keys(), {'HS'})
+
+        # SPECIES LIST
+        dict_pw_incomplete = PW.get_pw_incomplete(species=['HS', 'IAI1', 'ec042'])
+        self.assertEqual(dict_pw_incomplete.keys(), {'HS', 'IAI1', 'ec042'})
 
 
 
