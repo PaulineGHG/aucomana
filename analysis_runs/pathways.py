@@ -183,6 +183,7 @@ class Pathways:
             True if the completion of the pathway for the species is minimal (unique or not) between all species,
             False otherwise
         """
+        species += self.STR_COMP
         row = list(self.data_pathways_float.loc[pathway])
         min_completion = min(row)
         if unique:
@@ -191,7 +192,7 @@ class Pathways:
         else:
             return self.data_pathways_float.loc[pathway, species] == min_completion and min_completion > 0
 
-    def get_pw_min(self, species: str or List[str] = None, unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_pw_min(self, species: str or List[str] = None, unique: bool = False) -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of pathways having the minimal completion (unique or not),
         the pathways returned are not absent (at least 1 reaction in the pathway)
 
@@ -200,7 +201,7 @@ class Pathways:
         species: str or List[str], optional (default=None)
             species or list of species to be considered
             if None will be all the species
-        unique: bool, optional (default=True)
+        unique: bool, optional (default=False)
             True if the minimum is unique, False otherwise
 
         Returns
@@ -215,12 +216,11 @@ class Pathways:
             species = [species]
         min_pw_dict = {}
         for sp in species:
-            sp += self.STR_COMP
             min_pw = set()
             for pw in self.pathways_list:
                 if self.is_min(sp, pw, unique):
                     min_pw.add(pw)
-            min_pw_dict[sp[:-len(self.STR_COMP)]] = (len(min_pw), min_pw)
+            min_pw_dict[sp] = (len(min_pw), min_pw)
         return min_pw_dict
 
     # ## Absent

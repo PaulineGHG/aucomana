@@ -178,6 +178,15 @@ class Test(unittest.TestCase):
         self.assertTrue(PW.is_absent('ec042', 'PWY-6784', unique=True))
         self.assertFalse(PW.is_absent('UTI89', 'PWY-5647', unique=True))
 
+    def test_is_min(self):
+        # NO PARAMETER (UNIQUE = FALSE)
+        self.assertTrue(PW.is_min('IAI1', 'PWY-6370'))
+        self.assertFalse(PW.is_min('HS', 'PWY-7007'))
+
+        # UNIQUE = TRUE
+        self.assertTrue(PW.is_min('sf301', 'PWY-7799', unique=True))
+        self.assertFalse(PW.is_min('ec042', 'PWY-6538', unique=True))
+
     def test_get_pw_absent(self):
         # NO PARAMETER
         dict_pw_abs = PW.get_pw_absent()
@@ -189,7 +198,6 @@ class Test(unittest.TestCase):
 
         # UNIQUE = TRUE
         dict_pw_abs_uni = PW.get_pw_absent(unique=True)
-        print(dict_pw_abs_uni)
         self.assertEqual(dict_pw_abs_uni['HS'][0], 10)
         self.assertEqual(dict_pw_abs_uni['IAI1'][0], 0)
         self.assertIn('PWY-8225', dict_pw_abs_uni['HS'][1])
@@ -202,5 +210,29 @@ class Test(unittest.TestCase):
         dict_pw_abs = PW.get_pw_present(species=['HS', 'IAI1', 'ec042'])
         self.assertEqual(dict_pw_abs.keys(), {'HS', 'IAI1', 'ec042'})
 
-    # PWY-5698 UNIQUE MIN
+    def test_get_pw_min(self):
+        # NO PARAMETER
+        dict_pw_min = PW.get_pw_min()
+        self.assertIs(type(dict_pw_min), dict)
+        self.assertEqual(dict_pw_min['HS'][0], 1058)
+        self.assertIs(type(dict_pw_min['HS'][1]), set)
+        self.assertIn('TCA-1', dict_pw_min['HS'][1])
+        self.assertEqual(set(dict_pw_min.keys()), set(PW.species_list))
+
+        # UNIQUE = TRUE
+        dict_pw_min_uni = PW.get_pw_min(unique=True)
+        print(dict_pw_min_uni)
+        self.assertEqual(dict_pw_min_uni['HS'][0], 5)
+        self.assertEqual(dict_pw_min_uni['IAI1'][0], 0)
+        self.assertIn('PWY-5177', dict_pw_min_uni['HS'][1])
+
+        # SPECIES STR
+        dict_pw_min = PW.get_pw_min(species='HS')
+        self.assertEqual(dict_pw_min.keys(), {'HS'})
+
+        # SPECIES LIST
+        dict_pw_min = PW.get_pw_min(species=['HS', 'IAI1', 'ec042'])
+        self.assertEqual(dict_pw_min.keys(), {'HS', 'IAI1', 'ec042'})
+
+
 
