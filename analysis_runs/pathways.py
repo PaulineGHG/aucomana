@@ -244,13 +244,14 @@ class Pathways:
             True if the pathway for the species is absent (unique or not),
             False otherwise
         """
+        species += self.STR_COMP
         if unique:
             row = list(self.data_pathways_float.loc[pathway])
             return self.data_pathways_float.loc[pathway, species] == 0 and row.count(0) == 1
         else:
             return self.data_pathways_float.loc[pathway, species] == 0
 
-    def get_pw_absent(self, species: str or List[str] = None, unique: bool = True) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_pw_absent(self, species: str or List[str] = None, unique: bool = False) -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of absent pathways (unique or not) : considered unique if
         only this species is not having the pathway among all species
 
@@ -259,7 +260,7 @@ class Pathways:
         species: str or List[str], optional (default=None)
             species or list of species to be considered
             if None will be all the species
-        unique: bool, optional (default=True)
+        unique: bool, optional (default=False)
             True if the absence is unique, False otherwise
 
         Returns
@@ -274,12 +275,11 @@ class Pathways:
             species = [species]
         absent_pw_dict = {}
         for sp in species:
-            sp += self.STR_COMP
             absent_pw = set()
             for pw in self.pathways_list:
                 if self.is_absent(sp, pw, unique):
                     absent_pw.add(pw)
-            absent_pw_dict[sp[:-len(self.STR_COMP)]] = (len(absent_pw), absent_pw)
+            absent_pw_dict[sp] = (len(absent_pw), absent_pw)
         return absent_pw_dict
 
     # ## Incomplete

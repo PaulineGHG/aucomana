@@ -171,11 +171,36 @@ class Test(unittest.TestCase):
 
     def test_is_absent(self):
         # NO PARAMETER (UNIQUE = FALSE)
-        self.assertTrue(PW.is_present('HS', 'PWY-8259'))
-        self.assertFalse(PW.is_present('UTI89', 'PWY-7716'))
+        self.assertTrue(PW.is_absent('HS', 'PWY-5338'))
+        self.assertFalse(PW.is_absent('UTI89', 'PWY-5338'))
 
         # UNIQUE = TRUE
-        self.assertTrue(PW.is_present('sf301', 'PWY-5517', unique=True))
-        self.assertFalse(PW.is_present('sf301', 'AEROBACTINSYN-PWY', unique=True))
+        self.assertTrue(PW.is_absent('ec042', 'PWY-6784', unique=True))
+        self.assertFalse(PW.is_absent('UTI89', 'PWY-5647', unique=True))
+
+    def test_get_pw_absent(self):
+        # NO PARAMETER
+        dict_pw_abs = PW.get_pw_absent()
+        self.assertIs(type(dict_pw_abs), dict)
+        self.assertEqual(dict_pw_abs['HS'][0], 29)
+        self.assertIs(type(dict_pw_abs['HS'][1]), set)
+        self.assertIn('GDPRHAMSYN-PWY', dict_pw_abs['HS'][1])
+        self.assertEqual(set(dict_pw_abs.keys()), set(PW.species_list))
+
+        # UNIQUE = TRUE
+        dict_pw_abs_uni = PW.get_pw_absent(unique=True)
+        print(dict_pw_abs_uni)
+        self.assertEqual(dict_pw_abs_uni['HS'][0], 10)
+        self.assertEqual(dict_pw_abs_uni['IAI1'][0], 0)
+        self.assertIn('PWY-8225', dict_pw_abs_uni['HS'][1])
+
+        # SPECIES STR
+        dict_pw_abs = PW.get_pw_present(species='HS')
+        self.assertEqual(dict_pw_abs.keys(), {'HS'})
+
+        # SPECIES LIST
+        dict_pw_abs = PW.get_pw_present(species=['HS', 'IAI1', 'ec042'])
+        self.assertEqual(dict_pw_abs.keys(), {'HS', 'IAI1', 'ec042'})
 
     # PWY-5698 UNIQUE MIN
+
