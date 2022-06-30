@@ -1,4 +1,0 @@
-0: HS.faa
-1: IAI1.faa
-2: UTI89.faa
-3: ec042.faa
