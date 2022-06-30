@@ -1,7 +1,0 @@
-0: CFT073.faa
-1: HS.faa
-2: IAI1.faa
-3: LF82.faa
-4: UTI89.faa
-5: ec042.faa
-6: sf301.faa
