@@ -476,7 +476,7 @@ class Analysis:
 
     def rename_padmet_id(self, run):
         """ Rename the genes IDs to their original IDs in the final network PADMETs if they had been renamed by AuCoMe.
-        Useful to create WIKIs.
+        Also rename the all_panmetabolism padmet. Useful to create WIKIs.
 
         Parameters
         ----------
