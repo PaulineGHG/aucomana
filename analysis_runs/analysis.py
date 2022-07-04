@@ -486,6 +486,7 @@ class Analysis:
         asso_dict = {}
         # Path to studied_organisms
         path_species = os.path.join(self.path_runs, run, "studied_organisms")
+        path_panmeta = os.path.join(self.path_runs, run, "analysis", "all", "all_panmetabolism.padmet")
         # Path to final neworks PADMETs
         path_padmet = os.path.join(self.path_runs, run, "networks", "PADMETs")
         # Enrich asso_dict for every species having been renamed
@@ -496,9 +497,11 @@ class Analysis:
         out_path = os.path.join(self.path_study, "output_data", "renamed_id_padmet")
         # Replace renamed IDs to original IDs in PADMETs files
         for species in os.listdir(path_species):
-            print(f"ID renamed for {species}.padmet")
             apply_automaton(automaton, os.path.join(path_padmet, f"{species}.padmet"),
                             os.path.join(out_path, f"{species}.padmet"))
+            print(f"ID renamed for {species}.padmet")
+        apply_automaton(automaton, path_panmeta, os.path.join(out_path, "all_panmetabolism.padmet"))
+        print("ID renamed for all_panmetabolism.padmet")
         print(f"New PADMETs saved in : {out_path}")
 
 
