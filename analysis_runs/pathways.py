@@ -588,6 +588,7 @@ class Pathways:
     # Other
 
     def get_pw_names(self):
+        pw_set = set(self.pathways_list)
         pw_names = {}
         padmet_file = os.path.join(self.path_runs, self.name, "analysis", "all",
                                    "all_panmetabolism.padmet")
@@ -595,7 +596,8 @@ class Pathways:
             for l in f:
                 if "COMMON-NAME" in l and "pathway" in l:
                     l = l.split("\t")
-                    pw_names[l[1]] = l[3]
+                    if l[1] in pw_set:
+                        pw_names[l[1]] = l[3]
         return pw_names
 
     def convert_df_to_binary(self, threshold: float, strict: bool = False,

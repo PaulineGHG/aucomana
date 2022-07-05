@@ -300,6 +300,11 @@ class Test(unittest.TestCase):
         self.assertNotIn('PWY0-41', hs_ov50[1])  # 5/6
         self.assertIn('PWY-6523', hs_ov50[1])  # 1/3
 
+    def test_get_pw_names(self):
+        pw_names = PW.get_pw_names()
+        self.assertEqual(pw_names['1CMET2-PWY'], 'folate transformations III (E. coli)')
+        self.assertEqual(pw_names['PWY-5137'], 'fatty acid &beta;-oxidation III (unsaturated, odd number)')
+        self.assertEqual(pw_names.keys(), set(PW.pathways_list))
 
 
 
