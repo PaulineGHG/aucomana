@@ -623,7 +623,7 @@ class Pathways:
         common_name : bool, optional (default=False)
             Whether write the common name of the pathway in 1st column or not
         nb_rxn : bool, optional (default=False)
-            Whether write the total number of reactions of the pathway in 2nd column or not
+            Whether write the total number of reactions of the pathway in the last column or not
 
         Returns
         -------
