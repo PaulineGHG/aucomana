@@ -71,6 +71,17 @@ class Test(unittest.TestCase):
         columns_list = [x + PW.STR_RXN_ASSOC for x in PW.species_list]
         self.assertListEqual(columns_list, list(PW.data_rxn_assoc.columns))
 
+    def test_nb_rnx_pw(self):
+        self.assertEqual(PW.nb_rnx_pw["NADPHOS-DEPHOS-PWY-1"], 2)
+        self.assertEqual(PW.nb_rnx_pw["PWY-7716"], 4)
+        self.assertEqual(PW.nb_rnx_pw["PWY-5517"], 6)
+
+    def test_nb_rnx_pw_min(self):
+        PW3 = A.pathways(RUN, nb_rxn_pw_min=3)
+        self.assertNotIn("NADPHOS-DEPHOS-PWY-1", PW3.pathways_list)  # 2
+        self.assertIn("PWY-2722", PW3.pathways_list)  # 3
+        self.assertIn("PWY-7716", PW3.pathways_list)  # 4
+
     # Gain
 
     def test_is_present(self):
@@ -264,6 +275,31 @@ class Test(unittest.TestCase):
         # SPECIES LIST
         dict_pw_incomplete = PW.get_pw_incomplete(species=['HS', 'IAI1', 'ec042'])
         self.assertEqual(dict_pw_incomplete.keys(), {'HS', 'IAI1', 'ec042'})
+
+    # Other
+
+    def test_get_pw_over_treshold(self):
+        hs_ov50 = PW.get_pw_over_treshold('HS', 0.5)['HS']
+        self.assertEqual(hs_ov50[0], 781)
+        self.assertIn('PWY-5278', hs_ov50[1])  # 1/2
+        self.assertIn('PWY0-41', hs_ov50[1])  # 5/6
+        self.assertNotIn('PWY-6523', hs_ov50[1])  # 1/3
+        hs_ov50 = PW.get_pw_over_treshold('HS', 0.5, strict=True)['HS']
+        self.assertNotIn('PWY-5278', hs_ov50[1])  # 1/2
+        self.assertIn('PWY0-41', hs_ov50[1])  # 5/6
+        self.assertNotIn('PWY-6523', hs_ov50[1])  # 1/3
+
+    def test_get_pw_under_treshold(self):
+        hs_ov50 = PW.get_pw_under_treshold('HS', 0.5)['HS']
+        self.assertEqual(hs_ov50[0], 650)
+        self.assertIn('PWY-5278', hs_ov50[1])  # 1/2
+        self.assertNotIn('PWY0-41', hs_ov50[1])  # 5/6
+        self.assertIn('PWY-6523', hs_ov50[1])  # 1/3
+        hs_ov50 = PW.get_pw_under_treshold('HS', 0.5, strict=True)['HS']
+        self.assertNotIn('PWY-5278', hs_ov50[1])  # 1/2
+        self.assertNotIn('PWY0-41', hs_ov50[1])  # 5/6
+        self.assertIn('PWY-6523', hs_ov50[1])  # 1/3
+
 
 
 
