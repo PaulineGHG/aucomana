@@ -306,5 +306,29 @@ class Test(unittest.TestCase):
         self.assertEqual(pw_names['PWY-5137'], 'fatty acid &beta;-oxidation III (unsaturated, odd number)')
         self.assertEqual(pw_names.keys(), set(PW.pathways_list))
 
+    def test_convert_df_to_binary(self):
+        df_bin = PW.convert_df_to_binary(0.5)
+        self.assertEqual(df_bin.loc['PWY66-385', 'HS'], 1)
+        self.assertEqual(df_bin.loc['PWY-8219', 'HS'], 0)
+        self.assertEqual(list(df_bin.columns), PW.species_list)
+        self.assertEqual(list(df_bin.index), PW.pathways_list)
+        df_bin = PW.convert_df_to_binary(0.5, strict=True)
+
+    def test_generate_pw_dendrogram(self):
+        pass
+        # FILE Study_folder/output_data/dendro_tanglegrams/dendro_groups.tsv FILLED BEFORE
+        # NO PHYLO REF FILE
+        # PW.generate_pw_dendrogram(0.8, name="test_no_phylo", n_boot=10)
+        # self.assertEqual(os.path.exists(os.path.join(PW.path_study, 'output_data', 'dendro_tanglegrams', 'bact7',
+        #                                              'pw_test_no_phylo', 'pw_test_no_phylo_dendextend_dend.png')),
+        #                  True)
+        # self.assertEqual(os.path.exists(os.path.join(PW.path_study, 'output_data', 'dendro_tanglegrams', 'bact7',
+        #                                              'pw_test_no_phylo', 'pw_test_no_phylo_pvclust_dend.png')),
+        #                  True)
+
+        # PHYLO REF FILE
+        # phylo_file = os.path.join(A.path_study, 'Phylo.nexus')
+        # R.generate_rnx_dendrogram(name="test_phylo", n_boot=10, phylo_file=phylo_file)
+
 
 

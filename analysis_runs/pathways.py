@@ -627,7 +627,7 @@ class Pathways:
 
         Returns
         -------
-        df_binary : 'pd.DataFrame'
+        df_binary : pd.DataFrame
             Dataframe with binary values according to the threshold indicated :
             value = 1 if value >= (or > if strict) threshold
             value = 0 if value < (or <= if strict) threshold
@@ -672,14 +672,14 @@ class Pathways:
         else:
             return df_binary
 
-    def generate_pw_dendrogram(self, a: 'Analysis', df_binary_theshold: float, strict: bool = False,
+    def generate_pw_dendrogram(self, df_binary_threshold: float, strict: bool = False,
                                name: str = None, phylo_file: str = None, n_boot: int = 100000):
         if name is None:
             self.nb_dend += 1
             name = f"dendrogram{self.nb_dend}"
-        name = f"pw_{int(df_binary_theshold*100)}_{name}"
-        df_bin = self.convert_df_to_binary(df_binary_theshold, strict)
-        d = analysis_runs.dendrograms.Dendrogram(a, self.path_study, df_bin, self.name, name,
+        name = f"pw_{int(df_binary_threshold*100)}_{name}"
+        df_bin = self.convert_df_to_binary(df_binary_threshold, strict)
+        d = analysis_runs.dendrograms.Dendrogram(self.path_runs, self.path_study, df_bin, self.name, name,
                                                  phylo_file)
         d.get_dendro_pvclust(n_boot)
 
