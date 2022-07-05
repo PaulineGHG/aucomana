@@ -588,6 +588,13 @@ class Pathways:
     # Other
 
     def get_pw_names(self):
+        """ Associate for each pathway in pathways_list, its common name in a dictionary.
+
+        Returns
+        -------
+        pw_names : Dict[str, str]
+            Dictionary Dict[ID of pw, common name of pw] associating common pathways names to their ID.
+        """
         pw_set = set(self.pathways_list)
         pw_names = {}
         padmet_file = os.path.join(self.path_runs, self.name, "analysis", "all",
@@ -615,6 +622,8 @@ class Pathways:
             Whether write the binary data frame in an output file or not
         common_name : bool, optional (default=False)
             Whether write the common name of the pathway in 1st column or not
+        nb_rxn : bool, optional (default=False)
+            Whether write the total number of reactions of the pathway in 2nd column or not
 
         Returns
         -------
