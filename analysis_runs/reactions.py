@@ -434,3 +434,23 @@ class Reactions:
                                                  self.name, name, phylo_file)
         d.get_dendro_pvclust(n_boot)
 
+    def get_reactions_names(self):
+        """ Associate for each reaction in reactions_list, its common name in a dictionary.
+
+        Returns
+        -------
+        rxn_names : Dict[str, str]
+            Dictionary Dict[ID of rxn, common name of rxn] associating common reactions names to their ID.
+        """
+        rxn_set = set(self.reactions_list)
+        rxn_names = {}
+        padmet_file = os.path.join(self.path_runs, self.name, "analysis", "all",
+                                   "all_panmetabolism.padmet")
+        with open(padmet_file, "r") as f:
+            for l in f:
+                if "COMMON-NAME" in l and "reaction" in l:
+                    l = l.split("\t")
+                    if l[1] in rxn_set and len(l) > 6:
+                        rxn_names[l[1]] = l[7]
+        return rxn_names
+

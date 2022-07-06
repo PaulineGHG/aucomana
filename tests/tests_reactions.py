@@ -151,6 +151,14 @@ class Test(unittest.TestCase):
         self.assertEqual(os.path.exists(os.path.join(R.path_study, "output_data", "reactions_data", "genes_assoc",
                                         str(R.nb_genes_assoc), 'bact7_genes_assoc.json')), True)
 
+    def test_get_reactions_names(self):
+        rxn_names = R.get_reactions_names()
+        print(rxn_names)
+        # self.assertEqual(rxn_names['1CMET2-PWY'], 'folate transformations III (E. coli)')
+        # self.assertEqual(rxn_names['PWY-5137'], 'fatty acid &beta;-oxidation III (unsaturated, odd number)')
+        # self.assertEqual(rxn_names.keys(), set(R.reactions_list))
+        print(len(rxn_names), R.nb_reactions)
+
     def test_generate_rnx_dendrogram(self):
         # TODO : FINISH TEST + CREATE PHYLO FILE
         # FILE Study_folder/output_data/dendro_tanglegrams/dendro_groups.tsv FILLED BEFORE

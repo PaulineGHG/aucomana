@@ -99,3 +99,9 @@ class Test(unittest.TestCase):
         self.assertEqual(rxn_producing.keys(), {'GLYCOLLATE', 'OXYGEN-MOLECULE'})
         self.assertEqual(rxn_producing['GLYCOLLATE'].keys(), set(MB.species_list))
         self.assertIn('RXN-20148', rxn_producing['OXYGEN-MOLECULE']['CFT073'])
+
+    def test_get_metabolites_names(self):
+        mb_names = MB.get_metabolites_names()
+        self.assertEqual(mb_names['CPD-12117'], 'demethylmenaquinol-7')
+        self.assertEqual(mb_names['CPD-12817'], '1,2-dipalmitoyl-phosphatidylserine')
+

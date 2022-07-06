@@ -4,6 +4,7 @@ Metabolites class
 from typing import Dict, List, Tuple, Set
 import analysis_runs.dendrograms
 import pandas as pd
+import os
 
 
 class Metabolites:
@@ -192,5 +193,25 @@ class Metabolites:
                 rxn_producing[mb][species] = str(
                     self.data_metabolites_produced[species + self.STR_PRODUCE][mb]).split(";")
         return rxn_producing
+
+    def get_metabolites_names(self):
+        """ Associate for each metabolite in metabolites_list, its common name in a dictionary.
+
+        Returns
+        -------
+        mb_names : Dict[str, str]
+            Dictionary Dict[ID of mb, common name of mb] associating common metabolites names to their ID.
+        """
+        mb_set = set(self.metabolites_list)
+        mb_names = {}
+        padmet_file = os.path.join(self.path_runs, self.name, "analysis", "all",
+                                   "all_panmetabolism.padmet")
+        with open(padmet_file, "r") as f:
+            for l in f:
+                if "COMMON-NAME" in l and "compound" in l:
+                    l = l.split("\t")
+                    if l[1] in mb_set:
+                        mb_names[l[1]] = l[3]
+        return mb_names
 
 
