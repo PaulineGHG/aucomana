@@ -29,17 +29,23 @@ class Metabolites:
     STR_PRODUCE = "_rxn_produce"
     nb_dend = 0
 
-    def __init__(self, file_metabolites_tsv: str, species_list: List[str] = None):
+    def __init__(self, path_runs: str, path_study: str, file_metabolites_tsv: str, species_list: List[str] = None):
         """ Init the Genes class
 
         Parameters
         ----------
+        path_runs: str
+            path of AuCoMe runs results
+        path_study: str
+            path of outputs_data of the study
         file_metabolites_tsv : str
             file metabolites.tsv output from aucome analysis
         species_list : List[str], optional (default=None)
             List of species to study (must correspond to their name in metabolites.tsv file).
             If not specified, will contain all the species from metabolites.tsv file.
         """
+        self.path_runs = path_runs
+        self.path_study = path_study
         self.name = file_metabolites_tsv.split("/")[-4]
         self.species_list = species_list
         self.data_metabolites_consumed, \

@@ -244,11 +244,11 @@ class Analysis:
         if os.path.exists(m_path):
             if group is not None:
                 grp_species_l = list(self.get_grp_set(run, group, species_list))
-                MB = Metabolites(m_path, grp_species_l)
+                MB = Metabolites(self.path_runs, self.path_study, m_path, grp_species_l)
                 print(f"Metabolites instances has been created for run : {run} with group = {group}")
                 return MB
             else:
-                MB = Metabolites(m_path, species_list)
+                MB = Metabolites(self.path_runs, self.path_study, m_path, species_list)
                 print(f"Metabolites instances has been created for run : {run}")
                 return MB
         else:
