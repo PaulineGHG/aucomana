@@ -351,5 +351,24 @@ class Test(unittest.TestCase):
         # phylo_file = os.path.join(A.path_study, 'Phylo.nexus')
         # R.generate_rnx_dendrogram(name="test_phylo", n_boot=10, phylo_file=phylo_file)
 
+    def test_get_rxn_assoc(self):
+        # NO PARAMETER
+        rxn_assoc = PW.get_rxn_assoc()
+        self.assertEqual(rxn_assoc.keys(), set(PW.pathways_list))
+        self.assertEqual(rxn_assoc['PWY-8010'].keys(), set(PW.species_list))
+        self.assertIn('ARGININE-N-SUCCINYLTRANSFERASE-RXN', rxn_assoc['AST-PWY']['HS'])
+
+        # PATHWAYS_LIST STR
+        rxn_assoc = PW.get_rxn_assoc(pathways_list='AST-PWY')
+        self.assertEqual(rxn_assoc.keys(), {'AST-PWY'})
+        self.assertEqual(rxn_assoc['AST-PWY'].keys(), set(PW.species_list))
+        self.assertIn('ARGININE-N-SUCCINYLTRANSFERASE-RXN', rxn_assoc['AST-PWY']['HS'])
+
+        # PATHWAYS_LIST LIST
+        rxn_assoc = PW.get_rxn_assoc(pathways_list=['AST-PWY', 'PWY-8010'])
+        self.assertEqual(rxn_assoc.keys(), {'AST-PWY', 'PWY-8010'})
+        self.assertEqual(rxn_assoc['AST-PWY'].keys(), set(PW.species_list))
+        self.assertIn('ARGININE-N-SUCCINYLTRANSFERASE-RXN', rxn_assoc['AST-PWY']['HS'])
+
 
 

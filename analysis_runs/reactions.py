@@ -250,7 +250,9 @@ class Reactions:
 
     def get_genes_assoc(self, reactions_list: str or List[str] = None,
                         output_file=False) -> Dict[str, Dict[str, Dict[str, List[str]]]]:
-        """
+        """ Returns a dictionary of genes associated with each reaction for each species. Can write proteins sequences
+        associated in fasta files.
+
         Parameters
         ----------
         reactions_list : str or List[str], optional (default=None)

@@ -689,3 +689,30 @@ class Pathways:
         comp_float = round(self.data_pathways_float.loc[pathway, species], 3)
         print(f"{comp_str} reactions present in pathway \"{pathway}\" = {comp_float*100}%")
 
+    def get_rxn_assoc(self, pathways_list: str or List[str] = None) -> Dict[str, Dict[str, Dict[str, List[str]]]]:
+        """ Returns a dictionary of reactions associated with each pathway for each species.
+
+        Parameters
+        ----------
+        pathways_list : str or List[str], optional (default=None)
+            List of pathways to find reactions associated with.
+            If None, will be pathways_list attribute.
+
+        Returns
+        -------
+        rxn_assoc : Dict[str, Dict[str, Dict[str, List[str]]]]
+            Dictionary of reactions associated with each pathway for each species
+        """
+        rxn_assoc = {}
+        if pathways_list is None:
+            pathways_list = self.pathways_list
+        elif type(pathways_list) == str:
+            pathways_list = [pathways_list]
+        for pw in pathways_list:
+            rxn_assoc[pw] = {}
+        for pw in pathways_list:
+            for species in self.species_list:
+                rxn_assoc[pw][species] = str(
+                    self.data_rxn_assoc[species + self.STR_RXN_ASSOC][pw]).split(";")
+        return rxn_assoc
+
