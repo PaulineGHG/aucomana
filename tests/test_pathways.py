@@ -313,19 +313,27 @@ class Test(unittest.TestCase):
         self.assertEqual(df_bin.loc['PWY-8219', 'HS'], 0)
         self.assertEqual(list(df_bin.columns), PW.species_list)
         self.assertEqual(list(df_bin.index), PW.pathways_list)
+
         # TRSHOLD STRICT
         df_bin = PW.convert_df_to_binary(0.5, strict=True)
         self.assertEqual(df_bin.loc['PWY-6578', 'HS'], 0)  # 1/2
+
         # WITH COMMON NAME
         df_bin = PW.convert_df_to_binary(0.5, common_name=True)
         self.assertEqual(df_bin.columns[0], 'common name')
+
         # WITH NB RNX IN PW
         df_bin = PW.convert_df_to_binary(0.5, nb_rxn=True)
         self.assertEqual(df_bin.columns[-1], 'nb rnx pw')
+
         # WITH COMMON NAME AND NB RNX IN PW
         df_bin = PW.convert_df_to_binary(0.5, nb_rxn=True, common_name=True)
         self.assertEqual(df_bin.columns[0], 'common name')
         self.assertEqual(df_bin.columns[-1], 'nb rnx pw')
+
+        # WITH OUTPUT FILE
+        PW.convert_df_to_binary(0.5, output_file=True)
+        self.assertIs(os.path.exists('Study_folder/output_data/pathways_data/binary_df/bact7_0.5_binary_pw.tsv'), True)
 
     def test_generate_pw_dendrogram(self):
         pass
