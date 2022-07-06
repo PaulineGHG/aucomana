@@ -36,7 +36,7 @@ class Test(unittest.TestCase):
         self.assertEqual('DETHIOBIOTIN', MB.metabolites_list[0])
         self.assertEqual('MESACONATE', MB.metabolites_list[-1])
 
-    def test_data_pathways_str(self):
+    def test_data_metabolites_consumed(self):
         self.assertIsInstance(PW.data_pathways_str, pd.DataFrame)
         columns_list = [x + PW.STR_COMP for x in PW.species_list]
         self.assertListEqual(PW.pathways_list, list(PW.data_pathways_str.index))
@@ -44,10 +44,13 @@ class Test(unittest.TestCase):
         self.assertEqual(PW.data_pathways_str.loc['PWY-5515', 'UTI89_completion_rate'], '1/3')
         self.assertEqual(PW.data_pathways_str.loc['PWY-6550', 'UTI89_completion_rate'], '0/5')
 
-    def test_data_pathways_float(self):
+    def test_data_metabolites_produced(self):
         self.assertIsInstance(PW.data_pathways_float, pd.DataFrame)
         columns_list = [x + PW.STR_COMP for x in PW.species_list]
         self.assertListEqual(PW.pathways_list, list(PW.data_pathways_float.index))
         self.assertListEqual(columns_list, list(PW.data_pathways_float.columns))
         self.assertEqual(PW.data_pathways_float.loc['PWY-5515', 'UTI89_completion_rate'], float(1/3))
         self.assertEqual(PW.data_pathways_float.loc['PWY-6550', 'UTI89_completion_rate'], 0)
+
+    def test_data_metabolites(self):
+        pass
