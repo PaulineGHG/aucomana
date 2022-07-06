@@ -137,4 +137,60 @@ class Metabolites:
                                                  self.name, phylo_file)
         d.get_dendro_pvclust(n_boot)
 
+    def get_rxn_consuming(self, metabolites_list: str or List[str] = None) -> \
+            Dict[str, Dict[str, Dict[str, List[str]]]]:
+        """ Returns a dictionary of reactions consuming each metabolite for each species.
+
+        Parameters
+        ----------
+        metabolites_list : str or List[str], optional (default=None)
+            List of metabolites to find reactions consuming them.
+            If None, will be metabolites_list attribute.
+
+        Returns
+        -------
+        rxn_consuming : Dict[str, Dict[str, Dict[str, List[str]]]]
+            Dictionary of reactions consuming each metabolite for each species
+        """
+        rxn_consuming = {}
+        if metabolites_list is None:
+            metabolites_list = self.metabolites_list
+        elif type(metabolites_list) == str:
+            metabolites_list = [metabolites_list]
+        for mb in metabolites_list:
+            rxn_consuming[mb] = {}
+        for mb in metabolites_list:
+            for species in self.species_list:
+                rxn_consuming[mb][species] = str(
+                    self.data_metabolites_consumed[species + self.STR_CONSUME][mb]).split(";")
+        return rxn_consuming
+
+    def get_rxn_producing(self, metabolites_list: str or List[str] = None) -> \
+            Dict[str, Dict[str, Dict[str, List[str]]]]:
+        """ Returns a dictionary of reactions producing each metabolite for each species.
+
+        Parameters
+        ----------
+        metabolites_list : str or List[str], optional (default=None)
+            List of metabolites to find reactions producing them.
+            If None, will be metabolites_list attribute.
+
+        Returns
+        -------
+        rxn_producing : Dict[str, Dict[str, Dict[str, List[str]]]]
+            Dictionary of reactions producing each metabolite for each species
+        """
+        rxn_producing = {}
+        if metabolites_list is None:
+            metabolites_list = self.metabolites_list
+        elif type(metabolites_list) == str:
+            metabolites_list = [metabolites_list]
+        for mb in metabolites_list:
+            rxn_producing[mb] = {}
+        for mb in metabolites_list:
+            for species in self.species_list:
+                rxn_producing[mb][species] = str(
+                    self.data_metabolites_produced[species + self.STR_PRODUCE][mb]).split(";")
+        return rxn_producing
+
 

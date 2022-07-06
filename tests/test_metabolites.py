@@ -37,20 +37,27 @@ class Test(unittest.TestCase):
         self.assertEqual('MESACONATE', MB.metabolites_list[-1])
 
     def test_data_metabolites_consumed(self):
-        self.assertIsInstance(PW.data_pathways_str, pd.DataFrame)
-        columns_list = [x + PW.STR_COMP for x in PW.species_list]
-        self.assertListEqual(PW.pathways_list, list(PW.data_pathways_str.index))
-        self.assertListEqual(columns_list, list(PW.data_pathways_str.columns))
-        self.assertEqual(PW.data_pathways_str.loc['PWY-5515', 'UTI89_completion_rate'], '1/3')
-        self.assertEqual(PW.data_pathways_str.loc['PWY-6550', 'UTI89_completion_rate'], '0/5')
+        self.assertIsInstance(MB.data_metabolites_consumed, pd.DataFrame)
+        columns_list = [x + MB.STR_CONSUME for x in MB.species_list]
+        self.assertListEqual(MB.metabolites_list, list(MB.data_metabolites_consumed.index))
+        self.assertListEqual(columns_list, list(MB.data_metabolites_consumed.columns))
+        self.assertEqual(MB.data_metabolites_consumed.loc['GLYCOLLATE', 'HS_rxn_consume'],
+                         'GLYCOLATEDEHYDRO-RXN;RXN-969;RXN0-7229')
+        self.assertEqual(MB.data_metabolites_consumed.loc['DNA-Ligase-L-lysine-adenylate', 'LF82_rxn_consume'],
+                         'RXN-17918')
 
     def test_data_metabolites_produced(self):
-        self.assertIsInstance(PW.data_pathways_float, pd.DataFrame)
-        columns_list = [x + PW.STR_COMP for x in PW.species_list]
-        self.assertListEqual(PW.pathways_list, list(PW.data_pathways_float.index))
-        self.assertListEqual(columns_list, list(PW.data_pathways_float.columns))
-        self.assertEqual(PW.data_pathways_float.loc['PWY-5515', 'UTI89_completion_rate'], float(1/3))
-        self.assertEqual(PW.data_pathways_float.loc['PWY-6550', 'UTI89_completion_rate'], 0)
+        self.assertIsInstance(MB.data_metabolites_produced, pd.DataFrame)
+        columns_list = [x + MB.STR_PRODUCE for x in MB.species_list]
+        self.assertListEqual(MB.metabolites_list, list(MB.data_metabolites_produced.index))
+        self.assertListEqual(columns_list, list(MB.data_metabolites_produced.columns))
+        self.assertEqual(MB.data_metabolites_produced.loc['Alkylated-Bases', 'HS_rxn_produce'], '3.2.2.21-RXN')
+        self.assertEqual(MB.data_metabolites_produced.loc['RNA-3prime-Cytidine-3prime-P', 'CFT073_rxn_produce'],
+                         'RXN-19935;RXN-19932')
 
     def test_data_metabolites(self):
-        pass
+        self.assertIsInstance(MB.data_metabolites, pd.DataFrame)
+        self.assertListEqual(MB.metabolites_list, list(MB.data_metabolites.index))
+        self.assertListEqual(MB.species_list, list(MB.data_metabolites.columns))
+        self.assertEqual(MB.data_metabolites.loc['GDP-4-DEHYDRO-6-L-DEOXYGALACTOSE', 'HS'], 0)
+        self.assertEqual(MB.data_metabolites.loc['GLN', 'LF82'], 1)
