@@ -9,45 +9,32 @@ RUNS_PATH = 'Runs_aucome'
 
 RUN = 'bact7'
 A = Analysis(RUNS_PATH, STUDY_PATH)
-M = A.metabolites(RUN)
+MB = A.metabolites(RUN)
 
 
 class Test(unittest.TestCase):
 
     def test_init(self):
-        self.assertIsInstance(PW, Pathways)
+        self.assertIsInstance(MB, Metabolites)
 
     def test_init_species_default(self):
         species_obj = ['HS', 'IAI1', 'CFT073', 'UTI89', 'sf301', 'ec042', 'LF82']
-        self.assertEqual(species_obj, PW.species_list)
+        self.assertEqual(species_obj, MB.species_list)
 
     def test_species_precised(self):
         # SPECIES_LIST = ['HS', 'UTI89', 'ec042']
         sp_l = ['HS', 'UTI89', 'ec042']
-        pws = A.pathways(RUN, species_list=sp_l)
-        self.assertEqual(sp_l, pws.species_list)
+        mbs = A.metabolites(RUN, species_list=sp_l)
+        self.assertEqual(sp_l, mbs.species_list)
 
     def test_name(self):
-        self.assertEqual(PW.name, 'bact7')
+        self.assertEqual(MB.name, 'bact7')
 
-    def test_pathways(self):
-        self.assertIs(type(PW.pathways_list), list)
-        self.assertEqual(1281, len(PW.pathways_list))
-        self.assertEqual('PWY-8010', PW.pathways_list[0])
-        self.assertEqual('PWY-5517', PW.pathways_list[-1])
-
-    def test_pathways_filtered1(self):
-        # OUT = 1
-        pwo1 = A.pathways(RUN, out=1)
-        self.assertEqual(1225, len(pwo1.pathways_list))
-        self.assertIn('PWY0-1533', pwo1.pathways_list)
-        self.assertIn('PWY-6416', pwo1.pathways_list)
-        self.assertNotIn('PWY0-1569', pwo1.pathways_list)
-
-        # OUT = 2
-        pwo2 = A.pathways(RUN, out=2)
-        self.assertIn('PWY-7798', pwo2.pathways_list)
-        self.assertNotIn('PWY0-1569', pwo2.pathways_list)
+    def test_metabolites(self):
+        self.assertIs(type(MB.metabolites_list), list)
+        self.assertEqual(2581, len(MB.metabolites_list))
+        self.assertEqual('DETHIOBIOTIN', MB.metabolites_list[0])
+        self.assertEqual('MESACONATE', MB.metabolites_list[-1])
 
     def test_data_pathways_str(self):
         self.assertIsInstance(PW.data_pathways_str, pd.DataFrame)

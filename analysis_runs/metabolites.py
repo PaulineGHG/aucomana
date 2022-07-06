@@ -10,18 +10,24 @@ class Metabolites:
     """
     Attributes
     ----------
+    path_runs: str
+        path of AuCoMe runs results
+    path_study: str
+        path of outputs_data of the study
     name : str
         name of the run
     species_list : List[str]
         List of species studied
-    data_metabolites_consumed :
-        Dataframe indicating wich for each species
-    data_metabolites_produced :
-        Dataframe indicating reactions associated with each gene for each species
+    data_metabolites_consumed : pd.DataFrame
+        DataFrame indicating which reaction consumes the metabolite for each species
+    data_metabolites_produced : pd.DataFrame
+        DataFrame indicating which reaction produces the metabolite for each species
+    data_metabolites : pd.DataFrame
+        DataFrame indicating which metabolite is produced and/or consumed (1 or 0) by a reaction for each species
     metabolites_list : List[str]
-        List of all genes
+        List of all metabolites
     nb_metabolites : int
-        number of genes
+        number of metabolites
     nb_species : int
         number of species studied
     """
@@ -66,12 +72,12 @@ class Metabolites:
 
         Returns
         -------
-        data_genes :
-            data_genes attribute
-        data_rnx_assoc :
-            data_rnx_assoc attribute
-        genes_list : List[str]
-            genes_list
+        data_metabolites_consumed : pd.DataFrame
+            data_metabolites_consumed attribute
+        data_metabolites_produced : pd.DataFrame
+            data_metabolites_produced attribute
+        metabolites_list : List[str]
+            metabolites_list attribute
         """
         data = pd.read_csv(file_metabolites_tsv, sep="\t", header=0, index_col='metabolite')
         if self.species_list is None:
@@ -91,8 +97,8 @@ class Metabolites:
 
         Parameters
         ----------
-        data :
-            The dataframe created from genes.tsv file
+        data : pd.DataFrame
+            The dataframe created from metabolites.tsv file
         """
         self.species_list = []
         for x in data.columns:
@@ -101,6 +107,14 @@ class Metabolites:
             self.species_list.append(x[:-12])
 
     def __generate_metabolites_df(self):
+        """ Generate the metabolites_data attribute. The dataframe indicate if a metabolite is consumed and/or produced
+        by a reaction or not (1 or 0) for each species.
+
+        Returns
+        -------
+        metabolite_df : pd.DataFrame
+            data_metabolites attribute
+        """
         metabolites_df = pd.DataFrame(index=self.metabolites_list, columns=self.species_list)
         metabolites_df.index_label = "metabolite"
         for met in self.metabolites_list:
@@ -119,7 +133,8 @@ class Metabolites:
             self.nb_dend += 1
             name = f"dendrogram{self.nb_dend}"
         name = "met_" + name
-        analysis_runs.dendrograms.get_dendro_pvclust(self.data_metabolites, name, self.name,
-                                                     phylo_file, n_boot)
+        d = analysis_runs.dendrograms.Dendrogram(self.path_runs, self.path_study, self.data_metabolites, name,
+                                                 self.name, phylo_file)
+        d.get_dendro_pvclust(n_boot)
 
 
