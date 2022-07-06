@@ -450,7 +450,8 @@ class Reactions:
             for l in f:
                 if "COMMON-NAME" in l and "reaction" in l:
                     l = l.split("\t")
-                    if l[1] in rxn_set and len(l) > 6:
-                        rxn_names[l[1]] = l[7]
+                    if l[1] in rxn_set:
+                        name_index = l.index('COMMON-NAME') + 1
+                        rxn_names[l[1]] = l[name_index].strip('\n')
         return rxn_names
 

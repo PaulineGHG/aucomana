@@ -153,11 +153,8 @@ class Test(unittest.TestCase):
 
     def test_get_reactions_names(self):
         rxn_names = R.get_reactions_names()
-        print(rxn_names)
-        # self.assertEqual(rxn_names['1CMET2-PWY'], 'folate transformations III (E. coli)')
-        # self.assertEqual(rxn_names['PWY-5137'], 'fatty acid &beta;-oxidation III (unsaturated, odd number)')
-        # self.assertEqual(rxn_names.keys(), set(R.reactions_list))
-        print(len(rxn_names), R.nb_reactions)
+        self.assertEqual(rxn_names['GDPMANDEHYDRA-RXN'], 'GDP-D-mannose dehydratase, NAD(P)-binding')
+        self.assertEqual(rxn_names['RXN-20756'], 'tRNA 2-selenouridine synthase')
 
     def test_generate_rnx_dendrogram(self):
         # TODO : FINISH TEST + CREATE PHYLO FILE
