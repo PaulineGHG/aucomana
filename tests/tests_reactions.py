@@ -152,6 +152,7 @@ class Test(unittest.TestCase):
                                         str(R.nb_genes_assoc), 'bact7_genes_assoc.json')), True)
 
     def test_generate_rnx_dendrogram(self):
+        # TODO : FINISH TEST + CREATE PHYLO FILE
         # FILE Study_folder/output_data/dendro_tanglegrams/dendro_groups.tsv FILLED BEFORE
         # NO PHYLO REF FILE
         R.generate_rnx_dendrogram(name="test_no_phylo", n_boot=10)

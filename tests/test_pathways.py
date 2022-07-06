@@ -336,6 +336,7 @@ class Test(unittest.TestCase):
         self.assertIs(os.path.exists('Study_folder/output_data/pathways_data/binary_df/bact7_0.5_binary_pw.tsv'), True)
 
     def test_generate_pw_dendrogram(self):
+        # TODO : FINISH TEST
         pass
         # FILE Study_folder/output_data/dendro_tanglegrams/dendro_groups.tsv FILLED BEFORE
         # NO PHYLO REF FILE
