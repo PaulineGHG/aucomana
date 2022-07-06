@@ -61,3 +61,41 @@ class Test(unittest.TestCase):
         self.assertListEqual(MB.species_list, list(MB.data_metabolites.columns))
         self.assertEqual(MB.data_metabolites.loc['GDP-4-DEHYDRO-6-L-DEOXYGALACTOSE', 'HS'], 0)
         self.assertEqual(MB.data_metabolites.loc['GLN', 'LF82'], 1)
+
+    def test_get_rxn_consuming(self):
+        # NO PARAMETER
+        rxn_consuming = MB.get_rxn_consuming()
+        self.assertEqual(rxn_consuming.keys(), set(MB.metabolites_list))
+        self.assertEqual(rxn_consuming['CPD-15158'].keys(), set(MB.species_list))
+        self.assertIn('RXN-969', rxn_consuming['GLYCOLLATE']['HS'])
+
+        # METABOLITES_LIST STR
+        rxn_consuming = MB.get_rxn_consuming(metabolites_list='GLYCOLLATE')
+        self.assertEqual(rxn_consuming.keys(), {'GLYCOLLATE'})
+        self.assertEqual(rxn_consuming['GLYCOLLATE'].keys(), set(MB.species_list))
+        self.assertIn('RXN-969', rxn_consuming['GLYCOLLATE']['HS'])
+
+        # METABOLITES_LIST LIST
+        rxn_consuming = MB.get_rxn_consuming(metabolites_list=['GLYCOLLATE', 'CPD-15158'])
+        self.assertEqual(rxn_consuming.keys(), {'GLYCOLLATE', 'CPD-15158'})
+        self.assertEqual(rxn_consuming['GLYCOLLATE'].keys(), set(MB.species_list))
+        self.assertIn('RXN-969', rxn_consuming['GLYCOLLATE']['HS'])
+
+    def test_get_rxn_producing(self):
+        # NO PARAMETER
+        rxn_producing = MB.get_rxn_producing()
+        self.assertEqual(rxn_producing.keys(), set(MB.metabolites_list))
+        self.assertEqual(rxn_producing['CPD-15158'].keys(), set(MB.species_list))
+        self.assertIn('RXN-20148', rxn_producing['OXYGEN-MOLECULE']['CFT073'])
+
+        # METABOLITES_LIST STR
+        rxn_producing = MB.get_rxn_producing(metabolites_list='OXYGEN-MOLECULE')
+        self.assertEqual(rxn_producing.keys(), {'OXYGEN-MOLECULE'})
+        self.assertEqual(rxn_producing['OXYGEN-MOLECULE'].keys(), set(MB.species_list))
+        self.assertIn('RXN-20148', rxn_producing['OXYGEN-MOLECULE']['CFT073'])
+
+        # METABOLITES_LIST LIST
+        rxn_producing = MB.get_rxn_producing(metabolites_list=['GLYCOLLATE', 'OXYGEN-MOLECULE'])
+        self.assertEqual(rxn_producing.keys(), {'GLYCOLLATE', 'OXYGEN-MOLECULE'})
+        self.assertEqual(rxn_producing['GLYCOLLATE'].keys(), set(MB.species_list))
+        self.assertIn('RXN-20148', rxn_producing['OXYGEN-MOLECULE']['CFT073'])
