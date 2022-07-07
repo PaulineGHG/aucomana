@@ -169,7 +169,7 @@ class Test(unittest.TestCase):
                          True)
 
         # PHYLO REF FILE
-        # phylo_file = os.path.join(A.path_study, 'Phylo.nexus')
+        # phylo_file = os.path.join(A.path_study, 'Phylo.nex')
         # R.generate_rnx_dendrogram(name="test_phylo", n_boot=10, phylo_file=phylo_file)
 
 

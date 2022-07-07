@@ -18,10 +18,10 @@ def install_packages():
             utils.install_packages(package)
 
 
-# dendextend = importr(packnames[0])
-# pvclust = importr(packnames[1])
-# grdevices = importr(packnames[2])
-# ape = importr(packnames[3])
+dendextend = importr(packnames[0])
+pvclust = importr(packnames[1])
+grdevices = importr(packnames[2])
+ape = importr(packnames[3])
 
 
 class Dendrogram:
