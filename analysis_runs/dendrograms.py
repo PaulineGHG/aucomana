@@ -18,13 +18,11 @@ def install_packages():
             utils.install_packages(package)
 
 
-dendextend = importr(packnames[0])
-pvclust = importr(packnames[1])
-grdevices = importr(packnames[2])
-ape = importr(packnames[3])
-
-
 class Dendrogram:
+    dendextend = importr(packnames[0])
+    pvclust = importr(packnames[1])
+    grdevices = importr(packnames[2])
+    ape = importr(packnames[3])
 
     def __init__(self, path_runs, path_study, df_binary, run, name, phylo_file):
         self.path_runs = path_runs
@@ -45,15 +43,15 @@ class Dendrogram:
         pandas2ri.activate()
         # Launch pvclust on the data silently and in parallel.
         print(f"Running pvclust with nboot = {n_boot}, this step may take a while.")
-        result = pvclust.pvclust(self.df_binary, method_dist="binary", method_hclust="complete",
+        result = self.pvclust.pvclust(self.df_binary, method_dist="binary", method_hclust="complete",
                                  nboot=n_boot, quiet=True, parallel=True)
         print("Running pvclust : Done.")
         # Create the dendrogram picture.
 
         out_file = os.path.join(self.out_dir, f"{self.name}_pvclust_dend.png")
-        grdevices.png(file=out_file, width=1500, height=1000, pointsize=24)
-        pvclust.plot_pvclust(result)
-        grdevices.dev_off()
+        self.grdevices.png(file=out_file, width=1500, height=1000, pointsize=24)
+        self.pvclust.plot_pvclust(result)
+        self.grdevices.dev_off()
         print(f"pvclust dendrogram has been saved to : {out_file}")
         # Dendextend dendrogram
         self.__create_dendextend(result)
@@ -73,17 +71,15 @@ class Dendrogram:
                 groups_leaves[group] = {"list": group_list, "color": color}
         return groups_branch, groups_leaves
 
-    @staticmethod
-    def __set_branch_color(dend, groups_branch):
+    def __set_branch_color(self, dend, groups_branch):
         for gval in groups_branch.values():
             value = rpy2.robjects.StrVector(gval["list"])
             color = rpy2.robjects.StrVector([gval["color"]])
-            dend = dendextend.set(dend, "by_labels_branches_col", value=value, TF_values=color,
-                                  quiet=True)
+            dend = self.dendextend.set(dend, "by_labels_branches_col", value=value, TF_values=color,
+                                       quiet=True)
         return dend
 
-    @staticmethod
-    def __set_labels_color(dend, groups_branch):
+    def __set_labels_color(self, dend, groups_branch):
         lab = rpy2.robjects.r['labels'](dend)
         lab_color = []
         for sp in lab:
@@ -95,11 +91,10 @@ class Dendrogram:
             if not in_list:
                 lab_color.append("black")
         lab_color = rpy2.robjects.StrVector(lab_color)
-        dend = dendextend.set(dend, "labels_col", lab_color, quiet=True)
+        dend = self.dendextend.set(dend, "labels_col", lab_color, quiet=True)
         return dend
 
-    @staticmethod
-    def __set_leaves_color(dend, groups_leaves):
+    def __set_leaves_color(self, dend, groups_leaves):
         lab = rpy2.robjects.r['labels'](dend)
         leaves_color = []
         leaves_pch = []
@@ -115,18 +110,17 @@ class Dendrogram:
                 leaves_pch.append(0)
         leaves_color = rpy2.robjects.StrVector(leaves_color)
         leaves_pch = rpy2.robjects.IntVector(leaves_pch)
-        dend = dendextend.set(dend, "leaves_col", leaves_color, quiet=True)
-        dend = dendextend.set(dend, "leaves_pch", leaves_pch, quiet=True)
+        dend = self.dendextend.set(dend, "leaves_col", leaves_color, quiet=True)
+        dend = self.dendextend.set(dend, "leaves_pch", leaves_pch, quiet=True)
         return dend
 
-    @staticmethod
     # !!! If the abbreviatio gives duplicate names, untangle and tanglegram will give error.
-    def __set_abbr_labels(dend):
+    def __set_abbr_labels(self, dend):
         abbr_label = []
         for l in rpy2.robjects.r['labels'](dend):
             abbr_label.append(Analysis.get_abbr_name(l))
         abbr_label = rpy2.robjects.StrVector(abbr_label)
-        dend = dendextend.set(dend, "labels", abbr_label, quiet=True)
+        dend = self.dendextend.set(dend, "labels", abbr_label, quiet=True)
         return dend
 
     def __create_dendextend(self, pvclust_res):
@@ -136,7 +130,7 @@ class Dendrogram:
         groups_branch, groups_leaves = self.__get_groups(d_grp)
         # Create dendrograms
         dend = rpy2.robjects.r['as.dendrogram'](pvclust_res)
-        dend = dendextend.set(dend, "branches_lwd", 4)
+        dend = self.dendextend.set(dend, "branches_lwd", 4)
         # Branch Color
         dend = self.__set_branch_color(dend, groups_branch)
         # Labels Color
@@ -149,9 +143,9 @@ class Dendrogram:
         # Save figure
         title = f"{self.name} original phylogeny dendrogram"
         out_file = os.path.join(self.out_dir, f"{self.name}_dendextend_dend.png")
-        grdevices.png(file=out_file, width=1500, height=1000, pointsize=24)
+        self.grdevices.png(file=out_file, width=1500, height=1000, pointsize=24)
         rpy2.robjects.r.plot(dend, horiz=True, main=title)
-        grdevices.dev_off()
+        self.grdevices.dev_off()
         print(f"Shaped dendextend dendrogram has been saved to : {out_file}")
         # Compare with original phylogeny
         if self.phylo_file is not None:
@@ -161,9 +155,9 @@ class Dendrogram:
     def __get_original_phylo_dend(self, groups_branch, groups_leaves):
         print(f"Creating phylogeny dendrogram from {self.phylo_file} information.")
         phylo = rpy2.robjects.r['read.nexus'](self.phylo_file)
-        phylo = ape.chronos(phylo, quiet=True)
+        phylo = self.ape.chronos(phylo, quiet=True)
         phylo = rpy2.robjects.r['as.dendrogram'](phylo)
-        phylo = dendextend.set(phylo, "branches_lwd", 4)
+        phylo = self.dendextend.set(phylo, "branches_lwd", 4)
         # Branch Color
         phylo = self.__set_branch_color(phylo, groups_branch)
         # Labels Color
@@ -176,30 +170,30 @@ class Dendrogram:
         # Save figure
         title = f"{self.name} metabolic dendrogram"
         out_file = os.path.join(self.out_dir, f"{self.name}_phylo_dend.png")
-        grdevices.png(file=out_file, width=1500, height=1000, pointsize=24)
+        self.grdevices.png(file=out_file, width=1500, height=1000, pointsize=24)
         rpy2.robjects.r.plot(phylo, horiz=True, main=title)
-        grdevices.dev_off()
+        self.grdevices.dev_off()
         print(f"Phylogeny dendrogram has been saved to : {out_file}")
         return phylo
 
     def __get_tanglegram(self, phylo, dend):
         print("Creating tanglegram comparing metabolic dendrogram to phylogeny dendrogram.")
-        d1 = dendextend.intersect_trees(phylo, dend, quiet=True)
-        col_lines = dendextend.labels_col(d1[0])
+        d1 = self.dendextend.intersect_trees(phylo, dend, quiet=True)
+        col_lines = self.dendextend.labels_col(d1[0])
 
         out_file = os.path.join(self.out_dir, f"{self.name}_tanglegram.png")
-        grdevices.png(file=out_file, width=1700, height=1000, pointsize=24)
+        self.grdevices.png(file=out_file, width=1700, height=1000, pointsize=24)
         title_right = f"{self.name} Metabolic Dendrogram"
-        d1 = dendextend.untangle(d1)
-        dendextend.tanglegram(d1, lwd=2, color_lines=col_lines, main_left="Original phylogeny",
-                              main_right=title_right, quiet=True)
-        grdevices.dev_off()
+        d1 = self.dendextend.untangle(d1)
+        self.dendextend.tanglegram(d1, lwd=2, color_lines=col_lines, main_left="Original phylogeny",
+                                   main_right=title_right, quiet=True)
+        self.grdevices.dev_off()
         print(f"Tanglegram has been saved to : {out_file}")
         self.__get_similarity_indicators(d1)
 
     def __get_similarity_indicators(self, d1):
-        cor_coph = dendextend.cor_cophenetic(d1, method_coef="pearson")
-        cor_bakers_gamma = dendextend.cor_bakers_gamma(d1)
+        cor_coph = self.dendextend.cor_cophenetic(d1, method_coef="pearson")
+        cor_bakers_gamma = self.dendextend.cor_bakers_gamma(d1)
         out_file = os.path.join(self.out_dir, f"{self.name}_similarity_indicators.tsv")
         with open(out_file, 'w') as f:
             f.write("Correlation cophenetic\tCorrelation bakers gamma\n")
