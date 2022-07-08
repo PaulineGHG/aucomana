@@ -57,3 +57,18 @@ class Test(unittest.TestCase):
         self.assertEqual(G.nb_genes_species.keys(), set(G.species_list))
         self.assertEqual(G.nb_genes_species['HS'], 1691)
 
+    def test_get_genes_species(self):
+        # NO PARAMETER
+        genes_species = G.get_genes_species()
+        self.assertIs(type(genes_species), dict)
+        self.assertIs(type(genes_species['HS']), set)
+        self.assertEqual(genes_species.keys(), set(G.species_list))
+        self.assertIn('EcHS_A3369', genes_species['HS'])
+        self.assertEqual(len(genes_species['HS']), 1691)
+
+        # SPECIES_LIST STR
+        self.assertEqual(G.get_genes_species(species_list='HS').keys(), {'HS'})
+
+        # SPECIES_LIST STR
+        self.assertEqual(G.get_genes_species(species_list=['HS', 'UTI89']).keys(), {'HS', 'UTI89'})
+

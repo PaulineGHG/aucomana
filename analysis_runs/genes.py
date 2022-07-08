@@ -13,9 +13,9 @@ class Genes:
         name of the file
     species_list : List[str]
         List of species studied
-    data_genes :
+    data_genes : pd.DataFrame
         Dataframe indicating if genes are present for each species
-    data_rxn_assoc :
+    data_rxn_assoc : pd.DataFrame
         Dataframe indicating reactions associated with each gene for each species
     genes_list : List[str]
         List of all genes
@@ -102,16 +102,44 @@ class Genes:
             nb_genes_sp_dict[sp] = int(sum(self.data_genes[sp]))
         return nb_genes_sp_dict
 
-    def get_genes_1sp(self, species):
+    def __get_genes_1sp(self, species: str) -> Set[str]:
+        """ Returns for the species to consider, its set of genes.
+
+        Parameters
+        ----------
+        species : str
+            Name of the species to consider
+
+        Returns
+        -------
+        genes_set : Set[str]
+            Set of genes the species to consider have
+        """
         genes_set = set()
         for gene in self.genes_list:
             if self.data_genes.loc[gene, species] == 1:
                 genes_set.add(gene)
         return genes_set
 
-    def get_genes_all_sp(self):
+    def get_genes_species(self, species_list: str or List[str] = None) -> Dict[str, Set[str]]:
+        """ Returns a dictionary associating for each species, its set of genes it has.
+
+        Parameters
+        ----------
+        species_list : str or List[str], optional (default=None)
+            species list to consider, if None will be the species_list attribute (all the species)
+
+        Returns
+        -------
+        genes_sp_dict : Dict[str, Set[str]]
+            Dictionary Dict[species name, Set[genes id]] associating for each species, its set of genes it has.
+        """
+        if type(species_list) == str:
+            species_list = [species_list]
+        elif species_list is None:
+            species_list = self.species_list
         genes_sp_dict = {}
-        for sp in self.species_list:
-            genes_set = self.get_genes_1sp(sp)
+        for sp in species_list:
+            genes_set = self.__get_genes_1sp(sp)
             genes_sp_dict[sp] = genes_set
         return genes_sp_dict
