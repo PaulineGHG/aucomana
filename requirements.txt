@@ -1,5 +1,4 @@
-ahocorasick==0.9
-Bio==1.3.9
+biopython==1.79
 matplotlib==3.5.1
 numpy==1.22.3
 pandas==1.4.2
