@@ -340,7 +340,7 @@ class Test(unittest.TestCase):
         pass
         # FILE Study_folder/output_data/dendro_tanglegrams/dendro_groups.tsv FILLED BEFORE
         # NO PHYLO REF FILE
-        PW.generate_pw_dendrogram(0.8, name="test_no_phylo", n_boot=10)
+        PW.generate_pw_dendrogram(df_binary_threshold=0.8, name="test_no_phylo", n_boot=10)
         self.assertEqual(os.path.exists(os.path.join(PW.path_study, 'output_data', 'dendro_tanglegrams', 'bact7',
                                                      'pw_80_test_no_phylo', 'pw_80_test_no_phylo_dendextend_dend.png')),
                          True)

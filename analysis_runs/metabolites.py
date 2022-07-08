@@ -129,7 +129,7 @@ class Metabolites:
                     metabolites_df.loc[met, sp] = 1
         return metabolites_df
 
-    def generate_met_dendrogram(self, name=None, phylo_file=None, n_boot=100000):
+    def generate_met_dendrogram(self, name=None, phylo_file=None, n_boot=10000):
         if name is None:
             self.nb_dend += 1
             name = f"dendrogram{self.nb_dend}"

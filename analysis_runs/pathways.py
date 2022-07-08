@@ -673,7 +673,7 @@ class Pathways:
             return df_binary
 
     def generate_pw_dendrogram(self, df_binary_threshold: float, strict: bool = False,
-                               name: str = None, phylo_file: str = None, n_boot: int = 100000):
+                               name: str = None, phylo_file: str = None, n_boot: int = 10000):
         if name is None:
             self.nb_dend += 1
             name = f"dendrogram{self.nb_dend}"
