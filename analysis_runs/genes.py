@@ -15,7 +15,7 @@ class Genes:
         List of species studied
     data_genes :
         Dataframe indicating if genes are present for each species
-    data_rnx_assoc :
+    data_rxn_assoc :
         Dataframe indicating reactions associated with each gene for each species
     genes_list : List[str]
         List of all genes
@@ -24,7 +24,7 @@ class Genes:
     nb_species : int
         number of species studied
     """
-    STR_RNX_ASSOC = "_rxn_assoc (sep=;)"
+    STR_RXN_ASSOC = "_rxn_assoc (sep=;)"
 
     def __init__(self, file_genes_tsv: str, species_list: List[str] = None):
         """ Init the Genes class
@@ -40,7 +40,7 @@ class Genes:
         self.name = file_genes_tsv.split("/")[-4]
         self.species_list = species_list
         self.data_genes, \
-            self.data_rnx_assoc, \
+            self.data_rxn_assoc, \
             self.genes_list = self.__init_data(file_genes_tsv)
         self.nb_genes, self.nb_species = self.data_genes.shape
         self.nb_genes_species = self.__generate_nb_genes_sp()
@@ -68,7 +68,7 @@ class Genes:
             self.__generate_species_list(data)
         data_species_all_genes = data[self.species_list]
         data_species_all_genes = data_species_all_genes.fillna(int(0))
-        rnx_assoc_list = [x + self.STR_RNX_ASSOC for x in self.species_list]
+        rnx_assoc_list = [x + self.STR_RXN_ASSOC for x in self.species_list]
         data_rnx_assoc = data[rnx_assoc_list]
         genes_list = list(data_species_all_genes.index)
         return data_species_all_genes.loc[genes_list], \
