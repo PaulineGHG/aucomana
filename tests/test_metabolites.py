@@ -105,3 +105,20 @@ class Test(unittest.TestCase):
         self.assertEqual(mb_names['CPD-12117'], 'demethylmenaquinol-7')
         self.assertEqual(mb_names['CPD-12817'], '1,2-dipalmitoyl-phosphatidylserine')
 
+    def test_generate_met_dendrogram(self):
+        # TODO : FINISH TEST
+        pass
+        # FILE Study_folder/output_data/dendro_tanglegrams/dendro_groups.tsv FILLED BEFORE
+        # NO PHYLO REF FILE
+        MB.generate_met_dendrogram(name="test_no_phylo", n_boot=10)
+        self.assertEqual(os.path.exists(os.path.join(MB.path_study, 'output_data', 'dendro_tanglegrams', 'bact7',
+                                                     'met_test_no_phylo', 'met_test_no_phylo_dendextend_dend.png')),
+                         True)
+        self.assertEqual(os.path.exists(os.path.join(MB.path_study, 'output_data', 'dendro_tanglegrams', 'bact7',
+                                                     'met_test_no_phylo', 'met_test_no_phylo_pvclust_dend.png')),
+                         True)
+
+        # PHYLO REF FILE
+        # phylo_file = os.path.join(A.path_study, 'Phylo.nexus')
+        # MB.generate_met_dendrogram(name="test_phylo", n_boot=10, phylo_file=phylo_file)
+

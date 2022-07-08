@@ -134,8 +134,8 @@ class Metabolites:
             self.nb_dend += 1
             name = f"dendrogram{self.nb_dend}"
         name = "met_" + name
-        d = analysis_runs.dendrograms.Dendrogram(self.path_runs, self.path_study, self.data_metabolites, name,
-                                                 self.name, phylo_file)
+        d = analysis_runs.dendrograms.Dendrogram(self.path_runs, self.path_study, self.data_metabolites, self.name,
+                                                 name, phylo_file)
         d.get_dendro_pvclust(n_boot)
 
     def get_rxn_consuming(self, metabolites_list: str or List[str] = None) -> \

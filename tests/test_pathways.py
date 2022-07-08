@@ -340,17 +340,17 @@ class Test(unittest.TestCase):
         pass
         # FILE Study_folder/output_data/dendro_tanglegrams/dendro_groups.tsv FILLED BEFORE
         # NO PHYLO REF FILE
-        # PW.generate_pw_dendrogram(0.8, name="test_no_phylo", n_boot=10)
-        # self.assertEqual(os.path.exists(os.path.join(PW.path_study, 'output_data', 'dendro_tanglegrams', 'bact7',
-        #                                              'pw_test_no_phylo', 'pw_test_no_phylo_dendextend_dend.png')),
-        #                  True)
-        # self.assertEqual(os.path.exists(os.path.join(PW.path_study, 'output_data', 'dendro_tanglegrams', 'bact7',
-        #                                              'pw_test_no_phylo', 'pw_test_no_phylo_pvclust_dend.png')),
-        #                  True)
+        PW.generate_pw_dendrogram(0.8, name="test_no_phylo", n_boot=10)
+        self.assertEqual(os.path.exists(os.path.join(PW.path_study, 'output_data', 'dendro_tanglegrams', 'bact7',
+                                                     'pw_80_test_no_phylo', 'pw_80_test_no_phylo_dendextend_dend.png')),
+                         True)
+        self.assertEqual(os.path.exists(os.path.join(PW.path_study, 'output_data', 'dendro_tanglegrams', 'bact7',
+                                                     'pw_80_test_no_phylo', 'pw_80_test_no_phylo_pvclust_dend.png')),
+                         True)
 
         # PHYLO REF FILE
         # phylo_file = os.path.join(A.path_study, 'Phylo.nexus')
-        # R.generate_rnx_dendrogram(name="test_phylo", n_boot=10, phylo_file=phylo_file)
+        # PW.generate_pw_dendrogram(0.8, name="test_phylo", n_boot=10, phylo_file=phylo_file)
 
     def test_get_rxn_assoc(self):
         # NO PARAMETER
