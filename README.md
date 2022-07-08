@@ -138,7 +138,14 @@ MB.generate_met_dendrogram(name="test_no_phylo", n_boot=10)
 ```
 Here the number of boot is 10 for fast testing. The default value is 10 000.
 
+### Comparison with original phylogeny
 
+The dendrograms generation commands above allow you to compare dendrogram with original phylogeny. To do so you have to attribute a nexus file in the ```phylo_file``` parameter.
+
+``` py
+phylo_file = 'Path/To/Phylo.nexus'
+PW.generate_pw_dendrogram(0.8, name="test_phylo", n_boot=10, phylo_file=phylo_file)
+```
 
 
 
