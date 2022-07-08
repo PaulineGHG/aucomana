@@ -21,7 +21,7 @@ Python Packages needed :
 - rpy2>=3.5.1
 - venn>=0.1.3
 
-Requirments listed in ```requirments.txt``` file.
+Requirements listed in ```requirements.txt``` file.
 
 ## Usage
 
@@ -90,7 +90,53 @@ groupA     | blue    | L
 groupB     | orange  | L
 groupC     | magenta | L
 
+Exemple of dendrogram associated :
 
+<img src="https://github.com/PaulineGHG/analysis_runs/blob/master/tests/Study_folder/output_data/dendro_tanglegrams/bact7/rnx_test_no_phylo/rnx_test_no_phylo_dendextend_dend.png" alt="Dendrogramm" width="500"/>
+
+## Analyze Reactions, Pathways, Metabolites and Genes
+
+You can extract information and make some calculations from tables datas availables in 'analysis/all' from AuCoMe results.
+You can do it thanks to ```Reactions```, ```Pathways```, ```Metabolites``` and ```Genes``` classes.
+
+Commands to initoalyse these instances :
+
+``` py
+RUN = 'bact7'
+A = Analysis(RUNS_PATH, STUDY_PATH)
+R = A.reactions(run=RUN)
+PW = A.pathways(run=RUN)
+MB = A.metabolites(run=RUN)
+G = A.genes(run=RUN)
+```
+See the documentation for full methods description : 
+
+## Generate Dendrograms
+
+### Install R. packages
+
+``` py
+from analysis_runs import dendrograms
+dendrograms.install_packages()
+```
+
+### Commands
+
+You can generate dendrograms from reactions, pathways or metabolites datas.
+Exemple without comparing with original phylogeny file :
+
+``` py
+RUN = 'bact7'
+A = Analysis(RUNS_PATH, STUDY_PATH)
+R = A.reactions(run=RUN)
+PW = A.pathways(run=RUN)
+MB = A.metabolites(run=RUN)
+
+R.generate_rnx_dendrogram(name="test_no_phylo", n_boot=10)
+PW.generate_pw_dendrogram(df_binary_threshold=0.8, name="test_no_phylo", n_boot=10)
+MB.generate_met_dendrogram(name="test_no_phylo", n_boot=10)
+```
+Here the number of boot is 10 for fast testing. The default value is 10 000.
 
 
 
