@@ -1,11 +1,13 @@
+"""
+Dendrogram class
+"""
 import os
 import pandas as pd
+import rpy2
 
 from analysis_runs.analysis import Analysis
-import rpy2
 from rpy2.robjects.packages import importr
 from rpy2.robjects import pandas2ri
-
 
 packnames = ('dendextend', 'pvclust', 'grDevices', 'ape')
 

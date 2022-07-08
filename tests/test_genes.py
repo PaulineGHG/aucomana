@@ -1,4 +1,3 @@
-import os.path
 import unittest
 import pandas as pd
 from analysis_runs.analysis import Analysis

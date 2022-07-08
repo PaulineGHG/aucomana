@@ -1,7 +1,7 @@
 """
 Metabolites class
 """
-from typing import Dict, List, Tuple, Set
+from typing import Dict, List, Tuple
 import analysis_runs.dendrograms
 import pandas as pd
 import os
