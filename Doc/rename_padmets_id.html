@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module rename_padmets_id</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>rename_padmets_id</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/udd/phamongi/Documents/analysis_runs/analysis_runs/rename_padmets_id.py">/udd/phamongi/Documents/analysis_runs/analysis_runs/rename_padmets_id.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="ahocorasick.html">ahocorasick</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-apply_automaton"><strong>apply_automaton</strong></a>(automaton: 'ahocorasick.Automaton', input_padmet_file: str, output_padmet_file: str)</dt><dd><tt>Apply&nbsp;the&nbsp;automaton&nbsp;to&nbsp;the&nbsp;original&nbsp;padmet&nbsp;file&nbsp;and&nbsp;replaces&nbsp;all&nbsp;the&nbsp;renamed&nbsp;IDs&nbsp;by&nbsp;the&nbsp;originals&nbsp;ID.&nbsp;Write&nbsp;the<br>
+result&nbsp;to&nbsp;a&nbsp;new&nbsp;padmet&nbsp;file.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+automaton&nbsp;:&nbsp;ahocorasick.Automaton<br>
+&nbsp;&nbsp;&nbsp;&nbsp;automaton&nbsp;created&nbsp;from&nbsp;the&nbsp;dictionary&nbsp;of&nbsp;genes&nbsp;ID&nbsp;replaced.<br>
+input_padmet_file&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Path&nbsp;of&nbsp;the&nbsp;original&nbsp;padmet&nbsp;file.<br>
+output_padmet_file:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Path&nbsp;for&nbsp;the&nbsp;new&nbsp;padmet&nbsp;file</tt></dd></dl>
+ <dl><dt><a name="-get_dict"><strong>get_dict</strong></a>(run: str, species: str, asso_dict: Dict[str, str], path_runs: str) -&gt; Dict[str, str]</dt><dd><tt>Complete&nbsp;the&nbsp;assodict&nbsp;parameter&nbsp;(Dictionary&nbsp;associated&nbsp;original&nbsp;genes&nbsp;IDs&nbsp;with&nbsp;the&nbsp;renamed&nbsp;IDs)&nbsp;with&nbsp;the&nbsp;IDs<br>
+of&nbsp;genes&nbsp;associated&nbsp;to&nbsp;the&nbsp;species&nbsp;to&nbsp;consider.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+run&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ID&nbsp;of&nbsp;the&nbsp;run&nbsp;to&nbsp;consider<br>
+species&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;of&nbsp;the&nbsp;species&nbsp;to&nbsp;consider<br>
+asso_dict&nbsp;:&nbsp;Dict[str,&nbsp;str]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Dictionary&nbsp;associated&nbsp;original&nbsp;genes&nbsp;IDs&nbsp;with&nbsp;the&nbsp;renamed&nbsp;IDs&nbsp;for&nbsp;species&nbsp;having&nbsp;been&nbsp;treated&nbsp;by&nbsp;the&nbsp;function<br>
+&nbsp;&nbsp;&nbsp;&nbsp;previously<br>
+path_runs&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Path&nbsp;of&nbsp;AuCoMe&nbsp;runs<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+ass_odict&nbsp;:&nbsp;Dict[str,&nbsp;str]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Dictionary&nbsp;associated&nbsp;original&nbsp;genes&nbsp;IDs&nbsp;with&nbsp;the&nbsp;renamed&nbsp;IDs&nbsp;for&nbsp;species&nbsp;having&nbsp;been&nbsp;treated&nbsp;by&nbsp;the&nbsp;function<br>
+&nbsp;&nbsp;&nbsp;&nbsp;previously&nbsp;and&nbsp;completed&nbsp;by&nbsp;the&nbsp;IDs&nbsp;of&nbsp;genes&nbsp;associated&nbsp;to&nbsp;the&nbsp;species&nbsp;to&nbsp;consider.</tt></dd></dl>
+ <dl><dt><a name="-make_automaton"><strong>make_automaton</strong></a>(genes_to_replace: Dict[str, str]) -&gt; 'ahocorasick.Automaton'</dt><dd><tt>Creates&nbsp;automaton&nbsp;from&nbsp;the&nbsp;dictionary&nbsp;of&nbsp;renamed&nbsp;genes&nbsp;ID&nbsp;and&nbsp;returns&nbsp;it.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+genes_to_replace:&nbsp;Dict[str,&nbsp;str]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Dictionary&nbsp;associated&nbsp;all&nbsp;the&nbsp;original&nbsp;genes&nbsp;ID&nbsp;to&nbsp;their&nbsp;renamed&nbsp;ID&nbsp;for&nbsp;all&nbsp;the&nbsp;species.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+automaton&nbsp;:&nbsp;ahocorasick.Automaton<br>
+&nbsp;&nbsp;&nbsp;&nbsp;automaton&nbsp;created&nbsp;from&nbsp;the&nbsp;dictionary&nbsp;of&nbsp;genes&nbsp;ID&nbsp;replaced.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>Dict</strong> = typing.Dict</td></tr></table>
+</body></html>
