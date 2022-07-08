@@ -51,3 +51,9 @@ class Test(unittest.TestCase):
         self.assertListEqual(columns_list, list(G.data_rxn_assoc.columns))
         self.assertEqual(G.data_rxn_assoc.loc['EcHS_A3031', 'HS' + G.STR_RXN_ASSOC], '4.3.1.15-RXN')
         self.assertEqual(G.data_rxn_assoc.loc['LF82_1690', 'LF82' + G.STR_RXN_ASSOC], 'ABC-25-RXN')
+
+    def test_nb_genes_species(self):
+        self.assertIs(type(G.nb_genes_species), dict)
+        self.assertEqual(G.nb_genes_species.keys(), set(G.species_list))
+        self.assertEqual(G.nb_genes_species['HS'], 1691)
+

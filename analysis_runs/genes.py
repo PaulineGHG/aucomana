@@ -47,7 +47,7 @@ class Genes:
 
     def __init_data(self, file_genes_tsv: str) \
             -> Tuple['pd.DataFrame', 'pd.DataFrame', List[str]]:
-        """ Generate the data_genes, data_rnx_assoc and genes_list attributes
+        """ Generate the data_genes, data_rxn_assoc and genes_list attributes
 
         Parameters
         ----------
@@ -56,10 +56,10 @@ class Genes:
 
         Returns
         -------
-        data_genes :
+        data_genes : pd.DataFrame
             data_genes attribute
-        data_rnx_assoc :
-            data_rnx_assoc attribute
+        data_rxn_assoc : pd.DataFrame
+            data_rxn_assoc attribute
         genes_list : List[str]
             genes_list
         """
@@ -79,7 +79,7 @@ class Genes:
 
         Parameters
         ----------
-        data :
+        data : pd.DataFrame
             The dataframe created from genes.tsv file
         """
         self.species_list = []
@@ -88,7 +88,15 @@ class Genes:
                 break
             self.species_list.append(x)
 
-    def __generate_nb_genes_sp(self):
+    def __generate_nb_genes_sp(self) -> Dict[str, int]:
+        """ Generate the nb_genes_sp attribute. Returns a dictionary associating for each species the number of genes
+        it has.
+
+        Returns
+        -------
+        nb_genes_sp_dict : Dict[str, int]
+            Dictionary Dict[species name, number of genes] associating for each species the number of genes it has.
+        """
         nb_genes_sp_dict = {}
         for sp in self.species_list:
             nb_genes_sp_dict[sp] = int(sum(self.data_genes[sp]))
