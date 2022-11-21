@@ -21,7 +21,12 @@ Python Packages needed :
 - rpy2>=3.5.1
 - venn>=0.1.3
 
-Requirements listed in ```requirements.txt``` file.
+### Install dependencies
+
+From cloned directory :
+
+```pip install -r requirements.txt```
+```python install_R_packages.py```
 
 ## Usage
 
@@ -112,13 +117,6 @@ G = A.genes(run=RUN)
 See the documentation for full methods description : 
 
 ## Generate Dendrograms
-
-### Install R. packages
-
-``` py
-from analysis_runs import dendrograms
-dendrograms.install_packages()
-```
 
 ### Commands
 
