@@ -12,14 +12,6 @@ from rpy2.robjects import pandas2ri
 packnames = ('dendextend', 'pvclust', 'grDevices', 'ape')
 
 
-def install_packages():
-    utils = importr('utils')
-    utils.chooseCRANmirror(ind=1)
-    for package in packnames:
-        if package not in rpy2.robjects.r['installed.packages']():
-            utils.install_packages(package)
-
-
 class Dendrogram:
     dendextend = importr(packnames[0])
     pvclust = importr(packnames[1])
