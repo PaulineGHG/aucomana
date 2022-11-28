@@ -324,11 +324,11 @@ class Reactions:
                         o.write(id_gene + "\n")
                         o.write(seq + "\n")
 
-    def generate_rnx_dendrogram(self, name=None, phylo_file=None, n_boot=10000):
+    def generate_rxn_dendrogram(self, name=None, phylo_file=None, n_boot=10000):
         if name is None:
             self.nb_dend += 1
             name = f"dendrogram{self.nb_dend}"
-        name = "rnx_" + name
+        name = "Rxn_" + name
         d = analysis_runs.dendrograms.Dendrogram(self.path_runs, self.path_study, self.data_reactions,
                                                  self.name, name, phylo_file)
         d.get_dendro_pvclust(n_boot)

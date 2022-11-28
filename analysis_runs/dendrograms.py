@@ -137,7 +137,7 @@ class Dendrogram:
         # Save figure
         title = f"{self.name} original phylogeny dendrogram"
         out_file = os.path.join(self.out_dir, f"{self.name}_dendextend_dend.png")
-        self.grdevices.png(file=out_file, width=1500, height=1000, pointsize=24)
+        self.grdevices.png(file=out_file, width=3000, height=2000, pointsize=24)
         rpy2.robjects.r.plot(dend, horiz=True, main=title)
         self.grdevices.dev_off()
         print(f"Shaped dendextend dendrogram has been saved to : {out_file}")
@@ -176,7 +176,7 @@ class Dendrogram:
         col_lines = self.dendextend.labels_col(d1[0])
 
         out_file = os.path.join(self.out_dir, f"{self.name}_tanglegram.png")
-        self.grdevices.png(file=out_file, width=1700, height=1000, pointsize=24)
+        self.grdevices.png(file=out_file, width=3000, height=2000, pointsize=24)
         title_right = f"{self.name} Metabolic Dendrogram"
         d1 = self.dendextend.untangle(d1)
         self.dendextend.tanglegram(d1, lwd=2, color_lines=col_lines, main_left="Original phylogeny",

@@ -156,16 +156,16 @@ class Test(unittest.TestCase):
         self.assertEqual(rxn_names['GDPMANDEHYDRA-RXN'], 'GDP-D-mannose dehydratase, NAD(P)-binding')
         self.assertEqual(rxn_names['RXN-20756'], 'tRNA 2-selenouridine synthase')
 
-    def test_generate_rnx_dendrogram(self):
+    def test_generate_rxn_dendrogram(self):
         # TODO : FINISH TEST + CREATE PHYLO FILE
         # FILE Study_folder/output_data/dendro_tanglegrams/dendro_groups.tsv FILLED BEFORE
         # NO PHYLO REF FILE
-        R.generate_rnx_dendrogram(name="test_no_phylo", n_boot=10)
+        R.generate_rxn_dendrogram(name="test_no_phylo", n_boot=10)
         self.assertEqual(os.path.exists(os.path.join(R.path_study, 'output_data', 'dendro_tanglegrams', 'bact7',
-                                                     'rnx_test_no_phylo', 'rnx_test_no_phylo_dendextend_dend.png')),
+                                                     'Rxn_test_no_phylo', 'Rxn_test_no_phylo_dendextend_dend.png')),
                          True)
         self.assertEqual(os.path.exists(os.path.join(R.path_study, 'output_data', 'dendro_tanglegrams', 'bact7',
-                                                     'rnx_test_no_phylo', 'rnx_test_no_phylo_pvclust_dend.png')),
+                                                     'Rxn_test_no_phylo', 'Rxn_test_no_phylo_pvclust_dend.png')),
                          True)
 
         # PHYLO REF FILE
