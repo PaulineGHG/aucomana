@@ -111,7 +111,8 @@ class Analysis:
 
     # ## Create instances
 
-    def reactions(self, run: str, species_list: List[str] = None, group: str = None, out: int = None) -> 'Reactions':
+    def reactions(self, run: str, species_list: List[str] = None, group: str or List[str] = None, out: int = None) \
+            -> 'Reactions':
         """ Create Reactions instance.
 
         Parameters
@@ -120,8 +121,8 @@ class Analysis:
             The run ID to consider
         species_list: List[str], optional (default=None)
             List of species to consider for instance creation
-        group: str, optional (default=None)
-            The group to consider for species filtering
+        group: str or List[str], optional (default=None)
+            The group(s) to consider for species filtering
             If None will be all the species in species_list
         out: int, optional (default=None)
             Number of species maximum not having the reaction for the reaction to be kept
@@ -135,7 +136,11 @@ class Analysis:
         r_path = os.path.join(self.path_runs, run, "analysis", "all", "reactions.tsv")
         if os.path.exists(r_path):
             if group is not None:
-                grp_species_l = list(self.get_grp_set(run, group, species_list))
+                grp_species_l = []
+                if type(group) == str:
+                    group = [group]
+                for g in group:
+                    grp_species_l += list(self.get_grp_set(run, g, species_list))
                 RXN = Reactions(self.path_runs, self.path_study, r_path, grp_species_l, out)
                 print(f"Reactions instance has been created for run : {run} with group = {group} and out = {out}")
                 return RXN
@@ -146,7 +151,7 @@ class Analysis:
         else:
             raise OSError(f"No file reactions.tsv in path {r_path}")
 
-    def pathways(self, run: str, species_list: List[str] = None, group: str = None, out: int = None,
+    def pathways(self, run: str, species_list: List[str] = None, group: str or List[str] = None, out: int = None,
                  nb_rxn_pw_min: int = 0) -> 'Pathways':
         """ Create Pathways instance.
 
@@ -156,8 +161,8 @@ class Analysis:
             The run ID to consider
         species_list: List[str], optional (default=None)
             List of species to consider for instance creation
-        group: str, optional (default=None)
-            The group to consider for species filtering
+        group: str or List[str], optional (default=None)
+            The group(s) to consider for species filtering
             If None will be all the species in species_list
         out: int, optional (default=None)
             Number of species maximum not having the pathway for the pathway to be kept
@@ -174,7 +179,11 @@ class Analysis:
         p_path = os.path.join(self.path_runs, run, "analysis", "all", "pathways.tsv")
         if os.path.exists(p_path):
             if group is not None:
-                grp_species_l = list(self.get_grp_set(run, group, species_list))
+                grp_species_l = []
+                if type(group) == str:
+                    group = [group]
+                for g in group:
+                    grp_species_l = list(self.get_grp_set(run, g, species_list))
                 PW = Pathways(self.path_runs, self.path_study, p_path, grp_species_l, out, nb_rxn_pw_min)
                 print(f"Pathways instance has been created for run : {run} with group = {group}, out = "
                       f"{out} and minimal number of reactions in pathway = {nb_rxn_pw_min}")
@@ -187,7 +196,7 @@ class Analysis:
         else:
             raise OSError(f"No file reactions.tsv in path {p_path}")
 
-    def genes(self, run: str, species_list: List[str] = None, group: str = None) -> 'Genes':
+    def genes(self, run: str, species_list: List[str] = None, group: str or List[str] = None) -> 'Genes':
         """ Create Genes instance.
 
         Parameters
@@ -196,8 +205,8 @@ class Analysis:
             The run ID to consider
         species_list: List[str], optional (default=None)
             List of species to consider for instance creation
-        group: str, optional (default=None)
-            The group to consider for species filtering
+        group: str or List[str], optional (default=None)
+            The group(s) to consider for species filtering
             If None will be all the species in species_list
 
         Returns
@@ -208,7 +217,11 @@ class Analysis:
         g_path = os.path.join(self.path_runs, run, "analysis", "all", "genes.tsv")
         if os.path.exists(g_path):
             if group is not None:
-                grp_species_l = list(self.get_grp_set(run, group, species_list))
+                grp_species_l = []
+                if type(group) == str:
+                    group = [group]
+                for g in group:
+                    grp_species_l = list(self.get_grp_set(run, g, species_list))
                 GN = Genes(g_path, grp_species_l)
                 print(f"Genes instance has been created for run : {run} with group = {group}")
                 return GN
@@ -219,7 +232,7 @@ class Analysis:
         else:
             raise OSError(f"No file reactions.tsv in path {g_path}")
 
-    def metabolites(self, run: str, species_list: List[str] = None, group: str = None) -> 'Metabolites':
+    def metabolites(self, run: str, species_list: List[str] = None, group: str or List[str] = None) -> 'Metabolites':
         """ Create Metabolites instance.
 
         Parameters
@@ -228,8 +241,8 @@ class Analysis:
             The runs ID to consider
         species_list: List[str], optional (default=None)
             List of species to consider for instance creation
-        group: str, optional (default=None)
-            The group to consider for species filtering
+        group: str or List[str], optional (default=None)
+            The group(s) to consider for species filtering
             If None will be all the species in species_list
 
         Returns
@@ -240,7 +253,11 @@ class Analysis:
         m_path = os.path.join(self.path_runs, run, "analysis", "all", "metabolites.tsv")
         if os.path.exists(m_path):
             if group is not None:
-                grp_species_l = list(self.get_grp_set(run, group, species_list))
+                grp_species_l = []
+                if type(group) == str:
+                    group = [group]
+                for g in group:
+                    grp_species_l = list(self.get_grp_set(run, g, species_list))
                 MB = Metabolites(self.path_runs, self.path_study, m_path, grp_species_l)
                 print(f"Metabolites instances has been created for run : {run} with group = {group}")
                 return MB
