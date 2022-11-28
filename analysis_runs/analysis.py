@@ -53,8 +53,8 @@ class Analysis:
 
     @staticmethod
     def get_abbr_name(name: str) -> str:
-        """Abbreviate and returns the name of the species in format : X.xxxx.
-        Ex : Escherichia coli returns E.coli
+        """Abbreviate and returns the name of the species in format : X.xxxx
+        Ex : Escherichia-coli returns E.coli
 
         Parameters
         ----------
@@ -66,7 +66,7 @@ class Analysis:
         abbr_name: str
             Abbreviated name of the species
         """
-        name = name.split("_")
+        name = name.split("_")[0].split("-")
         if len(name) > 1:
             if len(name[1]) > 3:
                 return f"{name[0][0].upper()}.{name[1][:4].lower()}"

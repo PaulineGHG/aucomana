@@ -148,23 +148,34 @@ class Dendrogram:
 
     def __get_original_phylo_dend(self, groups_branch, groups_leaves):
         print(f"Creating phylogeny dendrogram from {self.phylo_file} information.")
-        phylo = rpy2.robjects.r['read.nexus'](self.phylo_file)
+        phylo = rpy2.robjects.r['read.tree'](self.phylo_file)
+
+        # Make the tree ultrametric
         phylo = self.ape.chronos(phylo, quiet=True)
+
+        # Make the tree dichotomous
+        phylo = self.ape.multi2di(phylo)
+        # phylo = self.ape.unroot(phylo)
+        # phylo = self.ape.root(phylo, outgroup="Heterosigma-akashiwo", resolve_root=True)
+        # print(self.ape.is_rooted(phylo))
+
+        # Convert tree to dendrogram
         phylo = rpy2.robjects.r['as.dendrogram'](phylo)
-        phylo = self.dendextend.set(phylo, "branches_lwd", 4)
-        # Branch Color
+
+        # Color branch / leaves / labels
+        phylo = self.dendextend.set(phylo, "branches_lwd", 4)  # Thickness
         phylo = self.__set_branch_color(phylo, groups_branch)
-        # Labels Color
         phylo = self.__set_labels_color(phylo, groups_branch)
-        # Leaves Color
         phylo = self.__set_leaves_color(phylo, groups_leaves)
+
         # Sort & Rename
         phylo = rpy2.robjects.r['sort'](phylo, type="nodes")
         phylo = self.__set_abbr_labels(phylo)
+
         # Save figure
         title = f"{self.name} metabolic dendrogram"
         out_file = os.path.join(self.out_dir, f"{self.name}_phylo_dend.png")
-        self.grdevices.png(file=out_file, width=1500, height=1000, pointsize=24)
+        self.grdevices.png(file=out_file, width=3000, height=2000, pointsize=24)
         rpy2.robjects.r.plot(phylo, horiz=True, main=title)
         self.grdevices.dev_off()
         print(f"Phylogeny dendrogram has been saved to : {out_file}")
@@ -179,7 +190,7 @@ class Dendrogram:
         self.grdevices.png(file=out_file, width=3000, height=2000, pointsize=24)
         title_right = f"{self.name} Metabolic Dendrogram"
         d1 = self.dendextend.untangle(d1)
-        self.dendextend.tanglegram(d1, lwd=2, color_lines=col_lines, main_left="Original phylogeny",
+        self.dendextend.tanglegram(d1, lwd=4, color_lines=col_lines, main_left="Original phylogeny",
                                    main_right=title_right, quiet=True)
         self.grdevices.dev_off()
         print(f"Tanglegram has been saved to : {out_file}")
