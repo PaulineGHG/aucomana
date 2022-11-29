@@ -215,11 +215,15 @@ class Metabolites:
             True if the metabolite for the species is produced (unique or not),
             False otherwise
         """
-        if unique:
-            row = list(self.metabolites_produced.loc[metabolite])
-            return self.metabolites_produced.loc[metabolite, species] == 1 and sum(row) == 1
+        if metabolite not in self.metabolites_list:
+            print(f'Metabolite {metabolite} not in the run results')
+            return False
         else:
-            return self.metabolites_produced.loc[metabolite, species] == 1
+            if unique:
+                row = list(self.metabolites_produced.loc[metabolite])
+                return self.metabolites_produced.loc[metabolite, species] == 1 and sum(row) == 1
+            else:
+                return self.metabolites_produced.loc[metabolite, species] == 1
 
     def is_consumed(self, species: str, metabolite: str, unique=False) -> bool:
         """ Indicate if the metabolite is consumed for the species (unique or not) : considered unique if only this
@@ -240,8 +244,12 @@ class Metabolites:
             True if the metabolite for the species is consumed (unique or not),
             False otherwise
         """
-        if unique:
-            row = list(self.metabolites_consumed.loc[metabolite])
-            return self.metabolites_consumed.loc[metabolite, species] == 1 and sum(row) == 1
+        if metabolite not in self.metabolites_list:
+            print(f'Metabolite {metabolite} not in the run results')
+            return False
         else:
-            return self.metabolites_consumed.loc[metabolite, species] == 1
+            if unique:
+                row = list(self.metabolites_consumed.loc[metabolite])
+                return self.metabolites_consumed.loc[metabolite, species] == 1 and sum(row) == 1
+            else:
+                return self.metabolites_consumed.loc[metabolite, species] == 1
