@@ -158,14 +158,13 @@ class Metabolites:
         rxn_dict = {}
         for mb in metabolites_list:
             rxn_dict[mb] = {}
-        for mb in metabolites_list:
             for species in self.species_list:
                 if consumed:
                     species_id = species + self.STR_CONSUME
                 else:
                     species_id = species + self.STR_PRODUCE
-                rxn_dict[mb][species] = str(
-                    df[species_id][mb]).split(";")
+                if type(df[species_id][mb]) == str:
+                    rxn_dict[mb][species] = str(df[species_id][mb]).split(";")
         return rxn_dict
 
     def generate_met_dendrogram(self, name=None, phylo_file=None, n_boot=10000):
@@ -218,9 +217,9 @@ class Metabolites:
         """
         if unique:
             row = list(self.metabolites_produced.loc[metabolite])
-            return self.metabolites_produced.loc[metabolite, species] == 0 and sum(row) == self.nb_species - 1
+            return self.metabolites_produced.loc[metabolite, species] == 1 and sum(row) == 1
         else:
-            return self.metabolites_produced.loc[metabolite, species] == 0
+            return self.metabolites_produced.loc[metabolite, species] == 1
 
     def is_consumed(self, species: str, metabolite: str, unique=False) -> bool:
         """ Indicate if the metabolite is consumed for the species (unique or not) : considered unique if only this
@@ -243,6 +242,6 @@ class Metabolites:
         """
         if unique:
             row = list(self.metabolites_consumed.loc[metabolite])
-            return self.metabolites_consumed.loc[metabolite, species] == 0 and sum(row) == self.nb_species - 1
+            return self.metabolites_consumed.loc[metabolite, species] == 1 and sum(row) == 1
         else:
-            return self.metabolites_consumed.loc[metabolite, species] == 0
+            return self.metabolites_consumed.loc[metabolite, species] == 1
