@@ -19,12 +19,14 @@ class Metabolites:
         name of the run
     species_list : List[str]
         List of species studied
-    data_metabolites_consumed : pd.DataFrame
-        DataFrame indicating which reaction consumes the metabolite for each species
-    data_metabolites_produced : pd.DataFrame
-        DataFrame indicating which reaction produces the metabolite for each species
-    data_metabolites : pd.DataFrame
-        DataFrame indicating which metabolite is produced and/or consumed (1 or 0) by a reaction for each species
+    reactions_consuming : Dict[str, Dict[str, List[str]]]
+        Dictionary of reactions consuming each metabolite for each species
+    reactions_producing : Dict[str, Dict[str, List[str]]]
+        Dictionary of reactions producing each metabolite for each species
+    metabolites_produced : pd.DataFrame.
+        DataFrame indicating which metabolite is produced (1 or 0) by a reaction for each species
+    metabolites_consumed : pd.DataFrame.
+        DataFrame indicating which metabolite is consumed (1 or 0) by a reaction for each species
     metabolites_list : List[str]
         List of all metabolites
     nb_metabolites : int
@@ -55,14 +57,18 @@ class Metabolites:
         self.path_study = path_study
         self.name = file_metabolites_tsv.split("/")[-4]
         self.species_list = species_list
-        self.data_metabolites_consumed, \
-            self.data_metabolites_produced, \
+        self.reactions_consuming, \
+            self.reactions_producing, \
+            self.metabolites_produced, \
+            self.metabolites_consumed, \
             self.metabolites_list = self.__init_data(file_metabolites_tsv)
-        self.data_metabolites = self.__generate_metabolites_df()
-        self.nb_metabolites, self.nb_species = self.data_metabolites_consumed.shape
+        self.nb_metabolites = len(self.metabolites_list)
+        self.nb_species = len(self.species_list)
 
     def __init_data(self, file_metabolites_tsv: str) \
-            -> Tuple['pd.DataFrame', 'pd.DataFrame', List[str]]:
+            -> Tuple[Dict[str, Dict[str, List[str]]], Dict[str, Dict[str, List[str]]],
+                     pd.DataFrame, pd.DataFrame,
+                     List[str]]:
         """ Generate the data_metabolites_consumed, data_metabolites_produced and metabolites_list
          attributes
 
@@ -73,10 +79,14 @@ class Metabolites:
 
         Returns
         -------
-        data_metabolites_consumed : pd.DataFrame
-            data_metabolites_consumed attribute
-        data_metabolites_produced : pd.DataFrame
-            data_metabolites_produced attribute
+        reactions_consuming : Dict[str, Dict[str, List[str]]]
+            reactions_consuming attribute
+        reactions_producing : Dict[str, Dict[str, List[str]]]
+            reactions_producing attribute
+        metabolites_produced : pd.DataFrame
+            metabolites_produced attribute
+        metabolites_consumed : pd.DataFrame
+            metabolites_consumed attribute
         metabolites_list : List[str]
             metabolites_list attribute
         """
@@ -85,13 +95,13 @@ class Metabolites:
             self.__generate_species_list(data)
         rnx_consume_list = [x + self.STR_CONSUME for x in self.species_list]
         rnx_produce_list = [x + self.STR_PRODUCE for x in self.species_list]
-        data_consume_all_metabolites = data[rnx_consume_list]
-        data_produce_all_metabolites = data[rnx_produce_list]
-        data_consume_all_metabolites = data_consume_all_metabolites.fillna(int(0))
-        data_produce_all_metabolites = data_produce_all_metabolites.fillna(int(0))
         metabolites_list = list(data.index)
-        return data_consume_all_metabolites.loc[metabolites_list], \
-            data_produce_all_metabolites.loc[metabolites_list], metabolites_list
+        reactions_consuming = self.__get_rxn(data[rnx_consume_list], metabolites_list, True)
+        reactions_producing = self.__get_rxn(data[rnx_produce_list], metabolites_list, False)
+
+        metabolites_produced, metabolites_consumed = self.__generate_metabolites_df(data)
+
+        return reactions_consuming, reactions_producing, metabolites_produced, metabolites_consumed, metabolites_list
 
     def __generate_species_list(self, data: 'pd.DataFrame'):
         """ Generate the species_list attribute if is None
@@ -107,92 +117,65 @@ class Metabolites:
                 break
             self.species_list.append(x[:-12])
 
-    def __generate_metabolites_df(self):
+    def __generate_metabolites_df(self, metabolites_df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
         """ Generate the metabolites_data attribute. The dataframe indicate if a metabolite is consumed and/or produced
         by a reaction or not (1 or 0) for each species.
 
         Returns
         -------
-        metabolite_df : pd.DataFrame
-            data_metabolites attribute
+        metabolites_produced : pd.DataFrame
+            metabolites_produced attribute
+        metabolites_consumed : pd.DataFrame
+            metabolites_consumed attribute
         """
-        metabolites_df = pd.DataFrame(index=self.metabolites_list, columns=self.species_list)
-        metabolites_df.index_label = "metabolite"
-        for met in self.metabolites_list:
-            for sp in self.species_list:
-                sp_prod = sp + self.STR_PRODUCE
-                sp_cons = sp + self.STR_CONSUME
-                if self.data_metabolites_consumed.loc[met, sp_cons] == 0 and \
-                        self.data_metabolites_produced.loc[met, sp_prod] == 0:
-                    metabolites_df.loc[met, sp] = 0
+        metabolites_df = metabolites_df.fillna(int(0))
+        metabolites_df[metabolites_df != 0] = int(1)
+        metabolites_produced = metabolites_df[[sp + self.STR_PRODUCE for sp in self.species_list]]
+        metabolites_consumed = metabolites_df[[sp + self.STR_CONSUME for sp in self.species_list]]
+        metabolites_produced.columns = metabolites_produced.columns.str.replace(self.STR_PRODUCE, '')
+        metabolites_consumed.columns = metabolites_consumed.columns.str.replace(self.STR_CONSUME, '')
+        return metabolites_produced, metabolites_consumed
+
+    def __get_rxn(self, df: pd.DataFrame, metabolites_list: List[str], consumed: bool) -> \
+            Dict[str, Dict[str, List[str]]]:
+        """ Returns a dictionary of reactions consuming or producing each metabolite for each species.
+
+        Parameters
+        ----------
+        df : pd.DataFrame
+            DataFrame of data from metabolites.tsv file
+        metabolites_list : List[str]
+            List of metabolites to find reactions consuming or producing them.
+        consumed : bool
+            If True will return the reactions consuming the metabolites
+            If False will return the reactions producing the metabolites
+
+        Returns
+        -------
+        rxn_dict : Dict[str, Dict[str, Dict[str, List[str]]]]
+            Dictionary of reactions consuming or producing each metabolite for each species
+        """
+        rxn_dict = {}
+        for mb in metabolites_list:
+            rxn_dict[mb] = {}
+        for mb in metabolites_list:
+            for species in self.species_list:
+                if consumed:
+                    species_id = species + self.STR_CONSUME
                 else:
-                    metabolites_df.loc[met, sp] = 1
-        return metabolites_df
+                    species_id = species + self.STR_PRODUCE
+                rxn_dict[mb][species] = str(
+                    df[species_id][mb]).split(";")
+        return rxn_dict
 
     def generate_met_dendrogram(self, name=None, phylo_file=None, n_boot=10000):
         if name is None:
             self.nb_dend += 1
             name = f"dendrogram{self.nb_dend}"
         name = "met_" + name
-        d = analysis_runs.dendrograms.Dendrogram(self.path_runs, self.path_study, self.data_metabolites, self.name,
+        d = analysis_runs.dendrograms.Dendrogram(self.path_runs, self.path_study, self.metabolites_produced, self.name,
                                                  name, phylo_file)
         d.get_dendro_pvclust(n_boot)
-
-    def get_rxn_consuming(self, metabolites_list: str or List[str] = None) -> \
-            Dict[str, Dict[str, Dict[str, List[str]]]]:
-        """ Returns a dictionary of reactions consuming each metabolite for each species.
-
-        Parameters
-        ----------
-        metabolites_list : str or List[str], optional (default=None)
-            List of metabolites to find reactions consuming them.
-            If None, will be metabolites_list attribute.
-
-        Returns
-        -------
-        rxn_consuming : Dict[str, Dict[str, Dict[str, List[str]]]]
-            Dictionary of reactions consuming each metabolite for each species
-        """
-        rxn_consuming = {}
-        if metabolites_list is None:
-            metabolites_list = self.metabolites_list
-        elif type(metabolites_list) == str:
-            metabolites_list = [metabolites_list]
-        for mb in metabolites_list:
-            rxn_consuming[mb] = {}
-        for mb in metabolites_list:
-            for species in self.species_list:
-                rxn_consuming[mb][species] = str(
-                    self.data_metabolites_consumed[species + self.STR_CONSUME][mb]).split(";")
-        return rxn_consuming
-
-    def get_rxn_producing(self, metabolites_list: str or List[str] = None) -> \
-            Dict[str, Dict[str, Dict[str, List[str]]]]:
-        """ Returns a dictionary of reactions producing each metabolite for each species.
-
-        Parameters
-        ----------
-        metabolites_list : str or List[str], optional (default=None)
-            List of metabolites to find reactions producing them.
-            If None, will be metabolites_list attribute.
-
-        Returns
-        -------
-        rxn_producing : Dict[str, Dict[str, Dict[str, List[str]]]]
-            Dictionary of reactions producing each metabolite for each species
-        """
-        rxn_producing = {}
-        if metabolites_list is None:
-            metabolites_list = self.metabolites_list
-        elif type(metabolites_list) == str:
-            metabolites_list = [metabolites_list]
-        for mb in metabolites_list:
-            rxn_producing[mb] = {}
-        for mb in metabolites_list:
-            for species in self.species_list:
-                rxn_producing[mb][species] = str(
-                    self.data_metabolites_produced[species + self.STR_PRODUCE][mb]).split(";")
-        return rxn_producing
 
     def get_metabolites_names(self):
         """ Associate for each metabolite in metabolites_list, its common name in a dictionary.
@@ -214,4 +197,52 @@ class Metabolites:
                         mb_names[l[1]] = l[3]
         return mb_names
 
+    def is_produced(self, species: str, metabolite: str, unique=False) -> bool:
+        """ Indicate if the metabolite is produced for the species (unique or not) : considered unique if only this
+        species is producing the metabolite among all species
 
+        Parameters
+        ----------
+        species: str
+            species to be considered
+        metabolite: str
+            metabolite to be considered
+        unique: bool, optional (default=False)
+            True if the production is unique, False otherwise
+
+        Returns
+        -------
+        bool
+            True if the metabolite for the species is produced (unique or not),
+            False otherwise
+        """
+        if unique:
+            row = list(self.metabolites_produced.loc[metabolite])
+            return self.metabolites_produced.loc[metabolite, species] == 0 and sum(row) == self.nb_species - 1
+        else:
+            return self.metabolites_produced.loc[metabolite, species] == 0
+
+    def is_consumed(self, species: str, metabolite: str, unique=False) -> bool:
+        """ Indicate if the metabolite is consumed for the species (unique or not) : considered unique if only this
+        species is consuming the metabolite among all species
+
+        Parameters
+        ----------
+        species: str
+            species to be considered
+        metabolite: str
+            metabolite to be considered
+        unique: bool, optional (default=False)
+            True if the consumption is unique, False otherwise
+
+        Returns
+        -------
+        bool
+            True if the metabolite for the species is consumed (unique or not),
+            False otherwise
+        """
+        if unique:
+            row = list(self.metabolites_consumed.loc[metabolite])
+            return self.metabolites_consumed.loc[metabolite, species] == 0 and sum(row) == self.nb_species - 1
+        else:
+            return self.metabolites_consumed.loc[metabolite, species] == 0
