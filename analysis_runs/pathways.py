@@ -402,6 +402,39 @@ class Pathways:
             present_pw_dict[sp] = (len(present_pw), present_pw)
         return present_pw_dict
 
+
+    def get_pw_presence(self, pathway: str or List[str] = None, unique: bool = False) -> \
+            Dict[str, Tuple[Tuple[int, float], Set[str]]]:
+        """ Returns for each species the number and the set of present pathways (unique or not) : considered unique if
+        only this species is having the pathway among all species
+
+        Parameters
+        ----------
+        pathway: str or List[str], optional (default=None)
+            species or list of species to be considered
+            if None will be all the species
+        unique: bool, optional (default=False)
+            True if the presence is unique, False otherwise
+
+        Returns
+        -------
+        present_pw_dict: Dict[str, Tuple[Tuple[int, float], Set[str]]]
+            (Dict[species, Tuple[number_pathways, Set[pathways]]]) dictionary associating for each species the number of
+            present pathways and its set (unique or not)
+        """
+        if pathway is None:
+            pathway = self.pathways_list
+        elif type(pathway) == str:
+            pathway = [pathway]
+        pw_presence_dict = {}
+        for pw in pathway:
+            pw_presence = set()
+            for sp in self.species_list:
+                if self.is_present(sp, pw, unique):
+                    pw_presence.add(sp)
+            pw_presence_dict[pw] = ((len(pw_presence), len(pw_presence)/self.nb_species), pw_presence)
+        return pw_presence_dict
+
     # ## Max
 
     def is_max(self, species: str, pathway: str, unique: bool = False) -> bool:

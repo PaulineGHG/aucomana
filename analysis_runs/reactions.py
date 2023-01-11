@@ -192,6 +192,40 @@ class Reactions:
             present_rxn_dict[sp] = (len(present_rxn), present_rxn)
         return present_rxn_dict
 
+
+    def get_rxn_presence(self, reaction: str or List[str] = None, unique: bool = False) -> \
+            Dict[str, Tuple[Tuple[int, float], Set[str]]]:
+        """ Returns for each reaction the number, the percentage, and the set of species having the reaction present
+        (unique or not) : considered unique if only one species is having the reaction among all species
+
+        Parameters
+        ----------
+        reaction: str or List[str], optional (default=None)
+            reaction or list of reactions to be considered
+            if None, will be all the reactions
+        unique: bool, optional (default=False)
+            True if the presence is unique, False otherwise
+
+        Returns
+        -------
+        rxn_presence_dict: Dict[str, Tuple[Tuple[int, float], Set[str]]]
+            (Dict[species, Tuple[Tuple[number_species, percentage_species], Set[reactions]]])
+            dictionary associating for each reaction the number and the percentage of species having the reaction and
+            its set (unique or not)
+        """
+        if reaction is None:
+            reaction = self.reactions_list
+        elif type(reaction) == str:
+            reaction = [reaction]
+        rxn_presence_dict = {}
+        for rxn in reaction:
+            rxn_presence = set()
+            for sp in self.species_list:
+                if self.is_present(sp, rxn, unique):
+                    rxn_presence.add(sp)
+            rxn_presence_dict[rxn] = ((len(rxn_presence), len(rxn_presence)/self.nb_species), rxn_presence)
+        return rxn_presence_dict
+
     def is_absent(self, species: str, reaction: str, unique: bool = False) -> bool:
         """ Indicate if the reaction is absent for the species (unique or not) : considered unique if only this species
         is not having the reaction among all species
