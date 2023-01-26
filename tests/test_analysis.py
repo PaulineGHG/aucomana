@@ -1,10 +1,10 @@
 import os
 import unittest
-from analysis_runs.analysis import Analysis
-from analysis_runs.reactions import Reactions
-from analysis_runs.pathways import Pathways
-from analysis_runs.genes import Genes
-from analysis_runs.metabolites import Metabolites
+from aucomana.analysis import Analysis
+from aucomana.reactions import Reactions
+from aucomana.pathways import Pathways
+from aucomana.genes import Genes
+from aucomana.metabolites import Metabolites
 
 STUDY_PATH = 'Study_folder'
 RUNS_PATH = 'Runs_aucome'
@@ -109,12 +109,12 @@ class Test(unittest.TestCase):
         self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/bact7_compare_groupA_groupB_groupC/'
                                        'groupC_hist.png'))
 
-    def test_intersect_rxn_groups(self):
-        A.intersect_rnx_groups(RUN, ['groupA', 'groupB', 'groupC'], venn_plot=True)
-        self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/'
-                                       'bact7_intersect_groupA_groupB_groupC.txt'))
-        self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/'
-                                       'bact7_intersect_groupA_groupB_groupC.png'))
+    # def test_intersect_rxn_groups(self):
+    #     A.intersect_rnx_groups(RUN, ['groupA', 'groupB', 'groupC'], venn_plot=True)
+    #     self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/'
+    #                                    'bact7_intersect_groupA_groupB_groupC.txt'))
+    #     self.assertTrue(os.path.exists('Study_folder/output_data/compare_groups/'
+    #                                    'bact7_intersect_groupA_groupB_groupC.png'))
 
     def test_rename_padmet_id(self):
         A.rename_padmet_id(RUN2)

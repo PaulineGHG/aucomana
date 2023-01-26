@@ -14,7 +14,6 @@ setup(
                       'pandas>=1.4.2',
                       'pyahocorasick>=1.4.4',
                       'rpy2>=3.5.1',
-                      'venn>=0.1.3,'
                       ],
 
     classifiers=[
@@ -24,8 +23,5 @@ setup(
         'Operating System :: Linux',
         'Topic :: Scientific/Engineering :: Bio-Informatics'
         'Programming Language :: Python :: 3.7',
-    ], 
-  entry_points={
-      'console_scripts': [
-          'aucomana = aucomana.__main__:main']
+    ],
 )

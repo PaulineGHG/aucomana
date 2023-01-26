@@ -2,7 +2,7 @@
 Metabolites class
 """
 from typing import Dict, List, Tuple
-import analysis_runs.dendrograms
+import aucomana.dendrograms
 import pandas as pd
 import os
 
@@ -172,8 +172,8 @@ class Metabolites:
             self.nb_dend += 1
             name = f"dendrogram{self.nb_dend}"
         name = "met_" + name
-        d = analysis_runs.dendrograms.Dendrogram(self.path_runs, self.path_study, self.metabolites_produced, self.name,
-                                                 name, phylo_file)
+        d = aucomana.dendrograms.Dendrogram(self.path_runs, self.path_study, self.metabolites_produced, self.name,
+                                            name, phylo_file)
         d.get_dendro_pvclust(n_boot)
 
     def get_metabolites_names(self):

@@ -1,7 +1,7 @@
 import unittest
 import pandas as pd
-from analysis_runs.analysis import Analysis
-from analysis_runs.genes import Genes
+from aucomana.analysis import Analysis
+from aucomana.genes import Genes
 
 STUDY_PATH = 'Study_folder'
 RUNS_PATH = 'Runs_aucome'

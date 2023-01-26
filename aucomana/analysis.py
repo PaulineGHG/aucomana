@@ -2,13 +2,12 @@ import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import venn
 
-from analysis_runs.reactions import Reactions
-from analysis_runs.pathways import Pathways
-from analysis_runs.genes import Genes
-from analysis_runs.metabolites import Metabolites
-from analysis_runs.rename_padmets_id import make_automaton, apply_automaton, get_dict
+from aucomana.reactions import Reactions
+from aucomana.pathways import Pathways
+from aucomana.genes import Genes
+from aucomana.metabolites import Metabolites
+from aucomana.rename_padmets_id import make_automaton, apply_automaton, get_dict
 from typing import List, Dict, Set
 
 
@@ -21,7 +20,7 @@ class Analysis:
         self.path_runs = path_runs
         self.path_study = path_study
         self.__create_folders()
-        self.__create_dendro_groups_file()
+        self.__create_dendrogram_groups_file()
 
     # Create folders to save output files
 
@@ -44,12 +43,12 @@ class Analysis:
                 os.mkdir(folder_path)
                 print(f'Folder {folder_path} created')
 
-    def __create_dendro_groups_file(self):
-        file = os.path.join(self.path_study, "output_data", "dendro_tanglegrams", "dendro_groups.tsv")
+    def __create_dendrogram_groups_file(self):
+        file = os.path.join(self.path_study, "output_data", "dendro_tanglegrams", "dendrogram_groups.tsv")
         if not os.path.exists(file):
             with open(file, "w") as f:
                 f.write("\t".join(["group name", "color", "element (B for branch, L for leave)"]))
-            print(f"dendro_groups.tsv file created in path : {file}")
+            print(f"dendrogram_groups.tsv file created in path : {file}")
 
     @staticmethod
     def get_abbr_name(name: str) -> str:
@@ -141,13 +140,13 @@ class Analysis:
                     group = [group]
                 for g in group:
                     grp_species_l += list(self.get_grp_set(run, g, species_list))
-                RXN = Reactions(self.path_runs, self.path_study, r_path, grp_species_l, out)
+                rxn = Reactions(self.path_runs, self.path_study, r_path, grp_species_l, out)
                 print(f"Reactions instance has been created for run : {run} with group = {group} and out = {out}")
-                return RXN
+                return rxn
             else:
-                RXN = Reactions(self.path_runs, self.path_study, r_path, species_list, out)
+                rxn = Reactions(self.path_runs, self.path_study, r_path, species_list, out)
                 print(f"Reactions instances has been created for run : {run} and out = {out}")
-                return RXN
+                return rxn
         else:
             raise OSError(f"No file reactions.tsv in path {r_path}")
 
@@ -184,15 +183,15 @@ class Analysis:
                     group = [group]
                 for g in group:
                     grp_species_l = list(self.get_grp_set(run, g, species_list))
-                PW = Pathways(self.path_runs, self.path_study, p_path, grp_species_l, out, nb_rxn_pw_min)
+                pw = Pathways(self.path_runs, self.path_study, p_path, grp_species_l, out, nb_rxn_pw_min)
                 print(f"Pathways instance has been created for run : {run} with group = {group}, out = "
                       f"{out} and minimal number of reactions in pathway = {nb_rxn_pw_min}")
-                return PW
+                return pw
             else:
-                PW = Pathways(self.path_runs, self.path_study, p_path, species_list, out, nb_rxn_pw_min)
+                pw = Pathways(self.path_runs, self.path_study, p_path, species_list, out, nb_rxn_pw_min)
                 print(f"Pathways instances has been created for run : {run}, out = "
                       f"{out} and minimal number of reactions in pathway = {nb_rxn_pw_min}")
-                return PW
+                return pw
         else:
             raise OSError(f"No file reactions.tsv in path {p_path}")
 
@@ -222,13 +221,13 @@ class Analysis:
                     group = [group]
                 for g in group:
                     grp_species_l = list(self.get_grp_set(run, g, species_list))
-                GN = Genes(g_path, grp_species_l)
+                gn = Genes(g_path, grp_species_l)
                 print(f"Genes instance has been created for run : {run} with group = {group}")
-                return GN
+                return gn
             else:
-                GN = Genes(g_path, species_list)
+                gn = Genes(g_path, species_list)
                 print(f"Genes instance has been created for run : {run}")
-                return GN
+                return gn
         else:
             raise OSError(f"No file reactions.tsv in path {g_path}")
 
@@ -258,13 +257,13 @@ class Analysis:
                     group = [group]
                 for g in group:
                     grp_species_l = list(self.get_grp_set(run, g, species_list))
-                MB = Metabolites(self.path_runs, self.path_study, m_path, grp_species_l)
+                mb = Metabolites(self.path_runs, self.path_study, m_path, grp_species_l)
                 print(f"Metabolites instances has been created for run : {run} with group = {group}")
-                return MB
+                return mb
             else:
-                MB = Metabolites(self.path_runs, self.path_study, m_path, species_list)
+                mb = Metabolites(self.path_runs, self.path_study, m_path, species_list)
                 print(f"Metabolites instances has been created for run : {run}")
-                return MB
+                return mb
         else:
             raise OSError(f"No file reactions.tsv in path {m_path}")
 
@@ -291,8 +290,8 @@ class Analysis:
             for calc in self.TO_CALCULATE:
                 axs = fig.add_subplot(2, 2, i)
                 i += 1
-                X = df_group[calc]
-                axs.hist(X, len(X) - len(X) // 2, density=True, facecolor='g')
+                x = df_group[calc]
+                axs.hist(x, len(x) - len(x) // 2, density=True, facecolor='g')
                 axs.set_xlabel(calc)
                 axs.set_ylabel('Density')
                 mu = df_comp.loc[group, calc + self.STAT[0]]
@@ -354,10 +353,10 @@ class Analysis:
     def compare_groups(self, run: str, groups_list: List[str], hist: bool = False,
                        boxplot: bool = False):
         """ Compare groups given according to : their number of genes, number of reactions, number of
-        pathways with completion > 80% and number of pathways with completion = 100%. For each of this
+        pathways with completion > 80% and number of pathways with completion = 100%. For each of these
         elements are calculated the mean, median, standard deviation, minimum and maximum between
         species of the group. Results are stored in tables and can be illustrated in histograms and/or
-        boxplots figures.
+        boxplot figures.
 
         Parameters
         ----------
@@ -401,12 +400,12 @@ class Analysis:
             # Path of group.tsv file (group stats)
             g_res_file = os.path.join(out_dir, f"{group}.tsv")
             # Create DataFrame with species of the group as index and stats to calculate as columns
-            df_g = pd.DataFrame(columns=self.TO_CALCULATE, index=grp_sp_list)
+            df_g = pd.DataFrame(columns=list(self.TO_CALCULATE), index=grp_sp_list)
             # Calculate stats for each species and fill the DataFrame
             for sp in grp_sp_list:
                 df_g.loc[sp, self.TO_CALCULATE[0]] = g_g.nb_genes_species[sp]
-                df_g.loc[sp, self.TO_CALCULATE[1]] = r_g.nb_reactions_sp[sp]
-                df_g.loc[sp, self.TO_CALCULATE[2]] = p_g.get_pw_over_treshold(sp, 0.8)[sp][0]
+                df_g.loc[sp, self.TO_CALCULATE[1]] = r_g.nb_rxn_sp[sp]
+                df_g.loc[sp, self.TO_CALCULATE[2]] = p_g.get_pw_over_threshold(sp, 0.8)[sp][0]
                 df_g.loc[sp, self.TO_CALCULATE[3]] = p_g.get_pw_complete(sp, False)[sp][0]
             # Store DataFrame in dict and save it in TSV file
             df_grp_dict[group] = df_g
@@ -432,59 +431,59 @@ class Analysis:
         if boxplot:
             self.__boxplot_comp(out_dir, df_grp_dict)
 
-    def intersect_rnx_groups(self, run: str, groups_list: List[str], percentage: bool = True, venn_plot: bool = False):
-        """ Intersects the set of reactions of groups to compare them. Can show percentages comparisons and/or venn
-        plot.
-
-        Parameters
-        ----------
-        run : str
-            The ID of the run to consider
-        groups_list : List[str]
-            List of the groups to intersect (max 6 if venn plot)
-        percentage : bool, optional (default=True)
-            True to save txt file of the percentages
-        venn_plot : bool, optional (default=True)
-            True to save venn plot of the intersection
-        """
-        group_rnx_dict = {}
-        grp_str = ""
-        for group in groups_list:
-            # Create string concatenating groups names
-            grp_str += group + "_"
-            group_list = list(self.get_grp_set(run, group))
-            r = self.reactions(run, group_list)
-            reactions_g = set(r.reactions_list)
-            # Add reactions list of the groups in dict
-            group_rnx_dict[group] = reactions_g
-
-        if percentage:
-            union = set.union(*group_rnx_dict.values())
-            intersect = set.intersection(*group_rnx_dict.values())
-            union_nb = len(union)
-            intersect_nb = len(intersect)
-            txt_file = os.path.join(self.path_study, "output_data", "compare_groups",
-                                    f"{run}_intersect_{grp_str[:-1]}.txt")
-            with open(txt_file, "w") as f:
-                s = f"Over {union_nb} reactions, {intersect_nb} reactions in common = " \
-                    f"{round((intersect_nb/union_nb) * 100, 2)} % of the union."
-                print(s)
-                f.write(s + "\n")
-                for group, reactions in group_rnx_dict.items():
-                    g_rnx_nb = len(reactions)
-                    s = f"{g_rnx_nb} present among the {group} group = " \
-                        f"{round((g_rnx_nb/union_nb) * 100, 2)} % of the union."
-                    print(s)
-                    f.write(s + "\n")
-                    s = f"{g_rnx_nb - intersect_nb} only present among the {group} group = " \
-                        f"{round(((g_rnx_nb - intersect_nb)/union_nb) * 100, 2)} % of the union."
-                    print(s)
-                    f.write(s + "\n")
-
-        if venn_plot:
-            venn.venn(group_rnx_dict, cmap="plasma")
-            plt.savefig(os.path.join(self.path_study, "output_data", "compare_groups",
-                                     f"{run}_intersect_{grp_str[:-1]}.png"))
+    # def intersect_rnx_groups(self, run: str, groups_list: List[str], percentage: bool = True, venn_plot: bool = False):
+    #     """ Intersects the set of reactions of groups to compare them. Can show percentages comparisons and/or venn
+    #     plot.
+    #
+    #     Parameters
+    #     ----------
+    #     run : str
+    #         The ID of the run to consider
+    #     groups_list : List[str]
+    #         List of the groups to intersect (max 6 if venn plot)
+    #     percentage : bool, optional (default=True)
+    #         True to save txt file of the percentages
+    #     venn_plot : bool, optional (default=True)
+    #         True to save venn plot of the intersection
+    #     """
+    #     group_rnx_dict = {}
+    #     grp_str = ""
+    #     for group in groups_list:
+    #         # Create string concatenating groups names
+    #         grp_str += group + "_"
+    #         group_list = list(self.get_grp_set(run, group))
+    #         r = self.reactions(run, group_list)
+    #         reactions_g = set(r.reactions_list)
+    #         # Add reactions list of the groups in dict
+    #         group_rnx_dict[group] = reactions_g
+    #
+    #     if percentage:
+    #         union = set.union(*group_rnx_dict.values())
+    #         intersect = set.intersection(*group_rnx_dict.values())
+    #         union_nb = len(union)
+    #         intersect_nb = len(intersect)
+    #         txt_file = os.path.join(self.path_study, "output_data", "compare_groups",
+    #                                 f"{run}_intersect_{grp_str[:-1]}.txt")
+    #         with open(txt_file, "w") as f:
+    #             s = f"Over {union_nb} reactions, {intersect_nb} reactions in common = " \
+    #                 f"{round((intersect_nb/union_nb) * 100, 2)} % of the union."
+    #             print(s)
+    #             f.write(s + "\n")
+    #             for group, reactions in group_rnx_dict.items():
+    #                 g_rnx_nb = len(reactions)
+    #                 s = f"{g_rnx_nb} present among the {group} group = " \
+    #                     f"{round((g_rnx_nb/union_nb) * 100, 2)} % of the union."
+    #                 print(s)
+    #                 f.write(s + "\n")
+    #                 s = f"{g_rnx_nb - intersect_nb} only present among the {group} group = " \
+    #                     f"{round(((g_rnx_nb - intersect_nb)/union_nb) * 100, 2)} % of the union."
+    #                 print(s)
+    #                 f.write(s + "\n")
+    #
+    #     if venn_plot:
+    #         venn.venn(group_rnx_dict, cmap="plasma")
+    #         plt.savefig(os.path.join(self.path_study, "output_data", "compare_groups",
+    #                                  f"{run}_intersect_{grp_str[:-1]}.png"))
 
     # Rename padmet id
 
@@ -497,24 +496,24 @@ class Analysis:
         run : str
             The run to consider to rename IDs
         """
-        asso_dict = {}
+        assoc_dict = {}
         # Path to studied_organisms
         path_species = os.path.join(self.path_runs, run, "studied_organisms")
-        path_panmeta = os.path.join(self.path_runs, run, "analysis", "all", "all_panmetabolism.padmet")
-        # Path to final neworks PADMETs
+        path_panmetabolism = os.path.join(self.path_runs, run, "analysis", "all", "all_panmetabolism.padmet")
+        # Path to final networks PADMETs
         path_padmet = os.path.join(self.path_runs, run, "networks", "PADMETs")
-        # Enrich asso_dict for every species having been renamed
+        # Enrich assoc_dict for every species having been renamed
         for species_folder in os.listdir(path_species):
-            asso_dict = get_dict(run, species_folder, asso_dict, self.path_runs)
-        # Make python ahocorasick automaton from asso_dict
-        automaton = make_automaton(asso_dict)
+            assoc_dict = get_dict(run, species_folder, assoc_dict, self.path_runs)
+        # Make python ahocorasick automaton from assoc_dict
+        automaton = make_automaton(assoc_dict)
         out_path = os.path.join(self.path_study, "output_data", "renamed_id_padmet")
         # Replace renamed IDs to original IDs in PADMETs files
         for species in os.listdir(path_species):
             apply_automaton(automaton, os.path.join(path_padmet, f"{species}.padmet"),
                             os.path.join(out_path, f"{species}.padmet"))
             print(f"ID renamed for {species}.padmet")
-        apply_automaton(automaton, path_panmeta, os.path.join(out_path, "all_panmetabolism.padmet"))
+        apply_automaton(automaton, path_panmetabolism, os.path.join(out_path, "all_panmetabolism.padmet"))
         print("ID renamed for all_panmetabolism.padmet")
         print(f"New PADMETs saved in : {out_path}")
 

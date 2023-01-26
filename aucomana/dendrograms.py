@@ -5,7 +5,7 @@ import os
 import pandas as pd
 import rpy2
 
-from analysis_runs.analysis import Analysis
+from aucomana.analysis import Analysis
 from rpy2.robjects.packages import importr
 from rpy2.robjects import pandas2ri
 

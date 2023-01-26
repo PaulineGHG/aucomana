@@ -4,7 +4,7 @@ Pathways class
 import copy
 from typing import Dict, List, Tuple, Set
 import os
-import analysis_runs.dendrograms
+import aucomana.dendrograms
 import pandas as pd
 import numpy as np
 
@@ -552,7 +552,7 @@ class Pathways:
             complete_pw_dict[sp] = (len(complete_pw), complete_pw)
         return complete_pw_dict
 
-    def get_pw_over_treshold(self, species: str or List[str], threshold: float, strict: bool = False) \
+    def get_pw_over_threshold(self, species: str or List[str], threshold: float, strict: bool = False) \
             -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns the pathways with completion over a given threshold for species
 
@@ -589,7 +589,7 @@ class Pathways:
             over_t_pw_dict[sp[:-len(self.STR_COMP)]] = (len(over_t_pw), over_t_pw)
         return over_t_pw_dict
 
-    def get_pw_under_treshold(self, species: str or List[str], threshold: float, strict: bool = False) \
+    def get_pw_under_threshold(self, species: str or List[str], threshold: float, strict: bool = False) \
             -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns the pathways with completion under a given threshold for species
 
@@ -609,9 +609,9 @@ class Pathways:
             pathways under the threshold and its set
         """
         if strict:
-            over_t_dict = self.get_pw_over_treshold(species, threshold, False)
+            over_t_dict = self.get_pw_over_threshold(species, threshold, False)
         else:
-            over_t_dict = self.get_pw_over_treshold(species, threshold, True)
+            over_t_dict = self.get_pw_over_threshold(species, threshold, True)
         under_t_pw_dict = {}
         for sp in over_t_dict:
             under_t_pw_dict[sp] = (self.nb_pathways - over_t_dict[sp][0],
@@ -712,8 +712,8 @@ class Pathways:
             name = f"dendrogram{self.nb_dend}"
         name = f"pw_{int(df_binary_threshold*100)}_{name}"
         df_bin = self.convert_df_to_binary(df_binary_threshold, strict)
-        d = analysis_runs.dendrograms.Dendrogram(self.path_runs, self.path_study, df_bin, self.name, name,
-                                                 phylo_file)
+        d = aucomana.dendrograms.Dendrogram(self.path_runs, self.path_study, df_bin, self.name, name,
+                                            phylo_file)
         d.get_dendro_pvclust(n_boot)
 
     def print_completion_pw(self, pathway, species):

@@ -2,8 +2,8 @@
 Reactions class
 """
 from typing import Dict, List, Tuple, Set
-import analysis_runs.dendrograms
-import analysis_runs.analysis
+import aucomana.dendrograms
+import aucomana.analysis
 import pandas as pd
 import json
 import os
@@ -65,6 +65,7 @@ class Reactions:
             self.data_genes_assoc, \
             self.reactions_list = self.__init_data(file_reactions_tsv, out)
         self.nb_reactions, self.nb_species = self.data_reactions.shape
+        self.nb_rxn_sp = self.__generate_nb_rxn_sp()
 
     def __init_data(self, file_reactions_tsv: str, out: int) \
             -> Tuple['pd.DataFrame', 'pd.DataFrame', List[str]]:
@@ -135,6 +136,22 @@ class Reactions:
             if count > nb_species - (out + 1):
                 filtered_reactions.append(reaction)
         return filtered_reactions
+
+
+    def __generate_nb_rxn_sp(self) -> Dict[str, int]:
+        """ Generate the nb_rxn_sp attribute. Returns a dictionary associating for each species the number of genes
+        it has.
+
+        Returns
+        -------
+        nb_genes_sp_dict : Dict[str, int]
+            Dictionary Dict[species name, number of genes] associating for each species the number of genes it has.
+        """
+        nb_rxn_sp_dict = {}
+        for sp in self.species_list:
+            nb_rxn_sp_dict[sp] = int(sum(self.data_reactions[sp]))
+        return nb_rxn_sp_dict
+
 
     def is_present(self, species: str, reaction: str, unique: bool = False) -> bool:
         """ Indicate if the reaction is present for the species (unique or not) : considered unique if only this species
@@ -363,8 +380,8 @@ class Reactions:
             self.nb_dend += 1
             name = f"dendrogram{self.nb_dend}"
         name = "Rxn_" + name
-        d = analysis_runs.dendrograms.Dendrogram(self.path_runs, self.path_study, self.data_reactions,
-                                                 self.name, name, phylo_file)
+        d = aucomana.dendrograms.Dendrogram(self.path_runs, self.path_study, self.data_reactions,
+                                            self.name, name, phylo_file)
         d.get_dendro_pvclust(n_boot)
 
     def get_reactions_names(self):

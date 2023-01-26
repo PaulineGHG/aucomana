@@ -1,6 +1,6 @@
 import os
 
-from analysis_runs import analysis
+from aucomana import analysis
 
 pruns = "/home/phamongi/Documents/Runs"
 pst = os.getcwd()
