@@ -1,4 +1,4 @@
-# Analysis_runs
+# Aucomana (AuCoMe Analysis)
 
 ## Library to make analyse of AuCoMe tool results 
 
