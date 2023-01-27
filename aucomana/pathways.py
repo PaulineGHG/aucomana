@@ -716,11 +716,14 @@ class Pathways:
                                             phylo_file)
         d.get_dendro_pvclust(n_boot)
 
-    def print_completion_pw(self, pathway, species):
+
+    def get_completion_pw(self, pathway, species, percentage=False, round_t=2):
         species += self.STR_COMP
-        comp_str = self.data_pathways_str.loc[pathway, species]
-        comp_float = round(self.data_pathways_float.loc[pathway, species], 3)
-        print(f"{comp_str} reactions present in pathway \"{pathway}\" = {comp_float*100}%")
+        if percentage:
+            return round(self.data_pathways_float.loc[pathway, species], round_t)
+        else:
+            return self.data_pathways_str.loc[pathway, species]
+
 
     def get_rxn_assoc(self, pathways_list: str or List[str] = None) -> Dict[str, Dict[str, Dict[str, List[str]]]]:
         """ Returns a dictionary of reactions associated with each pathway for each species.
