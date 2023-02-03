@@ -214,9 +214,12 @@ class Reactions:
         rxn_presence_dict = {}
         for rxn in reaction:
             rxn_presence = set()
-            for sp in self.species_list:
-                if self.is_present(sp, rxn, unique):
-                    rxn_presence.add(sp)
+            if rxn not in self.reactions_list:
+                rxn_presence_dict[rxn] = (0, 0, rxn_presence)
+            else:
+                for sp in self.species_list:
+                    if self.is_present(sp, rxn, unique):
+                        rxn_presence.add(sp)
             rxn_presence_dict[rxn] = ((len(rxn_presence), len(rxn_presence)/self.nb_species), rxn_presence)
         return rxn_presence_dict
 
