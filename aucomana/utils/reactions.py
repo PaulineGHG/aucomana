@@ -2,25 +2,13 @@
 Reactions class
 """
 from typing import Dict, List, Tuple, Set
-import aucomana.dendrograms
-import aucomana.analysis
 import pandas as pd
-import json
-import os
-import datetime
-from Bio import SeqIO
 
 
 class Reactions:
     """
     Attributes
     ----------
-    path_runs: str
-        path of AuCoMe runs results
-    path_study: str
-        path of outputs_data of the study
-    name : str
-        name of the file
     species_list : List[str]
         List of species studied
     data_reactions :
@@ -34,21 +22,13 @@ class Reactions:
     nb_species : int
         number of species studied
     """
-    nb_common_reac = 0
-    nb_genes_assoc = 0
-    nb_dend = 0
     STR_GENE_ASSOC = "_genes_assoc (sep=;)"
 
-    def __init__(self, path_runs: str, path_study: str, file_reactions_tsv: str, species_list: List[str] = None,
-                 out: int = None):
+    def __init__(self, file_reactions_tsv: str, species_list: List[str] = None, out: int = None):
         """ Init the Reactions class
 
         Parameters
         ----------
-        path_runs: str
-            path of AuCoMe runs results
-        path_study: str
-            path of outputs_data of the study
         file_reactions_tsv : str
             file reactions.tsv output from aucome analysis
         species_list : List[str], optional (default=None)
@@ -57,9 +37,6 @@ class Reactions:
         out : int, optional (default = None)
             number of species maximum not having the reaction for the reaction to be kept
         """
-        self.path_runs = path_runs
-        self.path_study = path_study
-        self.name = file_reactions_tsv.split("/")[-4]
         self.species_list = species_list
         self.data_reactions, \
             self.data_genes_assoc, \
@@ -298,110 +275,3 @@ class Reactions:
                     absent_rxn.add(rxn)
             absent_rxn_dict[sp] = (len(absent_rxn), absent_rxn)
         return absent_rxn_dict
-
-    def get_genes_assoc(self, reactions_list: str or List[str] = None,
-                        output_file=False) -> Dict[str, Dict[str, Dict[str, List[str]]]]:
-        """ Returns a dictionary of genes associated with each reaction for each species. Can write proteins sequences
-        associated in fasta files.
-
-        Parameters
-        ----------
-        reactions_list : str or List[str], optional (default=None)
-            List of reactions to find genes associated with.
-            If None, will be reactions_list attribute.
-        output_file : Bool, optional (default=False)
-            If False, return the gene_assoc dict
-            If true write the results with prot sequence
-
-        Returns
-        -------
-        genes_assoc : Dict[str, Dict[str, Dict[str, List[str]]]]
-            Dictionary of genes associated with each reaction for each species
-        """
-        genes_assoc = {}
-        if reactions_list is None:
-            reactions_list = self.reactions_list
-        elif type(reactions_list) == str:
-            reactions_list = [reactions_list]
-        for reaction in reactions_list:
-            genes_assoc[reaction] = {}
-        for reaction in reactions_list:
-            for species in self.species_list:
-                genes_assoc[reaction][species] = str(
-                    self.data_genes_assoc[species + self.STR_GENE_ASSOC][reaction]).split(";")
-        if not output_file:
-            return genes_assoc
-        else:
-            self.nb_genes_assoc += 1
-            self.__write_genes(genes_assoc)
-
-    def __write_genes(self, genes_assoc):
-        """ Allow writing sequences of genes in fasta out files
-
-        Parameters
-        ----------
-        genes_assoc : Dict[str, Dict[str, Dict[str, List[str]]]]
-            Dictionary of genes associated with each reaction for each species
-
-        Write results in {PATH_STUDY}/output_data/reactions_data/genes_assoc/{now}_{self.nb_genes_assoc}/
-        """
-        # PATH TO FASTA FILES
-        fa_file_path = os.path.join(self.path_runs, self.name, "studied_organisms")
-
-        # GET OUTFILE PATH NOT EXISTING IN DIRECTORY
-        out_file = os.path.join(self.path_study, "output_data", "reactions_data", "genes_assoc",
-                                str(self.nb_genes_assoc))
-        while os.path.exists(out_file):
-            self.nb_genes_assoc += 1
-            out_file = os.path.join(self.path_study, "output_data", "reactions_data", "genes_assoc",
-                                    str(self.nb_genes_assoc))
-        os.makedirs(out_file)
-
-        # CREATE JSON FILE
-        file_out_json = os.path.join(out_file, f"{self.name}_genes_assoc.json")
-        with open(file_out_json, 'w') as o:
-            json.dump(genes_assoc, o, indent=4)
-
-        # FILL FASTA FILE
-        for reaction, species_dict in genes_assoc.items():
-            fasta_file = os.path.join(out_file, f"{reaction}.fa")
-            with open(fasta_file, 'w') as o:
-                for species, genes_list in species_dict.items():
-                    genes_fa_file = os.path.join(fa_file_path, species, f"{species}.faa")
-                    seq_dict = SeqIO.to_dict(SeqIO.parse(genes_fa_file, "fasta"))
-                    for gene in genes_list:
-                        id_gene = f">{species}|{gene}"
-                        seq = str(seq_dict[gene].seq)
-                        o.write(id_gene + "\n")
-                        o.write(seq + "\n")
-
-    def generate_rxn_dendrogram(self, name=None, phylo_file=None, n_boot=10000):
-        if name is None:
-            self.nb_dend += 1
-            name = f"dendrogram{self.nb_dend}"
-        name = "Rxn_" + name
-        d = aucomana.dendrograms.Dendrogram(self.path_runs, self.path_study, self.data_reactions,
-                                            self.name, name, phylo_file)
-        d.get_dendro_pvclust(n_boot)
-
-    def get_reactions_names(self):
-        """ Associate for each reaction in reactions_list, its common name in a dictionary.
-
-        Returns
-        -------
-        rxn_names : Dict[str, str]
-            Dictionary Dict[ID of rxn, common name of rxn] associating common reactions names to their ID.
-        """
-        rxn_set = set(self.reactions_list)
-        rxn_names = {}
-        padmet_file = os.path.join(self.path_runs, self.name, "analysis", "all",
-                                   "all_panmetabolism.padmet")
-        with open(padmet_file, "r") as f:
-            for l in f:
-                if "COMMON-NAME" in l and "reaction" in l:
-                    l = l.split("\t")
-                    if l[1] in rxn_set:
-                        name_index = l.index('COMMON-NAME') + 1
-                        rxn_names[l[1]] = l[name_index].strip('\n')
-        return rxn_names
-

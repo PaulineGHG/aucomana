@@ -2,21 +2,13 @@
 Metabolites class
 """
 from typing import Dict, List, Tuple
-import aucomana.dendrograms
 import pandas as pd
-import os
 
 
 class Metabolites:
     """
     Attributes
     ----------
-    path_runs: str
-        path of AuCoMe runs results
-    path_study: str
-        path of outputs_data of the study
-    name : str
-        name of the run
     species_list : List[str]
         List of species studied
     reactions_consuming : Dict[str, Dict[str, List[str]]]
@@ -36,26 +28,18 @@ class Metabolites:
     """
     STR_CONSUME = "_rxn_consume"
     STR_PRODUCE = "_rxn_produce"
-    nb_dend = 0
 
-    def __init__(self, path_runs: str, path_study: str, file_metabolites_tsv: str, species_list: List[str] = None):
+    def __init__(self, file_metabolites_tsv: str, species_list: List[str] = None):
         """ Init the Genes class
 
         Parameters
         ----------
-        path_runs: str
-            path of AuCoMe runs results
-        path_study: str
-            path of outputs_data of the study
         file_metabolites_tsv : str
             file metabolites.tsv output from aucome analysis
         species_list : List[str], optional (default=None)
             List of species to study (must correspond to their name in metabolites.tsv file).
             If not specified, will contain all the species from metabolites.tsv file.
         """
-        self.path_runs = path_runs
-        self.path_study = path_study
-        self.name = file_metabolites_tsv.split("/")[-4]
         self.species_list = species_list
         self.reactions_consuming, \
             self.reactions_producing, \
@@ -167,34 +151,6 @@ class Metabolites:
                     rxn_dict[mb][species] = str(df[species_id][mb]).split(";")
         return rxn_dict
 
-    def generate_met_dendrogram(self, name=None, phylo_file=None, n_boot=10000):
-        if name is None:
-            self.nb_dend += 1
-            name = f"dendrogram{self.nb_dend}"
-        name = "met_" + name
-        d = aucomana.dendrograms.Dendrogram(self.path_runs, self.path_study, self.metabolites_produced, self.name,
-                                            name, phylo_file)
-        d.get_dendro_pvclust(n_boot)
-
-    def get_metabolites_names(self):
-        """ Associate for each metabolite in metabolites_list, its common name in a dictionary.
-
-        Returns
-        -------
-        mb_names : Dict[str, str]
-            Dictionary Dict[ID of mb, common name of mb] associating common metabolites names to their ID.
-        """
-        mb_set = set(self.metabolites_list)
-        mb_names = {}
-        padmet_file = os.path.join(self.path_runs, self.name, "analysis", "all",
-                                   "all_panmetabolism.padmet")
-        with open(padmet_file, "r") as f:
-            for l in f:
-                if "COMMON-NAME" in l and "compound" in l:
-                    l = l.split("\t")
-                    if l[1] in mb_set:
-                        mb_names[l[1]] = l[3]
-        return mb_names
 
     def is_produced(self, species: str, metabolite: str, unique=False) -> bool:
         """ Indicate if the metabolite is produced for the species (unique or not) : considered unique if only this

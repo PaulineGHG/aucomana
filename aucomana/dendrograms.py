@@ -5,7 +5,7 @@ import os
 import pandas as pd
 import rpy2
 
-from aucomana.analysis import Analysis
+from aucomana.utils.utils import get_grp_set, get_abbr_name
 from rpy2.robjects.packages import importr
 from rpy2.robjects import pandas2ri
 
@@ -18,19 +18,16 @@ class Dendrogram:
     grdevices = importr(packnames[2])
     ape = importr(packnames[3])
 
-    def __init__(self, path_runs, path_study, df_binary, run, name, phylo_file):
-        self.path_runs = path_runs
-        self.path_study = path_study
+    def __init__(self, output, df_binary, name, phylo_file, group_file):
+        self.output = output
         self.df_binary = df_binary
-        self.run = run
         self.name = name
         self.phylo_file = phylo_file
-        self.out_dir = os.path.join(self.path_study, "output_data", "dendro_tanglegrams", self.run,
-                                    self.name)
+        self.group_file = group_file
+        self.out_dir = os.path.join(self.output, "dendro_tanglegrams", self.name)
         if not os.path.exists(self.out_dir):
             os.makedirs(self.out_dir)
-        self.dendro_groups_file = os.path.join(self.path_study, "output_data", "dendro_tanglegrams",
-                                               "dendro_groups.tsv")
+        self.dendro_groups_file = os.path.join(self.output, "dendro_tanglegrams", "dendro_groups.tsv")
 
     def get_dendro_pvclust(self, n_boot=10000):
         # Make pandas dataframe compatible with R dataframe.
@@ -57,8 +54,7 @@ class Dendrogram:
             group = d_grp.loc[i, "group name"]
             color = d_grp.loc[i, "color"]
             element = d_grp.loc[i, "element (B for branch, L for leave)"]
-            a = Analysis(self.path_runs, self.path_study)
-            group_list = a.get_grp_set(run=self.run, group=group)
+            group_list = get_grp_set(self.group_file, group=group)
             if element == "B":
                 groups_branch[group] = {"list": group_list, "color": color}
             elif element == "L":
@@ -112,7 +108,7 @@ class Dendrogram:
     def __set_abbr_labels(self, dend):
         abbr_label = []
         for l in rpy2.robjects.r['labels'](dend):
-            abbr_label.append(Analysis.get_abbr_name(l))
+            abbr_label.append(get_abbr_name(l))
         abbr_label = rpy2.robjects.StrVector(abbr_label)
         dend = self.dendextend.set(dend, "labels", abbr_label, quiet=True)
         return dend
