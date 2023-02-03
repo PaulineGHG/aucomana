@@ -1,24 +1,15 @@
 """
 Pathways class
 """
-import copy
 from typing import Dict, List, Tuple, Set
 import os
-import aucomana.dendrograms
 import pandas as pd
-import numpy as np
 
 
 class Pathways:
     """
     Attributes
     ----------
-    path_runs: str
-        path of AuCoMe runs results
-    path_study: str
-        path of outputs_data of the study
-    name : str
-        name of the file
     species_list : List[str]
         List of species studied
     data_pathways_float :
@@ -34,20 +25,15 @@ class Pathways:
     nb_species : int
         number of species studied
     """
-    nb_dend = 0
     STR_COMP = "_completion_rate"
     STR_RXN_ASSOC = "_rxn_assoc (sep=;)"
 
-    def __init__(self, path_runs: str, path_study: str, file_pathways_tsv: str, species_list: List[str] = None,
+    def __init__(self, file_pathways_tsv: str, species_list: List[str] = None,
                  out: int = None, nb_rnx_pw_min: int = 1):
         """ Init the Reactions class
 
         Parameters
         ----------
-        path_runs: str
-            path of AuCoMe runs results
-        path_study: str
-            path of outputs_data of the study
         file_pathways_tsv : str
             file pathways.tsv output from aucome analysis
         species_list : List[str], optional (default=None)
@@ -58,9 +44,6 @@ class Pathways:
         nb_rnx_pw_min: int, optional (default=1)
             Minimal total number of reactions in the pathway for the pathway to be kept
         """
-        self.path_runs = path_runs
-        self.path_study = path_study
-        self.name = file_pathways_tsv.split("/")[-4]
         self.species_list = species_list
         self.data_pathways_str, self.data_rxn_assoc = self.__init_data(file_pathways_tsv)
         self.data_pathways_float = self.data_pathways_str.copy(deep=True)
@@ -68,8 +51,7 @@ class Pathways:
         self.pathways_list = self.__get_filtered_pathways(out, nb_rnx_pw_min)
         self.nb_pathways, self.nb_species = self.data_pathways_float.shape
 
-    def __init_data(self, file_pathways_tsv: str) \
-            -> Tuple['pd.DataFrame', 'pd.DataFrame']:
+    def __init_data(self, file_pathways_tsv: str) -> Tuple['pd.DataFrame', 'pd.DataFrame']:
         """ Generate the data_reactions, data_genes_assoc and reactions_list attributes
 
         Parameters
@@ -81,8 +63,8 @@ class Pathways:
         -------
         data_pathways_str :
             data_pathways attribute
-        data_reacs_assoc :
-            data_reacs_assoc attribute
+        data_species_all_pathways :
+            data_rxn_assoc attribute
         """
         data = pd.read_csv(file_pathways_tsv, sep="\t", header=0, index_col='pathway')
         if self.species_list is None:
@@ -620,29 +602,7 @@ class Pathways:
 
     # Other
 
-    def get_pw_names(self):
-        """ Associate for each pathway in pathways_list, its common name in a dictionary.
-
-        Returns
-        -------
-        pw_names : Dict[str, str]
-            Dictionary Dict[ID of pw, common name of pw] associating common pathways names to their ID.
-        """
-        pw_set = set(self.pathways_list)
-        pw_names = {}
-        padmet_file = os.path.join(self.path_runs, self.name, "analysis", "all",
-                                   "all_panmetabolism.padmet")
-        with open(padmet_file, "r") as f:
-            for l in f:
-                if "COMMON-NAME" in l and "pathway" in l:
-                    l = l.split("\t")
-                    if l[1] in pw_set:
-                        pw_names[l[1]] = l[3]
-        return pw_names
-
-    def convert_df_to_binary(self, threshold: float, strict: bool = False,
-                             output_file: bool = False, common_name: bool = False,
-                             nb_rxn: bool = False) -> 'pd.DataFrame':
+    def convert_df_to_binary(self, threshold: float, strict: bool = False, output_dir: str = None) -> 'pd.DataFrame':
         """ Returns the pathways with completion over a given threshold for species
 
         Parameters
@@ -651,12 +611,8 @@ class Pathways:
             Threshold of completion
         strict : bool, optional (default=False)
             Whether the inequality relative to the threshold should be strict or not
-        output_file : bool, optional (default=False)
+        output_dir : str, optional (default=None)
             Whether write the binary data frame in an output file or not
-        common_name : bool, optional (default=False)
-            Whether write the common name of the pathway in 1st column or not
-        nb_rxn : bool, optional (default=False)
-            Whether write the total number of reactions of the pathway in the last column or not
 
         Returns
         -------
@@ -667,23 +623,9 @@ class Pathways:
         """
         if threshold < 0 or threshold > 1:
             raise ValueError("The threshold must be within the range of 0 to 1")
-        if common_name:
-            common_pw_name = self.get_pw_names()
-            if nb_rxn:
-                columns = ["common name"] + self.species_list + ["nb rnx pw"]
-            else:
-                columns = ["common name"] + self.species_list
-        else:
-            if nb_rxn:
-                columns = self.species_list + ["nb rnx pw"]
-            else:
-                columns = self.species_list
+        columns = self.species_list
         df_binary = pd.DataFrame(columns=columns, index=self.pathways_list)
         for pw in self.pathways_list:
-            if nb_rxn:
-                df_binary.loc[pw, "nb rnx pw"] = int(self.nb_rnx_pw[pw])
-            if common_name:
-                df_binary.loc[pw, "common name"] = common_pw_name[pw]
             for sp in self.species_list:
                 sp_c = sp + self.STR_COMP
                 if strict:
@@ -697,25 +639,12 @@ class Pathways:
                     else:
                         df_binary.loc[pw, sp] = int(0)
 
-        if output_file:
-            file_name = f"{self.name}_{threshold}_binary_pw.tsv"
-            file_path = os.path.join(self.path_study, "output_data", "pathways_data", "binary_df",
-                                     file_name)
+        if output_dir is not None:
+            file_name = f"{threshold}_binary_pw.tsv"
+            file_path = os.path.join(output_dir, file_name)
             df_binary.to_csv(file_path, sep="\t", index_label="pathway")
         else:
             return df_binary
-
-    def generate_pw_dendrogram(self, df_binary_threshold: float, strict: bool = False,
-                               name: str = None, phylo_file: str = None, n_boot: int = 10000):
-        if name is None:
-            self.nb_dend += 1
-            name = f"dendrogram{self.nb_dend}"
-        name = f"pw_{int(df_binary_threshold*100)}_{name}"
-        df_bin = self.convert_df_to_binary(df_binary_threshold, strict)
-        d = aucomana.dendrograms.Dendrogram(self.path_runs, self.path_study, df_bin, self.name, name,
-                                            phylo_file)
-        d.get_dendro_pvclust(n_boot)
-
 
     def get_completion_pw(self, pathway, species, percentage=False, round_t=2):
         species += self.STR_COMP

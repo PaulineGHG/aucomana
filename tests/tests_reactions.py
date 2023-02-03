@@ -1,7 +1,7 @@
 import os.path
 import unittest
 import pandas as pd
-from aucomana.analysis import Analysis
+from aucomana.aucomana import Analysis
 from aucomana.reactions import Reactions
 
 STUDY_PATH = 'Study_folder'

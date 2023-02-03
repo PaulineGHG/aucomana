@@ -1,6 +1,6 @@
 import os
 import unittest
-from aucomana.analysis import Analysis
+from aucomana.aucomana import Analysis
 from aucomana.reactions import Reactions
 from aucomana.pathways import Pathways
 from aucomana.genes import Genes

@@ -1,6 +1,6 @@
 import unittest
 import pandas as pd
-from aucomana.analysis import Analysis
+from aucomana.aucomana import Analysis
 from aucomana.genes import Genes
 
 STUDY_PATH = 'Study_folder'

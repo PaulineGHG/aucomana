@@ -9,14 +9,12 @@ class Genes:
     """
     Attributes
     ----------
-    name : str
-        name of the file
     species_list : List[str]
         List of species studied
-    data_genes : pd.DataFrame
-        Dataframe indicating if genes are present for each species
-    data_rxn_assoc : pd.DataFrame
-        Dataframe indicating reactions associated with each gene for each species
+    data_genes : DataFrame
+        The Dataframe indicating if genes are present for each species
+    data_rxn_assoc : DataFrame
+        The Dataframe indicating reactions associated with each gene for each species
     genes_list : List[str]
         List of all genes
     nb_genes : int
@@ -37,7 +35,6 @@ class Genes:
             List of species to study (must correspond to their name in genes.tsv file).
             If not specified, will contain all the species from genes.tsv file.
         """
-        self.name = file_genes_tsv.split("/")[-4]
         self.species_list = species_list
         self.data_genes, \
             self.data_rxn_assoc, \
