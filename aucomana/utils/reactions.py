@@ -278,3 +278,30 @@ class Reactions:
                     absent_rxn.add(rxn)
             absent_rxn_dict[sp] = (len(absent_rxn), absent_rxn)
         return absent_rxn_dict
+
+    def get_genes_assoc(self, reactions_list: str or List[str] = None,) -> Dict[str, Dict[str, Dict[str, List[str]]]]:
+        """ Returns a dictionary of genes associated with each reaction for each species. Can write proteins sequences
+        associated in fasta files.
+        Parameters
+        ----------
+        reactions_list : str or List[str], optional (default=None)
+            List of reactions to find genes associated with.
+            If None, will be reactions_list attribute.
+
+        Returns
+        -------
+        genes_assoc : Dict[str, Dict[str, Dict[str, List[str]]]]
+            Dictionary of genes associated with each reaction for each species
+        """
+        genes_assoc = {}
+        if reactions_list is None:
+            reactions_list = self.reactions_list
+        elif type(reactions_list) == str:
+            reactions_list = [reactions_list]
+        for reaction in reactions_list:
+            genes_assoc[reaction] = {}
+        for reaction in reactions_list:
+            for species in self.species_list:
+                genes_assoc[reaction][species] = str(
+                    self.data_genes_assoc[species + self.STR_GENE_ASSOC][reaction]).split(";")
+        return genes_assoc
