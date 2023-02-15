@@ -298,10 +298,12 @@ class Reactions:
             reactions_list = self.reactions_list
         elif type(reactions_list) == str:
             reactions_list = [reactions_list]
+
         for reaction in reactions_list:
             genes_assoc[reaction] = {}
         for reaction in reactions_list:
             for species in self.species_list:
-                genes_assoc[reaction][species] = str(
-                    self.data_genes_assoc[species + self.STR_GENE_ASSOC][reaction]).split(";")
+                genes_assoc[reaction][species] = \
+                    set(str(self.data_genes_assoc[species + self.STR_GENE_ASSOC][reaction]).split(";"))
+
         return genes_assoc
