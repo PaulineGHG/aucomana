@@ -290,7 +290,7 @@ class Reactions:
 
         Returns
         -------
-        genes_assoc : Dict[str, Dict[str, Dict[str, List[str]]]]
+        genes_assoc : Dict[str, Dict[str, Dict[str, Set[str]]]]
             Dictionary of genes associated with each reaction for each species
         """
         genes_assoc = {}
