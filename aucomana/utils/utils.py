@@ -1,9 +1,8 @@
 import os
-import pandas as pd
 from typing import List, Set, Dict, Iterable
 
 
-def create_dendrogram_groups_file(output):
+def create_dendrogram_groups_file(output: str):
     file = os.path.join(output, "dendro_tanglegrams", "dendrogram_groups.tsv")
     if not os.path.exists(file):
         with open(file, "w") as f:
@@ -73,8 +72,6 @@ def get_grp_set(group_file: str, group: str or Iterable[str], species_list: Iter
         Set of species corresponding to the intersection of the groups chosen
     """
     dic_groups = extract_groups(group_file)
-    if group in dic_groups['all']:
-        return {group}
 
     if species_list is not None:
         species_set = set(species_list)
@@ -85,7 +82,10 @@ def get_grp_set(group_file: str, group: str or Iterable[str], species_list: Iter
         group = [group]
 
     for g in group:
-        if g not in dic_groups.keys():
+        if g in dic_groups['all']:
+            species_set = species_set.intersection({g})
+        elif g not in dic_groups.keys():
             raise ValueError(f"No group {g} in {group_file} file. Groups are : {list(dic_groups.keys())}.")
-        species_set = species_set.intersection(dic_groups[g])
+        else:
+            species_set = species_set.intersection(dic_groups[g])
     return species_set
