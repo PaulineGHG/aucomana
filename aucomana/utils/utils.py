@@ -57,6 +57,8 @@ def get_grp_set(group_file: str, group: str, species_list: List[str] = None) -> 
         Set of species corresponding to the group chosen
     """
     df = pd.read_csv(group_file, sep="\t", index_col=0)
+    if group in df.columns:
+        return set(group)
     if group not in list(df.index):
         raise ValueError(f"No group {group} in {group_file} file. Groups are : {list(df.index)}.")
     group_set = set(df.loc[group])

@@ -1,7 +1,7 @@
 """
 Pathways class
 """
-from typing import Dict, List, Tuple, Set
+from typing import Dict, List, Tuple, Set, Iterable
 import os
 import pandas as pd
 
@@ -28,7 +28,7 @@ class Pathways:
     STR_COMP = "_completion_rate"
     STR_RXN_ASSOC = "_rxn_assoc (sep=;)"
 
-    def __init__(self, file_pathways_tsv: str, species_list: List[str] = None,
+    def __init__(self, file_pathways_tsv: str, species_list: Iterable[str] = None,
                  out: int = None, nb_rnx_pw_min: int = 1):
         """ Init the Reactions class
 
@@ -36,7 +36,7 @@ class Pathways:
         ----------
         file_pathways_tsv : str
             file pathways.tsv output from aucome analysis
-        species_list : List[str], optional (default=None)
+        species_list : Iterable[str], optional (default=None)
             List of species to study.
             If not specified, will contain all the species from the run.
         out: int, optional (default=None)
@@ -44,7 +44,7 @@ class Pathways:
         nb_rnx_pw_min: int, optional (default=1)
             Minimal total number of reactions in the pathway for the pathway to be kept
         """
-        self.species_list = species_list
+        self.species_list = list(species_list)
         self.data_pathways_str, self.data_rxn_assoc = self.__init_data(file_pathways_tsv)
         self.data_pathways_float = self.data_pathways_str.copy(deep=True)
         self.nb_rnx_pw = self.__convert_data_pathways()
@@ -174,7 +174,7 @@ class Pathways:
         else:
             return self.data_pathways_float.loc[pathway, species] == min_completion and min_completion > 0
 
-    def get_pw_min(self, species: str or List[str] = None, unique: bool = False) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_pw_min(self, species: str or Iterable[str] = None, unique: bool = False) -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of pathways having the minimal completion (unique or not),
         the pathways returned are not absent (at least 1 reaction in the pathway)
 
@@ -233,7 +233,8 @@ class Pathways:
         else:
             return self.data_pathways_float.loc[pathway, species] == 0
 
-    def get_pw_absent(self, species: str or List[str] = None, unique: bool = False) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_pw_absent(self, species: str or Iterable[str] = None, unique: bool = False) \
+            -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of absent pathways (unique or not) : considered unique if
         only this species is not having the pathway among all species
 
@@ -292,7 +293,8 @@ class Pathways:
         else:
             return 0 < self.data_pathways_float.loc[pathway, species] < 1
 
-    def get_pw_incomplete(self, species: str or List[str] = None, unique: bool = False) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_pw_incomplete(self, species: str or Iterable[str] = None, unique: bool = False) \
+            -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of incomplete pathways (unique or not) : considered unique
         if all other species have the pathway completed
 
@@ -353,7 +355,8 @@ class Pathways:
         else:
             return self.data_pathways_float.loc[pathway, species] > 0
 
-    def get_pw_present(self, species: str or List[str] = None, unique: bool = False) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_pw_present(self, species: str or Iterable[str] = None, unique: bool = False) \
+            -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of present pathways (unique or not) : considered unique if
         only this species is having the pathway among all species
 
@@ -385,7 +388,7 @@ class Pathways:
         return present_pw_dict
 
 
-    def get_pw_presence(self, pathway: str or List[str] = None, unique: bool = False) -> \
+    def get_pw_presence(self, pathway: str or Iterable[str] = None, unique: bool = False) -> \
             Dict[str, Tuple[Tuple[int, float], Set[str]]]:
         """ Returns for each species the number and the set of present pathways (unique or not) : considered unique if
         only this species is having the pathway among all species
@@ -445,7 +448,7 @@ class Pathways:
         else:
             return self.data_pathways_float.loc[pathway, species] == max_comp
 
-    def get_pw_max(self, species: str or List[str] = None, unique: bool = False) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_pw_max(self, species: str or Iterable[str] = None, unique: bool = False) -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of pathways having the maximal completion (unique or not),
 
         Parameters
@@ -503,7 +506,8 @@ class Pathways:
         else:
             return self.data_pathways_float.loc[pathway, species] == 1
 
-    def get_pw_complete(self, species: str or List[str] = None, unique: bool = False) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_pw_complete(self, species: str or Iterable[str] = None, unique: bool = False) \
+            -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of complete pathways (unique or not) : considered unique
         if all other species have not the pathway completed
 
@@ -534,7 +538,7 @@ class Pathways:
             complete_pw_dict[sp] = (len(complete_pw), complete_pw)
         return complete_pw_dict
 
-    def get_pw_over_threshold(self, species: str or List[str], threshold: float, strict: bool = False) \
+    def get_pw_over_threshold(self, species: str or Iterable[str], threshold: float, strict: bool = False) \
             -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns the pathways with completion over a given threshold for species
 
@@ -571,7 +575,7 @@ class Pathways:
             over_t_pw_dict[sp[:-len(self.STR_COMP)]] = (len(over_t_pw), over_t_pw)
         return over_t_pw_dict
 
-    def get_pw_under_threshold(self, species: str or List[str], threshold: float, strict: bool = False) \
+    def get_pw_under_threshold(self, species: str or Iterable[str], threshold: float, strict: bool = False) \
             -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns the pathways with completion under a given threshold for species
 
@@ -654,7 +658,7 @@ class Pathways:
             return self.data_pathways_str.loc[pathway, species]
 
 
-    def get_rxn_assoc(self, pathways_list: str or List[str] = None) -> Dict[str, Dict[str, Dict[str, List[str]]]]:
+    def get_rxn_assoc(self, pathways_list: str or Iterable[str] = None) -> Dict[str, Dict[str, Dict[str, List[str]]]]:
         """ Returns a dictionary of reactions associated with each pathway for each species.
 
         Parameters
