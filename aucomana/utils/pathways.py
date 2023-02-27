@@ -28,7 +28,7 @@ class Pathways:
     STR_COMP = "_completion_rate"
     STR_RXN_ASSOC = "_rxn_assoc (sep=;)"
 
-    def __init__(self, file_pathways_tsv: str, species_list: Iterable[str] = None,
+    def __init__(self, file_pathways_tsv: str, species_list: List[str] = None,
                  out: int = None, nb_rnx_pw_min: int = 1):
         """ Init the Reactions class
 
@@ -36,7 +36,7 @@ class Pathways:
         ----------
         file_pathways_tsv : str
             file pathways.tsv output from aucome analysis
-        species_list : Iterable[str], optional (default=None)
+        species_list : List[str], optional (default=None)
             List of species to study.
             If not specified, will contain all the species from the run.
         out: int, optional (default=None)
@@ -44,7 +44,7 @@ class Pathways:
         nb_rnx_pw_min: int, optional (default=1)
             Minimal total number of reactions in the pathway for the pathway to be kept
         """
-        self.species_list = list(species_list)
+        self.species_list = species_list
         self.data_pathways_str, self.data_rxn_assoc = self.__init_data(file_pathways_tsv)
         self.data_pathways_float = self.data_pathways_str.copy(deep=True)
         self.nb_rnx_pw = self.__convert_data_pathways()

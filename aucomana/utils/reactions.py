@@ -1,7 +1,7 @@
 """
 Reactions class
 """
-from typing import Dict, List, Tuple, Set
+from typing import Dict, List, Tuple, Set, Iterable
 import pandas as pd
 
 
@@ -155,14 +155,15 @@ class Reactions:
         else:
             return self.data_reactions.loc[reaction, species] == 1
 
-    def get_rxn_present(self, species: str or List[str] = None, unique: bool = False) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_rxn_present(self, species: str or Iterable[str] = None, unique: bool = False) \
+            -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of present reactions (unique or not) : considered unique if
         only this species is having the reaction among all species
 
         Parameters
         ----------
-        species: str or List[str], optional (default=None)
-            species or list of species to be considered
+        species: str or Iterable[str], optional (default=None)
+            species or Iterable of species to be considered
             if None, will be all the species
         unique: bool, optional (default=False)
             True if the presence is unique, False otherwise
@@ -187,15 +188,15 @@ class Reactions:
         return present_rxn_dict
 
 
-    def get_rxn_presence(self, reaction: str or List[str] = None, unique: bool = False) -> \
+    def get_rxn_presence(self, reaction: str or Iterable[str] = None, unique: bool = False) -> \
             Dict[str, Tuple[Tuple[int, float], Set[str]]]:
         """ Returns for each reaction the number, the percentage, and the set of species having the reaction present
         (unique or not) : considered unique if only one species is having the reaction among all species
 
         Parameters
         ----------
-        reaction: str or List[str], optional (default=None)
-            reaction or list of reactions to be considered
+        reaction: str or Iterable[str], optional (default=None)
+            reaction or Iterable of reactions to be considered
             if None, will be all the reactions
         unique: bool, optional (default=False)
             True if the presence is unique, False otherwise
@@ -248,14 +249,15 @@ class Reactions:
         else:
             return self.data_reactions.loc[reaction, species] == 0
 
-    def get_rxn_absent(self, species: str or List[str] = None, unique: bool = False) -> Dict[str, Tuple[int, Set[str]]]:
+    def get_rxn_absent(self, species: str or Iterable[str] = None, unique: bool = False) \
+            -> Dict[str, Tuple[int, Set[str]]]:
         """ Returns for each species the number and the set of absent reactions (unique or not) : considered unique if
         only this species is not having the reaction among all species
 
         Parameters
         ----------
-        species: str or List[str], optional (default=None)
-            species or list of species to be considered
+        species: str or Iterable[str], optional (default=None)
+            species or Iterable of species to be considered
             if None will be all the species
         unique: bool, optional (default=False)
             True if the absence is unique, False otherwise
@@ -279,13 +281,14 @@ class Reactions:
             absent_rxn_dict[sp] = (len(absent_rxn), absent_rxn)
         return absent_rxn_dict
 
-    def get_genes_assoc(self, reactions_list: str or List[str] = None,) -> Dict[str, Dict[str, Dict[str, Set[str]]]]:
+    def get_genes_assoc(self, reactions_list: str or Iterable[str] = None,) \
+            -> Dict[str, Dict[str, Dict[str, Set[str]]]]:
         """ Returns a dictionary of genes associated with each reaction for each species. Can write proteins sequences
         associated in fasta files.
         Parameters
         ----------
-        reactions_list : str or List[str], optional (default=None)
-            List of reactions to find genes associated with.
+        reactions_list : str or Iterable[str], optional (default=None)
+            Iterable of reactions to find genes associated with.
             If None, will be reactions_list attribute.
 
         Returns
