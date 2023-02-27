@@ -5,12 +5,30 @@ from utils.utils import *
 from utils.pathways import Pathways
 
 
-
-STAT = (" mean", " med", " sd", " min", " max")
-TO_CALCULATE = ("nb_genes", "nb_rnx", "nb_pw > 80%", "nb_pw 100%")
-
 class AuCoMAna:
+    """
+    Attributes
+    ----------
+    group_template: str
+    reactions_tsv: str
+    pathways_tsv: str
+    genes_tsv: str
+    metabolites_tsv: str
+    """
+
+    STAT = (" mean", " med", " sd", " min", " max")
+    TO_CALCULATE = ("nb_genes", "nb_rnx", "nb_pw > 80%", "nb_pw 100%")
+
     def __int__(self, compare_path: str, group_template: str):
+        """ Init the AuCoMAna class.
+
+        Parameters
+        ----------
+        compare_path: str
+            Path of the directory with compare padmets results
+        group_template: str
+            Groups template tsv file
+        """
         self.group_template = group_template
         self.reactions_tsv = os.path.join(compare_path, 'reactions.tsv')
         self.pathways_tsv = os.path.join(compare_path, 'pathways.tsv')
@@ -27,6 +45,7 @@ class AuCoMAna:
             dic_groups[group] = get_grp_set(self.group_template, group, species_analysis)
 
         abs = pathway.get_pw_absent(species=species_analysis, unique=True)
+        print(abs)
         # abs_sr = []
         # abs_lr = []
         # abs_all = []
@@ -106,8 +125,11 @@ class AuCoMAna:
         # plt.tight_layout()
         # plt.show()
 
-group_file = os.path.join('../Runs/run62/analysis/group_template.tsv')
-print(get_grp_set(group_file, 'Halopteris-paniculata'))
+group_file = '../Runs/run62/analysis/group_template.tsv'
+compare_dir = '../Runs/run62/analysis/'
+
+A = AuCoMAna(compare_dir, group_file)
+print(A.group_template)
 
 
 
