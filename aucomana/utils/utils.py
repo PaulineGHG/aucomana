@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-from typing import List, Set
+from typing import List, Set, Dict, Iterable
 
 
 def create_dendrogram_groups_file(output):
@@ -37,33 +37,55 @@ def get_abbr_name(name: str) -> str:
 
 # ## Extract species according to groups from organisms file
 
-def get_grp_set(group_file: str, group: str, species_list: List[str] = None) -> Set[str]:
+
+def extract_groups(group_file: str) -> Dict[str, Set[str]]:
+    dic_group = dict()
+    with open(group_file, 'r') as f:
+        for l in f:
+            l = l.strip().split('\t')
+            group = l[0]
+            species = set(l[1:])
+            if '' in species:
+                species.remove('')
+            dic_group[group] = species
+    return dic_group
+
+
+def get_grp_set(group_file: str, group: str or Iterable[str], species_list: Iterable[str] = None) \
+        -> Set[str]:
     """ Select species according to the group they belong to. The groups must be specified in the
-    "group_template.tsv" file in path : <path runs>/<runID>/analysis/
+    "group_template.tsv" file.
 
     Parameters
     ----------
     group_file: str
         group_file path
-    group: str
-        The group to consider
-    species_list: List[str], optional (default=None)
+    group: str or Iterable[str]
+        The group or list of groups to consider
+    species_list: Iterable[str], optional (default=None)
         List of species to consider to be filtered according to their group belonging
         If None, it will be all the species of the run
+
 
     Returns
     -------
     Set[str]
-        Set of species corresponding to the group chosen
+        Set of species corresponding to the intersection of the groups chosen
     """
-    df = pd.read_csv(group_file, sep="\t", index_col=0)
-    if group in df.columns:
-        return set(group)
-    if group not in list(df.index):
-        raise ValueError(f"No group {group} in {group_file} file. Groups are : {list(df.index)}.")
-    group_set = set(df.loc[group])
+    dic_groups = extract_groups(group_file)
+    if group in dic_groups['all']:
+        return {group}
+
     if species_list is not None:
         species_set = set(species_list)
     else:
-        species_set = set(df.columns)
-    return group_set.intersection(species_set)
+        species_set = dic_groups['all']
+
+    if type(group) == str:
+        group = [group]
+
+    for g in group:
+        if g not in dic_groups.keys():
+            raise ValueError(f"No group {g} in {group_file} file. Groups are : {list(dic_groups.keys())}.")
+        species_set = species_set.intersection(dic_groups[g])
+    return species_set

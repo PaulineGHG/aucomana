@@ -180,8 +180,8 @@ class Pathways:
 
         Parameters
         ----------
-        species: str or List[str], optional (default=None)
-            species or list of species to be considered
+        species: str or Iterable[str], optional (default=None)
+            species or Iterable of species to be considered
             if None will be all the species
         unique: bool, optional (default=False)
             True if the minimum is unique, False otherwise
@@ -240,8 +240,8 @@ class Pathways:
 
         Parameters
         ----------
-        species: str or List[str], optional (default=None)
-            species or list of species to be considered
+        species: str or Iterable[str], optional (default=None)
+            species or Iterable of species to be considered
             if None will be all the species
         unique: bool, optional (default=False)
             True if the absence is unique, False otherwise
@@ -300,8 +300,8 @@ class Pathways:
 
         Parameters
         ----------
-        species: str or List[str], optional (default=None)
-            species or list of species to be considered
+        species: str or Iterable[str], optional (default=None)
+            species or Iterable of species to be considered
             if None will be all the species
         unique: bool, optional (default=False)
             True if the incomplete pathway is unique, False otherwise
@@ -362,8 +362,8 @@ class Pathways:
 
         Parameters
         ----------
-        species: str or List[str], optional (default=None)
-            species or list of species to be considered
+        species: str or Iterable[str], optional (default=None)
+            species or Iterable of species to be considered
             if None will be all the species
         unique: bool, optional (default=False)
             True if the presence is unique, False otherwise
@@ -395,8 +395,8 @@ class Pathways:
 
         Parameters
         ----------
-        pathway: str or List[str], optional (default=None)
-            species or list of species to be considered
+        pathway: str or Iterable[str], optional (default=None)
+            species or Iterable of species to be considered
             if None will be all the species
         unique: bool, optional (default=False)
             True if the presence is unique, False otherwise
@@ -453,8 +453,8 @@ class Pathways:
 
         Parameters
         ----------
-        species: str or List[str], optional (default=None)
-            species or list of species to be considered
+        species: str or Iterable[str], optional (default=None)
+            species or Iterable of species to be considered
             if None will be all the species
         unique: bool, optional (default=False)
             True if the maximum is unique, False otherwise
@@ -513,8 +513,8 @@ class Pathways:
 
         Parameters
         ----------
-        species: str or List[str], optional (default=None)
-            species or list of species to be considered
+        species: str or Iterable[str], optional (default=None)
+            species or Iterable of species to be considered
             if None will be all the species
         unique: bool, optional (default=False)
             True if the complete pathway is unique, False otherwise
@@ -544,8 +544,8 @@ class Pathways:
 
         Parameters
         ----------
-        species: str or List[str]
-            Species or list of species to be considered
+        species: str or Iterable[str]
+            Species or Iterable of species to be considered
         threshold : float
             Threshold of completion
         strict : bool, optional (default=False)
@@ -581,8 +581,8 @@ class Pathways:
 
         Parameters
         ----------
-        species: str or List[str]
-            Species or list of species to be considered
+        species: str or Iterable[str]
+            Species or Iterable of species to be considered
         threshold : float
             Threshold of completion
         strict : bool, optional (default=False)
