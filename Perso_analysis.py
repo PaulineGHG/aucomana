@@ -1,7 +1,7 @@
 from aucomana.aucomana import AuCoMAna
 from aucomana.utils.reactions import Reactions
 
-g_file = 'Runs/run62/analysis/group_template.tsv'
+g_file = 'Runs/lelsb_run/analysis/group_template.tsv'
 comp_dir = 'Runs/run62/analysis/all'
 spha = 'Sphacelaria-rigidula_FEMALE'
 
