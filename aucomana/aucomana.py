@@ -9,6 +9,7 @@ from typing import Iterable
 from aucomana.utils.utils import get_grp_set
 from aucomana.utils.pathways import Pathways
 from aucomana.utils.reactions import Reactions
+from supervenn import supervenn
 
 
 class AuCoMAna:
@@ -125,4 +126,16 @@ class AuCoMAna:
         plt.show()
 
 
+    def group_supervenn_rxn(self, groups_comp: Iterable[str]):
+        reactions = Reactions(self.reactions_tsv)
+
+        dic_groups = dict()
+        for group in list(groups_comp):
+            dic_groups[group] = get_grp_set(self.group_template, group)
+
+        rxn_sets = reactions.get_rxn_present()
+
+        supervenn([x[1] for x in rxn_sets.values()], list(rxn_sets.keys()), side_plots=False)
+        # fig = plt.figure(figsize=(60, 20))
+        plt.savefig('myplot.png')
 
