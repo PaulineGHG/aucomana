@@ -13,7 +13,7 @@ from aucomana.utils.reactions import Reactions
 from supervenn import supervenn
 
 
-class AuCoMAna:
+class GroupsAnalysis:
     """
     Attributes
     ----------
@@ -152,3 +152,8 @@ class AuCoMAna:
         supervenn([rxn_sets[sp][1] for sp in order_sp], order_sp, side_plots=False,
                   color_cycle=[dic_groups_color[dic_sp_groups[sp]] for sp in order_sp])
         plt.savefig(output)
+
+
+class SequencesAnalysis:
+    def __init__(self, proteome_dir, genome_dir):
+        self.x = 'x'
