@@ -5,7 +5,8 @@ import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from typing import Iterable
+import matplotlib.colors as m_colors
+from typing import Iterable, List
 from aucomana.utils.utils import get_grp_set
 from aucomana.utils.pathways import Pathways
 from aucomana.utils.reactions import Reactions
@@ -126,16 +127,28 @@ class AuCoMAna:
         plt.show()
 
 
-    def group_supervenn_rxn(self, groups_comp: Iterable[str]):
+    def group_supervenn_rxn(self, groups_comp: List[str], fig_size=(16, 8), colors=None, output='supervenn.png'):
         reactions = Reactions(self.reactions_tsv)
 
-        dic_groups = dict()
-        for group in list(groups_comp):
-            dic_groups[group] = get_grp_set(self.group_template, group)
+        order_sp = []
+        dic_sp_groups = dict()
+        for group in groups_comp:
+            species = get_grp_set(self.group_template, group)
+            for sp in species:
+                order_sp.append(sp)
+                dic_sp_groups[sp] = group
+
+        if colors is None:
+            colors = list(m_colors.TABLEAU_COLORS.keys())
+        colors_cycle = (len(groups_comp) // len(colors) + 1) * colors
+
+        dic_groups_color = dict()
+        for i in range(len(groups_comp)):
+            dic_groups_color[groups_comp[i]] = colors_cycle[i]
 
         rxn_sets = reactions.get_rxn_present()
 
-        supervenn([x[1] for x in rxn_sets.values()], list(rxn_sets.keys()), side_plots=False)
-        # fig = plt.figure(figsize=(60, 20))
-        plt.savefig('myplot.png')
-
+        plt.figure(figsize=fig_size)
+        supervenn([rxn_sets[sp][1] for sp in order_sp], order_sp, side_plots=False,
+                  color_cycle=[dic_groups_color[dic_sp_groups[sp]] for sp in order_sp])
+        plt.savefig(output)
