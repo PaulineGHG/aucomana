@@ -11,6 +11,7 @@ from aucomana.utils.utils import get_grp_set
 from aucomana.utils.pathways import Pathways
 from aucomana.utils.reactions import Reactions
 from supervenn import supervenn
+from Bio import AlignIO
 
 
 class GroupsAnalysis:
@@ -43,8 +44,8 @@ class GroupsAnalysis:
         self.genes_tsv = os.path.join(compare_path, 'genes.tsv')
         self.metabolites_tsv = os.path.join(compare_path, 'metabolites.tsv')
 
-
-    def group_reactions_comparison(self, groups_comp: Iterable[str], group_analysis: str = 'all'):
+    def group_reactions_comparison(self, groups_comp: Iterable[str], group_analysis: str = 'all',
+                                   output='groups_comp_rxn.png'):
         species_analysis = get_grp_set(self.group_template, group_analysis)
 
         reaction = Reactions(file_reactions_tsv=self.reactions_tsv,
@@ -76,10 +77,10 @@ class GroupsAnalysis:
         ax.set_title(f'Unique absent reactions for {"/".join(groups_comp)} groups')
         plt.xticks(rotation=0)
         plt.tight_layout()
-        plt.show()
+        plt.savefig(output)
 
-
-    def group_pathway_completion_comparison(self, groups_comp: Iterable[str], group_analysis: str = 'all'):
+    def group_pathway_completion_comparison(self, groups_comp: Iterable[str], group_analysis: str = 'all',
+                                            output='groups_comp_pw.png'):
         species_analysis = get_grp_set(self.group_template, group_analysis)
 
         pathway = Pathways(file_pathways_tsv=self.pathways_tsv,
@@ -124,8 +125,7 @@ class GroupsAnalysis:
         ax.set_title(f'Unique absent/minimal/incomplete pathway for {"/".join(groups_comp)} groups')
         plt.xticks(rotation=0)
         plt.tight_layout()
-        plt.show()
-
+        plt.savefig(output)
 
     def group_supervenn_rxn(self, groups_comp: List[str], fig_size=(16, 8), colors=None, output='supervenn.png'):
         reactions = Reactions(self.reactions_tsv)
@@ -155,5 +155,22 @@ class GroupsAnalysis:
 
 
 class SequencesAnalysis:
-    def __init__(self, proteome_dir, genome_dir):
-        self.x = 'x'
+    def __init__(self, species_sequences_dir: str, compare_path: str):
+        self.sp_genome = dict()
+        self.sp_proteome = dict()
+        self.__init_dicts(species_sequences_dir)
+        self.reactions_tsv = os.path.join(compare_path, 'reactions.tsv')
+        self.pathways_tsv = os.path.join(compare_path, 'pathways.tsv')
+        self.genes_tsv = os.path.join(compare_path, 'genes.tsv')
+        self.metabolites_tsv = os.path.join(compare_path, 'metabolites.tsv')
+
+    def __init_dicts(self, species_sequences_dir):
+        for species in os.listdir(species_sequences_dir):
+            for file in os.listdir(os.path.join(species_sequences_dir, species)):
+                if file.endswith('.faa'):
+                    self.sp_proteome[species] = file
+                elif file.endswith('.fna'):
+                    self.sp_genome[species] = file
+
+    def multiple_alignments(self):
+        r = Reactions(file_reactions_tsv=self.reactions_tsv)
