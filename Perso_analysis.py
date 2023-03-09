@@ -5,6 +5,7 @@ comp_dir = 'Runs/run62/analysis/all'
 spha = 'Sphacelaria-rigidula_FEMALE'
 orders = ['Fucales', 'Ectocarpales', 'Discosporangiales', 'Desmarestiales', 'Tilopteridales',
           'Ralfsiales', 'Laminariales', 'Sphacelariales', 'Dictyotales', 'Outgroup']
+
 sp_seq_dir = 'Runs/run62/studied_organisms'
 
 # GA = GroupsAnalysis(comp_dir, g_file)
@@ -13,8 +14,7 @@ sp_seq_dir = 'Runs/run62/studied_organisms'
 # GA.group_reactions_comparison(('LR', 'SR', spha), 'Phaeophyceae')
 # GA.group_supervenn_rxn(groups_comp=orders, fig_size=(64, 48), output='supervenn_run62.png')
 
-SA = SequencesAnalysis(sp_seq_dir)
 
-print(SA.sp_genome)
-print(SA.sp_proteome)
+SA = SequencesAnalysis(sp_seq_dir, comp_dir)
+SA.multiple_alignments('FRUCTOKINASE-RXN', 'Ectocarpus-subulatus', 'TEST_MULT')
 
