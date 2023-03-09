@@ -16,5 +16,5 @@ sp_seq_dir = 'Runs/run62/studied_organisms'
 
 
 SA = SequencesAnalysis(sp_seq_dir, comp_dir)
-SA.multiple_alignments('FRUCTOKINASE-RXN', 'Ectocarpus-subulatus', 'TEST_MULT')
+SA.multiple_alignments('FRUCTOKINASE-RXN', 'Ectocarpus-subulatus', 'FRUCTOKINASE-RXN')
 
