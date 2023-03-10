@@ -202,45 +202,73 @@ class SequencesAnalysis:
         # Create output directories
         seq_output = os.path.join(output, 'sequences')
         align_output = os.path.join(output, 'alignments')
-        for directory in (seq_output, align_output):
-            if not os.path.exists(directory):
-                os.mkdir(directory)
+        self.__create_directories((seq_output, align_output))
 
         # Align source sequences with sequences of each species :
-        all_align_file = os.path.join(output, 'all_align.txt')
+        all_align_file = os.path.join(align_output, 'all_align.txt')
         with open(all_align_file, 'a') as f:
             f.write(f'All alignments with {source_species} genes :\nseq\tid\tlen(seq)\n')
         all_seq_len = {seq.id: len(seq.seq) for seq in seq_source}
+        all_seq = list()
 
         for sp in species_list:
             if sp != source_species:
-                sp_genes = genes_assoc[sp]
-                if sp_genes != {'nan'}:
-                    print(f'align {source_genes} with {sp_genes}')
-                    seq_sp = SeqIO.to_dict(SeqIO.parse(self.sp_proteome[sp], 'fasta'))
-                    seq_to_align = [seq_sp[sp_g] for sp_g in sp_genes]
-                    seq_len = {seq.id: len(seq.seq) for seq in seq_to_align}
-                    all_seq_len.update(seq_len)
+                sp_genes = self.__filter_genes(genes_assoc[sp])
 
-                    # Create sequences fasta files in sequences directory
-                    seq_file = os.path.join(seq_output, f'{sp}__vs__{source_species}__{rxn}.fasta')
-                    with open(seq_file, "w") as output_handle:
-                        SeqIO.write(list(seq_source) + seq_to_align, output_handle, "fasta")
+                print(f'align {source_genes} with {sp_genes}')
+                seq_sp = SeqIO.to_dict(SeqIO.parse(self.sp_proteome[sp], 'fasta'))
+                print(seq_sp.keys())
+                seq_to_align = [seq_sp[sp_g] for sp_g in sp_genes]
+                seq_len = {seq.id: len(seq.seq) for seq in seq_to_align}
+                all_seq_len.update(seq_len)
+                all_seq += seq_to_align
 
-                    # Align all the sequences
-                    align_file = os.path.join(align_output, f'{sp}__vs__{source_species}__{rxn}.aln')
-                    muscle_cline = MuscleCommandline(input=seq_file, out=align_file)
-                    os.system(str(muscle_cline))
+                # Create sequences fasta files in sequences directory
+                seq_file = os.path.join(seq_output, f'{sp}__vs__{source_species}__{rxn}.fasta')
+                with open(seq_file, "w") as output_handle:
+                    SeqIO.write(list(seq_source) + seq_to_align, output_handle, "fasta")
 
-                    # Write alignment in final file with all alignments
-                    alignment = AlignIO.read(open(align_file), "fasta")
-                    with open(all_align_file, 'a') as f:
-                        f.write(f'\n\n{sp}\n')
-                        for record in alignment:
-                            if record.id in source_genes:
-                                f.write(f'{record.seq}\t{record.id}\t{str(all_seq_len[record.id])}\n')
-                        for record in alignment:
-                            if record.id not in source_genes:
-                                f.write(f'{record.seq}\t{record.id}\t{str(all_seq_len[record.id])}\n')
+                # Align all the sequences
+                align_file = os.path.join(align_output, f'{sp}__vs__{source_species}__{rxn}.aln')
+                muscle_cline = MuscleCommandline(input=seq_file, out=align_file)
+                os.system(str(muscle_cline))
 
+                # Write alignment in final file with all alignments
+                self.__write_alignment(align_file, all_align_file, source_genes, all_seq_len)
 
+        # Global align
+        global_align_fasta = os.path.join(align_output, 'global_align.fasta')
+        global_align_file = os.path.join(align_output, 'global_align.txt')
+        seq_file = os.path.join(seq_output, 'all_seq.fasta')
+        with open(seq_file, "w") as output_handle:
+            SeqIO.write(list(seq_source) + all_seq, output_handle, "fasta")
+        muscle_cline = MuscleCommandline(input=seq_file, out=global_align_fasta)
+        os.system(str(muscle_cline))
+
+        # Write alignment in final file with all alignments
+        self.__write_alignment(global_align_fasta, global_align_file, source_genes, all_seq_len)
+
+    @staticmethod
+    def __write_alignment(fasta_file, txt_file, source_genes, all_seq_len):
+        alignment = AlignIO.read(open(fasta_file), "fasta")
+        with open(txt_file, 'a') as f:
+            for record in alignment:
+                if record.id in source_genes:
+                    f.write(f'{record.seq}\t{record.id}\t{str(all_seq_len[record.id])}\n')
+            for record in alignment:
+                if record.id not in source_genes:
+                    f.write(f'{record.seq}\t{record.id}\t{str(all_seq_len[record.id])}\n')
+
+    @staticmethod
+    def __create_directories(directories: Iterable[str]):
+        for directory in directories:
+            if not os.path.exists(directory):
+                os.mkdir(directory)
+
+    @staticmethod
+    def __filter_genes(sp_genes):
+        sp_genes_2 = set()
+        for sp_g in sp_genes:
+            if not sp_g.startswith('predicted_') and sp_g != 'nan':
+                sp_genes_2.add(sp_g)
+        return sp_genes_2
