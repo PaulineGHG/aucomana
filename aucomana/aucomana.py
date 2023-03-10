@@ -207,6 +207,11 @@ class SequencesAnalysis:
                 os.mkdir(directory)
 
         # Align source sequences with sequences of each species :
+        all_align_file = os.path.join(output, 'all_align.txt')
+        with open(all_align_file, 'a') as f:
+            f.write(f'All alignments with {source_species} genes :\nseq\tid\tlen(seq)\n')
+        all_seq_len = {seq.id: len(seq.seq) for seq in seq_source}
+
         for sp in species_list:
             if sp != source_species:
                 sp_genes = genes_assoc[sp]
@@ -214,6 +219,8 @@ class SequencesAnalysis:
                     print(f'align {source_genes} with {sp_genes}')
                     seq_sp = SeqIO.to_dict(SeqIO.parse(self.sp_proteome[sp], 'fasta'))
                     seq_to_align = [seq_sp[sp_g] for sp_g in sp_genes]
+                    seq_len = {seq.id: len(seq.seq) for seq in seq_to_align}
+                    all_seq_len.update(seq_len)
 
                     # Create sequences fasta files in sequences directory
                     seq_file = os.path.join(seq_output, f'{sp}__vs__{source_species}__{rxn}.fasta')
@@ -225,7 +232,15 @@ class SequencesAnalysis:
                     muscle_cline = MuscleCommandline(input=seq_file, out=align_file)
                     os.system(str(muscle_cline))
 
+                    # Write alignment in final file with all alignments
                     alignment = AlignIO.read(open(align_file), "fasta")
-                    print("Alignment length %i" % alignment.get_alignment_length())
-                    for record in alignment:
-                        print(record.seq + " " + record.id)
+                    with open(all_align_file, 'a') as f:
+                        f.write(f'\n\n{sp}\n')
+                        for record in alignment:
+                            if record.id in source_genes:
+                                f.write(f'{record.seq}\t{record.id}\t{str(all_seq_len[record.id])}\n')
+                        for record in alignment:
+                            if record.id not in source_genes:
+                                f.write(f'{record.seq}\t{record.id}\t{str(all_seq_len[record.id])}\n')
+
+
