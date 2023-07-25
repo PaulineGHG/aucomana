@@ -2,10 +2,11 @@ import os.path
 
 from aucomana.aucomana import GroupsAnalysis, SequencesAnalysis
 from aucomana.utils.reactions import Reactions
+from aucomana.utils.pathways import Pathways
 from aucomana.utils.utils import get_grp_set
 
 g_file = 'Runs/run62/analysis/group_template.tsv'
-comp_dir = 'Runs/run62_nf/analysis/all'
+comp_dir = 'Runs/run16best/analysis/all'
 spha = 'Sphacelaria-rigidula_FEMALE'
 orders = ['Fucales', 'Ectocarpales', 'Discosporangiales', 'Desmarestiales', 'Tilopteridales',
           'Ralfsiales', 'Laminariales', 'Sphacelariales', 'Dictyotales', 'Outgroup']
@@ -14,11 +15,12 @@ sp_seq_dir = 'Runs/run62/studied_organisms'
 brown = get_grp_set(g_file, 'Phaeophyceae')
 outgr = get_grp_set(g_file, 'Outgroup')
 
-GA = GroupsAnalysis(comp_dir, g_file)
+# GA = GroupsAnalysis(comp_dir, g_file)
 
 #GA.group_pathway_completion_comparison(('LR', 'SR', spha), 'Phaeophyceae')
 #GA.group_reactions_comparison(('LR', 'SR', spha), 'Phaeophyceae')
-GA.group_supervenn_rxn(groups_comp=orders, fig_size=(64, 48), output='supervenn_run62_nf.png')
+#GA.group_supervenn_rxn(groups_comp=orders, fig_size=(64, 48), output='supervenn_run62_nf.png')
+# GA.group_supervenn_rxn(groups_comp=orders, fig_size=(64, 48), output='supervenn_run16best.png')
 
 # mannitol_pw_rxn = ['FRUCTOKINASE-RXN', 'MANNITOL-1-PHOSPHATASE-RXN',
 #                    'MANNITOL-2-DEHYDROGENASE-RXN', 'MANNPDEHYDROG-RXN']
@@ -38,3 +40,6 @@ GA.group_supervenn_rxn(groups_comp=orders, fig_size=(64, 48), output='supervenn_
 # print(RB.nb_reactions)
 # print(RB1.nb_reactions)
 
+R = Reactions('Runs/gf/5_wf_new_biomass/out/reactions.tsv')
+P = Pathways('Runs/gf/5_wf_new_biomass/out/pathways.tsv')
+print(P.get_pw_complete())

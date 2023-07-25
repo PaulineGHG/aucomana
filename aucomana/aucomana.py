@@ -136,7 +136,7 @@ class GroupsAnalysis:
         order_sp = []
         dic_sp_groups = dict()
         for group in groups_comp:
-            species = get_grp_set(self.group_template, group)
+            species = get_grp_set(self.group_template, group, species_list=reactions.species_list)
             for sp in species:
                 order_sp.append(sp)
                 dic_sp_groups[sp] = group
