@@ -8,13 +8,7 @@ setup(
     author='Pauline HAMON-GIRAUD',
     license='GPL-3.0 license',
     packages=['aucomana'],
-    install_requires=['biopython>=1.79',
-                      'matplotlib>=3.5.1',
-                      'numpy>=1.22.3',
-                      'pandas>=1.4.2',
-                      'pyahocorasick>=1.4.4',
-                      'rpy2>=3.5.1',
-                      ],
+    install_requires=['pandas>=1.4.2'],
 
     classifiers=[
         'Development Status :: 1 - Beta',
