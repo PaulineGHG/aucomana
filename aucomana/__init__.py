@@ -1,3 +1,3 @@
-from aucomana.utils import metabolites, reactions, pathways, genes, utils
+from aucomana.utils import utils, metabolites, reactions, pathways, genes
 
 __version__ = '0.1.0'
