@@ -130,7 +130,9 @@ class GroupsAnalysis:
         plt.tight_layout()
         plt.savefig(output)
 
-    def group_supervenn_rxn(self, groups_comp: List[str], fig_size=(16, 8), colors=None, output='supervenn.png'):
+    def group_supervenn_rxn(self, groups_comp: List[str], fig_size=(16, 8), colors=None, output='supervenn.png',
+                            chunks_ordering='occurrence', side_plots=True, widths_minmax_ratio=0.005,
+                            min_width_for_annotation=20, rotate_col_annotations=True):
         reactions = Reactions(self.reactions_tsv)
 
         order_sp = []
@@ -152,9 +154,10 @@ class GroupsAnalysis:
         rxn_sets = reactions.get_rxn_present()
 
         plt.figure(figsize=fig_size)
-        supervenn(sets=[rxn_sets[sp][1] for sp in order_sp], set_annotations=order_sp, side_plots=True,
-                  color_cycle=[dic_groups_color[dic_sp_groups[sp]] for sp in order_sp], chunks_ordering='occurrence',
-                  widths_minmax_ratio=0.005, min_width_for_annotation=20, rotate_col_annotations=True)
+        supervenn(sets=[rxn_sets[sp][1] for sp in order_sp], set_annotations=order_sp, side_plots=side_plots,
+                  color_cycle=[dic_groups_color[dic_sp_groups[sp]] for sp in order_sp], chunks_ordering=chunks_ordering,
+                  widths_minmax_ratio=widths_minmax_ratio, min_width_for_annotation=min_width_for_annotation,
+                  rotate_col_annotations=rotate_col_annotations)
         plt.savefig(output)
 
 
