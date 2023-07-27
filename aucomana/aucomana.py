@@ -152,8 +152,9 @@ class GroupsAnalysis:
         rxn_sets = reactions.get_rxn_present()
 
         plt.figure(figsize=fig_size)
-        supervenn([rxn_sets[sp][1] for sp in order_sp], order_sp, side_plots=False,
-                  color_cycle=[dic_groups_color[dic_sp_groups[sp]] for sp in order_sp])
+        supervenn(sets=[rxn_sets[sp][1] for sp in order_sp], set_annotations=order_sp, side_plots=True,
+                  color_cycle=[dic_groups_color[dic_sp_groups[sp]] for sp in order_sp], chunks_ordering='occurrence',
+                  widths_minmax_ratio=0.005, min_width_for_annotation=20, rotate_col_annotations=True)
         plt.savefig(output)
 
 
