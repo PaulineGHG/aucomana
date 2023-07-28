@@ -153,13 +153,14 @@ class Protein:
 class Pathway:
 
     def __init__(self, pw_node, pw_rlt_in, p_spec):
-        print(pw_node.misc)
         self.id = pw_node.id
         self.common_name = try_key_assignment(pw_node.misc, 'COMMON-NAME')
         self.taxonomic_range = try_key_assignment(pw_node.misc, 'TAXONOMIC-RANGE')
         self.input_cpd = try_key_assignment(pw_node.misc, 'INPUT-COMPOUNDS')
         self.output_cpd = try_key_assignment(pw_node.misc, 'OUTPUT-COMPOUNDS')
         self.rxn_order = try_key_assignment(pw_node.misc, 'REACTIONS-ORDER')
+        if self.rxn_order is not None:
+            self.rxn_order = self.rxn_order[0].split(',')
         self.is_class = set()
         self.name = set()
         self.xref = None
@@ -208,7 +209,7 @@ PADMET_NW_FILE = 'Ascophyllum-nodosum_MALE.padmet'
 P = PadmetSpec(PADMET_NW_FILE)
 N = PadmetNetwork(P)
 
-print([x.supp_data for x in N.classes])
+print([x.rxn_order for x in N.pathways])
 
 end = time.time()
 print(end-start)
