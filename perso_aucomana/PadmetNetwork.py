@@ -18,7 +18,7 @@ class PadmetNetwork:
         self.reactions: Set[Reaction] = set()
         self.compounds: Set[Compound] = set()
         self.genes: Set[Gene] = set()
-        self.proteins = None
+        self.proteins: Set[Protein] = set()
         self.classes = None
         self.pathways = None
         self.__init_attributes(padmet_spec)
@@ -32,6 +32,8 @@ class PadmetNetwork:
                 self.compounds.add(Compound(node, try_key_assignment(p_spec.dicOfRelationIn, node.id), p_spec))
             elif node.type == 'gene':
                 self.genes.add(Gene(node, try_key_assignment(p_spec.dicOfRelationIn, node.id), p_spec))
+            elif node.type == 'protein':
+                self.genes.add(Protein(node, try_key_assignment(p_spec.dicOfRelationIn, node.id), p_spec))
 
 
 class Reaction:
@@ -134,8 +136,8 @@ class Gene:
 
 class Protein:
 
-    def __init__(self):
-        self.id = None
+    def __init__(self, prot_node, prot_rlt_in, p_spec):
+        self.id = prot_node.id
         self.is_class = None
         self.name = None
         self.xref = None
