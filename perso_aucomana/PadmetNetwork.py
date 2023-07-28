@@ -19,8 +19,8 @@ class PadmetNetwork:
         self.compounds: Set[Compound] = set()
         self.genes: Set[Gene] = set()
         self.proteins: Set[Protein] = set()
-        self.classes = None
-        self.pathways = None
+        self.classes: Set[Class] = set()
+        self.pathways: Set[Pathway] = set()
         self.__init_attributes(padmet_spec)
 
     def __init_attributes(self, p_spec):
@@ -33,7 +33,11 @@ class PadmetNetwork:
             elif node.type == 'gene':
                 self.genes.add(Gene(node, try_key_assignment(p_spec.dicOfRelationIn, node.id), p_spec))
             elif node.type == 'protein':
-                self.genes.add(Protein(node, try_key_assignment(p_spec.dicOfRelationIn, node.id), p_spec))
+                self.proteins.add(Protein(node, try_key_assignment(p_spec.dicOfRelationIn, node.id), p_spec))
+            elif node.type == 'class':
+                self.classes.add(Class(node, try_key_assignment(p_spec.dicOfRelationIn, node.id), p_spec))
+            elif node.type == 'pathway':
+                self.pathways.add(Pathway(node, try_key_assignment(p_spec.dicOfRelationIn, node.id), p_spec))
 
 
 class Reaction:
@@ -148,23 +152,54 @@ class Protein:
 
 class Pathway:
 
-    def __init__(self):
-        self.id = None
-        self.is_class = None
-        self.name = None
+    def __init__(self, pw_node, pw_rlt_in, p_spec):
+        print(pw_node.misc)
+        self.id = pw_node.id
+        self.common_name = try_key_assignment(pw_node.misc, 'COMMON-NAME')
+        self.taxonomic_range = try_key_assignment(pw_node.misc, 'TAXONOMIC-RANGE')
+        self.input_cpd = try_key_assignment(pw_node.misc, 'INPUT-COMPOUNDS')
+        self.output_cpd = try_key_assignment(pw_node.misc, 'OUTPUT-COMPOUNDS')
+        self.rxn_order = try_key_assignment(pw_node.misc, 'REACTIONS-ORDER')
+        self.is_class = set()
+        self.name = set()
         self.xref = None
         self.in_pathways = None
         self.completion_rate = None
+        self.__init_rlt_in(pw_rlt_in, p_spec)
+
+    def __init_rlt_in(self, pw_rlt_in, p_spec):
+        if pw_rlt_in is not None:
+            for rlt in pw_rlt_in:
+                if rlt.type == 'is_a_class':
+                    self.is_class.add(rlt.id_out)
+                elif rlt.type == 'has_xref':
+                    self.xref = p_spec.dicOfNode[rlt.id_out].misc
+                elif rlt.type == 'has_name':
+                    self.name = self.name.union(set(p_spec.dicOfNode[rlt.id_out].misc['LABEL']))
 
 
 class Class:
 
-    def __init__(self):
-        self.id = None
-        self.is_class = None
-        self.name = None
+    def __init__(self, cls_node, cls_rlt_in, p_spec):
+        self.id = cls_node.id
+        self.common_name = try_key_assignment(cls_node.misc, 'COMMON-NAME')
+        self.is_class = set()
+        self.name = set()
         self.xref = None
-        self.supp_data = None
+        self.supp_data = dict()
+        self.__init_rlt_in(cls_rlt_in, p_spec)
+
+    def __init_rlt_in(self, cls_rlt_in, p_spec):
+        if cls_rlt_in is not None:
+            for rlt in cls_rlt_in:
+                if rlt.type == 'is_a_class':
+                    self.is_class.add(rlt.id_out)
+                elif rlt.type == 'has_xref':
+                    self.xref = p_spec.dicOfNode[rlt.id_out].misc
+                elif rlt.type == 'has_suppData':
+                    self.supp_data[rlt.id_out] = p_spec.dicOfNode[rlt.id_out].misc
+                elif rlt.type == 'has_name':
+                    self.name = self.name.union(set(p_spec.dicOfNode[rlt.id_out].misc['LABEL']))
 
 
 PADMET_NW_FILE = 'Ascophyllum-nodosum_MALE.padmet'
@@ -173,7 +208,7 @@ PADMET_NW_FILE = 'Ascophyllum-nodosum_MALE.padmet'
 P = PadmetSpec(PADMET_NW_FILE)
 N = PadmetNetwork(P)
 
-print([x.supp_data for x in N.genes])
+print([x.supp_data for x in N.classes])
 
 end = time.time()
 print(end-start)
