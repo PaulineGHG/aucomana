@@ -1,7 +1,5 @@
 from padmet.classes.padmetSpec import PadmetSpec
 from typing import Set, Dict
-import time
-start = time.time()
 
 
 def try_key_assignment(dictionary, key):
@@ -14,7 +12,8 @@ def try_key_assignment(dictionary, key):
 
 class PadmetNetwork:
 
-    def __init__(self, padmet_spec):
+    def __init__(self, padmet_network):
+        padmet_spec = PadmetSpec(padmet_network)
         self.reactions: Dict[str, Reaction] = dict()
         self.compounds: Dict[str, Compound] = dict()
         self.genes: Dict[str, Gene] = dict()
@@ -231,16 +230,3 @@ class Class:
                     self.supp_data[rlt.id_out] = p_spec.dicOfNode[rlt.id_out].misc
                 elif rlt.type == 'has_name':
                     self.name = self.name.union(set(p_spec.dicOfNode[rlt.id_out].misc['LABEL']))
-
-
-PADMET_NW_FILE = 'Ascophyllum-nodosum_MALE.padmet'
-
-
-P = PadmetSpec(PADMET_NW_FILE)
-N = PadmetNetwork(P)
-
-for pw_id, pw in N.pathways.items():
-    print(pw_id, pw.completion_str)
-
-end = time.time()
-print(end-start)
