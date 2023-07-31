@@ -1,5 +1,5 @@
 from padmet.classes.padmetSpec import PadmetSpec
-from typing import Set
+from typing import Set, Dict
 import time
 start = time.time()
 
@@ -15,29 +15,31 @@ def try_key_assignment(dictionary, key):
 class PadmetNetwork:
 
     def __init__(self, padmet_spec):
-        self.reactions: Set[Reaction] = set()
-        self.compounds: Set[Compound] = set()
-        self.genes: Set[Gene] = set()
-        self.proteins: Set[Protein] = set()
-        self.classes: Set[Class] = set()
-        self.pathways: Set[Pathway] = set()
+        self.reactions: Dict[str, Reaction] = dict()
+        self.compounds: Dict[str, Compound] = dict()
+        self.genes: Dict[str, Gene] = dict()
+        self.proteins: Dict[str, Protein] = dict()
+        self.classes: Dict[str, Class] = dict()
+        self.pathways: Dict[str, Pathway] = dict()
         self.__init_attributes(padmet_spec)
 
     def __init_attributes(self, p_spec):
         for node in p_spec.dicOfNode.values():
             # print(node.type)
             if node.type == 'reaction':
-                self.reactions.add(Reaction(node, try_key_assignment(p_spec.dicOfRelationIn, node.id), p_spec))
+                self.reactions[node.id] = Reaction(node, try_key_assignment(p_spec.dicOfRelationIn, node.id), p_spec)
             elif node.type == 'compound':
-                self.compounds.add(Compound(node, try_key_assignment(p_spec.dicOfRelationIn, node.id), p_spec))
+                self.compounds[node.id] = Compound(node, try_key_assignment(p_spec.dicOfRelationIn, node.id), p_spec)
             elif node.type == 'gene':
-                self.genes.add(Gene(node, try_key_assignment(p_spec.dicOfRelationIn, node.id), p_spec))
+                self.genes[node.id] = Gene(node, try_key_assignment(p_spec.dicOfRelationIn, node.id), p_spec)
             elif node.type == 'protein':
-                self.proteins.add(Protein(node, try_key_assignment(p_spec.dicOfRelationIn, node.id), p_spec))
+                self.proteins[node.id] = Protein(node, try_key_assignment(p_spec.dicOfRelationIn, node.id), p_spec)
             elif node.type == 'class':
-                self.classes.add(Class(node, try_key_assignment(p_spec.dicOfRelationIn, node.id), p_spec))
+                self.classes[node.id] = Class(node, try_key_assignment(p_spec.dicOfRelationIn, node.id), p_spec)
             elif node.type == 'pathway':
-                self.pathways.add(Pathway(node, try_key_assignment(p_spec.dicOfRelationIn, node.id), p_spec))
+                self.pathways[node.id] = Pathway(node, try_key_assignment(p_spec.dicOfRelationIn, node.id), p_spec)
+        for pw_id in self.pathways:
+            self.pathways[pw_id].calculate_completion_rate(self.reactions.keys())
 
 
 class Reaction:
@@ -142,12 +144,25 @@ class Protein:
 
     def __init__(self, prot_node, prot_rlt_in, p_spec):
         self.id = prot_node.id
-        self.is_class = None
-        self.name = None
+        self.is_class = set()
+        self.name = set()
         self.xref = None
-        self.supp_data = None
+        self.supp_data = dict()
         self.rxn_catalysing = None
         self.linked_species = None
+        self.__init_rlt_in(prot_rlt_in, p_spec)
+
+    def __init_rlt_in(self, prot_rlt_in, p_spec):
+        if prot_rlt_in is not None:
+            for rlt in prot_rlt_in:
+                if rlt.type == 'is_a_class':
+                    self.is_class.add(rlt.id_out)
+                elif rlt.type == 'has_xref':
+                    self.xref = p_spec.dicOfNode[rlt.id_out].misc
+                elif rlt.type == 'has_suppData':
+                    self.supp_data[rlt.id_out] = p_spec.dicOfNode[rlt.id_out].misc
+                elif rlt.type == 'has_name':
+                    self.name = self.name.union(set(p_spec.dicOfNode[rlt.id_out].misc['LABEL']))
 
 
 class Pathway:
@@ -159,13 +174,17 @@ class Pathway:
         self.input_cpd = try_key_assignment(pw_node.misc, 'INPUT-COMPOUNDS')
         self.output_cpd = try_key_assignment(pw_node.misc, 'OUTPUT-COMPOUNDS')
         self.rxn_order = try_key_assignment(pw_node.misc, 'REACTIONS-ORDER')
+        self.nb_rxn = 0
         if self.rxn_order is not None:
             self.rxn_order = self.rxn_order[0].split(',')
+            self.nb_rxn = len(set(self.rxn_order))
         self.is_class = set()
         self.name = set()
         self.xref = None
         self.in_pathways = None
+        self.rxn_present = set()
         self.completion_rate = None
+        self.completion_str = None
         self.__init_rlt_in(pw_rlt_in, p_spec)
 
     def __init_rlt_in(self, pw_rlt_in, p_spec):
@@ -177,6 +196,17 @@ class Pathway:
                     self.xref = p_spec.dicOfNode[rlt.id_out].misc
                 elif rlt.type == 'has_name':
                     self.name = self.name.union(set(p_spec.dicOfNode[rlt.id_out].misc['LABEL']))
+
+    def calculate_completion_rate(self, rxn_set):
+        if self.rxn_order is not None:
+            for r in self.rxn_order:
+                if r in rxn_set:
+                    self.rxn_present.add(r)
+        if self.nb_rxn != 0:
+            self.completion_rate = len(self.rxn_present) / self.nb_rxn
+        else:
+            self.completion_rate = float(1)
+        self.completion_str = f'{len(self.rxn_present)}/{self.nb_rxn}'
 
 
 class Class:
@@ -209,7 +239,8 @@ PADMET_NW_FILE = 'Ascophyllum-nodosum_MALE.padmet'
 P = PadmetSpec(PADMET_NW_FILE)
 N = PadmetNetwork(P)
 
-print([x.rxn_order for x in N.pathways])
+for pw_id, pw in N.pathways.items():
+    print(pw_id, pw.completion_str)
 
 end = time.time()
 print(end-start)
