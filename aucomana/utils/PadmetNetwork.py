@@ -14,6 +14,9 @@ class PadmetNetwork:
 
     def __init__(self, padmet_network):
         padmet_spec = PadmetSpec(padmet_network)
+        self.creation_date = try_key_assignment(padmet_spec.info, 'creation')
+        self.version = try_key_assignment(padmet_spec.info, 'version')
+        self.db_info = try_key_assignment(padmet_spec.info, 'DB_info')
         self.reactions: Dict[str, Reaction] = dict()
         self.compounds: Dict[str, Compound] = dict()
         self.genes: Dict[str, Gene] = dict()
@@ -47,14 +50,15 @@ class Reaction:
         self.common_name = try_key_assignment(rxn_node.misc, 'COMMON-NAME')
         self.direction = try_key_assignment(rxn_node.misc, 'DIRECTION')
         self.ec_number = try_key_assignment(rxn_node.misc, 'EC-NUMBER')
+        self.compartment = try_key_assignment(rxn_node.misc, 'COMPARTMENT')
         self.name = set()
         self.is_class = set()
         self.xref = None
         self.supp_data = dict()
         self.reconstruction_data = dict()
         self.in_pathways = set()
-        self.reactants = set()
-        self.products = set()
+        self.reactants = dict()
+        self.products = dict()
         self.linked_genes = set()
         self.__init_rlt_in(rxn_rlt_in, p_spec)
 
@@ -64,9 +68,9 @@ class Reaction:
                 if rlt.type == 'is_a_class':
                     self.is_class.add(rlt.id_out)
                 elif rlt.type == 'consumes':
-                    self.reactants.add(rlt.id_out)
+                    self.reactants[rlt.id_out] = rlt.misc
                 elif rlt.type == 'produces':
-                    self.products.add(rlt.id_out)
+                    self.products[rlt.id_out] = rlt.misc
                 elif rlt.type == 'has_xref':
                     self.xref = p_spec.dicOfNode[rlt.id_out].misc
                 elif rlt.type == 'has_reconstructionData':
@@ -143,6 +147,10 @@ class Protein:
 
     def __init__(self, prot_node, prot_rlt_in, p_spec):
         self.id = prot_node.id
+        self.molecular_weight = try_key_assignment(prot_node.misc, 'MOLECULAR-WEIGHT')
+        self.smiles = try_key_assignment(prot_node.misc, 'SMILES')
+        self.common_name = try_key_assignment(prot_node.misc, 'COMMON-NAME')
+        self.inchi_key = try_key_assignment(prot_node.misc, 'INCHI-KEY')
         self.is_class = set()
         self.name = set()
         self.xref = None
