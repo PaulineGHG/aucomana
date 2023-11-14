@@ -1,5 +1,5 @@
 from padmet.classes.padmetSpec import PadmetSpec
-from typing import Set, Dict
+from typing import Dict
 
 
 def try_key_assignment(dictionary, key):

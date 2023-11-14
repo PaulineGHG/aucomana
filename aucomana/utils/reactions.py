@@ -1,6 +1,8 @@
 """
 Reactions class
 """
+import os
+import json
 from typing import Dict, List, Tuple, Set, Iterable
 import pandas as pd
 
@@ -114,25 +116,24 @@ class Reactions:
                 filtered_reactions.append(reaction)
         return filtered_reactions
 
-
     def __generate_nb_rxn_sp(self) -> Dict[str, int]:
-        """ Generate the nb_rxn_sp attribute. Returns a dictionary associating for each species the number of genes
-        it has.
+        """ Generate the nb_rxn_sp attribute. Returns a dictionary associating for each species the
+        number of genes it has.
 
         Returns
         -------
         nb_genes_sp_dict : Dict[str, int]
-            Dictionary Dict[species name, number of genes] associating for each species the number of genes it has.
+            Dictionary Dict[species name, number of genes] associating for each species the number
+            of genes it has.
         """
         nb_rxn_sp_dict = {}
         for sp in self.species_list:
             nb_rxn_sp_dict[sp] = int(sum(self.data_reactions[sp]))
         return nb_rxn_sp_dict
 
-
     def is_present(self, species: str, reaction: str, unique: bool = False) -> bool:
-        """ Indicate if the reaction is present for the species (unique or not) : considered unique if only this species
-        is having the reaction among all species
+        """ Indicate if the reaction is present for the species (unique or not) : considered unique
+        if only this species is having the reaction among all species
 
         Parameters
         ----------
@@ -157,8 +158,8 @@ class Reactions:
 
     def get_rxn_present(self, species: str or Iterable[str] = None, unique: bool = False) \
             -> Dict[str, Tuple[int, Set[str]]]:
-        """ Returns for each species the number and the set of present reactions (unique or not) : considered unique if
-        only this species is having the reaction among all species
+        """ Returns for each species the number and the set of present reactions (unique or not) :
+        considered unique if only this species is having the reaction among all species
 
         Parameters
         ----------
@@ -171,8 +172,8 @@ class Reactions:
         Returns
         -------
         present_rxn_dict: Dict[str, Tuple[int, Set[str]]]
-            (Dict[species, Tuple[number_reactions, Set[reactions]]]) dictionary associating for each species the number
-            of present reactions and its set (unique or not)
+            (Dict[species, Tuple[number_reactions, Set[reactions]]]) dictionary associating for each
+            species the number of present reactions and its set (unique or not)
         """
         if species is None:
             species = self.species_list
@@ -187,11 +188,11 @@ class Reactions:
             present_rxn_dict[sp] = (len(present_rxn), present_rxn)
         return present_rxn_dict
 
-
     def get_rxn_presence(self, reaction: str or Iterable[str] = None, unique: bool = False) -> \
             Dict[str, Tuple[Tuple[int, float], Set[str]]]:
-        """ Returns for each reaction the number, the percentage, and the set of species having the reaction present
-        (unique or not) : considered unique if only one species is having the reaction among all species
+        """ Returns for each reaction the number, the percentage, and the set of species having the
+        reaction present (unique or not) : considered unique if only one species is having the
+        reaction among all species
 
         Parameters
         ----------
@@ -205,8 +206,8 @@ class Reactions:
         -------
         rxn_presence_dict: Dict[str, Tuple[Tuple[int, float], Set[str]]]
             (Dict[species, Tuple[Tuple[number_species, percentage_species], Set[reactions]]])
-            dictionary associating for each reaction the number and the percentage of species having the reaction and
-            its set (unique or not)
+            dictionary associating for each reaction the number and the percentage of species having
+            the reaction and its set (unique or not)
         """
         if reaction is None:
             reaction = self.reactions_list
@@ -221,12 +222,13 @@ class Reactions:
                 for sp in self.species_list:
                     if self.is_present(sp, rxn, unique):
                         rxn_presence.add(sp)
-            rxn_presence_dict[rxn] = ((len(rxn_presence), len(rxn_presence)/self.nb_species), rxn_presence)
+            rxn_presence_dict[rxn] = ((len(rxn_presence), len(rxn_presence) / self.nb_species),
+                                      rxn_presence)
         return rxn_presence_dict
 
-    def is_absent(self, species: str, reaction: str, unique: bool = False) -> bool:
-        """ Indicate if the reaction is absent for the species (unique or not) : considered unique if only this species
-        is not having the reaction among all species
+    def is_absent(self, species: str or Iterable[str], reaction: str, unique: bool = False) -> bool:
+        """ Indicate if the reaction is absent for the species (unique or not) : considered unique
+        if only this species is not having the reaction among all species
 
         Parameters
         ----------
@@ -243,16 +245,25 @@ class Reactions:
             True if the reaction for the species is absent (unique or not),
             False otherwise
         """
-        if unique:
-            row = list(self.data_reactions.loc[reaction])
-            return self.data_reactions.loc[reaction, species] == 0 and sum(row) == self.nb_species - 1
+        if type(species) == str:
+            if unique:
+                row = list(self.data_reactions.loc[reaction])
+                return self.data_reactions.loc[reaction, species] == 0 and sum(
+                    row) == self.nb_species - 1
+            else:
+                return self.data_reactions.loc[reaction, species] == 0
         else:
-            return self.data_reactions.loc[reaction, species] == 0
+            row = list(self.data_reactions.loc[reaction])
+            absence = [self.data_reactions.loc[reaction, s] for s in species]
+            if unique:
+                return 1 not in absence and sum(row) == self.nb_species - len(species)
+            else:
+                return 1 not in absence
 
-    def get_rxn_absent(self, species: str or Iterable[str] = None, unique: bool = False) \
-            -> Dict[str, Tuple[int, Set[str]]]:
-        """ Returns for each species the number and the set of absent reactions (unique or not) : considered unique if
-        only this species is not having the reaction among all species
+    def get_rxn_absent(self, species: str or Iterable[str] = None, unique: bool = False,
+                       union: bool = False) -> Dict[str, Tuple[int, Set[str]]]:
+        """ Returns for each species the number and the set of absent reactions (unique or not) :
+        considered unique if only this species is not having the reaction among all species
 
         Parameters
         ----------
@@ -261,30 +272,42 @@ class Reactions:
             if None will be all the species
         unique: bool, optional (default=False)
             True if the absence is unique, False otherwise
+        union: bool, optional (default=False)
+            True to check the absence for the union of species
 
         Returns
         -------
         absent_rxn_dict: Dict[str, Tuple[int, Set[str]]]
-            (Dict[species, Tuple[number_reactions, Set[reactions]]]) dictionary associating for each species the number
-            of absent reactions and its set (unique or not)
+            (Dict[species, Tuple[number_reactions, Set[reactions]]]) dictionary associating for each
+            species the number of absent reactions and its set (unique or not)
         """
         if species is None:
             species = self.species_list
         elif type(species) == str:
             species = [species]
         absent_rxn_dict = {}
-        for sp in species:
+
+        if not union:
+            for sp in species:
+                absent_rxn = set()
+                for rxn in self.reactions_list:
+                    if self.is_absent(sp, rxn, unique):
+                        absent_rxn.add(rxn)
+                absent_rxn_dict[sp] = (len(absent_rxn), absent_rxn)
+
+        else:
             absent_rxn = set()
             for rxn in self.reactions_list:
-                if self.is_absent(sp, rxn, unique):
+                if self.is_absent(species, rxn, unique):
                     absent_rxn.add(rxn)
-            absent_rxn_dict[sp] = (len(absent_rxn), absent_rxn)
+            absent_rxn_dict['_'.join(species)] = (len(absent_rxn), absent_rxn)
+
         return absent_rxn_dict
 
-    def get_genes_assoc(self, reactions_list: str or Iterable[str] = None,) \
-            -> Dict[str, Dict[str, Dict[str, Set[str]]]]:
-        """ Returns a dictionary of genes associated with each reaction for each species. Can write proteins sequences
-        associated in fasta files.
+    def get_genes_assoc(self, reactions_list: str or Iterable[str] = None, ) \
+            -> Dict[str, Dict[str, Dict[str, List[str]]]]:
+        """ Returns a dictionary of genes associated with each reaction for each species. Can write
+        proteins sequences associated in fasta files.
         Parameters
         ----------
         reactions_list : str or Iterable[str], optional (default=None)
@@ -293,7 +316,7 @@ class Reactions:
 
         Returns
         -------
-        genes_assoc : Dict[str, Dict[str, Dict[str, Set[str]]]]
+        genes_assoc : Dict[str, Dict[str, Dict[str, List[str]]]]
             Dictionary of genes associated with each reaction for each species
         """
         genes_assoc = {}
@@ -307,6 +330,43 @@ class Reactions:
         for reaction in reactions_list:
             for species in self.species_list:
                 genes_assoc[reaction][species] = \
-                    set(str(self.data_genes_assoc[species + self.STR_GENE_ASSOC][reaction]).split(";"))
-
+                    str(self.data_genes_assoc[species + self.STR_GENE_ASSOC][reaction]).split(';')
         return genes_assoc
+
+    @staticmethod
+    def write_genes(genes_assoc, fasta_dir, aucome=True, output_dir='genes_assoc'):
+        """ Allow writing sequences of genes in fasta out files
+
+        Parameters
+        ----------
+        genes_assoc : Dict[str, Dict[str, Dict[str, List[str]]]]
+            Dictionary of genes associated with each reaction for each species
+        fasta_dir
+        aucome
+        output_dir
+        """
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+        file_out_json = os.path.join(output_dir, 'genes_assoc.json')
+        with open(file_out_json, 'w') as o:
+            json.dump(genes_assoc, o, indent=4)
+
+        for reaction, species_dict in genes_assoc.items():
+            fasta = os.path.join(output_dir, f'{reaction}.fa')
+            with open(fasta, 'w') as o:
+                for species, genes_list in species_dict.items():
+                    if aucome:
+                        genes_fa = os.path.join(fasta_dir, species, f'{species}.faa')
+                    else:
+                        genes_fa = os.path.join(fasta_dir, f'{species}.faa')
+                    with open(genes_fa, 'r') as f:
+                        write_seq = False
+                        for line in f:
+                            if line[0] == ">":
+                                write_seq = False
+                                gene = line[1:][:-1]
+                                if gene in genes_list:
+                                    o.write(f">{species}|{gene}\n")
+                                    write_seq = True
+                            elif write_seq:
+                                o.write(line)

@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.colors as m_colors
-from typing import Iterable, List
+from typing import Iterable, List, Collection
 from aucomana.utils.utils import get_grp_set
 from aucomana.utils.pathways import Pathways
 from aucomana.utils.reactions import Reactions
@@ -47,8 +47,10 @@ class GroupsAnalysis:
         self.genes_tsv = os.path.join(compare_path, 'genes.tsv')
         self.metabolites_tsv = os.path.join(compare_path, 'metabolites.tsv')
 
-    def group_reactions_comparison(self, groups_comp: Iterable[str], group_analysis: str = 'all',
-                                   output='groups_comp_rxn.png'):
+    def group_reactions_absence_barplot(self, groups_comp: Iterable[str],
+                                        group_analysis: str = 'all',
+                                        output='groups_comp_rxn_union.png',
+                                        union=False):
         species_analysis = get_grp_set(self.group_template, group_analysis)
 
         reaction = Reactions(file_reactions_tsv=self.reactions_tsv,
@@ -57,14 +59,23 @@ class GroupsAnalysis:
         for group in list(groups_comp) + [group_analysis]:
             dic_groups[group] = get_grp_set(self.group_template, (group, group_analysis))
 
-        absent = reaction.get_rxn_absent(species=species_analysis, unique=True)
-        abs_groups = dict()
+        if not union:
+            absent = reaction.get_rxn_absent(species=species_analysis, unique=True)
+            abs_groups = dict()
 
-        for group in list(groups_comp) + [group_analysis]:
-            abs_groups[group] = list()
+            for group in list(groups_comp) + [group_analysis]:
+                abs_groups[group] = list()
 
-            for sp in dic_groups[group]:
-                abs_groups[group].append(absent[sp][0])
+                for sp in dic_groups[group]:
+                    abs_groups[group].append(absent[sp][0])
+
+        else:
+            abs_groups = dict()
+
+            for group in list(groups_comp):
+                absent = reaction.get_rxn_absent(species=dic_groups[group], unique=True, union=True)
+                for k, v in absent.items():
+                    abs_groups[group] = v[0]
 
         ind = ["absent"]
         col = list(abs_groups.keys())
@@ -76,13 +87,14 @@ class GroupsAnalysis:
         for container in ax.containers:
             ax.bar_label(container)
         ax.legend(bbox_to_anchor=(1.0, 1), loc='upper left')
-        ax.set_ylabel("Number of pathways")
+        ax.set_ylabel("Number of reactions")
         ax.set_title(f'Unique absent reactions for {"/".join(groups_comp)} groups')
         plt.xticks(rotation=0)
         plt.tight_layout()
         plt.savefig(output)
 
-    def group_pathway_completion_comparison(self, groups_comp: Iterable[str], group_analysis: str = 'all',
+    def group_pathway_completion_comparison(self, groups_comp: Iterable[str],
+                                            group_analysis: str = 'all',
                                             output='groups_comp_pw.png'):
         species_analysis = get_grp_set(self.group_template, group_analysis)
 
@@ -130,9 +142,12 @@ class GroupsAnalysis:
         plt.tight_layout()
         plt.savefig(output)
 
-    def group_supervenn_rxn(self, groups_comp: List[str], fig_size=(16, 8), colors=None, output='supervenn.png',
-                            chunks_ordering='occurrence', side_plots=True, widths_minmax_ratio=0.005,
-                            min_width_for_annotation=20, rotate_col_annotations=True):
+    def group_supervenn_rxn(self, groups_comp: List[str], fig_size=(16, 8), colors=None,
+                            output='supervenn.png',
+                            chunks_ordering='occurrence', side_plots=True,
+                            widths_minmax_ratio=0.005,
+                            min_width_for_annotation=20, rotate_col_annotations=True,
+                            absence=False):
         reactions = Reactions(self.reactions_tsv)
 
         order_sp = []
@@ -151,12 +166,18 @@ class GroupsAnalysis:
         for i in range(len(groups_comp)):
             dic_groups_color[groups_comp[i]] = colors_cycle[i]
 
-        rxn_sets = reactions.get_rxn_present()
+        if not absence:
+            rxn_sets = reactions.get_rxn_present()
+        else:
+            rxn_sets = reactions.get_rxn_absent()
 
         plt.figure(figsize=fig_size)
-        supervenn(sets=[rxn_sets[sp][1] for sp in order_sp], set_annotations=order_sp, side_plots=side_plots,
-                  color_cycle=[dic_groups_color[dic_sp_groups[sp]] for sp in order_sp], chunks_ordering=chunks_ordering,
-                  widths_minmax_ratio=widths_minmax_ratio, min_width_for_annotation=min_width_for_annotation,
+        supervenn(sets=[rxn_sets[sp][1] for sp in order_sp], set_annotations=order_sp,
+                  side_plots=side_plots,
+                  color_cycle=[dic_groups_color[dic_sp_groups[sp]] for sp in order_sp],
+                  chunks_ordering=chunks_ordering,
+                  widths_minmax_ratio=widths_minmax_ratio,
+                  min_width_for_annotation=min_width_for_annotation,
                   rotate_col_annotations=rotate_col_annotations)
         plt.savefig(output)
 
@@ -179,7 +200,8 @@ class SequencesAnalysis:
                 elif file.endswith('.fna'):
                     self.sp_genome[species] = os.path.join(species_sequences_dir, species, file)
 
-    def multiple_alignments(self, rxn, source_species: str, output: str, species_list: List[str]=None):
+    def multiple_alignments(self, rxn, source_species: str, output: str,
+                            species_list: List[str] = None):
         """ Need "muscle" installed.
 
         Parameters
@@ -200,8 +222,9 @@ class SequencesAnalysis:
             species_list = r.species_list
         # Obtain gene associated to rxn and get source sequences from the source species
         genes_assoc = r.get_genes_assoc(rxn)[rxn]
-        source_genes =  genes_assoc[source_species]
-        seq_source = [SeqIO.to_dict(SeqIO.parse(self.sp_proteome[source_species], 'fasta'))[g] for g in source_genes]
+        source_genes = genes_assoc[source_species]
+        seq_source = [SeqIO.to_dict(SeqIO.parse(self.sp_proteome[source_species], 'fasta'))[g] for g
+                      in source_genes]
 
         # Create output directories
         seq_output = os.path.join(output, 'sequences')
