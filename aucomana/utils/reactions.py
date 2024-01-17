@@ -304,6 +304,17 @@ class Reactions:
 
         return absent_rxn_dict
 
+    def get_rxn_percentage_presence(self, percentage: float, under: bool = False) -> Set[str]:
+        rxn_perc_presence = set()
+        int_perc = int(percentage * self.nb_species)
+        for rxn in self.reactions_list:
+            nb_sp_rxn = sum(self.data_reactions.loc[rxn])
+            if under and nb_sp_rxn <= int_perc:
+                rxn_perc_presence.add(rxn)
+            elif not under and nb_sp_rxn >= int_perc:
+                rxn_perc_presence.add(rxn)
+        return rxn_perc_presence
+
     def get_genes_assoc(self, reactions_list: str or Iterable[str] = None, ) \
             -> Dict[str, Dict[str, Dict[str, List[str]]]]:
         """ Returns a dictionary of genes associated with each reaction for each species. Can write
