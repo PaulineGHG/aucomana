@@ -305,6 +305,20 @@ class Reactions:
         return absent_rxn_dict
 
     def get_rxn_percentage_presence(self, percentage: float, under: bool = False) -> Set[str]:
+        """ Select reactions under or over a certain percentage of presence among species.
+
+        Parameters
+        ----------
+        percentage: float
+            Percentage of presence threshold
+        under: bool (optional, default=False)
+            True to keep reaction under threshold, False to keep over
+
+        Returns
+        -------
+        Set[str]:
+            Set of reactions under or over a certain percentage of presence among species
+        """
         rxn_perc_presence = set()
         int_perc = int(percentage * self.nb_species)
         for rxn in self.reactions_list:
