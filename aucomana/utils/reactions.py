@@ -364,11 +364,15 @@ class Reactions:
 
         Parameters
         ----------
-        genes_assoc : Dict[str, Dict[str, Dict[str, List[str]]]]
+        genes_assoc: Dict[str, Dict[str, Dict[str, List[str]]]]
             Dictionary of genes associated with each reaction for each species
-        fasta_dir
-        aucome
-        output_dir
+        fasta_dir: str
+            Path of the directory containing species fasta (.faa) files or aucome run
+            studied_organisms folder path
+        aucome: bool (optional, default=True)
+            True if the fasta_dir directory given is the studied_organism folder of aucome run
+        output_dir: str (optional, default='genes_assoc')
+            Path of the output directory (existing or not)
         """
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)

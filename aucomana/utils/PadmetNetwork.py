@@ -42,6 +42,7 @@ class PadmetNetwork:
                 self.pathways[node.id] = Pathway(node, try_key_assignment(p_spec.dicOfRelationIn, node.id), p_spec)
         for pw_id in self.pathways:
             self.pathways[pw_id].calculate_completion_rate(self.reactions.keys())
+            self.pathways[pw_id].add_sub_pathways(self.pathways.values())
 
 
 class Reaction:
@@ -185,14 +186,18 @@ class Pathway:
         if self.rxn_order is not None:
             self.rxn_order = self.rxn_order[0].split(',')
             self.nb_rxn = len(set(self.rxn_order))
+
         self.is_class = set()
         self.name = set()
         self.xref = None
-        self.in_pathways = None
+        self.in_pathways = set()
+        self.__init_rlt_in(pw_rlt_in, p_spec)
+
         self.rxn_present = set()
         self.completion_rate = None
         self.completion_str = None
-        self.__init_rlt_in(pw_rlt_in, p_spec)
+
+        self.sub_pathways = set()
 
     def __init_rlt_in(self, pw_rlt_in, p_spec):
         if pw_rlt_in is not None:
@@ -203,6 +208,8 @@ class Pathway:
                     self.xref = p_spec.dicOfNode[rlt.id_out].misc
                 elif rlt.type == 'has_name':
                     self.name = self.name.union(set(p_spec.dicOfNode[rlt.id_out].misc['LABEL']))
+                elif rlt.type == 'is_in_pathway':
+                    self.in_pathways.add(rlt.id_out)
 
     def calculate_completion_rate(self, rxn_set):
         if self.rxn_order is not None:
@@ -214,6 +221,11 @@ class Pathway:
         else:
             self.completion_rate = float(1)
         self.completion_str = f'{len(self.rxn_present)}/{self.nb_rxn}'
+
+    def add_sub_pathways(self, pw_set):
+        for pw in pw_set:
+            if self.id in pw.in_pathways:
+                self.sub_pathways.add(pw)
 
 
 class Class:
